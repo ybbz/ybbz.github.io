@@ -1109,34 +1109,34 @@ map.addControl(myZoomCtrl);
     <link href="http://blog.ybbz.site/2016/04/06/MacBook-Pages-Papers-EndNote/"/>
     <id>http://blog.ybbz.site/2016/04/06/MacBook-Pages-Papers-EndNote/</id>
     <published>2016-04-05T16:00:00.000Z</published>
-    <updated>2016-04-23T09:27:29.000Z</updated>
+    <updated>2016-04-23T10:01:56.000Z</updated>
     
     <content type="html">&lt;p&gt;之前一直用Papers3进行文献管理，确实好用。最近要写论文，就想着能否用Papers3来引用文献，于是进行了一番探索，记录如下。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;相关配置&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;###相关配置&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;MacBook 10.9&lt;/li&gt;
 &lt;li&gt;Pages 5.2&lt;/li&gt;
 &lt;li&gt;Papers 3.3.3&lt;/li&gt;
 &lt;li&gt;EndNote X7&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;一、Papers3添加引用&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;###Papers3添加引用&lt;/p&gt;
 &lt;p&gt;1.开启引用（Papers-Preferences-Citations）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160406_1.png&quot; alt=&quot;20160406_1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160406_1.png&quot; alt=&quot;20160406_1&quot;&gt;&lt;/p&gt;
 &lt;p&gt;2.在文档中引用（在Pages文档中双击control键）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160406_2.png&quot; alt=&quot;20160406_2&quot;&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160406_2.png&quot; alt=&quot;20160406_2&quot;&gt;  &lt;/p&gt;
 &lt;p&gt;一般来说，到这一步就可以引用成功了!&lt;br&gt;然而，上图提示“Cannot Insert Citation”，说是我的Pages版本不支持。&lt;br&gt;至于“Copy to Clipboard”这种功能，显然不是我想要的；于是就有了下面的步骤。&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;注：使用Papers管理文献不在本文讨论范围内，读者自行探索～&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;二、EndNote添加引用&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;###EndNote添加引用&lt;/p&gt;
 &lt;p&gt;1.Papers3导出（File-Export-Refman RIS File）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160406_3.png&quot; alt=&quot;20160406_3&quot;&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160406_3.png&quot; alt=&quot;20160406_3&quot;&gt;  &lt;/p&gt;
 &lt;p&gt;2.EndNote导入（File-Import-demo.ris）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160406_4.png&quot; alt=&quot;20160406_4&quot;&gt;  &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;三、Pages添加引用&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160406_4.png&quot; alt=&quot;20160406_4&quot;&gt;  &lt;/p&gt;
+&lt;p&gt;###Pages添加引用&lt;/p&gt;
 &lt;p&gt;1.安装EndNote插件  &lt;/p&gt;
 &lt;p&gt;插件下载地址：&lt;a href=&quot;https://support.apple.com/kb/DL1692?locale=en_US&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Pages EndNote Plug-in v2.0&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;2.在文档中引用&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160406_5.png&quot; alt=&quot;20160406_5&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160406_6.png&quot; alt=&quot;20160406_6&quot;&gt;  &lt;/p&gt;
-&lt;p&gt;参考资料：  &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160406_5.png&quot; alt=&quot;20160406_5&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160406_6.png&quot; alt=&quot;20160406_6&quot;&gt;  &lt;/p&gt;
+&lt;p&gt;###参考资料&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&quot;http://support.mekentosj.com/kb/papers2/citations-in-pages-with-papers-2-for-mac&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Citations in Pages with Papers 2 for Mac&lt;/a&gt;  &lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://www.360doc.com/content/11/1231/18/7660968_176344103.shtml&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Mac科研神器【文献管理】Papers&lt;/a&gt;  &lt;/li&gt;
@@ -1148,10 +1148,11 @@ map.addControl(myZoomCtrl);
     <summary type="html">
     
       &lt;p&gt;之前一直用Papers3进行文献管理，确实好用。最近要写论文，就想着能否用Papers3来引用文献，于是进行了一番探索，记录如下。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;相关配置&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;###相关配置&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;MacBook 10.9&lt;/li&gt;
-&lt;li&gt;Pages 5
+&lt;li&gt;Pages 5.2&lt;/li&gt;
+&lt;li&gt;Pa
     
     </summary>
     
@@ -1611,6 +1612,80 @@ P(A3|A1,A2)=P(A1,A2|A3)P(A3)/P(A1,A2)=P(A1,A2,A3)/P(A1,A2)=P(A3)P(A1|A3)P(A2|A3)
   </entry>
   
   <entry>
+    <title>一道算法题</title>
+    <link href="http://blog.ybbz.site/2016/03/29/algorithm/"/>
+    <id>http://blog.ybbz.site/2016/03/29/algorithm/</id>
+    <published>2016-03-28T16:00:00.000Z</published>
+    <updated>2016-04-23T09:26:42.000Z</updated>
+    
+    <content type="html">&lt;p&gt;题目如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;已知list1 = [20, 6, 15, 53, 47],已经排好序&lt;/li&gt;
+&lt;li&gt;已知list2 = [(6, ‘John’, ‘20’), (15, ‘Kim’, ‘18’),(20, ‘David’, ‘21’), (47, ‘Amy’, ‘23’), (53, ‘Mary’, ‘20’)]&lt;/li&gt;
+&lt;li&gt;把list2按照list1中的顺序重新排序，并把排序结果封装成json字符串，得到list3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;代码如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;list1 = [20, 6, 15, 53, 47]
+list2 = [(6, &amp;apos;John&amp;apos;, &amp;apos;20&amp;apos;), (15, &amp;apos;Kim&amp;apos;, &amp;apos;18&amp;apos;),
+         (20, &amp;apos;David&amp;apos;, &amp;apos;21&amp;apos;), (47, &amp;apos;Amy&amp;apos;, &amp;apos;23&amp;apos;), (53, &amp;apos;Mary&amp;apos;, &amp;apos;20&amp;apos;)]
+print(list1)
+print(list2)
+
+list3 = []
+# count = len(list1)
+# for i in range(0, count):
+#     dict = {}
+#     id = list1[i]
+#     dict[&amp;apos;id&amp;apos;] = id
+#     j = 0
+#     while j &amp;lt; count and list2[j][0] != id:
+#         j += 1
+#     dict[&amp;apos;name&amp;apos;] = list2[j][1]
+#     dict[&amp;apos;age&amp;apos;] = list2[j][2]
+#     list3.append(dict)
+
+
+# list2_dict = {}
+# for item2 in list2:
+#     list2_dict[item2[0]] = (item2[1], item2[2])
+# for item1 in list1:
+#     dict = {}
+#     dict[&amp;apos;id&amp;apos;] = item1
+#     dict[&amp;apos;name&amp;apos;] = list2_dict[item1][0]
+#     dict[&amp;apos;age&amp;apos;] = list2_dict[item1][1]
+#     list3.append(dict)
+
+list2_dict = {}
+for item2 in list2:
+    list2_dict[item2[0]] = {&amp;apos;name&amp;apos;: item2[1], &amp;apos;age&amp;apos;: item2[2]}
+for item1 in list1:
+    dict = list2_dict[item1]
+    dict[&amp;apos;id&amp;apos;] = item1
+    list3.append(dict)
+
+print(list3)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;^_^ 感谢我的本科室友~&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;题目如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;已知list1 = [20, 6, 15, 53, 47],已经排好序&lt;/li&gt;
+&lt;li&gt;已知list2 = [(6, ‘John’, ‘20’), (15, ‘Kim’, ‘18’),(20, ‘David’, ‘21’), (47,
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="http://blog.ybbz.site/categories/Algorithm/"/>
+    
+    
+      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
+    
+      <category term="Algorithm" scheme="http://blog.ybbz.site/tags/Algorithm/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Ajax跨域访问Flask构建的Python Web服务器</title>
     <link href="http://blog.ybbz.site/2016/03/29/Ajax-Flask-Python-Web-Server/"/>
     <id>http://blog.ybbz.site/2016/03/29/Ajax-Flask-Python-Web-Server/</id>
@@ -1730,80 +1805,6 @@ print(decode)
   </entry>
   
   <entry>
-    <title>一道算法题</title>
-    <link href="http://blog.ybbz.site/2016/03/29/algorithm/"/>
-    <id>http://blog.ybbz.site/2016/03/29/algorithm/</id>
-    <published>2016-03-28T16:00:00.000Z</published>
-    <updated>2016-04-23T09:26:42.000Z</updated>
-    
-    <content type="html">&lt;p&gt;题目如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;已知list1 = [20, 6, 15, 53, 47],已经排好序&lt;/li&gt;
-&lt;li&gt;已知list2 = [(6, ‘John’, ‘20’), (15, ‘Kim’, ‘18’),(20, ‘David’, ‘21’), (47, ‘Amy’, ‘23’), (53, ‘Mary’, ‘20’)]&lt;/li&gt;
-&lt;li&gt;把list2按照list1中的顺序重新排序，并把排序结果封装成json字符串，得到list3&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;代码如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;list1 = [20, 6, 15, 53, 47]
-list2 = [(6, &amp;apos;John&amp;apos;, &amp;apos;20&amp;apos;), (15, &amp;apos;Kim&amp;apos;, &amp;apos;18&amp;apos;),
-         (20, &amp;apos;David&amp;apos;, &amp;apos;21&amp;apos;), (47, &amp;apos;Amy&amp;apos;, &amp;apos;23&amp;apos;), (53, &amp;apos;Mary&amp;apos;, &amp;apos;20&amp;apos;)]
-print(list1)
-print(list2)
-
-list3 = []
-# count = len(list1)
-# for i in range(0, count):
-#     dict = {}
-#     id = list1[i]
-#     dict[&amp;apos;id&amp;apos;] = id
-#     j = 0
-#     while j &amp;lt; count and list2[j][0] != id:
-#         j += 1
-#     dict[&amp;apos;name&amp;apos;] = list2[j][1]
-#     dict[&amp;apos;age&amp;apos;] = list2[j][2]
-#     list3.append(dict)
-
-
-# list2_dict = {}
-# for item2 in list2:
-#     list2_dict[item2[0]] = (item2[1], item2[2])
-# for item1 in list1:
-#     dict = {}
-#     dict[&amp;apos;id&amp;apos;] = item1
-#     dict[&amp;apos;name&amp;apos;] = list2_dict[item1][0]
-#     dict[&amp;apos;age&amp;apos;] = list2_dict[item1][1]
-#     list3.append(dict)
-
-list2_dict = {}
-for item2 in list2:
-    list2_dict[item2[0]] = {&amp;apos;name&amp;apos;: item2[1], &amp;apos;age&amp;apos;: item2[2]}
-for item1 in list1:
-    dict = list2_dict[item1]
-    dict[&amp;apos;id&amp;apos;] = item1
-    list3.append(dict)
-
-print(list3)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;^_^ 感谢我的本科室友~&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;题目如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;已知list1 = [20, 6, 15, 53, 47],已经排好序&lt;/li&gt;
-&lt;li&gt;已知list2 = [(6, ‘John’, ‘20’), (15, ‘Kim’, ‘18’),(20, ‘David’, ‘21’), (47,
-    
-    </summary>
-    
-      <category term="Algorithm" scheme="http://blog.ybbz.site/categories/Algorithm/"/>
-    
-    
-      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
-    
-      <category term="Algorithm" scheme="http://blog.ybbz.site/tags/Algorithm/"/>
-    
-  </entry>
-  
-  <entry>
     <title>随笔：写在三月末</title>
     <link href="http://blog.ybbz.site/2016/03/28/Just-write-about-my-life/"/>
     <id>http://blog.ybbz.site/2016/03/28/Just-write-about-my-life/</id>
@@ -1837,6 +1838,123 @@ print(list3)
     
     
       <category term="Life" scheme="http://blog.ybbz.site/tags/Life/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>爬虫实战：抓取在iBeiKe的所有发帖信息保存到数据库，进行可视化分析</title>
+    <link href="http://blog.ybbz.site/2016/03/27/crawl-ibeike/"/>
+    <id>http://blog.ybbz.site/2016/03/27/crawl-ibeike/</id>
+    <published>2016-03-26T16:00:00.000Z</published>
+    <updated>2016-04-23T09:26:19.000Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;iBeiKe网站，或简称iBeiKe（中文：爱北科，英文缩写：IBK）是北京科技大学学生会下属的技术性学生组织iBeiKe团队建立和维护的网站，主要服务于北京科技大学的师生。网站成立于2001年3月，时称“北科大学生之家”。iBeiKe网站是北京科技大学学生会的宣传门户，同时也是一个综合性的学生网站及校园服务网站。iBeiKe网站也是北京科技大学历史最长的学生网站。网站的标语是“网上网下，一样精彩”。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;博主本科时期在iBeiKe担任了n年的版主和总版主（好吧，现在好像还没卸任？），挥洒了无数的青春与汗水。也结交了无数的基友（有男有女又老又少）。。。&lt;/p&gt;
+&lt;p&gt;声明：用爬虫抓取数据，没有任何坏心思，纯粹的兴趣与技术交流，抓的也都是自己的数据，不侵犯他人隐私。若牵扯到各方利益，请联系我！&lt;/p&gt;
+&lt;p&gt;言归正传～～～github传送门：&lt;a href=&quot;https://github.com/ybbz/crawler&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;crawl_ibeike1/2&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
+&lt;p&gt;效果图如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160330_1.png&quot; alt=&quot;20160330_1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160330_2.png&quot; alt=&quot;20160330_2&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;抓取数据并清洗，保存到数据库&quot;&gt;&lt;a href=&quot;#抓取数据并清洗，保存到数据库&quot; class=&quot;headerlink&quot; title=&quot;抓取数据并清洗，保存到数据库&quot;&gt;&lt;/a&gt;抓取数据并清洗，保存到数据库&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;# encoding=utf-8
+
+import httplib2
+import mysql.connector
+from bs4 import BeautifulSoup
+
+result = []
+pageNum = &amp;apos;total page number&amp;apos;
+uid = &amp;apos;your uid&amp;apos;
+cookie = &amp;quot;your cookies&amp;quot;
+
+url = &amp;apos;http://city.ibeike.com/home.php?mod=space&amp;amp;uid=&amp;apos; + uid + &amp;apos;&amp;amp;do=thread&amp;amp;view=me&amp;amp;order=dateline&amp;amp;from=space&amp;amp;page=&amp;apos;
+
+headers = {&amp;quot;Connection&amp;quot;: &amp;quot;keep-alive&amp;quot;,
+           &amp;quot;Cookie&amp;quot;: cookie,
+           &amp;quot;Content-Type&amp;quot;: &amp;quot;application/xhtml+xml&amp;quot;}
+
+for page in range(1, pageNum + 1):
+    cur_page = page
+    url_full = url + str(cur_page)
+    # http request
+    http = httplib2.Http()
+    response, content = http.request(url_full, &amp;quot;GET&amp;quot;, headers=headers)
+    if response.status == 200:
+        # print(response)
+        # print(content.decode(&amp;apos;utf-8&amp;apos;))
+        soup = BeautifulSoup(content, &amp;quot;lxml&amp;quot;)
+        table = soup.find_all(&amp;apos;table&amp;apos;)[1]
+        tr = table.find_all(&amp;apos;tr&amp;apos;, class_=&amp;apos;&amp;apos;)
+        for item in tr:
+            item_list = []
+            # print(item.prettify())
+            item_title = item.th.a.string
+            item_group = item.find_all(&amp;apos;td&amp;apos;, class_=&amp;apos;&amp;apos;)[0].a.string
+            item_reply = item.select(&amp;apos;td[class=&amp;quot;num&amp;quot;]&amp;apos;)[0].a.string
+            item_watch = item.select(&amp;apos;td[class=&amp;quot;num&amp;quot;]&amp;apos;)[0].em.string
+            # save to the result list
+            item = (str(item_title), str(item_group), int(item_reply), int(item_watch))
+            result.append(item)
+print(result)
+
+# connect database
+conn = mysql.connector.connect(host=&amp;quot;hostname&amp;quot;, user=&amp;quot;username&amp;quot;, passwd=&amp;quot;password&amp;quot;, db=&amp;quot;database&amp;quot;)
+cursor = conn.cursor()
+# save data
+sql = &amp;quot;insert into ibeike(title,groups,reply,watch) values(%s,%s,%s,%s)&amp;quot;
+cursor.executemany(sql, result)
+conn.commit()
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;数据分析与数据可视化&quot;&gt;&lt;a href=&quot;#数据分析与数据可视化&quot; class=&quot;headerlink&quot; title=&quot;数据分析与数据可视化&quot;&gt;&lt;/a&gt;数据分析与数据可视化&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;# encoding=utf-8
+
+import mysql.connector
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# connect database
+conn = mysql.connector.connect(host=&amp;quot;hostname&amp;quot;, user=&amp;quot;username&amp;quot;,passwd=&amp;quot;password&amp;quot;, db=&amp;quot;database&amp;quot;)
+cursor = conn.cursor()
+# query data
+cursor.execute(&amp;apos;select count(*),max(reply),min(reply),max(watch),min(watch) from ibeike&amp;apos;)
+values1 = cursor.fetchall()
+print(&amp;quot;ibeike:totally&amp;quot; + str(values1[0][0]) + &amp;quot;data&amp;quot;)
+list = [(&amp;apos;highest reply&amp;apos;, values1[0][1]), (&amp;apos;lowest reply&amp;apos;, values1[0][2]),(&amp;apos;hightest watch&amp;apos;, values1[0][3]),(&amp;apos;lowest watch&amp;apos;, values1[0][4])]
+# draw picture
+budget = pd.DataFrame(list, columns=[&amp;apos;type&amp;apos;, &amp;apos;count&amp;apos;])
+sns.set_style(&amp;quot;darkgrid&amp;quot;)
+bar_plot = sns.barplot(x=budget[&amp;quot;type&amp;quot;], y=budget[&amp;quot;count&amp;quot;],palette=&amp;quot;muted&amp;quot;, order=budget[&amp;quot;type&amp;quot;].tolist())
+plt.show()
+
+# query data
+cursor.execute(&amp;apos;select count(id),groups from ibeike group by groups&amp;apos;)
+values2 = cursor.fetchall()
+values2.append((values1[0][0], &amp;apos;all sort&amp;apos;))
+result = sorted(values2)
+result.reverse()
+# draw picture
+budget = pd.DataFrame(result, columns=[&amp;apos;count&amp;apos;, &amp;apos;sort&amp;apos;])
+sns.set_style(&amp;quot;darkgrid&amp;quot;)
+bar_plot = sns.barplot(x=budget[&amp;quot;sort&amp;quot;], y=budget[&amp;quot;count&amp;quot;],palette=&amp;quot;muted&amp;quot;, order=budget[&amp;quot;sort&amp;quot;].tolist())
+plt.xticks(rotation=30)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;参考资料：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://cuiqingcai.com/1319.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Python爬虫利器二之Beautiful Soup的用法&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;iBeiKe网站，或简称iBeiKe（中文：爱北科，英文缩写：IBK）是北京科技大学学生会下属的技术性学生组织iBeiKe团队建立和维护的网站，主要服务于北京科技大学的师生。网站成立于2001年3月，时称“北科大学生之家”。iBeiKe网站是北京科
+    
+    </summary>
+    
+      <category term="Crawler" scheme="http://blog.ybbz.site/categories/Crawler/"/>
+    
+    
+      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
+    
+      <category term="Crawler" scheme="http://blog.ybbz.site/tags/Crawler/"/>
     
   </entry>
   
@@ -1958,123 +2076,6 @@ print(&amp;apos;draw : done.&amp;apos;)
     
       &lt;p&gt;github传送门：&lt;a href=&quot;https://github.com/ybbz/crawler&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;crawl_weibo&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
 &lt;p&gt;声明：用爬虫抓取数据，没有
-    
-    </summary>
-    
-      <category term="Crawler" scheme="http://blog.ybbz.site/categories/Crawler/"/>
-    
-    
-      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
-    
-      <category term="Crawler" scheme="http://blog.ybbz.site/tags/Crawler/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>爬虫实战：抓取在iBeiKe的所有发帖信息保存到数据库，进行可视化分析</title>
-    <link href="http://blog.ybbz.site/2016/03/27/crawl-ibeike/"/>
-    <id>http://blog.ybbz.site/2016/03/27/crawl-ibeike/</id>
-    <published>2016-03-26T16:00:00.000Z</published>
-    <updated>2016-04-23T09:26:19.000Z</updated>
-    
-    <content type="html">&lt;blockquote&gt;
-&lt;p&gt;iBeiKe网站，或简称iBeiKe（中文：爱北科，英文缩写：IBK）是北京科技大学学生会下属的技术性学生组织iBeiKe团队建立和维护的网站，主要服务于北京科技大学的师生。网站成立于2001年3月，时称“北科大学生之家”。iBeiKe网站是北京科技大学学生会的宣传门户，同时也是一个综合性的学生网站及校园服务网站。iBeiKe网站也是北京科技大学历史最长的学生网站。网站的标语是“网上网下，一样精彩”。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;博主本科时期在iBeiKe担任了n年的版主和总版主（好吧，现在好像还没卸任？），挥洒了无数的青春与汗水。也结交了无数的基友（有男有女又老又少）。。。&lt;/p&gt;
-&lt;p&gt;声明：用爬虫抓取数据，没有任何坏心思，纯粹的兴趣与技术交流，抓的也都是自己的数据，不侵犯他人隐私。若牵扯到各方利益，请联系我！&lt;/p&gt;
-&lt;p&gt;言归正传～～～github传送门：&lt;a href=&quot;https://github.com/ybbz/crawler&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;crawl_ibeike1/2&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
-&lt;p&gt;效果图如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160330_1.png&quot; alt=&quot;20160330_1&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160330_2.png&quot; alt=&quot;20160330_2&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;抓取数据并清洗，保存到数据库&quot;&gt;&lt;a href=&quot;#抓取数据并清洗，保存到数据库&quot; class=&quot;headerlink&quot; title=&quot;抓取数据并清洗，保存到数据库&quot;&gt;&lt;/a&gt;抓取数据并清洗，保存到数据库&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;# encoding=utf-8
-
-import httplib2
-import mysql.connector
-from bs4 import BeautifulSoup
-
-result = []
-pageNum = &amp;apos;total page number&amp;apos;
-uid = &amp;apos;your uid&amp;apos;
-cookie = &amp;quot;your cookies&amp;quot;
-
-url = &amp;apos;http://city.ibeike.com/home.php?mod=space&amp;amp;uid=&amp;apos; + uid + &amp;apos;&amp;amp;do=thread&amp;amp;view=me&amp;amp;order=dateline&amp;amp;from=space&amp;amp;page=&amp;apos;
-
-headers = {&amp;quot;Connection&amp;quot;: &amp;quot;keep-alive&amp;quot;,
-           &amp;quot;Cookie&amp;quot;: cookie,
-           &amp;quot;Content-Type&amp;quot;: &amp;quot;application/xhtml+xml&amp;quot;}
-
-for page in range(1, pageNum + 1):
-    cur_page = page
-    url_full = url + str(cur_page)
-    # http request
-    http = httplib2.Http()
-    response, content = http.request(url_full, &amp;quot;GET&amp;quot;, headers=headers)
-    if response.status == 200:
-        # print(response)
-        # print(content.decode(&amp;apos;utf-8&amp;apos;))
-        soup = BeautifulSoup(content, &amp;quot;lxml&amp;quot;)
-        table = soup.find_all(&amp;apos;table&amp;apos;)[1]
-        tr = table.find_all(&amp;apos;tr&amp;apos;, class_=&amp;apos;&amp;apos;)
-        for item in tr:
-            item_list = []
-            # print(item.prettify())
-            item_title = item.th.a.string
-            item_group = item.find_all(&amp;apos;td&amp;apos;, class_=&amp;apos;&amp;apos;)[0].a.string
-            item_reply = item.select(&amp;apos;td[class=&amp;quot;num&amp;quot;]&amp;apos;)[0].a.string
-            item_watch = item.select(&amp;apos;td[class=&amp;quot;num&amp;quot;]&amp;apos;)[0].em.string
-            # save to the result list
-            item = (str(item_title), str(item_group), int(item_reply), int(item_watch))
-            result.append(item)
-print(result)
-
-# connect database
-conn = mysql.connector.connect(host=&amp;quot;hostname&amp;quot;, user=&amp;quot;username&amp;quot;, passwd=&amp;quot;password&amp;quot;, db=&amp;quot;database&amp;quot;)
-cursor = conn.cursor()
-# save data
-sql = &amp;quot;insert into ibeike(title,groups,reply,watch) values(%s,%s,%s,%s)&amp;quot;
-cursor.executemany(sql, result)
-conn.commit()
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;数据分析与数据可视化&quot;&gt;&lt;a href=&quot;#数据分析与数据可视化&quot; class=&quot;headerlink&quot; title=&quot;数据分析与数据可视化&quot;&gt;&lt;/a&gt;数据分析与数据可视化&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;# encoding=utf-8
-
-import mysql.connector
-import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
-
-# connect database
-conn = mysql.connector.connect(host=&amp;quot;hostname&amp;quot;, user=&amp;quot;username&amp;quot;,passwd=&amp;quot;password&amp;quot;, db=&amp;quot;database&amp;quot;)
-cursor = conn.cursor()
-# query data
-cursor.execute(&amp;apos;select count(*),max(reply),min(reply),max(watch),min(watch) from ibeike&amp;apos;)
-values1 = cursor.fetchall()
-print(&amp;quot;ibeike:totally&amp;quot; + str(values1[0][0]) + &amp;quot;data&amp;quot;)
-list = [(&amp;apos;highest reply&amp;apos;, values1[0][1]), (&amp;apos;lowest reply&amp;apos;, values1[0][2]),(&amp;apos;hightest watch&amp;apos;, values1[0][3]),(&amp;apos;lowest watch&amp;apos;, values1[0][4])]
-# draw picture
-budget = pd.DataFrame(list, columns=[&amp;apos;type&amp;apos;, &amp;apos;count&amp;apos;])
-sns.set_style(&amp;quot;darkgrid&amp;quot;)
-bar_plot = sns.barplot(x=budget[&amp;quot;type&amp;quot;], y=budget[&amp;quot;count&amp;quot;],palette=&amp;quot;muted&amp;quot;, order=budget[&amp;quot;type&amp;quot;].tolist())
-plt.show()
-
-# query data
-cursor.execute(&amp;apos;select count(id),groups from ibeike group by groups&amp;apos;)
-values2 = cursor.fetchall()
-values2.append((values1[0][0], &amp;apos;all sort&amp;apos;))
-result = sorted(values2)
-result.reverse()
-# draw picture
-budget = pd.DataFrame(result, columns=[&amp;apos;count&amp;apos;, &amp;apos;sort&amp;apos;])
-sns.set_style(&amp;quot;darkgrid&amp;quot;)
-bar_plot = sns.barplot(x=budget[&amp;quot;sort&amp;quot;], y=budget[&amp;quot;count&amp;quot;],palette=&amp;quot;muted&amp;quot;, order=budget[&amp;quot;sort&amp;quot;].tolist())
-plt.xticks(rotation=30)
-plt.show()
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;参考资料：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://cuiqingcai.com/1319.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Python爬虫利器二之Beautiful Soup的用法&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;iBeiKe网站，或简称iBeiKe（中文：爱北科，英文缩写：IBK）是北京科技大学学生会下属的技术性学生组织iBeiKe团队建立和维护的网站，主要服务于北京科技大学的师生。网站成立于2001年3月，时称“北科大学生之家”。iBeiKe网站是北京科
     
     </summary>
     
