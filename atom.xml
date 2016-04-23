@@ -646,43 +646,6 @@
   </entry>
   
   <entry>
-    <title>判断两个单向链表是否相交</title>
-    <link href="http://blog.ybbz.site/2016/04/20/Algorithm-3/"/>
-    <id>http://blog.ybbz.site/2016/04/20/Algorithm-3/</id>
-    <published>2016-04-19T16:00:00.000Z</published>
-    <updated>2016-04-23T09:28:08.000Z</updated>
-    
-    <content type="html">&lt;p&gt;问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;算法一&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;对链表一进行遍历，在遍历到每一个节点时，都在链表二中进行遍历，看是否有重复的节点。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;算法一改进&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;以空间换时间：将链表二存入字典，然后遍历链表一，判断是否在于字典中。简化后，时间复杂度变为 O(n+m)，但空间复杂度较高。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;算法二&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;算法二的思路基于以下两个原理：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;两个单向链表相交后，必然无法再分开。&lt;/li&gt;
-&lt;li&gt;两个单项链表相交后，尾节点一定相同。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;假设两个链表相交，很容易证明两个链表的尾元素是相同的。&lt;br&gt;逆反命题：两个链表的尾元素相同时，两个链表一定相交。&lt;br&gt;（注意：相同的节点不仅仅要求值相同，而是“同一个”，也就是指针地址相同。）&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;算法一&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;对链表一进行遍历，在遍历到每一个节点时，都在链表二中进行遍历，看是否有重复的节点。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;算法一改进&lt;/strong
-    
-    </summary>
-    
-      <category term="Algorithm" scheme="http://blog.ybbz.site/categories/Algorithm/"/>
-    
-    
-      <category term="Algorithm" scheme="http://blog.ybbz.site/tags/Algorithm/"/>
-    
-  </entry>
-  
-  <entry>
     <title>根号值逼近问题的算法</title>
     <link href="http://blog.ybbz.site/2016/04/20/Algorithm-2/"/>
     <id>http://blog.ybbz.site/2016/04/20/Algorithm-2/</id>
@@ -720,6 +683,43 @@
     
     
       <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
+    
+      <category term="Algorithm" scheme="http://blog.ybbz.site/tags/Algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>判断两个单向链表是否相交</title>
+    <link href="http://blog.ybbz.site/2016/04/20/Algorithm-3/"/>
+    <id>http://blog.ybbz.site/2016/04/20/Algorithm-3/</id>
+    <published>2016-04-19T16:00:00.000Z</published>
+    <updated>2016-04-23T09:28:08.000Z</updated>
+    
+    <content type="html">&lt;p&gt;问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;算法一&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;对链表一进行遍历，在遍历到每一个节点时，都在链表二中进行遍历，看是否有重复的节点。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;算法一改进&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;以空间换时间：将链表二存入字典，然后遍历链表一，判断是否在于字典中。简化后，时间复杂度变为 O(n+m)，但空间复杂度较高。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;算法二&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;算法二的思路基于以下两个原理：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;两个单向链表相交后，必然无法再分开。&lt;/li&gt;
+&lt;li&gt;两个单项链表相交后，尾节点一定相同。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;假设两个链表相交，很容易证明两个链表的尾元素是相同的。&lt;br&gt;逆反命题：两个链表的尾元素相同时，两个链表一定相交。&lt;br&gt;（注意：相同的节点不仅仅要求值相同，而是“同一个”，也就是指针地址相同。）&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;算法一&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;对链表一进行遍历，在遍历到每一个节点时，都在链表二中进行遍历，看是否有重复的节点。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;算法一改进&lt;/strong
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="http://blog.ybbz.site/categories/Algorithm/"/>
+    
     
       <category term="Algorithm" scheme="http://blog.ybbz.site/tags/Algorithm/"/>
     
@@ -1244,72 +1244,6 @@ pymysql.install_as_MySQLdb()
   </entry>
   
   <entry>
-    <title>Django学习笔记二：优化博客展示，抓取博文并保存到数据库</title>
-    <link href="http://blog.ybbz.site/2016/04/03/Django-foundation-two/"/>
-    <id>http://blog.ybbz.site/2016/04/03/Django-foundation-two/</id>
-    <published>2016-04-02T16:00:00.000Z</published>
-    <updated>2016-04-23T09:27:10.000Z</updated>
-    
-    <content type="html">&lt;p&gt;自从去年年底开始，走上了Jekyll+Github+Markdown这条不归路，先是把CSDN上面的一些博客迁移过来，然后就是经常写一些自己在平时学习、开发过程中的心得体会，不见得有人看。权当技术总结，外加练习写作表达了。&lt;/p&gt;
-&lt;p&gt;这种简洁优雅的表达方式，简直让人沉醉。不禁回想上大学（本科）时，也曾折腾了一段时间Wordpress，当时也写了一些内容、交了一些博友，可总有一种无病呻吟的感觉，后来不想写了，也没给服务器续费，就没了。之后，就是偶尔在CSDN上面做一些总结；可也没有很认真的对待。再后来，看了一些类似“我为什么要写博客”这样的文章，觉得说的很有道理，醍醐灌顶。于是，就在这儿安了家。我的朋友圈子里，几乎没有人写博客；虽然“孤单”，我却乐在其中。有时兴致来了，还把自己觉得不错的博文，在新建的公众号推送一下。&lt;/p&gt;
-&lt;p&gt;我在Github上fork的这个博客模版，文章有categories和tags这两个属性，可是页面展示出来的，只有tags，而categories却没有做展示。那么，问题来了！文章是需要有一个分类的，而一个文章却可能有多个标签。就想着，能不能加一个分类页面，更好的为文章分类。于是，就开始看模版的代码。据说Jekyll使用的是Ruby，我对Ruby完全不了解，但是不同语言之间是有规律可循的，这不，我就发现了规律：tags页面使用“for tag in site.tags”对标签进行遍历，于是我试了一下“for category in site.categories”，对分类进行遍历然后就通了。&lt;/p&gt;
-&lt;p&gt;这样，事情就好办了。在Tags.md同级目录（即网站根目录）新建Categories.md,把tags替换成categories，代码如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160402_1.jpeg&quot; alt=&quot;20160402_1&quot;&gt;&lt;/p&gt;
-&lt;p&gt;剩下的问题就是，分类页面和标签页面的样式完全一样，于是便有了下面的想法，打算做出来看看效果如何。&lt;/p&gt;
-&lt;p&gt;大概思路是：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;从Categories页面抓取博客的所有分类，以及每个分类下的文章（时间和标题）&lt;/li&gt;
-&lt;li&gt;将抓取到的内容保存到数据库中（新建blog数据库及表，字段title、create_time、content等）&lt;/li&gt;
-&lt;li&gt;从数据库中查询博客信息并做展示（此篇咱不分析，如有兴趣请关注本博客后续的文章）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;代码如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;from urllib.request import urlopen
-from bs4 import BeautifulSoup
-import mysql.connector
-
-url = &amp;apos;http://blog.ybbz.site/Categories/&amp;apos;
-html = urlopen(url)
-bsObj = BeautifulSoup(html, &amp;apos;lxml&amp;apos;)
-uls = bsObj.findAll(&amp;apos;ul&amp;apos;, {&amp;apos;class&amp;apos;: &amp;apos;listing&amp;apos;})
-cate_list = []
-for ul in uls:
-    cate = ul.h4.string
-    for li in ul.findAll(&amp;apos;li&amp;apos;):
-        cate_list.append((str(cate), str(li.time.string), str(li.a.string)))
-print(cate_list)
-
-host = &amp;apos;your hostname&amp;apos;
-user = &amp;apos;your username&amp;apos;
-passwd = &amp;apos;your password&amp;apos;
-db = &amp;apos;your database&amp;apos;
-# connect database
-conn = mysql.connector.connect(host=host, user=user, passwd=passwd, db=db)
-cursor = conn.cursor()
-# save blogs
-sql = &amp;quot;insert into blog(category,create_time,title) values(%s, %s, %s)&amp;quot;
-cursor.executemany(sql, cate_list)
-conn.commit()
-&lt;/code&gt;&lt;/pre&gt;</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;自从去年年底开始，走上了Jekyll+Github+Markdown这条不归路，先是把CSDN上面的一些博客迁移过来，然后就是经常写一些自己在平时学习、开发过程中的心得体会，不见得有人看。权当技术总结，外加练习写作表达了。&lt;/p&gt;
-&lt;p&gt;这种简洁优雅的表达方式，简直让人沉醉
-    
-    </summary>
-    
-      <category term="Python" scheme="http://blog.ybbz.site/categories/Python/"/>
-    
-    
-      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
-    
-      <category term="Crawler" scheme="http://blog.ybbz.site/tags/Crawler/"/>
-    
-      <category term="Django" scheme="http://blog.ybbz.site/tags/Django/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Django学习笔记一：创建新App及其常用命令</title>
     <link href="http://blog.ybbz.site/2016/04/03/Django-foundation-one/"/>
     <id>http://blog.ybbz.site/2016/04/03/Django-foundation-one/</id>
@@ -1409,6 +1343,72 @@ python3 manage.py runserver
     
     
       <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
+    
+      <category term="Django" scheme="http://blog.ybbz.site/tags/Django/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django学习笔记二：优化博客展示，抓取博文并保存到数据库</title>
+    <link href="http://blog.ybbz.site/2016/04/03/Django-foundation-two/"/>
+    <id>http://blog.ybbz.site/2016/04/03/Django-foundation-two/</id>
+    <published>2016-04-02T16:00:00.000Z</published>
+    <updated>2016-04-23T09:27:10.000Z</updated>
+    
+    <content type="html">&lt;p&gt;自从去年年底开始，走上了Jekyll+Github+Markdown这条不归路，先是把CSDN上面的一些博客迁移过来，然后就是经常写一些自己在平时学习、开发过程中的心得体会，不见得有人看。权当技术总结，外加练习写作表达了。&lt;/p&gt;
+&lt;p&gt;这种简洁优雅的表达方式，简直让人沉醉。不禁回想上大学（本科）时，也曾折腾了一段时间Wordpress，当时也写了一些内容、交了一些博友，可总有一种无病呻吟的感觉，后来不想写了，也没给服务器续费，就没了。之后，就是偶尔在CSDN上面做一些总结；可也没有很认真的对待。再后来，看了一些类似“我为什么要写博客”这样的文章，觉得说的很有道理，醍醐灌顶。于是，就在这儿安了家。我的朋友圈子里，几乎没有人写博客；虽然“孤单”，我却乐在其中。有时兴致来了，还把自己觉得不错的博文，在新建的公众号推送一下。&lt;/p&gt;
+&lt;p&gt;我在Github上fork的这个博客模版，文章有categories和tags这两个属性，可是页面展示出来的，只有tags，而categories却没有做展示。那么，问题来了！文章是需要有一个分类的，而一个文章却可能有多个标签。就想着，能不能加一个分类页面，更好的为文章分类。于是，就开始看模版的代码。据说Jekyll使用的是Ruby，我对Ruby完全不了解，但是不同语言之间是有规律可循的，这不，我就发现了规律：tags页面使用“for tag in site.tags”对标签进行遍历，于是我试了一下“for category in site.categories”，对分类进行遍历然后就通了。&lt;/p&gt;
+&lt;p&gt;这样，事情就好办了。在Tags.md同级目录（即网站根目录）新建Categories.md,把tags替换成categories，代码如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160402_1.jpeg&quot; alt=&quot;20160402_1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;剩下的问题就是，分类页面和标签页面的样式完全一样，于是便有了下面的想法，打算做出来看看效果如何。&lt;/p&gt;
+&lt;p&gt;大概思路是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;从Categories页面抓取博客的所有分类，以及每个分类下的文章（时间和标题）&lt;/li&gt;
+&lt;li&gt;将抓取到的内容保存到数据库中（新建blog数据库及表，字段title、create_time、content等）&lt;/li&gt;
+&lt;li&gt;从数据库中查询博客信息并做展示（此篇咱不分析，如有兴趣请关注本博客后续的文章）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;代码如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from urllib.request import urlopen
+from bs4 import BeautifulSoup
+import mysql.connector
+
+url = &amp;apos;http://blog.ybbz.site/Categories/&amp;apos;
+html = urlopen(url)
+bsObj = BeautifulSoup(html, &amp;apos;lxml&amp;apos;)
+uls = bsObj.findAll(&amp;apos;ul&amp;apos;, {&amp;apos;class&amp;apos;: &amp;apos;listing&amp;apos;})
+cate_list = []
+for ul in uls:
+    cate = ul.h4.string
+    for li in ul.findAll(&amp;apos;li&amp;apos;):
+        cate_list.append((str(cate), str(li.time.string), str(li.a.string)))
+print(cate_list)
+
+host = &amp;apos;your hostname&amp;apos;
+user = &amp;apos;your username&amp;apos;
+passwd = &amp;apos;your password&amp;apos;
+db = &amp;apos;your database&amp;apos;
+# connect database
+conn = mysql.connector.connect(host=host, user=user, passwd=passwd, db=db)
+cursor = conn.cursor()
+# save blogs
+sql = &amp;quot;insert into blog(category,create_time,title) values(%s, %s, %s)&amp;quot;
+cursor.executemany(sql, cate_list)
+conn.commit()
+&lt;/code&gt;&lt;/pre&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;自从去年年底开始，走上了Jekyll+Github+Markdown这条不归路，先是把CSDN上面的一些博客迁移过来，然后就是经常写一些自己在平时学习、开发过程中的心得体会，不见得有人看。权当技术总结，外加练习写作表达了。&lt;/p&gt;
+&lt;p&gt;这种简洁优雅的表达方式，简直让人沉醉
+    
+    </summary>
+    
+      <category term="Python" scheme="http://blog.ybbz.site/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
+    
+      <category term="Crawler" scheme="http://blog.ybbz.site/tags/Crawler/"/>
     
       <category term="Django" scheme="http://blog.ybbz.site/tags/Django/"/>
     
@@ -1611,80 +1611,6 @@ P(A3|A1,A2)=P(A1,A2|A3)P(A3)/P(A1,A2)=P(A1,A2,A3)/P(A1,A2)=P(A3)P(A1|A3)P(A2|A3)
   </entry>
   
   <entry>
-    <title>一道算法题</title>
-    <link href="http://blog.ybbz.site/2016/03/29/algorithm/"/>
-    <id>http://blog.ybbz.site/2016/03/29/algorithm/</id>
-    <published>2016-03-28T16:00:00.000Z</published>
-    <updated>2016-04-23T09:26:42.000Z</updated>
-    
-    <content type="html">&lt;p&gt;题目如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;已知list1 = [20, 6, 15, 53, 47],已经排好序&lt;/li&gt;
-&lt;li&gt;已知list2 = [(6, ‘John’, ‘20’), (15, ‘Kim’, ‘18’),(20, ‘David’, ‘21’), (47, ‘Amy’, ‘23’), (53, ‘Mary’, ‘20’)]&lt;/li&gt;
-&lt;li&gt;把list2按照list1中的顺序重新排序，并把排序结果封装成json字符串，得到list3&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;代码如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;list1 = [20, 6, 15, 53, 47]
-list2 = [(6, &amp;apos;John&amp;apos;, &amp;apos;20&amp;apos;), (15, &amp;apos;Kim&amp;apos;, &amp;apos;18&amp;apos;),
-         (20, &amp;apos;David&amp;apos;, &amp;apos;21&amp;apos;), (47, &amp;apos;Amy&amp;apos;, &amp;apos;23&amp;apos;), (53, &amp;apos;Mary&amp;apos;, &amp;apos;20&amp;apos;)]
-print(list1)
-print(list2)
-
-list3 = []
-# count = len(list1)
-# for i in range(0, count):
-#     dict = {}
-#     id = list1[i]
-#     dict[&amp;apos;id&amp;apos;] = id
-#     j = 0
-#     while j &amp;lt; count and list2[j][0] != id:
-#         j += 1
-#     dict[&amp;apos;name&amp;apos;] = list2[j][1]
-#     dict[&amp;apos;age&amp;apos;] = list2[j][2]
-#     list3.append(dict)
-
-
-# list2_dict = {}
-# for item2 in list2:
-#     list2_dict[item2[0]] = (item2[1], item2[2])
-# for item1 in list1:
-#     dict = {}
-#     dict[&amp;apos;id&amp;apos;] = item1
-#     dict[&amp;apos;name&amp;apos;] = list2_dict[item1][0]
-#     dict[&amp;apos;age&amp;apos;] = list2_dict[item1][1]
-#     list3.append(dict)
-
-list2_dict = {}
-for item2 in list2:
-    list2_dict[item2[0]] = {&amp;apos;name&amp;apos;: item2[1], &amp;apos;age&amp;apos;: item2[2]}
-for item1 in list1:
-    dict = list2_dict[item1]
-    dict[&amp;apos;id&amp;apos;] = item1
-    list3.append(dict)
-
-print(list3)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;^_^ 感谢我的本科室友~&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;题目如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;已知list1 = [20, 6, 15, 53, 47],已经排好序&lt;/li&gt;
-&lt;li&gt;已知list2 = [(6, ‘John’, ‘20’), (15, ‘Kim’, ‘18’),(20, ‘David’, ‘21’), (47,
-    
-    </summary>
-    
-      <category term="Algorithm" scheme="http://blog.ybbz.site/categories/Algorithm/"/>
-    
-    
-      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
-    
-      <category term="Algorithm" scheme="http://blog.ybbz.site/tags/Algorithm/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Ajax跨域访问Flask构建的Python Web服务器</title>
     <link href="http://blog.ybbz.site/2016/03/29/Ajax-Flask-Python-Web-Server/"/>
     <id>http://blog.ybbz.site/2016/03/29/Ajax-Flask-Python-Web-Server/</id>
@@ -1804,6 +1730,80 @@ print(decode)
   </entry>
   
   <entry>
+    <title>一道算法题</title>
+    <link href="http://blog.ybbz.site/2016/03/29/algorithm/"/>
+    <id>http://blog.ybbz.site/2016/03/29/algorithm/</id>
+    <published>2016-03-28T16:00:00.000Z</published>
+    <updated>2016-04-23T09:26:42.000Z</updated>
+    
+    <content type="html">&lt;p&gt;题目如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;已知list1 = [20, 6, 15, 53, 47],已经排好序&lt;/li&gt;
+&lt;li&gt;已知list2 = [(6, ‘John’, ‘20’), (15, ‘Kim’, ‘18’),(20, ‘David’, ‘21’), (47, ‘Amy’, ‘23’), (53, ‘Mary’, ‘20’)]&lt;/li&gt;
+&lt;li&gt;把list2按照list1中的顺序重新排序，并把排序结果封装成json字符串，得到list3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;代码如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;list1 = [20, 6, 15, 53, 47]
+list2 = [(6, &amp;apos;John&amp;apos;, &amp;apos;20&amp;apos;), (15, &amp;apos;Kim&amp;apos;, &amp;apos;18&amp;apos;),
+         (20, &amp;apos;David&amp;apos;, &amp;apos;21&amp;apos;), (47, &amp;apos;Amy&amp;apos;, &amp;apos;23&amp;apos;), (53, &amp;apos;Mary&amp;apos;, &amp;apos;20&amp;apos;)]
+print(list1)
+print(list2)
+
+list3 = []
+# count = len(list1)
+# for i in range(0, count):
+#     dict = {}
+#     id = list1[i]
+#     dict[&amp;apos;id&amp;apos;] = id
+#     j = 0
+#     while j &amp;lt; count and list2[j][0] != id:
+#         j += 1
+#     dict[&amp;apos;name&amp;apos;] = list2[j][1]
+#     dict[&amp;apos;age&amp;apos;] = list2[j][2]
+#     list3.append(dict)
+
+
+# list2_dict = {}
+# for item2 in list2:
+#     list2_dict[item2[0]] = (item2[1], item2[2])
+# for item1 in list1:
+#     dict = {}
+#     dict[&amp;apos;id&amp;apos;] = item1
+#     dict[&amp;apos;name&amp;apos;] = list2_dict[item1][0]
+#     dict[&amp;apos;age&amp;apos;] = list2_dict[item1][1]
+#     list3.append(dict)
+
+list2_dict = {}
+for item2 in list2:
+    list2_dict[item2[0]] = {&amp;apos;name&amp;apos;: item2[1], &amp;apos;age&amp;apos;: item2[2]}
+for item1 in list1:
+    dict = list2_dict[item1]
+    dict[&amp;apos;id&amp;apos;] = item1
+    list3.append(dict)
+
+print(list3)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;^_^ 感谢我的本科室友~&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;题目如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;已知list1 = [20, 6, 15, 53, 47],已经排好序&lt;/li&gt;
+&lt;li&gt;已知list2 = [(6, ‘John’, ‘20’), (15, ‘Kim’, ‘18’),(20, ‘David’, ‘21’), (47,
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="http://blog.ybbz.site/categories/Algorithm/"/>
+    
+    
+      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
+    
+      <category term="Algorithm" scheme="http://blog.ybbz.site/tags/Algorithm/"/>
+    
+  </entry>
+  
+  <entry>
     <title>随笔：写在三月末</title>
     <link href="http://blog.ybbz.site/2016/03/28/Just-write-about-my-life/"/>
     <id>http://blog.ybbz.site/2016/03/28/Just-write-about-my-life/</id>
@@ -1837,123 +1837,6 @@ print(decode)
     
     
       <category term="Life" scheme="http://blog.ybbz.site/tags/Life/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>爬虫实战：抓取在iBeiKe的所有发帖信息保存到数据库，进行可视化分析</title>
-    <link href="http://blog.ybbz.site/2016/03/27/crawl-ibeike/"/>
-    <id>http://blog.ybbz.site/2016/03/27/crawl-ibeike/</id>
-    <published>2016-03-26T16:00:00.000Z</published>
-    <updated>2016-04-23T09:26:19.000Z</updated>
-    
-    <content type="html">&lt;blockquote&gt;
-&lt;p&gt;iBeiKe网站，或简称iBeiKe（中文：爱北科，英文缩写：IBK）是北京科技大学学生会下属的技术性学生组织iBeiKe团队建立和维护的网站，主要服务于北京科技大学的师生。网站成立于2001年3月，时称“北科大学生之家”。iBeiKe网站是北京科技大学学生会的宣传门户，同时也是一个综合性的学生网站及校园服务网站。iBeiKe网站也是北京科技大学历史最长的学生网站。网站的标语是“网上网下，一样精彩”。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;博主本科时期在iBeiKe担任了n年的版主和总版主（好吧，现在好像还没卸任？），挥洒了无数的青春与汗水。也结交了无数的基友（有男有女又老又少）。。。&lt;/p&gt;
-&lt;p&gt;声明：用爬虫抓取数据，没有任何坏心思，纯粹的兴趣与技术交流，抓的也都是自己的数据，不侵犯他人隐私。若牵扯到各方利益，请联系我！&lt;/p&gt;
-&lt;p&gt;言归正传～～～github传送门：&lt;a href=&quot;https://github.com/ybbz/crawler&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;crawl_ibeike1/2&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
-&lt;p&gt;效果图如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160330_1.png&quot; alt=&quot;20160330_1&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160330_2.png&quot; alt=&quot;20160330_2&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;抓取数据并清洗，保存到数据库&quot;&gt;&lt;a href=&quot;#抓取数据并清洗，保存到数据库&quot; class=&quot;headerlink&quot; title=&quot;抓取数据并清洗，保存到数据库&quot;&gt;&lt;/a&gt;抓取数据并清洗，保存到数据库&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;# encoding=utf-8
-
-import httplib2
-import mysql.connector
-from bs4 import BeautifulSoup
-
-result = []
-pageNum = &amp;apos;total page number&amp;apos;
-uid = &amp;apos;your uid&amp;apos;
-cookie = &amp;quot;your cookies&amp;quot;
-
-url = &amp;apos;http://city.ibeike.com/home.php?mod=space&amp;amp;uid=&amp;apos; + uid + &amp;apos;&amp;amp;do=thread&amp;amp;view=me&amp;amp;order=dateline&amp;amp;from=space&amp;amp;page=&amp;apos;
-
-headers = {&amp;quot;Connection&amp;quot;: &amp;quot;keep-alive&amp;quot;,
-           &amp;quot;Cookie&amp;quot;: cookie,
-           &amp;quot;Content-Type&amp;quot;: &amp;quot;application/xhtml+xml&amp;quot;}
-
-for page in range(1, pageNum + 1):
-    cur_page = page
-    url_full = url + str(cur_page)
-    # http request
-    http = httplib2.Http()
-    response, content = http.request(url_full, &amp;quot;GET&amp;quot;, headers=headers)
-    if response.status == 200:
-        # print(response)
-        # print(content.decode(&amp;apos;utf-8&amp;apos;))
-        soup = BeautifulSoup(content, &amp;quot;lxml&amp;quot;)
-        table = soup.find_all(&amp;apos;table&amp;apos;)[1]
-        tr = table.find_all(&amp;apos;tr&amp;apos;, class_=&amp;apos;&amp;apos;)
-        for item in tr:
-            item_list = []
-            # print(item.prettify())
-            item_title = item.th.a.string
-            item_group = item.find_all(&amp;apos;td&amp;apos;, class_=&amp;apos;&amp;apos;)[0].a.string
-            item_reply = item.select(&amp;apos;td[class=&amp;quot;num&amp;quot;]&amp;apos;)[0].a.string
-            item_watch = item.select(&amp;apos;td[class=&amp;quot;num&amp;quot;]&amp;apos;)[0].em.string
-            # save to the result list
-            item = (str(item_title), str(item_group), int(item_reply), int(item_watch))
-            result.append(item)
-print(result)
-
-# connect database
-conn = mysql.connector.connect(host=&amp;quot;hostname&amp;quot;, user=&amp;quot;username&amp;quot;, passwd=&amp;quot;password&amp;quot;, db=&amp;quot;database&amp;quot;)
-cursor = conn.cursor()
-# save data
-sql = &amp;quot;insert into ibeike(title,groups,reply,watch) values(%s,%s,%s,%s)&amp;quot;
-cursor.executemany(sql, result)
-conn.commit()
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;数据分析与数据可视化&quot;&gt;&lt;a href=&quot;#数据分析与数据可视化&quot; class=&quot;headerlink&quot; title=&quot;数据分析与数据可视化&quot;&gt;&lt;/a&gt;数据分析与数据可视化&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;# encoding=utf-8
-
-import mysql.connector
-import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
-
-# connect database
-conn = mysql.connector.connect(host=&amp;quot;hostname&amp;quot;, user=&amp;quot;username&amp;quot;,passwd=&amp;quot;password&amp;quot;, db=&amp;quot;database&amp;quot;)
-cursor = conn.cursor()
-# query data
-cursor.execute(&amp;apos;select count(*),max(reply),min(reply),max(watch),min(watch) from ibeike&amp;apos;)
-values1 = cursor.fetchall()
-print(&amp;quot;ibeike:totally&amp;quot; + str(values1[0][0]) + &amp;quot;data&amp;quot;)
-list = [(&amp;apos;highest reply&amp;apos;, values1[0][1]), (&amp;apos;lowest reply&amp;apos;, values1[0][2]),(&amp;apos;hightest watch&amp;apos;, values1[0][3]),(&amp;apos;lowest watch&amp;apos;, values1[0][4])]
-# draw picture
-budget = pd.DataFrame(list, columns=[&amp;apos;type&amp;apos;, &amp;apos;count&amp;apos;])
-sns.set_style(&amp;quot;darkgrid&amp;quot;)
-bar_plot = sns.barplot(x=budget[&amp;quot;type&amp;quot;], y=budget[&amp;quot;count&amp;quot;],palette=&amp;quot;muted&amp;quot;, order=budget[&amp;quot;type&amp;quot;].tolist())
-plt.show()
-
-# query data
-cursor.execute(&amp;apos;select count(id),groups from ibeike group by groups&amp;apos;)
-values2 = cursor.fetchall()
-values2.append((values1[0][0], &amp;apos;all sort&amp;apos;))
-result = sorted(values2)
-result.reverse()
-# draw picture
-budget = pd.DataFrame(result, columns=[&amp;apos;count&amp;apos;, &amp;apos;sort&amp;apos;])
-sns.set_style(&amp;quot;darkgrid&amp;quot;)
-bar_plot = sns.barplot(x=budget[&amp;quot;sort&amp;quot;], y=budget[&amp;quot;count&amp;quot;],palette=&amp;quot;muted&amp;quot;, order=budget[&amp;quot;sort&amp;quot;].tolist())
-plt.xticks(rotation=30)
-plt.show()
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;参考资料：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://cuiqingcai.com/1319.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Python爬虫利器二之Beautiful Soup的用法&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;iBeiKe网站，或简称iBeiKe（中文：爱北科，英文缩写：IBK）是北京科技大学学生会下属的技术性学生组织iBeiKe团队建立和维护的网站，主要服务于北京科技大学的师生。网站成立于2001年3月，时称“北科大学生之家”。iBeiKe网站是北京科
-    
-    </summary>
-    
-      <category term="Crawler" scheme="http://blog.ybbz.site/categories/Crawler/"/>
-    
-    
-      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
-    
-      <category term="Crawler" scheme="http://blog.ybbz.site/tags/Crawler/"/>
     
   </entry>
   
@@ -2075,6 +1958,123 @@ print(&amp;apos;draw : done.&amp;apos;)
     
       &lt;p&gt;github传送门：&lt;a href=&quot;https://github.com/ybbz/crawler&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;crawl_weibo&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
 &lt;p&gt;声明：用爬虫抓取数据，没有
+    
+    </summary>
+    
+      <category term="Crawler" scheme="http://blog.ybbz.site/categories/Crawler/"/>
+    
+    
+      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
+    
+      <category term="Crawler" scheme="http://blog.ybbz.site/tags/Crawler/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>爬虫实战：抓取在iBeiKe的所有发帖信息保存到数据库，进行可视化分析</title>
+    <link href="http://blog.ybbz.site/2016/03/27/crawl-ibeike/"/>
+    <id>http://blog.ybbz.site/2016/03/27/crawl-ibeike/</id>
+    <published>2016-03-26T16:00:00.000Z</published>
+    <updated>2016-04-23T09:26:19.000Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;iBeiKe网站，或简称iBeiKe（中文：爱北科，英文缩写：IBK）是北京科技大学学生会下属的技术性学生组织iBeiKe团队建立和维护的网站，主要服务于北京科技大学的师生。网站成立于2001年3月，时称“北科大学生之家”。iBeiKe网站是北京科技大学学生会的宣传门户，同时也是一个综合性的学生网站及校园服务网站。iBeiKe网站也是北京科技大学历史最长的学生网站。网站的标语是“网上网下，一样精彩”。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;博主本科时期在iBeiKe担任了n年的版主和总版主（好吧，现在好像还没卸任？），挥洒了无数的青春与汗水。也结交了无数的基友（有男有女又老又少）。。。&lt;/p&gt;
+&lt;p&gt;声明：用爬虫抓取数据，没有任何坏心思，纯粹的兴趣与技术交流，抓的也都是自己的数据，不侵犯他人隐私。若牵扯到各方利益，请联系我！&lt;/p&gt;
+&lt;p&gt;言归正传～～～github传送门：&lt;a href=&quot;https://github.com/ybbz/crawler&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;crawl_ibeike1/2&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
+&lt;p&gt;效果图如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160330_1.png&quot; alt=&quot;20160330_1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160330_2.png&quot; alt=&quot;20160330_2&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;抓取数据并清洗，保存到数据库&quot;&gt;&lt;a href=&quot;#抓取数据并清洗，保存到数据库&quot; class=&quot;headerlink&quot; title=&quot;抓取数据并清洗，保存到数据库&quot;&gt;&lt;/a&gt;抓取数据并清洗，保存到数据库&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;# encoding=utf-8
+
+import httplib2
+import mysql.connector
+from bs4 import BeautifulSoup
+
+result = []
+pageNum = &amp;apos;total page number&amp;apos;
+uid = &amp;apos;your uid&amp;apos;
+cookie = &amp;quot;your cookies&amp;quot;
+
+url = &amp;apos;http://city.ibeike.com/home.php?mod=space&amp;amp;uid=&amp;apos; + uid + &amp;apos;&amp;amp;do=thread&amp;amp;view=me&amp;amp;order=dateline&amp;amp;from=space&amp;amp;page=&amp;apos;
+
+headers = {&amp;quot;Connection&amp;quot;: &amp;quot;keep-alive&amp;quot;,
+           &amp;quot;Cookie&amp;quot;: cookie,
+           &amp;quot;Content-Type&amp;quot;: &amp;quot;application/xhtml+xml&amp;quot;}
+
+for page in range(1, pageNum + 1):
+    cur_page = page
+    url_full = url + str(cur_page)
+    # http request
+    http = httplib2.Http()
+    response, content = http.request(url_full, &amp;quot;GET&amp;quot;, headers=headers)
+    if response.status == 200:
+        # print(response)
+        # print(content.decode(&amp;apos;utf-8&amp;apos;))
+        soup = BeautifulSoup(content, &amp;quot;lxml&amp;quot;)
+        table = soup.find_all(&amp;apos;table&amp;apos;)[1]
+        tr = table.find_all(&amp;apos;tr&amp;apos;, class_=&amp;apos;&amp;apos;)
+        for item in tr:
+            item_list = []
+            # print(item.prettify())
+            item_title = item.th.a.string
+            item_group = item.find_all(&amp;apos;td&amp;apos;, class_=&amp;apos;&amp;apos;)[0].a.string
+            item_reply = item.select(&amp;apos;td[class=&amp;quot;num&amp;quot;]&amp;apos;)[0].a.string
+            item_watch = item.select(&amp;apos;td[class=&amp;quot;num&amp;quot;]&amp;apos;)[0].em.string
+            # save to the result list
+            item = (str(item_title), str(item_group), int(item_reply), int(item_watch))
+            result.append(item)
+print(result)
+
+# connect database
+conn = mysql.connector.connect(host=&amp;quot;hostname&amp;quot;, user=&amp;quot;username&amp;quot;, passwd=&amp;quot;password&amp;quot;, db=&amp;quot;database&amp;quot;)
+cursor = conn.cursor()
+# save data
+sql = &amp;quot;insert into ibeike(title,groups,reply,watch) values(%s,%s,%s,%s)&amp;quot;
+cursor.executemany(sql, result)
+conn.commit()
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;数据分析与数据可视化&quot;&gt;&lt;a href=&quot;#数据分析与数据可视化&quot; class=&quot;headerlink&quot; title=&quot;数据分析与数据可视化&quot;&gt;&lt;/a&gt;数据分析与数据可视化&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;# encoding=utf-8
+
+import mysql.connector
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# connect database
+conn = mysql.connector.connect(host=&amp;quot;hostname&amp;quot;, user=&amp;quot;username&amp;quot;,passwd=&amp;quot;password&amp;quot;, db=&amp;quot;database&amp;quot;)
+cursor = conn.cursor()
+# query data
+cursor.execute(&amp;apos;select count(*),max(reply),min(reply),max(watch),min(watch) from ibeike&amp;apos;)
+values1 = cursor.fetchall()
+print(&amp;quot;ibeike:totally&amp;quot; + str(values1[0][0]) + &amp;quot;data&amp;quot;)
+list = [(&amp;apos;highest reply&amp;apos;, values1[0][1]), (&amp;apos;lowest reply&amp;apos;, values1[0][2]),(&amp;apos;hightest watch&amp;apos;, values1[0][3]),(&amp;apos;lowest watch&amp;apos;, values1[0][4])]
+# draw picture
+budget = pd.DataFrame(list, columns=[&amp;apos;type&amp;apos;, &amp;apos;count&amp;apos;])
+sns.set_style(&amp;quot;darkgrid&amp;quot;)
+bar_plot = sns.barplot(x=budget[&amp;quot;type&amp;quot;], y=budget[&amp;quot;count&amp;quot;],palette=&amp;quot;muted&amp;quot;, order=budget[&amp;quot;type&amp;quot;].tolist())
+plt.show()
+
+# query data
+cursor.execute(&amp;apos;select count(id),groups from ibeike group by groups&amp;apos;)
+values2 = cursor.fetchall()
+values2.append((values1[0][0], &amp;apos;all sort&amp;apos;))
+result = sorted(values2)
+result.reverse()
+# draw picture
+budget = pd.DataFrame(result, columns=[&amp;apos;count&amp;apos;, &amp;apos;sort&amp;apos;])
+sns.set_style(&amp;quot;darkgrid&amp;quot;)
+bar_plot = sns.barplot(x=budget[&amp;quot;sort&amp;quot;], y=budget[&amp;quot;count&amp;quot;],palette=&amp;quot;muted&amp;quot;, order=budget[&amp;quot;sort&amp;quot;].tolist())
+plt.xticks(rotation=30)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;参考资料：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://cuiqingcai.com/1319.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Python爬虫利器二之Beautiful Soup的用法&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;iBeiKe网站，或简称iBeiKe（中文：爱北科，英文缩写：IBK）是北京科技大学学生会下属的技术性学生组织iBeiKe团队建立和维护的网站，主要服务于北京科技大学的师生。网站成立于2001年3月，时称“北科大学生之家”。iBeiKe网站是北京科
     
     </summary>
     
