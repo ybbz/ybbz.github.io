@@ -32,32 +32,6 @@
 
 
 
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
 
 <link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
@@ -428,8 +402,8 @@ OWL Web本体语言指南TransWiki - W3CHINA.ORG开放翻译计划（OTP）
             
               
                 
-                <a class="post-title-link" href="/2016/04/20/SWRL/" itemprop="url">
-                  SWRL(A Semantic Web Rule Language Combining OWL and RuleML)
+                <a class="post-title-link" href="/2016/04/20/Algorithm-3/" itemprop="url">
+                  判断两个单向链表是否相交
                 </a>
               
             
@@ -456,8 +430,8 @@ OWL Web本体语言指南TransWiki - W3CHINA.ORG开放翻译计划（OTP）
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Ontology/" itemprop="url" rel="index">
-                    <span itemprop="name">Ontology</span>
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
                   </a>
                 </span>
 
@@ -472,8 +446,8 @@ OWL Web本体语言指南TransWiki - W3CHINA.ORG开放翻译计划（OTP）
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/20/SWRL/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/20/SWRL/" itemprop="commentsCount"></span>
+                <a href="/2016/04/20/Algorithm-3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/20/Algorithm-3/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -483,7 +457,7 @@ OWL Web本体语言指南TransWiki - W3CHINA.ORG开放翻译计划（OTP）
 
           
           
-             <span id="/2016/04/20/SWRL/" class="leancloud_visitors" data-flag-title="SWRL(A Semantic Web Rule Language Combining OWL and RuleML)">
+             <span id="/2016/04/20/Algorithm-3/" class="leancloud_visitors" data-flag-title="判断两个单向链表是否相交">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -507,11 +481,16 @@ OWL Web本体语言指南TransWiki - W3CHINA.ORG开放翻译计划（OTP）
       
         
           
-          The Ontology root element of the OWL XML Presentation Syntax is extended to include “imp” (implication rule) and “var” (variable declaration) axioms a
+          问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。
+算法一
+对链表一进行遍历，在遍历到每一个节点时，都在链表二中进行遍历，看是否有重复的节点。
+算法一改进
+以空间换时间：将链表二存入字典，然后遍历链表一，判断是否在于字典中。简化后，时间复杂度变为 O(n+m)，但空间复杂度较高。
+算法二
           ...
 
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/20/SWRL/#more" rel="contents">
+            <a class="btn" href="/2016/04/20/Algorithm-3/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -701,8 +680,8 @@ sqrt(num)在区间（left, right）内
             
               
                 
-                <a class="post-title-link" href="/2016/04/20/Algorithm-3/" itemprop="url">
-                  判断两个单向链表是否相交
+                <a class="post-title-link" href="/2016/04/20/SWRL/" itemprop="url">
+                  SWRL(A Semantic Web Rule Language Combining OWL and RuleML)
                 </a>
               
             
@@ -729,8 +708,8 @@ sqrt(num)在区间（left, right）内
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
-                    <span itemprop="name">Algorithm</span>
+                  <a href="/categories/Ontology/" itemprop="url" rel="index">
+                    <span itemprop="name">Ontology</span>
                   </a>
                 </span>
 
@@ -745,8 +724,8 @@ sqrt(num)在区间（left, right）内
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/20/Algorithm-3/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/20/Algorithm-3/" itemprop="commentsCount"></span>
+                <a href="/2016/04/20/SWRL/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/20/SWRL/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -756,7 +735,7 @@ sqrt(num)在区间（left, right）内
 
           
           
-             <span id="/2016/04/20/Algorithm-3/" class="leancloud_visitors" data-flag-title="判断两个单向链表是否相交">
+             <span id="/2016/04/20/SWRL/" class="leancloud_visitors" data-flag-title="SWRL(A Semantic Web Rule Language Combining OWL and RuleML)">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -780,16 +759,11 @@ sqrt(num)在区间（left, right）内
       
         
           
-          问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。
-算法一
-对链表一进行遍历，在遍历到每一个节点时，都在链表二中进行遍历，看是否有重复的节点。
-算法一改进
-以空间换时间：将链表二存入字典，然后遍历链表一，判断是否在于字典中。简化后，时间复杂度变为 O(n+m)，但空间复杂度较高。
-算法二
+          The Ontology root element of the OWL XML Presentation Syntax is extended to include “imp” (implication rule) and “var” (variable declaration) axioms a
           ...
 
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/20/Algorithm-3/#more" rel="contents">
+            <a class="btn" href="/2016/04/20/SWRL/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -975,141 +949,6 @@ Mr.葵，是我上个月的一时兴趣开发的，关于它的更多介绍，
             
               
                 
-                <a class="post-title-link" href="/2016/04/15/Hadoop-foundation-two/" itemprop="url">
-                  《Hadoop海量数据处理》读书笔记2:Hadoop环境准备
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-15T00:00:00+08:00" content="2016-04-15">
-              2016-04-15
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Hadoop/" itemprop="url" rel="index">
-                    <span itemprop="name">Hadoop</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/15/Hadoop-foundation-two/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/15/Hadoop-foundation-two/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/04/15/Hadoop-foundation-two/" class="leancloud_visitors" data-flag-title="《Hadoop海量数据处理》读书笔记2:Hadoop环境准备">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          Hadoop架构Hadoop主要由两部分构成：分布式文件系统HDFS和分布式计算框架MapReduce；HDFS主要是用于海量数据的存储，MapReduce则是对存储在HDFS中的数据进行分布式计算。
-Hadoop HDFS架构构成HDFS集群的主要是两类节点（主从模式，管理者－工作者模式）：一个N
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/15/Hadoop-foundation-two/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2016/04/15/Hadoop-foundation-one/" itemprop="url">
                   《Hadoop海量数据处理》读书笔记1:Hadoop简介
                 </a>
@@ -1195,6 +1034,141 @@ Apache软件基金会（ASF）：Hadoop软件库是一个框架，允许在集�
 
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/04/15/Hadoop-foundation-one/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/15/Hadoop-foundation-two/" itemprop="url">
+                  《Hadoop海量数据处理》读书笔记2:Hadoop环境准备
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-15T00:00:00+08:00" content="2016-04-15">
+              2016-04-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Hadoop/" itemprop="url" rel="index">
+                    <span itemprop="name">Hadoop</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/15/Hadoop-foundation-two/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/15/Hadoop-foundation-two/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/04/15/Hadoop-foundation-two/" class="leancloud_visitors" data-flag-title="《Hadoop海量数据处理》读书笔记2:Hadoop环境准备">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          Hadoop架构Hadoop主要由两部分构成：分布式文件系统HDFS和分布式计算框架MapReduce；HDFS主要是用于海量数据的存储，MapReduce则是对存储在HDFS中的数据进行分布式计算。
+Hadoop HDFS架构构成HDFS集群的主要是两类节点（主从模式，管理者－工作者模式）：一个N
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/15/Hadoop-foundation-two/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
