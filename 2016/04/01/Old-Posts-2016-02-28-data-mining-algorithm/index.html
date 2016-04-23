@@ -1,0 +1,704 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Algorithm,Data Mining," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="八宝粥的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="数据挖掘十大算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据挖掘十大算法">
+<meta property="og:url" content="http://blog.ybbz.site/2016/04/01/Old-Posts-2016-02-28-data-mining-algorithm/index.html">
+<meta property="og:site_name" content="八宝粥的博客">
+<meta property="og:description" content="数据挖掘十大算法">
+<meta property="og:updated_time" content="2016-04-02T08:17:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据挖掘十大算法">
+<meta name="twitter:description" content="数据挖掘十大算法">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6231437225821734000,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 数据挖掘十大算法 | 八宝粥的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?bf48638c9f88aa67b7f9a0135affb55a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">八宝粥的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">这一切都是命运石之门的选择</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                数据挖掘十大算法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-01T17:52:35+08:00" content="2016-04-01">
+              2016-04-01
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Data-Mining/" itemprop="url" rel="index">
+                    <span itemprop="name">Data-Mining</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/01/Old-Posts-2016-02-28-data-mining-algorithm/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/01/Old-Posts-2016-02-28-data-mining-algorithm/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="C4-5"><a href="#C4-5" class="headerlink" title="C4.5"></a>C4.5</h2><p>C4.5算法是机器学习和数据挖掘中的一整套用于处理分类问题的算法。该算法是有监督学习类型的，即：给定一个数据集，所有实例都由一组属性来描述，每个实例仅属于一个类别，在给定数据集上运行C4.5算法可以学习得到一个从属性值到类别的映射，进而可使用该映射去分类新的未知实例。</p>
+<p>如何选取测试的阈值？<br>对于布尔型和类别型的属性，测试所用的值也就仅仅是该属性的可能取值。但对于数值型属性，相应测试就需要确定阈值，就是要对该属性的取值进行排序进而求出合适的切分点以最大化上述测试选择准则。</p>
+<h2 id="k-means"><a href="#k-means" class="headerlink" title="k-means"></a>k-means</h2><p>k-means算法是一种被广泛使用的直接聚类算法。<br>给定一个对象（或记录）的集合，所谓聚类（或拆分）就是把这些对象划分为多个组或者“聚簇”，从而使得同组内对象间比较相似而不同组对象间差异比较大。换言之，聚类算法就是要将相似的对象放入同一个聚簇，而将不相似的对象分到不同的聚簇中。<br>在回归、分类等有监督学习任务中要定义类别标签或者目标值，但聚类过程的输入对象没有与之关联的目标信息（即类别标签或者目标值）。因此，聚类通常归于无监督学习任务。<br>k-means算法是一种简单的迭代型聚类算法，它将一个给定的数据集分为用户指定的k个聚簇。</p>
+<h2 id="SVM：支持向量机"><a href="#SVM：支持向量机" class="headerlink" title="SVM：支持向量机"></a>SVM：支持向量机</h2><p>支持向量机（SVM）：支持向量分类器（SVC）、支持向量回归器（SVR）<br>SVC：对于两类线性可分学习任务，SVC要找到一个间隔最大的超平面将两类样本分开，最大间隔能确保该超平面具有最好的泛化能力。泛化能力是指不仅要在训练数据有好的分类性能（例如精度等），也要能对于和训练数据具有同一分布的xinshuju进行高精度的预测。</p>
+<h2 id="Apriori"><a href="#Apriori" class="headerlink" title="Apriori"></a>Apriori</h2><p>Apriori算法的功能是寻找所有支持度不小于minsup的项集。项集的支持度是指包含该项集的事务所占所有事务的比例。频繁项集就是指满足给定的最小支持度的项集。</p>
+<h2 id="EM"><a href="#EM" class="headerlink" title="EM"></a>EM</h2><p>期望最大化（EM）算法是一种被广泛用于极大似然（ML）估计的迭代型计算方法，它对处理大量的数据不完整问题非常有用。</p>
+<h2 id="PageRank"><a href="#PageRank" class="headerlink" title="PageRank"></a>PageRank</h2><p>PageRank是基于链接的排序算法<br>从本质上讲，PageRank依靠的是Web内在的民主性，该算法的关键是借助于整个Web的庞大链接结构去度量每个单独网页的质量。<br>PageRank生成的Web网页排序是静态的，这是指每个网页的排序值是通过离线计算得到的，并且该值与查询无关。也就是说，网页排序值的计算纯粹基于Web上现有链接，而不考虑任何用户的任何查询。</p>
+<h2 id="AdaBoost"><a href="#AdaBoost" class="headerlink" title="AdaBoost"></a>AdaBoost</h2><p>自适应推举算法</p>
+<h2 id="kNN：k-最近邻"><a href="#kNN：k-最近邻" class="headerlink" title="kNN：k-最近邻"></a>kNN：k-最近邻</h2><p>kNN方法是指从训练集找出k个最接近测试对象的训练对象，再从这k个训练对象中找出居于主导的类别，将其赋给测试对象。<br>kNN是一种基于实例的学习方法（基于案例的推理也是一种基于实例的学习方法，只不过主要处理的是符号数据）。同时，kNN也是一种惰性学习方法，就是说直到回答查询（预测阶段）时才去处理训练数据。</p>
+<h2 id="Naive-Bayes：朴素贝叶斯"><a href="#Naive-Bayes：朴素贝叶斯" class="headerlink" title="Naive Bayes：朴素贝叶斯"></a>Naive Bayes：朴素贝叶斯</h2><p>给定一个对象的集合，每个对象用一个（已知的）向量表示并且属于一个（已知的）类别，我们的目标是：构造出一个规则，使得对于未曾见过的一个对象（仅有已知的向量，不知其所属类别），该规则能为其确定类别。［有监督分类］</p>
+<h2 id="CART：分类和回归树"><a href="#CART：分类和回归树" class="headerlink" title="CART：分类和回归树"></a>CART：分类和回归树</h2><p>CART算法首次将决策树的研究置于坚实的概率论和统计学基础之上。<br>CART决策树包含的基本过程主要有分裂、剪枝和树选择等。</p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Algorithm/" rel="tag">#Algorithm</a>
+          
+            <a href="/tags/Data-Mining/" rel="tag">#Data Mining</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/01/Old-Posts-2016-03-01-text-mining/" rel="next" title="文本挖掘概述">
+                <i class="fa fa-chevron-left"></i> 文本挖掘概述
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/01/Old-Posts-2016-02-28-Python-jieba/" rel="prev" title="Python使用结巴中文分词组件">
+                Python使用结巴中文分词组件 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/04/01/Old-Posts-2016-02-28-data-mining-algorithm/"
+     data-title="数据挖掘十大算法"
+     data-content=""
+     data-url="http://blog.ybbz.site/2016/04/01/Old-Posts-2016-02-28-data-mining-algorithm/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/01/Old-Posts-2016-02-28-data-mining-algorithm/"
+           data-title="数据挖掘十大算法" data-url="http://blog.ybbz.site/2016/04/01/Old-Posts-2016-02-28-data-mining-algorithm/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="八宝粥" />
+          <p class="site-author-name" itemprop="name">八宝粥</p>
+          <p class="site-description motion-element" itemprop="description">这一切都是命运石之门的选择</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">63</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">45</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ybbz" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/1005955131" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/ba-bao-zhou-73" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#C4-5"><span class="nav-number">1.</span> <span class="nav-text">C4.5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#k-means"><span class="nav-number">2.</span> <span class="nav-text">k-means</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVM：支持向量机"><span class="nav-number">3.</span> <span class="nav-text">SVM：支持向量机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Apriori"><span class="nav-number">4.</span> <span class="nav-text">Apriori</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EM"><span class="nav-number">5.</span> <span class="nav-text">EM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PageRank"><span class="nav-number">6.</span> <span class="nav-text">PageRank</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AdaBoost"><span class="nav-number">7.</span> <span class="nav-text">AdaBoost</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#kNN：k-最近邻"><span class="nav-number">8.</span> <span class="nav-text">kNN：k-最近邻</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Naive-Bayes：朴素贝叶斯"><span class="nav-number">9.</span> <span class="nav-text">Naive Bayes：朴素贝叶斯</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CART：分类和回归树"><span class="nav-number">10.</span> <span class="nav-text">CART：分类和回归树</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">八宝粥</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"八宝粥"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

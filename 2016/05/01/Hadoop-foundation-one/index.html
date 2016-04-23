@@ -1,0 +1,770 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hadoop,云计算,大数据," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="八宝粥的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="《Hadoop海量数据处理》读书笔记1:Hadoop简介">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《Hadoop海量数据处理》读书笔记1:Hadoop简介">
+<meta property="og:url" content="http://blog.ybbz.site/2016/05/01/Hadoop-foundation-one/index.html">
+<meta property="og:site_name" content="八宝粥的博客">
+<meta property="og:description" content="《Hadoop海量数据处理》读书笔记1:Hadoop简介">
+<meta property="og:updated_time" content="2016-04-14T15:16:57.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《Hadoop海量数据处理》读书笔记1:Hadoop简介">
+<meta name="twitter:description" content="《Hadoop海量数据处理》读书笔记1:Hadoop简介">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6231437225821734000,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 《Hadoop海量数据处理》读书笔记1:Hadoop简介 | 八宝粥的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?bf48638c9f88aa67b7f9a0135affb55a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">八宝粥的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">这一切都是命运石之门的选择</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                《Hadoop海量数据处理》读书笔记1:Hadoop简介
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-01T00:00:00+08:00" content="2016-05-01">
+              2016-05-01
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Hadoop/" itemprop="url" rel="index">
+                    <span itemprop="name">Hadoop</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/01/Hadoop-foundation-one/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/01/Hadoop-foundation-one/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="Hadoop定义"><a href="#Hadoop定义" class="headerlink" title="Hadoop定义"></a>Hadoop定义</h3><blockquote>
+<p>Apache软件基金会（ASF）：Hadoop软件库是一个框架，允许在集群中使用简单的编程模型对大规模数据集进行分布式计算。它被设计为可以从单一服务器扩展到数以千计的本地计算和存储的节点，并且Hadoop会在应用层面检测和处理错误，而不依靠硬件的高可用性，所以Hadoop能够在一个每个节点都有可能出错的集群之上提供一个高可用服务。</p>
+</blockquote>
+<p>根据以上定义总结Hadoop特点：</p>
+<ol>
+<li>Hadoop是一个框架</li>
+<li>Hadoop适合处理大规模数据</li>
+<li>Hadoop被部署在一个集群上</li>
+</ol>
+<p>因此，Hadoop是一个提供分布式存储和计算的软件框架，它具有无共享、高可用、弹性可扩展的特点，非常适合处理海量数据。</p>
+<h3 id="Hadoop生态圈"><a href="#Hadoop生态圈" class="headerlink" title="Hadoop生态圈"></a>Hadoop生态圈</h3><ul>
+<li>Common：最底层模块，为Hadoop各子项目提供各种工具</li>
+<li>HDFS：具有高度容错性的文件系统</li>
+<li>MapReduce：编程模型，函数式编程思想，将数据集处理过程分为Map和Reduce</li>
+<li>HBase：分布式的、面向列的开源数据库</li>
+<li>ZooKeeper：分布式的服务框架，解决分布式系统中一致性的问题</li>
+<li>Hive：基于Hadoop的一个数据仓库工具，将结构化的数据文件映射为一张表</li>
+<li>Pig：对大型数据集进行分析和评估的工具</li>
+<li>Impala：对存储在HDFS、HBase的数据提供直接查询互动的SQL</li>
+<li>Mahout：机器学习和数据挖掘库，利用MapReduce实现k-means,Naive Bayes等</li>
+<li>Flume：高可用、高可靠、分布式的海量日志采集、聚合和传输系统</li>
+<li>Sqoop：SQL to Hadoop，在结构化的数据存储（数据库）和Hadoop之间进行数据双向交换</li>
+</ul>
+<h3 id="云计算的定义"><a href="#云计算的定义" class="headerlink" title="云计算的定义"></a>云计算的定义</h3><blockquote>
+<p>美国国家标准技术研究院（NIST）：云计算是一种可以通过网络方便地接入共享资源池，按需获取计算资源（这些资源包括网络、服务器、存储、应用、服务等）的服务模型。共享资源池中的资源可以通过较少的管理代价和简单业务交互过程而快速部署和发布</p>
+</blockquote>
+<p>云计算的特点：</p>
+<ol>
+<li>按需提供服务</li>
+<li>宽带网络访问</li>
+<li>资源池化</li>
+<li>高可伸缩性</li>
+<li>可量化的服务</li>
+<li><em>大规模</em></li>
+<li><em>服务极其廉价</em></li>
+</ol>
+<p>云计算的类型：</p>
+<ol>
+<li>基础设施即服务（IaaS）：云计算架构最底层，利用虚拟化技术将硬件设备等基础资源封装成服务供用户使用。</li>
+<li>平台即服务（Paas）：对资源进行更进一步的抽象，它提供了用户应用程序的应用环境。</li>
+<li>软件即服务（SaaS）：针对性更强，它将某些特定应用软件功能封装成服务。</li>
+</ol>
+<h3 id="Hadoop和云计算"><a href="#Hadoop和云计算" class="headerlink" title="Hadoop和云计算"></a>Hadoop和云计算</h3><p>Hadoop是云计算的产物，是云计算技术的一种实现。<br>Hadoop作为一个分布式的软件框架，拥有云计算Paas层的所有特点，是云计算的重要组成部分。</p>
+<h3 id="大数据的定义"><a href="#大数据的定义" class="headerlink" title="大数据的定义"></a>大数据的定义</h3><blockquote>
+<p>国际顶级权威咨询机构麦肯锡：大数据指的是所涉及的数据集规模已经超过了传统数据库软件获取、存储、管理和分析的能力。这是一个被故意设计成主观性的定义，并且是一个关于多大的数据集才能被认为是大数据的可变定义，即并不定义大于一个特定数字的TB才叫大数据。因为随着技术的不断发展，符合大数据标准的数据集容量也会增长；并且定义随不同行业也有变化，这依赖于在一个特定行业通常使用何种软件和数据集有多大。因此，大数据在今天不同行业中的范围可以从几十TB到几PB。</p>
+</blockquote>
+<p>大数据的特征：数量（Volume）、种类（Variety）、速度（Velocity），3V，庞大容量、极快速度和种类丰富的数据。</p>
+<ol>
+<li>数据量</li>
+<li>数据的多样性</li>
+<li>数据的速度</li>
+<li><em>第四个V（Veracity，真实和准确）</em></li>
+</ol>
+<h3 id="大数据的结构类型"><a href="#大数据的结构类型" class="headerlink" title="大数据的结构类型"></a>大数据的结构类型</h3><ol>
+<li>结构化数据：包括预定义的数据类型、格式和结构的数据</li>
+<li>半结构化数据：具有可识别的模式并可以解析的文本数据文件（XML等）</li>
+<li>准结构化数据：具有不规则数据格式的文本数据，使用工具可以使之格式化（URL）</li>
+<li>非结构化数据：没有固定结构的数据（文本文档、PDF文档、图像和视频）</li>
+</ol>
+<h3 id="Hadoop和大数据"><a href="#Hadoop和大数据" class="headerlink" title="Hadoop和大数据"></a>Hadoop和大数据</h3><p>云计算和大数据的关系：云计算是你在做的事情，大数据使你所拥有的东西</p>
+<p>所谓云计算PaaS层技术的代表，Hadoop可以以一个可靠、高效、可扩展的方式存储、管理“大数据”。Hadoop及其生态圈为管理、挖掘大数据提供了一整套相对成熟可靠的解决方案。从功能上，Hadoop可以称作一个“大数据管理平台”。</p>
+<p>Hadoop的核心组件：</p>
+<ol>
+<li>海量数据的摇篮－HDFS</li>
+<li>处理海量数据的利器－MapReduce</li>
+<li>列式存储的代表－HBase</li>
+</ol>
+<p>由于Hadoop可以基于分布式存储进行分布式计算，横向扩展能力非常优秀，所以Hadoop非常适合并且能够胜任存储、管理、挖掘“大数据”的任务。</p>
+<h3 id="其他大数据平台"><a href="#其他大数据平台" class="headerlink" title="其他大数据平台"></a>其他大数据平台</h3><ol>
+<li>Storm<br>Hadoop主要擅长进行批处理，Storm是一个比较成熟的分布式的流计算平台。流式数据：计算的输入并不是一个文件，而是源源不断的数据流(数据实时到达，需要实时处理；数据是流式源源不断的，大小可能无穷无尽……)。Storm计算模型不是MapReduce，MapReduce不适合做流处理。</li>
+<li>Apache Spark<br>Apache Spark是一种与Hadoop相似的开源集群计算环境，在性能和迭代计算上很有优势。Spark最大的优点在于对于一定数据量的查询可以达到毫秒级，在某些迭代计算的场景（如机器学习算法）中可以领先Hadoop数十倍到一百倍，并且它支持DAG（有向无环图）计算。</li>
+<li>Hadoop2.0<br>Hadoop2.0从架构上与Hadoop完全不同，结构更加合理；最大的不同在于，引入了一个资源管理平台的组件－YARN。</li>
+</ol>
+<h3 id="数据挖掘"><a href="#数据挖掘" class="headerlink" title="数据挖掘"></a>数据挖掘</h3><p>数据-&gt;知识</p>
+<h3 id="数据仓库"><a href="#数据仓库" class="headerlink" title="数据仓库"></a>数据仓库</h3><p>数据仓库是一个面向主题的、集成的、时变的、非易失的数据集合，支持管理者的决策过程。</p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hadoop/" rel="tag">#Hadoop</a>
+          
+            <a href="/tags/云计算/" rel="tag">#云计算</a>
+          
+            <a href="/tags/大数据/" rel="tag">#大数据</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/23/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/01/Hadoop-foundation-two/" rel="prev" title="《Hadoop海量数据处理》读书笔记2:Hadoop环境准备">
+                《Hadoop海量数据处理》读书笔记2:Hadoop环境准备 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/05/01/Hadoop-foundation-one/"
+     data-title="《Hadoop海量数据处理》读书笔记1:Hadoop简介"
+     data-content=""
+     data-url="http://blog.ybbz.site/2016/05/01/Hadoop-foundation-one/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/05/01/Hadoop-foundation-one/"
+           data-title="《Hadoop海量数据处理》读书笔记1:Hadoop简介" data-url="http://blog.ybbz.site/2016/05/01/Hadoop-foundation-one/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="八宝粥" />
+          <p class="site-author-name" itemprop="name">八宝粥</p>
+          <p class="site-description motion-element" itemprop="description">这一切都是命运石之门的选择</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">63</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">45</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ybbz" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/1005955131" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/ba-bao-zhou-73" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hadoop定义"><span class="nav-number">1.</span> <span class="nav-text">Hadoop定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hadoop生态圈"><span class="nav-number">2.</span> <span class="nav-text">Hadoop生态圈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#云计算的定义"><span class="nav-number">3.</span> <span class="nav-text">云计算的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hadoop和云计算"><span class="nav-number">4.</span> <span class="nav-text">Hadoop和云计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#大数据的定义"><span class="nav-number">5.</span> <span class="nav-text">大数据的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#大数据的结构类型"><span class="nav-number">6.</span> <span class="nav-text">大数据的结构类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hadoop和大数据"><span class="nav-number">7.</span> <span class="nav-text">Hadoop和大数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他大数据平台"><span class="nav-number">8.</span> <span class="nav-text">其他大数据平台</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据挖掘"><span class="nav-number">9.</span> <span class="nav-text">数据挖掘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据仓库"><span class="nav-number">10.</span> <span class="nav-text">数据仓库</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">八宝粥</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"八宝粥"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

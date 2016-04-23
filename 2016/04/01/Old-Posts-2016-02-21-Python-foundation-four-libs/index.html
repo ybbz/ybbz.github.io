@@ -1,0 +1,953 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Python," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="八宝粥的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="Python基础知识总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python基础知识总结四：常用模块">
+<meta property="og:url" content="http://blog.ybbz.site/2016/04/01/Old-Posts-2016-02-21-Python-foundation-four-libs/index.html">
+<meta property="og:site_name" content="八宝粥的博客">
+<meta property="og:description" content="Python基础知识总结">
+<meta property="og:updated_time" content="2016-04-01T09:52:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python基础知识总结四：常用模块">
+<meta name="twitter:description" content="Python基础知识总结">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6231437225821734000,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Python基础知识总结四：常用模块 | 八宝粥的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?bf48638c9f88aa67b7f9a0135affb55a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">八宝粥的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">这一切都是命运石之门的选择</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Python基础知识总结四：常用模块
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-01T17:52:35+08:00" content="2016-04-01">
+              2016-04-01
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/01/Old-Posts-2016-02-21-Python-foundation-four-libs/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/01/Old-Posts-2016-02-21-Python-foundation-four-libs/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="datetime"><a href="#datetime" class="headerlink" title="datetime"></a>datetime</h3><p>datetime是Python处理日期和时间的标准库。datetime表示的时间需要时区信息才能确定一个特定的时间，否则只能视为本地时间。如果要存储datetime，最佳方法是将其转换为timestamp再存储，因为timestamp的值与时区完全无关。</p>
+<pre><code>from datetime import datetime
+
+# 获取当前datetime
+now = datetime.now()
+print(now)
+
+# datetime转换为指定的格式
+format = now.strftime(&quot;%Y-%m-%d %H:%M:%S&quot;)
+print(format)
+
+# 用指定日期时间创建datetime
+time = datetime(2016, 2, 14, 10, 20)
+print(time)
+
+# 把datetime转换为timestamp
+print(time.timestamp())
+
+# 把timestamp转换为datetime
+time = 1455416400.0
+print(datetime.fromtimestamp(time))  # 当前操作系统的时区,UTC+8:00时区
+print(datetime.utcfromtimestamp(time))  # 格林威治标准时间,UTC+0:00时区
+
+# str转换为datetime
+time = datetime.strptime(&apos;2016-2-14 10:20:20&apos;, &apos;%Y-%m-%d %H:%M:%S&apos;)
+print(time)
+
+# datetime转换为str
+print(time.strftime(&apos;%a, %b %d %H:%M:%S&apos;))
+</code></pre><h3 id="collections"><a href="#collections" class="headerlink" title="collections"></a>collections</h3><p>collections模块提供了一些有用的集合类，可以根据需要选用。</p>
+<pre><code>from collections import namedtuple, deque, defaultdict, OrderedDict, Counter
+
+# namedtuple是一个函数,用来创建自定义的tuple对象
+# 规定了tuple元素的个数,并可以用属性而不是索引来引用tuple的某个元素
+Point = namedtuple(&apos;Point&apos;, [&apos;x&apos;, &apos;y&apos;])
+p = Point(1, 2)
+print(p)
+
+# list存储数据时,按索引访问元素很快,但是插入和删除元素很慢
+# deque是为了高效实现插入和删除操作的双向列表,适合用于队列和栈
+q = deque([&apos;a&apos;, &apos;b&apos;, &apos;c&apos;])
+q.append(&apos;x&apos;)
+q.appendleft(&apos;y&apos;)
+print(q)
+
+# 使用dict时,如果Key不存在，会抛出KeyError。defaultdict:key不存在时，返回一个默认值
+dd = defaultdict(lambda: &apos;default&apos;)
+dd[&apos;1&apos;] = &apos;aaa&apos;
+print(dd[&apos;1&apos;])
+print(dd[&apos;2&apos;])
+
+# 使用dict时,Key是无序的。OrderedDict:保持Key的顺序(Key按照插入的顺序排列，不是Key本身排序)
+d = dict([(&apos;a&apos;, 1), (&apos;b&apos;, 2), (&apos;c&apos;, 3)])
+print(d)
+od = OrderedDict([(&apos;a&apos;, 1), (&apos;b&apos;, 2), (&apos;c&apos;, 3)])
+print(od)
+
+# Counter是一个简单的计数器,可以统计字符出现的个数(Counter实际上是dict的一个子类)
+c = Counter()
+for i in &apos;Hello World !&apos;:
+    c[i] += 1
+print(c)
+</code></pre><h3 id="base64"><a href="#base64" class="headerlink" title="base64"></a>base64</h3><p>Base64是一种用64个字符来表示任意二进制数据的方法。</p>
+<pre><code>import base64
+
+print(base64.b64encode(b&apos;helloworld&apos;))
+print(base64.b64decode(b&apos;aGVsbG93b3JsZA==&apos;))
+
+print(base64.b64encode(b&apos;i\xb7\x1d\xfb\xef\xff&apos;))
+# +和/在URL中就不能直接作为参数。urlsafe的base64编码,把字符+和/分别变成-和_
+print(base64.urlsafe_b64encode(b&apos;i\xb7\x1d\xfb\xef\xff&apos;))
+print(base64.urlsafe_b64decode(&apos;abcd--__&apos;))
+</code></pre><h3 id="hashlib"><a href="#hashlib" class="headerlink" title="hashlib"></a>hashlib</h3><p>Python的hashlib提供了常见的摘要算法，如MD5，SHA1等等。摘要算法又称哈希算法、散列算法。它通过一个函数，把任意长度的数据转换为一个长度固定的数据串（通常用16进制的字符串表示）。摘要算法在很多地方都有广泛的应用。要注意摘要算法不是加密算法，不能用于加密（因为无法通过摘要反推明文），只能用于防篡改，但是它的单向计算特性决定了可以在不存储明文口令的情况下验证用户口令。</p>
+<pre><code>import hashlib
+
+# MD5是最常见的摘要算法，速度很快，生成结果是固定的128 bit字节，通常用一个32位的16进制字符串表示
+md5 = hashlib.md5()
+md5.update(&apos;how to use md5 in python hashlib?&apos;.encode(&apos;utf-8&apos;))
+print(md5.hexdigest())
+
+# SHA1的结果是160 bit字节，通常用一个40位的16进制字符串表示。
+sha1 = hashlib.sha1()
+sha1.update(&apos;how to use sha1 in &apos;.encode(&apos;utf-8&apos;))
+sha1.update(&apos;python hashlib?&apos;.encode(&apos;utf-8&apos;))
+print(sha1.hexdigest())
+</code></pre><h3 id="itertools"><a href="#itertools" class="headerlink" title="itertools"></a>itertools</h3><p>Python的内建模块itertools提供了非常有用的用于操作迭代对象的函数。</p>
+<pre><code>import itertools
+
+# count()会创建一个无限的迭代器
+natuals = itertools.count(1)
+for n in natuals:
+    print(n)
+
+# cycle()会把传入的一个序列无限重复下去
+cs = itertools.cycle(&apos;ABC&apos;)
+for c in cs:
+    print(c)
+
+# repeat()负责把一个元素无限重复下去，提供第二个参数就可以限定重复次数：
+ns = itertools.repeat(&apos;A&apos;, 3)
+for n in ns:
+    print(n)
+
+# 通过takewhile()等函数根据条件判断来截取出一个有限的序列
+natuals = itertools.count(1)
+ns = itertools.takewhile(lambda x: x &lt;= 10, natuals)
+print(list(ns))
+</code></pre><h3 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h3><p>操作XML的两种方法：DOM和SAX。DOM把整个XML读入内存，解析为树，因此占用内存大，解析慢，优点是可以任意遍历树的节点。SAX是流模式，边读边解析，占用内存小，解析快，缺点是我们需要自己处理事件。优先考虑SAX。</p>
+<pre><code>from xml.parsers.expat import ParserCreate
+
+class DefaultSaxHandler(object):
+    def start_element(self, name, attrs):
+        print(&apos;sax:start_element: %s, attrs: %s&apos; % (name, str(attrs)))
+
+    def end_element(self, name):
+        print(&apos;sax:end_element: %s&apos; % name)
+
+    def char_data(self, text):
+        print(&apos;sax:char_data: %s&apos; % text)
+
+
+xml = r&apos;&apos;&apos;&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;ol&gt;
+    &lt;li&gt;&lt;a href=&quot;/python&quot;&gt;Python&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;/ruby&quot;&gt;Ruby&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&apos;&apos;&apos;
+
+handler = DefaultSaxHandler()
+parser = ParserCreate()
+parser.StartElementHandler = handler.start_element
+parser.EndElementHandler = handler.end_element
+parser.CharacterDataHandler = handler.char_data
+parser.Parse(xml)
+</code></pre><h3 id="HTMLParser"><a href="#HTMLParser" class="headerlink" title="HTMLParser"></a>HTMLParser</h3><p>Python提供了HTMLParser来非常方便地解析HTML；利用HTMLParser,可以把网页中的文本、图像等解析出来。</p>
+<pre><code>from html.parser import HTMLParser
+
+class MyHTMLParser(HTMLParser):
+    def handle_starttag(self, tag, attrs):
+        print(&apos;&lt;%s&gt;&apos; % tag)
+
+    def handle_endtag(self, tag):
+        print(&apos;&lt;/%s&gt;&apos; % tag)
+
+    def handle_startendtag(self, tag, attrs):
+        print(&apos;&lt;%s/&gt;&apos; % tag)
+
+    def handle_data(self, data):
+        print(data)
+
+    def handle_comment(self, data):
+        print(&apos;&lt;!--&apos;, data, &apos;--&gt;&apos;)
+
+    def handle_entityref(self, name):
+        print(&apos;&amp;%s;&apos; % name)
+
+    def handle_charref(self, name):
+        print(&apos;&amp;#%s;&apos; % name)
+
+
+parser = MyHTMLParser()
+parser.feed(&apos;&apos;&apos;&lt;html&gt;
+&lt;head&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;!-- test html parser --&gt;
+    &lt;p&gt;Some &lt;a href=\&quot;#\&quot;&gt;html&lt;/a&gt; HTML&amp;nbsp;tutorial...&lt;br&gt;END&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;&apos;&apos;&apos;)
+</code></pre><h3 id="urllib"><a href="#urllib" class="headerlink" title="urllib"></a>urllib</h3><p>urllib提供了一系列用于操作URL的功能。<br>urllib提供的功能就是利用程序去执行各种HTTP请求。如果要模拟浏览器完成特定功能，需要把请求伪装成浏览器。伪装的方法是先监控浏览器发出的请求，再根据浏览器的请求头来伪装，User-Agent头就是用来标识浏览器的。</p>
+<pre><code>from urllib import request, parse
+
+# request模块可以非常方便地抓取URL内容，也就是发送一个GET请求到指定页面，然后返回HTTP的响应
+with request.urlopen(&apos;https://api.douban.com/v2/book/2129650&apos;) as f:
+    data = f.read()
+    print(&apos;Status:&apos;, f.status, f.reason)
+    for k, v in f.getheaders():
+        print(&apos;%s: %s&apos; % (k, v))
+    print(&apos;Data:&apos;, data.decode(&apos;utf-8&apos;))
+
+# 模拟浏览器发送GET请求，就需要使用Request对象，通过往Request对象添加HTTP头，就可以把请求伪装成浏览器
+req = request.Request(&apos;http://www.douban.com/&apos;)
+req.add_header(&apos;User-Agent&apos;,
+               &apos;Mozilla/6.0 (iPhone; CPU iPhone OS 8_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/8.0 Mobile/10A5376e Safari/8536.25&apos;)
+with request.urlopen(req) as f:
+    print(&apos;Status:&apos;, f.status, f.reason)
+    for k, v in f.getheaders():
+        print(&apos;%s: %s&apos; % (k, v))
+    print(&apos;Data:&apos;, f.read().decode(&apos;utf-8&apos;))
+
+# 以POST发送一个请求，只需要把参数data以bytes形式传入
+print(&apos;Login to weibo.cn...&apos;)
+email = input(&apos;Email: &apos;)
+passwd = input(&apos;Password: &apos;)
+login_data = parse.urlencode([
+    (&apos;username&apos;, email),
+    (&apos;password&apos;, passwd),
+    (&apos;entry&apos;, &apos;mweibo&apos;),
+    (&apos;client_id&apos;, &apos;&apos;),
+    (&apos;savestate&apos;, &apos;1&apos;),
+    (&apos;ec&apos;, &apos;&apos;),
+    (&apos;pagerefer&apos;, &apos;https://passport.weibo.cn/signin/welcome?entry=mweibo&amp;r=http%3A%2F%2Fm.weibo.cn%2F&apos;)
+])
+
+req = request.Request(&apos;https://passport.weibo.cn/sso/login&apos;)
+req.add_header(&apos;Origin&apos;, &apos;https://passport.weibo.cn&apos;)
+req.add_header(&apos;User-Agent&apos;,
+               &apos;Mozilla/6.0 (iPhone; CPU iPhone OS 8_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/8.0 Mobile/10A5376e Safari/8536.25&apos;)
+req.add_header(&apos;Referer&apos;,
+               &apos;https://passport.weibo.cn/signin/login?entry=mweibo&amp;res=wel&amp;wm=3349&amp;r=http%3A%2F%2Fm.weibo.cn%2F&apos;)
+
+with request.urlopen(req, data=login_data.encode(&apos;utf-8&apos;)) as f:
+    print(&apos;Status:&apos;, f.status, f.reason)
+    for k, v in f.getheaders():
+        print(&apos;%s: %s&apos; % (k, v))
+    print(&apos;Data:&apos;, f.read().decode(&apos;utf-8&apos;))
+</code></pre><h3 id="GUI"><a href="#GUI" class="headerlink" title="GUI"></a>GUI</h3><p>Python支持多种图形界面的第三方库包括：Tk、wxWidgets、Qt、GTK等。<br>Python自带的库是支持Tk的Tkinter，使用Tkinter，无需安装任何包，就可以直接使用。（Tkinter封装了访问Tk的接口；Tk是一个图形库，支持多个操作系统，使用Tcl语言开发；Tk会调用操作系统提供的本地GUI接口，完成最终的GUI。）</p>
+<pre><code>from tkinter import *
+
+class Application(Frame):
+    def __init__(self, master=None):
+        Frame.__init__(self, master)
+        self.pack()
+        self.createWidgets()
+
+    def createWidgets(self):
+        self.helloLabel = Label(self, text=&apos;Hello, world!&apos;)
+        self.helloLabel.pack()
+        self.quitButton = Button(self, text=&apos;Quit&apos;, command=self.quit)
+        self.quitButton.pack()
+
+
+app = Application()
+# 设置窗口标题:
+app.master.title(&apos;Hello World&apos;)
+# 主消息循环:
+app.mainloop()
+</code></pre><p>加入一个文本框，让用户可以输入文本，然后点按钮后，弹出消息对话框。</p>
+<pre><code>from tkinter import *
+import tkinter.messagebox as messagebox
+
+
+class Application(Frame):
+    def __init__(self, master=None):
+        Frame.__init__(self, master)
+        self.pack()
+        self.createWidgets()
+
+    def createWidgets(self):
+        self.nameInput = Entry(self)
+        self.nameInput.pack()
+        self.alertButton = Button(self, text=&apos;Hello&apos;, command=self.hello)
+        self.alertButton.pack()
+
+    def hello(self):
+        name = self.nameInput.get() or &apos;world&apos;
+        messagebox.showinfo(&apos;Message&apos;, &apos;Hello, %s&apos; % name)
+
+
+app = Application()
+# 设置窗口标题:
+app.master.title(&apos;Hello World&apos;)
+# 主消息循环:
+app.mainloop()
+</code></pre>
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag">#Python</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/01/Old-Posts-2016-02-22-Python-foundation-Web-Flask/" rel="next" title="Python基础知识总结六：Web开发之Flask">
+                <i class="fa fa-chevron-left"></i> Python基础知识总结六：Web开发之Flask
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/01/Old-Posts-2016-02-20-Python-foundation-two-regular/" rel="prev" title="Python基础知识总结二：正则表达式">
+                Python基础知识总结二：正则表达式 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/04/01/Old-Posts-2016-02-21-Python-foundation-four-libs/"
+     data-title="Python基础知识总结四：常用模块"
+     data-content=""
+     data-url="http://blog.ybbz.site/2016/04/01/Old-Posts-2016-02-21-Python-foundation-four-libs/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/01/Old-Posts-2016-02-21-Python-foundation-four-libs/"
+           data-title="Python基础知识总结四：常用模块" data-url="http://blog.ybbz.site/2016/04/01/Old-Posts-2016-02-21-Python-foundation-four-libs/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="八宝粥" />
+          <p class="site-author-name" itemprop="name">八宝粥</p>
+          <p class="site-description motion-element" itemprop="description">这一切都是命运石之门的选择</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">63</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">45</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ybbz" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/1005955131" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/ba-bao-zhou-73" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#datetime"><span class="nav-number">1.</span> <span class="nav-text">datetime</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#collections"><span class="nav-number">2.</span> <span class="nav-text">collections</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#base64"><span class="nav-number">3.</span> <span class="nav-text">base64</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hashlib"><span class="nav-number">4.</span> <span class="nav-text">hashlib</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#itertools"><span class="nav-number">5.</span> <span class="nav-text">itertools</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XML"><span class="nav-number">6.</span> <span class="nav-text">XML</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTMLParser"><span class="nav-number">7.</span> <span class="nav-text">HTMLParser</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#urllib"><span class="nav-number">8.</span> <span class="nav-text">urllib</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GUI"><span class="nav-number">9.</span> <span class="nav-text">GUI</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">八宝粥</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"八宝粥"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

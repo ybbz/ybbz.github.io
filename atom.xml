@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.ybbz.site/"/>
-  <updated>2016-04-23T08:06:43.000Z</updated>
+  <updated>2016-04-14T16:47:00.000Z</updated>
   <id>http://blog.ybbz.site/</id>
   
   <author>
@@ -16,18 +16,182 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>test</title>
-    <link href="http://blog.ybbz.site/2016/04/23/test/"/>
-    <id>http://blog.ybbz.site/2016/04/23/test/</id>
-    <published>2016-04-23T08:06:43.000Z</published>
-    <updated>2016-04-23T08:06:43.000Z</updated>
+    <title>《Hadoop海量数据处理》读书笔记2:Hadoop环境准备</title>
+    <link href="http://blog.ybbz.site/2016/05/01/Hadoop-foundation-two/"/>
+    <id>http://blog.ybbz.site/2016/05/01/Hadoop-foundation-two/</id>
+    <published>2016-04-30T16:00:00.000Z</published>
+    <updated>2016-04-14T16:47:00.000Z</updated>
     
-    <content type="html"></content>
+    <content type="html">&lt;h3 id=&quot;Hadoop架构&quot;&gt;&lt;a href=&quot;#Hadoop架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h3&gt;&lt;p&gt;Hadoop主要由两部分构成：分布式文件系统HDFS和分布式计算框架MapReduce；HDFS主要是用于海量数据的存储，MapReduce则是对存储在HDFS中的数据进行分布式计算。&lt;/p&gt;
+&lt;h4 id=&quot;Hadoop-HDFS架构&quot;&gt;&lt;a href=&quot;#Hadoop-HDFS架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop HDFS架构&quot;&gt;&lt;/a&gt;Hadoop HDFS架构&lt;/h4&gt;&lt;p&gt;构成HDFS集群的主要是两类节点（主从模式，管理者－工作者模式）：一个NameNode（管理者）和多个DataNode（工作者），SecondaryNameNode作为NameNode镜像数据备份。&lt;/p&gt;
+&lt;p&gt;表：HDFS守护进程&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;守护进程&lt;/th&gt;
+&lt;th&gt;集群中的数目&lt;/th&gt;
+&lt;th&gt;作用&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;NameNode&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;存储文件系统的元数据，存储文件与数据块映射，并提供文件系统的全景图&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SecondaryNameNode&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;备份NameNode数据，并负责镜像与NameNode日志数据的合并&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DataNode&lt;/td&gt;
+&lt;td&gt;多个(至少一个)&lt;/td&gt;
+&lt;td&gt;存储块数据&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&quot;Hadoop-MapReduce架构&quot;&gt;&lt;a href=&quot;#Hadoop-MapReduce架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop MapReduce架构&quot;&gt;&lt;/a&gt;Hadoop MapReduce架构&lt;/h4&gt;&lt;p&gt;构成MapReduce集群为两类节点（主从模式）：JobTracker和TaskTracker。&lt;/p&gt;
+&lt;p&gt;表：MapReduce守护进程&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;守护进程&lt;/th&gt;
+&lt;th&gt;集群中的数目&lt;/th&gt;
+&lt;th&gt;作用&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;JobTracker&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;负责接受客户端作业提交，调度任务到TaskTracker上运行，并提供监控TaskTracker及任务进度等管理功能&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TaskTracker&lt;/td&gt;
+&lt;td&gt;多个(至少一个)&lt;/td&gt;
+&lt;td&gt;实例化用户程序，在本地执行任务并周期性地向JobTracker汇报状态&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&quot;Hadoop架构-1&quot;&gt;&lt;a href=&quot;#Hadoop架构-1&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h4&gt;&lt;p&gt;HDFS集群和MapReduce集群其实由一些守护进程组成，而所有这些守护进程和运行它们的节点就构成了Hadoop集群。这个集群的NameNode进程和JobTracker进程在一个节点上运行，而DataNode进程和TaskTracker进程在同一个节点上运行。（DataNode和TaskTracker需要配对部署在同一个节点，NameNode和JobTracker并不一定部署在同一个节点；生产环境，建议NameNode和JobTracker分开部署）。&lt;/p&gt;
+</content>
     
     <summary type="html">
     
+      《Hadoop海量数据处理》读书笔记2:Hadoop环境准备
+    
     </summary>
     
+      <category term="Hadoop" scheme="http://blog.ybbz.site/categories/Hadoop/"/>
+    
+    
+      <category term="Hadoop" scheme="http://blog.ybbz.site/tags/Hadoop/"/>
+    
+      <category term="云计算" scheme="http://blog.ybbz.site/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/"/>
+    
+      <category term="大数据" scheme="http://blog.ybbz.site/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《Hadoop海量数据处理》读书笔记1:Hadoop简介</title>
+    <link href="http://blog.ybbz.site/2016/05/01/Hadoop-foundation-one/"/>
+    <id>http://blog.ybbz.site/2016/05/01/Hadoop-foundation-one/</id>
+    <published>2016-04-30T16:00:00.000Z</published>
+    <updated>2016-04-14T15:16:57.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;Hadoop定义&quot;&gt;&lt;a href=&quot;#Hadoop定义&quot; class=&quot;headerlink&quot; title=&quot;Hadoop定义&quot;&gt;&lt;/a&gt;Hadoop定义&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;Apache软件基金会（ASF）：Hadoop软件库是一个框架，允许在集群中使用简单的编程模型对大规模数据集进行分布式计算。它被设计为可以从单一服务器扩展到数以千计的本地计算和存储的节点，并且Hadoop会在应用层面检测和处理错误，而不依靠硬件的高可用性，所以Hadoop能够在一个每个节点都有可能出错的集群之上提供一个高可用服务。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;根据以上定义总结Hadoop特点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Hadoop是一个框架&lt;/li&gt;
+&lt;li&gt;Hadoop适合处理大规模数据&lt;/li&gt;
+&lt;li&gt;Hadoop被部署在一个集群上&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;因此，Hadoop是一个提供分布式存储和计算的软件框架，它具有无共享、高可用、弹性可扩展的特点，非常适合处理海量数据。&lt;/p&gt;
+&lt;h3 id=&quot;Hadoop生态圈&quot;&gt;&lt;a href=&quot;#Hadoop生态圈&quot; class=&quot;headerlink&quot; title=&quot;Hadoop生态圈&quot;&gt;&lt;/a&gt;Hadoop生态圈&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Common：最底层模块，为Hadoop各子项目提供各种工具&lt;/li&gt;
+&lt;li&gt;HDFS：具有高度容错性的文件系统&lt;/li&gt;
+&lt;li&gt;MapReduce：编程模型，函数式编程思想，将数据集处理过程分为Map和Reduce&lt;/li&gt;
+&lt;li&gt;HBase：分布式的、面向列的开源数据库&lt;/li&gt;
+&lt;li&gt;ZooKeeper：分布式的服务框架，解决分布式系统中一致性的问题&lt;/li&gt;
+&lt;li&gt;Hive：基于Hadoop的一个数据仓库工具，将结构化的数据文件映射为一张表&lt;/li&gt;
+&lt;li&gt;Pig：对大型数据集进行分析和评估的工具&lt;/li&gt;
+&lt;li&gt;Impala：对存储在HDFS、HBase的数据提供直接查询互动的SQL&lt;/li&gt;
+&lt;li&gt;Mahout：机器学习和数据挖掘库，利用MapReduce实现k-means,Naive Bayes等&lt;/li&gt;
+&lt;li&gt;Flume：高可用、高可靠、分布式的海量日志采集、聚合和传输系统&lt;/li&gt;
+&lt;li&gt;Sqoop：SQL to Hadoop，在结构化的数据存储（数据库）和Hadoop之间进行数据双向交换&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;云计算的定义&quot;&gt;&lt;a href=&quot;#云计算的定义&quot; class=&quot;headerlink&quot; title=&quot;云计算的定义&quot;&gt;&lt;/a&gt;云计算的定义&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;美国国家标准技术研究院（NIST）：云计算是一种可以通过网络方便地接入共享资源池，按需获取计算资源（这些资源包括网络、服务器、存储、应用、服务等）的服务模型。共享资源池中的资源可以通过较少的管理代价和简单业务交互过程而快速部署和发布&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;云计算的特点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;按需提供服务&lt;/li&gt;
+&lt;li&gt;宽带网络访问&lt;/li&gt;
+&lt;li&gt;资源池化&lt;/li&gt;
+&lt;li&gt;高可伸缩性&lt;/li&gt;
+&lt;li&gt;可量化的服务&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;大规模&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;服务极其廉价&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;云计算的类型：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;基础设施即服务（IaaS）：云计算架构最底层，利用虚拟化技术将硬件设备等基础资源封装成服务供用户使用。&lt;/li&gt;
+&lt;li&gt;平台即服务（Paas）：对资源进行更进一步的抽象，它提供了用户应用程序的应用环境。&lt;/li&gt;
+&lt;li&gt;软件即服务（SaaS）：针对性更强，它将某些特定应用软件功能封装成服务。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;Hadoop和云计算&quot;&gt;&lt;a href=&quot;#Hadoop和云计算&quot; class=&quot;headerlink&quot; title=&quot;Hadoop和云计算&quot;&gt;&lt;/a&gt;Hadoop和云计算&lt;/h3&gt;&lt;p&gt;Hadoop是云计算的产物，是云计算技术的一种实现。&lt;br&gt;Hadoop作为一个分布式的软件框架，拥有云计算Paas层的所有特点，是云计算的重要组成部分。&lt;/p&gt;
+&lt;h3 id=&quot;大数据的定义&quot;&gt;&lt;a href=&quot;#大数据的定义&quot; class=&quot;headerlink&quot; title=&quot;大数据的定义&quot;&gt;&lt;/a&gt;大数据的定义&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;国际顶级权威咨询机构麦肯锡：大数据指的是所涉及的数据集规模已经超过了传统数据库软件获取、存储、管理和分析的能力。这是一个被故意设计成主观性的定义，并且是一个关于多大的数据集才能被认为是大数据的可变定义，即并不定义大于一个特定数字的TB才叫大数据。因为随着技术的不断发展，符合大数据标准的数据集容量也会增长；并且定义随不同行业也有变化，这依赖于在一个特定行业通常使用何种软件和数据集有多大。因此，大数据在今天不同行业中的范围可以从几十TB到几PB。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;大数据的特征：数量（Volume）、种类（Variety）、速度（Velocity），3V，庞大容量、极快速度和种类丰富的数据。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;数据量&lt;/li&gt;
+&lt;li&gt;数据的多样性&lt;/li&gt;
+&lt;li&gt;数据的速度&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;第四个V（Veracity，真实和准确）&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;大数据的结构类型&quot;&gt;&lt;a href=&quot;#大数据的结构类型&quot; class=&quot;headerlink&quot; title=&quot;大数据的结构类型&quot;&gt;&lt;/a&gt;大数据的结构类型&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;结构化数据：包括预定义的数据类型、格式和结构的数据&lt;/li&gt;
+&lt;li&gt;半结构化数据：具有可识别的模式并可以解析的文本数据文件（XML等）&lt;/li&gt;
+&lt;li&gt;准结构化数据：具有不规则数据格式的文本数据，使用工具可以使之格式化（URL）&lt;/li&gt;
+&lt;li&gt;非结构化数据：没有固定结构的数据（文本文档、PDF文档、图像和视频）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;Hadoop和大数据&quot;&gt;&lt;a href=&quot;#Hadoop和大数据&quot; class=&quot;headerlink&quot; title=&quot;Hadoop和大数据&quot;&gt;&lt;/a&gt;Hadoop和大数据&lt;/h3&gt;&lt;p&gt;云计算和大数据的关系：云计算是你在做的事情，大数据使你所拥有的东西&lt;/p&gt;
+&lt;p&gt;所谓云计算PaaS层技术的代表，Hadoop可以以一个可靠、高效、可扩展的方式存储、管理“大数据”。Hadoop及其生态圈为管理、挖掘大数据提供了一整套相对成熟可靠的解决方案。从功能上，Hadoop可以称作一个“大数据管理平台”。&lt;/p&gt;
+&lt;p&gt;Hadoop的核心组件：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;海量数据的摇篮－HDFS&lt;/li&gt;
+&lt;li&gt;处理海量数据的利器－MapReduce&lt;/li&gt;
+&lt;li&gt;列式存储的代表－HBase&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;由于Hadoop可以基于分布式存储进行分布式计算，横向扩展能力非常优秀，所以Hadoop非常适合并且能够胜任存储、管理、挖掘“大数据”的任务。&lt;/p&gt;
+&lt;h3 id=&quot;其他大数据平台&quot;&gt;&lt;a href=&quot;#其他大数据平台&quot; class=&quot;headerlink&quot; title=&quot;其他大数据平台&quot;&gt;&lt;/a&gt;其他大数据平台&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Storm&lt;br&gt;Hadoop主要擅长进行批处理，Storm是一个比较成熟的分布式的流计算平台。流式数据：计算的输入并不是一个文件，而是源源不断的数据流(数据实时到达，需要实时处理；数据是流式源源不断的，大小可能无穷无尽……)。Storm计算模型不是MapReduce，MapReduce不适合做流处理。&lt;/li&gt;
+&lt;li&gt;Apache Spark&lt;br&gt;Apache Spark是一种与Hadoop相似的开源集群计算环境，在性能和迭代计算上很有优势。Spark最大的优点在于对于一定数据量的查询可以达到毫秒级，在某些迭代计算的场景（如机器学习算法）中可以领先Hadoop数十倍到一百倍，并且它支持DAG（有向无环图）计算。&lt;/li&gt;
+&lt;li&gt;Hadoop2.0&lt;br&gt;Hadoop2.0从架构上与Hadoop完全不同，结构更加合理；最大的不同在于，引入了一个资源管理平台的组件－YARN。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;数据挖掘&quot;&gt;&lt;a href=&quot;#数据挖掘&quot; class=&quot;headerlink&quot; title=&quot;数据挖掘&quot;&gt;&lt;/a&gt;数据挖掘&lt;/h3&gt;&lt;p&gt;数据-&amp;gt;知识&lt;/p&gt;
+&lt;h3 id=&quot;数据仓库&quot;&gt;&lt;a href=&quot;#数据仓库&quot; class=&quot;headerlink&quot; title=&quot;数据仓库&quot;&gt;&lt;/a&gt;数据仓库&lt;/h3&gt;&lt;p&gt;数据仓库是一个面向主题的、集成的、时变的、非易失的数据集合，支持管理者的决策过程。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      《Hadoop海量数据处理》读书笔记1:Hadoop简介
+    
+    </summary>
+    
+      <category term="Hadoop" scheme="http://blog.ybbz.site/categories/Hadoop/"/>
+    
+    
+      <category term="Hadoop" scheme="http://blog.ybbz.site/tags/Hadoop/"/>
+    
+      <category term="云计算" scheme="http://blog.ybbz.site/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/"/>
+    
+      <category term="大数据" scheme="http://blog.ybbz.site/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
     
   </entry>
   
@@ -55,6 +219,1948 @@
     
     </summary>
     
+    
+  </entry>
+  
+  <entry>
+    <title>OWL Web本体语言指南</title>
+    <link href="http://blog.ybbz.site/2016/04/20/OWL-SWRL/"/>
+    <id>http://blog.ybbz.site/2016/04/20/OWL-SWRL/</id>
+    <published>2016-04-19T16:00:00.000Z</published>
+    <updated>2016-04-10T09:13:45.000Z</updated>
+    
+    <content type="html">&lt;p&gt;这篇指南是转载的，不过经过了一定的加工（删减、排版），主要是为了方便自己查找及阅读（毕竟官方的排版不怎么适合我这种强迫症），也删去了一些自己用不到的部分。读者也可查看下面引用中的译文及原文。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;OWL Web本体语言指南&lt;br&gt;TransWiki - W3CHINA.ORG开放翻译计划（OTP）&lt;/p&gt;
+&lt;p&gt;译文    &lt;a href=&quot;http://www.transwiki.org/cn/owlguide.htm&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OWL Web本体语言指南&lt;/a&gt;&lt;br&gt;原文    &lt;a href=&quot;http://www.w3.org/TR/2004/REC-owl-guide-20040210/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OWL Web Ontology Language Guide Recommendation&lt;/a&gt;  &lt;/p&gt;
+&lt;p&gt;译者&lt;br&gt;刘升平（Shengping Liu）翻译活动主席 lsp&lt;at&gt;w3china.org：翻译目录、第1节和附录A、附录C，并负责工作组的组织与翻译工作的统筹。&lt;br&gt;倪跃（Yue Ni）,nybon&lt;at&gt;163.com ：翻译3.3-3.4节和第7节。&lt;br&gt;徐涵（Collin Hsu），collin&lt;at&gt;w3china.org：翻译第2.1-2.3节、第3.1-3.2节和附录B。&lt;br&gt;sprag, spragsina.com：翻译第5节。&lt;br&gt;zephyr, gzq03mails.tsinghua.edu.cn：翻译第4节。&lt;br&gt;icecream199612, fenglp1996163.com：翻译第6节。&lt;br&gt;jumbo, jumboemilymsn.com：翻译第2节引言部分。&lt;/at&gt;&lt;/at&gt;&lt;/at&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h1&gt;&lt;p&gt;目前这种结构的万维网，很像一本地图做得很差的地理书，我们对于Web中可以使用的文档和服务的了解，都是基于关键字搜索的， 同时还需要灵活地使用文档的链接和使用模式。如果没有强有力的工具的支持，这么大规模的数据是很难管理的，为了能够给Web绘制出更为详实的地图，计算代理需要对于网络上可用资源的内容和能力做一个机器能够读得懂的描述。这些描述是人类能够读得懂的信息的扩展。&lt;/p&gt;
+&lt;p&gt;OWL，这种本体描述语言，可以用来描述Web文档和应用中内在的类和关系。&lt;/p&gt;
+&lt;p&gt;这篇文章解释了OWL语言的使用：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;通过定义类以及类的属性来形式化某个领域；&lt;/li&gt;
+&lt;li&gt;定义个体并说明它们之间的属性；&lt;/li&gt;
+&lt;li&gt;在OWL语言的形式化语义允许的层次上，对类和个体进行推理。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;本文的各章节间是按照类、属性、个体的集合的定义给出来的，从最简单的概念开始，逐渐过渡到更为复杂的概念。&lt;/p&gt;
+&lt;h1 id=&quot;本文档的状态&quot;&gt;&lt;a href=&quot;#本文档的状态&quot; class=&quot;headerlink&quot; title=&quot;本文档的状态&quot;&gt;&lt;/a&gt;本文档的状态&lt;/h1&gt;&lt;p&gt;本文档已被W3C成员及其他相关方面审阅，并已被W3C总监（W3C Director）批准为W3C推荐标准（W3C Recommendation）。W3C制定推荐标准的任务是使之受到关注，并促使其被广泛应用。这将增强Web的功能性与互操作性。&lt;/p&gt;
+&lt;p&gt;本文档是W3C关于Web本体语言OWL的推荐标准的六个部分之一。 它已经被Web 本体工作小组 (小组章程) 作为W3C语义Web行动 (行动声明) 的一部分于2004年2月10日发布。本文档的早期版本中所描述的关于OWL的设计已被广泛评阅，并已满足工作小组的技术需求。工作小组充分考虑所有收到的意见，并做了必要的修改。本文档自从候选推荐标准版本以来的所有修改都在文后的变更日志中。&lt;/p&gt;
+&lt;p&gt;这节描述了本文档在发布时的状态。其他文档可能替代这文档。一份当前W3C的最新出版物的目录和这个技术报告的最新版本可以在&lt;a href=&quot;http://www.w3.org/TR/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;W3C技术报告索引&lt;/a&gt;上找到。&lt;/p&gt;
+&lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h1&gt;&lt;p&gt;摘要&lt;br&gt;本文档状态&lt;br&gt;内容&lt;br&gt;1.引言&lt;br&gt;1.1.OWL的种类&lt;br&gt;1.2.本文档的结构&lt;br&gt;2.本体的结构&lt;br&gt;2.1.命名空间&lt;br&gt;2.2.本体头信息&lt;br&gt;2.3.数据聚合和隐私&lt;br&gt;3.基本元素&lt;br&gt;3.1.简单类和个体&lt;br&gt;3.1.1.简单具名类&lt;br&gt;3.1.2.个体&lt;br&gt;3.1.3.使用时的设计&lt;br&gt;3.2.简单属性&lt;br&gt;3.2.1.定义属性&lt;br&gt;3.2.2.属性和数据类型&lt;br&gt;3.2.3.个体的属性&lt;br&gt;3.3.属性的特征&lt;br&gt;3.3.1.传递属性&lt;br&gt;3.3.2.对称属性&lt;br&gt;3.3.3.函数型属性&lt;br&gt;3.3.4.逆属性&lt;br&gt;3.3.5.反函数型属性&lt;br&gt;3.4.属性约束&lt;br&gt;3.4.1.allValuesFrom, someValuesFrom&lt;br&gt;3.4.2.Cardinality&lt;br&gt;3.4.3.hasValue&lt;br&gt;4.本体映射&lt;br&gt;4.1.类之间和属性之间的等价性&lt;br&gt;4.2.个体之间的等同性&lt;br&gt;4.3.不同的个体&lt;br&gt;5.复杂类&lt;br&gt;5.1.集合操作&lt;br&gt;5.2.枚举类&lt;br&gt;5.3.不相交类&lt;br&gt;6.本体版本&lt;br&gt;7.使用举例&lt;br&gt;7.1.关于酒的门户网站&lt;br&gt;7.2.关于酒的主体（Agent）  &lt;/p&gt;
+&lt;h1 id=&quot;1-引言&quot;&gt;&lt;a href=&quot;#1-引言&quot; class=&quot;headerlink&quot; title=&quot;1.引言&quot;&gt;&lt;/a&gt;1.引言&lt;/h1&gt;&lt;p&gt;“告诉我我应该买什么酒提供给下列菜单的每道菜，随便说一下，我不喜欢苏特恩白葡萄酒”。&lt;/p&gt;
+&lt;p&gt;目前构造一个能够查找满足这个查询的酒的Web代理会是困难的。类似地，考虑派给软件代理一个做出合理的旅行安排的任务（更多的用例，参考OWL需求文档）。&lt;/p&gt;
+&lt;p&gt;为了支持这种计算，不仅仅用关键词而是说明Web上描述的资源的含义是必要的。这个额外的解释层表述了数据的“语义”。&lt;/p&gt;
+&lt;p&gt;Web本体语言OWL是一种定义和实例化“Web本体”的语言。“本体”这个术语来自于哲学，它是研究世界上的各种实体以及他们是怎么关联的科学。一个“Web本体”可能包含了类，属性和他们的实例的描述。给出这样的一个本体，OWL形式语义说明怎么获得它的逻辑结论，也就是说，不是逐字写在本体中的事实，而是语义蕴涵的事实。这些蕴涵可以是基于单个的文档也或利用OWL机制合并在一起的多个分布的文档。&lt;/p&gt;
+&lt;p&gt;本文档是W3CWeb本体工作组（WebOnt）制定的Web本体语言的描述的一部分。 OWL综述([Overview], 1.1)的文档指南 部分描述了不同部分的文档以及他们怎样结合的。&lt;/p&gt;
+&lt;p&gt;当描述另外一个XML/Web标准时，有一个问题会冒出来：这个标准给了我什么XML和XML Schema不能给的。这个问题有两个答案。&lt;/p&gt;
+&lt;p&gt;本体和XML Schema的区别是它是一种知识表示，而不是一种消息格式。大多数来自工业界的Web标准包含了一个消息格式和协议规范的组合。这些格式已经被给予一个操作语义，例如，”一旦收到订单（PurchaseOrder）的消息，从AccountFrom账号转移Amount数量的美元到AccountTo账号，并且发货(Product)”，但是这些规范并没有设计为支持此事务上下文之外的推理。例如，一般来说，没有机制让我们推出：因为这个产品的类型是夏敦埃酒（Chardonnay，一种无甜味白葡萄酒），它必定也是一种白色酒。&lt;/p&gt;
+&lt;p&gt;OWL本体的一个优点是会有能够对其做推理的工具。这些工具提供了不特定于某个主题领域的通用支持，而如果要构建一个能对一个特定的工业界标准XML Schema做推理的系统，它往往是特定于一个领域的。构建一个可靠的和有用的推理系统不是一项简单的工作。而创建一个本体则更为容易处理。我们的期望就是很多团体会着手本体创建。他们会得益于基于OWL语言的形式属性的第三方工具，这些工具提供了多种多样的能力，而这些能力是大部分组织难以复制的。&lt;/p&gt;
+&lt;p&gt;1.1. OWL的种类&lt;/p&gt;
+&lt;p&gt;OWL提供了三种表达能力递增的子语言，以分别用于特定的实现者和用户团体。&lt;/p&gt;
+&lt;p&gt;OWL Lite用于提供给那些只需要一个分类层次和简单约束的用户。例如，虽然OWL Lite支持支持基数限制，但只允许基数为0或1。提供支持OWL Lite的工具应该比支持表达能力更强的其他OWL语言更简单，并且从辞典（thesauri）和分类系统（taxonomy）转换到OWL Lite更为迅速。&lt;/p&gt;
+&lt;p&gt;OWL DL 支持那些需要最强表达能力的推理系统的用户，且这个推理系统能够保证计算的完全性（computational completeness，即所有的结论都能够保证被计算出来）和可判定性（decidability，即所有的计算都在有限的时间内完成）。它包括了OWL语言的所有成分，但有一定的限制，如类型的分离（一个类不能同时是一个个体或属性，一个属性不能同时是一个个体或类）。OWL DL 这么命名是因为它对应于[描述逻辑]，这是一个研究一阶逻辑的一个特定可判定片断的领域。OWL DL旨在支持已有的描述逻辑商业处理（business segment）和具有良好计算性质的推理系统。&lt;/p&gt;
+&lt;p&gt;OWL Full 支持那些需要尽管没有可计算性保证，但有最强的表达能力和完全自由的RDF语法的用户。例如，在OWL Full中，一个类可以被同时看为许多个体的一个集合以及本身作为一个个体。另外一个和OWL DL的重要区别是owl:DatatypeProperty（数据类型属性）能作为一个owl:InverseFunctionalProperty（逆函数型属性）。OWL full允许一个本体增加预定义的（RDF、OWL）词汇的含义。这样，不太可能有推理软件能支持对OWL FULL的所有成分的完全推理。&lt;/p&gt;
+&lt;p&gt;在表达能力和推理能力上，每个子语言都是前面的语言的扩展。这三种子语言之间有如下关系成立，但这些关系反过来并不成立。&lt;/p&gt;
+&lt;p&gt;每个合法的OWL Lite本体都是一个合法的OWL DL本体；&lt;br&gt;每个合法的OWL DL本体都是一个合法的OWL Full本体；&lt;br&gt;每个有效的OWL Lite结论都是一个有效的OWL DL结论；&lt;br&gt;每个有效的OWL DL结论都是一个有效的OWL Full结论。&lt;br&gt;使用OWL的本体开发者要考虑哪种语言最符合他们的需求。选择OWL Lite还是OWL DL主要取决于用户在多大程度上需要OWL DL提供的表达能力更强的成分。OWL Lite的推理机会有良好的计算性质。而OWL DL的推理机处理的尽管是一个可判定的子语言，会有更高的最坏情况复杂度。选择OWL DL还是OWL Full主要取决于用户在多大程度上需要RDF的元模型机制（如定义关于类的类）；使用OWL Full相比于OWL DL，对推理的支持是更难预测的。关于此问题的更多信息参考OWL语义文档。&lt;/p&gt;
+&lt;p&gt;用户在把RDF文档转换到OWL DL或OWL Lite文档时必须谨慎，以保证原来的RDF文档是否满足 OWL DL 或OWL Lite对RDF的一些附加的限制。这些限制在文档OWL参考的附录E中有详细的解释。&lt;/p&gt;
+&lt;p&gt;当我们介绍只在 OWL DL或 OWL Full中允许的构词（construct）时，他们被标记为”[OWL DL]”。&lt;/p&gt;
+&lt;p&gt;1.2. 本文档的结构&lt;/p&gt;
+&lt;p&gt;为了在这个指南中提供一个一致的例子，我们创建了一个关于酒和食物的本体。它是一个OWL DL本体。我们有些讨论会集中于OWL Full的表达能力，因此会标注出来。这个酒和食物本体是对历史悠久的DAML本体库中的一个元素 的重大修改而成的。它最初由McGuinness作为一个描述逻辑CLASSIC的例子开发的，后来扩充为一个描述逻辑教程和一个本体教程。&lt;/p&gt;
+&lt;p&gt;在这个文档中，我们假设大部分读者熟悉XML，因此用RDF/XML语法表示例子([RDF], 5)。标准的OWL交换语法是RDF/XML。注意OWL在设计时保持了与RDF和RDF Schema的最大兼容性。这些XML和RDF格式是OWL标准的一部分。&lt;/p&gt;
+&lt;p&gt;本文档中引进的所有例子都是从本体wine.rdf 和 food.rdf中摘取的，除了那些在右下角用 ?  标注的。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;本体的结构&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;OWL是语义网活动的一个组成部分。这项工作的目的是通过对增加关于那些描述或提供网络内容的资源的信息，从而使网络资源能够更容易地被那些自动进程访问。由于语义网络固有的分布性，OWL必须允许信息能够从分布的信息源收集起来。其中，允许本体间相互联系，包括明确导入其他本体的信息，能够部分实现这样的功能。&lt;/p&gt;
+&lt;p&gt;另外，OWL提出了一个开放世界的假设。也就是说，对资源的描述并不局限于在一个简单的文件或范围内。类C1本来是由本体O1定义出来的，然而，它也可以是由其他的本体扩展出来的。对C1进行这样的假设的结果是单调的。新的信息不能否定之前的信息。新的信息可以是和旧的信息矛盾的，但是事实和推导只能被增加而不能被删减。&lt;/p&gt;
+&lt;p&gt;当设计一个本体的时候，设计者必须考虑到这种矛盾的可能性。一种期望是，工具的支持将帮助侦测到这样的情况。&lt;/p&gt;
+&lt;p&gt;为了能写出一个能被唯一翻译的而且能被软件（代理）使用的本体，我们要求OWL有一个语法和正规的语义。OWL是RDF的一个词汇扩充[RDF语义(&lt;a href=&quot;http://www.w3.org/TR/rdf-mt/)]。在OWL网络本体语言语义和简明语法中，有OWL的语义定义。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.w3.org/TR/rdf-mt/)]。在OWL网络本体语言语义和简明语法中，有OWL的语义定义。&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2.1. 命名空间&lt;/p&gt;
+&lt;p&gt;在我们使用一组术语之前，我们需要一个精确地指出哪些具体的词汇表将被用到。一个标准的本体开头部分里包括一组XML命名空间（namespace）声明（被包含在rdf:RDF标签里）。这些命名空间声明提供了一种无歧义地解释标识符的方式，并使得剩余的本体表示具有更强的可读性。一个典型的OWL本体以一个命名空间声明（namespace declaration）开始（就像下面的例子那样）。当然，被定义本体的URIs未必都是w3.org的。&lt;/p&gt;
+ &lt;rdf:rdf xmlns=&quot;http://www.w3.org/TR/2004/REC-owl-guide-20040210/wine#&quot; xmlns:vin=&quot;http://www.w3.org/TR/2004/REC-owl-guide-20040210/wine#&quot; xml:base=&quot;http://www.w3.org/TR/2004/REC-owl-guide-20040210/wine#&quot; xmlns:food=&quot;http://www.w3.org/TR/2004/REC-owl-guide-20040210/food#&quot; xmlns:owl=&quot;http://www.w3.org/2002/07/owl#&quot; xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot; xmlns:rdfs=&quot;http://www.w3.org/2000/01/rdf-schema#&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema#&quot;&gt;
+
+
+&lt;p&gt;前两个声明标识了与该本体相关的命名空间。第一个声明指定了缺省命名空间，即表明所有无前缀的限定名（qualified names）都出自当前本体。第二个声明为当前本体指定了前缀 vin:。第三个声明为当前文档（参见下文）指定了基准URI（base URI）。第四个声明指出食物（food）本体将用前缀food:来标识。&lt;/p&gt;
+&lt;p&gt;第五个命名空间声明指出，在当前文档中，前缀为owl:的元素应被理解是对出自&lt;a href=&quot;http://www.w3.org/2002/07/owl#中的事物的引用。这是引入OWL词汇表的惯例用法。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.w3.org/2002/07/owl#中的事物的引用。这是引入OWL词汇表的惯例用法。&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;OWL要依赖RDF、RDFS以及XML Schema数据类型中的构词（constructs）。在本文档中，rdf:前缀表明事物出自命名空间 &lt;a href=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#。接下来的两个命名空间声明分别为RDF&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.w3.org/1999/02/22-rdf-syntax-ns#。接下来的两个命名空间声明分别为RDF&lt;/a&gt; Schema和XML Schema数据类型指定前缀rdfs:和xsd:。&lt;/p&gt;
+&lt;p&gt;为帮助书写冗长的URLs，在本体的定义之前，在文档类型声明（DOCTYPE）中提供一些实体定义（entity definitions）常常是很有用的。这些被命名空间声明定义的名称仅当作为XML标签的一部分时才具有意义。属性值（attribute values）是不具有命名空间的。但是在OWL里，我们经常要用属性值来引用本体标识符。我们可以写出它们的完整URI形式，比如“&lt;a href=&quot;http://www.w3.org/TR/2004/REC-owl-guide-20040210/wine#merlot”。或者，利用实体定义来简略URI的书写，例如：&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.w3.org/TR/2004/REC-owl-guide-20040210/wine#merlot”。或者，利用实体定义来简略URI的书写，例如：&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt; &amp;lt;!DOCTYPE rdf:RDF [&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;!ENTITY vin  &amp;quot;http://www.w3.org/TR/2004/REC-owl-guide-20040210/wine#&amp;quot; &amp;gt;
+
+&amp;lt;!ENTITY food &amp;quot;http://www.w3.org/TR/2004/REC-owl-guide-20040210/food#&amp;quot; &amp;gt; ]&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在声明这些实体后，我们可以将“&amp;vin;merlot”作为“&lt;a href=&quot;http://www.w3.org/TR/2004/REC-owl-guide-20040210/wine#merlot”的简写。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.w3.org/TR/2004/REC-owl-guide-20040210/wine#merlot”的简写。&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;更为重要的是，这样rdf:RDf命名空间声明可以被简化，并且只需对实体声明作修改即可在整个本体范围内应用URI的变化。&lt;/p&gt;
+ &lt;rdf:rdf xmlns=&quot;&amp;vin;&quot; xmlns:vin=&quot;&amp;vin;&quot; xml:base=&quot;&amp;vin;&quot; xmlns:food=&quot;&amp;food;&quot; xmlns:owl=&quot;http://www.w3.org/2002/07/owl#&quot; xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot; xmlns:rdfs=&quot;http://www.w3.org/2000/01/rdf-schema#&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema#&quot;&gt;
+
+
+&lt;p&gt;2.2. 本体头部&lt;/p&gt;
+&lt;p&gt;建立了命名空间后，接下来我们通常要在owl:Ontology标签里给出一组关于本体的声明。这些标签支持一些重要的常务工作比如注释、版本控制以及其他本体的嵌入等。&lt;/p&gt;
+ &lt;owl:ontology rdf:about=&quot;&quot;&gt;
+
+&lt;p&gt;   &lt;rdfs:comment&gt;An example OWL ontology&lt;/rdfs:comment&gt;&lt;/p&gt;
+   &lt;owl:priorversion rdf:resource=&quot;http://www.w3.org/TR/2003/PR-owl-guide-20031215/wine&quot;&gt;
+
+   &lt;owl:imports rdf:resource=&quot;http://www.w3.org/TR/2004/REC-owl-guide-20040210/food&quot;&gt;
+
+&lt;p&gt;   &lt;rdfs:label&gt;Wine Ontology&lt;/rdfs:label&gt;&lt;/p&gt;
+&lt;p&gt;   …&lt;/p&gt;
+&lt;p&gt;注意：我们使用“…”表明这里有一些文本被略去了。&lt;/p&gt;
+&lt;p&gt;owl:Ontology元素是用来收集关于当前文档的OWL元数据的。它不确保文档描述一个传统意义的本体。在某些圈子里，本体不是关于个体的，而是仅仅关于某个领域的类和属性的。在使用OWL来描述一个实例数据集合时，owl:Ontology标签也许会被需要用来记录版本信息，和导入文档所依赖的一些定义。因此，在OWL里，本体一词被放宽了，已包含实例数据（如上文）。&lt;/p&gt;
+&lt;p&gt;rdf:about属性为本体提供一个名称或引用。根据标准，当rdf:about属性的值为””时，本体的名称是owl:Ontology元素的基准URI。典型地，这是一个包含本体的文档的URI。在使用了xml:base的上下文中则是一个特殊情况，这时owl:Ontology元素的基准URI也许会被设为其他URI。&lt;/p&gt;
+&lt;p&gt;rdfs:comment提供了显然必须的为本体添加注解的能力。&lt;/p&gt;
+&lt;p&gt;owl:priorVersion是一个为用于本体的版本控制系统提供相关信息（hook）的标准标签。本体的版本控制将在后面作进一步讨论。&lt;/p&gt;
+&lt;p&gt;owl:imports提供了一种嵌入机制。owl:imports接受一个用rdf:resource属性标识的参数。&lt;/p&gt;
+&lt;p&gt;导入另一个本体将把那个本体中的全部声明引入到当前本体中。为了充分利用好这一机制，通常要与命名空间声明结合使用。请注意这两种机制的区别。命名空间声明提供的是一种方便对其他本体定义的名称进行引用的方法。概念上，owl:imports用于表明包含目标本体中的声明。在导入另一个本体02时，在02中导入的其他本体也将被导入。&lt;/p&gt;
+&lt;p&gt;注意：owl:imports并不是总能成功的。正如你所料的，在涉及语义网时，对分布在Web上的资源的访问也许是不可及的。在这种情况下，工具的响应是与具体实现相关的。&lt;/p&gt;
+&lt;p&gt;注意：不必为了使用OWL本体词汇，而导入owl.rdf本体。实际上，这样导入是不推荐的。&lt;/p&gt;
+&lt;p&gt;一个理想的可被嵌入的标签集合是部分标准的Dublin Core元数据标签。该子集包含一些值为简单类型或字符串的标签。比如：Title, Creator, Description, Publisher和Date等（参见RDF声明）。&lt;/p&gt;
+&lt;p&gt;被用作注解的属性（properties）应用owl:AnnotationProperty来声明。例如&lt;/p&gt;
+ &lt;owl:annotationproperty rdf:about=&quot;&amp;dc;creator&quot;&gt;
+
+
+&lt;p&gt;OWL提供了若干其他的机制来将当前本体与被导入本体相关联（参见本题映射部分）。&lt;br&gt;我们也可以用rdfs:label来对本体进行自然语言标注。&lt;/p&gt;
+&lt;p&gt;本体头部定义在下列标签处结束：&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;&lt;/owl:annotationproperty&gt;&lt;/owl:imports&gt;&lt;/owl:priorversion&gt;&lt;/owl:ontology&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;在这段开头之后跟随的是构成本体的实际定义，最终由&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;&lt;/rdf:rdf&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;终止。&lt;/p&gt;
+&lt;p&gt;2.3. 数据集成与隐私&lt;/p&gt;
+&lt;p&gt;OWL在表达出现在多个文档中的实例信息的能力方面，支持连接来自异源的数据。下层语义为这些数据提供推理支持，这可以产生意外的结果。特别地，owl:sameAs的表达等价的能力，可被用来表达表面上不同的个体实际上是相同的。Owl:InverseFunctionalProperty也可被用来连接个体。例如，如果一个属性，比如“SocialSecurityNumber”，是一个owl:InverseFunctionalProperty，那么两个分开的个体如果具有相同的SocialSecurityNumber属性，则可被推理出是相同的个体。当个体被这样确定为相同时，来自异源的关于这些个体的信息可以被合并。这种聚合可被用来得出不可直接从单源获得的事实。&lt;/p&gt;
+&lt;p&gt;语义网的连接来自多源的信息的能力是一个理想的、强大的特性，它可被用在许多应用中。但是合并来自多源数据的能力，加上OWL的推理能力，确实存在被误用的可能。OWL用户应对潜在的隐私问题予以警惕。具体的安全方案超出了工作组的工作范畴。一些组织正在用各种不同的安全和偏好方案来处理这些问题，比如SAML和P3P。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;基本元素（Basic Elements）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;一个OWL本体中的大部分元素是与类（class）、属性（property）[译注//这里的property也可译作“特性”]、类的实例（instance）以及这些实例间的关系有关的。本节给出应用这些元素所必需的语言成分。&lt;/p&gt;
+&lt;p&gt;3.1. 简单的类和个体&lt;/p&gt;
+&lt;p&gt;许多情况下，使用本体是为了用它进行关于个体的推理。为了在一种有效的方式下做到这一点，我们需要一种机制来描述个体所属的类以及这些个体通过类成员关系而继承得到的属性。尽管我们总能为个体声明特定的属性，但是本体的大部分能力在于基于类的推理。&lt;/p&gt;
+&lt;p&gt;有时，我们希望强调区分一个类是作为对象还是作为包含元素的集合。我们称由属于某个类的个体所构成的集合为该类的外延（extension）。&lt;/p&gt;
+&lt;p&gt;3.1.1. 简单的具名类&lt;br&gt;Class, rdfs:subClassOf&lt;br&gt;一个领域中的最基本概念应分别对应于各个分类层次树的根。OWL中的所有个体都是类owl:Thing的成员。因此，各个用户自定义的类都隐含地是owl:Thing的一个子类。要定义特定领域的根类，只需将它们声明为一个具名类（named class）即可。OWL也可以定义空类，owl:Nothing。&lt;/p&gt;
+&lt;p&gt;在我们所举的葡萄酒领域的例子中，我们创建三个根类：Winery，Region和ConsumableThing。&lt;/p&gt;
+ &lt;owl:class rdf:id=&quot;Winery&quot;&gt;
+
+ &lt;owl:class rdf:id=&quot;Region&quot;&gt;
+
+ &lt;owl:class rdf:id=&quot;ConsumableThing&quot;&gt;
+
+
+&lt;p&gt;注意：我们只是说这里有三个具有指定名称（通过语法“rdf:ID=”）的类。形式上，即使我们使用了熟悉的英语单词作为标签,但我们除了知道这些类的存在以外，仍不了解任何其他关于它们的信息。而这些类尽管存在，但它们可能没有成员。就所有目前我们所知道的信息而言，将这些类分别命名为Thing1、Thing2和Thing3与命名为上述名称没有什么区别。&lt;/p&gt;
+&lt;p&gt;记住这一点很重要，即定义可以是增量的和分布式的。特别地，我们将在后面对Winery作更多的讨论。&lt;/p&gt;
+&lt;p&gt;语法 rdf:ID=”Region” 被用于引入一个名称（作为定义的一部分）。该rdf:ID属性（attribute） （[RDF]，7.2.22）类似于XML中的ID属性（attribute）。在这一文档中，我们现在可以用#Region来引用Region类，例如 rdf:resource=”#Region”。而其他的本体可以通过”&lt;a href=&quot;http://www.w3.org/TR/2004/REC-owl-guide-20040210/wine#Region&amp;quot;这一完整形式来引用该名称。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.w3.org/TR/2004/REC-owl-guide-20040210/wine#Region&amp;quot;这一完整形式来引用该名称。&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;另一种引用类的形式是用语法 rdf:about=”#Region” 来扩展对一个资源的定义。语法 rdf:about=”&amp;ont;#x” 的使用在分布式本体的创建中是一个关键要素。它允许导入x类的定义并对它进行扩展，而不需修改源定义文档，从而支持增量构建更大的本体。&lt;/p&gt;
+&lt;p&gt;现在，我们可以在其他OWL的构建中通过这些类的标识符来引用这些类。比如对于第一个类，同样也在该文档内的话,我们就可以使用相对标识符#Winery。由于其他文档可能也需要引用这个类，因此最合理的方式是提供命名空间和实体定义，在其中包含着这个类的定义文档作为定义源：&lt;/p&gt;
+&lt;p&gt; …&lt;/p&gt;
+&lt;p&gt; &amp;lt;!ENTITY vin  “&lt;a href=&quot;http://www.w3.org/TR/2004/REC-owl-guide-20040210/wine#&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.w3.org/TR/2004/REC-owl-guide-20040210/wine#&lt;/a&gt;“ &amp;gt;&lt;/p&gt;
+&lt;p&gt; &amp;lt;!ENTITY food “&lt;a href=&quot;http://www.w3.org/TR/2004/REC-owl-guide-20040210/food#&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.w3.org/TR/2004/REC-owl-guide-20040210/food#&lt;/a&gt;“ &amp;gt;&lt;/p&gt;
+&lt;p&gt; …&lt;/p&gt;
+ &lt;rdf:rdf xmlns:vin=&quot;http://www.w3.org/TR/2004/REC-owl-guide-20040210/wine#&quot; xmlns:food=&quot;http://www.w3.org/TR/2004/REC-owl-guide-20040210/food#&quot; ...=&quot;&quot;&gt;
+
+&lt;p&gt; …&lt;/p&gt;
+&lt;p&gt;给定上述定义后，我们便可以通过XML标签vin:Winery或属性（attribute）值&amp;vin;Winery来引用winery类。更确切地说，我们总可以使用资源的完整URL来引用它们，比如这里我们可以用&lt;a href=&quot;http://www.w3.org/TR/2004/REC-owl-guide-20040210/wine#Winery&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.w3.org/TR/2004/REC-owl-guide-20040210/wine#Winery&lt;/a&gt; 来引用Winery类。&lt;/p&gt;
+&lt;p&gt;rdfs:subClassOf是用于类的基本分类构造符。它将一个较具体的类与一个较一般的类关联。如果X是Y的一个子类（subclass），那么X的每个实例同时也都是Y的实例。rdfs:subClassOf关系是可传递的，即如果X是Y的一个子类，而Y又是Z的一个子类，那么X就是Z的一个子类。&lt;/p&gt;
+ &lt;owl:class rdf:id=&quot;PotableLiquid&quot;&gt;
+
+   &lt;rdfs:subclassof rdf:resource=&quot;#ConsumableThing&quot;&gt;
+
+&lt;p&gt;   …&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;&lt;/rdfs:subclassof&gt;&lt;/owl:class&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;上面，我们把PotableLiquid（可饮用的液体）定义为ConsumableThing的子类。&lt;/p&gt;
+&lt;p&gt;在基于Web的本体世界中，这两个类可定义在一个分散的本体中，而这个本体又可以作为各种不同的食物和饮料本体的基础。我们已在食物(food)本体中定义了各种不同的食物和饮料本体，并将该食物本体导入葡萄酒（wine）本体中。食物本体中包含了许多类，如Food、EdibleThing、MealCourse和Shellfish等不属于葡萄酒的事物，但是如果要做有用的推理，则必须将它们与葡萄酒本体中的词汇相关联。为了满足我们识别葡萄酒/食物对的需求，食物和葡萄酒本体是彼此独立的。&lt;/p&gt;
+&lt;p&gt;一个类的定义由两部分组成：引入或引用一个名称，以及一个限制列表。被直接包含在类定义中的各个表达式进一步限制了该类的实例，该类的实例属于所有这些限制的交集。（这里描述的是成为某个类的必要条件，关于描述成为某个类的充分必要条件，请参见owl:equivalentClass部分。）到目前为止，我们所看到的例子均为只包含单个限制：强制被描述的新类为某个其它具名类（named class）的子类。&lt;/p&gt;
+&lt;p&gt;至此，我们可以为Wine类创建一个简单的（和不完整的）定义。Wine是一个PortableLiquid。同时，我们将Pasta定义为一个EdibleThing。&lt;/p&gt;
+ &lt;owl:class rdf:id=&quot;Wine&quot;&gt;
+
+   &lt;rdfs:subclassof rdf:resource=&quot;&amp;food;PotableLiquid&quot;&gt;
+
+&lt;p&gt;   &lt;rdfs:label xml:lang=&quot;en&quot;&gt;wine&lt;/rdfs:label&gt;&lt;/p&gt;
+&lt;p&gt;   &lt;rdfs:label xml:lang=&quot;fr&quot;&gt;vin&lt;/rdfs:label&gt;&lt;/p&gt;
+&lt;p&gt;   …  &lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;&lt;/rdfs:subclassof&gt;&lt;/owl:class&gt;&lt;p&gt;&lt;/p&gt;
+ &lt;owl:class rdf:id=&quot;Pasta&quot;&gt;
+
+   &lt;rdfs:subclassof rdf:resource=&quot;#EdibleThing&quot;&gt;
+
+&lt;p&gt;   …&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;&lt;/rdfs:subclassof&gt;&lt;/owl:class&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;rdfs:label是可选的，它为该类提供一个人类可读的名称。负责呈现的工具可以利用这个元素。“lang”属性为多语言提供了支持。一个label（标号）就像一个注释，不向本体的逻辑解释添加任何内容。&lt;/p&gt;
+&lt;p&gt;葡萄酒的定义仍然是不完整的。我们除了知道葡萄酒是一种事物并且适于饮用以外，对它别无所知。但我们有足够的信息来创建个体和对个体进行推理。&lt;/p&gt;
+&lt;p&gt;3.1.2. 个体&lt;br&gt;除了描述类，我们还希望能够描述类的成员。我们通常认为类的成员是我们所关心的范畴中的一个个体（而不是另一个类或属性）。要引入一个个体（individual），只需将它们声明为某个类的成员。&lt;/p&gt;
+ &lt;region rdf:id=&quot;CentralCoastRegion&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;注意：下面代码的含义与上面的例子相同。&lt;br&gt;&lt;br&gt; &lt;owl:thing rdf:id=&quot;CentralCoastRegion&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt; &lt;owl:thing rdf:about=&quot;#CentralCoastRegion&quot;&gt;&lt;br&gt;&lt;br&gt;    &lt;rdf:type rdf:resource=&quot;#Region&quot;&gt;&lt;br&gt;&lt;br&gt; &lt;/rdf:type&gt;&lt;/owl:thing&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;rdf:type是一个RDF属性（RDF property），用于关联一个个体和它所属的类。&lt;br&gt;&lt;br&gt;这里有一些注意点。首先，我们已经决定CentralCoastRegion（一个特定的区域）是Region的成员。这里的Region类包含所有地理上的区域。其次，对于上述这一由两个元素构成的示例，并没有要求这两个陈述必须是相邻的、或必须位于同一文件中（尽管这些名字在这种情况下需要扩充一个URI）。Web本体被设计成为分布式的，我们可以通过导入和补充已有的本体来创建衍生的本体。&lt;br&gt;&lt;br&gt;为了得到更多的类用于将在下一节引入的属性，我们定义了一个Grape（葡萄）的层次分类以及一个代表Cabernet Sauvignon品种的葡萄的个体。Grapes在食物本体中是这样定义的：&lt;br&gt;&lt;br&gt; &lt;owl:class rdf:id=&quot;Grape&quot;&gt;&lt;br&gt;&lt;br&gt;   …&lt;br&gt;&lt;br&gt; &lt;/owl:class&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;接着，我们在葡萄酒本体中有：&lt;br&gt;&lt;br&gt; &lt;owl:class rdf:id=&quot;WineGrape&quot;&gt;&lt;br&gt;&lt;br&gt;   &lt;rdfs:subclassof rdf:resource=&quot;&amp;food;Grape&quot;&gt;&lt;br&gt;&lt;br&gt; &lt;/rdfs:subclassof&gt;&lt;/owl:class&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt; &lt;winegrape rdf:id=&quot;CabernetSauvignonGrape&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;正如下一节将要讨论的，CabernetSauvignonGrape是一个个体，因为它代表的是某个单个葡萄品种。&lt;br&gt;&lt;br&gt;3.1.3. 使用方面的考虑&lt;br&gt;关于OWL中类与个体的区别，有一些重要的问题。一个类仅是一个名称和一些描述某集合内个体的属性；而个体是该集合的成员。因此，类应自然地对应于与某论域中的事物的出现集合，而个体应对应于可被归入这些类的实际的实体。&lt;br&gt;&lt;br&gt;在构建本体时，这个区别常常变得模糊不清，主要有两种情况：&lt;br&gt;&lt;br&gt;表示的层次： 在某些上下文中，某些事物明显是一个类，但同时其本身又可被视为另一个事物的实例。例如：在葡萄酒本体中，我们有Grape的概念，它是代表所有葡萄品种的集合。CabernetSauvingonGrape是这个类中的一个实例，它代表Cabernet Sauvignon这一葡萄品种。但是，CabernetSauvignonGrape其自身也可被视为一个类，即代表所有实际的 Cabernet Sauvignon葡萄这一集合的类。&lt;br&gt;&lt;br&gt;子类 vs. 实例： 实例（instance-of）关系和子类（subclass）关系很容易被混淆。例如，也许看上去可以随意地将CabernetSauvignonGrape作为Grape的一个实例，而不是作为Grape的一个子类，但实际上这个决定并不是随意的。Grape类代表的是所有葡萄品种的集合，因此任何Grape的子类应代表这些品种的一个子集。因而，CabernetSauvignonGrape应被认为是Grape的一个实例，而不是一个子类。因为CabernetSauvignonGrape是一个葡萄品种，而不是一个葡萄品种的子类。&lt;br&gt;&lt;br&gt;注意：对于Wine类也同样有着上述问题。Wine类实际上代表的是所有葡萄酒种类的集合，而不是某人可以购买的瓶装葡萄酒的集合。设想在另一个本体中，各个Wine类的实例代表一个类，该类是某类葡萄酒的瓶装葡萄酒的集合。容易设想这样一个信息系统，例如一个葡萄酒商的库存系统，它需要处理各个瓶装葡萄酒。葡萄酒本体需要有把类作为实例处理的能力，以支持该解释。注意：OWL Full是允许这样表达的，这使得我们可以同时将一个葡萄酒品种的实例视为一个类，而该类的实例是瓶装葡萄酒。&lt;br&gt;&lt;br&gt;同样的，葡萄酒厂在特定年份所生产的葡萄酒将被视为佳酒。为了表达佳酒这一概念，我们必须考虑将它置于当前本体中的何处。如前所述，一个Wine类的实例代表的是某葡萄酒厂所生产的某个单个葡萄酒种类，比如FormanChardonnay。&lt;br&gt;&lt;br&gt;要表达“2000年生产的葡萄酒被视为佳酒”是有点复杂的，因为我们没有表达某种给定葡萄酒的个体的子集的能力。佳酒并不是一个新的葡萄酒种类，而是一个特殊的葡萄酒子集，即那些产于2000年的葡萄酒。一个方案是使用OWL Full，将Wine类的实例视为类，而后者的子类（子集）代表瓶装葡萄酒。另一个方案是使用变通手法，即将Vintage视为一个单独的类，Vintage的实例与代表它所属种类的Wine类相关联。例如，FormanChardonnay2000是一个Vintage类的个体，它通过vintageOf属性与Wine类的个体FormanChardonnay相关联。我们将在后面看到Vintage类的定义。&lt;br&gt;&lt;br&gt;这里需要注意的一点是，一个本体的开发应坚定地由它的预定用途所驱动。这些问题也存在于OWL Full和OWL DL之间的一个重要区别。OWL Full允许将类（class）用作实例（instance），而OWL DL不允许。由于葡萄酒本体被预定为使用OWL DL，因此不会将个体（例如FormanChardonnay等）同时作为类来看待。&lt;br&gt;&lt;br&gt;3.2. 简单属性&lt;br&gt;&lt;br&gt;如果仅允许定义层次分类，那么这个类和个体的世界也许会变得颇为无趣。属性（propertyies）使得我们可以断言关于类成员的一般事实以及关于个体的具体事实。&lt;br&gt;&lt;br&gt;3.2.1. 定义属性（Defining Properties）&lt;br&gt;ObjectProperty, DatatypeProperty, rdfs:subPropertyOf, rdfs:domain, rdfs:range&lt;br&gt;一个属性是一个二元关系。有两种类型的属性：&lt;br&gt;数据类型属性（datatype properties），类实例与RDF文字或XML Schema数据类型间的关系。&lt;br&gt;对象属性（object properties），两个类的实例间的关系。注意：对象属性这个名称并不是要反映与RDF术语rdf:object（[RDF]，5.3.4）的联系。&lt;br&gt;&lt;br&gt;在我们定义一个属性的时候，有一些对该二元关系施加限定的方法。我们可以指定定义域（domain）和值域（range）。可以将一个属性定义为某个已有属性的特殊化（子属性）。要进行更详细的限定也是可能的，我们将在后面对此作出介绍。&lt;br&gt;&lt;br&gt; &lt;owl:objectproperty rdf:id=&quot;madeFromGrape&quot;&gt;&lt;br&gt;&lt;br&gt;   &lt;rdfs:domain rdf:resource=&quot;#Wine&quot;&gt;&lt;br&gt;&lt;br&gt;   &lt;rdfs:range rdf:resource=&quot;#WineGrape&quot;&gt;&lt;br&gt;&lt;br&gt; &lt;/rdfs:range&gt;&lt;/rdfs:domain&gt;&lt;/owl:objectproperty&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt; &lt;owl:objectproperty rdf:id=&quot;course&quot;&gt;&lt;br&gt;&lt;br&gt;   &lt;rdfs:domain rdf:resource=&quot;#Meal&quot;&gt;&lt;br&gt;&lt;br&gt;   &lt;rdfs:range rdf:resource=&quot;#MealCourse&quot;&gt;&lt;br&gt;&lt;br&gt; &lt;/rdfs:range&gt;&lt;/rdfs:domain&gt;&lt;/owl:objectproperty&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;在OWL中，不含显式操作符的元素序列代表一个隐式的合取（conjunction）。属性madeFromGrape的定义域（domain）为Wine，且值域（range）为WineGrape。也就是说，它把Wine类的实例关联到WineGrape类的实例。为同一属性声明多个定义域表明该属性的定义域是所有这些类的交集（多个值域声明也类似这样）。&lt;br&gt;&lt;br&gt;同样地，属性course将一个Meal与MealCourse相关联。&lt;br&gt;&lt;br&gt;注意：OWL中值域和定义域信息的使用与程序设计语言中的类型信息有所不同。在程序设计中，类型被用来检查程序设计语言的一致性。而在OWL中，一个值域可被用来推断一个类型。比如，根据下面这段代码：&lt;br&gt;&lt;br&gt; &lt;owl:thing rdf:id=&quot;LindemansBin65Chardonnay&quot;&gt;&lt;br&gt;&lt;br&gt;   &lt;madefromgrape rdf:resource=&quot;#ChardonnayGrape&quot;&gt;&lt;br&gt;&lt;br&gt; &lt;/madefromgrape&gt;&lt;/owl:thing&gt;                                              ┐&lt;br&gt;&lt;br&gt;&lt;br&gt;我们可以推断出，LindemansBin65Chardonnay是一种葡萄酒，因为madeFromGrape的定义域为Wine。&lt;br&gt;&lt;br&gt;属性也可以像类一样按照层次结构来组织。&lt;br&gt;&lt;br&gt; &lt;owl:class rdf:id=&quot;WineDescriptor&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt; &lt;owl:class rdf:id=&quot;WineColor&quot;&gt;&lt;br&gt;&lt;br&gt;   &lt;rdfs:subclassof rdf:resource=&quot;#WineDescriptor&quot;&gt;&lt;br&gt;&lt;br&gt;   …&lt;br&gt;&lt;br&gt; &lt;/rdfs:subclassof&gt;&lt;/owl:class&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt; &lt;owl:objectproperty rdf:id=&quot;hasWineDescriptor&quot;&gt;&lt;br&gt;&lt;br&gt;   &lt;rdfs:domain rdf:resource=&quot;#Wine&quot;&gt;&lt;br&gt;&lt;br&gt;   &lt;rdfs:range rdf:resource=&quot;#WineDescriptor&quot;&gt;&lt;br&gt;&lt;br&gt; &lt;/rdfs:range&gt;&lt;/rdfs:domain&gt;&lt;/owl:objectproperty&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt; &lt;owl:objectproperty rdf:id=&quot;hasColor&quot;&gt;&lt;br&gt;&lt;br&gt;   &lt;rdfs:subpropertyof rdf:resource=&quot;#hasWineDescriptor&quot;&gt;&lt;br&gt;&lt;br&gt;   &lt;rdfs:range rdf:resource=&quot;#WineColor&quot;&gt;&lt;br&gt;&lt;br&gt;   …&lt;br&gt;&lt;br&gt; &lt;/rdfs:range&gt;&lt;/rdfs:subpropertyof&gt;&lt;/owl:objectproperty&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;WineDescriptor属性将葡萄酒（wine）与它们的颜色（color）和味觉成分（包括甜、浓、口味）相关联。hasColor是hasWineDescriptor的子属性，hasColor与hasWineDescriptor的不同在于它的值域被进一步限定为WineColor。rdfs:subPropertyOf关系表示：任何事物如果具有一个值为X的hasColor属性，那么它同时具有一个值为X的hasWineDescriptor属性。&lt;br&gt;&lt;br&gt;下面，我们介绍locatedIn属性，它将事物和事物所在的地区相关联。&lt;br&gt;&lt;br&gt; &lt;owl:objectproperty rdf:id=&quot;locatedIn&quot;&gt;&lt;br&gt;&lt;br&gt;   …&lt;br&gt;&lt;br&gt;   &lt;rdfs:domain rdf:resource=&quot;http://www.w3.org/2002/07/owl#Thing&quot;&gt;&lt;br&gt;&lt;br&gt;   &lt;rdfs:range rdf:resource=&quot;#Region&quot;&gt;&lt;br&gt;&lt;br&gt; &lt;/rdfs:range&gt;&lt;/rdfs:domain&gt;&lt;/owl:objectproperty&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;请注意是如何定义locateIn的定义域和值域的。该定义域定义允许任何事物被值域某个区域中，包括该区域自身。这一关系的传递的组合本质上构建了一个包含子区域和事物的地理网络。没有包含其他事物于其中的那些事物可以属于任意类,而包含其他事物或者区域的那些事物则必须是区域。&lt;br&gt;&lt;br&gt;现在可以扩展Wine的定义来表达“一个葡萄酒是由至少一种WineGrape制成的”了。和属性定义一样，类定义也由多个隐含相联的部分组成。&lt;br&gt;&lt;br&gt; &lt;owl:class rdf:id=&quot;Wine&quot;&gt;&lt;br&gt;&lt;br&gt;   &lt;rdfs:subclassof rdf:resource=&quot;&amp;food;PotableLiquid&quot;&gt;&lt;br&gt;&lt;br&gt;   &lt;rdfs:subclassof&gt;&lt;br&gt;&lt;br&gt;   &lt;owl:restriction&gt;&lt;br&gt;      &lt;owl:onproperty rdf:resource=&quot;#madeFromGrape&quot;&gt;&lt;br&gt;      &lt;owl:mincardinality rdf:datatype=&quot;&amp;xsd;nonNegativeInteger&quot;&gt;1&lt;/owl:mincardinality&gt;&lt;br&gt;   &lt;/owl:onproperty&gt;&lt;/owl:restriction&gt;&lt;br&gt;   &lt;/rdfs:subclassof&gt;&lt;br&gt;&lt;br&gt;   …&lt;br&gt;&lt;br&gt; &lt;/rdfs:subclassof&gt;&lt;/owl:class&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;上述被高亮的子类限定&lt;br&gt;&lt;br&gt;     &lt;owl:restriction&gt;&lt;br&gt;&lt;br&gt;       &lt;owl:onproperty rdf:resource=&quot;#madeFromGrape&quot;&gt;&lt;br&gt;&lt;br&gt;       &lt;owl:mincardinality rdf:datatype=&quot;&amp;xsd;nonNegativeInteger&quot;&gt;1&lt;/owl:mincardinality&gt;&lt;br&gt;&lt;br&gt;     &lt;/owl:onproperty&gt;&lt;/owl:restriction&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;定义了一个无名类（unnamed class），该无名类代表至少具有一个madeFromGrape属性的事物集合。我们称这些类为匿名类。在Wine类的定义中包含该限定表明属于Wine类的事物，也是该匿名类的成员。也就是说，任何葡萄酒都必须参与至少一个madeFromGrape关系。&lt;br&gt;&lt;br&gt;现在，我们可以描述前面所提到的Vintage类了。&lt;br&gt;&lt;br&gt; &lt;owl:class rdf:id=&quot;Vintage&quot;&gt;&lt;br&gt;&lt;br&gt;   &lt;rdfs:subclassof&gt;&lt;br&gt;&lt;br&gt;     &lt;owl:restriction&gt;&lt;br&gt;&lt;br&gt;       &lt;owl:onproperty rdf:resource=&quot;#vintageOf&quot;&gt;&lt;br&gt;&lt;br&gt;       &lt;owl:mincardinality rdf:datatype=&quot;&amp;xsd;nonNegativeInteger&quot;&gt;1&lt;/owl:mincardinality&gt;&lt;br&gt;&lt;br&gt;     &lt;/owl:onproperty&gt;&lt;/owl:restriction&gt;&lt;br&gt;&lt;br&gt;   &lt;/rdfs:subclassof&gt;&lt;br&gt;&lt;br&gt; &lt;/owl:class&gt;                                              ┐&lt;br&gt;&lt;br&gt;&lt;br&gt;vintageOf属性将一个Vintage关联到Wine。&lt;br&gt;&lt;br&gt; &lt;owl:objectproperty rdf:id=&quot;vintageOf&quot;&gt;&lt;br&gt;&lt;br&gt;   &lt;rdfs:domain rdf:resource=&quot;#Vintage&quot;&gt;&lt;br&gt;&lt;br&gt;   &lt;rdfs:range rdf:resource=&quot;#Wine&quot;&gt;&lt;br&gt;&lt;br&gt; &lt;/rdfs:range&gt;&lt;/rdfs:domain&gt;&lt;/owl:objectproperty&gt;                                      ┐&lt;br&gt;&lt;br&gt;&lt;br&gt;我们将在下一节把Vintages关联到它们的生产年份。&lt;br&gt;&lt;br&gt;3.2.2. 属性和数据类型&lt;br&gt;根据是将个体关联到个体、还是将个体关联到数据类型，我们可以区分两类属性：前者称为对象属性（object properties）；后者称为数据类型属性（datatype properties）。数据类型属性的值域范围是RDF文字或者是XML Schema数据类型中定义的那些简单类型（simple types）。&lt;br&gt;&lt;br&gt;OWL使用XML Schema内嵌数据类型中的大部分。对这些数据类型的引用是通过对&lt;a href=&quot;http://www.w3.org/2001/XMLSchema&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.w3.org/2001/XMLSchema&lt;/a&gt; 这个URI引用进行的。下列数据类型是推荐在OWL中使用的：&lt;br&gt;&lt;br&gt; xsd:string         xsd:normalizedString     xsd:boolean&lt;br&gt;&lt;br&gt; xsd:decimal     xsd:float    xsd:double&lt;br&gt;&lt;br&gt; xsd:integer     xsd:nonNegativeInteger     xsd:positiveInteger&lt;br&gt;&lt;br&gt; xsd:nonPositiveInteger     xsd:negativeInteger&lt;br&gt;&lt;br&gt; xsd:long     xsd:int     xsd:short     xsd:byte&lt;br&gt;&lt;br&gt; xsd:unsignedLong xsd:unsignedInt xsd:unsignedShort xsd:unsignedByte&lt;br&gt;&lt;br&gt; xsd:hexBinary xsd:base64Binary&lt;br&gt;&lt;br&gt; xsd:dateTime xsd:time xsd:date xsd:gYearMonth&lt;br&gt;&lt;br&gt; xsd:gYear xsd:gMonthDay xsd:gDay xsd:gMonth&lt;br&gt;&lt;br&gt; xsd:anyURI xsd:token xsd:language&lt;br&gt;&lt;br&gt; xsd:NMTOKEN xsd:Name xsd:NCName&lt;br&gt;&lt;br&gt;&lt;br&gt;上面的数据类型，连同rdfs:Literal构成了OWL的内嵌数据类型。所有的OWL推理机都应支持xsd:integer和xsd:string数据类型。&lt;br&gt;&lt;br&gt;其他XML Schema内嵌数据类型可被在OWL Full中，但在OWL Semantics and Abstract Syntax中给出了一些警告。&lt;br&gt;&lt;br&gt; &lt;owl:class rdf:id=&quot;VintageYear&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt; &lt;owl:datatypeproperty rdf:id=&quot;yearValue&quot;&gt;&lt;br&gt;&lt;br&gt;   &lt;rdfs:domain rdf:resource=&quot;#VintageYear&quot;&gt;&lt;br&gt;&lt;br&gt;   &lt;rdfs:range rdf:resource=&quot;&amp;xsd;positiveInteger&quot;&gt;&lt;br&gt;&lt;br&gt; &lt;/rdfs:range&gt;&lt;/rdfs:domain&gt;&lt;/owl:datatypeproperty&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;yearValue属性将VintageYears与一个整数值相关联。我们将引入hasVintageYear属性，它将一个Vintage关联到一个VintageYear（如下）。&lt;br&gt;&lt;br&gt;OWL Reference（[Reference]，6.2）描述了owl:oneOf的使用、以及用rdf:List和rdf:rest来定义一个枚举数据类型，那里有个例子展示了如何构建一个值域为整数值列表{0, 15, 30, 40}的数据类型属性tennisGameScore。&lt;br&gt;3.2.3. 个体的属性&lt;br&gt;首先，我们描述Region和Winery个体，然后我们定义第一个葡萄酒Cabernet Sauvignon。&lt;br&gt;&lt;br&gt; &lt;region rdf:id=&quot;SantaCruzMountainsRegion&quot;&gt;&lt;br&gt;&lt;br&gt;   &lt;locatedin rdf:resource=&quot;#CaliforniaRegion&quot;&gt;&lt;br&gt;&lt;br&gt; &lt;/locatedin&gt;&lt;/region&gt;
+
+
+ &lt;winery rdf:id=&quot;SantaCruzMountainVineyard&quot;&gt;
+
+
+ &lt;cabernetsauvignon rdf:id=&quot;SantaCruzMountainVineyardCabernetSauvignon&quot;&gt;&lt;br&gt;&lt;br&gt;   &lt;locatedin rdf:resource=&quot;#SantaCruzMountainsRegion&quot;&gt;&lt;br&gt;&lt;br&gt;   &lt;hasmaker rdf:resource=&quot;#SantaCruzMountainVineyard&quot;&gt;&lt;br&gt;&lt;br&gt; &lt;/hasmaker&gt;&lt;/locatedin&gt;&lt;/cabernetsauvignon&gt;  
+
+
+&lt;p&gt;这仍然是不完整的。完整的本体中存在关于葡萄酒口味的其他方面的定义。但这些片断将会慢慢地揍齐为一个整体。我们不妨先开始推理葡萄酒将会与食物本体中的什么菜单项相伴。我们从上述定义得知，它将是Santa Cruz Mountain Vineyard。因为它是一种Cabernet Sauvignon（定义参见wine.rdf），我们知道它是一种干的（dry）、红色（red）葡萄酒（参见wine.rdf）。&lt;/p&gt;
+&lt;p&gt;可以用同样的方式给个体增加数据类型属性。下面，我们描述一个VintageYear的实例，并将它关联到一个特定的&amp;xsd;positiveInteger类型的值。&lt;/p&gt;
+ &lt;vintageyear rdf:id=&quot;Year1998&quot;&gt;&lt;br&gt;&lt;br&gt;   &lt;yearvalue rdf:datatype=&quot;&amp;xsd;positiveInteger&quot;&gt;1998&lt;/yearvalue&gt;&lt;br&gt;&lt;br&gt; &lt;/vintageyear&gt;
+
+
+&lt;p&gt;3.3. 属性特性&lt;/p&gt;
+&lt;p&gt;接下来的几节描述了用以进一步说明属性的机制。我们可以对属性的特性进行详细的说明，这就提供了一种强有力的机制以增强对于一个属性的推理。&lt;br&gt;3.3.1. TransitiveProperty&lt;br&gt;如果一个属性P被声明为传递属性，那么对于任意的x,y和z：&lt;/p&gt;
+&lt;p&gt;P(x,y) 与 P(y,z) 蕴含 P(x,z)&lt;/p&gt;
+&lt;p&gt;属性locatedIn是传递属性。&lt;/p&gt;
+&lt;p&gt;&lt;owl:objectproperty rdf:id=&quot;locatedIn&quot;&gt;&lt;br&gt;  &lt;rdf:type rdf:resource=&quot;&amp;owl;TransitiveProperty&quot;&gt;&lt;/rdf:type&gt;&lt;/owl:objectproperty&gt;&lt;/p&gt;
+  &lt;rdfs:domain rdf:resource=&quot;&amp;owl;Thing&quot;&gt;
+
+  &lt;rdfs:range rdf:resource=&quot;#Region&quot;&gt;
+
+&lt;p&gt;&lt;/p&gt;
+&lt;region rdf:id=&quot;SantaCruzMountainsRegion&quot;&gt;&lt;br&gt;  &lt;locatedin rdf:resource=&quot;#CaliforniaRegion&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;/locatedin&gt;&lt;/region&gt;&lt;br&gt;&lt;region rdf:id=&quot;CaliforniaRegion&quot;&gt;&lt;br&gt;  &lt;locatedin rdf:resource=&quot;#USRegion&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;/locatedin&gt;&lt;/region&gt;&lt;br&gt;因为圣克鲁斯山地区（SantaCruzMountainsRegion）位于（locatedIn）加利福尼亚地区（CaliforniaRegion），那么它也应该位于（locatedIn）美国地区（USRegion），因为属性locatedIn是传递属性。&lt;br&gt;&lt;br&gt;3.3.2. SymmetricProperty&lt;br&gt;如果一个属性P被声明为对称属性，那么对于任意的x和y：&lt;br&gt;&lt;br&gt;P(x,y)当且仅当P(y,x)&lt;br&gt;&lt;br&gt;adjacentRegion属性是对称属性，而locatedIn属性则不是。更准确地说，locatedIn属性是没有被规定为对称属性。在当前的葡萄酒本体中没有任何限制，让它不能成为对称属性。&lt;br&gt;&lt;br&gt; &lt;owl:objectproperty rdf:id=&quot;adjacentRegion&quot;&gt;&lt;br&gt;&lt;br&gt;   &lt;rdf:type rdf:resource=&quot;&amp;owl;SymmetricProperty&quot;&gt;&lt;br&gt;&lt;br&gt;   &lt;rdfs:domain rdf:resource=&quot;#Region&quot;&gt;&lt;br&gt;&lt;br&gt;   &lt;rdfs:range rdf:resource=&quot;#Region&quot;&gt;&lt;br&gt;&lt;br&gt; &lt;/rdfs:range&gt;&lt;/rdfs:domain&gt;&lt;/rdf:type&gt;&lt;/owl:objectproperty&gt;&lt;br&gt;&lt;br&gt; &lt;region rdf:id=&quot;MendocinoRegion&quot;&gt;&lt;br&gt;&lt;br&gt;   &lt;locatedin rdf:resource=&quot;#CaliforniaRegion&quot;&gt;&lt;br&gt;&lt;br&gt;   &lt;adjacentregion rdf:resource=&quot;#SonomaRegion&quot;&gt;&lt;br&gt;&lt;br&gt; &lt;/adjacentregion&gt;&lt;/locatedin&gt;&lt;/region&gt;
+
+&lt;p&gt;MendocinoRegion地区与SonomaRegion地区相邻，反过来也是这样。MendocinoRegion地区位于CaliforniaRegion地区，但是反过来并不成立。&lt;br&gt;3.3.3. FunctionalProperty&lt;br&gt;如果一个属性P被标记为函数型属性，那么对于所有的x, y, 和z:&lt;/p&gt;
+&lt;p&gt;P(x,y) 与P(x,z) 蕴含 y = z&lt;/p&gt;
+&lt;p&gt;在我们的葡萄酒本体中，hasVintageYear属性是函数型属性。一种葡萄酒有着一个特定的制造年份。也即，一个给定的Vintage个体只能使用hasVintageYear属性与单独一个年份相关联。owl:FunctionalProperty并不要求该属性的定义域的所有元素都有值。请参见关于Vintage的基数的讨论。&lt;/p&gt;
+ &lt;owl:class rdf:id=&quot;VintageYear&quot;&gt;
+
+
+ &lt;owl:objectproperty rdf:id=&quot;hasVintageYear&quot;&gt;
+
+   &lt;rdf:type rdf:resource=&quot;&amp;owl;FunctionalProperty&quot;&gt;
+
+   &lt;rdfs:domain rdf:resource=&quot;#Vintage&quot;&gt;
+
+   &lt;rdfs:range rdf:resource=&quot;#VintageYear&quot;&gt;
+
+&lt;p&gt; &lt;/p&gt;&lt;/rdfs:range&gt;&lt;/rdfs:domain&gt;&lt;/rdf:type&gt;&lt;/owl:objectproperty&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;3.3.4. inverseOf&lt;br&gt;如果一个属性P1被标记为属性P2的逆（owl:inverseOf）, 那么对于所有的x 和 y:&lt;/p&gt;
+&lt;p&gt;P1(x,y) 当且仅当P2(y,x)&lt;/p&gt;
+&lt;p&gt;请注意owl:inverseOf的语法，它仅仅使用一个属性名作为参数。A 当且仅当B 意思是 (A 蕴含 B)并且(B蕴含A).&lt;/p&gt;
+ &lt;owl:objectproperty rdf:id=&quot;hasMaker&quot;&gt;
+
+   &lt;rdf:type rdf:resource=&quot;&amp;owl;FunctionalProperty&quot;&gt;
+
+&lt;p&gt; &lt;/p&gt;&lt;/rdf:type&gt;&lt;/owl:objectproperty&gt;&lt;p&gt;&lt;/p&gt;
+ &lt;owl:objectproperty rdf:id=&quot;producesWine&quot;&gt;
+
+   &lt;owl:inverseof rdf:resource=&quot;#hasMaker&quot;&gt;
+
+&lt;p&gt; &lt;/p&gt;&lt;/owl:inverseof&gt;&lt;/owl:objectproperty&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;各种葡萄酒都有制造商，这些制造商在Wine类的定义中被限制为酿酒厂（Winery）。而每个酿酒厂生产的酒均以该酿酒厂为制造商。&lt;/p&gt;
+&lt;p&gt;3.3.5. InverseFunctionalProperty&lt;br&gt;如果一个属性P被标记为反函数型的（InverseFunctional），那么对于所有的x, y 和 z:&lt;/p&gt;
+&lt;p&gt;P(y,x) 与 P(z,x) 蕴含 y = z&lt;/p&gt;
+&lt;p&gt;我们可以注意到，在前面的章节中提到的producesWine属性是反函数型属性。因为一个函数型属性的逆必定是反函数型的。我们也能够如下定义hasMaker属性和 producesWine 属性以达到和前例中相同的效果。&lt;/p&gt;
+ &lt;owl:objectproperty rdf:id=&quot;hasMaker&quot;&gt;
+
+
+
+ &lt;owl:objectproperty rdf:id=&quot;producesWine&quot;&gt;
+
+   &lt;rdf:type rdf:resource=&quot;&amp;owl;InverseFunctionalProperty&quot;&gt;
+
+   &lt;owl:inverseof rdf:resource=&quot;#hasMaker&quot;&gt;
+
+&lt;p&gt; &lt;/p&gt;&lt;/owl:inverseof&gt;&lt;/rdf:type&gt;&lt;/owl:objectproperty&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;反函数型属性的值域中的元素可以看成是在数据库意义上定义一个唯一的键值。owl:InverseFunctional意味着属性的值域中的元素为定义域中的每个元素提供了一个唯一的标识。&lt;/p&gt;
+&lt;p&gt;在OWL Full中，DatatypeProperty属性可以被声明为一个反函数型属性。这就使得我们能够使用一个字符串作为一个唯一的键值。在OWL DL中，文字（literal）与owl:Thing是不相交的，因此OWL DL不允许将InverseFunctional属性声明应用到DatatypeProperty属性。&lt;/p&gt;
+&lt;p&gt;3.4. 属性限制&lt;/p&gt;
+&lt;p&gt;除了能够指定属性特性，我们还能够使用多种方法进一步在一个明确的上下文中限制属性的值域。这是通过“属性限制”来完成的。下面描述的多种形式仅在owl:Restriction的上下文中才能使用。owl:onProperty元素指出了受限制的属性。&lt;/p&gt;
+&lt;p&gt;3.4.1. allValuesFrom, someValuesFrom&lt;br&gt;我们已经发现了一种限制组成属性的元素的类型的方法。到现在为止，我们所讲述的机制都是全局的（global），因为这些机制都会应用到属性的所有实例。而接下来要讲述的两个属性限制机制，allValuesFrom与 someValuesFrom，则是 局部的（local），它们仅仅在包含它们的类的定义中起作用。&lt;/p&gt;
+&lt;p&gt;owl:allValuesFrom属性限制要求：对于每一个有指定属性实例的类实例，该属性的值必须是由owl:allValuesFrom从句指定的类的成员。&lt;/p&gt;
+ &lt;owl:class rdf:id=&quot;Wine&quot;&gt;
+
+   &lt;rdfs:subclassof rdf:resource=&quot;&amp;food;PotableLiquid&quot;&gt;
+
+&lt;p&gt;   …&lt;/p&gt;
+   &lt;rdfs:subclassof&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;owl:Restriction&amp;gt;
+
+  &amp;lt;owl:onProperty rdf:resource=&amp;quot;#hasMaker&amp;quot; /&amp;gt;
+
+  &amp;lt;owl:allValuesFrom rdf:resource=&amp;quot;#Winery&amp;quot; /&amp;gt;
+
+&amp;lt;/owl:Restriction&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;   &lt;/p&gt;&lt;/rdfs:subclassof&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;   …&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;&lt;/rdfs:subclassof&gt;&lt;/owl:class&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;Wine的制造商必须是Winery。allValuesFrom限制仅仅应用在Wine的hasMaker 属性上。Cheese的制造商并不受这一局部限制的约束。&lt;br&gt;owl:someValuesFrom限制与之相似。在上个例子中，如果我们用owl:someValuesFrom替换owl:allValuesFrom，那就意味着至少有一个Wine类实例的hasMaker属性是指向一个Winery类的个体的。&lt;/p&gt;
+ &lt;owl:class rdf:id=&quot;Wine&quot;&gt;
+
+   &lt;rdfs:subclassof rdf:resource=&quot;&amp;food;PotableLiquid&quot;&gt;
+
+   &lt;rdfs:subclassof&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;owl:Restriction&amp;gt;
+
+  &amp;lt;owl:onProperty rdf:resource=&amp;quot;#hasMaker&amp;quot; /&amp;gt;
+
+  &amp;lt;owl:someValuesFrom rdf:resource=&amp;quot;#Winery&amp;quot; /&amp;gt;
+
+&amp;lt;/owl:Restriction&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;   &lt;/p&gt;&lt;/rdfs:subclassof&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;   …&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;&lt;/rdfs:subclassof&gt;&lt;/owl:class&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;这两种限制形式间的不同就是全称量词与存在量词间的不同。&lt;/p&gt;
+&lt;p&gt;关系    含意&lt;br&gt;allValuesFrom    对于所有的葡萄酒，如果它们有制造商，那么所有的制造商都是酿酒厂。&lt;br&gt;someValuesFrom    对于所有的葡萄酒，它们中至少有一个的制造商是酿酒厂。&lt;br&gt;前者并不要求一种葡萄酒一定要有一个制造商。如果它确实有一个或多个制造商，那么这些制造商必须全部都是酿酒厂。后者要求至少有一个制造商是酿酒厂，但是可以存在不是酿酒厂的制造商。&lt;/p&gt;
+&lt;p&gt;3.4.2. 基数限制&lt;br&gt;在前面我们已经看到过关于基数约束的例子了。到目前为止的例子中，这些约束都是关于最小基数的所作出的断言。更为直接的方法是使用owl:cardinality，这一约束允许对一个关系中的元素数目作出精确的限制。例如，我们可以将Vintage标识为恰好含有一个VintageYear的类。&lt;/p&gt;
+ &lt;owl:class rdf:id=&quot;Vintage&quot;&gt;
+
+   &lt;rdfs:subclassof&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;owl:Restriction&amp;gt;
+
+  &amp;lt;owl:onProperty rdf:resource=&amp;quot;#hasVintageYear&amp;quot;/&amp;gt;  
+
+  &amp;lt;owl:cardinality rdf:datatype=&amp;quot;&amp;amp;xsd;nonNegativeInteger&amp;quot;&amp;gt;1&amp;lt;/owl:cardinality&amp;gt;
+
+&amp;lt;/owl:Restriction&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;   &lt;/p&gt;&lt;/rdfs:subclassof&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;&lt;/owl:class&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;我们标识hasVintageYear属性为一个函数型属性，也即意味着每个Vintage有至多一个VintageYear。而如果对Vintage类的hasVintageYear属性使用基数限制则是对其作出了更强的断言，它表明了每个Vintage有恰好一个VintageYear。&lt;/p&gt;
+&lt;p&gt;值域限制在0和1的基数表达式(Cardinality expressions)是OWL Lite的一部分。这使得用户能够表示“至少一个”，“不超过一个”，和“恰好一个”这几种意思。OWL DL中还允许使用除0与1以外的正整数值。owl:maxCardinality能够用来指定一个上界。owl:minCardinality能够用来指定一个下界。使用二者的组合就能够将一个属性的基数限制为一个数值区间。&lt;/p&gt;
+&lt;p&gt;3.4.3. hasValue [OWL DL ]&lt;br&gt;hasValue 使得我们能够根据“特定的”属性值的存在来标识类。因此，一个个体只要至少有“一个”属性值等于hasValue的资源，这一个体就是该类的成员。&lt;/p&gt;
+ &lt;owl:class rdf:id=&quot;Burgundy&quot;&gt;
+
+&lt;p&gt;   …&lt;/p&gt;
+   &lt;rdfs:subclassof&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;owl:Restriction&amp;gt;
+
+  &amp;lt;owl:onProperty rdf:resource=&amp;quot;#hasSugar&amp;quot; /&amp;gt;
+
+  &amp;lt;owl:hasValue rdf:resource=&amp;quot;#Dry&amp;quot; /&amp;gt;
+
+&amp;lt;/owl:Restriction&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;   &lt;/p&gt;&lt;/rdfs:subclassof&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;&lt;/owl:class&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;这里我们声明了所有的Burgundy酒都是干(dry)的酒。也即，它们的hasSugar属性必须至少有一个是值等于Dry（干的）。&lt;/p&gt;
+&lt;p&gt;与allValuesFrom 和someValuesFrom类似，这是一个局部的限制。它仅仅对Burgundy类的hasSugar属性作出限制。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;本体映射&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;为了让本体发挥最大的作用，就需要让本体得到充分的共享。为了使得在开发本体时尽可能的节省人力，就需要使得开发出的本体能够被重用。更理想的情况是他们能够被组合使用。例如，你可能同时使用来自某一来源的日期本体(date ontology)和来自另一来源的物理位置本体(physical location ontology),并将位置(location)的概念加以扩展以包括这个位置所处在的时间段。&lt;/p&gt;
+&lt;p&gt;在开发一个本体的过程中，很多的精力都被投入到将类与属性联系起来以获取最大的意义的工作上去了,意识到这一点也是很重要的。我们希望对类成员作出的断言较为简单同时又要求有广泛的和有用的含意在里面。这也是在本体开发过程中最为困难的工作。如果你能够找到已经经过广泛使用和精炼的本体，那么采用它才有意义。&lt;br&gt;多个本体的合并工作是非常具有挑战性的。为了维护其一致性,几乎必然需要工具的支持。&lt;/p&gt;
+&lt;p&gt;4.1. 类和属性之间的等价关系&lt;/p&gt;
+&lt;p&gt;equivalentClass, equivalentProperty&lt;/p&gt;
+&lt;p&gt;当我们要把一些本体组合在一起作为另一个新的本体的一部分时，能说明在一个本体中的某个类或者属性与另一个本体中的某个类或者属性是等价的，这往往很有用。在实际应用中我们这样做的时候要千万小心。因为如果要组合的那些本体是互相矛盾的（所有A的都是B的 与 A的并不全是B的），那么在组合得到的结果中就不会有满足条件的扩展（没有满足条件的个体或关系）了。&lt;/p&gt;
+&lt;p&gt;在食物本体中，我们现在想把在餐宴菜肴中对葡萄酒特点的描述与葡萄酒本体相联系起来。达到这一目的一种方法就是在食物本体中定义一个类(&amp;food;Wine)，然后在葡萄酒本体中将一个已有的类声明为与这个类是等价的。&lt;/p&gt;
+ &lt;owl:class rdf:id=&quot;Wine&quot;&gt;
+
+   &lt;owl:equivalentclass rdf:resource=&quot;&amp;vin;Wine&quot;&gt;
+
+&lt;p&gt; &lt;/p&gt;&lt;/owl:equivalentclass&gt;&lt;/owl:class&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;属性owl:equivalentClass被用来表示两个类有着完全相同的实例。但我们要注意，在OWL DL中，类仅仅代表着个体的集合而不是个体本身。然而在OWL FULL中，我们能够使用owl:sameAs来表示两个类在各方面均完全一致。&lt;br&gt;当然了，上面我们举的例子多少有点刻意人为的意思，因为我们总是能在本来用＃Wine的地方使用&amp;vin;Wine以取得同样的效果而不需要重新定义类。一种更可能出现的情况是：我们依赖两个独立开发的本体，并注意到他们使用了O1:foo和O2:bar这两个URI引用相同的一个类。 这时我们就能够使用owl:equivalentClass将这两个类关联起来， 使得从这两个本体中继承的限制也得到合并。&lt;/p&gt;
+&lt;p&gt;大家都知道，类名（类的表达式）既能用于&lt;rdfs:subclassof&gt;设计中，又能用于&lt;owl:equivalentclass&gt;设计中。一个类名可多处使用，既省却了命名的麻烦，又给我们提供了基于属性要求的强大的定义能力。&lt;/owl:equivalentclass&gt;&lt;/rdfs:subclassof&gt;&lt;/p&gt;
+ &lt;owl:class rdf:id=&quot;TexasThings&quot;&gt;
+
+   &lt;owl:equivalentclass&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;owl:Restriction&amp;gt;
+
+  &amp;lt;owl:onProperty rdf:resource=&amp;quot;#locatedIn&amp;quot; /&amp;gt;
+
+  &amp;lt;owl:someValuesFrom rdf:resource=&amp;quot;#TexasRegion&amp;quot; /&amp;gt;
+
+&amp;lt;/owl:Restriction&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;   &lt;/p&gt;&lt;/owl:equivalentclass&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;&lt;/owl:class&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;TexasThings指的是那些恰好位于Texas地区的事物。使用owl:equivalentClass 和使用rdfs:subClassOf 的不同就像必要条件和充要条件的不同一样。如果是使用subClassOf的话，位于Texas地区的事物不一定是TexasThings。但是，如果使用owl:equivalentClass，位于Texas地区的事物一定属于TexasThings类。&lt;/p&gt;
+&lt;p&gt;关系    蕴涵&lt;br&gt;subClassOf    TexasThings(x) implies locatedIn(x,y) and TexasRegion(y)&lt;br&gt;equivalentClass    TexasThings(x) implies locatedIn(x,y) and TexasRegion(y)&lt;br&gt;类似的，我们可以通过使用owl:equivalentProperty属性声明表达属性的等同。&lt;/p&gt;
+&lt;p&gt;4.2 个体间的同一性&lt;/p&gt;
+&lt;p&gt;sameAs&lt;/p&gt;
+&lt;p&gt;描述个体之间相同的机制与描述类之间的相同的机制类似，仅仅只要将两个个体声明成一致的就可以了。&lt;/p&gt;
+&lt;p&gt;例如这样一个例子：&lt;/p&gt;
+ &amp;lt;Wine rdf:ID=”MikesFavoriteWine&amp;gt;&lt;br&gt;&lt;br&gt;     &lt;owl:sameas rdf:resource=&quot;#StGenevieveTexasWhite&quot;&gt;&lt;br&gt;&lt;br&gt; 
+
+
+
+ &lt;wine rdf:id=&quot;MikesFavoriteWine&quot;&gt;&lt;br&gt;&lt;br&gt;   &lt;owl:sameas rdf:resource=&quot;#StGenevieveTexasWhite&quot;&gt;&lt;br&gt;&lt;br&gt; &lt;/owl:sameas&gt;&lt;/wine&gt;
+
+
+
+&lt;p&gt;在这个例子并没有什么实际意义。所有我们从中能了解到的就是Mike喜欢一种便宜的本地酒。sameAs的一种更加典型的用法是将不同文档中定义的两个个体等同起来，作为统一两个本体的部分。&lt;/p&gt;
+&lt;p&gt;但这样做带来了一个问题。OWL中并没有名称唯一这一假定。仅仅名称不同并不意味着这两个名称引用的是不同的个体。&lt;/p&gt;
+&lt;p&gt;在上面的例子中，我们对两个截然不同的名称作出一致性断言。但是也只有在这种标示的情况下，才可能进行推理。请记住那些可能从函数型属性中得出的含意。假如hasMaker是一个函数型属性，那么下面的例子就不一定会产生冲突。&lt;/p&gt;
+&lt;p&gt;&lt;owl:thing rdf:about=&quot;#BancroftChardonnay&quot;&gt;&lt;br&gt;  &lt;hasmaker rdf:resource=&quot;#Bancroft&quot;&gt;&lt;/hasmaker&gt;&lt;/owl:thing&gt;&lt;/p&gt;
+  &lt;hasmaker rdf:resource=&quot;#Beringer&quot;&gt;
+
+&lt;p&gt;&lt;/p&gt;&lt;/hasmaker&gt;&lt;/owl:sameas&gt;&lt;/owl:objectproperty&gt;&lt;/owl:class&gt;&lt;/rdfs:range&gt;&lt;/rdfs:domain&gt;&lt;/winery&gt;&lt;/owl:class&gt;&lt;/owl:class&gt;&lt;/winegrape&gt;&lt;/owl:thing&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;除非和我们本体中的其他信息发生冲突，不然的话这样的描述是没有冲突的，他说明Bancroft和Beringer是相同的个体。&lt;/p&gt;
+&lt;p&gt;要清楚，修饰（或引用）两个类用sameAs还是用equivalentClass效果是不同的。用sameAs的时候，把一个类解释为一个个体，就像在OWL Full中一样，这有利于对本体进行分类。在OWL Full中，sameAs可以用来引用两个东西，如一个类和一个个体、一个类和一个属性等等，无论什么情况，都将被解释为个体。&lt;/p&gt;
+&lt;p&gt;4.3. 不同的个体&lt;/p&gt;
+&lt;p&gt;differentFrom, AllDifferent&lt;/p&gt;
+&lt;p&gt;这一机制提供了与sameAs相反的效果。&lt;/p&gt;
+ &lt;winesugar rdf:id=&quot;Dry&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt; &lt;winesugar rdf:id=&quot;Sweet&quot;&gt;&lt;br&gt;&lt;br&gt;   &lt;owl:differentfrom rdf:resource=&quot;#Dry&quot;&gt;&lt;br&gt;&lt;br&gt; &lt;/owl:differentfrom&gt;&lt;/winesugar&gt;
+
+
+ &lt;winesugar rdf:id=&quot;OffDry&quot;&gt;&lt;br&gt;&lt;br&gt;   &lt;owl:differentfrom rdf:resource=&quot;#Dry&quot;&gt;&lt;br&gt;&lt;br&gt;   &lt;owl:differentfrom rdf:resource=&quot;#Sweet&quot;&gt;&lt;br&gt;&lt;br&gt; &lt;/owl:differentfrom&gt;&lt;/owl:differentfrom&gt;&lt;/winesugar&gt;
+
+
+
+&lt;p&gt;这是一种声明这三个值相互不同的方法。但在有些时候，更重要的是利用这些定义元素能把这种不同区别开来。没有上述的定义元素，我们可能会定义一种既干又甜的葡萄酒，并且添加hasSugar属性使其取值小于等于某个值来限定该种葡萄酒的甜度。如果我们没有用 differentFrom元素来申明既干又甜的葡萄酒，这意味着“干葡萄酒”和“甜葡萄酒”是相同的。但是我们从上面申明的元素来推断，这又是矛盾的。&lt;/p&gt;
+&lt;p&gt;还有一种更便利的定义相互不同个体的机制。如下面申明红葡萄酒、白葡萄酒和玫瑰葡萄酒的例子。&lt;/p&gt;
+ &lt;owl:alldifferent&gt;
+
+   &lt;owl:distinctmembers rdf:parsetype=&quot;Collection&quot;&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;vin:WineColor rdf:about=&amp;quot;#Red&amp;quot; /&amp;gt;
+
+&amp;lt;vin:WineColor rdf:about=&amp;quot;#White&amp;quot; /&amp;gt;
+
+&amp;lt;vin:WineColor rdf:about=&amp;quot;#Rose&amp;quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;   &lt;/p&gt;&lt;/owl:distinctmembers&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;&lt;/owl:alldifferent&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;要注意，owl:distinctMembers属性声明只能和owl:AllDifferent属性声明一起结合使用。&lt;/p&gt;
+&lt;p&gt;在葡萄酒本体中，我们为所有的WineDescriptor提供了一个owl:AllDifferent声明。我们同时还声明了所有的Winery是不同的。这时，如果我们想要在其他的某个本体中添加一个新的酿酒厂，并表明它是与其他已定义的任何酿酒厂都是不同的，我们可能需要拷贝原来的owl:AllDifferent属性声明，然后将新的制造厂添加到列表中。在OWL DL中，没有更加简单的方法以扩展一个声明为owl:AllDifferent的集合。而在OWL Full中，通过使用RDF三元组和rdf:List构造，可以实现一些其他的方法来完成这一扩展。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;复杂类 [OWL DL]&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;OWL另外还提供了一些用于构建类的构造子。这些构造子被用于创建所谓的类表达式。OWL支持基本的集合操作，即并，交和补运算。它们分别被命名为owl:unionOf,owl:intersectionOf,和owl:complementOf.此外，类还可以是枚举的。类的外延可以使用oneOf构造子来显示的声明。同时，我们也可以声明类的外延必须是互不相交的。&lt;/p&gt;
+&lt;p&gt;注意类表达式是可以嵌套的，它并不要求要为每一个中间类都提供一个名字。这样就允许我们通过使用集合操作来从匿名类或具有值约束的类来创建复合类。&lt;/p&gt;
+&lt;p&gt;5.1 集合运算符 intersectionOf,unionOf,complementOf&lt;/p&gt;
+&lt;p&gt;记住:OWL类外延是由个体组成的集合，而这些个体都是类的成员。OWL使用基本的集合操作算子来处理类的外延。&lt;/p&gt;
+&lt;p&gt;5.1.1.交运算 [some uses of OWL DL]&lt;br&gt;下面的例子展示了intersectionOf构造子的使用&lt;/p&gt;
+ &lt;owl:class rdf:id=&quot;WhiteWine&quot;&gt;
+
+   &lt;owl:intersectionof rdf:parsetype=&quot;Collection&quot;&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;owl:Class rdf:about=&amp;quot;#Wine&amp;quot; /&amp;gt;
+
+&amp;lt;owl:Restriction&amp;gt;
+
+  &amp;lt;owl:onProperty rdf:resource=&amp;quot;#hasColor&amp;quot; /&amp;gt;
+
+  &amp;lt;owl:hasValue rdf:resource=&amp;quot;#White&amp;quot; /&amp;gt;
+
+&amp;lt;/owl:Restriction&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;   &lt;/p&gt;&lt;/owl:intersectionof&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;&lt;/owl:class&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;使用集合操作构造的类与我们目前所看到的所有语法中的定义类似。类的成员完全是通过集合操作来说明的。上面的语句说明WhiteWine恰好是类Wine与所有颜色是白色的事物的集合的交集。这就意味着如果某一事物是白色的并且是葡萄酒，那么它就是WhiteWine的实例。如果没有这样的定义我们只能知道白葡萄酒是葡萄酒酒并且是白色的，但是反过来就不是这样了。这是对个体进行分类的强有力工具。(请注意：’rdf:parseType=”Collection”‘是必需的语法元素。)&lt;/p&gt;
+ &lt;owl:class rdf:about=&quot;#Burgundy&quot;&gt;
+
+   &lt;owl:intersectionof rdf:parsetype=&quot;Collection&quot;&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;owl:Class rdf:about=&amp;quot;#Wine&amp;quot; /&amp;gt;
+
+&amp;lt;owl:Restriction&amp;gt;
+
+  &amp;lt;owl:onProperty rdf:resource=&amp;quot;#locatedIn&amp;quot; /&amp;gt;
+
+  &amp;lt;owl:hasValue rdf:resource=&amp;quot;#BourgogneRegion&amp;quot; /&amp;gt;
+
+&amp;lt;/owl:Restriction&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;   &lt;/p&gt;&lt;/owl:intersectionof&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;&lt;/owl:class&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;在这里我们定义了Burgundy类。这个类恰好包含了那些至少有一个locatedIn关系，而同时这一关系又要联系到Bourgogne地区的葡萄酒。当然我们也可以声明一个新的类ThingsFromBourgogneRegion，并且将该类作为owl:intersectionOf结构中的类使用。但既然ThingsFromBourgogneRegion不再有其他用处，上面的声明就显得更加简短、清晰，并且这一声明不需要我们努力想一个新的名字出来。&lt;/p&gt;
+ &lt;owl:class rdf:id=&quot;WhiteBurgundy&quot;&gt;
+
+   &lt;owl:intersectionof rdf:parsetype=&quot;Collection&quot;&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;owl:Class rdf:about=&amp;quot;#Burgundy&amp;quot; /&amp;gt;
+
+&amp;lt;owl:Class rdf:about=&amp;quot;#WhiteWine&amp;quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;   &lt;/p&gt;&lt;/owl:intersectionof&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;&lt;/owl:class&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;最后，WhiteBurgundy类恰好是白葡萄酒和Burgundies的交集。依次，Burgundies生产在法国一个叫做Bourgogne的地方并且它是干葡萄酒（dry wine）。因此，所有满足这些标准的葡萄酒个体都是WhiteBurgundy类的外延的一部分。&lt;/p&gt;
+&lt;p&gt;5.1.2. 并运算 [OWL DL]&lt;br&gt;下面的例子展示了unionOf结构的使用。它的使用方法和intersectionOf极其类似:&lt;/p&gt;
+ &lt;owl:class rdf:id=&quot;Fruit&quot;&gt;
+
+   &lt;owl:unionof rdf:parsetype=&quot;Collection&quot;&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;owl:Class rdf:about=&amp;quot;#SweetFruit&amp;quot; /&amp;gt;
+
+&amp;lt;owl:Class rdf:about=&amp;quot;#NonSweetFruit&amp;quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;   &lt;/p&gt;&lt;/owl:unionof&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;&lt;/owl:class&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;Fruit类既包含了SweetFruit类的外延也包含了NonSweetFruit的外延。&lt;/p&gt;
+&lt;p&gt;请仔细观察这种并集类型的结构与下面的一个结构是多么的不同。&lt;/p&gt;
+ &lt;owl:class rdf:id=&quot;Fruit&quot;&gt;
+
+   &lt;rdfs:subclassof rdf:resource=&quot;#SweetFruit&quot;&gt;
+
+   &lt;rdfs:subclassof rdf:resource=&quot;#NonSweetFruit&quot;&gt;
+
+&lt;p&gt; &lt;/p&gt;&lt;/rdfs:subclassof&gt;&lt;/rdfs:subclassof&gt;&lt;/owl:class&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;上面的例子说明Fruit的实例是SweetFruit和NonSweetFruit的交集的子集,这里我们将预计得到一个空集。&lt;/p&gt;
+&lt;p&gt;5.1.3. 补运算 [OWL DL]&lt;br&gt;complementOf结构从某个论域(domain of discourse)选出不属于某个类的所有个体。通常它将指向一个非常大的个体集合：&lt;/p&gt;
+  &lt;owl:class rdf:id=&quot;ConsumableThing&quot;&gt;
+
+  &lt;owl:class rdf:id=&quot;NonConsumableThing&quot;&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;owl:complementOf rdf:resource=&amp;quot;#ConsumableThing&amp;quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  &lt;/p&gt;&lt;/owl:class&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;类NonConsumableThing包含了所有不属于ConsumableThing的外延的个体。NonConsumableThing集合包含了所有的Wines,Regions等。它实际上就是owl:Thing与ConsumableThing的这两个集合的集合差。因此，complementOf典型的用法是与其它集合运算符联合使用：&lt;/p&gt;
+ &lt;owl:class rdf:id=&quot;NonFrenchWine&quot;&gt;
+
+   &lt;owl:intersectionof rdf:parsetype=&quot;Collection&quot;&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;owl:Class rdf:about=&amp;quot;#Wine&amp;quot;/&amp;gt;
+
+&amp;lt;owl:Class&amp;gt;
+
+  &amp;lt;owl:complementOf&amp;gt;
+
+    &amp;lt;owl:Restriction&amp;gt;
+
+      &amp;lt;owl:onProperty rdf:resource=&amp;quot;#locatedIn&amp;quot; /&amp;gt;
+
+      &amp;lt;owl:hasValue rdf:resource=&amp;quot;#FrenchRegion&amp;quot; /&amp;gt;
+
+    &amp;lt;/owl:Restriction&amp;gt;
+
+  &amp;lt;/owl:complementOf&amp;gt;
+
+&amp;lt;/owl:Class&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;   &lt;/p&gt;&lt;/owl:intersectionof&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;&lt;/owl:class&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;上面的例子定义了一个NonFrenchWine类，它是Wine类与所有不位于法国的事物的集合的交集。&lt;/p&gt;
+&lt;p&gt;5.2. 枚举类 oneOf [OWL DL]&lt;/p&gt;
+&lt;p&gt;OWL提供了一种通过直接枚举类的成员的方法来描述类。这是通过使用oneOf结构来完成。特别地，这个定义完整地描述了类的外延，因此任何其他个体都不能被声明为属于这个类。&lt;/p&gt;
+&lt;p&gt;下面的例子定义了WineColor类，它的成员是White,Rose和Red这三个个体.&lt;/p&gt;
+ &lt;owl:class rdf:id=&quot;WineColor&quot;&gt;
+
+   &lt;rdfs:subclassof rdf:resource=&quot;#WineDescriptor&quot;&gt;
+
+   &lt;owl:oneof rdf:parsetype=&quot;Collection&quot;&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;owl:Thing rdf:about=&amp;quot;#White&amp;quot;/&amp;gt;
+
+&amp;lt;owl:Thing rdf:about=&amp;quot;#Rose&amp;quot;/&amp;gt;
+
+&amp;lt;owl:Thing rdf:about=&amp;quot;#Red&amp;quot;/&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;   &lt;/p&gt;&lt;/owl:oneof&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;&lt;/rdfs:subclassof&gt;&lt;/owl:class&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;看到上面的定义，第一件想到的事情就是由于这个类是通过枚举定义的，因此其他任何个体都不可能是一个有效的WineColor。&lt;/p&gt;
+&lt;p&gt;oneOf结构的每一个元素都必须是一个有效声明的个体。一个个体必须属于某个类。在上面的例子中，每一个个体都是通过名字来引用的。我们使用owl:Thing简单地进行引用，尽管这有点多余（因为每个个体都属于owl:Thing）。另外，我们也可以根据具体类型WineColor来引用集合中的元素：&lt;/p&gt;
+ &lt;owl:class rdf:id=&quot;WineColor&quot;&gt;
+
+   &lt;rdfs:subclassof rdf:resource=&quot;#WineDescriptor&quot;&gt;
+
+   &lt;owl:oneof rdf:parsetype=&quot;Collection&quot;&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;WineColor rdf:about=&amp;quot;#White&amp;quot; /&amp;gt;
+
+&amp;lt;WineColor rdf:about=&amp;quot;#Rose&amp;quot; /&amp;gt;
+
+&amp;lt;WineColor rdf:about=&amp;quot;#Red&amp;quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;   &lt;/p&gt;&lt;/owl:oneof&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;&lt;/rdfs:subclassof&gt;&lt;/owl:class&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;另外，较复杂的个体描述同样也可以是oneOf结构的有效元素，例如:&lt;/p&gt;
+ &lt;winecolor rdf:about=&quot;#White&quot;&gt;&lt;br&gt;&lt;br&gt;   &lt;rdfs:label&gt;White&lt;/rdfs:label&gt;&lt;br&gt;&lt;br&gt; &lt;/winecolor&gt;
+
+
+&lt;p&gt;其它关于oneOf使用的例子，请参见 Reference.&lt;/p&gt;
+&lt;p&gt;5.3. 不相交类 disjointWith [OWL DL]&lt;/p&gt;
+&lt;p&gt;使用owl:disjointWith构造子可以表达一组类是不相交的。它保证了属于某一个类的个体不能同时又是另一个指定类的实例。&lt;/p&gt;
+ &lt;owl:class rdf:id=&quot;Pasta&quot;&gt;
+
+   &lt;rdfs:subclassof rdf:resource=&quot;#EdibleThing&quot;&gt;
+
+   &lt;owl:disjointwith rdf:resource=&quot;#Meat&quot;&gt;
+
+   &lt;owl:disjointwith rdf:resource=&quot;#Fowl&quot;&gt;
+
+   &lt;owl:disjointwith rdf:resource=&quot;#Seafood&quot;&gt;
+
+   &lt;owl:disjointwith rdf:resource=&quot;#Dessert&quot;&gt;
+
+   &lt;owl:disjointwith rdf:resource=&quot;#Fruit&quot;&gt;
+
+&lt;p&gt; &lt;/p&gt;&lt;/owl:disjointwith&gt;&lt;/owl:disjointwith&gt;&lt;/owl:disjointwith&gt;&lt;/owl:disjointwith&gt;&lt;/owl:disjointwith&gt;&lt;/rdfs:subclassof&gt;&lt;/owl:class&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;Pasta例子声明了多个不相交类。注意它只声明了Pasta与其它所有类是不相交的。例如，它并没有保证Meat和Fruit是不相交的。为了声明一组类是互不相交的，我们必须对每两个类都使用owl:disjointWith来声明。&lt;/p&gt;
+&lt;p&gt;一个常见的需求是定义一个类为一组互不相交的子类的联合（union）。&lt;/p&gt;
+ &lt;owl:class rdf:id=&quot;SweetFruit&quot;&gt;
+
+   &lt;rdfs:subclassof rdf:resource=&quot;#EdibleThing&quot;&gt;
+
+&lt;p&gt; &lt;/p&gt;&lt;/rdfs:subclassof&gt;&lt;/owl:class&gt;&lt;p&gt;&lt;/p&gt;
+ &lt;owl:class rdf:id=&quot;NonSweetFruit&quot;&gt;
+
+   &lt;rdfs:subclassof rdf:resource=&quot;#EdibleThing&quot;&gt;
+
+   &lt;owl:disjointwith rdf:resource=&quot;#SweetFruit&quot;&gt;
+
+&lt;p&gt; &lt;/p&gt;&lt;/owl:disjointwith&gt;&lt;/rdfs:subclassof&gt;&lt;/owl:class&gt;&lt;p&gt;&lt;/p&gt;
+ &lt;owl:class rdf:id=&quot;Fruit&quot;&gt;
+
+   &lt;owl:unionof rdf:parsetype=&quot;Collection&quot;&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;owl:Class rdf:about=&amp;quot;#SweetFruit&amp;quot; /&amp;gt;
+
+&amp;lt;owl:Class rdf:about=&amp;quot;#NonSweetFruit&amp;quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;   &lt;/p&gt;&lt;/owl:unionof&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;&lt;/owl:class&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;在上面个例子中，我们定义了Fruit是SweetFruit和NonSweetFruit的并集。而且我们知道这些子类恰好将Fruit划分成了连个截然不同的子类，因为它们是互不相交的。随着互不相交的类的增加，不相交的声明的数目也会相应的增加到n2.然而，在我们已知的用例中，n通常比较小。&lt;/p&gt;
+&lt;p&gt;当n很大时，我们可以使用另一些方法以避免声明的数目按二次方增长。其中一个方法在OWL test suite 有详细说明。&lt;/p&gt;
+&lt;p&gt;这一方法的工作原理如下。我们描述一个父类，它的元素有一个基数等于一的属性。接着，对于这个父类的每一个子类，我们都要求这个子类的实例的这一属性必须具有一个唯一的值。在这种情况下，各个不同子类就不可能有共同的成员了。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;本体的版本控制&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;本体和软件一样需要维护，因此它们将随着时间的推移而改变。在一个owl:Ontology元素（如上面讨论的&lt;a href=&quot;http://www.w3.org/TR/2004/REC-owl-guide-20040210/#OntologyHeaders）&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.w3.org/TR/2004/REC-owl-guide-20040210/#OntologyHeaders）&lt;/a&gt; 内，链接到一个以前定义的本体版本是可能的。属性owl:priorVersion被用来提供这种链接，并能用它跟踪一个本体的版本历史。&lt;/p&gt;
+ &lt;owl:ontology rdf:about=&quot;&quot;&gt;
+
+&lt;p&gt;   …&lt;/p&gt;
+   &lt;owl:priorversion rdf:resource=&quot;http://www.w3.org/TR/2003/CR-owl-guide-20030818/wine&quot;&gt;
+
+&lt;p&gt;   …&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;&lt;/owl:priorversion&gt;&lt;/owl:ontology&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;在上面例子中被指出的那个本体是被定义本体的一个以前版本。&lt;/p&gt;
+&lt;p&gt;本体版本可能彼此互不兼容，例如，一个本体以前的版本可能包含与现在版本中的陈述相矛盾的陈述。在一个owl:Ontology元素中，我们使用owl:backwardCompatibleWith和owl:incompatibleWith这些属性来指出本体版本是兼容还是不兼容以前的版本。如果没有进行owl:backwardCompatibleWith声明，那么我们假定就不存在兼容性。除了上面讲到的两个属性，还有一个属性owl:versionInfo适用与版本控制系统，它提供了一些相关信息（hook）。和前面三个属性相反的是，owl:versionInfo的客体是一个文字值（literal），这一属性除了可以用来注释本体之外还可以用来注释类和属性。&lt;/p&gt;
+&lt;p&gt;在许多时候，仅仅在整个本体的粒度上提供版本跟踪是不够的。维护人员可能希望能够记录类、属性、个体的版本信息——即使这些信息可能还是是不够充分。在OWL中，类表示的渐增性本质意味着了一个本体可以为一个在另一个本体中定义的（具名）类添加约束，而这些额外的约束本身可能需要版本信息。&lt;/p&gt;
+&lt;p&gt;OWL Full提供的表示能力能够对一个类进行任何类型的声明，也即可以声明一个类可以是另一个类的实例，或者一个类（不是它的实例）有一个属性和一个对应的属性值。这一框架就能被用来为版本跟踪信息建立一个由类和属性构成的本体。OWL的名称间中包括了两个预定义的类owl:DeprecatedClass和owl:DeprecatedProperty来完成这个目的。他们被用来指明某个类或属性在未来发布的版本中可能以一种不兼容的方式发生变化。&lt;/p&gt;
+&lt;p&gt; …&lt;/p&gt;
+   &lt;owl:deprecatedclass rdf:id=&quot;&amp;vin;JugWine&quot;&gt;
+
+   &lt;owl:deprecatedproperty rdf:id=&quot;&amp;vin;hasSeeds&quot;&gt;
+
+&lt;p&gt; …&lt;/p&gt;
+&lt;p&gt;我们要注意到owl:DeprecatedClass及owl:DeprecatedProperty并没有附加的语义，这很重要。它们应由工具开发者和OWL使用者来确保这些属性是按其本意使用的。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;使用范例&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;一旦有某个初始的领域本体可以利用，人们就能够使用这个本体开发大量的应用。在本节中，我们会描述使用在葡萄酒领域的一些例子。&lt;/p&gt;
+&lt;p&gt;7.1.葡萄酒门户网站&lt;/p&gt;
+&lt;p&gt;现今有许多站点称自己是葡萄酒的门户网站。比如在Google上就可以找到152,000个与“wine portal”（葡萄酒门户网站）相匹配的结果。最匹配的是一个称为”Wine-Portal.com”的站点，该站点提供了问其他许多站点的途径。声称自己是葡萄酒门户网站的站点大多是信息式站点（informational sites）。例如，wine-portal.com中的第一个特色站点被称为“酒塞烹饪”（cork cuisine）(www.corkcuisine.com/)，这一站点就是提供关于葡萄酒和食物的搭配、关于以葡萄酒作为礼物等方面的信息的。&lt;/p&gt;
+&lt;p&gt;细读任何一个范围的主题，人们都会发现大量与该主题相关的内容，它们包含了与该主题相关的信息或者服务。像“附属品和礼物”（accessories and gifts）这个主题中就包含了关于购买特别的葡萄酒物品（wine item）时的注意事项的信息，同时也包含了众多的在线零售商的信息。另一个顶层的主题范围“购物”中包含了一个子范围“葡萄酒购买”（wine shopping），从这儿用户能够找到在线（或者“街道购物”（stree shopping））商店（按照国家分类）。这两个站点仅仅是现在许多例子中的两个，它们代表了这些门户网站的一般概念，也即葡萄酒门户为某个特定主题范围提供了大量的信息和服务。&lt;/p&gt;
+&lt;p&gt;即使在更细节的程度上考察这些站点，我们也无法得知现在它们在多大程度上依赖着本体。例如，我们从html的源代码中并无法找出它们使用本体的证据。然而，非常明显的，这些站点是有可能使用本体的并可以从中得到一些葡萄酒本体。&lt;/p&gt;
+&lt;p&gt;在门户网站中，本体的一个简单使用就是利用其进行组织和浏览。上面的类别列表就可能从葡萄酒的类别层次的最高几层生成。查询能够使用葡萄酒本体对与葡萄酒相关的信息进行检索。如果某人对本体中包含的术语进行搜索，查询就可能根据子类的信息进行扩展从而找到更多相关的答案。门户网站也可能使用（候选的）相关主题范围内的信息进行自我更新。使用强大的推理能力，它们甚至能够识别出可能的葡萄酒销售站点并通过协商将这些站点包含为门户网站的一部分。&lt;/p&gt;
+&lt;p&gt;7.2. 葡萄酒主体（agent）&lt;/p&gt;
+&lt;p&gt;为了说明的目的，我们启动了一个葡萄酒主体（wine agent）项目。按照我们最初的设计，葡萄酒主体的目标是为饮宴上的菜推荐合适品种的葡萄酒。该应用使用的本体就是作为本指南基础的这一葡萄酒本体。这一葡萄酒本体可以在DAML本体库中得到，名为wines.&lt;/p&gt;
+&lt;p&gt;一个个性化的葡萄酒主体能为人们够提供大量的服务。&lt;/p&gt;
+&lt;p&gt;主体能够根据给定的许多约束条件（例如要提供的餐宴）推荐合适的葡萄酒，能够找到关于某种特定的葡萄酒或者某种特定的葡萄酒的类别的信息，它还能够为一种葡萄酒找出合适的附属品（例如为某个品种的葡萄酒找到合适的特定种类的杯子等）。&lt;/p&gt;
+&lt;p&gt;接下来，我们用一个简单的原型系统来描述一个例子，该系统是作为一个学生作业项目来完成的。&lt;/p&gt;
+&lt;p&gt;考虑下面的情景：&lt;/p&gt;
+&lt;p&gt;某人正在筹划一个晚宴，其中至少有一个客人对酒了解甚深。主人希望能够使用与菜单上的菜肴最合适的酒来招待客人。主人也希望自己能够对晚宴的用酒显得学识渊博。并且，主人决定在晚宴上使用一种用番茄做成的意大利面条酱和新鲜的意大利面条作为主菜来招待客人。&lt;/p&gt;
+&lt;p&gt;为了能够提供与餐宴合适的葡萄酒，主人需要葡萄酒酒和食物搭配方面的知识。为了显得对葡萄酒有相当的了解，主人需要获得关于宴会用酒的有关信息。为了配上合适的附属品，主人还需要有关在该情况下（以及在主人认可价格范围内）的附属品的信息。&lt;/p&gt;
+&lt;p&gt;通过一个相关背景的葡萄酒本体，根据对餐宴的一定的描述，葡萄酒主体能够给出适合该餐宴的酒的类型的建议。葡萄酒主体可能会建议使用馨芳葡萄酒（Zinfandel）作为这次宴会的用酒类型。除此之外，通过相关背景的本体，葡萄酒主体可以给出建议使用某种特定的馨芳葡萄酒，比如玛丽埃塔馨芳葡萄酒（Marietta Zinfandel)。如果给定了用酒是馨芳葡萄酒的话，葡萄酒主体可能会去某个地点进行搜寻，它可能得到的是一系列的馨芳葡萄酒，也可能得到某种特定的馨芳葡萄酒，例如玛丽埃塔馨芳葡萄酒。如果本体中包含了购买葡萄酒的合适地点的信息（可能根据主人所在地以及葡萄酒销售商所在地信息进行了过滤），葡萄酒主体就可能访问一个站点如wine.com，在站点内搜索‘馨芳葡萄酒’并返回那个站点所销售的馨芳葡萄酒的列表。葡萄酒主体也可能从酿酒厂或者其他零售商处尝试寻找玛丽埃塔 馨芳葡萄酒。例如，它可能发现（通过在Google进行搜索或者在某些选定站点上进行结构化的查询）在winelibrary.com上有1999年制造的玛丽埃塔馨芳葡萄酒正以13.99美元的折扣价进行销售。葡萄酒主体就可能使用附加的过滤信息进行过滤，这些过滤信息可能是由消费者提供的价格范围或者是对于不同品种的建议等。&lt;/p&gt;
+&lt;p&gt;葡萄酒主体现在就可能尝试要提供关于馨芳葡萄酒的通用信息或者玛丽埃塔馨芳葡萄酒的特定信息。它可能使用一个具有葡萄酒站点背景的本体来寻找关于特定的葡萄酒的信息。例如，它可能用到酿酒厂对它们最新的馨芳葡萄酒的描述。像Wine Spectator这样的其他相关信息源的额外的评论也可能被用上。如果在某个最受欢迎的站点上没有关于玛丽埃塔馨芳葡萄酒的相关评论，在相同的地方找一些关于馨芳葡萄酒的评论可能也是有用的，比如在这里就可以找一些关于加利福尼亚Sonoma郡的馨芳葡萄酒的评论。&lt;/p&gt;
+&lt;p&gt;通用的背景信息可能也会使用到。主人可能需要做一些相关的阅读，他也可能对普通酒或者是馨芳葡萄酒的书籍感兴趣。例如，主人可能对Amazon.com上销售的馨芳葡萄酒的书籍感兴趣。主人也可能对相同地区的葡萄酒相关的信息感兴趣，这里可能就是Sonoma郡的馨芳葡萄酒。葡萄酒主体一般仅能得到它的主要知识领域相关的背景信息。比如，这个葡萄酒主体是关于食物和酒的匹配方面的，所以它可能通过免费的或者付费购买的方式得到的这一主题的信息，例如像评酒者上的关于搭配食物和酒的文章。&lt;/p&gt;
+&lt;p&gt;宴会的主人可能还要购买一些对于宴会活动来说很重要的酒的附属品。酒是使用酒杯作为容器的，而不同品种的酒最好使用不同种类的酒杯来装。例如，如果主人选择了一道菜是适合用馨芳葡萄酒来配的，主人可能就需要知道Riedel是一个知名的酒器生产商。主人可能还希望能够链接到Wine Enthusiast（一个相当受敬重的葡萄酒商品供应商）并告诉他Wine Enthusiast有一种Riedel生产的馨芳葡萄酒酒杯正在以63.95美元的价格四个一组地进行销售（如果你买两组四个的杯子的话就可以得到59.95美元一组的折扣价）。主人可能还有兴趣了解在Amazon.com上通过49.99美元(and claims a list price of $65.00)就可以购买得到的Reidel生产的Sommelier 馨芳葡萄酒单把杯（Reidel’s Sommelier Zinfandel single stem glass）。Amazon上面也有相同的6个一组的馨芳葡萄酒酒杯销售（而不像Wine Enthusiast上的4个一组），销售价是79.99美元（and claims a list price of $119.40)。葡萄酒主体能提供一个与餐宴搭配的（也即，与招待用的馨芳葡萄酒搭配的）酒器的列表给主人，然后进行价格的比较或者根据由本体中的一个属性列表中选出的其他标准来进行比较。&lt;/p&gt;
+&lt;p&gt;主人可能还要考虑其他的酒的附属品。从本体中我们可以了解到启瓶器是属于酒的附属品。背景本体可能已经对启瓶器的子类进行了编码或者这些信息可以通过相关的葡萄酒站点获得。Wine Enthusiast就有一系列它们推荐的（其中有关于启瓶器的类型和价格范围的描述）[1]。它们也根据启瓶器的不同类型（杠杆型、服务员型、固定型、旋转型、抽吸型）进行区分，而主人可能想要得到关于这些不同类型的启瓶器的信息。&lt;/p&gt;
+&lt;p&gt;根据不同领域的背景本体知识和不同的信息以及不同的服务站点，葡萄酒主体可能应用到不同复杂程度的情况中去。在本例中，我们仅仅考虑了关于酒、品种类型、食物和酒的组合、某些酒的附属品和它们相关属性的一些信息。当然，我们能够根据顾客要求将本例扩展以包含更多的信息和更多的约束。&lt;/p&gt;
+&lt;p&gt;葡萄酒主体的例子还在不断完善中，从这里我们可以得到它。&lt;/p&gt;
+&lt;/owl:deprecatedproperty&gt;&lt;/owl:deprecatedclass&gt;&lt;/owl:class&gt;&lt;/winesugar&gt;&lt;/region&gt;&lt;/rdf:rdf&gt;&lt;/owl:class&gt;&lt;/owl:class&gt;&lt;/owl:class&gt;&lt;/rdf:rdf&gt;</content>
+    
+    <summary type="html">
+    
+      OWL Web本体语言指南
+    
+    </summary>
+    
+      <category term="Ontology" scheme="http://blog.ybbz.site/categories/Ontology/"/>
+    
+    
+      <category term="Ontology" scheme="http://blog.ybbz.site/tags/Ontology/"/>
+    
+      <category term="OWL" scheme="http://blog.ybbz.site/tags/OWL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>根号值逼近问题的算法</title>
+    <link href="http://blog.ybbz.site/2016/04/20/Algorithm-2/"/>
+    <id>http://blog.ybbz.site/2016/04/20/Algorithm-2/</id>
+    <published>2016-04-19T16:00:00.000Z</published>
+    <updated>2016-04-20T14:38:19.000Z</updated>
+    
+    <content type="html">&lt;p&gt;在Python中，可以通过以下方式表达根号&lt;/p&gt;
+&lt;figure class=&quot;highlight moonscript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;math&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;a = &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; ** &lt;span class=&quot;number&quot;&gt;0.5&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;print&lt;/span&gt;(a)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;b = &lt;span class=&quot;built_in&quot;&gt;math&lt;/span&gt;.sqrt(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;print&lt;/span&gt;(b)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;c = &lt;span class=&quot;built_in&quot;&gt;math&lt;/span&gt;.pow(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;0.5&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;print&lt;/span&gt;(c)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;算法一&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;sqrt(num)在区间（left, right）内&lt;/li&gt;
+&lt;li&gt;计算middle=(left＋right)/2，&lt;/li&gt;
+&lt;li&gt;如果middle-num&amp;gt;0，那么sqrt(num)就在区间(left, middle)之间&lt;/li&gt;
+&lt;li&gt;如果middle-num&amp;lt;0，那么sqrt(num)就在区间(middle, right)之间&lt;/li&gt;
+&lt;li&gt;设定误差限在0.001，即上面减法的差值的绝对值小于0.001，便不再计算&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight livecodeserver&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;def sqrt_2(left, &lt;span class=&quot;literal&quot;&gt;right&lt;/span&gt;, &lt;span class=&quot;built_in&quot;&gt;num&lt;/span&gt;):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;middle&lt;/span&gt; = (left + &lt;span class=&quot;literal&quot;&gt;right&lt;/span&gt;) / &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;middle&lt;/span&gt; - &lt;span class=&quot;built_in&quot;&gt;num&lt;/span&gt; &amp;gt; &lt;span class=&quot;number&quot;&gt;0.001&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;literal&quot;&gt;return&lt;/span&gt; sqrt_2(left, &lt;span class=&quot;keyword&quot;&gt;middle&lt;/span&gt;, &lt;span class=&quot;built_in&quot;&gt;num&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    elif &lt;span class=&quot;keyword&quot;&gt;middle&lt;/span&gt; - &lt;span class=&quot;built_in&quot;&gt;num&lt;/span&gt; &amp;lt; &lt;span class=&quot;number&quot;&gt;-0.001&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;literal&quot;&gt;return&lt;/span&gt; sqrt_2(&lt;span class=&quot;keyword&quot;&gt;middle&lt;/span&gt;, &lt;span class=&quot;literal&quot;&gt;right&lt;/span&gt;, &lt;span class=&quot;built_in&quot;&gt;num&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;literal&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;middle&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(sqrt_2(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, b))&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;算法二&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;((sqrt(x)-sqrt(num/x))^2=0的根就是sqrt(num)&lt;/li&gt;
+&lt;li&gt;上面公式变形为sqrt(num)=(x+num/x)/2&lt;/li&gt;
+&lt;li&gt;设定误差限在0.001，并重复计算&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;sqrt_1&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(num, x)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    result = (x + num / x) / &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; math.fabs(result - b) &amp;lt; &lt;span class=&quot;number&quot;&gt;0.001&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; result&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; sqrt_1(num, result)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(sqrt_1(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(sqrt_1(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(sqrt_1(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      有关根号值逼近问题的算法
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="http://blog.ybbz.site/categories/Algorithm/"/>
+    
+    
+      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
+    
+      <category term="Algorithm" scheme="http://blog.ybbz.site/tags/Algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>判断两个单向链表是否相交</title>
+    <link href="http://blog.ybbz.site/2016/04/20/Algorithm-3/"/>
+    <id>http://blog.ybbz.site/2016/04/20/Algorithm-3/</id>
+    <published>2016-04-19T16:00:00.000Z</published>
+    <updated>2016-04-20T15:04:07.000Z</updated>
+    
+    <content type="html">&lt;p&gt;问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;算法一&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;对链表一进行遍历，在遍历到每一个节点时，都在链表二中进行遍历，看是否有重复的节点。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;算法一改进&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;以空间换时间：将链表二存入字典，然后遍历链表一，判断是否在于字典中。简化后，时间复杂度变为 O(n+m)，但空间复杂度较高。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;算法二&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;算法二的思路基于以下两个原理：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;两个单向链表相交后，必然无法再分开。&lt;/li&gt;
+&lt;li&gt;两个单项链表相交后，尾节点一定相同。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;假设两个链表相交，很容易证明两个链表的尾元素是相同的。&lt;br&gt;逆反命题：两个链表的尾元素相同时，两个链表一定相交。&lt;br&gt;（注意：相同的节点不仅仅要求值相同，而是“同一个”，也就是指针地址相同。）&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      判断两个单向链表是否相交
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="http://blog.ybbz.site/categories/Algorithm/"/>
+    
+    
+      <category term="Algorithm" scheme="http://blog.ybbz.site/tags/Algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PHP记录</title>
+    <link href="http://blog.ybbz.site/2016/04/18/Old-Posts-2015-12-01-php-foundation/"/>
+    <id>http://blog.ybbz.site/2016/04/18/Old-Posts-2015-12-01-php-foundation/</id>
+    <published>2016-04-18T05:25:42.000Z</published>
+    <updated>2016-04-18T05:26:39.000Z</updated>
+    
+    <content type="html">&lt;p&gt;除法，保留小数点后两位&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;echo round(3.1415926,2);
+&lt;/code&gt;&lt;/pre&gt;</content>
+    
+    <summary type="html">
+    
+      PHP记录
+    
+    </summary>
+    
+      <category term="PHP" scheme="http://blog.ybbz.site/categories/PHP/"/>
+    
+    
+      <category term="PHP" scheme="http://blog.ybbz.site/tags/PHP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>庆祝我的第一个独立APP上线</title>
+    <link href="http://blog.ybbz.site/2016/04/18/my-first-andorid-app-online/"/>
+    <id>http://blog.ybbz.site/2016/04/18/my-first-andorid-app-online/</id>
+    <published>2016-04-17T16:00:00.000Z</published>
+    <updated>2016-04-21T12:26:19.000Z</updated>
+    
+    <content type="html">&lt;p&gt;所谓独立，就是说这个APP是我私人开发的，不牵扯其他任何个人或组织。之前一直自称Android工程师，可是并没有自己上线的作品；至于Android项目么，要么是和队友们一块儿合作的，不敢冠上自己的名字；要么就是自己做着玩的，压根没想过要发布。&lt;/p&gt;
+&lt;p&gt;Mr.葵，是我上个月的一时兴趣开发的，关于它的更多介绍，可以在&lt;a href=&quot;http://blog.ybbz.site/android/2016/03/15/App-develop/&quot;&gt;记一次有趣的App开发之旅&lt;/a&gt;中找到。不过为了顺利上线，这几天对它进行了一部分的改造。&lt;/p&gt;
+&lt;p&gt;有关这个APP，核心就是一个功能，记录自己的生活事宜，并做统计分析（好吧，其实数据挖掘和分析才是我的真正关注点）；然后又按照自己的兴趣，加了几个小功能，比如今日天气、星座运势、历史上的今天等。当然，并不止于此，下一版本，可能会增加其他有意思的功能。&lt;/p&gt;
+&lt;p&gt;有关用户注册与登录，可以通过手机号注册/登录，或者新浪微博第三方登录。我想说的是，因为短信服务基本都是收费的，所以我没有集成短信服务；因此注册时并没有短信验证码，这是一个不足之处。&lt;/p&gt;
+&lt;p&gt;关于上线，就只在360手机助手和应用宝提交了；说说360吧，5分钟左右，就给我审核通过并上线了，当时还是蛮激动的（360，我为你点赞；至于应用宝，还在审核中）。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160418_1.jpeg&quot; alt=&quot;20160418_1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;下载地址：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://zhushou.360.cn/detail/index/soft_id/3261474?recrefer=SE_D_Mr.%E8%91%B5&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;360手机助手&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://android.myapp.com/myapp/detail.htm?apkName=com.kui.activity&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;应用宝&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://ybbz.site/app/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;APP发布网页&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;更多的，读者可以自己下载安装体验；如果想加入其他功能，也可以告诉我。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      庆祝我的第一个独立APP上线
+    
+    </summary>
+    
+      <category term="Android" scheme="http://blog.ybbz.site/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="http://blog.ybbz.site/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android使用新浪微博API</title>
+    <link href="http://blog.ybbz.site/2016/04/17/Old-Posts-2016-03-14-android-sina-weibo/"/>
+    <id>http://blog.ybbz.site/2016/04/17/Old-Posts-2016-03-14-android-sina-weibo/</id>
+    <published>2016-04-17T15:46:36.000Z</published>
+    <updated>2016-04-18T11:27:51.000Z</updated>
+    
+    <content type="html">&lt;p&gt;redirect_uri_mismatch&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;应用信息－高级信息－OAuth2.0 授权设置&lt;/li&gt;
+&lt;li&gt;填写授权回调页、取消授权回调页&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;sso package or sign error&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;应用信息－基本信息－Android签名包名信息&lt;/li&gt;
+&lt;li&gt;填写Android包名、Android签名&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      Android使用新浪微博API
+    
+    </summary>
+    
+      <category term="Android" scheme="http://blog.ybbz.site/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="http://blog.ybbz.site/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android中的ActionBar设置</title>
+    <link href="http://blog.ybbz.site/2016/04/17/Old-Posts-2016-03-14-Android-ActionBar-Setting/"/>
+    <id>http://blog.ybbz.site/2016/04/17/Old-Posts-2016-03-14-Android-ActionBar-Setting/</id>
+    <published>2016-04-17T07:25:43.000Z</published>
+    <updated>2016-04-17T07:29:46.000Z</updated>
+    
+    <content type="html">&lt;p&gt;1.在FatherActivity中&lt;/p&gt;
+&lt;figure class=&quot;highlight aspectj&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;setActionBar&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;boolean&lt;/span&gt; arrow, &lt;span class=&quot;keyword&quot;&gt;boolean&lt;/span&gt; logo, String title)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ActionBar actionBar = getActionBar();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    actionBar.setDisplayShowTitleEnabled(&lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 标题&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    actionBar.setTitle(title);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 决定左上角图标的右侧是否有向左的小箭头, true有小箭头，并且图标可以点击&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    actionBar.setDisplayHomeAsUpEnabled(arrow);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 使左上角图标是否显示，如果设成false，则没有程序图标，仅仅就个标题，&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 否则，显示应用程序图标，对应id为android.R.id.home，对应ActionBar.DISPLAY_SHOW_HOME&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    actionBar.setDisplayShowHomeEnabled(logo);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@Override&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;onOptionsItemSelected&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(MenuItem item)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;switch&lt;/span&gt; (item.getItemId()) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; android.R.id.home:// 点击返回图标事件&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.finish();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;default&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;super&lt;/span&gt;.onOptionsItemSelected(item);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;2.继承FatherActivity&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;set&lt;/span&gt;ActionBar(&lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;, &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;PageTitle&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      Android中的ActionBar设置
+    
+    </summary>
+    
+      <category term="Android" scheme="http://blog.ybbz.site/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="http://blog.ybbz.site/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Node.js配置</title>
+    <link href="http://blog.ybbz.site/2016/04/13/Old-Posts-2016-01-12-Node-js-foundation/"/>
+    <id>http://blog.ybbz.site/2016/04/13/Old-Posts-2016-01-12-Node-js-foundation/</id>
+    <published>2016-04-13T11:06:09.000Z</published>
+    <updated>2016-04-13T13:41:31.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;Mac安装Node-js&quot;&gt;&lt;a href=&quot;#Mac安装Node-js&quot; class=&quot;headerlink&quot; title=&quot;Mac安装Node.js&quot;&gt;&lt;/a&gt;Mac安装Node.js&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;brew install node
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;Linux-CentOS-安装Node-js&quot;&gt;&lt;a href=&quot;#Linux-CentOS-安装Node-js&quot; class=&quot;headerlink&quot; title=&quot;Linux(CentOS)安装Node.js&quot;&gt;&lt;/a&gt;Linux(CentOS)安装Node.js&lt;/h3&gt;&lt;p&gt;1.准备命令&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;yum -y install gcc make gcc-c++ openssl-devel wget
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;2.下载源码及解压&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget http://nodejs.org/dist/v0.10.26/node-v0.10.26.tar.gz
+tar -zvxf node-v0.10.26.tar.gz
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;3.编译及安装&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd node-v0.10.26
+make &amp;amp;&amp;amp; make install
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;4.验证是否安装配置成功&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;node -v
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;安装express&quot;&gt;&lt;a href=&quot;#安装express&quot; class=&quot;headerlink&quot; title=&quot;安装express&quot;&gt;&lt;/a&gt;安装express&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;npm install --save express@4.10.2
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;Error-Cannot-find-module-‘express’&quot;&gt;&lt;a href=&quot;#Error-Cannot-find-module-‘express’&quot; class=&quot;headerlink&quot; title=&quot;Error: Cannot find module ‘express’&quot;&gt;&lt;/a&gt;Error: Cannot find module ‘express’&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;export NODE_PATH=&amp;quot;/Users/ybbz/node_modules&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;简单的服务器&quot;&gt;&lt;a href=&quot;#简单的服务器&quot; class=&quot;headerlink&quot; title=&quot;简单的服务器&quot;&gt;&lt;/a&gt;简单的服务器&lt;/h3&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; app = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;express&#39;&lt;/span&gt;)();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; http = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;http&#39;&lt;/span&gt;).Server(app);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;app.get(&lt;span class=&quot;string&quot;&gt;&#39;/&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;req, res&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  res.send(&lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;h1&amp;gt;Hello world&amp;lt;/h1&amp;gt;&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;//文件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;//res.sendFile(__dirname + &#39;/index.html&#39;);&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;http.listen(&lt;span class=&quot;number&quot;&gt;3000&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;listening on *:3000&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;安装socket-io&quot;&gt;&lt;a href=&quot;#安装socket-io&quot; class=&quot;headerlink&quot; title=&quot;安装socket.io&quot;&gt;&lt;/a&gt;安装socket.io&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;npm install --save socket.io
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;开启远程服务器端口（CentOS）&quot;&gt;&lt;a href=&quot;#开启远程服务器端口（CentOS）&quot; class=&quot;headerlink&quot; title=&quot;开启远程服务器端口（CentOS）&quot;&gt;&lt;/a&gt;开启远程服务器端口（CentOS）&lt;/h3&gt;&lt;p&gt;1.开启端口&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;firewall-cmd --zone=public --add-port=80/tcp --permanent
+
+命令含义：
+--zone #作用域
+--add-port=80/tcp  #添加端口，格式为：端口/通讯协议
+--permanent   #永久生效，没有此参数重启后失效
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;2.重启防火墙&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;firewall-cmd --reload
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;参考资料：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.centoscn.com/CentOS/config/2015/0310/4848.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Centos7 开放端口&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/24729024/centos-7-open-firewall-port&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;centos 7 - open firewall port&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      Node.js
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://blog.ybbz.site/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="http://blog.ybbz.site/tags/JavaScript/"/>
+    
+      <category term="Node.js" scheme="http://blog.ybbz.site/tags/Node-js/"/>
+    
+      <category term="socket.io" scheme="http://blog.ybbz.site/tags/socket-io/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微信公众平台开发实践</title>
+    <link href="http://blog.ybbz.site/2016/04/11/WeChat-public-platform-development-practices/"/>
+    <id>http://blog.ybbz.site/2016/04/11/WeChat-public-platform-development-practices/</id>
+    <published>2016-04-10T16:00:00.000Z</published>
+    <updated>2016-04-13T13:43:58.000Z</updated>
+    
+    <content type="html">&lt;p&gt;今天中午去图书馆还书&amp;amp;&amp;amp;借书，偶然看到一本《微信公众平台开发最佳实践》，想着竟然这也有教材了？于是就借回来看了一下，拿自己的微信公众号（硬性植入：八宝粥）当小白鼠，实践了其中一部分。&lt;/p&gt;
+&lt;p&gt;开发需要有自己的服务器，这本书上说的新浪SAE不错，于是我也就打算用SAE试试。之前就用过SAE，不过很久没用了；登录了一看，欠费了！！！我那“挺尸”了好几年的WordPress博客，竟然还在收费。为了接着用，就充了10块钱。顺便把博客删了。&lt;/p&gt;
+&lt;h3 id=&quot;服务器端的验证文件-PHP实现&quot;&gt;&lt;a href=&quot;#服务器端的验证文件-PHP实现&quot; class=&quot;headerlink&quot; title=&quot;服务器端的验证文件(PHP实现)&quot;&gt;&lt;/a&gt;服务器端的验证文件(PHP实现)&lt;/h3&gt;&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;56&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;57&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;58&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;59&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;60&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;61&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;62&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;63&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;65&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;66&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;67&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;68&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;69&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;70&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;71&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;define(&lt;span class=&quot;string&quot;&gt;&quot;TOKEN&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;weixin&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$wechatObj = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; wechatCallbackapiTest();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;isset&lt;/span&gt;($_GET[&lt;span class=&quot;string&quot;&gt;&#39;echostr&#39;&lt;/span&gt;])) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    $wechatObj-&amp;gt;valid();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    $wechatObj-&amp;gt;responseMsg();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;wechatCallbackapiTest&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//验证签名&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;valid&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $echoStr = $_GET[&lt;span class=&quot;string&quot;&gt;&quot;echostr&quot;&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;($this-&amp;gt;checkSignature())&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;echo&lt;/span&gt; $echoStr;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;exit&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;checkSignature&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $signature = $_GET[&lt;span class=&quot;string&quot;&gt;&quot;signature&quot;&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $timestamp = $_GET[&lt;span class=&quot;string&quot;&gt;&quot;timestamp&quot;&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $nonce = $_GET[&lt;span class=&quot;string&quot;&gt;&quot;nonce&quot;&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $token = TOKEN;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $tmpArr = &lt;span class=&quot;keyword&quot;&gt;array&lt;/span&gt;($token, $timestamp, $nonce);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        sort($tmpArr, SORT_STRING);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $tmpStr = implode( $tmpArr );&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $tmpStr = sha1( $tmpStr );&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;( $tmpStr == $signature )&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;false&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//响应消息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;responseMsg&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $postStr = $GLOBALS[&lt;span class=&quot;string&quot;&gt;&quot;HTTP_RAW_POST_DATA&quot;&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (!&lt;span class=&quot;keyword&quot;&gt;empty&lt;/span&gt;($postStr))&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            $postObj = simplexml_load_string($postStr, &lt;span class=&quot;string&quot;&gt;&#39;SimpleXMLElement&#39;&lt;/span&gt;, LIBXML_NOCDATA);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            $fromUsername = $postObj-&amp;gt;FromUserName;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            $toUsername = $postObj-&amp;gt;ToUserName;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            $keyword = trim($postObj-&amp;gt;Content);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            $time = time();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            $textTpl = &lt;span class=&quot;string&quot;&gt;&quot;&amp;lt;xml&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        &amp;lt;ToUserName&amp;gt;&amp;lt;![CDATA[%s]]&amp;gt;&amp;lt;/ToUserName&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        &amp;lt;FromUserName&amp;gt;&amp;lt;![CDATA[%s]]&amp;gt;&amp;lt;/FromUserName&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        &amp;lt;CreateTime&amp;gt;%s&amp;lt;/CreateTime&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        &amp;lt;MsgType&amp;gt;&amp;lt;![CDATA[%s]]&amp;gt;&amp;lt;/MsgType&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        &amp;lt;Content&amp;gt;&amp;lt;![CDATA[%s]]&amp;gt;&amp;lt;/Content&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        &amp;lt;FuncFlag&amp;gt;0&amp;lt;/FuncFlag&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        &amp;lt;/xml&amp;gt;&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;($keyword == &lt;span class=&quot;string&quot;&gt;&quot;?&quot;&lt;/span&gt; || $keyword == &lt;span class=&quot;string&quot;&gt;&quot;？&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                $msgType = &lt;span class=&quot;string&quot;&gt;&quot;text&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                $contentStr = date(&lt;span class=&quot;string&quot;&gt;&quot;Y-m-d H:i:s&quot;&lt;/span&gt;,time());&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;echo&lt;/span&gt; $resultStr;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;exit&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;微信公众平台配置&quot;&gt;&lt;a href=&quot;#微信公众平台配置&quot; class=&quot;headerlink&quot; title=&quot;微信公众平台配置&quot;&gt;&lt;/a&gt;微信公众平台配置&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160411_1.png&quot; alt=&quot;20160411_1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;终于走到验证服务器这一步，点击提交。可是提交了很多次，无论如何都是“Token验证失败”，尝试了很多次，也试了网上的一些解决办法，没用。&lt;/p&gt;
+&lt;p&gt;于是回到起点，老老实实的在自己的阿里云服务器上新建一个虚拟机，解析域名，ftp上传验证文件。然后就成功了……&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160411_2.png&quot; alt=&quot;20160411_2&quot;&gt;&lt;/p&gt;
+&lt;p&gt;不过，验证成功后，公众号原本的自动回复和自定义菜单功能就不能使用了，因为需要自己在服务器端配置。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160411_3.png&quot; alt=&quot;20160411_3&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160411_4.png&quot; alt=&quot;20160411_4&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;基础接口&quot;&gt;&lt;a href=&quot;#基础接口&quot; class=&quot;headerlink&quot; title=&quot;基础接口&quot;&gt;&lt;/a&gt;基础接口&lt;/h3&gt;&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//用户发送的消息类型判断&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;switch&lt;/span&gt; ($RX_TYPE)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;text&quot;&lt;/span&gt;:    &lt;span class=&quot;comment&quot;&gt;//文本消息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $result = $this-&amp;gt;receiveText($postObj);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;break&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;image&quot;&lt;/span&gt;:   &lt;span class=&quot;comment&quot;&gt;//图片消息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $result = $this-&amp;gt;receiveImage($postObj);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;break&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;voice&quot;&lt;/span&gt;:   &lt;span class=&quot;comment&quot;&gt;//语音消息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $result = $this-&amp;gt;receiveVoice($postObj);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;break&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;video&quot;&lt;/span&gt;:   &lt;span class=&quot;comment&quot;&gt;//视频消息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $result = $this-&amp;gt;receiveVideo($postObj);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;break&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;location&quot;&lt;/span&gt;:&lt;span class=&quot;comment&quot;&gt;//位置消息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $result = $this-&amp;gt;receiveLocation($postObj);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;break&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;link&quot;&lt;/span&gt;:    &lt;span class=&quot;comment&quot;&gt;//链接消息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $result = $this-&amp;gt;receiveLink($postObj);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;break&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;event&quot;&lt;/span&gt;:   &lt;span class=&quot;comment&quot;&gt;//事件消息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $result = $this-&amp;gt;receiveEvent($postObj);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;break&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;default&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $result = &lt;span class=&quot;string&quot;&gt;&quot;unknow msg type: &quot;&lt;/span&gt;.$RX_TYPE;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;break&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;echo&lt;/span&gt; $result;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;后面还有很多接口，比如自定义菜单、微信支付、微信小店等，不过需要通过微信认证才能具有接口权限；而微信认证暂不支持个人类型的公众帐号申请微信认证。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160411_5.png&quot; alt=&quot;20160411_5&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;完整代码：&lt;/strong&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/ybbz/IT-Learning/blob/master/PHP/wechat/index.php&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;微信公众平台开发实践&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      微信公众平台开发实践
+    
+    </summary>
+    
+      <category term="PHP" scheme="http://blog.ybbz.site/categories/PHP/"/>
+    
+    
+      <category term="PHP" scheme="http://blog.ybbz.site/tags/PHP/"/>
+    
+      <category term="WeChat" scheme="http://blog.ybbz.site/tags/WeChat/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>利用百度地图API定位</title>
+    <link href="http://blog.ybbz.site/2016/04/08/map-practice/"/>
+    <id>http://blog.ybbz.site/2016/04/08/map-practice/</id>
+    <published>2016-04-07T16:00:00.000Z</published>
+    <updated>2016-04-13T13:47:53.000Z</updated>
+    
+    <content type="html">&lt;p&gt;对于利用地图来定位展示这方面一直挺好奇的，之前倒是用过百度地图API，但也只是简单的利用地图生成器，给网站加一个地图地址。就像下面这样：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160408_1.png&quot; alt=&quot;20160408_1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;今天便针对地图做了一番尝试，记录如下。&lt;/p&gt;
+&lt;h3 id=&quot;微信地图&quot;&gt;&lt;a href=&quot;#微信地图&quot; class=&quot;headerlink&quot; title=&quot;微信地图&quot;&gt;&lt;/a&gt;微信地图&lt;/h3&gt;&lt;p&gt;大家应该都使用过微信的发送/共享位置功能，效果如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160408_3.png&quot; alt=&quot;20160408_3&quot;&gt;&lt;/p&gt;
+&lt;p&gt;现在很多公司都会依托微信公众号做开发，以期更好的展示或者直接利用公众号交易。而微信平台开发便涉及地图功能：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160408_2.png&quot; alt=&quot;20160408_2&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;百度地图API&quot;&gt;&lt;a href=&quot;#百度地图API&quot; class=&quot;headerlink&quot; title=&quot;百度地图API&quot;&gt;&lt;/a&gt;百度地图API&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160408_4.png&quot; alt=&quot;20160408_4&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;测试内容如下：&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;使用百度地图API功能&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// 百度地图API功能
+var map = new BMap.Map(&amp;quot;allmap&amp;quot;);    // 创建Map实例
+var point = new BMap.Point(116.3640600000, 39.9961000000);
+map.centerAndZoom(point, 15);  // 初始化地图,设置中心点坐标和地图级别
+map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
+map.setCurrentCity(&amp;quot;北京&amp;quot;);          // 设置地图显示的城市
+map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;利用浏览器定位（其他还有IP/城市名/经纬度定位等）&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;//浏览器定位
+var geolocation = new BMap.Geolocation();
+geolocation.getCurrentPosition(function (r) {
+    if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+        var mk = new BMap.Marker(r.point);
+        map.addOverlay(mk);
+        map.panTo(r.point);
+        //alert(&amp;apos;您的位置：&amp;apos; + r.point.lng + &amp;apos;,&amp;apos; + r.point.lat);
+    }
+    else {
+        alert(&amp;apos;failed&amp;apos; + this.getStatus());
+    }
+}, {enableHighAccuracy: true})
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;添加带有定位的导航控件&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// 添加带有定位的导航控件
+var navigationControl = new BMap.NavigationControl({
+    // 靠左上角位置
+    anchor: BMAP_ANCHOR_TOP_LEFT,
+    // LARGE类型
+    type: BMAP_NAVIGATION_CONTROL_LARGE,
+    // 启用显示定位
+    enableGeolocation: true
+});
+map.addControl(navigationControl);
+
+// 添加定位控件
+var geolocationControl = new BMap.GeolocationControl();
+geolocationControl.addEventListener(&amp;quot;locationSuccess&amp;quot;, function (e) {
+    // 定位成功事件
+    var address = &amp;quot;&amp;quot;;
+    //address += e.addressComponent.province;
+    address += e.addressComponent.city;
+    address += e.addressComponent.district;
+    address += e.addressComponent.street;
+    address += e.addressComponent.streetNumber;
+    alert(&amp;quot;位置更新成功:&amp;quot; + &amp;quot;\n\r&amp;quot; + address);
+});
+geolocationControl.addEventListener(&amp;quot;locationError&amp;quot;, function (e) {
+    // 定位失败事件
+    alert(e.message);
+});
+map.addControl(geolocationControl);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;添加自定义控件&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// 定义一个控件类,即function
+function ZoomControl() {
+    // 默认停靠位置和偏移量
+    this.defaultAnchor = BMAP_ANCHOR_BOTTOM_RIGHT;
+    this.defaultOffset = new BMap.Size(20, 20);
+}
+
+// 通过JavaScript的prototype属性继承于BMap.Control
+ZoomControl.prototype = new BMap.Control();
+
+// 自定义控件必须实现自己的initialize方法,并且将控件的DOM元素返回
+// 在本方法中创建个div元素作为控件的容器,并将其添加到地图容器中
+ZoomControl.prototype.initialize = function (map) {
+    // 创建一个DOM元素
+    var div = document.createElement(&amp;quot;div&amp;quot;);
+    // 添加文字说明
+    div.innerHTML = &amp;quot;&amp;lt;p class=&amp;apos;text&amp;apos;&amp;gt;立即购买&amp;lt;/p&amp;gt;&amp;quot;
+    //div.appendChild(document.createTextNode(&amp;quot;立即下单&amp;quot;));
+    // 设置样式
+    div.className = &amp;quot;btn&amp;quot;;
+    // 绑定事件,点击一次放大两级
+    div.onclick = function (e) {
+        alert(&amp;quot;下单喽~&amp;quot;)
+    }
+    // 添加DOM元素到地图中
+    map.getContainer().appendChild(div);
+    // 将DOM元素返回
+    return div;
+}
+// 创建控件
+var myZoomCtrl = new ZoomControl();
+// 添加到地图当中
+map.addControl(myZoomCtrl);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;完整代码：&lt;/strong&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/ybbz/IT-Learning/blob/master/HTML/map.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;百度地图API测试&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;测试效果如下图所示：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160408_5.png&quot; alt=&quot;20160408_5&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;高德地图API&quot;&gt;&lt;a href=&quot;#高德地图API&quot; class=&quot;headerlink&quot; title=&quot;高德地图API&quot;&gt;&lt;/a&gt;高德地图API&lt;/h3&gt;&lt;p&gt;高德地图也提供类似的服务，从下图来看，和百度类似（高德地图我并没有测试）。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160408_6.png&quot; alt=&quot;20160408_6&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160408_7.png&quot; alt=&quot;20160408_7&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      利用百度地图API定位
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://blog.ybbz.site/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="http://blog.ybbz.site/tags/JavaScript/"/>
+    
+      <category term="API" scheme="http://blog.ybbz.site/tags/API/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mac下(Pages+Papers+EndNote组合)论文写作与文献管理/引用</title>
+    <link href="http://blog.ybbz.site/2016/04/06/MacBook-Pages-Papers-EndNote/"/>
+    <id>http://blog.ybbz.site/2016/04/06/MacBook-Pages-Papers-EndNote/</id>
+    <published>2016-04-05T16:00:00.000Z</published>
+    <updated>2016-04-06T07:08:29.000Z</updated>
+    
+    <content type="html">&lt;p&gt;之前一直用Papers3进行文献管理，确实好用。最近要写论文，就想着能否用Papers3来引用文献，于是进行了一番探索，记录如下。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;相关配置&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MacBook 10.9&lt;/li&gt;
+&lt;li&gt;Pages 5.2&lt;/li&gt;
+&lt;li&gt;Papers 3.3.3&lt;/li&gt;
+&lt;li&gt;EndNote X7&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;一、Papers3添加引用&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1.开启引用（Papers-Preferences-Citations）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160406_1.png&quot; alt=&quot;20160406_1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;2.在文档中引用（在Pages文档中双击control键）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160406_2.png&quot; alt=&quot;20160406_2&quot;&gt;  &lt;/p&gt;
+&lt;p&gt;一般来说，到这一步就可以引用成功了!&lt;br&gt;然而，上图提示“Cannot Insert Citation”，说是我的Pages版本不支持。&lt;br&gt;至于“Copy to Clipboard”这种功能，显然不是我想要的；于是就有了下面的步骤。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;注：使用Papers管理文献不在本文讨论范围内，读者自行探索～&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;二、EndNote添加引用&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1.Papers3导出（File-Export-Refman RIS File）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160406_3.png&quot; alt=&quot;20160406_3&quot;&gt;  &lt;/p&gt;
+&lt;p&gt;2.EndNote导入（File-Import-demo.ris）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160406_4.png&quot; alt=&quot;20160406_4&quot;&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;三、Pages添加引用&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1.安装EndNote插件  &lt;/p&gt;
+&lt;p&gt;插件下载地址：&lt;a href=&quot;https://support.apple.com/kb/DL1692?locale=en_US&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Pages EndNote Plug-in v2.0&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2.在文档中引用&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160406_5.png&quot; alt=&quot;20160406_5&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160406_6.png&quot; alt=&quot;20160406_6&quot;&gt;  &lt;/p&gt;
+&lt;p&gt;参考资料：  &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;http://support.mekentosj.com/kb/papers2/citations-in-pages-with-papers-2-for-mac&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Citations in Pages with Papers 2 for Mac&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.360doc.com/content/11/1231/18/7660968_176344103.shtml&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Mac科研神器【文献管理】Papers&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/21910307&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Pages中插入Endnote引文是灰色的不可用状态&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/23138856&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;pages中如何修改/增加endnote引文格式&lt;/a&gt;  &lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      Mac下(Pages+Papers+EndNote组合)论文写作与文献管理/引用
+    
+    </summary>
+    
+      <category term="Tool" scheme="http://blog.ybbz.site/categories/Tool/"/>
+    
+    
+      <category term="Mac" scheme="http://blog.ybbz.site/tags/Mac/"/>
+    
+      <category term="Pages" scheme="http://blog.ybbz.site/tags/Pages/"/>
+    
+      <category term="Papers" scheme="http://blog.ybbz.site/tags/Papers/"/>
+    
+      <category term="EndNote" scheme="http://blog.ybbz.site/tags/EndNote/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django学习笔记三：Django博客实战</title>
+    <link href="http://blog.ybbz.site/2016/04/04/Django-foundation-three/"/>
+    <id>http://blog.ybbz.site/2016/04/04/Django-foundation-three/</id>
+    <published>2016-04-03T16:00:00.000Z</published>
+    <updated>2016-04-05T08:43:10.000Z</updated>
+    
+    <content type="html">&lt;p&gt;MySQL配置&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pip3 install PyMySQL
+＃ 在__init__.py添加如下内容：
+import pymysql
+pymysql.install_as_MySQLdb()
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;项目配置&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# settings.py
+DATABASES = {
+    &amp;apos;default&amp;apos;: {
+        &amp;apos;ENGINE&amp;apos;: &amp;apos;django.db.backends.mysql&amp;apos;,
+        &amp;apos;NAME&amp;apos;: &amp;apos;blog&amp;apos;,
+        &amp;apos;USER&amp;apos;: &amp;apos;username&amp;apos;,
+        &amp;apos;PASSWORD&amp;apos;: &amp;apos;password&amp;apos;,
+        &amp;apos;HOST&amp;apos;: &amp;apos;localhost&amp;apos;,
+        &amp;apos;PORT&amp;apos;: &amp;apos;3306&amp;apos;,
+    }
+}
+# models.py
+class Blog(models.Model):
+title = models.CharField(max_length=50)
+category = models.CharField(max_length=20, blank=True)
+create_time = models.CharField(max_length=20)
+content = models.TextField(blank=True, null=True)
+# views.py
+def home(request):
+    posts = Blog.objects.all()
+    paginator = Paginator(posts, 5)
+    page = request.GET.get(&amp;apos;page&amp;apos;)
+    try:
+        post_list = paginator.page(page)
+    except PageNotAnInteger:
+        post_list = paginator.page(1)
+    except EmptyPage:
+        post_list = paginator.paginator(paginator.num_pages)
+    return render(request, &amp;apos;home2.html&amp;apos;, {&amp;apos;post_list&amp;apos;: post_list})
+#urls.py
+from app.views import home
+urlpatterns = [
+              ......
+              url(r&amp;apos;^home$&amp;apos;, home, name=&amp;apos;home&amp;apos;),
+              ......
+          ]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;效果图如下（待完善…）：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160404_1.jpeg&quot; alt=&quot;20160404_1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Github仓库：&lt;a href=&quot;https://github.com/ybbz/django-blog&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;django-blog&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      Django学习笔记三：Django博客实战
+    
+    </summary>
+    
+      <category term="Python" scheme="http://blog.ybbz.site/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
+    
+      <category term="Django" scheme="http://blog.ybbz.site/tags/Django/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django学习笔记二：优化博客展示，抓取博文并保存到数据库</title>
+    <link href="http://blog.ybbz.site/2016/04/03/Django-foundation-two/"/>
+    <id>http://blog.ybbz.site/2016/04/03/Django-foundation-two/</id>
+    <published>2016-04-02T16:00:00.000Z</published>
+    <updated>2016-04-05T08:24:41.000Z</updated>
+    
+    <content type="html">&lt;p&gt;自从去年年底开始，走上了Jekyll+Github+Markdown这条不归路，先是把CSDN上面的一些博客迁移过来，然后就是经常写一些自己在平时学习、开发过程中的心得体会，不见得有人看。权当技术总结，外加练习写作表达了。&lt;/p&gt;
+&lt;p&gt;这种简洁优雅的表达方式，简直让人沉醉。不禁回想上大学（本科）时，也曾折腾了一段时间Wordpress，当时也写了一些内容、交了一些博友，可总有一种无病呻吟的感觉，后来不想写了，也没给服务器续费，就没了。之后，就是偶尔在CSDN上面做一些总结；可也没有很认真的对待。再后来，看了一些类似“我为什么要写博客”这样的文章，觉得说的很有道理，醍醐灌顶。于是，就在这儿安了家。我的朋友圈子里，几乎没有人写博客；虽然“孤单”，我却乐在其中。有时兴致来了，还把自己觉得不错的博文，在新建的公众号推送一下。&lt;/p&gt;
+&lt;p&gt;我在Github上fork的这个博客模版，文章有categories和tags这两个属性，可是页面展示出来的，只有tags，而categories却没有做展示。那么，问题来了！文章是需要有一个分类的，而一个文章却可能有多个标签。就想着，能不能加一个分类页面，更好的为文章分类。于是，就开始看模版的代码。据说Jekyll使用的是Ruby，我对Ruby完全不了解，但是不同语言之间是有规律可循的，这不，我就发现了规律：tags页面使用“for tag in site.tags”对标签进行遍历，于是我试了一下“for category in site.categories”，对分类进行遍历然后就通了。&lt;/p&gt;
+&lt;p&gt;这样，事情就好办了。在Tags.md同级目录（即网站根目录）新建Categories.md,把tags替换成categories，代码如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160402_1.jpeg&quot; alt=&quot;20160402_1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;剩下的问题就是，分类页面和标签页面的样式完全一样，于是便有了下面的想法，打算做出来看看效果如何。&lt;/p&gt;
+&lt;p&gt;大概思路是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;从Categories页面抓取博客的所有分类，以及每个分类下的文章（时间和标题）&lt;/li&gt;
+&lt;li&gt;将抓取到的内容保存到数据库中（新建blog数据库及表，字段title、create_time、content等）&lt;/li&gt;
+&lt;li&gt;从数据库中查询博客信息并做展示（此篇咱不分析，如有兴趣请关注本博客后续的文章）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;代码如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from urllib.request import urlopen
+from bs4 import BeautifulSoup
+import mysql.connector
+
+url = &amp;apos;http://blog.ybbz.site/Categories/&amp;apos;
+html = urlopen(url)
+bsObj = BeautifulSoup(html, &amp;apos;lxml&amp;apos;)
+uls = bsObj.findAll(&amp;apos;ul&amp;apos;, {&amp;apos;class&amp;apos;: &amp;apos;listing&amp;apos;})
+cate_list = []
+for ul in uls:
+    cate = ul.h4.string
+    for li in ul.findAll(&amp;apos;li&amp;apos;):
+        cate_list.append((str(cate), str(li.time.string), str(li.a.string)))
+print(cate_list)
+
+host = &amp;apos;your hostname&amp;apos;
+user = &amp;apos;your username&amp;apos;
+passwd = &amp;apos;your password&amp;apos;
+db = &amp;apos;your database&amp;apos;
+# connect database
+conn = mysql.connector.connect(host=host, user=user, passwd=passwd, db=db)
+cursor = conn.cursor()
+# save blogs
+sql = &amp;quot;insert into blog(category,create_time,title) values(%s, %s, %s)&amp;quot;
+cursor.executemany(sql, cate_list)
+conn.commit()
+&lt;/code&gt;&lt;/pre&gt;</content>
+    
+    <summary type="html">
+    
+      Django学习笔记二：优化博客展示，抓取博文并保存到数据库
+    
+    </summary>
+    
+      <category term="Python" scheme="http://blog.ybbz.site/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
+    
+      <category term="Django" scheme="http://blog.ybbz.site/tags/Django/"/>
+    
+      <category term="Crawler" scheme="http://blog.ybbz.site/tags/Crawler/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Django学习笔记一：创建新App及其常用命令</title>
+    <link href="http://blog.ybbz.site/2016/04/03/Django-foundation-one/"/>
+    <id>http://blog.ybbz.site/2016/04/03/Django-foundation-one/</id>
+    <published>2016-04-02T16:00:00.000Z</published>
+    <updated>2016-04-05T08:43:27.000Z</updated>
+    
+    <content type="html">&lt;p&gt;清明节假期，正是读书、学习的好时候；别人都出去玩了，然而我仍然在“学习”。之前一直对Django很感兴趣（因为很多人提到了它，而我也有打算在未来用Python重构PHP做的系统），因此就学习了一下&lt;/p&gt;
+&lt;p&gt;创建新的项目&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;django-admin.py startproject my_project
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;创建新的App&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# 在Django项目(my_project)的根目录下执行
+python3 manage.py startapp my_app
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;启动Django中的开发服务器&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# make new migrations
+python3 manage.py makemigrations
+# apply all migrations
+python3 manage.py migrate
+# run server
+python3 manage.py runserver
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;创建models&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;class App1(models.Model):
+    title = models.CharField(max_length=100)
+    category = models.CharField(max_length=50, blank=True)
+    date_time = models.DateTimeField(auto_now_add=True)
+
+    def __unicode__(self):
+        return self.title
+
+    class Meta:
+        ordering = [&amp;apos;-date_time&amp;apos;]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;进入Django中的交互式shell&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;python3 manage.py shell
+from app1.models import App1
+# create(增加操作)
+App1.objects.create(title=&amp;apos;title&amp;apos;,category=&amp;apos;category1&amp;apos;)
+# all和get(查看操作)
+App1.objects.all()
+App1.objects.get(id=1)
+# update(修改操作)
+demo = App1.objects.get(id=1)
+demo.title
+demo.title=&amp;apos;title2&amp;apos;
+# delete(删除操作)
+demo.delete()
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;创建一个超级用户&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;python3 manage.py createsuperuser
+# 输入http://127.0.0.1:8000/admin登录后台
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;数据库信息的增加和删除，admin.py中增加代码&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from article.models import App1
+admin.site.register(App1)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Views和URL操作&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# views.py
+from django.http import HttpResponse
+def home(request):
+    return HttpResponse(&amp;quot;Hello World, Django&amp;quot;)
+# urls.py
+url(r&amp;apos;^$&amp;apos;, &amp;apos;app1.views.home&amp;apos;)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;URL传参&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# views.py
+def detail(request, number):
+    return HttpResponse(&amp;quot;The number is %s.&amp;quot; % number)
+# urls.py
+url(r&amp;apos;^([0-9]+)/&amp;apos;, &amp;apos;app1.views.detail&amp;apos;, name=&amp;apos;detail&amp;apos;)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;URL传参查询数据库&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# views.py
+def database(request, args):
+    post = App1.objects.all()[int(args)]
+    str = (&amp;quot;title = %s, category = %s, date_time = %s&amp;quot; % (post.title, post.category, post.date_time))
+    return HttpResponse(str)
+# urls.py
+url(r&amp;apos;^id/([0-9])+/&amp;apos;, &amp;apos;article.views.database&amp;apos;, name=&amp;apos;database&amp;apos;),
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;将代码上传到Github&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# 在github中新建仓库django-blog
+# 在项目根目录下执行
+git init
+git remote add Django
+git@github.com:ybbz/django-blog.git
+git add .
+git status
+git commit -m &amp;quot;django blog init&amp;quot;
+git pull Django master &amp;amp;&amp;amp; git push Django master
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Error: That port is already in use.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ps aux | grep -i manage
+kill -9 ****
+python3 manage.py runserver
+&lt;/code&gt;&lt;/pre&gt;</content>
+    
+    <summary type="html">
+    
+      Django学习笔记一：创建新App及其常用命令
+    
+    </summary>
+    
+      <category term="Python" scheme="http://blog.ybbz.site/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
+    
+      <category term="Django" scheme="http://blog.ybbz.site/tags/Django/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>RoboBinding探究三：网络请求实现</title>
+    <link href="http://blog.ybbz.site/2016/04/01/Old-Posts-2015-12-14-RoboBinding-three-HTTP/"/>
+    <id>http://blog.ybbz.site/2016/04/01/Old-Posts-2015-12-14-RoboBinding-three-HTTP/</id>
+    <published>2016-04-01T09:52:35.000Z</published>
+    <updated>2016-04-02T06:42:53.000Z</updated>
+    
+    <content type="html">&lt;p&gt;###TestActivity&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;@SuppressLint(&amp;quot;HandlerLeak&amp;quot;)
+public class TestActivity extends Activity {
+
+    private Handler mHandler;
+    private PresentationModelChangeSupport changeSupport;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        PresentationModel presentationModel = new PresentationModel(
+                TestActivity.this);
+        changeSupport = presentationModel.getPresentationModelChangeSupport();
+        ViewBinder viewBinder = createViewBinder();
+        View rootView = viewBinder.inflateAndBind(R.layout.activity_test,
+                presentationModel);
+        setContentView(rootView);
+        // 处理消息，更新UI
+        mHandler = new Handler() {
+            @Override
+            public void handleMessage(Message msg) {
+                switch (msg.what) {
+                case 0x01:
+                    changeSupport.firePropertyChange(&amp;quot;http&amp;quot;);
+                    break;
+                default:
+                    break;
+                }
+            }
+        };
+
+    }
+
+    private ViewBinder createViewBinder() {
+        BinderFactory reusableBinderFactory = new BinderFactoryBuilder()
+                .build();
+        return reusableBinderFactory.createViewBinder(this);
+    }
+
+    public Handler getHandler() {
+        return mHandler;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;###PresentationModel&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;@org.robobinding.annotation.PresentationModel
+public class PresentationModel implements HasPresentationModelChangeSupport {
+    private PresentationModelChangeSupport changeSupport;
+    private String result;
+    private TestActivity context;
+
+    public PresentationModel(TestActivity context) {
+        this.context = context;
+        changeSupport = new PresentationModelChangeSupport(this);
+    }
+
+    public String getHttp() {
+        return &amp;quot;网络数据：&amp;quot; + result;
+    }
+
+    public void httpRequest() {
+        changeSupport.firePropertyChange(&amp;quot;http&amp;quot;);
+        // 网络请求
+        myRequest();
+    }
+
+    public void myRequest() {
+        AsyncHttpClient client = new AsyncHttpClient();
+        String urlString = &amp;quot;http://apis.baidu.com/apistore/weatherservice/citylist&amp;quot;;
+        client.get(urlString, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(String response) {
+                result = response;
+                Log.e(&amp;quot;网络请求成功&amp;quot;, response);
+                //
+                Handler handler = context.getHandler();
+                if (handler != null) {
+                    Message msg = handler.obtainMessage();
+                    msg.what = 0x01;
+                    handler.sendMessage(msg);
+                }
+            }
+
+            @Override
+            public void onFailure(Throwable arg0) {
+                Log.e(&amp;quot;网络请求失败&amp;quot;, &amp;quot;失败&amp;quot;);
+            }
+        });
+    }
+
+    @Override
+    public PresentationModelChangeSupport getPresentationModelChangeSupport() {
+        return changeSupport;
+    }
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;###R.layout.activity_test&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;LinearLayout xmlns:android=&amp;quot;http://schemas.android.com/apk/res/android&amp;quot;
+    xmlns:tools=&amp;quot;http://schemas.android.com/tools&amp;quot;
+    xmlns:bind=&amp;quot;http://robobinding.org/android&amp;quot;
+    android:layout_width=&amp;quot;match_parent&amp;quot;
+    android:layout_height=&amp;quot;match_parent&amp;quot;
+    android:orientation=&amp;quot;vertical&amp;quot;
+    tools:ignore=&amp;quot;MissingPrefix&amp;quot; &amp;gt;
+
+    &amp;lt;TextView
+        android:layout_width=&amp;quot;wrap_content&amp;quot;
+        android:layout_height=&amp;quot;wrap_content&amp;quot;
+        android:layout_marginTop=&amp;quot;30dp&amp;quot;
+        bind:text=&amp;quot;{http}&amp;quot; /&amp;gt;
+
+    &amp;lt;Button
+        android:layout_width=&amp;quot;wrap_content&amp;quot;
+        android:layout_height=&amp;quot;wrap_content&amp;quot;
+        android:text=&amp;quot;网络请求&amp;quot;
+        bind:onClick=&amp;quot;httpRequest&amp;quot; /&amp;gt;
+
+&amp;lt;/LinearLayout&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;</content>
+    
+    <summary type="html">
+    
+      「RoboBinding探究」
+    
+    </summary>
+    
+      <category term="Android" scheme="http://blog.ybbz.site/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="http://blog.ybbz.site/tags/Android/"/>
+    
+      <category term="RoboBinding" scheme="http://blog.ybbz.site/tags/RoboBinding/"/>
+    
+      <category term="MVVM" scheme="http://blog.ybbz.site/tags/MVVM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown 简明语法参考</title>
+    <link href="http://blog.ybbz.site/2016/04/01/Old-Posts-2015-08-19-Markdown-Syntax/"/>
+    <id>http://blog.ybbz.site/2016/04/01/Old-Posts-2015-08-19-Markdown-Syntax/</id>
+    <published>2016-04-01T09:52:35.000Z</published>
+    <updated>2016-04-02T08:20:38.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;Markdown-概述&quot;&gt;&lt;a href=&quot;#Markdown-概述&quot; class=&quot;headerlink&quot; title=&quot;Markdown 概述&quot;&gt;&lt;/a&gt;Markdown 概述&lt;/h2&gt;&lt;p&gt;Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面。&lt;br&gt;—— &lt;a href=&quot;https://zh.wikipedia.org/wiki/Markdown&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;维基百科&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Markdown 语法是对纯文本格式的强化，能使文本显示得更清晰、有条理。但它依旧算是简单的文本，很容易修改和扩展，常用于快速写作中。&lt;/p&gt;
+&lt;p&gt;所见即所得。不少 MD 编辑器有极强的实时预览渲染，可以让写作者及时看到自己写作的内容显示效果并对此做出调整。&lt;/p&gt;
+&lt;p&gt;Markdown 格式的简洁特性、兼容扩展性颇佳，使之能快速转换为各种互联网上的常用格式，比如 HTML、Word、PDF 等。目前，越来越多的人开始接受和使用它。&lt;/p&gt;
+&lt;h2 id=&quot;Markdown-编辑器&quot;&gt;&lt;a href=&quot;#Markdown-编辑器&quot; class=&quot;headerlink&quot; title=&quot;Markdown 编辑器&quot;&gt;&lt;/a&gt;Markdown 编辑器&lt;/h2&gt;&lt;p&gt;常见及常用的 Markdown 编辑器很多，比如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://macdown.uranusjr.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MacDown&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://typora.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Typora&lt;/a&gt;  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;此外还有（收费为主）：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.literatureandlatte.com/scrivener.php&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Scrivener&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://realmacsoftware.com/typed/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Typed&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://ia.net/writer/mac/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;
+&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://bywordapp.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Byword&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://marked2app.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Marked 2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.ulyssesapp.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Ulysses&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://marboo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Marboo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://25.io/mou/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Mou&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以及支持 Markdown 的优质在线编辑器：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://maxiang.info/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;马克飞象&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dillinger.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Dillinger&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://stackedit.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;StackEdit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://markable.in/editor/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Markable&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;入门编辑器推荐第一序列的 MacDown，其它编辑器可以等熟悉 Markdown 之后再自行探索。&lt;/p&gt;
+&lt;h1 id=&quot;Markdown-语法&quot;&gt;&lt;a href=&quot;#Markdown-语法&quot; class=&quot;headerlink&quot; title=&quot;Markdown 语法&quot;&gt;&lt;/a&gt;Markdown 语法&lt;/h1&gt;&lt;p&gt;关于 Markdown 的基本语法，这里将逐一说明。对于一些写作中一般不算常用（不好用）的表格及代码展示，不多说明。&lt;/p&gt;
+&lt;p&gt;基本所有以下涉及的标点都以在英文输入状态下的为准。不然会导致语法失效。&lt;/p&gt;
+&lt;p&gt;先看一个包含了蛮多基本语法的范例。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://dreamofbook.qiniudn.com/Markdown-Sample.png&quot; alt=&quot;Markdown&quot;&gt;&lt;/p&gt;
+&lt;p&gt;关于语法，让我们先从在文中起到分清区块、梳理逻辑关系的标题说起：&lt;/p&gt;
+&lt;h2 id=&quot;标题&quot;&gt;&lt;a href=&quot;#标题&quot; class=&quot;headerlink&quot; title=&quot;标题&quot;&gt;&lt;/a&gt;标题&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;# 一级标题
+## 二级标题
+### 三级标题
+#### 四级标题
+##### 五级标题
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;显示效果如下：&lt;/p&gt;
+&lt;h1 id=&quot;这是一级标题&quot;&gt;&lt;a href=&quot;#这是一级标题&quot; class=&quot;headerlink&quot; title=&quot;这是一级标题&quot;&gt;&lt;/a&gt;这是一级标题&lt;/h1&gt;&lt;h2 id=&quot;俺，二级标题&quot;&gt;&lt;a href=&quot;#俺，二级标题&quot; class=&quot;headerlink&quot; title=&quot;俺，二级标题&quot;&gt;&lt;/a&gt;俺，二级标题&lt;/h2&gt;&lt;h3 id=&quot;我是三级标题&quot;&gt;&lt;a href=&quot;#我是三级标题&quot; class=&quot;headerlink&quot; title=&quot;我是三级标题&quot;&gt;&lt;/a&gt;我是三级标题&lt;/h3&gt;&lt;h4 id=&quot;人家只是个四级标题……&quot;&gt;&lt;a href=&quot;#人家只是个四级标题……&quot; class=&quot;headerlink&quot; title=&quot;人家只是个四级标题……&quot;&gt;&lt;/a&gt;人家只是个四级标题……&lt;/h4&gt;&lt;h5 id=&quot;更小的我，五级标题-XD&quot;&gt;&lt;a href=&quot;#更小的我，五级标题-XD&quot; class=&quot;headerlink&quot; title=&quot;更小的我，五级标题 XD&quot;&gt;&lt;/a&gt;更小的我，五级标题 XD&lt;/h5&gt;&lt;h6 id=&quot;Github-支持的最小的可以我（哪里冒出来的）&quot;&gt;&lt;a href=&quot;#Github-支持的最小的可以我（哪里冒出来的）&quot; class=&quot;headerlink&quot; title=&quot;Github 支持的最小的可以我（哪里冒出来的）&quot;&gt;&lt;/a&gt;Github 支持的最小的可以我（哪里冒出来的）&lt;/h6&gt;&lt;hr&gt;
+&lt;h2 id=&quot;换行&quot;&gt;&lt;a href=&quot;#换行&quot; class=&quot;headerlink&quot; title=&quot;换行&quot;&gt;&lt;/a&gt;换行&lt;/h2&gt;&lt;p&gt;Markdown 语法下，换行的方式有：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;隔行换行。连续敲击两下「Return」键，再开始写下一段；&lt;/li&gt;
+&lt;li&gt;在行末添加两个空格符，而后「Return」（为了显示清晰），开始写下一段。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;强调标记&quot;&gt;&lt;a href=&quot;#强调标记&quot; class=&quot;headerlink&quot; title=&quot;强调标记&quot;&gt;&lt;/a&gt;强调标记&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;*斜体* 斜体
+_斜体_
+
+**加粗** 加粗
+__粗体_
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;对于强调符号，需要注意的就是，以什么开始，以什么结尾，数量也保持一致，相应的语法才能生效。&lt;/p&gt;
+&lt;p&gt;显示效果如下：&lt;/p&gt;
+&lt;p&gt;这是 &lt;em&gt;斜体&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;这是 &lt;strong&gt;强调&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;分割线&quot;&gt;&lt;a href=&quot;#分割线&quot; class=&quot;headerlink&quot; title=&quot;分割线&quot;&gt;&lt;/a&gt;分割线&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;*** 加分割线
+* * * 加分割线
+***** 或者这样？
+--- 还有另外的方式
+___ 其实，还可以这样
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;以下就是一条分割线：&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;列表&quot;&gt;&lt;a href=&quot;#列表&quot; class=&quot;headerlink&quot; title=&quot;列表&quot;&gt;&lt;/a&gt;列表&lt;/h2&gt;&lt;p&gt;列表分无序列表合有序列表两类，前者以「*」、「-」、「+」开头，后者以阿拉伯数字「1」开头。&lt;/p&gt;
+&lt;p&gt;三个注意点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;如果前面有内容，在输入字符前，应先空一行；&lt;/li&gt;
+&lt;li&gt;符号与内容之间，须隔一个空格符，列表模式才能生效；&lt;/li&gt;
+&lt;li&gt;第一行内容输入完成，换行会自动补全下一行的开头符号（有序列表数字递增，无序列表符号不变），接下去只需继续输下一行内容，以此类推；&lt;/li&gt;
+&lt;li&gt;多层级列表，为美观也为减少出错考虑，注意同级列表符号的统一和上下对齐。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;无序列表：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Unordered List:
+
+* English
+* Japanese
+* Chinese
+* ……
+
+Unordered List:
+
+- English
+- Japanese
+- Chinese
+- ……
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;显示效果均如下：&lt;/p&gt;
+&lt;p&gt;Country List：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;English&lt;/li&gt;
+&lt;li&gt;Japanese&lt;/li&gt;
+&lt;li&gt;Chinese&lt;/li&gt;
+&lt;li&gt;……&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;有序列表：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Ordered List:
+
+1. Orange
+2. Apple
+3. Banana
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;My Favorite Fruit List:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Orange&lt;/li&gt;
+&lt;li&gt;Apple&lt;/li&gt;
+&lt;li&gt;Banana&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;多层级列表：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;两都名胜
+
+- 南京
+  + 玄武湖
+  + 中山陵
+  + 鸡鸣寺
+- 杭州
+  + 西湖
+    * 苏堤
+    * 湖心亭
+    * 太子湾
+  + 九溪
+  + 灵隐
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;注：此处的几个符号作用都是一样的，不同层级符号有所区别只为显示美观。日常使用，请每一级的符号一致。&lt;/p&gt;
+&lt;p&gt;显示效果如下：&lt;/p&gt;
+&lt;p&gt;两都名胜&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;南京&lt;ul&gt;
+&lt;li&gt;玄武湖&lt;/li&gt;
+&lt;li&gt;中山陵&lt;/li&gt;
+&lt;li&gt;鸡鸣寺&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;杭州&lt;ul&gt;
+&lt;li&gt;西湖&lt;ul&gt;
+&lt;li&gt;苏堤&lt;/li&gt;
+&lt;li&gt;湖心亭&lt;/li&gt;
+&lt;li&gt;太子湾&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;九溪&lt;/li&gt;
+&lt;li&gt;灵隐&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;引用&quot;&gt;&lt;a href=&quot;#引用&quot; class=&quot;headerlink&quot; title=&quot;引用&quot;&gt;&lt;/a&gt;引用&lt;/h2&gt;&lt;p&gt;引用。使用「&amp;gt;」，添加在每行的开头。&lt;/p&gt;
+&lt;p&gt;两个注意点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;「&amp;gt;」的上一行，必须为空行；&lt;/li&gt;
+&lt;li&gt;「&amp;gt;」与其后紧跟的第一个字之间有无空格符不影响效果（不过建议加一个）。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;显示效果如下：&lt;/p&gt;
+&lt;p&gt;詹姆斯·馬奇《馬奇論管理》：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;堂吉诃德提醒我们，如果我們只在不被辜負時去信任，只在有所回報時去愛，只在學有所用時去學習，那麼我們就放棄了為人的特征——願意在自我理念的名義下行動，不管結果如何。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;或者，你想要引用一首诗、一首歌：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; 五月天《天使》
+
+&amp;gt; 像孩子依赖着肩膀
+&amp;gt; 像眼泪依赖着脸庞
+&amp;gt; 你就像天使一样
+&amp;gt; 给我依赖 给我力量  
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这儿也需要注意换行：每一行最后换行，添加两个空格符，不然内容会挤压在一块，变成一行。或者行与行之间，空一行。以下例子中，歌词部分输入时虽然都分列开，而实际显示时歌词都连成一句了。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;五月天《天使》&lt;/p&gt;
+&lt;p&gt;像孩子依赖着肩膀&lt;br&gt;像眼泪依赖着脸庞&lt;br&gt;你就像天使一样&lt;br&gt;给我依赖 给我力量&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;每句歌词的行尾空两格之后，效果是这样的：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;五月天《天使》&lt;/p&gt;
+&lt;p&gt;像孩子依赖着肩膀&lt;br&gt;像眼泪依赖着脸庞&lt;br&gt;你就像天使一样&lt;br&gt;给我依赖 给我力量   &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果是想嵌套引用，像这样：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;浙江  &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;杭州  &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;西湖  &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;湖心亭  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;博客默认的 Markdown 工具有点问题，效果如下图：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i1381.photobucket.com/albums/ah234/Azeril_Lapland/Screen%20Shot%202015-08-30%20at%209.26.17%20PM_zpsg0ojze8c.png&quot; alt=&quot;嵌套引用&quot;&gt;&lt;/p&gt;
+&lt;p&gt;语法如下，每行多添加一个「&amp;gt;」符号，再输入文字内容即可（每行行尾记得添两个空格符）：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; 浙江
+&amp;gt;&amp;gt; 杭州
+&amp;gt;&amp;gt;&amp;gt; 西湖
+&amp;gt;&amp;gt;&amp;gt;&amp;gt; 湖心亭
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;代码区&quot;&gt;&lt;a href=&quot;#代码区&quot; class=&quot;headerlink&quot; title=&quot;代码区&quot;&gt;&lt;/a&gt;代码区&lt;/h2&gt;&lt;p&gt;也就是 Blockquotes。&lt;/p&gt;
+&lt;p&gt;如果行尾不空格呢有没其它解决方法呢？如果是这样——&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;风吹柳絮
+
+《麦兜当当伴我心》插曲
+
+风吹柳絮 茫茫难聚  
+随着风吹 飘来飘去  
+我若能够携你随风去  
+
+我愿像一块扣肉  
+我愿像一块扣肉  
+我愿像一块扣肉  
+扣住你梅菜扣住你手  
+
+我愿像一块扣肉  
+我愿像一块扣肉  
+我是你一块扣肉  
+你是那梅菜扣住你手  
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这里的方法是首行开头缩进四个空格符，或敲一下 tab 键（制表符键）。&lt;/p&gt;
+&lt;p&gt;还有一个方法。连续三个反引号「`」组成的前后两行，将内容包裹起来。&lt;/p&gt;
+&lt;p&gt;显示效果如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;这是另一个代码区块&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;在代码区块中，Markdown 语法不会被转换，这也是为什么前面很多 Markdown 语法的例子能在代码区展示出来的缘故。不然这样一篇以 Markdown 语法解释 Markdown 语法的说明也无从谈起了。&lt;/p&gt;
+&lt;p&gt;嗯…嗯？&lt;/p&gt;
+&lt;p&gt;反引号的输入：英文输入模式下，点击键盘左上角的「~」键。&lt;/p&gt;
+&lt;h2 id=&quot;标记&quot;&gt;&lt;a href=&quot;#标记&quot; class=&quot;headerlink&quot; title=&quot;标记&quot;&gt;&lt;/a&gt;标记&lt;/h2&gt;&lt;p&gt;标记小段代码（文字）。为着重强调的内容添加深色背景框，在内容前后各添一个反引号「`」，将代码段或文字夹在中间即可实现。&lt;/p&gt;
+&lt;p&gt;显示效果如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Use the &lt;code&gt;printf()&lt;/code&gt; function.&lt;/li&gt;
+&lt;li&gt;这是加深背景色框的&lt;code&gt;字符&lt;/code&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;网址链接&quot;&gt;&lt;a href=&quot;#网址链接&quot; class=&quot;headerlink&quot; title=&quot;网址链接&quot;&gt;&lt;/a&gt;网址链接&lt;/h2&gt;&lt;h3 id=&quot;自动链接&quot;&gt;&lt;a href=&quot;#自动链接&quot; class=&quot;headerlink&quot; title=&quot;自动链接&quot;&gt;&lt;/a&gt;自动链接&lt;/h3&gt;&lt;p&gt;使用「&amp;lt;」、「&amp;gt;」这样的尖角符号，url/email 在 Markdown 下可自动实现可点击链接的效果。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;http://www.google.com&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;显示效果如下：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.google.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.google.com&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;网址链接-1&quot;&gt;&lt;a href=&quot;#网址链接-1&quot; class=&quot;headerlink&quot; title=&quot;网址链接&quot;&gt;&lt;/a&gt;网址链接&lt;/h3&gt;&lt;p&gt;至于网址链接的基本格式，应该是这样：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[Link Name](Link)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;构成为：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一个方括号，添加图片的描述文字&lt;/li&gt;
+&lt;li&gt;一个括号，添加图片网址&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以下为一个网址的栗子：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[Welcome to my blog](http://azeril.me)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;显示效果如下：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://azeril.me&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Welcome to my blog&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;索引链接&quot;&gt;&lt;a href=&quot;#索引链接&quot; class=&quot;headerlink&quot; title=&quot;索引链接&quot;&gt;&lt;/a&gt;索引链接&lt;/h3&gt;&lt;p&gt;内容描述后添加定义链接（以数字/英文/符号为主），在文字段落外关联具体网址，实现可跳转效果。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[Click Google Search][Tags]
+
+[Tags]: http://www.google.com &amp;quot;Google&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;显示效果如下：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.google.com&quot; title=&quot;Google&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Click Google Search&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;添加图片&quot;&gt;&lt;a href=&quot;#添加图片&quot; class=&quot;headerlink&quot; title=&quot;添加图片&quot;&gt;&lt;/a&gt;添加图片&lt;/h2&gt;&lt;p&gt;插入图片的语法：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;![Pic name](Pic link)  
+![Instagram Pic](http://i.imgur.com/UKhrRrK.jpg)
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;一个英文输入下的惊叹号「!」；&lt;/li&gt;
+&lt;li&gt;一个方括号，添加图片的描述文字；&lt;/li&gt;
+&lt;li&gt;一个括号，添加图片网址。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;相比插入网址链接，多了一个开头的惊叹号。&lt;/p&gt;
+&lt;p&gt;显示效果如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/UKhrRrK.jpg&quot; alt=&quot;Instagram Pic&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;添加表格&quot;&gt;&lt;a href=&quot;#添加表格&quot; class=&quot;headerlink&quot; title=&quot;添加表格&quot;&gt;&lt;/a&gt;添加表格&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;|Province |Title 1|Title 2|Title 3|
+|---|---:|:---:|---:|
+|City|City 1|City 2|City 3|
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;显示效果如下：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Province&lt;/th&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;ZJ 浙江省&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;FJ 福建省&lt;/th&gt;
+&lt;th style=&quot;text-align:right&quot;&gt;YN 云南省&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;City&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;杭州&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;厦门&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;昆明&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;一般的表格由「|」与「-」两种符号（英文半角字符）构成。第一、三及其后的行都由「|」组成。依数据的列数确定数量（列数据量 +1）。&lt;br&gt;第二行为中间为连续的「-」组成的隔断，数量不限，更多是让文本显得美观（和预览无关）。&lt;/p&gt;
+&lt;p&gt;第二行中出现的冒号作用是设定表格内数据的对齐方式，不是必须使用的。具体意义如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;:– 冒号在左，左对齐&lt;/li&gt;
+&lt;li&gt;–： 冒号在右，右对齐&lt;/li&gt;
+&lt;li&gt;：–： 左右两侧都出现冒号，居中对齐&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;转义符&quot;&gt;&lt;a href=&quot;#转义符&quot; class=&quot;headerlink&quot; title=&quot;转义符&quot;&gt;&lt;/a&gt;转义符&lt;/h2&gt;&lt;p&gt;如何在 MD 文档中输出被用于转换格式的符号本身？这里就需要转义符，也就是反斜线「\」来协助。&lt;/p&gt;
+&lt;p&gt;如果要显示「*」，则可以用如下的方式：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;表示强调的符号这样用： \*Emphasize\*
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;显示效果如下：&lt;/p&gt;
+&lt;p&gt;表示强调的符号这样用： *Emphasize*&lt;/p&gt;
+&lt;p&gt;支持转义的 MD 符号包括：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;\   反斜线
+`   反引号
+\*   星号
+\_   下划线
+{}  花括号
+[]  方括号
+()  圆括号
+#   井号
++   加号
+-   减号（连字符）
+.   句点
+!   感叹号
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;h2 id=&quot;扩展阅读&quot;&gt;&lt;a href=&quot;#扩展阅读&quot; class=&quot;headerlink&quot; title=&quot;扩展阅读&quot;&gt;&lt;/a&gt;扩展阅读&lt;/h2&gt;&lt;p&gt;基于 Markdown 的 HTML 语言运用。&lt;/p&gt;
+&lt;p&gt;HTML 可以契合 MD 语法，而通过利用前者，可以实现一些单纯依靠 MD 语法暂时无法实现的功能和页面显示效果。&lt;/p&gt;
+&lt;h3 id=&quot;网址链接-2&quot;&gt;&lt;a href=&quot;#网址链接-2&quot; class=&quot;headerlink&quot; title=&quot;网址链接&quot;&gt;&lt;/a&gt;网址链接&lt;/h3&gt;&lt;p&gt;页面内跳转链接。利用 HTML &lt;img&gt; 语法制作 Markdown 长文的可跳转目录。分两部分，前为具体条目信息，后边则指向内容的位置（代码段放在页面的哪里，点击索引条目后就跳转到哪里）。&lt;/p&gt;
+&lt;p&gt;范例语法如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[Line](#A)
+
+&amp;lt;a name=&amp;quot;A&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&quot;#A&quot;&gt;Line&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a name=&quot;A&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;添加图片-进阶版&quot;&gt;&lt;a href=&quot;#添加图片-进阶版&quot; class=&quot;headerlink&quot; title=&quot;添加图片(进阶版)&quot;&gt;&lt;/a&gt;添加图片(进阶版)&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;http://7s1rzi.com1.z0.glb.clouddn.com/Pic_Sample.jpg&quot; alt=&quot;Pic_Sample&quot;&gt;&lt;/p&gt;
+&lt;p&gt;在页面中，要并排插入多张图片（两张或三张并排显示）或将插入图片居中显示，又或者是类似固定显示图片的宽度与高度，目前依靠 Markdown 语法还无法实现。&lt;br&gt;这时，调用 HTML 语法就可以轻松搞定。&lt;/p&gt;
+&lt;p&gt;以下，可以仅看添加图床图片的那部分，减少认知负荷。&lt;/p&gt;
+&lt;h3 id=&quot;图片与图床&quot;&gt;&lt;a href=&quot;#图片与图床&quot; class=&quot;headerlink&quot; title=&quot;图片与图床&quot;&gt;&lt;/a&gt;图片与图床&lt;/h3&gt;&lt;p&gt;图床是第三方服务托管个人上传图片，并提供图片外链，让我们在写博客文章时使用的方式。&lt;/p&gt;
+&lt;p&gt;常用图床：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.qiniu.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;七牛云存储&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://imgur.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Imgur&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://s1381.photobucket.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Photobucket&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;图床在上传图片后会提供一个图片的外链。我们可以利用外链把图片添加到自己的博文中。图片也可以存储在 Github 自己的博客项目里，不过图片蛮占用空间（Github 项目空间为200 M）。因而最好是选图床托管图片。&lt;/p&gt;
+&lt;p&gt;如果是单纯插入来自图床的图片外链：&lt;/p&gt;
+&lt;p&gt;单张居中显示：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;center&amp;gt;
+&amp;lt;img src=&amp;quot;http://dreamofbook.qiniudn.com/Zero.png&amp;quot;&amp;gt;
+
+OR
+
+&amp;lt;figure&amp;gt;
+    &amp;lt;img src=&amp;quot;http://xxx.jpg&amp;quot;&amp;gt;
+&amp;lt;/figure&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;效果如下：&lt;/p&gt;
+&lt;figure&gt;&lt;br&gt;&lt;img src=&quot;http://dreamofbook.qiniudn.com/Zero.png&quot;&gt;&lt;br&gt;&lt;/figure&gt;
+
+&lt;p&gt;固定图片宽度/高度：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;img src=&amp;quot;http://xxx.jpg&amp;quot; title=&amp;quot;Logo&amp;quot; width=&amp;quot;100&amp;quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;宽度是 Width，高度是 High。Title 为图片描述。&lt;/p&gt;
+&lt;p&gt;效果如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://dreamofbook.qiniudn.com/Zero.png&quot; title=&quot;Logo&quot; width=&quot;100&quot;&gt;&lt;/p&gt;
+&lt;p&gt;两张并排显示：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;figure class=&amp;quot;half&amp;quot;&amp;gt;
+    &amp;lt;img src=&amp;quot;http://xxx.jpg&amp;quot;&amp;gt;
+    &amp;lt;img src=&amp;quot;http://yyy.jpg&amp;quot;&amp;gt;
+&amp;lt;/figure&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;三张并排显示：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;figure class=&amp;quot;third&amp;quot;&amp;gt;
+    &amp;lt;img src=&amp;quot;http://xxx.jpg&amp;quot;&amp;gt;
+    &amp;lt;img src=&amp;quot;http://yyy.jpg&amp;quot;&amp;gt;
+    &amp;lt;img src=&amp;quot;http://zzz.jpg&amp;quot;&amp;gt;
+&amp;lt;/figure&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;使用时复制相应的代码粘贴，然后替换 “”(英文输入下的引号) 里的链接，也就是例子中的「&lt;a href=&quot;http://xxx.jpg」链接为自己上传图片（一般只有在图床上传的图才有这样的链接）的外链。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://xxx.jpg」链接为自己上传图片（一般只有在图床上传的图才有这样的链接）的外链。&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Tips: 关于 jpg/png 都是常用文件格式，jpg 格式压缩效率高，相对文件质量小一点，占用网络空间少，在页面里显示时加载会快一些。png 格式的图片更清晰。&lt;/p&gt;
+&lt;h3 id=&quot;添加-Github-图片&quot;&gt;&lt;a href=&quot;#添加-Github-图片&quot; class=&quot;headerlink&quot; title=&quot;添加 Github 图片&quot;&gt;&lt;/a&gt;添加 Github 图片&lt;/h3&gt;&lt;p&gt;如果是利用在 Github 项目文件夹里的图片，基本的语法不变，只是将前面提到 “” 里的图片外链（网址）替换为：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;「自定义的域名 + 图片在 Github 项目的位置」
+&lt;/code&gt;&lt;/pre&gt;&lt;figure class=&quot;highlight crystal&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;template-variable&quot;&gt;&amp;#123;&amp;#123; site.url &amp;#125;&amp;#125;&lt;/span&gt;/images/xxx.jpg&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;引用的代码自动变形了。博文中两个花括号及「site.url」构成的代码块会自动补全为我的个人域名，所以这篇博文代码区中的演示也受到了影响(上一段的引用就受到影响了。后边的文中引用的例子也一样)。如果复制了刚才的代码块，需要将「 azeril.me//」修改成下图中的样子（两个花括号，中间加 site.url ）。即：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://dreamofbook.qiniudn.com/onelinecode.png&quot; alt=&quot;code&quot;&gt;&lt;/p&gt;
+&lt;p&gt;使用时复制和修改相应的代码，并替换「/images/xxx.jpg」这样的链接为自己放置图片的路径。&lt;/p&gt;
+&lt;p&gt;如果 Github 项目下有 images 文件夹，直接在里面放图，就是如上的代码替换。如果是 images 目录下的文件夹，如 Instagram，则路径为：「images/Instagram/ xxx.jpg」。依此类推。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://dreamofbook.qiniudn.com/twolinescode.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;附加浏览窗口的模式&quot;&gt;&lt;a href=&quot;#附加浏览窗口的模式&quot; class=&quot;headerlink&quot; title=&quot;附加浏览窗口的模式&quot;&gt;&lt;/a&gt;附加浏览窗口的模式&lt;/h3&gt;&lt;p&gt;更复杂一点，点击图片可以跳出一个预览窗口，可以看大图和切换图片。&lt;/p&gt;
+&lt;p&gt;效果如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://dreamofbook.qiniudn.com/Preview_Pic.png&quot; alt=&quot;PreviewPic&quot;&gt;&lt;/p&gt;
+&lt;p&gt;两张并排显示的代码（单张和三张代码和前述的类似）：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;figure class=&amp;quot;half&amp;quot;&amp;gt;
+    &amp;lt;a href=&amp;quot;{{ site.url }}/images/xxx.jpg&amp;quot;&amp;gt;&amp;lt;img src=&amp;quot;{{ site.url }}/images/ xxx.jpg&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;
+    &amp;lt;a href=&amp;quot;{{ site.url }}/images/yyy.jpg&amp;quot;&amp;gt;&amp;lt;img src=&amp;quot;{{ site.url }}/images/ yyy.jpg&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;
+&amp;lt;/figure&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;添加图片代码分享&quot;&gt;&lt;a href=&quot;#添加图片代码分享&quot; class=&quot;headerlink&quot; title=&quot;添加图片代码分享&quot;&gt;&lt;/a&gt;添加图片代码分享&lt;/h3&gt;&lt;p&gt;因博客显示时引用的部分 HTML 代码有问题，所以另外发一份 md 版本的文档供参考。&lt;/p&gt;
+&lt;p&gt;下载地址：&lt;/p&gt;
+&lt;p&gt;百度云 - &lt;a href=&quot;http://pan.baidu.com/s/1Bb4qM&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Dl from BaiduYun&lt;/a&gt;&lt;br&gt;box.com -  &lt;a href=&quot;https://app.box.com/s/l8x1jajwv82umq33aa7dkwpl9sr59q55&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Dl from Box.com&lt;/a&gt;&lt;br&gt;dropbox -  &lt;a href=&quot;https://dl.dropboxusercontent.com/u/64524965/AddPic.md&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Dl from Dropbox&lt;/a&gt;  &lt;/p&gt;
+&lt;p&gt;愉快。&lt;/p&gt;
+&lt;h2 id=&quot;参考文档及扩展阅读&quot;&gt;&lt;a href=&quot;#参考文档及扩展阅读&quot; class=&quot;headerlink&quot; title=&quot;参考文档及扩展阅读&quot;&gt;&lt;/a&gt;参考文档及扩展阅读&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.jianshu.com/p/q81RER&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;献给写作者的 Markdown 新手指南_简书&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://wowubuntu.com/markdown/#editor&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Markdown 语法说明_WowUbuntu&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.ituring.com.cn/article/504&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Markdown 语法说明（详解版）_图灵社区&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://guides.github.com/features/mastering-markdown/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Mastering Markdown · GitHub Guides&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.wikiwand.com/zh/Markdown&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Markdown - Wikiwand&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.yangzhiping.com/tech/r-markdown-knitr.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Markdown 写作浅谈 - 阳志平的网志&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      这是一份基本版的 Markdown 语法清单
+    
+    </summary>
+    
+      <category term="Tool" scheme="http://blog.ybbz.site/categories/Tool/"/>
+    
+    
+      <category term="Markdown" scheme="http://blog.ybbz.site/tags/Markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>办公日常工具清单</title>
+    <link href="http://blog.ybbz.site/2016/04/01/Old-Posts-2015-08-20-Office-Tools/"/>
+    <id>http://blog.ybbz.site/2016/04/01/Old-Posts-2015-08-20-Office-Tools/</id>
+    <published>2016-04-01T09:52:35.000Z</published>
+    <updated>2016-04-02T08:20:42.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;配置穿墙工具-ShadowsocksX&quot;&gt;&lt;a href=&quot;#配置穿墙工具-ShadowsocksX&quot; class=&quot;headerlink&quot; title=&quot;配置穿墙工具 ShadowsocksX&quot;&gt;&lt;/a&gt;配置穿墙工具 ShadowsocksX&lt;/h2&gt;&lt;p&gt;ShadowsocksX 客户端文件下载：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;box.com: &lt;a href=&quot;https://app.box.com/s/vtnmvm14sk1sk007m739a6tycu0jt6iw&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;DL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;百度云：&lt;a href=&quot;http://pan.baidu.com/s/1sjmk0OH&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;DL&lt;/a&gt; Keyword: bfve&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;配置：填写账号的服务器及相关信息&lt;/p&gt;
+&lt;p&gt;配置账户服务器表单。&lt;/p&gt;
+&lt;p&gt;安装后打开 ShadowsocksX 客户端，选择 Servers - Open Server Preferences。而后把相应的信息（服务器、端口、密码和加密方式）添加进去。&lt;/p&gt;
+&lt;p&gt;添加完，可以在浏览器输入 youtube.com / Facebook.com / Twitter.com 测试是否可用（第一次使用，请确认 SS 已在开启状态）。&lt;/p&gt;
+&lt;p&gt;使用时，如果 Auto Proxy Mode 无法使用，可以切换 Global Mode。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/K6Lc3Ff.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;网络音频下载&quot;&gt;&lt;a href=&quot;#网络音频下载&quot; class=&quot;headerlink&quot; title=&quot;网络音频下载&quot;&gt;&lt;/a&gt;网络音频下载&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/adkill-and-media-download/lcibdonokophlabplhpmmmjjbgohgcok&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Adkill and Media Download - Chrome 网上应用店&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/BY81Wle.png&quot; alt=&quot;Imgur&quot;&gt;&lt;/p&gt;
+&lt;p&gt;原理是，提取浏览器缓存文件。下载前需先进入页面，播放想要缓存的音频文件。而后点扩展下载（如果音频较长，需要多等一会儿才能缓存好）。&lt;/p&gt;
+&lt;h2 id=&quot;录音文件压缩程序（压缩文件大小）&quot;&gt;&lt;a href=&quot;#录音文件压缩程序（压缩文件大小）&quot; class=&quot;headerlink&quot; title=&quot;录音文件压缩程序（压缩文件大小）&quot;&gt;&lt;/a&gt;录音文件压缩程序（压缩文件大小）&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://itunes.apple.com/us/app/music-converter/id468990728?mt=12&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Mac App Store - Music Converter&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;压缩录音笔录取的音频文件，节省占用的空间或方便传输。&lt;/p&gt;
+&lt;p&gt;直接拖拽文件到界面里，而后点 Convert。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/eNzVlBz.png&quot; alt=&quot;MusicConverter&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;视频&quot;&gt;&lt;a href=&quot;#视频&quot; class=&quot;headerlink&quot; title=&quot;视频&quot;&gt;&lt;/a&gt;视频&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://download.flvcd.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;硕鼠下载中心&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;选 Mac 版&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/3VhdUDZ.png&quot; alt=&quot;FLVCD&quot;&gt;&lt;/p&gt;
+&lt;p&gt;将视频链接贴到里头，然后下载。视频较长时，会分多段下载。下载完自己再合并。&lt;/p&gt;
+&lt;h2 id=&quot;Markdown-扩展&quot;&gt;&lt;a href=&quot;#Markdown-扩展&quot; class=&quot;headerlink&quot; title=&quot;Markdown 扩展&quot;&gt;&lt;/a&gt;Markdown 扩展&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/copy-as-markdown/fkeaekngjflipcockcnpobkpbbfbhmdn&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Copy as Markdown - Chrome 网上应用店&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;将网页及链接复制时自动转为 Markdown 格式。当前页面选择复制。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/qmHfx6b.png&quot; alt=&quot;Copyasmarkdown&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://markdown-here.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Markdown Here&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;转换 Markdown 格式为网页显示（编辑器的预览效果）。发送邮件时较为常用。&lt;/p&gt;
+&lt;h2 id=&quot;比较好用的图床&quot;&gt;&lt;a href=&quot;#比较好用的图床&quot; class=&quot;headerlink&quot; title=&quot;比较好用的图床&quot;&gt;&lt;/a&gt;比较好用的图床&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.qiniu.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;七牛云存储&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://imgur.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Imgur&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://s1381.photobucket.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Photobucket&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;注册账号，上传并获取图片外链。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      一些零零碎碎的小工具
+    
+    </summary>
+    
+      <category term="Tool" scheme="http://blog.ybbz.site/categories/Tool/"/>
+    
+    
+      <category term="Mac" scheme="http://blog.ybbz.site/tags/Mac/"/>
     
   </entry>
   

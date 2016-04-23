@@ -1,0 +1,861 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Machine-Learning," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="八宝粥的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="机器学习读书笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="读书笔记:《机器学习实践:测试驱动的开发方法》">
+<meta property="og:url" content="http://blog.ybbz.site/2016/04/01/machine-learning-notes/index.html">
+<meta property="og:site_name" content="八宝粥的博客">
+<meta property="og:description" content="机器学习读书笔记">
+<meta property="og:updated_time" content="2016-04-03T08:01:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="读书笔记:《机器学习实践:测试驱动的开发方法》">
+<meta name="twitter:description" content="机器学习读书笔记">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6231437225821734000,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 读书笔记:《机器学习实践:测试驱动的开发方法》 | 八宝粥的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?bf48638c9f88aa67b7f9a0135affb55a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">八宝粥的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">这一切都是命运石之门的选择</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                读书笔记:《机器学习实践:测试驱动的开发方法》
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-01T00:00:00+08:00" content="2016-04-01">
+              2016-04-01
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Machine-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Machine-Learning</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/01/machine-learning-notes/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/01/machine-learning-notes/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>《机器学习实践:测试驱动的开发方法》</strong>（Thoughtful Machine Learning:A Test-Driven Approach），在图书馆看到了这本书，当时浏览了目录，觉得挺中意的，就借回来了。然而看了前言之后，我就对这本书不抱有太大的希望了，原因无他，作者用的是Ruby而非Python。我对自己的定位只是Python入门、任重而道远，因此并不打算跳入Ruby的“火坑”。</p>
+<p>可是这并不妨碍我阅读这本书，毕竟，机器学习的算法思想都是相通的，并不妨碍我去学习。下面，简单记录一下看这本书时候的一些体会。</p>
+<p><strong>测试驱动开发</strong>（Test-Driven Development，TDD）</p>
+<ul>
+<li>用测试来驱动开发。强调“测试先行”，而非在开发周期的最后才考虑测试。</li>
+<li>步骤：先编写一个无法通过的测试，然后编写可使其通过的功能代码，最后重构初始代码。</li>
+</ul>
+<h2 id="机器学习概述"><a href="#机器学习概述" class="headerlink" title="机器学习概述"></a>机器学习概述</h2><h4 id="什么是机器学习"><a href="#什么是机器学习" class="headerlink" title="什么是机器学习"></a>什么是机器学习</h4><p>机器学习是具有坚实理论基础的计算机科学和含噪声的真是数据的交集。本质上，机器学习是一门关于如何使机器像人类那样去理解数据的科学。</p>
+<h4 id="机器学习问题"><a href="#机器学习问题" class="headerlink" title="机器学习问题"></a>机器学习问题</h4><table>
+<thead>
+<tr>
+<th>问题</th>
+<th>机器学习类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>将数据拟合为某个函数或函数逼近</td>
+<td>有监督学习</td>
+</tr>
+<tr>
+<td>在无反馈条件下对数据进行推断</td>
+<td>无监督学习</td>
+</tr>
+<tr>
+<td>进行有奖励和回报的比赛或游戏</td>
+<td>强化学习</td>
+</tr>
+</tbody>
+</table>
+<h4 id="机器学习算法矩阵"><a href="#机器学习算法矩阵" class="headerlink" title="机器学习算法矩阵"></a>机器学习算法矩阵</h4><table>
+<thead>
+<tr>
+<th>算法</th>
+<th>类型</th>
+<th>类</th>
+<th>限制条件</th>
+<th>适用场合</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>K近邻（KNN）</td>
+<td>有监督学习</td>
+<td>基于实例的</td>
+<td>一般来说，kNN擅长度量基于距离的逼近，但易受维数灾难的影响</td>
+<td>适合解决基于距离的问题</td>
+</tr>
+<tr>
+<td>朴素贝叶斯分类（NB）</td>
+<td>有监督学习</td>
+<td>概率的</td>
+<td>要求所给问题中，各输入相互独立</td>
+<td>适用于问题域中各类的概率均大于0的情形</td>
+</tr>
+<tr>
+<td>隐马尔可夫模型（HMM）</td>
+<td>有/无监督学习</td>
+<td>马尔可夫的</td>
+<td>要求系统信息满足马尔科夫假设</td>
+<td>适用于时间序列数据和无记忆的信息</td>
+</tr>
+<tr>
+<td>支持向量机（SVM）</td>
+<td>有监督学习</td>
+<td>决策面</td>
+<td>要求待分类的两个类别有明确的差别</td>
+<td>适用于求解两类分类问题</td>
+</tr>
+<tr>
+<td>神经网络（NN）</td>
+<td>有监督学习</td>
+<td>非线性函数逼近</td>
+<td>几乎没有限制条件</td>
+<td>适用于二值输入</td>
+</tr>
+<tr>
+<td>聚类</td>
+<td>无监督学习</td>
+<td>聚类</td>
+<td>无限制</td>
+<td>适用于当给定某种形式的距离度量（如欧式距离、曼哈顿距离等）时，能表现出明确分组特性的数据</td>
+</tr>
+<tr>
+<td>（核）岭回归</td>
+<td>有监督学习</td>
+<td>回归</td>
+<td>限制很少</td>
+<td>适用于变量连续的情形</td>
+</tr>
+<tr>
+<td>滤波</td>
+<td>无监督学习</td>
+<td>特征变换</td>
+<td>无限制</td>
+<td>适用于有大量变量需要过滤的数据</td>
+</tr>
+</tbody>
+</table>
+<h2 id="K近邻分类"><a href="#K近邻分类" class="headerlink" title="K近邻分类"></a>K近邻分类</h2><p>kNN算法简介：一种基于实例的有监督学习方法，尤其适用于对距离敏感的数据。易受“维数灾难”的影响。</p>
+<h4 id="如何选择K"><a href="#如何选择K" class="headerlink" title="如何选择K"></a>如何选择K</h4><ol>
+<li>猜测</li>
+<li>使用启发式策略</li>
+<li>通过算法优化</li>
+</ol>
+<h4 id="选择K的启发式策略"><a href="#选择K的启发式策略" class="headerlink" title="选择K的启发式策略"></a>选择K的启发式策略</h4><ol>
+<li>当分类问题中只涉及两个类别时，不要将K取为偶数</li>
+<li>K的值应不小于类别总数加1</li>
+<li>为避免出现噪声，K的值应足够小</li>
+</ol>
+<p>降维： <strong>SIFT、SURF算法</strong><br>机器学习中使用频率极高的三个术语：<strong>特征、纬度和实例</strong></p>
+<h4 id="余弦相似度"><a href="#余弦相似度" class="headerlink" title="余弦相似度"></a>余弦相似度</h4><p>这是确定两个对象之间接近程度的一种良好方式。采取的准则并不是看数据是否100%相等，而是看两个向量是否足够接近。对于比较两不同向量之间是否相似，余弦相似度是一种非常有用的测度。它实际上度量的是这两个向量之间的夹角，而非长度上的差异。</p>
+<h2 id="朴素贝叶斯分类"><a href="#朴素贝叶斯分类" class="headerlink" title="朴素贝叶斯分类"></a>朴素贝叶斯分类</h2><p>一种有监督的概率学习方法，对于数据集中输入相互独立的场合，朴素贝叶斯分类器能够展现出良好的性能。此外，它也更适合解决那些任何属性的概率均大于零的问题。</p>
+<h4 id="条件概率"><a href="#条件概率" class="headerlink" title="条件概率"></a>条件概率</h4><pre><code># B发生后A发生的概率等于A和B同时发生的概率除以B发生的概率
+P(A|B)=P(AB)/P(B)
+</code></pre><h4 id="贝叶斯定理"><a href="#贝叶斯定理" class="headerlink" title="贝叶斯定理"></a>贝叶斯定理</h4><p>P(B|A)=P(A|B)P(B)/P(A)</p>
+<h4 id="朴素贝叶斯分类器"><a href="#朴素贝叶斯分类器" class="headerlink" title="朴素贝叶斯分类器"></a>朴素贝叶斯分类器</h4><pre><code># 联合概率:所有事件均发生的概率（链式法则）
+P(A1,A2,…,An)=P(A1)P(A2|A1)P(A3|A1,A2)…P(An|A1,A2,…,An-1)
+P(A1,A2,A3)=P(A1)P(A2|A1)P(A3|A1,A2)=P(A1,A2)P(A3|A1,A2)
+# 从朴素的观点出发
+P(A1,A2,A3)=P(A1)P(A2|A1)P(A3|A1)
+P(A3|A1,A2)=P(A1,A2|A3)P(A3)/P(A1,A2)=P(A1,A2,A3)/P(A1,A2)=P(A3)P(A1|A3)P(A2|A3)/P(A1,A2)
+</code></pre><p>样本容量不足：<strong>伪计数</strong></p>
+<p><em>由于为得到分类结果，朴素贝叶斯分类器需要将所有条件独立的概率相乘，因此一旦这些概率之中有一项为0，则总概率也将为0。</em><br><em>在计算概率是，我们为单词的出现次数加上1，即所有单词的出现次数均记为word_count+1。有助于缓解归零效应的影响。</em><br><em>适用于数据相互独立的场景，对于欺诈检测、垃圾邮件过滤以及其他拥有这些特征的问题都很适用。</em></p>
+<h2 id="隐马尔科夫模型"><a href="#隐马尔科夫模型" class="headerlink" title="隐马尔科夫模型"></a>隐马尔科夫模型</h2><h2 id="支持向量机"><a href="#支持向量机" class="headerlink" title="支持向量机"></a>支持向量机</h2><h2 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h2><h2 id="聚类"><a href="#聚类" class="headerlink" title="聚类"></a>聚类</h2><ul>
+<li>聚类算法是一种无监督学习问题，在数据分组方面有突出的表现。在实际运用中，会受到不可能定理的制约。</li>
+<li>分类：找出最优的函数逼近，以将数据分配到某个数据集和标签。聚类：更关心数据本身，而非标签。</li>
+</ul>
+<h4 id="常用的聚类算法"><a href="#常用的聚类算法" class="headerlink" title="常用的聚类算法"></a>常用的聚类算法</h4><ol>
+<li>K均值聚类算法</li>
+<li>期望最大化（Expectation Maximization,EM）聚类算法</li>
+</ol>
+<h3 id="K均值聚类"><a href="#K均值聚类" class="headerlink" title="K均值聚类"></a>K均值聚类</h3><p>利用一个预定义的K值，即希望将数据划分为簇的数目，K均值聚类算法可找到各簇的最优质心。K均值聚类的最佳特质是各簇在本质上呈紧致的球状分布，且总会收敛到某个解。</p>
+<h4 id="K均值算法工作原理"><a href="#K均值算法工作原理" class="headerlink" title="K均值算法工作原理"></a>K均值算法工作原理</h4><p>K均值算法首先从某个基本配置开始。该算法随机从数据集中选择K个数据点，并将其定义为各簇的质心。接着，将数据集 中的每个点分配到与每个不同的质心距离最近的那个簇中。这样，我们便得到了一个由初始随机质心确定的聚类结果。但这显然不是我们想要的结果，因此我们重新计算各簇的均值来更新质心。然后，我们重复上述过程，直到质心的位置不再发生变动为止。</p>
+<h4 id="K均值缺陷"><a href="#K均值缺陷" class="headerlink" title="K均值缺陷"></a>K均值缺陷</h4><ol>
+<li>各簇之间必须存在一个“硬”边界。这意味着每个数据点只能属于一个簇，无法跨越两个簇之间的界限。</li>
+<li>适合于呈球状分布的数据。（欧式距离）</li>
+</ol>
+<h3 id="EM聚类算法"><a href="#EM聚类算法" class="headerlink" title="EM聚类算法"></a>EM聚类算法</h3><ul>
+<li>K均值：找到一个质心，找到与其相关的数据点；确定各簇之间的边界。</li>
+<li>EM：获得一个数据点属于各簇的概率值，而非分配结果；适用于对不存在明确边界的数据进行分类。</li>
+</ul>
+<h4 id="EM算法步骤"><a href="#EM算法步骤" class="headerlink" title="EM算法步骤"></a>EM算法步骤</h4><ol>
+<li>计算期望</li>
+<li>将期望最大化</li>
+</ol>
+<h4 id="不可能性定理"><a href="#不可能性定理" class="headerlink" title="不可能性定理"></a>不可能性定理</h4><p>丰富性、尺度不变性、一致性（最多只能获得三种属性中的两种）</p>
+<h2 id="核岭回归"><a href="#核岭回归" class="headerlink" title="核岭回归"></a>核岭回归</h2><ul>
+<li>回归：从将X映射为Y的数据中拟合出一条直线。有监督的学习算法。对于能够求解的问题限制极少，更擅长使用连续变量。能够对数据进行平滑并移除离群点。</li>
+<li>线性回归：给定一个数据集，拟合出逼近这些数据的最优直线。（例如依据身高预测体重）</li>
+</ul>
+<h3 id="协同过滤"><a href="#协同过滤" class="headerlink" title="协同过滤"></a>协同过滤</h3><p>与其他用户关联的方式。<em>例：你喜欢喝啤酒，那你也可能喜欢杯子、杯垫等。即便你没有实际购买过这些物品，但由于与你类似的其他用户（也喜欢喝啤酒）购买了他们，因此你也很可能喜欢他们。</em></p>
+<h4 id="协同过滤算法"><a href="#协同过滤算法" class="headerlink" title="协同过滤算法"></a>协同过滤算法</h4><ol>
+<li>找到那些与你有相同爱好的用户</li>
+<li>利用来自其他相似用户的评分来进行推荐</li>
+</ol>
+<h4 id="解决上述问题"><a href="#解决上述问题" class="headerlink" title="解决上述问题"></a>解决上述问题</h4><ol>
+<li>暴力法</li>
+<li>K近邻搜索</li>
+<li>回归</li>
+</ol>
+<h4 id="核技巧"><a href="#核技巧" class="headerlink" title="核技巧"></a>核技巧</h4><p>核技巧可以将非线性数据变换到一个新的特征空间，使其成为线性数据。核技巧是非常强大的工具，非常适用于求解数据非线性的问题。</p>
+<h2 id="模型改进与数据提取"><a href="#模型改进与数据提取" class="headerlink" title="模型改进与数据提取"></a>模型改进与数据提取</h2><h4 id="维数灾难"><a href="#维数灾难" class="headerlink" title="维数灾难"></a>维数灾难</h4><ul>
+<li>避免维数灾难的途径：降维</li>
+<li>克服维数灾难：特征选择、特征变换</li>
+</ul>
+<h4 id="特征变换算法："><a href="#特征变换算法：" class="headerlink" title="特征变换算法："></a>特征变换算法：</h4><ul>
+<li>主分量分析（Principle Component Analysis，PCA）</li>
+<li>独立分量分析（Independent Component Analysis，ICA）</li>
+</ul>
+<p>To be continued !</p>
+<blockquote>
+<p>Thoughtful Machine Learning by Matthew Kirk (O’Reilly).</p>
+</blockquote>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Machine-Learning/" rel="tag">#Machine-Learning</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/01/Old-Posts-2016-03-28-Just-write-about-my-life/" rel="prev" title="随笔：写在三月末">
+                随笔：写在三月末 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/04/01/machine-learning-notes/"
+     data-title="读书笔记:《机器学习实践:测试驱动的开发方法》"
+     data-content=""
+     data-url="http://blog.ybbz.site/2016/04/01/machine-learning-notes/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/01/machine-learning-notes/"
+           data-title="读书笔记:《机器学习实践:测试驱动的开发方法》" data-url="http://blog.ybbz.site/2016/04/01/machine-learning-notes/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="八宝粥" />
+          <p class="site-author-name" itemprop="name">八宝粥</p>
+          <p class="site-description motion-element" itemprop="description">这一切都是命运石之门的选择</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">63</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">45</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ybbz" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/1005955131" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/ba-bao-zhou-73" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#机器学习概述"><span class="nav-number">1.</span> <span class="nav-text">机器学习概述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是机器学习"><span class="nav-number">1.0.1.</span> <span class="nav-text">什么是机器学习</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#机器学习问题"><span class="nav-number">1.0.2.</span> <span class="nav-text">机器学习问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#机器学习算法矩阵"><span class="nav-number">1.0.3.</span> <span class="nav-text">机器学习算法矩阵</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#K近邻分类"><span class="nav-number">2.</span> <span class="nav-text">K近邻分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#如何选择K"><span class="nav-number">2.0.1.</span> <span class="nav-text">如何选择K</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选择K的启发式策略"><span class="nav-number">2.0.2.</span> <span class="nav-text">选择K的启发式策略</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#余弦相似度"><span class="nav-number">2.0.3.</span> <span class="nav-text">余弦相似度</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#朴素贝叶斯分类"><span class="nav-number">3.</span> <span class="nav-text">朴素贝叶斯分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#条件概率"><span class="nav-number">3.0.1.</span> <span class="nav-text">条件概率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#贝叶斯定理"><span class="nav-number">3.0.2.</span> <span class="nav-text">贝叶斯定理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#朴素贝叶斯分类器"><span class="nav-number">3.0.3.</span> <span class="nav-text">朴素贝叶斯分类器</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隐马尔科夫模型"><span class="nav-number">4.</span> <span class="nav-text">隐马尔科夫模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#支持向量机"><span class="nav-number">5.</span> <span class="nav-text">支持向量机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#神经网络"><span class="nav-number">6.</span> <span class="nav-text">神经网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#聚类"><span class="nav-number">7.</span> <span class="nav-text">聚类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用的聚类算法"><span class="nav-number">7.0.1.</span> <span class="nav-text">常用的聚类算法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#K均值聚类"><span class="nav-number">7.1.</span> <span class="nav-text">K均值聚类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#K均值算法工作原理"><span class="nav-number">7.1.1.</span> <span class="nav-text">K均值算法工作原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#K均值缺陷"><span class="nav-number">7.1.2.</span> <span class="nav-text">K均值缺陷</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EM聚类算法"><span class="nav-number">7.2.</span> <span class="nav-text">EM聚类算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#EM算法步骤"><span class="nav-number">7.2.1.</span> <span class="nav-text">EM算法步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不可能性定理"><span class="nav-number">7.2.2.</span> <span class="nav-text">不可能性定理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#核岭回归"><span class="nav-number">8.</span> <span class="nav-text">核岭回归</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#协同过滤"><span class="nav-number">8.1.</span> <span class="nav-text">协同过滤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#协同过滤算法"><span class="nav-number">8.1.1.</span> <span class="nav-text">协同过滤算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决上述问题"><span class="nav-number">8.1.2.</span> <span class="nav-text">解决上述问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#核技巧"><span class="nav-number">8.1.3.</span> <span class="nav-text">核技巧</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型改进与数据提取"><span class="nav-number">9.</span> <span class="nav-text">模型改进与数据提取</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#维数灾难"><span class="nav-number">9.0.1.</span> <span class="nav-text">维数灾难</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特征变换算法："><span class="nav-number">9.0.2.</span> <span class="nav-text">特征变换算法：</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">八宝粥</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"八宝粥"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
