@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion">
+<html class="theme-next mist use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -82,23 +82,50 @@
 
 
 
-<meta name="description" content="判断两个单向链表是否相交">
+<meta name="description" content="问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。
+算法一
+对链表一进行遍历，在遍历到每一个节点时，都在链表二中进行遍历，看是否有重复的节点。
+算法一改进
+以空间换时间：将链表二存入字典，然后遍历链表一，判断是否在于字典中。简化后，时间复杂度变为 O(n+m)，但空间复杂度较高。
+算法二
+算法二的思路基于以下两个原理：
+
+两个单向链表相交后，必然无法再分开。
+两个单项链表相交后，尾节点">
 <meta property="og:type" content="article">
 <meta property="og:title" content="判断两个单向链表是否相交">
 <meta property="og:url" content="http://blog.ybbz.site/2016/04/20/Algorithm-3/index.html">
 <meta property="og:site_name" content="八宝粥的博客">
-<meta property="og:description" content="判断两个单向链表是否相交">
-<meta property="og:updated_time" content="2016-04-20T15:04:07.000Z">
+<meta property="og:description" content="问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。
+算法一
+对链表一进行遍历，在遍历到每一个节点时，都在链表二中进行遍历，看是否有重复的节点。
+算法一改进
+以空间换时间：将链表二存入字典，然后遍历链表一，判断是否在于字典中。简化后，时间复杂度变为 O(n+m)，但空间复杂度较高。
+算法二
+算法二的思路基于以下两个原理：
+
+两个单向链表相交后，必然无法再分开。
+两个单项链表相交后，尾节点">
+<meta property="og:updated_time" content="2016-04-23T09:28:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="判断两个单向链表是否相交">
-<meta name="twitter:description" content="判断两个单向链表是否相交">
+<meta name="twitter:description" content="问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。
+算法一
+对链表一进行遍历，在遍历到每一个节点时，都在链表二中进行遍历，看是否有重复的节点。
+算法一改进
+以空间换时间：将链表二存入字典，然后遍历链表一，判断是否在于字典中。简化后，时间复杂度变为 O(n+m)，但空间复杂度较高。
+算法二
+算法二的思路基于以下两个原理：
+
+两个单向链表相交后，必然无法再分开。
+两个单项链表相交后，尾节点">
 
 
 
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Pisces',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -366,16 +393,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/18/my-first-andorid-app-online/" rel="next" title="庆祝我的第一个独立APP上线">
-                <i class="fa fa-chevron-left"></i> 庆祝我的第一个独立APP上线
+              <a href="/2016/04/20/Algorithm-2/" rel="next" title="根号值逼近问题的算法">
+                <i class="fa fa-chevron-left"></i> 根号值逼近问题的算法
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/20/Algorithm-2/" rel="prev" title="根号值逼近问题的算法">
-                根号值逼近问题的算法 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/20/OWL-SWRL/" rel="prev" title="OWL Web本体语言指南">
+                OWL Web本体语言指南 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -467,7 +494,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">62</span>
+              <span class="site-state-item-count">57</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -582,7 +609,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Mist
   </a>
 </div>
 
@@ -647,13 +674,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>

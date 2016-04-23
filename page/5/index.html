@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion">
+<html class="theme-next mist use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -97,7 +97,7 @@
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Pisces',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -330,9 +330,19 @@
 
       
         
-          「MySQL Client」
+          
+          
+Sequel Pro是Mac平台上的一个MySQL Client，官网等各种方式均可下载。通过SSH的方式，输入数据库及服务器的连接参数（HOST、username、password等）即可连接。
+
+功能特点
+
+支持多达30种编码方式
+快速导出/导入、备份/还原数据库的SQL/CSV文件
+最高版本
+          ...
+
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/01/19/Sequel Pro-Mac-Mysql-Client/">
+            <a class="btn" href="/2016/01/19/Sequel Pro-Mac-Mysql-Client/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -452,9 +462,16 @@
 
       
         
-          Node.js
+          
+          Mac安装Node.jsbrew install node
+Linux(CentOS)安装Node.js1.准备命令
+yum -y install gcc make gcc-c++ openssl-devel wget
+2.下载源码及解压
+wget http://nodejs.org/dist/v0
+          ...
+
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/01/12/Node-js-foundation/">
+            <a class="btn" href="/2016/01/12/Node-js-foundation/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -574,9 +591,16 @@
 
       
         
-          「post请求、header验证」
+          
+          AsyncHttpClient与Volley的post请求、header验证比较
+###AsyncHttpClient
+AsyncHttpClient client = new AsyncHttpClient();
+// 请求参数的封装对象
+RequestParams params = new Re
+          ...
+
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/01/07/AsyncHttpClient-Volley-post-header/">
+            <a class="btn" href="/2016/01/07/AsyncHttpClient-Volley-post-header/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -696,131 +720,16 @@
 
       
         
-          「Android中SlidingMenu与后退按钮事件」
+          
+          主页点击后退键时：若SlidingMenu显示，则隐藏；若SlidingMenu不显示，则双击退出App
+@Override
+public boolean onKeyDown(int keyCode, KeyEvent event) {
+    // 截获后退键
+    if (keyCode ==
+          ...
+
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/12/25/Android-SlidingMenu/">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/12/14/RoboBinding-one-TextView-EditText/" itemprop="url">
-                  RoboBinding探究一：TextView及EditText基础实现
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-12-14T00:00:00+08:00" content="2015-12-14">
-              2015-12-14
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/12/14/RoboBinding-one-TextView-EditText/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/14/RoboBinding-one-TextView-EditText/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          「RoboBinding探究」
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/12/14/RoboBinding-one-TextView-EditText/">
+            <a class="btn" href="/2015/12/25/Android-SlidingMenu/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -940,9 +849,17 @@
 
       
         
-          「RoboBinding探究」
+          
+          ###ImageActivity
+public class ImageActivity extends Activity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.o
+          ...
+
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/12/14/RoboBinding-two-ImageView/">
+            <a class="btn" href="/2015/12/14/RoboBinding-two-ImageView/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1062,9 +979,142 @@
 
       
         
-          「RoboBinding探究」
+          
+          ###TestActivity
+@SuppressLint(&quot;HandlerLeak&quot;)
+public class TestActivity extends Activity {
+
+    private Handler mHandler;
+    private Present
+          ...
+
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/12/14/RoboBinding-three-HTTP/">
+            <a class="btn" href="/2015/12/14/RoboBinding-three-HTTP/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/12/14/RoboBinding-one-TextView-EditText/" itemprop="url">
+                  RoboBinding探究一：TextView及EditText基础实现
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-12-14T00:00:00+08:00" content="2015-12-14">
+              2015-12-14
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/12/14/RoboBinding-one-TextView-EditText/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/14/RoboBinding-one-TextView-EditText/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          RoboBinding简介RoboBinding是一个实现了数据绑定 Presentation Model(MVVM)模式的Android开源框架。从简单的角度看，他移除了如addXXListener()，findViewById()这些不必要的代码，连如BufferKnife那样的InjectVi
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/12/14/RoboBinding-one-TextView-EditText/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1184,9 +1234,16 @@
 
       
         
-          JavaScript
+          
+          JS中获取节点的兄弟、父、子节点，一般情况下通过这种方式获取：
+var chils= s.childNodes;  //得到s的全部子节点
+var par=s.parentNode;   //得到s的父节点
+var ns=s.nextSibling;   //获得s的下一个兄弟节点
+var ps=s
+          ...
+
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/12/12/JS-nodes/">
+            <a class="btn" href="/2015/12/12/JS-nodes/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1306,9 +1363,21 @@
 
       
         
-          Yii2使用Markdown编辑器
+          
+          ###bootstrap-markdown下载，复制到工程中即可使用
+
+GitHub地址
+
+DEMO演示
+
+
+在视图中使用bootstrap-markdown:
+&lt;form&gt;
+    &lt;textarea name=&quot;content&quot; data-provide=&
+          ...
+
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/12/06/Yii2-Markdown/">
+            <a class="btn" href="/2015/12/06/Yii2-Markdown/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1428,9 +1497,14 @@
 
       
         
-          PHP记录
+          
+          除法，保留小数点后两位
+echo round(3.1415926,2);
+
+          
+
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/12/01/php-foundation/">
+            <a class="btn" href="/2015/12/01/php-foundation/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1464,7 +1538,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1505,7 +1579,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">62</span>
+              <span class="site-state-item-count">57</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1609,7 +1683,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Mist
   </a>
 </div>
 
@@ -1674,13 +1748,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
-
-
 
   
 

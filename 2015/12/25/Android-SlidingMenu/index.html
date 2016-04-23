@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion">
+<html class="theme-next mist use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -82,23 +82,38 @@
 
 
 
-<meta name="description" content="「Android中SlidingMenu与后退按钮事件」">
+<meta name="description" content="主页点击后退键时：若SlidingMenu显示，则隐藏；若SlidingMenu不显示，则双击退出App
+@Override
+public boolean onKeyDown(int keyCode, KeyEvent event) {
+    // 截获后退键
+    if (keyCode == KeyEvent.KEYCODE_BACK) {
+        if (slidingMenu.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android中SlidingMenu与后退按钮事件">
 <meta property="og:url" content="http://blog.ybbz.site/2015/12/25/Android-SlidingMenu/index.html">
 <meta property="og:site_name" content="八宝粥的博客">
-<meta property="og:description" content="「Android中SlidingMenu与后退按钮事件」">
-<meta property="og:updated_time" content="2016-04-01T09:52:35.000Z">
+<meta property="og:description" content="主页点击后退键时：若SlidingMenu显示，则隐藏；若SlidingMenu不显示，则双击退出App
+@Override
+public boolean onKeyDown(int keyCode, KeyEvent event) {
+    // 截获后退键
+    if (keyCode == KeyEvent.KEYCODE_BACK) {
+        if (slidingMenu.">
+<meta property="og:updated_time" content="2016-04-23T09:21:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android中SlidingMenu与后退按钮事件">
-<meta name="twitter:description" content="「Android中SlidingMenu与后退按钮事件」">
+<meta name="twitter:description" content="主页点击后退键时：若SlidingMenu显示，则隐藏；若SlidingMenu不显示，则双击退出App
+@Override
+public boolean onKeyDown(int keyCode, KeyEvent event) {
+    // 截获后退键
+    if (keyCode == KeyEvent.KEYCODE_BACK) {
+        if (slidingMenu.">
 
 
 
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Pisces',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -376,8 +391,8 @@ public boolean onKeyDown(int keyCode, KeyEvent event) {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/14/RoboBinding-one-TextView-EditText/" rel="next" title="RoboBinding探究一：TextView及EditText基础实现">
-                <i class="fa fa-chevron-left"></i> RoboBinding探究一：TextView及EditText基础实现
+              <a href="/2015/12/14/RoboBinding-two-ImageView/" rel="next" title="RoboBinding探究二：ImageView及自定义控件实现">
+                <i class="fa fa-chevron-left"></i> RoboBinding探究二：ImageView及自定义控件实现
               </a>
             
           </div>
@@ -477,7 +492,7 @@ public boolean onKeyDown(int keyCode, KeyEvent event) {
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">62</span>
+              <span class="site-state-item-count">57</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -592,7 +607,7 @@ public boolean onKeyDown(int keyCode, KeyEvent event) {
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Mist
   </a>
 </div>
 
@@ -657,13 +672,6 @@ public boolean onKeyDown(int keyCode, KeyEvent event) {
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>

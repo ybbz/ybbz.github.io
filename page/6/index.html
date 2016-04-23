@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion">
+<html class="theme-next mist use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -97,7 +97,7 @@
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Pisces',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -330,9 +330,15 @@
 
       
         
-          Linux下MySQL命令大全
+          
+          Linux下导入、导出MySQL数据库命令一、导出数据库用mysqldump命令（注意mysql的安装路径，即此命令的路径）：
+1、导出数据和表结构：
+mysqldump -u 用户名 -p 密码 数据库名 &gt; 数据库名.sql
+#/usr/local/mysql/bin/   mysqldu
+          ...
+
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/11/21/Linux-MySQL/">
+            <a class="btn" href="/2015/11/21/Linux-MySQL/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -452,9 +458,16 @@
 
       
         
-          CentOS7配置Apache多站点VirtualHost
+          
+          创建两个网站的目录结构及测试用页面文件
+# mkdir /www/test1
+# echo &quot;test1&quot; &gt; /www/test1/index.html
+# mkdir /www/test2
+# echo &quot;test2&quot; &gt; /www/test2
+          ...
+
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/11/02/CentOS7-Apache-VirtualHost/">
+            <a class="btn" href="/2015/11/02/CentOS7-Apache-VirtualHost/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -574,9 +587,17 @@
 
       
         
-          Sublime Text配置Markdown预览插件
+          
+          
+Sublime Text配置Markdown预览插件：
+
+打开Sublime Text，按快捷键ctrl/command+shift+P输入install进入install Packages。
+输入Markdown Preview（Markdown预览插件，可以直接生成html进行预览等功能）。
+
+          ...
+
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/11/01/Sublime-Text-Markdown/">
+            <a class="btn" href="/2015/11/01/Sublime-Text-Markdown/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -696,9 +717,17 @@
 
       
         
-          VIM
+          
+          VIM以前玩 Python 及之前用 Git 因为不熟悉 Vim 遇到了很多坑，进而导致屡次学习各项语言的放弃…惨痛教训就源于这莫名其妙的 Vim…
+整理一下思路，重新出发。
+Vi/Vim 分三种模式：
+
+指令模式 默认进入界面时的模式，此时只支持 Vi/Vim 的指令
+编辑模式 此模式下才能输入指
+          ...
+
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/20/VIM/">
+            <a class="btn" href="/2015/10/20/VIM/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -818,375 +847,12 @@
 
       
         
-          「快速打造一个可心的独立博客~！」
+          
+          Build Your First Jekyll BlogGitHub 以当前世界最大、也是最流行的代码托管平台和程序员的社交平台闻名遐迩。在代码托管平台的构建之外，GitHub 也开放出 GitHub Pages 服务，方便程序员们发布项目的说明文档，提供给开发者们相关的项目资料。而 gh Pgae
+          ...
+
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/19/Build-Your-First-GitHub-Pages-Blog/">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/10/16/Selected-Collection-of-Jekyll-Themes/" itemprop="url">
-                  Jekyll 博客主题精选
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-10-16T00:00:00+08:00" content="2015-10-16">
-              2015-10-16
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Tool/" itemprop="url" rel="index">
-                    <span itemprop="name">Tool</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/10/16/Selected-Collection-of-Jekyll-Themes/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/16/Selected-Collection-of-Jekyll-Themes/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          「标准是好用且好看 」
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/16/Selected-Collection-of-Jekyll-Themes/">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/08/30/The-Rule-of-Chinese-Writing-Style/" itemprop="url">
-                  中文书写风格清单
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-08-30T00:00:00+08:00" content="2015-08-30">
-              2015-08-30
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Tool/" itemprop="url" rel="index">
-                    <span itemprop="name">Tool</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/08/30/The-Rule-of-Chinese-Writing-Style/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/30/The-Rule-of-Chinese-Writing-Style/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          个人版的简明书写注意事项
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/08/30/The-Rule-of-Chinese-Writing-Style/">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/08/20/Office-Tools/" itemprop="url">
-                  办公日常工具清单
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-08-20T00:00:00+08:00" content="2015-08-20">
-              2015-08-20
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Tool/" itemprop="url" rel="index">
-                    <span itemprop="name">Tool</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/08/20/Office-Tools/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/20/Office-Tools/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          一些零零碎碎的小工具
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/08/20/Office-Tools/">
+            <a class="btn" href="/2015/10/19/Build-Your-First-GitHub-Pages-Blog/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1306,9 +972,14 @@
 
       
         
-          这是一份基本版的 Markdown 语法清单
+          
+          Markdown 概述Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面。—— 维基百科
+Markdown 语法是对纯文本格式的强化，能使文本显示得更清晰、有条理。但它依旧算是简单的文本，很容易修改和扩展，常用于快速写作中。
+所见即所
+          ...
+
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/08/19/Markdown-Syntax/">
+            <a class="btn" href="/2015/08/19/Markdown-Syntax/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1428,9 +1099,14 @@
 
       
         
-          GitHub 博客使用概述
+          
+          GitHub Pages 是 GitHub 所提供的一个博客系统。现在使用这一服务的用户随着 GitHub 网站的壮大而益发普及开来。
+让我们忽略 GitHub 被国内网友戏称为「世界上最大的同性（程序猿们）社交网站…」这样的事……
+本文初衷关于 GitHub 博客的具体搭建，下次会专门写一篇博文。
+          ...
+
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/08/18/Github-Pages-Blog/">
+            <a class="btn" href="/2015/08/18/Github-Pages-Blog/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1464,7 +1140,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span>
   </nav>
 
 
@@ -1505,7 +1181,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">62</span>
+              <span class="site-state-item-count">57</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1609,7 +1285,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Mist
   </a>
 </div>
 
@@ -1674,13 +1350,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
-
-
 
   
 

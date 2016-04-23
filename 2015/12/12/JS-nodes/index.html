@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion">
+<html class="theme-next mist use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -82,23 +82,38 @@
 
 
 
-<meta name="description" content="JavaScript">
+<meta name="description" content="JS中获取节点的兄弟、父、子节点，一般情况下通过这种方式获取：
+var chils= s.childNodes;  //得到s的全部子节点
+var par=s.parentNode;   //得到s的父节点
+var ns=s.nextSibling;   //获得s的下一个兄弟节点
+var ps=s.previousSbiling;  //得到s的上一个兄弟节点
+var fc=s.firstChi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript中获取节点的兄弟、父、子节点的各种问题">
 <meta property="og:url" content="http://blog.ybbz.site/2015/12/12/JS-nodes/index.html">
 <meta property="og:site_name" content="八宝粥的博客">
-<meta property="og:description" content="JavaScript">
-<meta property="og:updated_time" content="2016-04-01T09:52:35.000Z">
+<meta property="og:description" content="JS中获取节点的兄弟、父、子节点，一般情况下通过这种方式获取：
+var chils= s.childNodes;  //得到s的全部子节点
+var par=s.parentNode;   //得到s的父节点
+var ns=s.nextSibling;   //获得s的下一个兄弟节点
+var ps=s.previousSbiling;  //得到s的上一个兄弟节点
+var fc=s.firstChi">
+<meta property="og:updated_time" content="2016-04-23T09:21:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript中获取节点的兄弟、父、子节点的各种问题">
-<meta name="twitter:description" content="JavaScript">
+<meta name="twitter:description" content="JS中获取节点的兄弟、父、子节点，一般情况下通过这种方式获取：
+var chils= s.childNodes;  //得到s的全部子节点
+var par=s.parentNode;   //得到s的父节点
+var ns=s.nextSibling;   //获得s的下一个兄弟节点
+var ps=s.previousSbiling;  //得到s的上一个兄弟节点
+var fc=s.firstChi">
 
 
 
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Pisces',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -338,7 +353,7 @@ var lc=s.lastChild;   //获得s的最后一个子节点
     var divChilds=divParent.childNodes;
     var divNext;
     for (var i = 0; i &lt;divChilds.length; i++) {
-        if (divChilds[i].className == &apos;media-right disagree&apos;) 
+        if (divChilds[i].className == &apos;media-right disagree&apos;)
             divNext=divChilds[i];
     }
 }
@@ -384,8 +399,8 @@ var lc=s.lastChild;   //获得s的最后一个子节点
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/12/14/RoboBinding-three-HTTP/" rel="prev" title="RoboBinding探究三：网络请求实现">
-                RoboBinding探究三：网络请求实现 <i class="fa fa-chevron-right"></i>
+              <a href="/2015/12/14/RoboBinding-one-TextView-EditText/" rel="prev" title="RoboBinding探究一：TextView及EditText基础实现">
+                RoboBinding探究一：TextView及EditText基础实现 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -477,7 +492,7 @@ var lc=s.lastChild;   //获得s的最后一个子节点
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">62</span>
+              <span class="site-state-item-count">57</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -592,7 +607,7 @@ var lc=s.lastChild;   //获得s的最后一个子节点
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Mist
   </a>
 </div>
 
@@ -657,13 +672,6 @@ var lc=s.lastChild;   //获得s的最后一个子节点
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>

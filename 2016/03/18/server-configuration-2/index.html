@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion">
+<html class="theme-next mist use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -82,23 +82,41 @@
 
 
 
-<meta name="description" content="我在新服务器配置上走过的那些坑">
+<meta name="description" content="配置SSH服务SSH作为Linux远程连接重要的方式，如何配置安装linux系统的SSH服务?
+1.在终端输入以下命令，查找当前系统是否已经安装ssh服务
+rpm -qa |grep ssh
+2.如果没有安装SSH软件包，可以通过进行安装
+yum install ssh
+sudo apt-get install openssh-server   #Ubuntu等
+3.安装好了之后，开启ssh服务">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我在新服务器配置上走过的那些坑(2)">
 <meta property="og:url" content="http://blog.ybbz.site/2016/03/18/server-configuration-2/index.html">
 <meta property="og:site_name" content="八宝粥的博客">
-<meta property="og:description" content="我在新服务器配置上走过的那些坑">
-<meta property="og:updated_time" content="2016-04-01T09:52:35.000Z">
+<meta property="og:description" content="配置SSH服务SSH作为Linux远程连接重要的方式，如何配置安装linux系统的SSH服务?
+1.在终端输入以下命令，查找当前系统是否已经安装ssh服务
+rpm -qa |grep ssh
+2.如果没有安装SSH软件包，可以通过进行安装
+yum install ssh
+sudo apt-get install openssh-server   #Ubuntu等
+3.安装好了之后，开启ssh服务">
+<meta property="og:updated_time" content="2016-04-23T09:25:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我在新服务器配置上走过的那些坑(2)">
-<meta name="twitter:description" content="我在新服务器配置上走过的那些坑">
+<meta name="twitter:description" content="配置SSH服务SSH作为Linux远程连接重要的方式，如何配置安装linux系统的SSH服务?
+1.在终端输入以下命令，查找当前系统是否已经安装ssh服务
+rpm -qa |grep ssh
+2.如果没有安装SSH软件包，可以通过进行安装
+yum install ssh
+sudo apt-get install openssh-server   #Ubuntu等
+3.安装好了之后，开启ssh服务">
 
 
 
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Pisces',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -339,7 +357,7 @@ sudo apt-get install openssh-server   #Ubuntu等
 </code></pre><h3 id="安装Python3-5"><a href="#安装Python3-5" class="headerlink" title="安装Python3.5"></a>安装Python3.5</h3><p>1.下载python3.5的包</p>
 <p>在python官网<a href="https://www.python.org/downloads/release/python-351/" target="_blank" rel="external">https://www.python.org/downloads/release/python-351/</a> 下载tgz包（Python-3.5.1.tgz）</p>
 <p>2.解压文件，并进入目录</p>
-<pre><code>tar -xf Python-3.5.1.tgz 
+<pre><code>tar -xf Python-3.5.1.tgz
 cd Python-3.5.1
 </code></pre><p>4.开始安装，使用编译的方法进行安装</p>
 <pre><code>mkdir /usr/python3.5
@@ -454,16 +472,16 @@ apachectl -v   #二选一
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/17/text-mining-distance-similar/" rel="next" title="关于欧氏距离、余弦相似度及多文本分类的思考">
-                <i class="fa fa-chevron-left"></i> 关于欧氏距离、余弦相似度及多文本分类的思考
+              <a href="/2016/03/18/server-configuration-1/" rel="next" title="我在新服务器配置上走过的那些坑(1)">
+                <i class="fa fa-chevron-left"></i> 我在新服务器配置上走过的那些坑(1)
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/03/18/server-configuration-1/" rel="prev" title="我在新服务器配置上走过的那些坑(1)">
-                我在新服务器配置上走过的那些坑(1) <i class="fa fa-chevron-right"></i>
+              <a href="/2016/03/19/Python-shell-ipython/" rel="prev" title="Python增强交互式shell：ipython">
+                Python增强交互式shell：ipython <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -555,7 +573,7 @@ apachectl -v   #二选一
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">62</span>
+              <span class="site-state-item-count">57</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -670,7 +688,7 @@ apachectl -v   #二选一
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Mist
   </a>
 </div>
 
@@ -735,13 +753,6 @@ apachectl -v   #二选一
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.ybbz.site/"/>
-  <updated>2016-04-23T09:03:25.000Z</updated>
+  <updated>2016-04-23T09:28:16.000Z</updated>
   <id>http://blog.ybbz.site/</id>
   
   <author>
@@ -16,192 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>《Hadoop海量数据处理》读书笔记1:Hadoop简介</title>
-    <link href="http://blog.ybbz.site/2016/05/01/Hadoop-foundation-one/"/>
-    <id>http://blog.ybbz.site/2016/05/01/Hadoop-foundation-one/</id>
-    <published>2016-04-30T16:00:00.000Z</published>
-    <updated>2016-04-23T09:03:25.000Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;Hadoop定义&quot;&gt;&lt;a href=&quot;#Hadoop定义&quot; class=&quot;headerlink&quot; title=&quot;Hadoop定义&quot;&gt;&lt;/a&gt;Hadoop定义&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;Apache软件基金会（ASF）：Hadoop软件库是一个框架，允许在集群中使用简单的编程模型对大规模数据集进行分布式计算。它被设计为可以从单一服务器扩展到数以千计的本地计算和存储的节点，并且Hadoop会在应用层面检测和处理错误，而不依靠硬件的高可用性，所以Hadoop能够在一个每个节点都有可能出错的集群之上提供一个高可用服务。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;根据以上定义总结Hadoop特点：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Hadoop是一个框架&lt;/li&gt;
-&lt;li&gt;Hadoop适合处理大规模数据&lt;/li&gt;
-&lt;li&gt;Hadoop被部署在一个集群上&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;因此，Hadoop是一个提供分布式存储和计算的软件框架，它具有无共享、高可用、弹性可扩展的特点，非常适合处理海量数据。&lt;/p&gt;
-&lt;h3 id=&quot;Hadoop生态圈&quot;&gt;&lt;a href=&quot;#Hadoop生态圈&quot; class=&quot;headerlink&quot; title=&quot;Hadoop生态圈&quot;&gt;&lt;/a&gt;Hadoop生态圈&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Common：最底层模块，为Hadoop各子项目提供各种工具&lt;/li&gt;
-&lt;li&gt;HDFS：具有高度容错性的文件系统&lt;/li&gt;
-&lt;li&gt;MapReduce：编程模型，函数式编程思想，将数据集处理过程分为Map和Reduce&lt;/li&gt;
-&lt;li&gt;HBase：分布式的、面向列的开源数据库&lt;/li&gt;
-&lt;li&gt;ZooKeeper：分布式的服务框架，解决分布式系统中一致性的问题&lt;/li&gt;
-&lt;li&gt;Hive：基于Hadoop的一个数据仓库工具，将结构化的数据文件映射为一张表&lt;/li&gt;
-&lt;li&gt;Pig：对大型数据集进行分析和评估的工具&lt;/li&gt;
-&lt;li&gt;Impala：对存储在HDFS、HBase的数据提供直接查询互动的SQL&lt;/li&gt;
-&lt;li&gt;Mahout：机器学习和数据挖掘库，利用MapReduce实现k-means,Naive Bayes等&lt;/li&gt;
-&lt;li&gt;Flume：高可用、高可靠、分布式的海量日志采集、聚合和传输系统&lt;/li&gt;
-&lt;li&gt;Sqoop：SQL to Hadoop，在结构化的数据存储（数据库）和Hadoop之间进行数据双向交换&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;云计算的定义&quot;&gt;&lt;a href=&quot;#云计算的定义&quot; class=&quot;headerlink&quot; title=&quot;云计算的定义&quot;&gt;&lt;/a&gt;云计算的定义&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;美国国家标准技术研究院（NIST）：云计算是一种可以通过网络方便地接入共享资源池，按需获取计算资源（这些资源包括网络、服务器、存储、应用、服务等）的服务模型。共享资源池中的资源可以通过较少的管理代价和简单业务交互过程而快速部署和发布&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;云计算的特点：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;按需提供服务&lt;/li&gt;
-&lt;li&gt;宽带网络访问&lt;/li&gt;
-&lt;li&gt;资源池化&lt;/li&gt;
-&lt;li&gt;高可伸缩性&lt;/li&gt;
-&lt;li&gt;可量化的服务&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;大规模&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;服务极其廉价&lt;/em&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;云计算的类型：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;基础设施即服务（IaaS）：云计算架构最底层，利用虚拟化技术将硬件设备等基础资源封装成服务供用户使用。&lt;/li&gt;
-&lt;li&gt;平台即服务（Paas）：对资源进行更进一步的抽象，它提供了用户应用程序的应用环境。&lt;/li&gt;
-&lt;li&gt;软件即服务（SaaS）：针对性更强，它将某些特定应用软件功能封装成服务。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;Hadoop和云计算&quot;&gt;&lt;a href=&quot;#Hadoop和云计算&quot; class=&quot;headerlink&quot; title=&quot;Hadoop和云计算&quot;&gt;&lt;/a&gt;Hadoop和云计算&lt;/h3&gt;&lt;p&gt;Hadoop是云计算的产物，是云计算技术的一种实现。&lt;br&gt;Hadoop作为一个分布式的软件框架，拥有云计算Paas层的所有特点，是云计算的重要组成部分。&lt;/p&gt;
-&lt;h3 id=&quot;大数据的定义&quot;&gt;&lt;a href=&quot;#大数据的定义&quot; class=&quot;headerlink&quot; title=&quot;大数据的定义&quot;&gt;&lt;/a&gt;大数据的定义&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;国际顶级权威咨询机构麦肯锡：大数据指的是所涉及的数据集规模已经超过了传统数据库软件获取、存储、管理和分析的能力。这是一个被故意设计成主观性的定义，并且是一个关于多大的数据集才能被认为是大数据的可变定义，即并不定义大于一个特定数字的TB才叫大数据。因为随着技术的不断发展，符合大数据标准的数据集容量也会增长；并且定义随不同行业也有变化，这依赖于在一个特定行业通常使用何种软件和数据集有多大。因此，大数据在今天不同行业中的范围可以从几十TB到几PB。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;大数据的特征：数量（Volume）、种类（Variety）、速度（Velocity），3V，庞大容量、极快速度和种类丰富的数据。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;数据量&lt;/li&gt;
-&lt;li&gt;数据的多样性&lt;/li&gt;
-&lt;li&gt;数据的速度&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;第四个V（Veracity，真实和准确）&lt;/em&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;大数据的结构类型&quot;&gt;&lt;a href=&quot;#大数据的结构类型&quot; class=&quot;headerlink&quot; title=&quot;大数据的结构类型&quot;&gt;&lt;/a&gt;大数据的结构类型&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;结构化数据：包括预定义的数据类型、格式和结构的数据&lt;/li&gt;
-&lt;li&gt;半结构化数据：具有可识别的模式并可以解析的文本数据文件（XML等）&lt;/li&gt;
-&lt;li&gt;准结构化数据：具有不规则数据格式的文本数据，使用工具可以使之格式化（URL）&lt;/li&gt;
-&lt;li&gt;非结构化数据：没有固定结构的数据（文本文档、PDF文档、图像和视频）&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;Hadoop和大数据&quot;&gt;&lt;a href=&quot;#Hadoop和大数据&quot; class=&quot;headerlink&quot; title=&quot;Hadoop和大数据&quot;&gt;&lt;/a&gt;Hadoop和大数据&lt;/h3&gt;&lt;p&gt;云计算和大数据的关系：云计算是你在做的事情，大数据使你所拥有的东西&lt;/p&gt;
-&lt;p&gt;所谓云计算PaaS层技术的代表，Hadoop可以以一个可靠、高效、可扩展的方式存储、管理“大数据”。Hadoop及其生态圈为管理、挖掘大数据提供了一整套相对成熟可靠的解决方案。从功能上，Hadoop可以称作一个“大数据管理平台”。&lt;/p&gt;
-&lt;p&gt;Hadoop的核心组件：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;海量数据的摇篮－HDFS&lt;/li&gt;
-&lt;li&gt;处理海量数据的利器－MapReduce&lt;/li&gt;
-&lt;li&gt;列式存储的代表－HBase&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;由于Hadoop可以基于分布式存储进行分布式计算，横向扩展能力非常优秀，所以Hadoop非常适合并且能够胜任存储、管理、挖掘“大数据”的任务。&lt;/p&gt;
-&lt;h3 id=&quot;其他大数据平台&quot;&gt;&lt;a href=&quot;#其他大数据平台&quot; class=&quot;headerlink&quot; title=&quot;其他大数据平台&quot;&gt;&lt;/a&gt;其他大数据平台&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;Storm&lt;br&gt;Hadoop主要擅长进行批处理，Storm是一个比较成熟的分布式的流计算平台。流式数据：计算的输入并不是一个文件，而是源源不断的数据流(数据实时到达，需要实时处理；数据是流式源源不断的，大小可能无穷无尽……)。Storm计算模型不是MapReduce，MapReduce不适合做流处理。&lt;/li&gt;
-&lt;li&gt;Apache Spark&lt;br&gt;Apache Spark是一种与Hadoop相似的开源集群计算环境，在性能和迭代计算上很有优势。Spark最大的优点在于对于一定数据量的查询可以达到毫秒级，在某些迭代计算的场景（如机器学习算法）中可以领先Hadoop数十倍到一百倍，并且它支持DAG（有向无环图）计算。&lt;/li&gt;
-&lt;li&gt;Hadoop2.0&lt;br&gt;Hadoop2.0从架构上与Hadoop完全不同，结构更加合理；最大的不同在于，引入了一个资源管理平台的组件－YARN。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;数据挖掘&quot;&gt;&lt;a href=&quot;#数据挖掘&quot; class=&quot;headerlink&quot; title=&quot;数据挖掘&quot;&gt;&lt;/a&gt;数据挖掘&lt;/h3&gt;&lt;p&gt;数据-&amp;gt;知识&lt;/p&gt;
-&lt;h3 id=&quot;数据仓库&quot;&gt;&lt;a href=&quot;#数据仓库&quot; class=&quot;headerlink&quot; title=&quot;数据仓库&quot;&gt;&lt;/a&gt;数据仓库&lt;/h3&gt;&lt;p&gt;数据仓库是一个面向主题的、集成的、时变的、非易失的数据集合，支持管理者的决策过程。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;Hadoop定义&quot;&gt;&lt;a href=&quot;#Hadoop定义&quot; class=&quot;headerlink&quot; title=&quot;Hadoop定义&quot;&gt;&lt;/a&gt;Hadoop定义&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;Apache软件基金会（ASF）：Hadoop软件库是一个框架，允
-    
-    </summary>
-    
-      <category term="Hadoop" scheme="http://blog.ybbz.site/categories/Hadoop/"/>
-    
-    
-      <category term="Hadoop" scheme="http://blog.ybbz.site/tags/Hadoop/"/>
-    
-      <category term="云计算" scheme="http://blog.ybbz.site/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/"/>
-    
-      <category term="大数据" scheme="http://blog.ybbz.site/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《Hadoop海量数据处理》读书笔记2:Hadoop环境准备</title>
-    <link href="http://blog.ybbz.site/2016/05/01/Hadoop-foundation-two/"/>
-    <id>http://blog.ybbz.site/2016/05/01/Hadoop-foundation-two/</id>
-    <published>2016-04-30T16:00:00.000Z</published>
-    <updated>2016-04-23T09:03:19.000Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;Hadoop架构&quot;&gt;&lt;a href=&quot;#Hadoop架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h3&gt;&lt;p&gt;Hadoop主要由两部分构成：分布式文件系统HDFS和分布式计算框架MapReduce；HDFS主要是用于海量数据的存储，MapReduce则是对存储在HDFS中的数据进行分布式计算。&lt;/p&gt;
-&lt;h4 id=&quot;Hadoop-HDFS架构&quot;&gt;&lt;a href=&quot;#Hadoop-HDFS架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop HDFS架构&quot;&gt;&lt;/a&gt;Hadoop HDFS架构&lt;/h4&gt;&lt;p&gt;构成HDFS集群的主要是两类节点（主从模式，管理者－工作者模式）：一个NameNode（管理者）和多个DataNode（工作者），SecondaryNameNode作为NameNode镜像数据备份。&lt;/p&gt;
-&lt;p&gt;表：HDFS守护进程&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;守护进程&lt;/th&gt;
-&lt;th&gt;集群中的数目&lt;/th&gt;
-&lt;th&gt;作用&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;NameNode&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;存储文件系统的元数据，存储文件与数据块映射，并提供文件系统的全景图&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;SecondaryNameNode&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;备份NameNode数据，并负责镜像与NameNode日志数据的合并&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;DataNode&lt;/td&gt;
-&lt;td&gt;多个(至少一个)&lt;/td&gt;
-&lt;td&gt;存储块数据&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h4 id=&quot;Hadoop-MapReduce架构&quot;&gt;&lt;a href=&quot;#Hadoop-MapReduce架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop MapReduce架构&quot;&gt;&lt;/a&gt;Hadoop MapReduce架构&lt;/h4&gt;&lt;p&gt;构成MapReduce集群为两类节点（主从模式）：JobTracker和TaskTracker。&lt;/p&gt;
-&lt;p&gt;表：MapReduce守护进程&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;守护进程&lt;/th&gt;
-&lt;th&gt;集群中的数目&lt;/th&gt;
-&lt;th&gt;作用&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;JobTracker&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;负责接受客户端作业提交，调度任务到TaskTracker上运行，并提供监控TaskTracker及任务进度等管理功能&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;TaskTracker&lt;/td&gt;
-&lt;td&gt;多个(至少一个)&lt;/td&gt;
-&lt;td&gt;实例化用户程序，在本地执行任务并周期性地向JobTracker汇报状态&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h4 id=&quot;Hadoop架构-1&quot;&gt;&lt;a href=&quot;#Hadoop架构-1&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h4&gt;&lt;p&gt;HDFS集群和MapReduce集群其实由一些守护进程组成，而所有这些守护进程和运行它们的节点就构成了Hadoop集群。这个集群的NameNode进程和JobTracker进程在一个节点上运行，而DataNode进程和TaskTracker进程在同一个节点上运行。（DataNode和TaskTracker需要配对部署在同一个节点，NameNode和JobTracker并不一定部署在同一个节点；生产环境，建议NameNode和JobTracker分开部署）。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;Hadoop架构&quot;&gt;&lt;a href=&quot;#Hadoop架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h3&gt;&lt;p&gt;Hadoop主要由两部分构成：分布式文件系统HDFS和分布式计算框架MapReduce；HD
-    
-    </summary>
-    
-      <category term="Hadoop" scheme="http://blog.ybbz.site/categories/Hadoop/"/>
-    
-    
-      <category term="Hadoop" scheme="http://blog.ybbz.site/tags/Hadoop/"/>
-    
-      <category term="云计算" scheme="http://blog.ybbz.site/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/"/>
-    
-      <category term="大数据" scheme="http://blog.ybbz.site/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
-    
-  </entry>
-  
-  <entry>
     <title>OWL Web本体语言指南</title>
     <link href="http://blog.ybbz.site/2016/04/20/OWL-SWRL/"/>
     <id>http://blog.ybbz.site/2016/04/20/OWL-SWRL/</id>
     <published>2016-04-19T16:00:00.000Z</published>
-    <updated>2016-04-10T09:13:45.000Z</updated>
+    <updated>2016-04-23T09:28:16.000Z</updated>
     
     <content type="html">&lt;p&gt;这篇指南是转载的，不过经过了一定的加工（删减、排版），主要是为了方便自己查找及阅读（毕竟官方的排版不怎么适合我这种强迫症），也删去了一些自己用不到的部分。读者也可查看下面引用中的译文及原文。&lt;/p&gt;
 &lt;blockquote&gt;
@@ -811,7 +630,9 @@
     
     <summary type="html">
     
-      OWL Web本体语言指南
+      &lt;p&gt;这篇指南是转载的，不过经过了一定的加工（删减、排版），主要是为了方便自己查找及阅读（毕竟官方的排版不怎么适合我这种强迫症），也删去了一些自己用不到的部分。读者也可查看下面引用中的译文及原文。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;OWL Web本体语言指南&lt;br&gt;Tran
     
     </summary>
     
@@ -825,11 +646,48 @@
   </entry>
   
   <entry>
+    <title>判断两个单向链表是否相交</title>
+    <link href="http://blog.ybbz.site/2016/04/20/Algorithm-3/"/>
+    <id>http://blog.ybbz.site/2016/04/20/Algorithm-3/</id>
+    <published>2016-04-19T16:00:00.000Z</published>
+    <updated>2016-04-23T09:28:08.000Z</updated>
+    
+    <content type="html">&lt;p&gt;问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;算法一&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;对链表一进行遍历，在遍历到每一个节点时，都在链表二中进行遍历，看是否有重复的节点。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;算法一改进&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;以空间换时间：将链表二存入字典，然后遍历链表一，判断是否在于字典中。简化后，时间复杂度变为 O(n+m)，但空间复杂度较高。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;算法二&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;算法二的思路基于以下两个原理：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;两个单向链表相交后，必然无法再分开。&lt;/li&gt;
+&lt;li&gt;两个单项链表相交后，尾节点一定相同。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;假设两个链表相交，很容易证明两个链表的尾元素是相同的。&lt;br&gt;逆反命题：两个链表的尾元素相同时，两个链表一定相交。&lt;br&gt;（注意：相同的节点不仅仅要求值相同，而是“同一个”，也就是指针地址相同。）&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;算法一&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;对链表一进行遍历，在遍历到每一个节点时，都在链表二中进行遍历，看是否有重复的节点。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;算法一改进&lt;/strong
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="http://blog.ybbz.site/categories/Algorithm/"/>
+    
+    
+      <category term="Algorithm" scheme="http://blog.ybbz.site/tags/Algorithm/"/>
+    
+  </entry>
+  
+  <entry>
     <title>根号值逼近问题的算法</title>
     <link href="http://blog.ybbz.site/2016/04/20/Algorithm-2/"/>
     <id>http://blog.ybbz.site/2016/04/20/Algorithm-2/</id>
     <published>2016-04-19T16:00:00.000Z</published>
-    <updated>2016-04-20T14:38:19.000Z</updated>
+    <updated>2016-04-23T09:28:01.000Z</updated>
     
     <content type="html">&lt;p&gt;在Python中，可以通过以下方式表达根号&lt;/p&gt;
 &lt;figure class=&quot;highlight moonscript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;math&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;a = &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; ** &lt;span class=&quot;number&quot;&gt;0.5&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;print&lt;/span&gt;(a)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;b = &lt;span class=&quot;built_in&quot;&gt;math&lt;/span&gt;.sqrt(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;print&lt;/span&gt;(b)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;c = &lt;span class=&quot;built_in&quot;&gt;math&lt;/span&gt;.pow(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;0.5&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;print&lt;/span&gt;(c)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -853,7 +711,8 @@
     
     <summary type="html">
     
-      有关根号值逼近问题的算法
+      &lt;p&gt;在Python中，可以通过以下方式表达根号&lt;/p&gt;
+&lt;figure class=&quot;highlight moonscript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span cl
     
     </summary>
     
@@ -867,45 +726,11 @@
   </entry>
   
   <entry>
-    <title>判断两个单向链表是否相交</title>
-    <link href="http://blog.ybbz.site/2016/04/20/Algorithm-3/"/>
-    <id>http://blog.ybbz.site/2016/04/20/Algorithm-3/</id>
-    <published>2016-04-19T16:00:00.000Z</published>
-    <updated>2016-04-20T15:04:07.000Z</updated>
-    
-    <content type="html">&lt;p&gt;问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;算法一&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;对链表一进行遍历，在遍历到每一个节点时，都在链表二中进行遍历，看是否有重复的节点。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;算法一改进&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;以空间换时间：将链表二存入字典，然后遍历链表一，判断是否在于字典中。简化后，时间复杂度变为 O(n+m)，但空间复杂度较高。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;算法二&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;算法二的思路基于以下两个原理：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;两个单向链表相交后，必然无法再分开。&lt;/li&gt;
-&lt;li&gt;两个单项链表相交后，尾节点一定相同。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;假设两个链表相交，很容易证明两个链表的尾元素是相同的。&lt;br&gt;逆反命题：两个链表的尾元素相同时，两个链表一定相交。&lt;br&gt;（注意：相同的节点不仅仅要求值相同，而是“同一个”，也就是指针地址相同。）&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      判断两个单向链表是否相交
-    
-    </summary>
-    
-      <category term="Algorithm" scheme="http://blog.ybbz.site/categories/Algorithm/"/>
-    
-    
-      <category term="Algorithm" scheme="http://blog.ybbz.site/tags/Algorithm/"/>
-    
-  </entry>
-  
-  <entry>
     <title>庆祝我的第一个独立APP上线</title>
     <link href="http://blog.ybbz.site/2016/04/18/my-first-andorid-app-online/"/>
     <id>http://blog.ybbz.site/2016/04/18/my-first-andorid-app-online/</id>
     <published>2016-04-17T16:00:00.000Z</published>
-    <updated>2016-04-21T12:26:19.000Z</updated>
+    <updated>2016-04-23T09:27:54.000Z</updated>
     
     <content type="html">&lt;p&gt;所谓独立，就是说这个APP是我私人开发的，不牵扯其他任何个人或组织。之前一直自称Android工程师，可是并没有自己上线的作品；至于Android项目么，要么是和队友们一块儿合作的，不敢冠上自己的名字；要么就是自己做着玩的，压根没想过要发布。&lt;/p&gt;
 &lt;p&gt;Mr.葵，是我上个月的一时兴趣开发的，关于它的更多介绍，可以在&lt;a href=&quot;http://blog.ybbz.site/android/2016/03/15/App-develop/&quot;&gt;记一次有趣的App开发之旅&lt;/a&gt;中找到。不过为了顺利上线，这几天对它进行了一部分的改造。&lt;/p&gt;
@@ -922,7 +747,8 @@
     
     <summary type="html">
     
-      庆祝我的第一个独立APP上线
+      &lt;p&gt;所谓独立，就是说这个APP是我私人开发的，不牵扯其他任何个人或组织。之前一直自称Android工程师，可是并没有自己上线的作品；至于Android项目么，要么是和队友们一块儿合作的，不敢冠上自己的名字；要么就是自己做着玩的，压根没想过要发布。&lt;/p&gt;
+&lt;p&gt;Mr.葵，是我上
     
     </summary>
     
@@ -934,11 +760,192 @@
   </entry>
   
   <entry>
+    <title>《Hadoop海量数据处理》读书笔记1:Hadoop简介</title>
+    <link href="http://blog.ybbz.site/2016/04/15/Hadoop-foundation-one/"/>
+    <id>http://blog.ybbz.site/2016/04/15/Hadoop-foundation-one/</id>
+    <published>2016-04-14T16:00:00.000Z</published>
+    <updated>2016-04-23T09:28:41.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;Hadoop定义&quot;&gt;&lt;a href=&quot;#Hadoop定义&quot; class=&quot;headerlink&quot; title=&quot;Hadoop定义&quot;&gt;&lt;/a&gt;Hadoop定义&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;Apache软件基金会（ASF）：Hadoop软件库是一个框架，允许在集群中使用简单的编程模型对大规模数据集进行分布式计算。它被设计为可以从单一服务器扩展到数以千计的本地计算和存储的节点，并且Hadoop会在应用层面检测和处理错误，而不依靠硬件的高可用性，所以Hadoop能够在一个每个节点都有可能出错的集群之上提供一个高可用服务。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;根据以上定义总结Hadoop特点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Hadoop是一个框架&lt;/li&gt;
+&lt;li&gt;Hadoop适合处理大规模数据&lt;/li&gt;
+&lt;li&gt;Hadoop被部署在一个集群上&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;因此，Hadoop是一个提供分布式存储和计算的软件框架，它具有无共享、高可用、弹性可扩展的特点，非常适合处理海量数据。&lt;/p&gt;
+&lt;h3 id=&quot;Hadoop生态圈&quot;&gt;&lt;a href=&quot;#Hadoop生态圈&quot; class=&quot;headerlink&quot; title=&quot;Hadoop生态圈&quot;&gt;&lt;/a&gt;Hadoop生态圈&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Common：最底层模块，为Hadoop各子项目提供各种工具&lt;/li&gt;
+&lt;li&gt;HDFS：具有高度容错性的文件系统&lt;/li&gt;
+&lt;li&gt;MapReduce：编程模型，函数式编程思想，将数据集处理过程分为Map和Reduce&lt;/li&gt;
+&lt;li&gt;HBase：分布式的、面向列的开源数据库&lt;/li&gt;
+&lt;li&gt;ZooKeeper：分布式的服务框架，解决分布式系统中一致性的问题&lt;/li&gt;
+&lt;li&gt;Hive：基于Hadoop的一个数据仓库工具，将结构化的数据文件映射为一张表&lt;/li&gt;
+&lt;li&gt;Pig：对大型数据集进行分析和评估的工具&lt;/li&gt;
+&lt;li&gt;Impala：对存储在HDFS、HBase的数据提供直接查询互动的SQL&lt;/li&gt;
+&lt;li&gt;Mahout：机器学习和数据挖掘库，利用MapReduce实现k-means,Naive Bayes等&lt;/li&gt;
+&lt;li&gt;Flume：高可用、高可靠、分布式的海量日志采集、聚合和传输系统&lt;/li&gt;
+&lt;li&gt;Sqoop：SQL to Hadoop，在结构化的数据存储（数据库）和Hadoop之间进行数据双向交换&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;云计算的定义&quot;&gt;&lt;a href=&quot;#云计算的定义&quot; class=&quot;headerlink&quot; title=&quot;云计算的定义&quot;&gt;&lt;/a&gt;云计算的定义&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;美国国家标准技术研究院（NIST）：云计算是一种可以通过网络方便地接入共享资源池，按需获取计算资源（这些资源包括网络、服务器、存储、应用、服务等）的服务模型。共享资源池中的资源可以通过较少的管理代价和简单业务交互过程而快速部署和发布&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;云计算的特点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;按需提供服务&lt;/li&gt;
+&lt;li&gt;宽带网络访问&lt;/li&gt;
+&lt;li&gt;资源池化&lt;/li&gt;
+&lt;li&gt;高可伸缩性&lt;/li&gt;
+&lt;li&gt;可量化的服务&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;大规模&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;服务极其廉价&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;云计算的类型：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;基础设施即服务（IaaS）：云计算架构最底层，利用虚拟化技术将硬件设备等基础资源封装成服务供用户使用。&lt;/li&gt;
+&lt;li&gt;平台即服务（Paas）：对资源进行更进一步的抽象，它提供了用户应用程序的应用环境。&lt;/li&gt;
+&lt;li&gt;软件即服务（SaaS）：针对性更强，它将某些特定应用软件功能封装成服务。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;Hadoop和云计算&quot;&gt;&lt;a href=&quot;#Hadoop和云计算&quot; class=&quot;headerlink&quot; title=&quot;Hadoop和云计算&quot;&gt;&lt;/a&gt;Hadoop和云计算&lt;/h3&gt;&lt;p&gt;Hadoop是云计算的产物，是云计算技术的一种实现。&lt;br&gt;Hadoop作为一个分布式的软件框架，拥有云计算Paas层的所有特点，是云计算的重要组成部分。&lt;/p&gt;
+&lt;h3 id=&quot;大数据的定义&quot;&gt;&lt;a href=&quot;#大数据的定义&quot; class=&quot;headerlink&quot; title=&quot;大数据的定义&quot;&gt;&lt;/a&gt;大数据的定义&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;国际顶级权威咨询机构麦肯锡：大数据指的是所涉及的数据集规模已经超过了传统数据库软件获取、存储、管理和分析的能力。这是一个被故意设计成主观性的定义，并且是一个关于多大的数据集才能被认为是大数据的可变定义，即并不定义大于一个特定数字的TB才叫大数据。因为随着技术的不断发展，符合大数据标准的数据集容量也会增长；并且定义随不同行业也有变化，这依赖于在一个特定行业通常使用何种软件和数据集有多大。因此，大数据在今天不同行业中的范围可以从几十TB到几PB。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;大数据的特征：数量（Volume）、种类（Variety）、速度（Velocity），3V，庞大容量、极快速度和种类丰富的数据。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;数据量&lt;/li&gt;
+&lt;li&gt;数据的多样性&lt;/li&gt;
+&lt;li&gt;数据的速度&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;第四个V（Veracity，真实和准确）&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;大数据的结构类型&quot;&gt;&lt;a href=&quot;#大数据的结构类型&quot; class=&quot;headerlink&quot; title=&quot;大数据的结构类型&quot;&gt;&lt;/a&gt;大数据的结构类型&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;结构化数据：包括预定义的数据类型、格式和结构的数据&lt;/li&gt;
+&lt;li&gt;半结构化数据：具有可识别的模式并可以解析的文本数据文件（XML等）&lt;/li&gt;
+&lt;li&gt;准结构化数据：具有不规则数据格式的文本数据，使用工具可以使之格式化（URL）&lt;/li&gt;
+&lt;li&gt;非结构化数据：没有固定结构的数据（文本文档、PDF文档、图像和视频）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;Hadoop和大数据&quot;&gt;&lt;a href=&quot;#Hadoop和大数据&quot; class=&quot;headerlink&quot; title=&quot;Hadoop和大数据&quot;&gt;&lt;/a&gt;Hadoop和大数据&lt;/h3&gt;&lt;p&gt;云计算和大数据的关系：云计算是你在做的事情，大数据使你所拥有的东西&lt;/p&gt;
+&lt;p&gt;所谓云计算PaaS层技术的代表，Hadoop可以以一个可靠、高效、可扩展的方式存储、管理“大数据”。Hadoop及其生态圈为管理、挖掘大数据提供了一整套相对成熟可靠的解决方案。从功能上，Hadoop可以称作一个“大数据管理平台”。&lt;/p&gt;
+&lt;p&gt;Hadoop的核心组件：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;海量数据的摇篮－HDFS&lt;/li&gt;
+&lt;li&gt;处理海量数据的利器－MapReduce&lt;/li&gt;
+&lt;li&gt;列式存储的代表－HBase&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;由于Hadoop可以基于分布式存储进行分布式计算，横向扩展能力非常优秀，所以Hadoop非常适合并且能够胜任存储、管理、挖掘“大数据”的任务。&lt;/p&gt;
+&lt;h3 id=&quot;其他大数据平台&quot;&gt;&lt;a href=&quot;#其他大数据平台&quot; class=&quot;headerlink&quot; title=&quot;其他大数据平台&quot;&gt;&lt;/a&gt;其他大数据平台&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Storm&lt;br&gt;Hadoop主要擅长进行批处理，Storm是一个比较成熟的分布式的流计算平台。流式数据：计算的输入并不是一个文件，而是源源不断的数据流(数据实时到达，需要实时处理；数据是流式源源不断的，大小可能无穷无尽……)。Storm计算模型不是MapReduce，MapReduce不适合做流处理。&lt;/li&gt;
+&lt;li&gt;Apache Spark&lt;br&gt;Apache Spark是一种与Hadoop相似的开源集群计算环境，在性能和迭代计算上很有优势。Spark最大的优点在于对于一定数据量的查询可以达到毫秒级，在某些迭代计算的场景（如机器学习算法）中可以领先Hadoop数十倍到一百倍，并且它支持DAG（有向无环图）计算。&lt;/li&gt;
+&lt;li&gt;Hadoop2.0&lt;br&gt;Hadoop2.0从架构上与Hadoop完全不同，结构更加合理；最大的不同在于，引入了一个资源管理平台的组件－YARN。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;数据挖掘&quot;&gt;&lt;a href=&quot;#数据挖掘&quot; class=&quot;headerlink&quot; title=&quot;数据挖掘&quot;&gt;&lt;/a&gt;数据挖掘&lt;/h3&gt;&lt;p&gt;数据-&amp;gt;知识&lt;/p&gt;
+&lt;h3 id=&quot;数据仓库&quot;&gt;&lt;a href=&quot;#数据仓库&quot; class=&quot;headerlink&quot; title=&quot;数据仓库&quot;&gt;&lt;/a&gt;数据仓库&lt;/h3&gt;&lt;p&gt;数据仓库是一个面向主题的、集成的、时变的、非易失的数据集合，支持管理者的决策过程。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Hadoop定义&quot;&gt;&lt;a href=&quot;#Hadoop定义&quot; class=&quot;headerlink&quot; title=&quot;Hadoop定义&quot;&gt;&lt;/a&gt;Hadoop定义&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;Apache软件基金会（ASF）：Hadoop软件库是一个框架，允
+    
+    </summary>
+    
+      <category term="Hadoop" scheme="http://blog.ybbz.site/categories/Hadoop/"/>
+    
+    
+      <category term="Hadoop" scheme="http://blog.ybbz.site/tags/Hadoop/"/>
+    
+      <category term="云计算" scheme="http://blog.ybbz.site/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/"/>
+    
+      <category term="大数据" scheme="http://blog.ybbz.site/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《Hadoop海量数据处理》读书笔记2:Hadoop环境准备</title>
+    <link href="http://blog.ybbz.site/2016/04/15/Hadoop-foundation-two/"/>
+    <id>http://blog.ybbz.site/2016/04/15/Hadoop-foundation-two/</id>
+    <published>2016-04-14T16:00:00.000Z</published>
+    <updated>2016-04-23T09:28:47.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;Hadoop架构&quot;&gt;&lt;a href=&quot;#Hadoop架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h3&gt;&lt;p&gt;Hadoop主要由两部分构成：分布式文件系统HDFS和分布式计算框架MapReduce；HDFS主要是用于海量数据的存储，MapReduce则是对存储在HDFS中的数据进行分布式计算。&lt;/p&gt;
+&lt;h4 id=&quot;Hadoop-HDFS架构&quot;&gt;&lt;a href=&quot;#Hadoop-HDFS架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop HDFS架构&quot;&gt;&lt;/a&gt;Hadoop HDFS架构&lt;/h4&gt;&lt;p&gt;构成HDFS集群的主要是两类节点（主从模式，管理者－工作者模式）：一个NameNode（管理者）和多个DataNode（工作者），SecondaryNameNode作为NameNode镜像数据备份。&lt;/p&gt;
+&lt;p&gt;表：HDFS守护进程&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;守护进程&lt;/th&gt;
+&lt;th&gt;集群中的数目&lt;/th&gt;
+&lt;th&gt;作用&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;NameNode&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;存储文件系统的元数据，存储文件与数据块映射，并提供文件系统的全景图&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SecondaryNameNode&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;备份NameNode数据，并负责镜像与NameNode日志数据的合并&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DataNode&lt;/td&gt;
+&lt;td&gt;多个(至少一个)&lt;/td&gt;
+&lt;td&gt;存储块数据&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&quot;Hadoop-MapReduce架构&quot;&gt;&lt;a href=&quot;#Hadoop-MapReduce架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop MapReduce架构&quot;&gt;&lt;/a&gt;Hadoop MapReduce架构&lt;/h4&gt;&lt;p&gt;构成MapReduce集群为两类节点（主从模式）：JobTracker和TaskTracker。&lt;/p&gt;
+&lt;p&gt;表：MapReduce守护进程&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;守护进程&lt;/th&gt;
+&lt;th&gt;集群中的数目&lt;/th&gt;
+&lt;th&gt;作用&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;JobTracker&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;负责接受客户端作业提交，调度任务到TaskTracker上运行，并提供监控TaskTracker及任务进度等管理功能&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TaskTracker&lt;/td&gt;
+&lt;td&gt;多个(至少一个)&lt;/td&gt;
+&lt;td&gt;实例化用户程序，在本地执行任务并周期性地向JobTracker汇报状态&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&quot;Hadoop架构-1&quot;&gt;&lt;a href=&quot;#Hadoop架构-1&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h4&gt;&lt;p&gt;HDFS集群和MapReduce集群其实由一些守护进程组成，而所有这些守护进程和运行它们的节点就构成了Hadoop集群。这个集群的NameNode进程和JobTracker进程在一个节点上运行，而DataNode进程和TaskTracker进程在同一个节点上运行。（DataNode和TaskTracker需要配对部署在同一个节点，NameNode和JobTracker并不一定部署在同一个节点；生产环境，建议NameNode和JobTracker分开部署）。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Hadoop架构&quot;&gt;&lt;a href=&quot;#Hadoop架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h3&gt;&lt;p&gt;Hadoop主要由两部分构成：分布式文件系统HDFS和分布式计算框架MapReduce；HD
+    
+    </summary>
+    
+      <category term="Hadoop" scheme="http://blog.ybbz.site/categories/Hadoop/"/>
+    
+    
+      <category term="Hadoop" scheme="http://blog.ybbz.site/tags/Hadoop/"/>
+    
+      <category term="云计算" scheme="http://blog.ybbz.site/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/"/>
+    
+      <category term="大数据" scheme="http://blog.ybbz.site/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+  </entry>
+  
+  <entry>
     <title>微信公众平台开发实践</title>
     <link href="http://blog.ybbz.site/2016/04/11/WeChat-public-platform-development-practices/"/>
     <id>http://blog.ybbz.site/2016/04/11/WeChat-public-platform-development-practices/</id>
     <published>2016-04-10T16:00:00.000Z</published>
-    <updated>2016-04-13T13:43:58.000Z</updated>
+    <updated>2016-04-23T09:27:47.000Z</updated>
     
     <content type="html">&lt;p&gt;今天中午去图书馆还书&amp;amp;&amp;amp;借书，偶然看到一本《微信公众平台开发最佳实践》，想着竟然这也有教材了？于是就借回来看了一下，拿自己的微信公众号（硬性植入：八宝粥）当小白鼠，实践了其中一部分。&lt;/p&gt;
 &lt;p&gt;开发需要有自己的服务器，这本书上说的新浪SAE不错，于是我也就打算用SAE试试。之前就用过SAE，不过很久没用了；登录了一看，欠费了！！！我那“挺尸”了好几年的WordPress博客，竟然还在收费。为了接着用，就充了10块钱。顺便把博客删了。&lt;/p&gt;
@@ -958,7 +965,8 @@
     
     <summary type="html">
     
-      微信公众平台开发实践
+      &lt;p&gt;今天中午去图书馆还书&amp;amp;&amp;amp;借书，偶然看到一本《微信公众平台开发最佳实践》，想着竟然这也有教材了？于是就借回来看了一下，拿自己的微信公众号（硬性植入：八宝粥）当小白鼠，实践了其中一部分。&lt;/p&gt;
+&lt;p&gt;开发需要有自己的服务器，这本书上说的新浪SAE不错，于是我也
     
     </summary>
     
@@ -976,7 +984,7 @@
     <link href="http://blog.ybbz.site/2016/04/08/map-practice/"/>
     <id>http://blog.ybbz.site/2016/04/08/map-practice/</id>
     <published>2016-04-07T16:00:00.000Z</published>
-    <updated>2016-04-13T13:47:53.000Z</updated>
+    <updated>2016-04-23T09:27:36.000Z</updated>
     
     <content type="html">&lt;p&gt;对于利用地图来定位展示这方面一直挺好奇的，之前倒是用过百度地图API，但也只是简单的利用地图生成器，给网站加一个地图地址。就像下面这样：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160408_1.png&quot; alt=&quot;20160408_1&quot;&gt;&lt;/p&gt;
@@ -1082,7 +1090,8 @@ map.addControl(myZoomCtrl);
     
     <summary type="html">
     
-      利用百度地图API定位
+      &lt;p&gt;对于利用地图来定位展示这方面一直挺好奇的，之前倒是用过百度地图API，但也只是简单的利用地图生成器，给网站加一个地图地址。就像下面这样：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160408_1.png&quot; 
     
     </summary>
     
@@ -1100,7 +1109,7 @@ map.addControl(myZoomCtrl);
     <link href="http://blog.ybbz.site/2016/04/06/MacBook-Pages-Papers-EndNote/"/>
     <id>http://blog.ybbz.site/2016/04/06/MacBook-Pages-Papers-EndNote/</id>
     <published>2016-04-05T16:00:00.000Z</published>
-    <updated>2016-04-06T07:08:29.000Z</updated>
+    <updated>2016-04-23T09:27:29.000Z</updated>
     
     <content type="html">&lt;p&gt;之前一直用Papers3进行文献管理，确实好用。最近要写论文，就想着能否用Papers3来引用文献，于是进行了一番探索，记录如下。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;相关配置&lt;/strong&gt;&lt;/p&gt;
@@ -1138,7 +1147,11 @@ map.addControl(myZoomCtrl);
     
     <summary type="html">
     
-      Mac下(Pages+Papers+EndNote组合)论文写作与文献管理/引用
+      &lt;p&gt;之前一直用Papers3进行文献管理，确实好用。最近要写论文，就想着能否用Papers3来引用文献，于是进行了一番探索，记录如下。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;相关配置&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MacBook 10.9&lt;/li&gt;
+&lt;li&gt;Pages 5
     
     </summary>
     
@@ -1160,7 +1173,7 @@ map.addControl(myZoomCtrl);
     <link href="http://blog.ybbz.site/2016/04/04/Django-foundation-three/"/>
     <id>http://blog.ybbz.site/2016/04/04/Django-foundation-three/</id>
     <published>2016-04-03T16:00:00.000Z</published>
-    <updated>2016-04-05T08:43:10.000Z</updated>
+    <updated>2016-04-23T09:27:18.000Z</updated>
     
     <content type="html">&lt;p&gt;MySQL配置&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;pip3 install PyMySQL
@@ -1211,7 +1224,13 @@ urlpatterns = [
     
     <summary type="html">
     
-      Django学习笔记三：Django博客实战
+      &lt;p&gt;MySQL配置&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pip3 install PyMySQL
+＃ 在__init__.py添加如下内容：
+import pymysql
+pymysql.install_as_MySQLdb()
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;项目配置&lt;/p&gt;
+&lt;p
     
     </summary>
     
@@ -1229,7 +1248,7 @@ urlpatterns = [
     <link href="http://blog.ybbz.site/2016/04/03/Django-foundation-two/"/>
     <id>http://blog.ybbz.site/2016/04/03/Django-foundation-two/</id>
     <published>2016-04-02T16:00:00.000Z</published>
-    <updated>2016-04-05T08:24:41.000Z</updated>
+    <updated>2016-04-23T09:27:10.000Z</updated>
     
     <content type="html">&lt;p&gt;自从去年年底开始，走上了Jekyll+Github+Markdown这条不归路，先是把CSDN上面的一些博客迁移过来，然后就是经常写一些自己在平时学习、开发过程中的心得体会，不见得有人看。权当技术总结，外加练习写作表达了。&lt;/p&gt;
 &lt;p&gt;这种简洁优雅的表达方式，简直让人沉醉。不禁回想上大学（本科）时，也曾折腾了一段时间Wordpress，当时也写了一些内容、交了一些博友，可总有一种无病呻吟的感觉，后来不想写了，也没给服务器续费，就没了。之后，就是偶尔在CSDN上面做一些总结；可也没有很认真的对待。再后来，看了一些类似“我为什么要写博客”这样的文章，觉得说的很有道理，醍醐灌顶。于是，就在这儿安了家。我的朋友圈子里，几乎没有人写博客；虽然“孤单”，我却乐在其中。有时兴致来了，还把自己觉得不错的博文，在新建的公众号推送一下。&lt;/p&gt;
@@ -1274,7 +1293,8 @@ conn.commit()
     
     <summary type="html">
     
-      Django学习笔记二：优化博客展示，抓取博文并保存到数据库
+      &lt;p&gt;自从去年年底开始，走上了Jekyll+Github+Markdown这条不归路，先是把CSDN上面的一些博客迁移过来，然后就是经常写一些自己在平时学习、开发过程中的心得体会，不见得有人看。权当技术总结，外加练习写作表达了。&lt;/p&gt;
+&lt;p&gt;这种简洁优雅的表达方式，简直让人沉醉
     
     </summary>
     
@@ -1294,7 +1314,7 @@ conn.commit()
     <link href="http://blog.ybbz.site/2016/04/03/Django-foundation-one/"/>
     <id>http://blog.ybbz.site/2016/04/03/Django-foundation-one/</id>
     <published>2016-04-02T16:00:00.000Z</published>
-    <updated>2016-04-05T08:43:27.000Z</updated>
+    <updated>2016-04-23T09:27:01.000Z</updated>
     
     <content type="html">&lt;p&gt;清明节假期，正是读书、学习的好时候；别人都出去玩了，然而我仍然在“学习”。之前一直对Django很感兴趣（因为很多人提到了它，而我也有打算在未来用Python重构PHP做的系统），因此就学习了一下&lt;/p&gt;
 &lt;p&gt;创建新的项目&lt;/p&gt;
@@ -1379,7 +1399,9 @@ python3 manage.py runserver
     
     <summary type="html">
     
-      Django学习笔记一：创建新App及其常用命令
+      &lt;p&gt;清明节假期，正是读书、学习的好时候；别人都出去玩了，然而我仍然在“学习”。之前一直对Django很感兴趣（因为很多人提到了它，而我也有打算在未来用Python重构PHP做的系统），因此就学习了一下&lt;/p&gt;
+&lt;p&gt;创建新的项目&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;django-ad
     
     </summary>
     
@@ -1397,7 +1419,7 @@ python3 manage.py runserver
     <link href="http://blog.ybbz.site/2016/04/01/machine-learning-notes/"/>
     <id>http://blog.ybbz.site/2016/04/01/machine-learning-notes/</id>
     <published>2016-03-31T16:00:00.000Z</published>
-    <updated>2016-04-03T08:01:12.000Z</updated>
+    <updated>2016-04-23T09:26:54.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;strong&gt;《机器学习实践:测试驱动的开发方法》&lt;/strong&gt;（Thoughtful Machine Learning:A Test-Driven Approach），在图书馆看到了这本书，当时浏览了目录，觉得挺中意的，就借回来了。然而看了前言之后，我就对这本书不抱有太大的希望了，原因无他，作者用的是Ruby而非Python。我对自己的定位只是Python入门、任重而道远，因此并不打算跳入Ruby的“火坑”。&lt;/p&gt;
 &lt;p&gt;可是这并不妨碍我阅读这本书，毕竟，机器学习的算法思想都是相通的，并不妨碍我去学习。下面，简单记录一下看这本书时候的一些体会。&lt;/p&gt;
@@ -1577,14 +1599,88 @@ P(A3|A1,A2)=P(A1,A2|A3)P(A3)/P(A1,A2)=P(A1,A2,A3)/P(A1,A2)=P(A3)P(A1|A3)P(A2|A3)
     
     <summary type="html">
     
-      机器学习读书笔记
+      &lt;p&gt;&lt;strong&gt;《机器学习实践:测试驱动的开发方法》&lt;/strong&gt;（Thoughtful Machine Learning:A Test-Driven Approach），在图书馆看到了这本书，当时浏览了目录，觉得挺中意的，就借回来了。然而看了前言之后，我就对这本书不抱
     
     </summary>
     
-      <category term="Machine-Learning" scheme="http://blog.ybbz.site/categories/Machine-Learning/"/>
+      <category term="Machine Learning" scheme="http://blog.ybbz.site/categories/Machine-Learning/"/>
     
     
       <category term="Machine-Learning" scheme="http://blog.ybbz.site/tags/Machine-Learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一道算法题</title>
+    <link href="http://blog.ybbz.site/2016/03/29/algorithm/"/>
+    <id>http://blog.ybbz.site/2016/03/29/algorithm/</id>
+    <published>2016-03-28T16:00:00.000Z</published>
+    <updated>2016-04-23T09:26:42.000Z</updated>
+    
+    <content type="html">&lt;p&gt;题目如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;已知list1 = [20, 6, 15, 53, 47],已经排好序&lt;/li&gt;
+&lt;li&gt;已知list2 = [(6, ‘John’, ‘20’), (15, ‘Kim’, ‘18’),(20, ‘David’, ‘21’), (47, ‘Amy’, ‘23’), (53, ‘Mary’, ‘20’)]&lt;/li&gt;
+&lt;li&gt;把list2按照list1中的顺序重新排序，并把排序结果封装成json字符串，得到list3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;代码如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;list1 = [20, 6, 15, 53, 47]
+list2 = [(6, &amp;apos;John&amp;apos;, &amp;apos;20&amp;apos;), (15, &amp;apos;Kim&amp;apos;, &amp;apos;18&amp;apos;),
+         (20, &amp;apos;David&amp;apos;, &amp;apos;21&amp;apos;), (47, &amp;apos;Amy&amp;apos;, &amp;apos;23&amp;apos;), (53, &amp;apos;Mary&amp;apos;, &amp;apos;20&amp;apos;)]
+print(list1)
+print(list2)
+
+list3 = []
+# count = len(list1)
+# for i in range(0, count):
+#     dict = {}
+#     id = list1[i]
+#     dict[&amp;apos;id&amp;apos;] = id
+#     j = 0
+#     while j &amp;lt; count and list2[j][0] != id:
+#         j += 1
+#     dict[&amp;apos;name&amp;apos;] = list2[j][1]
+#     dict[&amp;apos;age&amp;apos;] = list2[j][2]
+#     list3.append(dict)
+
+
+# list2_dict = {}
+# for item2 in list2:
+#     list2_dict[item2[0]] = (item2[1], item2[2])
+# for item1 in list1:
+#     dict = {}
+#     dict[&amp;apos;id&amp;apos;] = item1
+#     dict[&amp;apos;name&amp;apos;] = list2_dict[item1][0]
+#     dict[&amp;apos;age&amp;apos;] = list2_dict[item1][1]
+#     list3.append(dict)
+
+list2_dict = {}
+for item2 in list2:
+    list2_dict[item2[0]] = {&amp;apos;name&amp;apos;: item2[1], &amp;apos;age&amp;apos;: item2[2]}
+for item1 in list1:
+    dict = list2_dict[item1]
+    dict[&amp;apos;id&amp;apos;] = item1
+    list3.append(dict)
+
+print(list3)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;^_^ 感谢我的本科室友~&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;题目如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;已知list1 = [20, 6, 15, 53, 47],已经排好序&lt;/li&gt;
+&lt;li&gt;已知list2 = [(6, ‘John’, ‘20’), (15, ‘Kim’, ‘18’),(20, ‘David’, ‘21’), (47,
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="http://blog.ybbz.site/categories/Algorithm/"/>
+    
+    
+      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
+    
+      <category term="Algorithm" scheme="http://blog.ybbz.site/tags/Algorithm/"/>
     
   </entry>
   
@@ -1593,7 +1689,7 @@ P(A3|A1,A2)=P(A1,A2|A3)P(A3)/P(A1,A2)=P(A1,A2,A3)/P(A1,A2)=P(A3)P(A1|A3)P(A2|A3)
     <link href="http://blog.ybbz.site/2016/03/29/Ajax-Flask-Python-Web-Server/"/>
     <id>http://blog.ybbz.site/2016/03/29/Ajax-Flask-Python-Web-Server/</id>
     <published>2016-03-28T16:00:00.000Z</published>
-    <updated>2016-04-02T07:02:08.000Z</updated>
+    <updated>2016-04-23T09:26:34.000Z</updated>
     
     <content type="html">&lt;p&gt;看到标题，你可能会觉得博主比较奇葩，为什么要把事情搞得这么复杂？其实博主也不想这样，只是去年已经用PHP搭建好了系统，而且功能、UI等也基本调试的差不多了；现在要借助Python强大而方便的数据分析功能来分析数据，最简单直接的也就是这么做了。或许之后，会考虑用Django等来重构整个系统，但这并不是现在的重点。&lt;/p&gt;
 &lt;h3 id=&quot;利用Ajax跨域访问Flask服务器&quot;&gt;&lt;a href=&quot;#利用Ajax跨域访问Flask服务器&quot; class=&quot;headerlink&quot; title=&quot;利用Ajax跨域访问Flask服务器&quot;&gt;&lt;/a&gt;利用Ajax跨域访问Flask服务器&lt;/h3&gt;&lt;p&gt;Web前端通过Ajax请求Flask服务器的接口：&lt;/p&gt;
@@ -1692,7 +1788,7 @@ print(decode)
     
     <summary type="html">
     
-      利用Ajax跨域访问Flask构建的Python Web服务器
+      &lt;p&gt;看到标题，你可能会觉得博主比较奇葩，为什么要把事情搞得这么复杂？其实博主也不想这样，只是去年已经用PHP搭建好了系统，而且功能、UI等也基本调试的差不多了；现在要借助Python强大而方便的数据分析功能来分析数据，最简单直接的也就是这么做了。或许之后，会考虑用Django等
     
     </summary>
     
@@ -1708,82 +1804,11 @@ print(decode)
   </entry>
   
   <entry>
-    <title>一道算法题</title>
-    <link href="http://blog.ybbz.site/2016/03/29/algorithm/"/>
-    <id>http://blog.ybbz.site/2016/03/29/algorithm/</id>
-    <published>2016-03-28T16:00:00.000Z</published>
-    <updated>2016-04-02T07:02:30.000Z</updated>
-    
-    <content type="html">&lt;p&gt;题目如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;已知list1 = [20, 6, 15, 53, 47],已经排好序&lt;/li&gt;
-&lt;li&gt;已知list2 = [(6, ‘John’, ‘20’), (15, ‘Kim’, ‘18’),(20, ‘David’, ‘21’), (47, ‘Amy’, ‘23’), (53, ‘Mary’, ‘20’)]&lt;/li&gt;
-&lt;li&gt;把list2按照list1中的顺序重新排序，并把排序结果封装成json字符串，得到list3&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;代码如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;list1 = [20, 6, 15, 53, 47]
-list2 = [(6, &amp;apos;John&amp;apos;, &amp;apos;20&amp;apos;), (15, &amp;apos;Kim&amp;apos;, &amp;apos;18&amp;apos;),
-         (20, &amp;apos;David&amp;apos;, &amp;apos;21&amp;apos;), (47, &amp;apos;Amy&amp;apos;, &amp;apos;23&amp;apos;), (53, &amp;apos;Mary&amp;apos;, &amp;apos;20&amp;apos;)]
-print(list1)
-print(list2)
-
-list3 = []
-# count = len(list1)
-# for i in range(0, count):
-#     dict = {}
-#     id = list1[i]
-#     dict[&amp;apos;id&amp;apos;] = id
-#     j = 0
-#     while j &amp;lt; count and list2[j][0] != id:
-#         j += 1
-#     dict[&amp;apos;name&amp;apos;] = list2[j][1]
-#     dict[&amp;apos;age&amp;apos;] = list2[j][2]
-#     list3.append(dict)
-
-
-# list2_dict = {}
-# for item2 in list2:
-#     list2_dict[item2[0]] = (item2[1], item2[2])
-# for item1 in list1:
-#     dict = {}
-#     dict[&amp;apos;id&amp;apos;] = item1
-#     dict[&amp;apos;name&amp;apos;] = list2_dict[item1][0]
-#     dict[&amp;apos;age&amp;apos;] = list2_dict[item1][1]
-#     list3.append(dict)
-
-list2_dict = {}
-for item2 in list2:
-    list2_dict[item2[0]] = {&amp;apos;name&amp;apos;: item2[1], &amp;apos;age&amp;apos;: item2[2]}
-for item1 in list1:
-    dict = list2_dict[item1]
-    dict[&amp;apos;id&amp;apos;] = item1
-    list3.append(dict)
-
-print(list3)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;^_^ 感谢我的本科室友~&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      一道算法题
-    
-    </summary>
-    
-      <category term="Algorithm" scheme="http://blog.ybbz.site/categories/Algorithm/"/>
-    
-    
-      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
-    
-      <category term="Algorithm" scheme="http://blog.ybbz.site/tags/Algorithm/"/>
-    
-  </entry>
-  
-  <entry>
     <title>随笔：写在三月末</title>
     <link href="http://blog.ybbz.site/2016/03/28/Just-write-about-my-life/"/>
     <id>http://blog.ybbz.site/2016/03/28/Just-write-about-my-life/</id>
     <published>2016-03-27T16:00:00.000Z</published>
-    <updated>2016-04-03T08:17:56.000Z</updated>
+    <updated>2016-04-23T09:26:27.000Z</updated>
     
     <content type="html">&lt;p&gt;这个学期，虽然才刚刚开始，但是已经历了太多事情！&lt;/p&gt;
 &lt;p&gt;先是2月份过完年返校，从年前实习的公司离职，在公司实习的经历让我很愉快，因为可以安心的写代码、搞研究，这于我，就够了！离职后，希望把研究生课题尽快搞定；课题方面，倒也算是取得了一些进展，可也并不能让人满意，还需要努力，希望后续会顺利吧。&lt;/p&gt;
@@ -1803,7 +1828,8 @@ print(list3)
     
     <summary type="html">
     
-      随笔：写在三月末
+      &lt;p&gt;这个学期，虽然才刚刚开始，但是已经历了太多事情！&lt;/p&gt;
+&lt;p&gt;先是2月份过完年返校，从年前实习的公司离职，在公司实习的经历让我很愉快，因为可以安心的写代码、搞研究，这于我，就够了！离职后，希望把研究生课题尽快搞定；课题方面，倒也算是取得了一些进展，可也并不能让人满意，还需
     
     </summary>
     
@@ -1815,11 +1841,128 @@ print(list3)
   </entry>
   
   <entry>
+    <title>爬虫实战：抓取在iBeiKe的所有发帖信息保存到数据库，进行可视化分析</title>
+    <link href="http://blog.ybbz.site/2016/03/27/crawl-ibeike/"/>
+    <id>http://blog.ybbz.site/2016/03/27/crawl-ibeike/</id>
+    <published>2016-03-26T16:00:00.000Z</published>
+    <updated>2016-04-23T09:26:19.000Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;iBeiKe网站，或简称iBeiKe（中文：爱北科，英文缩写：IBK）是北京科技大学学生会下属的技术性学生组织iBeiKe团队建立和维护的网站，主要服务于北京科技大学的师生。网站成立于2001年3月，时称“北科大学生之家”。iBeiKe网站是北京科技大学学生会的宣传门户，同时也是一个综合性的学生网站及校园服务网站。iBeiKe网站也是北京科技大学历史最长的学生网站。网站的标语是“网上网下，一样精彩”。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;博主本科时期在iBeiKe担任了n年的版主和总版主（好吧，现在好像还没卸任？），挥洒了无数的青春与汗水。也结交了无数的基友（有男有女又老又少）。。。&lt;/p&gt;
+&lt;p&gt;声明：用爬虫抓取数据，没有任何坏心思，纯粹的兴趣与技术交流，抓的也都是自己的数据，不侵犯他人隐私。若牵扯到各方利益，请联系我！&lt;/p&gt;
+&lt;p&gt;言归正传～～～github传送门：&lt;a href=&quot;https://github.com/ybbz/crawler&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;crawl_ibeike1/2&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
+&lt;p&gt;效果图如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160330_1.png&quot; alt=&quot;20160330_1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160330_2.png&quot; alt=&quot;20160330_2&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;抓取数据并清洗，保存到数据库&quot;&gt;&lt;a href=&quot;#抓取数据并清洗，保存到数据库&quot; class=&quot;headerlink&quot; title=&quot;抓取数据并清洗，保存到数据库&quot;&gt;&lt;/a&gt;抓取数据并清洗，保存到数据库&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;# encoding=utf-8
+
+import httplib2
+import mysql.connector
+from bs4 import BeautifulSoup
+
+result = []
+pageNum = &amp;apos;total page number&amp;apos;
+uid = &amp;apos;your uid&amp;apos;
+cookie = &amp;quot;your cookies&amp;quot;
+
+url = &amp;apos;http://city.ibeike.com/home.php?mod=space&amp;amp;uid=&amp;apos; + uid + &amp;apos;&amp;amp;do=thread&amp;amp;view=me&amp;amp;order=dateline&amp;amp;from=space&amp;amp;page=&amp;apos;
+
+headers = {&amp;quot;Connection&amp;quot;: &amp;quot;keep-alive&amp;quot;,
+           &amp;quot;Cookie&amp;quot;: cookie,
+           &amp;quot;Content-Type&amp;quot;: &amp;quot;application/xhtml+xml&amp;quot;}
+
+for page in range(1, pageNum + 1):
+    cur_page = page
+    url_full = url + str(cur_page)
+    # http request
+    http = httplib2.Http()
+    response, content = http.request(url_full, &amp;quot;GET&amp;quot;, headers=headers)
+    if response.status == 200:
+        # print(response)
+        # print(content.decode(&amp;apos;utf-8&amp;apos;))
+        soup = BeautifulSoup(content, &amp;quot;lxml&amp;quot;)
+        table = soup.find_all(&amp;apos;table&amp;apos;)[1]
+        tr = table.find_all(&amp;apos;tr&amp;apos;, class_=&amp;apos;&amp;apos;)
+        for item in tr:
+            item_list = []
+            # print(item.prettify())
+            item_title = item.th.a.string
+            item_group = item.find_all(&amp;apos;td&amp;apos;, class_=&amp;apos;&amp;apos;)[0].a.string
+            item_reply = item.select(&amp;apos;td[class=&amp;quot;num&amp;quot;]&amp;apos;)[0].a.string
+            item_watch = item.select(&amp;apos;td[class=&amp;quot;num&amp;quot;]&amp;apos;)[0].em.string
+            # save to the result list
+            item = (str(item_title), str(item_group), int(item_reply), int(item_watch))
+            result.append(item)
+print(result)
+
+# connect database
+conn = mysql.connector.connect(host=&amp;quot;hostname&amp;quot;, user=&amp;quot;username&amp;quot;, passwd=&amp;quot;password&amp;quot;, db=&amp;quot;database&amp;quot;)
+cursor = conn.cursor()
+# save data
+sql = &amp;quot;insert into ibeike(title,groups,reply,watch) values(%s,%s,%s,%s)&amp;quot;
+cursor.executemany(sql, result)
+conn.commit()
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;数据分析与数据可视化&quot;&gt;&lt;a href=&quot;#数据分析与数据可视化&quot; class=&quot;headerlink&quot; title=&quot;数据分析与数据可视化&quot;&gt;&lt;/a&gt;数据分析与数据可视化&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;# encoding=utf-8
+
+import mysql.connector
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# connect database
+conn = mysql.connector.connect(host=&amp;quot;hostname&amp;quot;, user=&amp;quot;username&amp;quot;,passwd=&amp;quot;password&amp;quot;, db=&amp;quot;database&amp;quot;)
+cursor = conn.cursor()
+# query data
+cursor.execute(&amp;apos;select count(*),max(reply),min(reply),max(watch),min(watch) from ibeike&amp;apos;)
+values1 = cursor.fetchall()
+print(&amp;quot;ibeike:totally&amp;quot; + str(values1[0][0]) + &amp;quot;data&amp;quot;)
+list = [(&amp;apos;highest reply&amp;apos;, values1[0][1]), (&amp;apos;lowest reply&amp;apos;, values1[0][2]),(&amp;apos;hightest watch&amp;apos;, values1[0][3]),(&amp;apos;lowest watch&amp;apos;, values1[0][4])]
+# draw picture
+budget = pd.DataFrame(list, columns=[&amp;apos;type&amp;apos;, &amp;apos;count&amp;apos;])
+sns.set_style(&amp;quot;darkgrid&amp;quot;)
+bar_plot = sns.barplot(x=budget[&amp;quot;type&amp;quot;], y=budget[&amp;quot;count&amp;quot;],palette=&amp;quot;muted&amp;quot;, order=budget[&amp;quot;type&amp;quot;].tolist())
+plt.show()
+
+# query data
+cursor.execute(&amp;apos;select count(id),groups from ibeike group by groups&amp;apos;)
+values2 = cursor.fetchall()
+values2.append((values1[0][0], &amp;apos;all sort&amp;apos;))
+result = sorted(values2)
+result.reverse()
+# draw picture
+budget = pd.DataFrame(result, columns=[&amp;apos;count&amp;apos;, &amp;apos;sort&amp;apos;])
+sns.set_style(&amp;quot;darkgrid&amp;quot;)
+bar_plot = sns.barplot(x=budget[&amp;quot;sort&amp;quot;], y=budget[&amp;quot;count&amp;quot;],palette=&amp;quot;muted&amp;quot;, order=budget[&amp;quot;sort&amp;quot;].tolist())
+plt.xticks(rotation=30)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;参考资料：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://cuiqingcai.com/1319.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Python爬虫利器二之Beautiful Soup的用法&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;iBeiKe网站，或简称iBeiKe（中文：爱北科，英文缩写：IBK）是北京科技大学学生会下属的技术性学生组织iBeiKe团队建立和维护的网站，主要服务于北京科技大学的师生。网站成立于2001年3月，时称“北科大学生之家”。iBeiKe网站是北京科
+    
+    </summary>
+    
+      <category term="Crawler" scheme="http://blog.ybbz.site/categories/Crawler/"/>
+    
+    
+      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
+    
+      <category term="Crawler" scheme="http://blog.ybbz.site/tags/Crawler/"/>
+    
+  </entry>
+  
+  <entry>
     <title>爬虫实战：抓取某人所有微博并处理，绘制top30关键词的图表</title>
     <link href="http://blog.ybbz.site/2016/03/27/crawl_weibo/"/>
     <id>http://blog.ybbz.site/2016/03/27/crawl_weibo/</id>
     <published>2016-03-26T16:00:00.000Z</published>
-    <updated>2016-04-13T13:47:29.000Z</updated>
+    <updated>2016-04-23T09:25:43.000Z</updated>
     
     <content type="html">&lt;p&gt;github传送门：&lt;a href=&quot;https://github.com/ybbz/crawler&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;crawl_weibo&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
 &lt;p&gt;声明：用爬虫抓取数据，没有任何坏心思，纯粹的兴趣与技术交流，抓的也都是自己的数据，不侵犯他人隐私。若牵扯到各方利益，请联系我！&lt;/p&gt;
@@ -1930,123 +2073,8 @@ print(&amp;apos;draw : done.&amp;apos;)
     
     <summary type="html">
     
-      爬虫实战：抓取某人所有微博并处理，绘制top30关键词的图表
-    
-    </summary>
-    
-      <category term="Crawler" scheme="http://blog.ybbz.site/categories/Crawler/"/>
-    
-    
-      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
-    
-      <category term="Crawler" scheme="http://blog.ybbz.site/tags/Crawler/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>爬虫实战：抓取在iBeiKe的所有发帖信息保存到数据库，进行可视化分析</title>
-    <link href="http://blog.ybbz.site/2016/03/27/crawl-ibeike/"/>
-    <id>http://blog.ybbz.site/2016/03/27/crawl-ibeike/</id>
-    <published>2016-03-26T16:00:00.000Z</published>
-    <updated>2016-04-13T13:47:38.000Z</updated>
-    
-    <content type="html">&lt;blockquote&gt;
-&lt;p&gt;iBeiKe网站，或简称iBeiKe（中文：爱北科，英文缩写：IBK）是北京科技大学学生会下属的技术性学生组织iBeiKe团队建立和维护的网站，主要服务于北京科技大学的师生。网站成立于2001年3月，时称“北科大学生之家”。iBeiKe网站是北京科技大学学生会的宣传门户，同时也是一个综合性的学生网站及校园服务网站。iBeiKe网站也是北京科技大学历史最长的学生网站。网站的标语是“网上网下，一样精彩”。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;博主本科时期在iBeiKe担任了n年的版主和总版主（好吧，现在好像还没卸任？），挥洒了无数的青春与汗水。也结交了无数的基友（有男有女又老又少）。。。&lt;/p&gt;
-&lt;p&gt;声明：用爬虫抓取数据，没有任何坏心思，纯粹的兴趣与技术交流，抓的也都是自己的数据，不侵犯他人隐私。若牵扯到各方利益，请联系我！&lt;/p&gt;
-&lt;p&gt;言归正传～～～github传送门：&lt;a href=&quot;https://github.com/ybbz/crawler&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;crawl_ibeike1/2&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
-&lt;p&gt;效果图如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160330_1.png&quot; alt=&quot;20160330_1&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160330_2.png&quot; alt=&quot;20160330_2&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;抓取数据并清洗，保存到数据库&quot;&gt;&lt;a href=&quot;#抓取数据并清洗，保存到数据库&quot; class=&quot;headerlink&quot; title=&quot;抓取数据并清洗，保存到数据库&quot;&gt;&lt;/a&gt;抓取数据并清洗，保存到数据库&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;# encoding=utf-8
-
-import httplib2
-import mysql.connector
-from bs4 import BeautifulSoup
-
-result = []
-pageNum = &amp;apos;total page number&amp;apos;
-uid = &amp;apos;your uid&amp;apos;
-cookie = &amp;quot;your cookies&amp;quot;
-
-url = &amp;apos;http://city.ibeike.com/home.php?mod=space&amp;amp;uid=&amp;apos; + uid + &amp;apos;&amp;amp;do=thread&amp;amp;view=me&amp;amp;order=dateline&amp;amp;from=space&amp;amp;page=&amp;apos;
-
-headers = {&amp;quot;Connection&amp;quot;: &amp;quot;keep-alive&amp;quot;,
-           &amp;quot;Cookie&amp;quot;: cookie,
-           &amp;quot;Content-Type&amp;quot;: &amp;quot;application/xhtml+xml&amp;quot;}
-
-for page in range(1, pageNum + 1):
-    cur_page = page
-    url_full = url + str(cur_page)
-    # http request
-    http = httplib2.Http()
-    response, content = http.request(url_full, &amp;quot;GET&amp;quot;, headers=headers)
-    if response.status == 200:
-        # print(response)
-        # print(content.decode(&amp;apos;utf-8&amp;apos;))
-        soup = BeautifulSoup(content, &amp;quot;lxml&amp;quot;)
-        table = soup.find_all(&amp;apos;table&amp;apos;)[1]
-        tr = table.find_all(&amp;apos;tr&amp;apos;, class_=&amp;apos;&amp;apos;)
-        for item in tr:
-            item_list = []
-            # print(item.prettify())
-            item_title = item.th.a.string
-            item_group = item.find_all(&amp;apos;td&amp;apos;, class_=&amp;apos;&amp;apos;)[0].a.string
-            item_reply = item.select(&amp;apos;td[class=&amp;quot;num&amp;quot;]&amp;apos;)[0].a.string
-            item_watch = item.select(&amp;apos;td[class=&amp;quot;num&amp;quot;]&amp;apos;)[0].em.string
-            # save to the result list
-            item = (str(item_title), str(item_group), int(item_reply), int(item_watch))
-            result.append(item)
-print(result)
-
-# connect database
-conn = mysql.connector.connect(host=&amp;quot;hostname&amp;quot;, user=&amp;quot;username&amp;quot;, passwd=&amp;quot;password&amp;quot;, db=&amp;quot;database&amp;quot;)
-cursor = conn.cursor()
-# save data
-sql = &amp;quot;insert into ibeike(title,groups,reply,watch) values(%s,%s,%s,%s)&amp;quot;
-cursor.executemany(sql, result)
-conn.commit()
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;数据分析与数据可视化&quot;&gt;&lt;a href=&quot;#数据分析与数据可视化&quot; class=&quot;headerlink&quot; title=&quot;数据分析与数据可视化&quot;&gt;&lt;/a&gt;数据分析与数据可视化&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;# encoding=utf-8
-
-import mysql.connector
-import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
-
-# connect database
-conn = mysql.connector.connect(host=&amp;quot;hostname&amp;quot;, user=&amp;quot;username&amp;quot;,passwd=&amp;quot;password&amp;quot;, db=&amp;quot;database&amp;quot;)
-cursor = conn.cursor()
-# query data
-cursor.execute(&amp;apos;select count(*),max(reply),min(reply),max(watch),min(watch) from ibeike&amp;apos;)
-values1 = cursor.fetchall()
-print(&amp;quot;ibeike:totally&amp;quot; + str(values1[0][0]) + &amp;quot;data&amp;quot;)
-list = [(&amp;apos;highest reply&amp;apos;, values1[0][1]), (&amp;apos;lowest reply&amp;apos;, values1[0][2]),(&amp;apos;hightest watch&amp;apos;, values1[0][3]),(&amp;apos;lowest watch&amp;apos;, values1[0][4])]
-# draw picture
-budget = pd.DataFrame(list, columns=[&amp;apos;type&amp;apos;, &amp;apos;count&amp;apos;])
-sns.set_style(&amp;quot;darkgrid&amp;quot;)
-bar_plot = sns.barplot(x=budget[&amp;quot;type&amp;quot;], y=budget[&amp;quot;count&amp;quot;],palette=&amp;quot;muted&amp;quot;, order=budget[&amp;quot;type&amp;quot;].tolist())
-plt.show()
-
-# query data
-cursor.execute(&amp;apos;select count(id),groups from ibeike group by groups&amp;apos;)
-values2 = cursor.fetchall()
-values2.append((values1[0][0], &amp;apos;all sort&amp;apos;))
-result = sorted(values2)
-result.reverse()
-# draw picture
-budget = pd.DataFrame(result, columns=[&amp;apos;count&amp;apos;, &amp;apos;sort&amp;apos;])
-sns.set_style(&amp;quot;darkgrid&amp;quot;)
-bar_plot = sns.barplot(x=budget[&amp;quot;sort&amp;quot;], y=budget[&amp;quot;count&amp;quot;],palette=&amp;quot;muted&amp;quot;, order=budget[&amp;quot;sort&amp;quot;].tolist())
-plt.xticks(rotation=30)
-plt.show()
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;参考资料：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://cuiqingcai.com/1319.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Python爬虫利器二之Beautiful Soup的用法&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      爬虫实战：抓取在iBeiKe的所有发帖信息保存到数据库，进行可视化分析
+      &lt;p&gt;github传送门：&lt;a href=&quot;https://github.com/ybbz/crawler&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;crawl_weibo&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
+&lt;p&gt;声明：用爬虫抓取数据，没有
     
     </summary>
     
@@ -2064,7 +2092,7 @@ plt.show()
     <link href="http://blog.ybbz.site/2016/03/26/crawl-get-html-img/"/>
     <id>http://blog.ybbz.site/2016/03/26/crawl-get-html-img/</id>
     <published>2016-03-25T16:00:00.000Z</published>
-    <updated>2016-04-02T07:00:58.000Z</updated>
+    <updated>2016-04-23T09:25:37.000Z</updated>
     
     <content type="html">&lt;p&gt;从img标签中爬取到的src图片链接可能是相对或者绝对路径，视网站情况而定，具体的可以审查元素看一下。如果是相对路径，则需要补全（下面的代码就是这种情况）。如果两者都有，则需要再另外处理了。&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;from urllib import request, parse
@@ -2101,7 +2129,8 @@ get_html_img(url)
     
     <summary type="html">
     
-      爬虫入门：抓取网页所有图片并保存到本地
+      &lt;p&gt;从img标签中爬取到的src图片链接可能是相对或者绝对路径，视网站情况而定，具体的可以审查元素看一下。如果是相对路径，则需要补全（下面的代码就是这种情况）。如果两者都有，则需要再另外处理了。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from urllib import request
     
     </summary>
     
@@ -2119,7 +2148,7 @@ get_html_img(url)
     <link href="http://blog.ybbz.site/2016/03/24/terminal-telnet/"/>
     <id>http://blog.ybbz.site/2016/03/24/terminal-telnet/</id>
     <published>2016-03-23T16:00:00.000Z</published>
-    <updated>2016-04-02T06:59:51.000Z</updated>
+    <updated>2016-04-23T09:25:31.000Z</updated>
     
     <content type="html">&lt;p&gt;昨晚和队友们聚会，打车时想到了自己之前遇到的一个待解决问题（用终端登录校园网），就提了出来。一个队友说可以写个脚本，另一个队友说他以前写过，然后我就直接拿来用了。&lt;a href=&quot;https://github.com/chensonglu/login-USTB-campus-network&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;login-USTB-campus-network&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;代码如下：（注释得非常到位，让我看了觉得很惭愧～）&lt;/p&gt;
@@ -2294,7 +2323,7 @@ with request.urlopen(req, data=body.encode(&amp;apos;utf-8&amp;apos;)) as f:
     
     <summary type="html">
     
-      用终端登录校园网
+      &lt;p&gt;昨晚和队友们聚会，打车时想到了自己之前遇到的一个待解决问题（用终端登录校园网），就提了出来。一个队友说可以写个脚本，另一个队友说他以前写过，然后我就直接拿来用了。&lt;a href=&quot;https://github.com/chensonglu/login-USTB-campus
     
     </summary>
     

@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion">
+<html class="theme-next mist use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -82,23 +82,47 @@
 
 
 
-<meta name="description" content="获取案例库中所有标题并分词，统计词频并保存(Python实现)">
+<meta name="description" content="首先从数据库（案例表case）中获取到所有案例的标题，并使用结巴中文分词组件进行批量中文分词。统计分词后的词频，并将结果保存到数据库（词频表corpus）。
+# encoding=utf-8
+
+import jieba
+import mysql.connector
+import datetime
+
+# 连接数据库
+conn = mysql.connector.connect(host=&amp;quot;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="获取案例库中所有标题并分词，统计词频并保存(Python实现)">
 <meta property="og:url" content="http://blog.ybbz.site/2016/03/07/database-names-cut-and-statistics/index.html">
 <meta property="og:site_name" content="八宝粥的博客">
-<meta property="og:description" content="获取案例库中所有标题并分词，统计词频并保存(Python实现)">
-<meta property="og:updated_time" content="2016-04-02T08:16:58.000Z">
+<meta property="og:description" content="首先从数据库（案例表case）中获取到所有案例的标题，并使用结巴中文分词组件进行批量中文分词。统计分词后的词频，并将结果保存到数据库（词频表corpus）。
+# encoding=utf-8
+
+import jieba
+import mysql.connector
+import datetime
+
+# 连接数据库
+conn = mysql.connector.connect(host=&amp;quot;">
+<meta property="og:updated_time" content="2016-04-23T09:23:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="获取案例库中所有标题并分词，统计词频并保存(Python实现)">
-<meta name="twitter:description" content="获取案例库中所有标题并分词，统计词频并保存(Python实现)">
+<meta name="twitter:description" content="首先从数据库（案例表case）中获取到所有案例的标题，并使用结巴中文分词组件进行批量中文分词。统计分词后的词频，并将结果保存到数据库（词频表corpus）。
+# encoding=utf-8
+
+import jieba
+import mysql.connector
+import datetime
+
+# 连接数据库
+conn = mysql.connector.connect(host=&amp;quot;">
 
 
 
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Pisces',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -286,7 +310,7 @@
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/Data-Mining/" itemprop="url" rel="index">
-                    <span itemprop="name">Data-Mining</span>
+                    <span itemprop="name">Data Mining</span>
                   </a>
                 </span>
 
@@ -535,7 +559,7 @@ with open(file_origin, &apos;a&apos;) as f1, open(file_count, &apos;w&apos;) as 
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">62</span>
+              <span class="site-state-item-count">57</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -650,7 +674,7 @@ with open(file_origin, &apos;a&apos;) as f1, open(file_count, &apos;w&apos;) as 
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Mist
   </a>
 </div>
 
@@ -715,13 +739,6 @@ with open(file_origin, &apos;a&apos;) as f1, open(file_count, &apos;w&apos;) as 
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
