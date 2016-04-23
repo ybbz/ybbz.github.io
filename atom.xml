@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.ybbz.site/"/>
-  <updated>2016-04-14T16:47:00.000Z</updated>
+  <updated>2016-04-23T09:03:19.000Z</updated>
   <id>http://blog.ybbz.site/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://blog.ybbz.site/2016/05/01/Hadoop-foundation-two/"/>
     <id>http://blog.ybbz.site/2016/05/01/Hadoop-foundation-two/</id>
     <published>2016-04-30T16:00:00.000Z</published>
-    <updated>2016-04-14T16:47:00.000Z</updated>
+    <updated>2016-04-23T09:03:19.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;Hadoop架构&quot;&gt;&lt;a href=&quot;#Hadoop架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h3&gt;&lt;p&gt;Hadoop主要由两部分构成：分布式文件系统HDFS和分布式计算框架MapReduce；HDFS主要是用于海量数据的存储，MapReduce则是对存储在HDFS中的数据进行分布式计算。&lt;/p&gt;
 &lt;h4 id=&quot;Hadoop-HDFS架构&quot;&gt;&lt;a href=&quot;#Hadoop-HDFS架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop HDFS架构&quot;&gt;&lt;/a&gt;Hadoop HDFS架构&lt;/h4&gt;&lt;p&gt;构成HDFS集群的主要是两类节点（主从模式，管理者－工作者模式）：一个NameNode（管理者）和多个DataNode（工作者），SecondaryNameNode作为NameNode镜像数据备份。&lt;/p&gt;
@@ -79,7 +79,7 @@
     
     <summary type="html">
     
-      《Hadoop海量数据处理》读书笔记2:Hadoop环境准备
+      &lt;h3 id=&quot;Hadoop架构&quot;&gt;&lt;a href=&quot;#Hadoop架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h3&gt;&lt;p&gt;Hadoop主要由两部分构成：分布式文件系统HDFS和分布式计算框架MapReduce；HD
     
     </summary>
     
@@ -99,7 +99,7 @@
     <link href="http://blog.ybbz.site/2016/05/01/Hadoop-foundation-one/"/>
     <id>http://blog.ybbz.site/2016/05/01/Hadoop-foundation-one/</id>
     <published>2016-04-30T16:00:00.000Z</published>
-    <updated>2016-04-14T15:16:57.000Z</updated>
+    <updated>2016-04-23T09:03:25.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;Hadoop定义&quot;&gt;&lt;a href=&quot;#Hadoop定义&quot; class=&quot;headerlink&quot; title=&quot;Hadoop定义&quot;&gt;&lt;/a&gt;Hadoop定义&lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;Apache软件基金会（ASF）：Hadoop软件库是一个框架，允许在集群中使用简单的编程模型对大规模数据集进行分布式计算。它被设计为可以从单一服务器扩展到数以千计的本地计算和存储的节点，并且Hadoop会在应用层面检测和处理错误，而不依靠硬件的高可用性，所以Hadoop能够在一个每个节点都有可能出错的集群之上提供一个高可用服务。&lt;/p&gt;
@@ -180,7 +180,8 @@
     
     <summary type="html">
     
-      《Hadoop海量数据处理》读书笔记1:Hadoop简介
+      &lt;h3 id=&quot;Hadoop定义&quot;&gt;&lt;a href=&quot;#Hadoop定义&quot; class=&quot;headerlink&quot; title=&quot;Hadoop定义&quot;&gt;&lt;/a&gt;Hadoop定义&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;Apache软件基金会（ASF）：Hadoop软件库是一个框架，允
     
     </summary>
     
@@ -192,33 +193,6 @@
       <category term="云计算" scheme="http://blog.ybbz.site/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/"/>
     
       <category term="大数据" scheme="http://blog.ybbz.site/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://blog.ybbz.site/2016/04/23/hello-world/"/>
-    <id>http://blog.ybbz.site/2016/04/23/hello-world/</id>
-    <published>2016-04-23T07:51:12.000Z</published>
-    <updated>2016-04-23T07:51:12.000Z</updated>
-    
-    <content type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo generate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/generating.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Generating&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Deploy-to-remote-sites&quot;&gt;&lt;a href=&quot;#Deploy-to-remote-sites&quot; class=&quot;headerlink&quot; title=&quot;Deploy to remote sites&quot;&gt;&lt;/a&gt;Deploy to remote sites&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo deploy&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/deployment.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-    
-    </summary>
-    
     
   </entry>
   
@@ -851,6 +825,40 @@
   </entry>
   
   <entry>
+    <title>判断两个单向链表是否相交</title>
+    <link href="http://blog.ybbz.site/2016/04/20/Algorithm-3/"/>
+    <id>http://blog.ybbz.site/2016/04/20/Algorithm-3/</id>
+    <published>2016-04-19T16:00:00.000Z</published>
+    <updated>2016-04-20T15:04:07.000Z</updated>
+    
+    <content type="html">&lt;p&gt;问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;算法一&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;对链表一进行遍历，在遍历到每一个节点时，都在链表二中进行遍历，看是否有重复的节点。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;算法一改进&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;以空间换时间：将链表二存入字典，然后遍历链表一，判断是否在于字典中。简化后，时间复杂度变为 O(n+m)，但空间复杂度较高。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;算法二&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;算法二的思路基于以下两个原理：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;两个单向链表相交后，必然无法再分开。&lt;/li&gt;
+&lt;li&gt;两个单项链表相交后，尾节点一定相同。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;假设两个链表相交，很容易证明两个链表的尾元素是相同的。&lt;br&gt;逆反命题：两个链表的尾元素相同时，两个链表一定相交。&lt;br&gt;（注意：相同的节点不仅仅要求值相同，而是“同一个”，也就是指针地址相同。）&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      判断两个单向链表是否相交
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="http://blog.ybbz.site/categories/Algorithm/"/>
+    
+    
+      <category term="Algorithm" scheme="http://blog.ybbz.site/tags/Algorithm/"/>
+    
+  </entry>
+  
+  <entry>
     <title>根号值逼近问题的算法</title>
     <link href="http://blog.ybbz.site/2016/04/20/Algorithm-2/"/>
     <id>http://blog.ybbz.site/2016/04/20/Algorithm-2/</id>
@@ -893,64 +901,6 @@
   </entry>
   
   <entry>
-    <title>判断两个单向链表是否相交</title>
-    <link href="http://blog.ybbz.site/2016/04/20/Algorithm-3/"/>
-    <id>http://blog.ybbz.site/2016/04/20/Algorithm-3/</id>
-    <published>2016-04-19T16:00:00.000Z</published>
-    <updated>2016-04-20T15:04:07.000Z</updated>
-    
-    <content type="html">&lt;p&gt;问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;算法一&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;对链表一进行遍历，在遍历到每一个节点时，都在链表二中进行遍历，看是否有重复的节点。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;算法一改进&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;以空间换时间：将链表二存入字典，然后遍历链表一，判断是否在于字典中。简化后，时间复杂度变为 O(n+m)，但空间复杂度较高。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;算法二&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;算法二的思路基于以下两个原理：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;两个单向链表相交后，必然无法再分开。&lt;/li&gt;
-&lt;li&gt;两个单项链表相交后，尾节点一定相同。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;假设两个链表相交，很容易证明两个链表的尾元素是相同的。&lt;br&gt;逆反命题：两个链表的尾元素相同时，两个链表一定相交。&lt;br&gt;（注意：相同的节点不仅仅要求值相同，而是“同一个”，也就是指针地址相同。）&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      判断两个单向链表是否相交
-    
-    </summary>
-    
-      <category term="Algorithm" scheme="http://blog.ybbz.site/categories/Algorithm/"/>
-    
-    
-      <category term="Algorithm" scheme="http://blog.ybbz.site/tags/Algorithm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PHP记录</title>
-    <link href="http://blog.ybbz.site/2016/04/18/Old-Posts-2015-12-01-php-foundation/"/>
-    <id>http://blog.ybbz.site/2016/04/18/Old-Posts-2015-12-01-php-foundation/</id>
-    <published>2016-04-18T05:25:42.000Z</published>
-    <updated>2016-04-18T05:26:39.000Z</updated>
-    
-    <content type="html">&lt;p&gt;除法，保留小数点后两位&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;echo round(3.1415926,2);
-&lt;/code&gt;&lt;/pre&gt;</content>
-    
-    <summary type="html">
-    
-      PHP记录
-    
-    </summary>
-    
-      <category term="PHP" scheme="http://blog.ybbz.site/categories/PHP/"/>
-    
-    
-      <category term="PHP" scheme="http://blog.ybbz.site/tags/PHP/"/>
-    
-  </entry>
-  
-  <entry>
     <title>庆祝我的第一个独立APP上线</title>
     <link href="http://blog.ybbz.site/2016/04/18/my-first-andorid-app-online/"/>
     <id>http://blog.ybbz.site/2016/04/18/my-first-andorid-app-online/</id>
@@ -980,117 +930,6 @@
     
     
       <category term="Android" scheme="http://blog.ybbz.site/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android使用新浪微博API</title>
-    <link href="http://blog.ybbz.site/2016/04/17/Old-Posts-2016-03-14-android-sina-weibo/"/>
-    <id>http://blog.ybbz.site/2016/04/17/Old-Posts-2016-03-14-android-sina-weibo/</id>
-    <published>2016-04-17T15:46:36.000Z</published>
-    <updated>2016-04-18T11:27:51.000Z</updated>
-    
-    <content type="html">&lt;p&gt;redirect_uri_mismatch&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;应用信息－高级信息－OAuth2.0 授权设置&lt;/li&gt;
-&lt;li&gt;填写授权回调页、取消授权回调页&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;sso package or sign error&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;应用信息－基本信息－Android签名包名信息&lt;/li&gt;
-&lt;li&gt;填写Android包名、Android签名&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-    
-    <summary type="html">
-    
-      Android使用新浪微博API
-    
-    </summary>
-    
-      <category term="Android" scheme="http://blog.ybbz.site/categories/Android/"/>
-    
-    
-      <category term="Android" scheme="http://blog.ybbz.site/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android中的ActionBar设置</title>
-    <link href="http://blog.ybbz.site/2016/04/17/Old-Posts-2016-03-14-Android-ActionBar-Setting/"/>
-    <id>http://blog.ybbz.site/2016/04/17/Old-Posts-2016-03-14-Android-ActionBar-Setting/</id>
-    <published>2016-04-17T07:25:43.000Z</published>
-    <updated>2016-04-17T07:29:46.000Z</updated>
-    
-    <content type="html">&lt;p&gt;1.在FatherActivity中&lt;/p&gt;
-&lt;figure class=&quot;highlight aspectj&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;setActionBar&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;boolean&lt;/span&gt; arrow, &lt;span class=&quot;keyword&quot;&gt;boolean&lt;/span&gt; logo, String title)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ActionBar actionBar = getActionBar();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    actionBar.setDisplayShowTitleEnabled(&lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 标题&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    actionBar.setTitle(title);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 决定左上角图标的右侧是否有向左的小箭头, true有小箭头，并且图标可以点击&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    actionBar.setDisplayHomeAsUpEnabled(arrow);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 使左上角图标是否显示，如果设成false，则没有程序图标，仅仅就个标题，&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 否则，显示应用程序图标，对应id为android.R.id.home，对应ActionBar.DISPLAY_SHOW_HOME&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    actionBar.setDisplayShowHomeEnabled(logo);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@Override&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;onOptionsItemSelected&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(MenuItem item)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;switch&lt;/span&gt; (item.getItemId()) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; android.R.id.home:// 点击返回图标事件&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.finish();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;default&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;super&lt;/span&gt;.onOptionsItemSelected(item);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;2.继承FatherActivity&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;set&lt;/span&gt;ActionBar(&lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;, &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;PageTitle&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-</content>
-    
-    <summary type="html">
-    
-      Android中的ActionBar设置
-    
-    </summary>
-    
-      <category term="Android" scheme="http://blog.ybbz.site/categories/Android/"/>
-    
-    
-      <category term="Android" scheme="http://blog.ybbz.site/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Node.js配置</title>
-    <link href="http://blog.ybbz.site/2016/04/13/Old-Posts-2016-01-12-Node-js-foundation/"/>
-    <id>http://blog.ybbz.site/2016/04/13/Old-Posts-2016-01-12-Node-js-foundation/</id>
-    <published>2016-04-13T11:06:09.000Z</published>
-    <updated>2016-04-13T13:41:31.000Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;Mac安装Node-js&quot;&gt;&lt;a href=&quot;#Mac安装Node-js&quot; class=&quot;headerlink&quot; title=&quot;Mac安装Node.js&quot;&gt;&lt;/a&gt;Mac安装Node.js&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;brew install node
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;Linux-CentOS-安装Node-js&quot;&gt;&lt;a href=&quot;#Linux-CentOS-安装Node-js&quot; class=&quot;headerlink&quot; title=&quot;Linux(CentOS)安装Node.js&quot;&gt;&lt;/a&gt;Linux(CentOS)安装Node.js&lt;/h3&gt;&lt;p&gt;1.准备命令&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;yum -y install gcc make gcc-c++ openssl-devel wget
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;2.下载源码及解压&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;wget http://nodejs.org/dist/v0.10.26/node-v0.10.26.tar.gz
-tar -zvxf node-v0.10.26.tar.gz
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;3.编译及安装&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;cd node-v0.10.26
-make &amp;amp;&amp;amp; make install
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;4.验证是否安装配置成功&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;node -v
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;安装express&quot;&gt;&lt;a href=&quot;#安装express&quot; class=&quot;headerlink&quot; title=&quot;安装express&quot;&gt;&lt;/a&gt;安装express&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;npm install --save express@4.10.2
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;Error-Cannot-find-module-‘express’&quot;&gt;&lt;a href=&quot;#Error-Cannot-find-module-‘express’&quot; class=&quot;headerlink&quot; title=&quot;Error: Cannot find module ‘express’&quot;&gt;&lt;/a&gt;Error: Cannot find module ‘express’&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;export NODE_PATH=&amp;quot;/Users/ybbz/node_modules&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;简单的服务器&quot;&gt;&lt;a href=&quot;#简单的服务器&quot; class=&quot;headerlink&quot; title=&quot;简单的服务器&quot;&gt;&lt;/a&gt;简单的服务器&lt;/h3&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; app = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;express&#39;&lt;/span&gt;)();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; http = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;http&#39;&lt;/span&gt;).Server(app);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;app.get(&lt;span class=&quot;string&quot;&gt;&#39;/&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;req, res&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  res.send(&lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;h1&amp;gt;Hello world&amp;lt;/h1&amp;gt;&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;//文件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;//res.sendFile(__dirname + &#39;/index.html&#39;);&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;http.listen(&lt;span class=&quot;number&quot;&gt;3000&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;listening on *:3000&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;安装socket-io&quot;&gt;&lt;a href=&quot;#安装socket-io&quot; class=&quot;headerlink&quot; title=&quot;安装socket.io&quot;&gt;&lt;/a&gt;安装socket.io&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;npm install --save socket.io
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;开启远程服务器端口（CentOS）&quot;&gt;&lt;a href=&quot;#开启远程服务器端口（CentOS）&quot; class=&quot;headerlink&quot; title=&quot;开启远程服务器端口（CentOS）&quot;&gt;&lt;/a&gt;开启远程服务器端口（CentOS）&lt;/h3&gt;&lt;p&gt;1.开启端口&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;firewall-cmd --zone=public --add-port=80/tcp --permanent
-
-命令含义：
---zone #作用域
---add-port=80/tcp  #添加端口，格式为：端口/通讯协议
---permanent   #永久生效，没有此参数重启后失效
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;2.重启防火墙&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;firewall-cmd --reload
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;参考资料：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.centoscn.com/CentOS/config/2015/0310/4848.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Centos7 开放端口&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/24729024/centos-7-open-firewall-port&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;centos 7 - open firewall port&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      Node.js
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="http://blog.ybbz.site/categories/JavaScript/"/>
-    
-    
-      <category term="JavaScript" scheme="http://blog.ybbz.site/tags/JavaScript/"/>
-    
-      <category term="Node.js" scheme="http://blog.ybbz.site/tags/Node-js/"/>
-    
-      <category term="socket.io" scheme="http://blog.ybbz.site/tags/socket-io/"/>
     
   </entry>
   
@@ -1444,9 +1283,9 @@ conn.commit()
     
       <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
     
-      <category term="Django" scheme="http://blog.ybbz.site/tags/Django/"/>
-    
       <category term="Crawler" scheme="http://blog.ybbz.site/tags/Crawler/"/>
+    
+      <category term="Django" scheme="http://blog.ybbz.site/tags/Django/"/>
     
   </entry>
   
@@ -1554,613 +1393,917 @@ python3 manage.py runserver
   </entry>
   
   <entry>
-    <title>RoboBinding探究三：网络请求实现</title>
-    <link href="http://blog.ybbz.site/2016/04/01/Old-Posts-2015-12-14-RoboBinding-three-HTTP/"/>
-    <id>http://blog.ybbz.site/2016/04/01/Old-Posts-2015-12-14-RoboBinding-three-HTTP/</id>
-    <published>2016-04-01T09:52:35.000Z</published>
-    <updated>2016-04-02T06:42:53.000Z</updated>
+    <title>读书笔记:《机器学习实践:测试驱动的开发方法》</title>
+    <link href="http://blog.ybbz.site/2016/04/01/machine-learning-notes/"/>
+    <id>http://blog.ybbz.site/2016/04/01/machine-learning-notes/</id>
+    <published>2016-03-31T16:00:00.000Z</published>
+    <updated>2016-04-03T08:01:12.000Z</updated>
     
-    <content type="html">&lt;p&gt;###TestActivity&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;@SuppressLint(&amp;quot;HandlerLeak&amp;quot;)
-public class TestActivity extends Activity {
-
-    private Handler mHandler;
-    private PresentationModelChangeSupport changeSupport;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        PresentationModel presentationModel = new PresentationModel(
-                TestActivity.this);
-        changeSupport = presentationModel.getPresentationModelChangeSupport();
-        ViewBinder viewBinder = createViewBinder();
-        View rootView = viewBinder.inflateAndBind(R.layout.activity_test,
-                presentationModel);
-        setContentView(rootView);
-        // 处理消息，更新UI
-        mHandler = new Handler() {
-            @Override
-            public void handleMessage(Message msg) {
-                switch (msg.what) {
-                case 0x01:
-                    changeSupport.firePropertyChange(&amp;quot;http&amp;quot;);
-                    break;
-                default:
-                    break;
-                }
-            }
-        };
-
-    }
-
-    private ViewBinder createViewBinder() {
-        BinderFactory reusableBinderFactory = new BinderFactoryBuilder()
-                .build();
-        return reusableBinderFactory.createViewBinder(this);
-    }
-
-    public Handler getHandler() {
-        return mHandler;
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;###PresentationModel&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;@org.robobinding.annotation.PresentationModel
-public class PresentationModel implements HasPresentationModelChangeSupport {
-    private PresentationModelChangeSupport changeSupport;
-    private String result;
-    private TestActivity context;
-
-    public PresentationModel(TestActivity context) {
-        this.context = context;
-        changeSupport = new PresentationModelChangeSupport(this);
-    }
-
-    public String getHttp() {
-        return &amp;quot;网络数据：&amp;quot; + result;
-    }
-
-    public void httpRequest() {
-        changeSupport.firePropertyChange(&amp;quot;http&amp;quot;);
-        // 网络请求
-        myRequest();
-    }
-
-    public void myRequest() {
-        AsyncHttpClient client = new AsyncHttpClient();
-        String urlString = &amp;quot;http://apis.baidu.com/apistore/weatherservice/citylist&amp;quot;;
-        client.get(urlString, new AsyncHttpResponseHandler() {
-            @Override
-            public void onSuccess(String response) {
-                result = response;
-                Log.e(&amp;quot;网络请求成功&amp;quot;, response);
-                //
-                Handler handler = context.getHandler();
-                if (handler != null) {
-                    Message msg = handler.obtainMessage();
-                    msg.what = 0x01;
-                    handler.sendMessage(msg);
-                }
-            }
-
-            @Override
-            public void onFailure(Throwable arg0) {
-                Log.e(&amp;quot;网络请求失败&amp;quot;, &amp;quot;失败&amp;quot;);
-            }
-        });
-    }
-
-    @Override
-    public PresentationModelChangeSupport getPresentationModelChangeSupport() {
-        return changeSupport;
-    }
-
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;###R.layout.activity_test&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;LinearLayout xmlns:android=&amp;quot;http://schemas.android.com/apk/res/android&amp;quot;
-    xmlns:tools=&amp;quot;http://schemas.android.com/tools&amp;quot;
-    xmlns:bind=&amp;quot;http://robobinding.org/android&amp;quot;
-    android:layout_width=&amp;quot;match_parent&amp;quot;
-    android:layout_height=&amp;quot;match_parent&amp;quot;
-    android:orientation=&amp;quot;vertical&amp;quot;
-    tools:ignore=&amp;quot;MissingPrefix&amp;quot; &amp;gt;
-
-    &amp;lt;TextView
-        android:layout_width=&amp;quot;wrap_content&amp;quot;
-        android:layout_height=&amp;quot;wrap_content&amp;quot;
-        android:layout_marginTop=&amp;quot;30dp&amp;quot;
-        bind:text=&amp;quot;{http}&amp;quot; /&amp;gt;
-
-    &amp;lt;Button
-        android:layout_width=&amp;quot;wrap_content&amp;quot;
-        android:layout_height=&amp;quot;wrap_content&amp;quot;
-        android:text=&amp;quot;网络请求&amp;quot;
-        bind:onClick=&amp;quot;httpRequest&amp;quot; /&amp;gt;
-
-&amp;lt;/LinearLayout&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;</content>
-    
-    <summary type="html">
-    
-      「RoboBinding探究」
-    
-    </summary>
-    
-      <category term="Android" scheme="http://blog.ybbz.site/categories/Android/"/>
-    
-    
-      <category term="Android" scheme="http://blog.ybbz.site/tags/Android/"/>
-    
-      <category term="RoboBinding" scheme="http://blog.ybbz.site/tags/RoboBinding/"/>
-    
-      <category term="MVVM" scheme="http://blog.ybbz.site/tags/MVVM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Markdown 简明语法参考</title>
-    <link href="http://blog.ybbz.site/2016/04/01/Old-Posts-2015-08-19-Markdown-Syntax/"/>
-    <id>http://blog.ybbz.site/2016/04/01/Old-Posts-2015-08-19-Markdown-Syntax/</id>
-    <published>2016-04-01T09:52:35.000Z</published>
-    <updated>2016-04-02T08:20:38.000Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;Markdown-概述&quot;&gt;&lt;a href=&quot;#Markdown-概述&quot; class=&quot;headerlink&quot; title=&quot;Markdown 概述&quot;&gt;&lt;/a&gt;Markdown 概述&lt;/h2&gt;&lt;p&gt;Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面。&lt;br&gt;—— &lt;a href=&quot;https://zh.wikipedia.org/wiki/Markdown&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;维基百科&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Markdown 语法是对纯文本格式的强化，能使文本显示得更清晰、有条理。但它依旧算是简单的文本，很容易修改和扩展，常用于快速写作中。&lt;/p&gt;
-&lt;p&gt;所见即所得。不少 MD 编辑器有极强的实时预览渲染，可以让写作者及时看到自己写作的内容显示效果并对此做出调整。&lt;/p&gt;
-&lt;p&gt;Markdown 格式的简洁特性、兼容扩展性颇佳，使之能快速转换为各种互联网上的常用格式，比如 HTML、Word、PDF 等。目前，越来越多的人开始接受和使用它。&lt;/p&gt;
-&lt;h2 id=&quot;Markdown-编辑器&quot;&gt;&lt;a href=&quot;#Markdown-编辑器&quot; class=&quot;headerlink&quot; title=&quot;Markdown 编辑器&quot;&gt;&lt;/a&gt;Markdown 编辑器&lt;/h2&gt;&lt;p&gt;常见及常用的 Markdown 编辑器很多，比如：&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;strong&gt;《机器学习实践:测试驱动的开发方法》&lt;/strong&gt;（Thoughtful Machine Learning:A Test-Driven Approach），在图书馆看到了这本书，当时浏览了目录，觉得挺中意的，就借回来了。然而看了前言之后，我就对这本书不抱有太大的希望了，原因无他，作者用的是Ruby而非Python。我对自己的定位只是Python入门、任重而道远，因此并不打算跳入Ruby的“火坑”。&lt;/p&gt;
+&lt;p&gt;可是这并不妨碍我阅读这本书，毕竟，机器学习的算法思想都是相通的，并不妨碍我去学习。下面，简单记录一下看这本书时候的一些体会。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;测试驱动开发&lt;/strong&gt;（Test-Driven Development，TDD）&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://macdown.uranusjr.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MacDown&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://typora.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Typora&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;用测试来驱动开发。强调“测试先行”，而非在开发周期的最后才考虑测试。&lt;/li&gt;
+&lt;li&gt;步骤：先编写一个无法通过的测试，然后编写可使其通过的功能代码，最后重构初始代码。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;此外还有（收费为主）：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.literatureandlatte.com/scrivener.php&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Scrivener&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://realmacsoftware.com/typed/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Typed&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://ia.net/writer/mac/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;
-&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://bywordapp.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Byword&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://marked2app.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Marked 2&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.ulyssesapp.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Ulysses&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://marboo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Marboo&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://25.io/mou/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Mou&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;以及支持 Markdown 的优质在线编辑器：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://maxiang.info/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;马克飞象&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://dillinger.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Dillinger&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://stackedit.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;StackEdit&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://markable.in/editor/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Markable&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;入门编辑器推荐第一序列的 MacDown，其它编辑器可以等熟悉 Markdown 之后再自行探索。&lt;/p&gt;
-&lt;h1 id=&quot;Markdown-语法&quot;&gt;&lt;a href=&quot;#Markdown-语法&quot; class=&quot;headerlink&quot; title=&quot;Markdown 语法&quot;&gt;&lt;/a&gt;Markdown 语法&lt;/h1&gt;&lt;p&gt;关于 Markdown 的基本语法，这里将逐一说明。对于一些写作中一般不算常用（不好用）的表格及代码展示，不多说明。&lt;/p&gt;
-&lt;p&gt;基本所有以下涉及的标点都以在英文输入状态下的为准。不然会导致语法失效。&lt;/p&gt;
-&lt;p&gt;先看一个包含了蛮多基本语法的范例。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://dreamofbook.qiniudn.com/Markdown-Sample.png&quot; alt=&quot;Markdown&quot;&gt;&lt;/p&gt;
-&lt;p&gt;关于语法，让我们先从在文中起到分清区块、梳理逻辑关系的标题说起：&lt;/p&gt;
-&lt;h2 id=&quot;标题&quot;&gt;&lt;a href=&quot;#标题&quot; class=&quot;headerlink&quot; title=&quot;标题&quot;&gt;&lt;/a&gt;标题&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;# 一级标题
-## 二级标题
-### 三级标题
-#### 四级标题
-##### 五级标题
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;显示效果如下：&lt;/p&gt;
-&lt;h1 id=&quot;这是一级标题&quot;&gt;&lt;a href=&quot;#这是一级标题&quot; class=&quot;headerlink&quot; title=&quot;这是一级标题&quot;&gt;&lt;/a&gt;这是一级标题&lt;/h1&gt;&lt;h2 id=&quot;俺，二级标题&quot;&gt;&lt;a href=&quot;#俺，二级标题&quot; class=&quot;headerlink&quot; title=&quot;俺，二级标题&quot;&gt;&lt;/a&gt;俺，二级标题&lt;/h2&gt;&lt;h3 id=&quot;我是三级标题&quot;&gt;&lt;a href=&quot;#我是三级标题&quot; class=&quot;headerlink&quot; title=&quot;我是三级标题&quot;&gt;&lt;/a&gt;我是三级标题&lt;/h3&gt;&lt;h4 id=&quot;人家只是个四级标题……&quot;&gt;&lt;a href=&quot;#人家只是个四级标题……&quot; class=&quot;headerlink&quot; title=&quot;人家只是个四级标题……&quot;&gt;&lt;/a&gt;人家只是个四级标题……&lt;/h4&gt;&lt;h5 id=&quot;更小的我，五级标题-XD&quot;&gt;&lt;a href=&quot;#更小的我，五级标题-XD&quot; class=&quot;headerlink&quot; title=&quot;更小的我，五级标题 XD&quot;&gt;&lt;/a&gt;更小的我，五级标题 XD&lt;/h5&gt;&lt;h6 id=&quot;Github-支持的最小的可以我（哪里冒出来的）&quot;&gt;&lt;a href=&quot;#Github-支持的最小的可以我（哪里冒出来的）&quot; class=&quot;headerlink&quot; title=&quot;Github 支持的最小的可以我（哪里冒出来的）&quot;&gt;&lt;/a&gt;Github 支持的最小的可以我（哪里冒出来的）&lt;/h6&gt;&lt;hr&gt;
-&lt;h2 id=&quot;换行&quot;&gt;&lt;a href=&quot;#换行&quot; class=&quot;headerlink&quot; title=&quot;换行&quot;&gt;&lt;/a&gt;换行&lt;/h2&gt;&lt;p&gt;Markdown 语法下，换行的方式有：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;隔行换行。连续敲击两下「Return」键，再开始写下一段；&lt;/li&gt;
-&lt;li&gt;在行末添加两个空格符，而后「Return」（为了显示清晰），开始写下一段。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;强调标记&quot;&gt;&lt;a href=&quot;#强调标记&quot; class=&quot;headerlink&quot; title=&quot;强调标记&quot;&gt;&lt;/a&gt;强调标记&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;*斜体* 斜体
-_斜体_
-
-**加粗** 加粗
-__粗体_
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;对于强调符号，需要注意的就是，以什么开始，以什么结尾，数量也保持一致，相应的语法才能生效。&lt;/p&gt;
-&lt;p&gt;显示效果如下：&lt;/p&gt;
-&lt;p&gt;这是 &lt;em&gt;斜体&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;这是 &lt;strong&gt;强调&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&quot;分割线&quot;&gt;&lt;a href=&quot;#分割线&quot; class=&quot;headerlink&quot; title=&quot;分割线&quot;&gt;&lt;/a&gt;分割线&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;*** 加分割线
-* * * 加分割线
-***** 或者这样？
---- 还有另外的方式
-___ 其实，还可以这样
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;以下就是一条分割线：&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;列表&quot;&gt;&lt;a href=&quot;#列表&quot; class=&quot;headerlink&quot; title=&quot;列表&quot;&gt;&lt;/a&gt;列表&lt;/h2&gt;&lt;p&gt;列表分无序列表合有序列表两类，前者以「*」、「-」、「+」开头，后者以阿拉伯数字「1」开头。&lt;/p&gt;
-&lt;p&gt;三个注意点：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;如果前面有内容，在输入字符前，应先空一行；&lt;/li&gt;
-&lt;li&gt;符号与内容之间，须隔一个空格符，列表模式才能生效；&lt;/li&gt;
-&lt;li&gt;第一行内容输入完成，换行会自动补全下一行的开头符号（有序列表数字递增，无序列表符号不变），接下去只需继续输下一行内容，以此类推；&lt;/li&gt;
-&lt;li&gt;多层级列表，为美观也为减少出错考虑，注意同级列表符号的统一和上下对齐。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;无序列表：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Unordered List:
-
-* English
-* Japanese
-* Chinese
-* ……
-
-Unordered List:
-
-- English
-- Japanese
-- Chinese
-- ……
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;显示效果均如下：&lt;/p&gt;
-&lt;p&gt;Country List：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;English&lt;/li&gt;
-&lt;li&gt;Japanese&lt;/li&gt;
-&lt;li&gt;Chinese&lt;/li&gt;
-&lt;li&gt;……&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;有序列表：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Ordered List:
-
-1. Orange
-2. Apple
-3. Banana
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;My Favorite Fruit List:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Orange&lt;/li&gt;
-&lt;li&gt;Apple&lt;/li&gt;
-&lt;li&gt;Banana&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;多层级列表：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;两都名胜
-
-- 南京
-  + 玄武湖
-  + 中山陵
-  + 鸡鸣寺
-- 杭州
-  + 西湖
-    * 苏堤
-    * 湖心亭
-    * 太子湾
-  + 九溪
-  + 灵隐
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;注：此处的几个符号作用都是一样的，不同层级符号有所区别只为显示美观。日常使用，请每一级的符号一致。&lt;/p&gt;
-&lt;p&gt;显示效果如下：&lt;/p&gt;
-&lt;p&gt;两都名胜&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;南京&lt;ul&gt;
-&lt;li&gt;玄武湖&lt;/li&gt;
-&lt;li&gt;中山陵&lt;/li&gt;
-&lt;li&gt;鸡鸣寺&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;杭州&lt;ul&gt;
-&lt;li&gt;西湖&lt;ul&gt;
-&lt;li&gt;苏堤&lt;/li&gt;
-&lt;li&gt;湖心亭&lt;/li&gt;
-&lt;li&gt;太子湾&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;九溪&lt;/li&gt;
-&lt;li&gt;灵隐&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;引用&quot;&gt;&lt;a href=&quot;#引用&quot; class=&quot;headerlink&quot; title=&quot;引用&quot;&gt;&lt;/a&gt;引用&lt;/h2&gt;&lt;p&gt;引用。使用「&amp;gt;」，添加在每行的开头。&lt;/p&gt;
-&lt;p&gt;两个注意点：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;「&amp;gt;」的上一行，必须为空行；&lt;/li&gt;
-&lt;li&gt;「&amp;gt;」与其后紧跟的第一个字之间有无空格符不影响效果（不过建议加一个）。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;显示效果如下：&lt;/p&gt;
-&lt;p&gt;詹姆斯·馬奇《馬奇論管理》：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;堂吉诃德提醒我们，如果我們只在不被辜負時去信任，只在有所回報時去愛，只在學有所用時去學習，那麼我們就放棄了為人的特征——願意在自我理念的名義下行動，不管結果如何。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;或者，你想要引用一首诗、一首歌：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;gt; 五月天《天使》
-
-&amp;gt; 像孩子依赖着肩膀
-&amp;gt; 像眼泪依赖着脸庞
-&amp;gt; 你就像天使一样
-&amp;gt; 给我依赖 给我力量  
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这儿也需要注意换行：每一行最后换行，添加两个空格符，不然内容会挤压在一块，变成一行。或者行与行之间，空一行。以下例子中，歌词部分输入时虽然都分列开，而实际显示时歌词都连成一句了。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;五月天《天使》&lt;/p&gt;
-&lt;p&gt;像孩子依赖着肩膀&lt;br&gt;像眼泪依赖着脸庞&lt;br&gt;你就像天使一样&lt;br&gt;给我依赖 给我力量&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;每句歌词的行尾空两格之后，效果是这样的：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;五月天《天使》&lt;/p&gt;
-&lt;p&gt;像孩子依赖着肩膀&lt;br&gt;像眼泪依赖着脸庞&lt;br&gt;你就像天使一样&lt;br&gt;给我依赖 给我力量   &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;如果是想嵌套引用，像这样：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;浙江  &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;杭州  &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;西湖  &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;湖心亭  &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;博客默认的 Markdown 工具有点问题，效果如下图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://i1381.photobucket.com/albums/ah234/Azeril_Lapland/Screen%20Shot%202015-08-30%20at%209.26.17%20PM_zpsg0ojze8c.png&quot; alt=&quot;嵌套引用&quot;&gt;&lt;/p&gt;
-&lt;p&gt;语法如下，每行多添加一个「&amp;gt;」符号，再输入文字内容即可（每行行尾记得添两个空格符）：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;gt; 浙江
-&amp;gt;&amp;gt; 杭州
-&amp;gt;&amp;gt;&amp;gt; 西湖
-&amp;gt;&amp;gt;&amp;gt;&amp;gt; 湖心亭
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;代码区&quot;&gt;&lt;a href=&quot;#代码区&quot; class=&quot;headerlink&quot; title=&quot;代码区&quot;&gt;&lt;/a&gt;代码区&lt;/h2&gt;&lt;p&gt;也就是 Blockquotes。&lt;/p&gt;
-&lt;p&gt;如果行尾不空格呢有没其它解决方法呢？如果是这样——&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;风吹柳絮
-
-《麦兜当当伴我心》插曲
-
-风吹柳絮 茫茫难聚  
-随着风吹 飘来飘去  
-我若能够携你随风去  
-
-我愿像一块扣肉  
-我愿像一块扣肉  
-我愿像一块扣肉  
-扣住你梅菜扣住你手  
-
-我愿像一块扣肉  
-我愿像一块扣肉  
-我是你一块扣肉  
-你是那梅菜扣住你手  
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这里的方法是首行开头缩进四个空格符，或敲一下 tab 键（制表符键）。&lt;/p&gt;
-&lt;p&gt;还有一个方法。连续三个反引号「`」组成的前后两行，将内容包裹起来。&lt;/p&gt;
-&lt;p&gt;显示效果如下：&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;这是另一个代码区块&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;在代码区块中，Markdown 语法不会被转换，这也是为什么前面很多 Markdown 语法的例子能在代码区展示出来的缘故。不然这样一篇以 Markdown 语法解释 Markdown 语法的说明也无从谈起了。&lt;/p&gt;
-&lt;p&gt;嗯…嗯？&lt;/p&gt;
-&lt;p&gt;反引号的输入：英文输入模式下，点击键盘左上角的「~」键。&lt;/p&gt;
-&lt;h2 id=&quot;标记&quot;&gt;&lt;a href=&quot;#标记&quot; class=&quot;headerlink&quot; title=&quot;标记&quot;&gt;&lt;/a&gt;标记&lt;/h2&gt;&lt;p&gt;标记小段代码（文字）。为着重强调的内容添加深色背景框，在内容前后各添一个反引号「`」，将代码段或文字夹在中间即可实现。&lt;/p&gt;
-&lt;p&gt;显示效果如下：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Use the &lt;code&gt;printf()&lt;/code&gt; function.&lt;/li&gt;
-&lt;li&gt;这是加深背景色框的&lt;code&gt;字符&lt;/code&gt;。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;网址链接&quot;&gt;&lt;a href=&quot;#网址链接&quot; class=&quot;headerlink&quot; title=&quot;网址链接&quot;&gt;&lt;/a&gt;网址链接&lt;/h2&gt;&lt;h3 id=&quot;自动链接&quot;&gt;&lt;a href=&quot;#自动链接&quot; class=&quot;headerlink&quot; title=&quot;自动链接&quot;&gt;&lt;/a&gt;自动链接&lt;/h3&gt;&lt;p&gt;使用「&amp;lt;」、「&amp;gt;」这样的尖角符号，url/email 在 Markdown 下可自动实现可点击链接的效果。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;http://www.google.com&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;显示效果如下：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.google.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.google.com&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;网址链接-1&quot;&gt;&lt;a href=&quot;#网址链接-1&quot; class=&quot;headerlink&quot; title=&quot;网址链接&quot;&gt;&lt;/a&gt;网址链接&lt;/h3&gt;&lt;p&gt;至于网址链接的基本格式，应该是这样：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;[Link Name](Link)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;构成为：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;一个方括号，添加图片的描述文字&lt;/li&gt;
-&lt;li&gt;一个括号，添加图片网址&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;以下为一个网址的栗子：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;[Welcome to my blog](http://azeril.me)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;显示效果如下：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://azeril.me&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Welcome to my blog&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;索引链接&quot;&gt;&lt;a href=&quot;#索引链接&quot; class=&quot;headerlink&quot; title=&quot;索引链接&quot;&gt;&lt;/a&gt;索引链接&lt;/h3&gt;&lt;p&gt;内容描述后添加定义链接（以数字/英文/符号为主），在文字段落外关联具体网址，实现可跳转效果。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;[Click Google Search][Tags]
-
-[Tags]: http://www.google.com &amp;quot;Google&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;显示效果如下：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.google.com&quot; title=&quot;Google&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Click Google Search&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;添加图片&quot;&gt;&lt;a href=&quot;#添加图片&quot; class=&quot;headerlink&quot; title=&quot;添加图片&quot;&gt;&lt;/a&gt;添加图片&lt;/h2&gt;&lt;p&gt;插入图片的语法：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;![Pic name](Pic link)  
-![Instagram Pic](http://i.imgur.com/UKhrRrK.jpg)
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;一个英文输入下的惊叹号「!」；&lt;/li&gt;
-&lt;li&gt;一个方括号，添加图片的描述文字；&lt;/li&gt;
-&lt;li&gt;一个括号，添加图片网址。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;相比插入网址链接，多了一个开头的惊叹号。&lt;/p&gt;
-&lt;p&gt;显示效果如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/UKhrRrK.jpg&quot; alt=&quot;Instagram Pic&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;添加表格&quot;&gt;&lt;a href=&quot;#添加表格&quot; class=&quot;headerlink&quot; title=&quot;添加表格&quot;&gt;&lt;/a&gt;添加表格&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;|Province |Title 1|Title 2|Title 3|
-|---|---:|:---:|---:|
-|City|City 1|City 2|City 3|
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;显示效果如下：&lt;/p&gt;
-&lt;table&gt;
+&lt;h2 id=&quot;机器学习概述&quot;&gt;&lt;a href=&quot;#机器学习概述&quot; class=&quot;headerlink&quot; title=&quot;机器学习概述&quot;&gt;&lt;/a&gt;机器学习概述&lt;/h2&gt;&lt;h4 id=&quot;什么是机器学习&quot;&gt;&lt;a href=&quot;#什么是机器学习&quot; class=&quot;headerlink&quot; title=&quot;什么是机器学习&quot;&gt;&lt;/a&gt;什么是机器学习&lt;/h4&gt;&lt;p&gt;机器学习是具有坚实理论基础的计算机科学和含噪声的真是数据的交集。本质上，机器学习是一门关于如何使机器像人类那样去理解数据的科学。&lt;/p&gt;
+&lt;h4 id=&quot;机器学习问题&quot;&gt;&lt;a href=&quot;#机器学习问题&quot; class=&quot;headerlink&quot; title=&quot;机器学习问题&quot;&gt;&lt;/a&gt;机器学习问题&lt;/h4&gt;&lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;Province&lt;/th&gt;
-&lt;th style=&quot;text-align:left&quot;&gt;ZJ 浙江省&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;FJ 福建省&lt;/th&gt;
-&lt;th style=&quot;text-align:right&quot;&gt;YN 云南省&lt;/th&gt;
+&lt;th&gt;问题&lt;/th&gt;
+&lt;th&gt;机器学习类型&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;City&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;杭州&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;厦门&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;昆明&lt;/td&gt;
+&lt;td&gt;将数据拟合为某个函数或函数逼近&lt;/td&gt;
+&lt;td&gt;有监督学习&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;在无反馈条件下对数据进行推断&lt;/td&gt;
+&lt;td&gt;无监督学习&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;进行有奖励和回报的比赛或游戏&lt;/td&gt;
+&lt;td&gt;强化学习&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;一般的表格由「|」与「-」两种符号（英文半角字符）构成。第一、三及其后的行都由「|」组成。依数据的列数确定数量（列数据量 +1）。&lt;br&gt;第二行为中间为连续的「-」组成的隔断，数量不限，更多是让文本显得美观（和预览无关）。&lt;/p&gt;
-&lt;p&gt;第二行中出现的冒号作用是设定表格内数据的对齐方式，不是必须使用的。具体意义如下：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;:– 冒号在左，左对齐&lt;/li&gt;
-&lt;li&gt;–： 冒号在右，右对齐&lt;/li&gt;
-&lt;li&gt;：–： 左右两侧都出现冒号，居中对齐&lt;/li&gt;
+&lt;h4 id=&quot;机器学习算法矩阵&quot;&gt;&lt;a href=&quot;#机器学习算法矩阵&quot; class=&quot;headerlink&quot; title=&quot;机器学习算法矩阵&quot;&gt;&lt;/a&gt;机器学习算法矩阵&lt;/h4&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;算法&lt;/th&gt;
+&lt;th&gt;类型&lt;/th&gt;
+&lt;th&gt;类&lt;/th&gt;
+&lt;th&gt;限制条件&lt;/th&gt;
+&lt;th&gt;适用场合&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;K近邻（KNN）&lt;/td&gt;
+&lt;td&gt;有监督学习&lt;/td&gt;
+&lt;td&gt;基于实例的&lt;/td&gt;
+&lt;td&gt;一般来说，kNN擅长度量基于距离的逼近，但易受维数灾难的影响&lt;/td&gt;
+&lt;td&gt;适合解决基于距离的问题&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;朴素贝叶斯分类（NB）&lt;/td&gt;
+&lt;td&gt;有监督学习&lt;/td&gt;
+&lt;td&gt;概率的&lt;/td&gt;
+&lt;td&gt;要求所给问题中，各输入相互独立&lt;/td&gt;
+&lt;td&gt;适用于问题域中各类的概率均大于0的情形&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;隐马尔可夫模型（HMM）&lt;/td&gt;
+&lt;td&gt;有/无监督学习&lt;/td&gt;
+&lt;td&gt;马尔可夫的&lt;/td&gt;
+&lt;td&gt;要求系统信息满足马尔科夫假设&lt;/td&gt;
+&lt;td&gt;适用于时间序列数据和无记忆的信息&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;支持向量机（SVM）&lt;/td&gt;
+&lt;td&gt;有监督学习&lt;/td&gt;
+&lt;td&gt;决策面&lt;/td&gt;
+&lt;td&gt;要求待分类的两个类别有明确的差别&lt;/td&gt;
+&lt;td&gt;适用于求解两类分类问题&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;神经网络（NN）&lt;/td&gt;
+&lt;td&gt;有监督学习&lt;/td&gt;
+&lt;td&gt;非线性函数逼近&lt;/td&gt;
+&lt;td&gt;几乎没有限制条件&lt;/td&gt;
+&lt;td&gt;适用于二值输入&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;聚类&lt;/td&gt;
+&lt;td&gt;无监督学习&lt;/td&gt;
+&lt;td&gt;聚类&lt;/td&gt;
+&lt;td&gt;无限制&lt;/td&gt;
+&lt;td&gt;适用于当给定某种形式的距离度量（如欧式距离、曼哈顿距离等）时，能表现出明确分组特性的数据&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;（核）岭回归&lt;/td&gt;
+&lt;td&gt;有监督学习&lt;/td&gt;
+&lt;td&gt;回归&lt;/td&gt;
+&lt;td&gt;限制很少&lt;/td&gt;
+&lt;td&gt;适用于变量连续的情形&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;滤波&lt;/td&gt;
+&lt;td&gt;无监督学习&lt;/td&gt;
+&lt;td&gt;特征变换&lt;/td&gt;
+&lt;td&gt;无限制&lt;/td&gt;
+&lt;td&gt;适用于有大量变量需要过滤的数据&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&quot;K近邻分类&quot;&gt;&lt;a href=&quot;#K近邻分类&quot; class=&quot;headerlink&quot; title=&quot;K近邻分类&quot;&gt;&lt;/a&gt;K近邻分类&lt;/h2&gt;&lt;p&gt;kNN算法简介：一种基于实例的有监督学习方法，尤其适用于对距离敏感的数据。易受“维数灾难”的影响。&lt;/p&gt;
+&lt;h4 id=&quot;如何选择K&quot;&gt;&lt;a href=&quot;#如何选择K&quot; class=&quot;headerlink&quot; title=&quot;如何选择K&quot;&gt;&lt;/a&gt;如何选择K&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;猜测&lt;/li&gt;
+&lt;li&gt;使用启发式策略&lt;/li&gt;
+&lt;li&gt;通过算法优化&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&quot;转义符&quot;&gt;&lt;a href=&quot;#转义符&quot; class=&quot;headerlink&quot; title=&quot;转义符&quot;&gt;&lt;/a&gt;转义符&lt;/h2&gt;&lt;p&gt;如何在 MD 文档中输出被用于转换格式的符号本身？这里就需要转义符，也就是反斜线「\」来协助。&lt;/p&gt;
-&lt;p&gt;如果要显示「*」，则可以用如下的方式：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;表示强调的符号这样用： \*Emphasize\*
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;显示效果如下：&lt;/p&gt;
-&lt;p&gt;表示强调的符号这样用： *Emphasize*&lt;/p&gt;
-&lt;p&gt;支持转义的 MD 符号包括：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;\   反斜线
-`   反引号
-\*   星号
-\_   下划线
-{}  花括号
-[]  方括号
-()  圆括号
-#   井号
-+   加号
--   减号（连字符）
-.   句点
-!   感叹号
-&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
-&lt;h2 id=&quot;扩展阅读&quot;&gt;&lt;a href=&quot;#扩展阅读&quot; class=&quot;headerlink&quot; title=&quot;扩展阅读&quot;&gt;&lt;/a&gt;扩展阅读&lt;/h2&gt;&lt;p&gt;基于 Markdown 的 HTML 语言运用。&lt;/p&gt;
-&lt;p&gt;HTML 可以契合 MD 语法，而通过利用前者，可以实现一些单纯依靠 MD 语法暂时无法实现的功能和页面显示效果。&lt;/p&gt;
-&lt;h3 id=&quot;网址链接-2&quot;&gt;&lt;a href=&quot;#网址链接-2&quot; class=&quot;headerlink&quot; title=&quot;网址链接&quot;&gt;&lt;/a&gt;网址链接&lt;/h3&gt;&lt;p&gt;页面内跳转链接。利用 HTML &lt;img&gt; 语法制作 Markdown 长文的可跳转目录。分两部分，前为具体条目信息，后边则指向内容的位置（代码段放在页面的哪里，点击索引条目后就跳转到哪里）。&lt;/p&gt;
-&lt;p&gt;范例语法如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;[Line](#A)
-
-&amp;lt;a name=&amp;quot;A&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&quot;#A&quot;&gt;Line&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a name=&quot;A&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;添加图片-进阶版&quot;&gt;&lt;a href=&quot;#添加图片-进阶版&quot; class=&quot;headerlink&quot; title=&quot;添加图片(进阶版)&quot;&gt;&lt;/a&gt;添加图片(进阶版)&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;http://7s1rzi.com1.z0.glb.clouddn.com/Pic_Sample.jpg&quot; alt=&quot;Pic_Sample&quot;&gt;&lt;/p&gt;
-&lt;p&gt;在页面中，要并排插入多张图片（两张或三张并排显示）或将插入图片居中显示，又或者是类似固定显示图片的宽度与高度，目前依靠 Markdown 语法还无法实现。&lt;br&gt;这时，调用 HTML 语法就可以轻松搞定。&lt;/p&gt;
-&lt;p&gt;以下，可以仅看添加图床图片的那部分，减少认知负荷。&lt;/p&gt;
-&lt;h3 id=&quot;图片与图床&quot;&gt;&lt;a href=&quot;#图片与图床&quot; class=&quot;headerlink&quot; title=&quot;图片与图床&quot;&gt;&lt;/a&gt;图片与图床&lt;/h3&gt;&lt;p&gt;图床是第三方服务托管个人上传图片，并提供图片外链，让我们在写博客文章时使用的方式。&lt;/p&gt;
-&lt;p&gt;常用图床：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.qiniu.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;七牛云存储&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://imgur.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Imgur&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://s1381.photobucket.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Photobucket&lt;/a&gt;&lt;/li&gt;
+&lt;h4 id=&quot;选择K的启发式策略&quot;&gt;&lt;a href=&quot;#选择K的启发式策略&quot; class=&quot;headerlink&quot; title=&quot;选择K的启发式策略&quot;&gt;&lt;/a&gt;选择K的启发式策略&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;当分类问题中只涉及两个类别时，不要将K取为偶数&lt;/li&gt;
+&lt;li&gt;K的值应不小于类别总数加1&lt;/li&gt;
+&lt;li&gt;为避免出现噪声，K的值应足够小&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;降维： &lt;strong&gt;SIFT、SURF算法&lt;/strong&gt;&lt;br&gt;机器学习中使用频率极高的三个术语：&lt;strong&gt;特征、纬度和实例&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&quot;余弦相似度&quot;&gt;&lt;a href=&quot;#余弦相似度&quot; class=&quot;headerlink&quot; title=&quot;余弦相似度&quot;&gt;&lt;/a&gt;余弦相似度&lt;/h4&gt;&lt;p&gt;这是确定两个对象之间接近程度的一种良好方式。采取的准则并不是看数据是否100%相等，而是看两个向量是否足够接近。对于比较两不同向量之间是否相似，余弦相似度是一种非常有用的测度。它实际上度量的是这两个向量之间的夹角，而非长度上的差异。&lt;/p&gt;
+&lt;h2 id=&quot;朴素贝叶斯分类&quot;&gt;&lt;a href=&quot;#朴素贝叶斯分类&quot; class=&quot;headerlink&quot; title=&quot;朴素贝叶斯分类&quot;&gt;&lt;/a&gt;朴素贝叶斯分类&lt;/h2&gt;&lt;p&gt;一种有监督的概率学习方法，对于数据集中输入相互独立的场合，朴素贝叶斯分类器能够展现出良好的性能。此外，它也更适合解决那些任何属性的概率均大于零的问题。&lt;/p&gt;
+&lt;h4 id=&quot;条件概率&quot;&gt;&lt;a href=&quot;#条件概率&quot; class=&quot;headerlink&quot; title=&quot;条件概率&quot;&gt;&lt;/a&gt;条件概率&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;# B发生后A发生的概率等于A和B同时发生的概率除以B发生的概率
+P(A|B)=P(AB)/P(B)
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&quot;贝叶斯定理&quot;&gt;&lt;a href=&quot;#贝叶斯定理&quot; class=&quot;headerlink&quot; title=&quot;贝叶斯定理&quot;&gt;&lt;/a&gt;贝叶斯定理&lt;/h4&gt;&lt;p&gt;P(B|A)=P(A|B)P(B)/P(A)&lt;/p&gt;
+&lt;h4 id=&quot;朴素贝叶斯分类器&quot;&gt;&lt;a href=&quot;#朴素贝叶斯分类器&quot; class=&quot;headerlink&quot; title=&quot;朴素贝叶斯分类器&quot;&gt;&lt;/a&gt;朴素贝叶斯分类器&lt;/h4&gt;&lt;pre&gt;&lt;code&gt;# 联合概率:所有事件均发生的概率（链式法则）
+P(A1,A2,…,An)=P(A1)P(A2|A1)P(A3|A1,A2)…P(An|A1,A2,…,An-1)
+P(A1,A2,A3)=P(A1)P(A2|A1)P(A3|A1,A2)=P(A1,A2)P(A3|A1,A2)
+# 从朴素的观点出发
+P(A1,A2,A3)=P(A1)P(A2|A1)P(A3|A1)
+P(A3|A1,A2)=P(A1,A2|A3)P(A3)/P(A1,A2)=P(A1,A2,A3)/P(A1,A2)=P(A3)P(A1|A3)P(A2|A3)/P(A1,A2)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;样本容量不足：&lt;strong&gt;伪计数&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;由于为得到分类结果，朴素贝叶斯分类器需要将所有条件独立的概率相乘，因此一旦这些概率之中有一项为0，则总概率也将为0。&lt;/em&gt;&lt;br&gt;&lt;em&gt;在计算概率是，我们为单词的出现次数加上1，即所有单词的出现次数均记为word_count+1。有助于缓解归零效应的影响。&lt;/em&gt;&lt;br&gt;&lt;em&gt;适用于数据相互独立的场景，对于欺诈检测、垃圾邮件过滤以及其他拥有这些特征的问题都很适用。&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&quot;隐马尔科夫模型&quot;&gt;&lt;a href=&quot;#隐马尔科夫模型&quot; class=&quot;headerlink&quot; title=&quot;隐马尔科夫模型&quot;&gt;&lt;/a&gt;隐马尔科夫模型&lt;/h2&gt;&lt;h2 id=&quot;支持向量机&quot;&gt;&lt;a href=&quot;#支持向量机&quot; class=&quot;headerlink&quot; title=&quot;支持向量机&quot;&gt;&lt;/a&gt;支持向量机&lt;/h2&gt;&lt;h2 id=&quot;神经网络&quot;&gt;&lt;a href=&quot;#神经网络&quot; class=&quot;headerlink&quot; title=&quot;神经网络&quot;&gt;&lt;/a&gt;神经网络&lt;/h2&gt;&lt;h2 id=&quot;聚类&quot;&gt;&lt;a href=&quot;#聚类&quot; class=&quot;headerlink&quot; title=&quot;聚类&quot;&gt;&lt;/a&gt;聚类&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;聚类算法是一种无监督学习问题，在数据分组方面有突出的表现。在实际运用中，会受到不可能定理的制约。&lt;/li&gt;
+&lt;li&gt;分类：找出最优的函数逼近，以将数据分配到某个数据集和标签。聚类：更关心数据本身，而非标签。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;图床在上传图片后会提供一个图片的外链。我们可以利用外链把图片添加到自己的博文中。图片也可以存储在 Github 自己的博客项目里，不过图片蛮占用空间（Github 项目空间为200 M）。因而最好是选图床托管图片。&lt;/p&gt;
-&lt;p&gt;如果是单纯插入来自图床的图片外链：&lt;/p&gt;
-&lt;p&gt;单张居中显示：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;center&amp;gt;
-&amp;lt;img src=&amp;quot;http://dreamofbook.qiniudn.com/Zero.png&amp;quot;&amp;gt;
-
-OR
-
-&amp;lt;figure&amp;gt;
-    &amp;lt;img src=&amp;quot;http://xxx.jpg&amp;quot;&amp;gt;
-&amp;lt;/figure&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;效果如下：&lt;/p&gt;
-&lt;figure&gt;&lt;br&gt;&lt;img src=&quot;http://dreamofbook.qiniudn.com/Zero.png&quot;&gt;&lt;br&gt;&lt;/figure&gt;
-
-&lt;p&gt;固定图片宽度/高度：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;img src=&amp;quot;http://xxx.jpg&amp;quot; title=&amp;quot;Logo&amp;quot; width=&amp;quot;100&amp;quot; /&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;宽度是 Width，高度是 High。Title 为图片描述。&lt;/p&gt;
-&lt;p&gt;效果如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://dreamofbook.qiniudn.com/Zero.png&quot; title=&quot;Logo&quot; width=&quot;100&quot;&gt;&lt;/p&gt;
-&lt;p&gt;两张并排显示：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;figure class=&amp;quot;half&amp;quot;&amp;gt;
-    &amp;lt;img src=&amp;quot;http://xxx.jpg&amp;quot;&amp;gt;
-    &amp;lt;img src=&amp;quot;http://yyy.jpg&amp;quot;&amp;gt;
-&amp;lt;/figure&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;三张并排显示：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;figure class=&amp;quot;third&amp;quot;&amp;gt;
-    &amp;lt;img src=&amp;quot;http://xxx.jpg&amp;quot;&amp;gt;
-    &amp;lt;img src=&amp;quot;http://yyy.jpg&amp;quot;&amp;gt;
-    &amp;lt;img src=&amp;quot;http://zzz.jpg&amp;quot;&amp;gt;
-&amp;lt;/figure&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;使用时复制相应的代码粘贴，然后替换 “”(英文输入下的引号) 里的链接，也就是例子中的「&lt;a href=&quot;http://xxx.jpg」链接为自己上传图片（一般只有在图床上传的图才有这样的链接）的外链。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://xxx.jpg」链接为自己上传图片（一般只有在图床上传的图才有这样的链接）的外链。&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Tips: 关于 jpg/png 都是常用文件格式，jpg 格式压缩效率高，相对文件质量小一点，占用网络空间少，在页面里显示时加载会快一些。png 格式的图片更清晰。&lt;/p&gt;
-&lt;h3 id=&quot;添加-Github-图片&quot;&gt;&lt;a href=&quot;#添加-Github-图片&quot; class=&quot;headerlink&quot; title=&quot;添加 Github 图片&quot;&gt;&lt;/a&gt;添加 Github 图片&lt;/h3&gt;&lt;p&gt;如果是利用在 Github 项目文件夹里的图片，基本的语法不变，只是将前面提到 “” 里的图片外链（网址）替换为：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;「自定义的域名 + 图片在 Github 项目的位置」
-&lt;/code&gt;&lt;/pre&gt;&lt;figure class=&quot;highlight crystal&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;template-variable&quot;&gt;&amp;#123;&amp;#123; site.url &amp;#125;&amp;#125;&lt;/span&gt;/images/xxx.jpg&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;引用的代码自动变形了。博文中两个花括号及「site.url」构成的代码块会自动补全为我的个人域名，所以这篇博文代码区中的演示也受到了影响(上一段的引用就受到影响了。后边的文中引用的例子也一样)。如果复制了刚才的代码块，需要将「 azeril.me//」修改成下图中的样子（两个花括号，中间加 site.url ）。即：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://dreamofbook.qiniudn.com/onelinecode.png&quot; alt=&quot;code&quot;&gt;&lt;/p&gt;
-&lt;p&gt;使用时复制和修改相应的代码，并替换「/images/xxx.jpg」这样的链接为自己放置图片的路径。&lt;/p&gt;
-&lt;p&gt;如果 Github 项目下有 images 文件夹，直接在里面放图，就是如上的代码替换。如果是 images 目录下的文件夹，如 Instagram，则路径为：「images/Instagram/ xxx.jpg」。依此类推。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://dreamofbook.qiniudn.com/twolinescode.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;附加浏览窗口的模式&quot;&gt;&lt;a href=&quot;#附加浏览窗口的模式&quot; class=&quot;headerlink&quot; title=&quot;附加浏览窗口的模式&quot;&gt;&lt;/a&gt;附加浏览窗口的模式&lt;/h3&gt;&lt;p&gt;更复杂一点，点击图片可以跳出一个预览窗口，可以看大图和切换图片。&lt;/p&gt;
-&lt;p&gt;效果如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://dreamofbook.qiniudn.com/Preview_Pic.png&quot; alt=&quot;PreviewPic&quot;&gt;&lt;/p&gt;
-&lt;p&gt;两张并排显示的代码（单张和三张代码和前述的类似）：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;figure class=&amp;quot;half&amp;quot;&amp;gt;
-    &amp;lt;a href=&amp;quot;{{ site.url }}/images/xxx.jpg&amp;quot;&amp;gt;&amp;lt;img src=&amp;quot;{{ site.url }}/images/ xxx.jpg&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;
-    &amp;lt;a href=&amp;quot;{{ site.url }}/images/yyy.jpg&amp;quot;&amp;gt;&amp;lt;img src=&amp;quot;{{ site.url }}/images/ yyy.jpg&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;
-&amp;lt;/figure&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;添加图片代码分享&quot;&gt;&lt;a href=&quot;#添加图片代码分享&quot; class=&quot;headerlink&quot; title=&quot;添加图片代码分享&quot;&gt;&lt;/a&gt;添加图片代码分享&lt;/h3&gt;&lt;p&gt;因博客显示时引用的部分 HTML 代码有问题，所以另外发一份 md 版本的文档供参考。&lt;/p&gt;
-&lt;p&gt;下载地址：&lt;/p&gt;
-&lt;p&gt;百度云 - &lt;a href=&quot;http://pan.baidu.com/s/1Bb4qM&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Dl from BaiduYun&lt;/a&gt;&lt;br&gt;box.com -  &lt;a href=&quot;https://app.box.com/s/l8x1jajwv82umq33aa7dkwpl9sr59q55&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Dl from Box.com&lt;/a&gt;&lt;br&gt;dropbox -  &lt;a href=&quot;https://dl.dropboxusercontent.com/u/64524965/AddPic.md&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Dl from Dropbox&lt;/a&gt;  &lt;/p&gt;
-&lt;p&gt;愉快。&lt;/p&gt;
-&lt;h2 id=&quot;参考文档及扩展阅读&quot;&gt;&lt;a href=&quot;#参考文档及扩展阅读&quot; class=&quot;headerlink&quot; title=&quot;参考文档及扩展阅读&quot;&gt;&lt;/a&gt;参考文档及扩展阅读&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.jianshu.com/p/q81RER&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;献给写作者的 Markdown 新手指南_简书&lt;/a&gt;  &lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://wowubuntu.com/markdown/#editor&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Markdown 语法说明_WowUbuntu&lt;/a&gt;  &lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.ituring.com.cn/article/504&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Markdown 语法说明（详解版）_图灵社区&lt;/a&gt;  &lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://guides.github.com/features/mastering-markdown/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Mastering Markdown · GitHub Guides&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.wikiwand.com/zh/Markdown&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Markdown - Wikiwand&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.yangzhiping.com/tech/r-markdown-knitr.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Markdown 写作浅谈 - 阳志平的网志&lt;/a&gt;&lt;/li&gt;
+&lt;h4 id=&quot;常用的聚类算法&quot;&gt;&lt;a href=&quot;#常用的聚类算法&quot; class=&quot;headerlink&quot; title=&quot;常用的聚类算法&quot;&gt;&lt;/a&gt;常用的聚类算法&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;K均值聚类算法&lt;/li&gt;
+&lt;li&gt;期望最大化（Expectation Maximization,EM）聚类算法&lt;/li&gt;
 &lt;/ol&gt;
+&lt;h3 id=&quot;K均值聚类&quot;&gt;&lt;a href=&quot;#K均值聚类&quot; class=&quot;headerlink&quot; title=&quot;K均值聚类&quot;&gt;&lt;/a&gt;K均值聚类&lt;/h3&gt;&lt;p&gt;利用一个预定义的K值，即希望将数据划分为簇的数目，K均值聚类算法可找到各簇的最优质心。K均值聚类的最佳特质是各簇在本质上呈紧致的球状分布，且总会收敛到某个解。&lt;/p&gt;
+&lt;h4 id=&quot;K均值算法工作原理&quot;&gt;&lt;a href=&quot;#K均值算法工作原理&quot; class=&quot;headerlink&quot; title=&quot;K均值算法工作原理&quot;&gt;&lt;/a&gt;K均值算法工作原理&lt;/h4&gt;&lt;p&gt;K均值算法首先从某个基本配置开始。该算法随机从数据集中选择K个数据点，并将其定义为各簇的质心。接着，将数据集 中的每个点分配到与每个不同的质心距离最近的那个簇中。这样，我们便得到了一个由初始随机质心确定的聚类结果。但这显然不是我们想要的结果，因此我们重新计算各簇的均值来更新质心。然后，我们重复上述过程，直到质心的位置不再发生变动为止。&lt;/p&gt;
+&lt;h4 id=&quot;K均值缺陷&quot;&gt;&lt;a href=&quot;#K均值缺陷&quot; class=&quot;headerlink&quot; title=&quot;K均值缺陷&quot;&gt;&lt;/a&gt;K均值缺陷&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;各簇之间必须存在一个“硬”边界。这意味着每个数据点只能属于一个簇，无法跨越两个簇之间的界限。&lt;/li&gt;
+&lt;li&gt;适合于呈球状分布的数据。（欧式距离）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;EM聚类算法&quot;&gt;&lt;a href=&quot;#EM聚类算法&quot; class=&quot;headerlink&quot; title=&quot;EM聚类算法&quot;&gt;&lt;/a&gt;EM聚类算法&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;K均值：找到一个质心，找到与其相关的数据点；确定各簇之间的边界。&lt;/li&gt;
+&lt;li&gt;EM：获得一个数据点属于各簇的概率值，而非分配结果；适用于对不存在明确边界的数据进行分类。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;EM算法步骤&quot;&gt;&lt;a href=&quot;#EM算法步骤&quot; class=&quot;headerlink&quot; title=&quot;EM算法步骤&quot;&gt;&lt;/a&gt;EM算法步骤&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;计算期望&lt;/li&gt;
+&lt;li&gt;将期望最大化&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;不可能性定理&quot;&gt;&lt;a href=&quot;#不可能性定理&quot; class=&quot;headerlink&quot; title=&quot;不可能性定理&quot;&gt;&lt;/a&gt;不可能性定理&lt;/h4&gt;&lt;p&gt;丰富性、尺度不变性、一致性（最多只能获得三种属性中的两种）&lt;/p&gt;
+&lt;h2 id=&quot;核岭回归&quot;&gt;&lt;a href=&quot;#核岭回归&quot; class=&quot;headerlink&quot; title=&quot;核岭回归&quot;&gt;&lt;/a&gt;核岭回归&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;回归：从将X映射为Y的数据中拟合出一条直线。有监督的学习算法。对于能够求解的问题限制极少，更擅长使用连续变量。能够对数据进行平滑并移除离群点。&lt;/li&gt;
+&lt;li&gt;线性回归：给定一个数据集，拟合出逼近这些数据的最优直线。（例如依据身高预测体重）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;协同过滤&quot;&gt;&lt;a href=&quot;#协同过滤&quot; class=&quot;headerlink&quot; title=&quot;协同过滤&quot;&gt;&lt;/a&gt;协同过滤&lt;/h3&gt;&lt;p&gt;与其他用户关联的方式。&lt;em&gt;例：你喜欢喝啤酒，那你也可能喜欢杯子、杯垫等。即便你没有实际购买过这些物品，但由于与你类似的其他用户（也喜欢喝啤酒）购买了他们，因此你也很可能喜欢他们。&lt;/em&gt;&lt;/p&gt;
+&lt;h4 id=&quot;协同过滤算法&quot;&gt;&lt;a href=&quot;#协同过滤算法&quot; class=&quot;headerlink&quot; title=&quot;协同过滤算法&quot;&gt;&lt;/a&gt;协同过滤算法&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;找到那些与你有相同爱好的用户&lt;/li&gt;
+&lt;li&gt;利用来自其他相似用户的评分来进行推荐&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;解决上述问题&quot;&gt;&lt;a href=&quot;#解决上述问题&quot; class=&quot;headerlink&quot; title=&quot;解决上述问题&quot;&gt;&lt;/a&gt;解决上述问题&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;暴力法&lt;/li&gt;
+&lt;li&gt;K近邻搜索&lt;/li&gt;
+&lt;li&gt;回归&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;核技巧&quot;&gt;&lt;a href=&quot;#核技巧&quot; class=&quot;headerlink&quot; title=&quot;核技巧&quot;&gt;&lt;/a&gt;核技巧&lt;/h4&gt;&lt;p&gt;核技巧可以将非线性数据变换到一个新的特征空间，使其成为线性数据。核技巧是非常强大的工具，非常适用于求解数据非线性的问题。&lt;/p&gt;
+&lt;h2 id=&quot;模型改进与数据提取&quot;&gt;&lt;a href=&quot;#模型改进与数据提取&quot; class=&quot;headerlink&quot; title=&quot;模型改进与数据提取&quot;&gt;&lt;/a&gt;模型改进与数据提取&lt;/h2&gt;&lt;h4 id=&quot;维数灾难&quot;&gt;&lt;a href=&quot;#维数灾难&quot; class=&quot;headerlink&quot; title=&quot;维数灾难&quot;&gt;&lt;/a&gt;维数灾难&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;避免维数灾难的途径：降维&lt;/li&gt;
+&lt;li&gt;克服维数灾难：特征选择、特征变换&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;特征变换算法：&quot;&gt;&lt;a href=&quot;#特征变换算法：&quot; class=&quot;headerlink&quot; title=&quot;特征变换算法：&quot;&gt;&lt;/a&gt;特征变换算法：&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;主分量分析（Principle Component Analysis，PCA）&lt;/li&gt;
+&lt;li&gt;独立分量分析（Independent Component Analysis，ICA）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To be continued !&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Thoughtful Machine Learning by Matthew Kirk (O’Reilly).&lt;/p&gt;
+&lt;/blockquote&gt;
 </content>
     
     <summary type="html">
     
-      这是一份基本版的 Markdown 语法清单
+      机器学习读书笔记
     
     </summary>
     
-      <category term="Tool" scheme="http://blog.ybbz.site/categories/Tool/"/>
+      <category term="Machine-Learning" scheme="http://blog.ybbz.site/categories/Machine-Learning/"/>
     
     
-      <category term="Markdown" scheme="http://blog.ybbz.site/tags/Markdown/"/>
+      <category term="Machine-Learning" scheme="http://blog.ybbz.site/tags/Machine-Learning/"/>
     
   </entry>
   
   <entry>
-    <title>办公日常工具清单</title>
-    <link href="http://blog.ybbz.site/2016/04/01/Old-Posts-2015-08-20-Office-Tools/"/>
-    <id>http://blog.ybbz.site/2016/04/01/Old-Posts-2015-08-20-Office-Tools/</id>
-    <published>2016-04-01T09:52:35.000Z</published>
-    <updated>2016-04-02T08:20:42.000Z</updated>
+    <title>一道算法题</title>
+    <link href="http://blog.ybbz.site/2016/03/29/algorithm/"/>
+    <id>http://blog.ybbz.site/2016/03/29/algorithm/</id>
+    <published>2016-03-28T16:00:00.000Z</published>
+    <updated>2016-04-02T07:02:30.000Z</updated>
     
-    <content type="html">&lt;h2 id=&quot;配置穿墙工具-ShadowsocksX&quot;&gt;&lt;a href=&quot;#配置穿墙工具-ShadowsocksX&quot; class=&quot;headerlink&quot; title=&quot;配置穿墙工具 ShadowsocksX&quot;&gt;&lt;/a&gt;配置穿墙工具 ShadowsocksX&lt;/h2&gt;&lt;p&gt;ShadowsocksX 客户端文件下载：&lt;/p&gt;
+    <content type="html">&lt;p&gt;题目如下：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;box.com: &lt;a href=&quot;https://app.box.com/s/vtnmvm14sk1sk007m739a6tycu0jt6iw&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;DL&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;百度云：&lt;a href=&quot;http://pan.baidu.com/s/1sjmk0OH&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;DL&lt;/a&gt; Keyword: bfve&lt;/li&gt;
+&lt;li&gt;已知list1 = [20, 6, 15, 53, 47],已经排好序&lt;/li&gt;
+&lt;li&gt;已知list2 = [(6, ‘John’, ‘20’), (15, ‘Kim’, ‘18’),(20, ‘David’, ‘21’), (47, ‘Amy’, ‘23’), (53, ‘Mary’, ‘20’)]&lt;/li&gt;
+&lt;li&gt;把list2按照list1中的顺序重新排序，并把排序结果封装成json字符串，得到list3&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;配置：填写账号的服务器及相关信息&lt;/p&gt;
-&lt;p&gt;配置账户服务器表单。&lt;/p&gt;
-&lt;p&gt;安装后打开 ShadowsocksX 客户端，选择 Servers - Open Server Preferences。而后把相应的信息（服务器、端口、密码和加密方式）添加进去。&lt;/p&gt;
-&lt;p&gt;添加完，可以在浏览器输入 youtube.com / Facebook.com / Twitter.com 测试是否可用（第一次使用，请确认 SS 已在开启状态）。&lt;/p&gt;
-&lt;p&gt;使用时，如果 Auto Proxy Mode 无法使用，可以切换 Global Mode。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/K6Lc3Ff.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;网络音频下载&quot;&gt;&lt;a href=&quot;#网络音频下载&quot; class=&quot;headerlink&quot; title=&quot;网络音频下载&quot;&gt;&lt;/a&gt;网络音频下载&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/adkill-and-media-download/lcibdonokophlabplhpmmmjjbgohgcok&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Adkill and Media Download - Chrome 网上应用店&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/BY81Wle.png&quot; alt=&quot;Imgur&quot;&gt;&lt;/p&gt;
-&lt;p&gt;原理是，提取浏览器缓存文件。下载前需先进入页面，播放想要缓存的音频文件。而后点扩展下载（如果音频较长，需要多等一会儿才能缓存好）。&lt;/p&gt;
-&lt;h2 id=&quot;录音文件压缩程序（压缩文件大小）&quot;&gt;&lt;a href=&quot;#录音文件压缩程序（压缩文件大小）&quot; class=&quot;headerlink&quot; title=&quot;录音文件压缩程序（压缩文件大小）&quot;&gt;&lt;/a&gt;录音文件压缩程序（压缩文件大小）&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://itunes.apple.com/us/app/music-converter/id468990728?mt=12&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Mac App Store - Music Converter&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;压缩录音笔录取的音频文件，节省占用的空间或方便传输。&lt;/p&gt;
-&lt;p&gt;直接拖拽文件到界面里，而后点 Convert。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/eNzVlBz.png&quot; alt=&quot;MusicConverter&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;视频&quot;&gt;&lt;a href=&quot;#视频&quot; class=&quot;headerlink&quot; title=&quot;视频&quot;&gt;&lt;/a&gt;视频&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://download.flvcd.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;硕鼠下载中心&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;选 Mac 版&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/3VhdUDZ.png&quot; alt=&quot;FLVCD&quot;&gt;&lt;/p&gt;
-&lt;p&gt;将视频链接贴到里头，然后下载。视频较长时，会分多段下载。下载完自己再合并。&lt;/p&gt;
-&lt;h2 id=&quot;Markdown-扩展&quot;&gt;&lt;a href=&quot;#Markdown-扩展&quot; class=&quot;headerlink&quot; title=&quot;Markdown 扩展&quot;&gt;&lt;/a&gt;Markdown 扩展&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/copy-as-markdown/fkeaekngjflipcockcnpobkpbbfbhmdn&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Copy as Markdown - Chrome 网上应用店&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;将网页及链接复制时自动转为 Markdown 格式。当前页面选择复制。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/qmHfx6b.png&quot; alt=&quot;Copyasmarkdown&quot;&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://markdown-here.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Markdown Here&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;转换 Markdown 格式为网页显示（编辑器的预览效果）。发送邮件时较为常用。&lt;/p&gt;
-&lt;h2 id=&quot;比较好用的图床&quot;&gt;&lt;a href=&quot;#比较好用的图床&quot; class=&quot;headerlink&quot; title=&quot;比较好用的图床&quot;&gt;&lt;/a&gt;比较好用的图床&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.qiniu.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;七牛云存储&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://imgur.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Imgur&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://s1381.photobucket.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Photobucket&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;注册账号，上传并获取图片外链。&lt;/p&gt;
+&lt;p&gt;代码如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;list1 = [20, 6, 15, 53, 47]
+list2 = [(6, &amp;apos;John&amp;apos;, &amp;apos;20&amp;apos;), (15, &amp;apos;Kim&amp;apos;, &amp;apos;18&amp;apos;),
+         (20, &amp;apos;David&amp;apos;, &amp;apos;21&amp;apos;), (47, &amp;apos;Amy&amp;apos;, &amp;apos;23&amp;apos;), (53, &amp;apos;Mary&amp;apos;, &amp;apos;20&amp;apos;)]
+print(list1)
+print(list2)
+
+list3 = []
+# count = len(list1)
+# for i in range(0, count):
+#     dict = {}
+#     id = list1[i]
+#     dict[&amp;apos;id&amp;apos;] = id
+#     j = 0
+#     while j &amp;lt; count and list2[j][0] != id:
+#         j += 1
+#     dict[&amp;apos;name&amp;apos;] = list2[j][1]
+#     dict[&amp;apos;age&amp;apos;] = list2[j][2]
+#     list3.append(dict)
+
+
+# list2_dict = {}
+# for item2 in list2:
+#     list2_dict[item2[0]] = (item2[1], item2[2])
+# for item1 in list1:
+#     dict = {}
+#     dict[&amp;apos;id&amp;apos;] = item1
+#     dict[&amp;apos;name&amp;apos;] = list2_dict[item1][0]
+#     dict[&amp;apos;age&amp;apos;] = list2_dict[item1][1]
+#     list3.append(dict)
+
+list2_dict = {}
+for item2 in list2:
+    list2_dict[item2[0]] = {&amp;apos;name&amp;apos;: item2[1], &amp;apos;age&amp;apos;: item2[2]}
+for item1 in list1:
+    dict = list2_dict[item1]
+    dict[&amp;apos;id&amp;apos;] = item1
+    list3.append(dict)
+
+print(list3)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;^_^ 感谢我的本科室友~&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      一些零零碎碎的小工具
+      一道算法题
     
     </summary>
     
-      <category term="Tool" scheme="http://blog.ybbz.site/categories/Tool/"/>
+      <category term="Algorithm" scheme="http://blog.ybbz.site/categories/Algorithm/"/>
     
     
-      <category term="Mac" scheme="http://blog.ybbz.site/tags/Mac/"/>
+      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
+    
+      <category term="Algorithm" scheme="http://blog.ybbz.site/tags/Algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ajax跨域访问Flask构建的Python Web服务器</title>
+    <link href="http://blog.ybbz.site/2016/03/29/Ajax-Flask-Python-Web-Server/"/>
+    <id>http://blog.ybbz.site/2016/03/29/Ajax-Flask-Python-Web-Server/</id>
+    <published>2016-03-28T16:00:00.000Z</published>
+    <updated>2016-04-02T07:02:08.000Z</updated>
+    
+    <content type="html">&lt;p&gt;看到标题，你可能会觉得博主比较奇葩，为什么要把事情搞得这么复杂？其实博主也不想这样，只是去年已经用PHP搭建好了系统，而且功能、UI等也基本调试的差不多了；现在要借助Python强大而方便的数据分析功能来分析数据，最简单直接的也就是这么做了。或许之后，会考虑用Django等来重构整个系统，但这并不是现在的重点。&lt;/p&gt;
+&lt;h3 id=&quot;利用Ajax跨域访问Flask服务器&quot;&gt;&lt;a href=&quot;#利用Ajax跨域访问Flask服务器&quot; class=&quot;headerlink&quot; title=&quot;利用Ajax跨域访问Flask服务器&quot;&gt;&lt;/a&gt;利用Ajax跨域访问Flask服务器&lt;/h3&gt;&lt;p&gt;Web前端通过Ajax请求Flask服务器的接口：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
+    $(document).ready(function(){
+        $(&amp;quot;#click_demo&amp;quot;).click(function(){
+            //http request
+            $.post(&amp;quot;http://127.0.0.1:8080/demo&amp;quot;,
+            {
+               name:$(&amp;quot;#param&amp;quot;).text(),
+            },
+            function(data,status){
+                //alert(&amp;quot;status：&amp;quot; + status + &amp;quot;\ndata：&amp;quot; + data);
+                var myobj=eval(data);
+                var result=&amp;apos;&amp;apos;;
+                for (var i = 0;i &amp;lt; myobj.length;i++) {
+                    var item=&amp;apos;&amp;lt;p&amp;gt;&amp;apos;+myobj[i].name+&amp;apos;&amp;lt;/p&amp;gt;&amp;apos;;
+                    result=result+item;
+                }
+                $(&amp;quot;#result-element&amp;quot;)[0].innerHTML=result;
+                $(&amp;quot;#result-element&amp;quot;).show();
+            });
+        });
+    });
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Ajax跨域请求的时候可以在服务端设置header信息，来达到跨域请求的目的（不需要通过jsonp的方式设置ajax参数）：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Response.AddHeader(&amp;quot;Access-Control-Allow-Origin&amp;quot;, &amp;quot;*&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Flask服务器端代码如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;@app.route(&amp;apos;/demo&amp;apos;, methods=[&amp;apos;POST&amp;apos;])
+def home():
+    result_json = json.dumps(result)
+    # Response
+    resp = Response(result_json)
+    resp.headers[&amp;apos;Access-Control-Allow-Origin&amp;apos;] = &amp;apos;*&amp;apos;
+    return resp
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;Python操作Json&quot;&gt;&lt;a href=&quot;#Python操作Json&quot; class=&quot;headerlink&quot; title=&quot;Python操作Json&quot;&gt;&lt;/a&gt;Python操作Json&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;JSON (JavaScript Object Notation), specified by RFC 7159 (which obsoletes RFC 4627) and by ECMA-404, is a lightweight data interchange format inspired by JavaScript object literal syntax (although it is not a strict subset of JavaScript).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;import json
+
+list1 = [20, 6, 15, 53, 47]
+list2 = [(6, &amp;apos;John&amp;apos;, &amp;apos;20&amp;apos;), (20, &amp;apos;David&amp;apos;, &amp;apos;21&amp;apos;), (47, &amp;apos;Amy&amp;apos;, &amp;apos;23&amp;apos;), (15, &amp;apos;Kim&amp;apos;, &amp;apos;18&amp;apos;), (53, &amp;apos;Mary&amp;apos;, &amp;apos;20&amp;apos;)]
+
+list3 = []
+for a in list2:
+    dict = {}
+    dict[&amp;apos;id&amp;apos;] = a[0]
+    dict[&amp;apos;name&amp;apos;] = a[1]
+    dict[&amp;apos;age&amp;apos;] = a[2]
+    list3.append(dict)
+result = {}
+result[&amp;apos;id&amp;apos;] = list1
+result[&amp;apos;data&amp;apos;] = list3
+
+json1 = json.dumps(list1)
+json2 = json.dumps(list2)
+json3 = json.dumps(list3)
+json4 = json.dumps(result)
+print(json1)
+print(json2)
+print(json3)
+print(json4)
+
+decode = json.loads(json4)
+print(decode)
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;JS解析Json数据&quot;&gt;&lt;a href=&quot;#JS解析Json数据&quot; class=&quot;headerlink&quot; title=&quot;JS解析Json数据&quot;&gt;&lt;/a&gt;JS解析Json数据&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;SCRIPT LANGUAGE=&amp;quot;JavaScript&amp;quot;&amp;gt;
+    var t=&amp;quot;{&amp;apos;firstName&amp;apos;: &amp;apos;cyra&amp;apos;, &amp;apos;lastName&amp;apos;: &amp;apos;richardson&amp;apos;, &amp;apos;address&amp;apos;: { &amp;apos;streetAddress&amp;apos;: &amp;apos;1 Microsoft way&amp;apos;, &amp;apos;city&amp;apos;: &amp;apos;Redmond&amp;apos;, &amp;apos;state&amp;apos;: &amp;apos;WA&amp;apos;, &amp;apos;postalCode&amp;apos;: 98052 },&amp;apos;phoneNumbers&amp;apos;: [ &amp;apos;425-777-7777&amp;apos;,&amp;apos;206-777-7777&amp;apos; ] }&amp;quot;;
+    var jsonobj=eval(&amp;apos;(&amp;apos;+t+&amp;apos;)&amp;apos;);
+    alert(jsonobj.firstName);
+    alert(jsonobj.lastName);
+
+
+    var t2=&amp;quot;[{name:&amp;apos;zhangsan&amp;apos;,age:&amp;apos;24&amp;apos;},{name:&amp;apos;lisi&amp;apos;,age:&amp;apos;30&amp;apos;},{name:&amp;apos;wangwu&amp;apos;,age:&amp;apos;16&amp;apos;},{name:&amp;apos;tianqi&amp;apos;,age:&amp;apos;7&amp;apos;}] &amp;quot;;
+    var myobj=eval(t2);
+    for(var i=0;i&amp;lt;myobj.length;i++){
+        alert(myobj[i].name);
+        alert(myobj[i].age);
+    }
+
+    var t3=&amp;quot;[[&amp;apos;14113295100&amp;apos;,&amp;apos;社旗县国税局桥头税务所&amp;apos;,&amp;apos;社旗县城郊乡长江路西段&amp;apos;]]&amp;quot;;
+    //通过eval()函数可以将JSON字符串转化为对象
+    var obj = eval(t3);
+    for(var i=0;i&amp;lt;obj.length;i++){
+        for(var j=0;j&amp;lt;obj[i].length;j++){
+            alert(obj[i][j]);
+        }
+    }
+&amp;lt;/SCRIPT&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;参考资料：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/mahatmasmile/archive/2013/03/29/2989505.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Ajax跨域请求&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/25860304/how-do-i-set-response-headers-in-flask&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;How do I set response headers in Flask?&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://flask.pocoo.org/docs/0.10/api/#response-objects&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Flask API&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.python.org/3/library/json.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Python操作json的API&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.360doc.com/content/16/0329/20/32081299_546351123.shtml&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;JS解析json数据（如何将json字符串转化为数组）&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      利用Ajax跨域访问Flask构建的Python Web服务器
+    
+    </summary>
+    
+      <category term="Python" scheme="http://blog.ybbz.site/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
+    
+      <category term="Flask" scheme="http://blog.ybbz.site/tags/Flask/"/>
+    
+      <category term="Ajax" scheme="http://blog.ybbz.site/tags/Ajax/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>随笔：写在三月末</title>
+    <link href="http://blog.ybbz.site/2016/03/28/Just-write-about-my-life/"/>
+    <id>http://blog.ybbz.site/2016/03/28/Just-write-about-my-life/</id>
+    <published>2016-03-27T16:00:00.000Z</published>
+    <updated>2016-04-03T08:17:56.000Z</updated>
+    
+    <content type="html">&lt;p&gt;这个学期，虽然才刚刚开始，但是已经历了太多事情！&lt;/p&gt;
+&lt;p&gt;先是2月份过完年返校，从年前实习的公司离职，在公司实习的经历让我很愉快，因为可以安心的写代码、搞研究，这于我，就够了！离职后，希望把研究生课题尽快搞定；课题方面，倒也算是取得了一些进展，可也并不能让人满意，还需要努力，希望后续会顺利吧。&lt;/p&gt;
+&lt;p&gt;上上周接手了一台服务器，想把课题相关的代码放在上面跑，可这过程真是无比曲折。上上周五，安装好了系统，周六周日还算正常；到了上周一，系统挂了，调了很久也没调好。你肯定无法想象，我在一间噪声无比巨大的小机房里，一待就是几小时，出了机房耳朵都嗡嗡地响；可也忍了下来，因为我相信只要坚持下来，我就一定会有收获，到了上周五，终于又调试好了。周六周日运行正常，我也利用周末的时间埋首机房，配置好了各种环境。可是到今天（周一），机器又挂了！完全没理由！或许是我经验不够，看样子只能暂时放弃了。不知道是不是工作日，电压问题……为什么人家阿里云就那么稳定，不怎么出问题。&lt;/p&gt;
+&lt;p&gt;春天到了！满校园的花朵盛开，红的、白的、粉的、黄的、紫的……然而，我却无法欣赏。我竟然对花粉过敏！刚开始我只是以为我感冒了、才打喷嚏，可我除了打喷嚏，也没有其他症状啊？而且，在屋子里状态很好，只要到了室外，马上就开始打喷嚏。为了验证我是真的过敏，我特意走到了一颗开满了花儿的树下，然后，几秒钟之后，我就开始打喷嚏了，喷嚏打的我都流眼泪了。我也终于相信我是过敏了！（奇怪，为什么以前我没发现？）&lt;/p&gt;
+&lt;p&gt;自己在生活各个方面真的是各种迟钝，比如上面说的过敏，再比如，在食堂吃饭，买了饭菜就开始吃的津津有味，过了一会儿，女票问我，你打的这个菜/汤怎么这么咸？我也终于反应过来了，是啊，怎么这么咸！然后对于这些菜/汤，我就无法再入口了。所以，从小到大，我就特别“讨厌”同桌吃饭的人点评饭菜，能等我吃完了你再说吗？&lt;/p&gt;
+&lt;p&gt;有时候晚上睡觉不踏实，便想着去跑步，提前消耗掉每天剩余的精力，再洗澡睡觉。效果嘛，时好时坏吧，和睡觉前的心情、状态也有关系，有时候想的太多就睡不好了……&lt;/p&gt;
+&lt;p&gt;也喜欢上了吃水果，最喜欢吃的是苹果，每次都买一大袋子，吃完了就马上再买；对身体真的很有好处，可以明显感受到身体的变化（那么问题来了？果然是食堂的饭菜不合理吗？）&lt;/p&gt;
+&lt;p&gt;还想再吐槽点儿小事～为嘛每次好心把自行车借给别人，还回来就变样了，每次都要花几十大洋去修理。借了别人的东西，还一点儿不爱惜，谁还会再次借给你？己所不欲，勿施于人！&lt;/p&gt;
+&lt;p&gt;今天还和一个经管的博士后学姐在图书馆咖啡厅讨论了快两个小时，也算是跨学科交流吧，很有收获。就这些吧，还是先把心沉下来，好好的搞科研。写在三月末，迎接崭新的四月！&lt;/p&gt;
+&lt;p&gt;最后的最后，推荐一个Mac上好用的图片压缩方法，不想使用额外的软件（PS等）对照片作处理的话，图个方便的话，可以一试，反正我很喜欢这种方式：&lt;br&gt;1.用mac自带的预览打开图片；2.工具－调整大小；3.文件－存储&lt;br&gt;另外，如果想对照片做更多处理的话，也可以使用Mac自带的iPhoto来编辑图片。&lt;/p&gt;
+&lt;p&gt;效果图如下，第一张是校园随手拍的夜景，后两张是黑马运动会前一晚操场调试大屏幕时拍的。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160328_1.jpg&quot; alt=&quot;20160328_1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160328_2.jpg&quot; alt=&quot;20160328_2&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160328_3.jpg&quot; alt=&quot;20160328_3&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      随笔：写在三月末
+    
+    </summary>
+    
+      <category term="Life" scheme="http://blog.ybbz.site/categories/Life/"/>
+    
+    
+      <category term="Life" scheme="http://blog.ybbz.site/tags/Life/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>爬虫实战：抓取在iBeiKe的所有发帖信息保存到数据库，进行可视化分析</title>
+    <link href="http://blog.ybbz.site/2016/03/27/crawl-ibeike/"/>
+    <id>http://blog.ybbz.site/2016/03/27/crawl-ibeike/</id>
+    <published>2016-03-26T16:00:00.000Z</published>
+    <updated>2016-04-13T13:47:38.000Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;iBeiKe网站，或简称iBeiKe（中文：爱北科，英文缩写：IBK）是北京科技大学学生会下属的技术性学生组织iBeiKe团队建立和维护的网站，主要服务于北京科技大学的师生。网站成立于2001年3月，时称“北科大学生之家”。iBeiKe网站是北京科技大学学生会的宣传门户，同时也是一个综合性的学生网站及校园服务网站。iBeiKe网站也是北京科技大学历史最长的学生网站。网站的标语是“网上网下，一样精彩”。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;博主本科时期在iBeiKe担任了n年的版主和总版主（好吧，现在好像还没卸任？），挥洒了无数的青春与汗水。也结交了无数的基友（有男有女又老又少）。。。&lt;/p&gt;
+&lt;p&gt;声明：用爬虫抓取数据，没有任何坏心思，纯粹的兴趣与技术交流，抓的也都是自己的数据，不侵犯他人隐私。若牵扯到各方利益，请联系我！&lt;/p&gt;
+&lt;p&gt;言归正传～～～github传送门：&lt;a href=&quot;https://github.com/ybbz/crawler&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;crawl_ibeike1/2&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
+&lt;p&gt;效果图如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160330_1.png&quot; alt=&quot;20160330_1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160330_2.png&quot; alt=&quot;20160330_2&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;抓取数据并清洗，保存到数据库&quot;&gt;&lt;a href=&quot;#抓取数据并清洗，保存到数据库&quot; class=&quot;headerlink&quot; title=&quot;抓取数据并清洗，保存到数据库&quot;&gt;&lt;/a&gt;抓取数据并清洗，保存到数据库&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;# encoding=utf-8
+
+import httplib2
+import mysql.connector
+from bs4 import BeautifulSoup
+
+result = []
+pageNum = &amp;apos;total page number&amp;apos;
+uid = &amp;apos;your uid&amp;apos;
+cookie = &amp;quot;your cookies&amp;quot;
+
+url = &amp;apos;http://city.ibeike.com/home.php?mod=space&amp;amp;uid=&amp;apos; + uid + &amp;apos;&amp;amp;do=thread&amp;amp;view=me&amp;amp;order=dateline&amp;amp;from=space&amp;amp;page=&amp;apos;
+
+headers = {&amp;quot;Connection&amp;quot;: &amp;quot;keep-alive&amp;quot;,
+           &amp;quot;Cookie&amp;quot;: cookie,
+           &amp;quot;Content-Type&amp;quot;: &amp;quot;application/xhtml+xml&amp;quot;}
+
+for page in range(1, pageNum + 1):
+    cur_page = page
+    url_full = url + str(cur_page)
+    # http request
+    http = httplib2.Http()
+    response, content = http.request(url_full, &amp;quot;GET&amp;quot;, headers=headers)
+    if response.status == 200:
+        # print(response)
+        # print(content.decode(&amp;apos;utf-8&amp;apos;))
+        soup = BeautifulSoup(content, &amp;quot;lxml&amp;quot;)
+        table = soup.find_all(&amp;apos;table&amp;apos;)[1]
+        tr = table.find_all(&amp;apos;tr&amp;apos;, class_=&amp;apos;&amp;apos;)
+        for item in tr:
+            item_list = []
+            # print(item.prettify())
+            item_title = item.th.a.string
+            item_group = item.find_all(&amp;apos;td&amp;apos;, class_=&amp;apos;&amp;apos;)[0].a.string
+            item_reply = item.select(&amp;apos;td[class=&amp;quot;num&amp;quot;]&amp;apos;)[0].a.string
+            item_watch = item.select(&amp;apos;td[class=&amp;quot;num&amp;quot;]&amp;apos;)[0].em.string
+            # save to the result list
+            item = (str(item_title), str(item_group), int(item_reply), int(item_watch))
+            result.append(item)
+print(result)
+
+# connect database
+conn = mysql.connector.connect(host=&amp;quot;hostname&amp;quot;, user=&amp;quot;username&amp;quot;, passwd=&amp;quot;password&amp;quot;, db=&amp;quot;database&amp;quot;)
+cursor = conn.cursor()
+# save data
+sql = &amp;quot;insert into ibeike(title,groups,reply,watch) values(%s,%s,%s,%s)&amp;quot;
+cursor.executemany(sql, result)
+conn.commit()
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;数据分析与数据可视化&quot;&gt;&lt;a href=&quot;#数据分析与数据可视化&quot; class=&quot;headerlink&quot; title=&quot;数据分析与数据可视化&quot;&gt;&lt;/a&gt;数据分析与数据可视化&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;# encoding=utf-8
+
+import mysql.connector
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# connect database
+conn = mysql.connector.connect(host=&amp;quot;hostname&amp;quot;, user=&amp;quot;username&amp;quot;,passwd=&amp;quot;password&amp;quot;, db=&amp;quot;database&amp;quot;)
+cursor = conn.cursor()
+# query data
+cursor.execute(&amp;apos;select count(*),max(reply),min(reply),max(watch),min(watch) from ibeike&amp;apos;)
+values1 = cursor.fetchall()
+print(&amp;quot;ibeike:totally&amp;quot; + str(values1[0][0]) + &amp;quot;data&amp;quot;)
+list = [(&amp;apos;highest reply&amp;apos;, values1[0][1]), (&amp;apos;lowest reply&amp;apos;, values1[0][2]),(&amp;apos;hightest watch&amp;apos;, values1[0][3]),(&amp;apos;lowest watch&amp;apos;, values1[0][4])]
+# draw picture
+budget = pd.DataFrame(list, columns=[&amp;apos;type&amp;apos;, &amp;apos;count&amp;apos;])
+sns.set_style(&amp;quot;darkgrid&amp;quot;)
+bar_plot = sns.barplot(x=budget[&amp;quot;type&amp;quot;], y=budget[&amp;quot;count&amp;quot;],palette=&amp;quot;muted&amp;quot;, order=budget[&amp;quot;type&amp;quot;].tolist())
+plt.show()
+
+# query data
+cursor.execute(&amp;apos;select count(id),groups from ibeike group by groups&amp;apos;)
+values2 = cursor.fetchall()
+values2.append((values1[0][0], &amp;apos;all sort&amp;apos;))
+result = sorted(values2)
+result.reverse()
+# draw picture
+budget = pd.DataFrame(result, columns=[&amp;apos;count&amp;apos;, &amp;apos;sort&amp;apos;])
+sns.set_style(&amp;quot;darkgrid&amp;quot;)
+bar_plot = sns.barplot(x=budget[&amp;quot;sort&amp;quot;], y=budget[&amp;quot;count&amp;quot;],palette=&amp;quot;muted&amp;quot;, order=budget[&amp;quot;sort&amp;quot;].tolist())
+plt.xticks(rotation=30)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;参考资料：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://cuiqingcai.com/1319.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Python爬虫利器二之Beautiful Soup的用法&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      爬虫实战：抓取在iBeiKe的所有发帖信息保存到数据库，进行可视化分析
+    
+    </summary>
+    
+      <category term="Crawler" scheme="http://blog.ybbz.site/categories/Crawler/"/>
+    
+    
+      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
+    
+      <category term="Crawler" scheme="http://blog.ybbz.site/tags/Crawler/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>爬虫实战：抓取某人所有微博并处理，绘制top30关键词的图表</title>
+    <link href="http://blog.ybbz.site/2016/03/27/crawl_weibo/"/>
+    <id>http://blog.ybbz.site/2016/03/27/crawl_weibo/</id>
+    <published>2016-03-26T16:00:00.000Z</published>
+    <updated>2016-04-13T13:47:29.000Z</updated>
+    
+    <content type="html">&lt;p&gt;github传送门：&lt;a href=&quot;https://github.com/ybbz/crawler&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;crawl_weibo&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
+&lt;p&gt;声明：用爬虫抓取数据，没有任何坏心思，纯粹的兴趣与技术交流，抓的也都是自己的数据，不侵犯他人隐私。若牵扯到各方利益，请联系我！&lt;/p&gt;
+&lt;p&gt;效果图如下：&lt;br&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160327_1.png&quot; alt=&quot;20160327_1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;代码如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# encoding=utf-8
+
+import requests
+from lxml import etree
+import jieba
+import csv
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+result = &amp;apos;&amp;apos;
+count = 1
+user_id = &amp;apos;your weibo user_id&amp;apos;
+cookie = {&amp;quot;Cookie&amp;quot;: &amp;apos;your weibo cookie&amp;apos;}
+download_path = &amp;apos;/Users/ybbz/Downloads/weibo/&amp;apos;
+
+print(&amp;apos;crawl the text of your weibo: start...&amp;apos;)
+
+# get total page number
+html = requests.get(&amp;apos;http://weibo.cn/%d/profile?page=1&amp;apos; % user_id, cookies=cookie).content
+selector = etree.HTML(html)
+pageNum = int((selector.xpath(&amp;apos;//input[@name=&amp;quot;mp&amp;quot;]&amp;apos;)[0].attrib[&amp;apos;value&amp;apos;]))
+
+# crawl your weibo
+for page in range(1, pageNum + 1):
+    # for page in range(1, 2):
+    # get lxml
+    url = &amp;apos;http://weibo.cn/%d/profile?page=%d&amp;apos; % (user_id, page)
+    lxml1 = requests.get(url, cookies=cookie).content
+    # get text
+    selector = etree.HTML(lxml1)
+    content = selector.xpath(&amp;apos;//span[@class=&amp;quot;ctt&amp;quot;]&amp;apos;)
+    for each in content:
+        text = each.xpath(&amp;apos;string(.)&amp;apos;)
+        text = &amp;quot;%d :&amp;quot; % count + text + &amp;quot;\n&amp;quot;
+        result += text
+        count += 1
+
+# write the result to the document
+with open(download_path + str(user_id), &amp;apos;w&amp;apos;) as f:
+    f.write(result)
+
+print(&amp;apos;crawl : done, a total of %d data.&amp;apos; % (count - 1))
+######################################################
+print(&amp;apos;analyze the text of your weibo : start...&amp;apos;)
+
+stop_list = []
+word_list = []
+word_dict = {}
+word_frequency = []
+
+file_stopwords = &amp;apos;stopwords.txt&amp;apos;
+
+# read stopwords.txt,get stop words list
+with open(file_stopwords, &amp;apos;r&amp;apos;) as f_stop:
+    f_stop_text = f_stop.read()
+    stop_list = f_stop_text.split(&amp;apos;\n&amp;apos;)
+
+# cut the text result of your weibo with jieba
+result_cut = jieba.cut_for_search(result)
+
+# remove all stop words,get the new word list
+for cut in result_cut:
+    if not (cut.strip() in stop_list):
+        word_list.append(cut)
+
+# statistics frequency of the new word list
+for word in word_list:
+    if word not in word_dict:
+        word_dict[word] = 1
+    else:
+        word_dict[word] += 1
+
+# get the list of frequency
+for key in word_dict:
+    word_frequency.append((word_dict[key], key))
+
+# sort the result and get top20
+word_30 = sorted(word_frequency)[-30:]
+word_30.reverse()
+
+print(&amp;apos;analyze : done.&amp;apos;)
+######################################################
+print(&amp;apos;draw : start...&amp;apos;)
+
+csv_path = &amp;apos;/Users/ybbz/Downloads/weibo/weibo.csv&amp;apos;
+
+# write top30 result to csv document
+with open(csv_path, &amp;apos;w&amp;apos;) as f:
+    f_csv = csv.writer(f)
+    f_csv.writerow([&amp;apos;frequency&amp;apos;, &amp;apos;word&amp;apos;])
+    f_csv.writerows(word_30)
+
+# read data and draw picture
+budget = pd.read_csv(csv_path)
+sns.set_style(&amp;quot;darkgrid&amp;quot;)
+bar_plot = sns.barplot(x=budget[&amp;quot;word&amp;quot;], y=budget[&amp;quot;frequency&amp;quot;], palette=&amp;quot;muted&amp;quot;, order=budget[&amp;quot;word&amp;quot;].tolist())
+plt.xticks(rotation=0)
+plt.show()
+
+print(&amp;apos;draw : done.&amp;apos;)
+&lt;/code&gt;&lt;/pre&gt;</content>
+    
+    <summary type="html">
+    
+      爬虫实战：抓取某人所有微博并处理，绘制top30关键词的图表
+    
+    </summary>
+    
+      <category term="Crawler" scheme="http://blog.ybbz.site/categories/Crawler/"/>
+    
+    
+      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
+    
+      <category term="Crawler" scheme="http://blog.ybbz.site/tags/Crawler/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>爬虫入门：抓取网页所有图片并保存到本地</title>
+    <link href="http://blog.ybbz.site/2016/03/26/crawl-get-html-img/"/>
+    <id>http://blog.ybbz.site/2016/03/26/crawl-get-html-img/</id>
+    <published>2016-03-25T16:00:00.000Z</published>
+    <updated>2016-04-02T07:00:58.000Z</updated>
+    
+    <content type="html">&lt;p&gt;从img标签中爬取到的src图片链接可能是相对或者绝对路径，视网站情况而定，具体的可以审查元素看一下。如果是相对路径，则需要补全（下面的代码就是这种情况）。如果两者都有，则需要再另外处理了。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from urllib import request, parse
+import re
+
+def get_html_img(url):
+    req = request.Request(url)
+    with request.urlopen(req) as f:
+        print(&amp;apos;Status:&amp;apos;, f.status, f.reason)
+        for k, v in f.getheaders():
+            print(&amp;apos;%s: %s&amp;apos; % (k, v))
+        content = f.read()
+        print(&amp;apos;Content:&amp;apos;, content)
+        body = re.findall(&amp;apos;&amp;lt;body&amp;gt;(.*?)&amp;lt;/body&amp;gt;&amp;apos;, str(content), re.S)
+        img_urls = re.findall(&amp;apos;src=&amp;quot;(.*?)&amp;quot;&amp;apos;, str(body), re.S)
+        count = 1
+        local_dir = &amp;apos;/Users/Downloads/&amp;apos;
+        print(&amp;quot;download images start ……&amp;quot;)
+        for img_url in img_urls:
+            img_url_full = url + img_url
+            # 下载图片
+            local_name = local_dir + str(count) + &amp;apos;.jpg&amp;apos;
+            count += 1
+            try:
+                request.urlretrieve(img_url_full, local_name)
+            except Exception as e:
+                continue
+        print(&amp;quot;download images success !&amp;quot;)
+
+url = &amp;apos;http://www.xxx.com&amp;apos;
+get_html_img(url)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在Github新建了一个仓库，记录自己写的&lt;a href=&quot;https://github.com/ybbz/crawler&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;爬虫&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      爬虫入门：抓取网页所有图片并保存到本地
+    
+    </summary>
+    
+      <category term="Crawler" scheme="http://blog.ybbz.site/categories/Crawler/"/>
+    
+    
+      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
+    
+      <category term="Crawler" scheme="http://blog.ybbz.site/tags/Crawler/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用终端登录校园网</title>
+    <link href="http://blog.ybbz.site/2016/03/24/terminal-telnet/"/>
+    <id>http://blog.ybbz.site/2016/03/24/terminal-telnet/</id>
+    <published>2016-03-23T16:00:00.000Z</published>
+    <updated>2016-04-02T06:59:51.000Z</updated>
+    
+    <content type="html">&lt;p&gt;昨晚和队友们聚会，打车时想到了自己之前遇到的一个待解决问题（用终端登录校园网），就提了出来。一个队友说可以写个脚本，另一个队友说他以前写过，然后我就直接拿来用了。&lt;a href=&quot;https://github.com/chensonglu/login-USTB-campus-network&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;login-USTB-campus-network&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;代码如下：（注释得非常到位，让我看了觉得很惭愧～）&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# coding=utf8
+&amp;quot;&amp;quot;&amp;quot;
+The script is used to log in USTB campus network
+Modify username and password to yours
+Put the script in computer startup items
+Then computer will log in campus network automatically when startup
+Python version：2.7.5
+&amp;quot;&amp;quot;&amp;quot;
+
+import httplib
+import urllib
+import subprocess
+import re
+
+&amp;quot;&amp;quot;&amp;quot;
+This function will return computer&amp;apos;s local temporary ipv6 address if it exists,
+otherwise return None.
+Every computer has two ipv6 addresses, a ipv6 address and a temporary ipv6 address.
+We use the temporary ipv6 address.
+&amp;quot;&amp;quot;&amp;quot;
+def get_local_tmp_v6ip():
+    get_ipv6_process = subprocess.Popen(&amp;quot;ipconfig&amp;quot;, stdout = subprocess.PIPE)
+    output = (get_ipv6_process.stdout.read())
+    ipv6_pattern=&amp;apos;(([a-f0-9]{1,4}:){7}[a-f0-9]{1,4})&amp;apos;
+    m = re.findall(ipv6_pattern, str(output))
+    if m is not None:
+        #m is a list of tuples
+        #m[1] is the second tuple
+        #m[1][0] is the temporary ipv6 address
+        return m[1][0]
+    else:
+        return None
+
+#modify username and password to yours
+username=&amp;apos;your username&amp;apos;
+password=&amp;apos;your password&amp;apos;
+savePWD=&amp;apos;on&amp;apos;
+
+headers = {&amp;quot;Connection&amp;quot;: &amp;quot;keep-alive&amp;quot;,
+           &amp;quot;Cookie&amp;quot;: &amp;quot;myusername=%s; username=%s; smartdot=%s; pwd=%s&amp;quot; % (username, username, password, password),
+           &amp;quot;Content-Type&amp;quot;: &amp;quot;application/x-www-form-urlencoded&amp;quot;}
+
+body = urllib.urlencode({&amp;apos;DDDDD&amp;apos;:username,     
+                           &amp;apos;upass&amp;apos;:password,     
+                           &amp;apos;0MKKey&amp;apos;:&amp;apos;123456789&amp;apos;,     
+                           &amp;apos;v6ip&amp;apos;:get_local_tmp_v6ip(),     
+                           &amp;apos;savePWD&amp;apos;:savePWD})
+
+conn = httplib.HTTPConnection(&amp;quot;202.204.48.66&amp;quot;)
+conn.request(&amp;quot;POST&amp;quot;, url=&amp;quot;/&amp;quot;, body = body, headers = headers)
+response = conn.getresponse()
+if response.status == 200:
+    print response.status, response.reason
+    print response.msg
+    #conn.close()
+
+    #get your network information
+    #print response.read()
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;处理过程就是往校园网登陆网址（202.204.48.66）提交POST请求；提交请求时附加自己的校园网账户信息，强迫症特意查看了一下登录页面的源代码，参数一致。代码是用Python2.7写的，然后自己又修改出了一个Python3.5的版本：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# coding=utf8
+&amp;quot;&amp;quot;&amp;quot;
+The script is used to log in USTB campus network
+Modify username and password to yours
+Put the script in computer startup items
+Then computer will log in campus network automatically when startup
+Python version：3.5.1
+&amp;quot;&amp;quot;&amp;quot;
+
+import httplib2
+import urllib
+import subprocess
+import re
+
+&amp;quot;&amp;quot;&amp;quot;
+This function will return computer&amp;apos;s local temporary ipv6 address if it exists,
+otherwise return None.
+Every computer has two ipv6 addresses, a ipv6 address and a temporary ipv6 address.
+We use the temporary ipv6 address.
+&amp;quot;&amp;quot;&amp;quot;
+
+
+def get_local_tmp_v6ip():
+    get_ipv6_process = subprocess.Popen(&amp;quot;ifconfig&amp;quot;, stdout=subprocess.PIPE)
+    output = (get_ipv6_process.stdout.read())
+    ipv6_pattern = &amp;apos;(([a-f0-9]{1,4}:){7}[a-f0-9]{1,4})&amp;apos;
+    m = re.findall(ipv6_pattern, str(output))
+    if m is not None:
+        # m is a list of tuples
+        # m[1] is the second tuple
+        # m[1][0] is the temporary ipv6 address
+        return m[1][0]
+    else:
+        return None
+
+
+# modify username and password to yours
+username=&amp;apos;your username&amp;apos;
+password=&amp;apos;your password&amp;apos;
+savePWD = &amp;apos;on&amp;apos;
+
+headers = {&amp;quot;Connection&amp;quot;: &amp;quot;keep-alive&amp;quot;,
+           &amp;quot;Cookie&amp;quot;: &amp;quot;myusername=%s; username=%s; smartdot=%s; pwd=%s&amp;quot; % (username, username, password, password),
+           &amp;quot;Content-Type&amp;quot;: &amp;quot;application/x-www-form-urlencoded&amp;quot;}
+
+body = urllib.parse.urlencode({&amp;apos;DDDDD&amp;apos;: username,
+                               &amp;apos;upass&amp;apos;: password,
+                               &amp;apos;0MKKey&amp;apos;: &amp;apos;123456789&amp;apos;,
+                               &amp;apos;v6ip&amp;apos;: get_local_tmp_v6ip(),
+                               &amp;apos;savePWD&amp;apos;: savePWD})
+
+http = httplib2.Http()
+response, content = http.request(&amp;quot;http://202.204.48.66&amp;quot;, &amp;quot;POST&amp;quot;, body=body, headers=headers)
+if response.status == 200:
+    print(response)
+    print(content)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后又想到，这种事情说得简单点，就是一个网络请求，那直接用urllib来做就是了，于是有了下面这个：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# coding=utf8
+&amp;quot;&amp;quot;&amp;quot;
+The script is used to log in USTB campus network
+Modify username and password to yours
+Put the script in computer startup items
+Then computer will log in campus network automatically when startup
+Python version：3.5.1
+&amp;quot;&amp;quot;&amp;quot;
+
+from urllib import request, parse
+import subprocess, re
+
+
+def get_local_tmp_v6ip():
+    get_ipv6_process = subprocess.Popen(&amp;quot;ifconfig&amp;quot;, stdout=subprocess.PIPE)
+    output = (get_ipv6_process.stdout.read())
+    ipv6_pattern = &amp;apos;(([a-f0-9]{1,4}:){7}[a-f0-9]{1,4})&amp;apos;
+    m = re.findall(ipv6_pattern, str(output))
+    if m is not None:
+        # m is a list of tuples
+        # m[1] is the second tuple
+        # m[1][0] is the temporary ipv6 address
+        return m[1][0]
+    else:
+        return None
+
+
+# modify username and password to yours
+username=&amp;apos;your username&amp;apos;
+password=&amp;apos;your password&amp;apos;
+savePWD = &amp;apos;on&amp;apos;
+
+body = parse.urlencode({&amp;apos;DDDDD&amp;apos;: username,
+                        &amp;apos;upass&amp;apos;: password,
+                        &amp;apos;0MKKey&amp;apos;: &amp;apos;123456789&amp;apos;,
+                        &amp;apos;v6ip&amp;apos;: get_local_tmp_v6ip(),
+                        &amp;apos;savePWD&amp;apos;: savePWD})
+
+req = request.Request(&amp;quot;http://202.204.48.66&amp;quot;)
+req.add_header(&amp;apos;Cookie&amp;apos;, &amp;apos;myusername=%s; username=%s; smartdot=%s; pwd=%s&amp;apos; % (username, username, password, password))
+
+print(&amp;apos;Logging in Campus Network……&amp;apos;)
+with request.urlopen(req, data=body.encode(&amp;apos;utf-8&amp;apos;)) as f:
+    print(&amp;apos;Status:&amp;apos;, f.status, f.reason)
+    for k, v in f.getheaders():
+        print(&amp;apos;%s: %s&amp;apos; % (k, v))
+    print(&amp;apos;Content:&amp;apos;, f.read())
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;至于为什么用urllib而去掉了前面得httplib，我觉得可以用&lt;a href=&quot;http://stackoverflow.com/questions/3305250/python-urllib-vs-httplib&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Stack Overflow&lt;/a&gt;上面的一段话来解释：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;urllib (particularly urllib2) handles many things by default or has appropriate libs to do so. For example, urllib2 will follow redirects automatically and you can use cookiejar to handle login scripts. These are all things you’d have to code yourself if you were using httplib.&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+    
+    <summary type="html">
+    
+      用终端登录校园网
+    
+    </summary>
+    
+      <category term="Python" scheme="http://blog.ybbz.site/categories/Python/"/>
+    
+    
+      <category term="HTTP" scheme="http://blog.ybbz.site/tags/HTTP/"/>
+    
+      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
     
   </entry>
   

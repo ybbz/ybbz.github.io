@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.ybbz.site/2016/05/01/Hadoop-foundation-one/</loc>
+    
+    <lastmod>2016-04-23T09:03:25.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2016/05/01/Hadoop-foundation-two/</loc>
+    
+    <lastmod>2016-04-23T09:03:19.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.ybbz.site/about/index.html</loc>
     
     <lastmod>2016-04-23T08:53:25.000Z</lastmod>
@@ -19,13 +33,6 @@
     <loc>http://blog.ybbz.site/tag/index.html</loc>
     
     <lastmod>2016-04-23T08:30:44.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.ybbz.site/2016/04/23/hello-world/</loc>
-    
-    <lastmod>2016-04-23T07:51:12.000Z</lastmod>
     
   </url>
   
@@ -51,37 +58,23 @@
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/17/Old-Posts-2016-03-14-android-sina-weibo/</loc>
+    <loc>http://blog.ybbz.site/2016/03/14/android-sina-weibo/</loc>
     
     <lastmod>2016-04-18T11:27:51.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/18/Old-Posts-2015-12-01-php-foundation/</loc>
+    <loc>http://blog.ybbz.site/2015/12/01/php-foundation/</loc>
     
     <lastmod>2016-04-18T05:26:39.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/17/Old-Posts-2016-03-14-Android-ActionBar-Setting/</loc>
+    <loc>http://blog.ybbz.site/2016/03/14/Android-ActionBar-Setting/</loc>
     
     <lastmod>2016-04-17T07:29:46.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.ybbz.site/2016/05/01/Hadoop-foundation-two/</loc>
-    
-    <lastmod>2016-04-14T16:47:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.ybbz.site/2016/05/01/Hadoop-foundation-one/</loc>
-    
-    <lastmod>2016-04-14T15:16:57.000Z</lastmod>
     
   </url>
   
@@ -93,14 +86,14 @@
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2016-03-27-crawl-ibeike/</loc>
+    <loc>http://blog.ybbz.site/2016/03/27/crawl-ibeike/</loc>
     
     <lastmod>2016-04-13T13:47:38.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2016-03-27-crawl-weibo/</loc>
+    <loc>http://blog.ybbz.site/2016/03/27/crawl_weibo/</loc>
     
     <lastmod>2016-04-13T13:47:29.000Z</lastmod>
     
@@ -114,7 +107,7 @@
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/13/Old-Posts-2016-01-12-Node-js-foundation/</loc>
+    <loc>http://blog.ybbz.site/2016/01/12/Node-js-foundation/</loc>
     
     <lastmod>2016-04-13T13:41:31.000Z</lastmod>
     
@@ -149,7 +142,7 @@
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2016-03-10-Python-Numpy/</loc>
+    <loc>http://blog.ybbz.site/2016/03/10/Python-Numpy/</loc>
     
     <lastmod>2016-04-05T08:42:34.000Z</lastmod>
     
@@ -163,7 +156,7 @@
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2016-03-28-Just-write-about-my-life/</loc>
+    <loc>http://blog.ybbz.site/2016/03/28/Just-write-about-my-life/</loc>
     
     <lastmod>2016-04-03T08:17:56.000Z</lastmod>
     
@@ -177,287 +170,287 @@
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2016-02-20-Python-foundation-one/</loc>
+    <loc>http://blog.ybbz.site/2016/02/20/Python-foundation-one/</loc>
     
     <lastmod>2016-04-02T10:19:35.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2015-10-20-VIM/</loc>
+    <loc>http://blog.ybbz.site/2015/10/20/VIM/</loc>
     
     <lastmod>2016-04-02T08:21:04.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2015-10-19-Build-Your-First-GitHub-Pages-Blog/</loc>
+    <loc>http://blog.ybbz.site/2015/10/19/Build-Your-First-GitHub-Pages-Blog/</loc>
     
     <lastmod>2016-04-02T08:20:54.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2015-10-16-Selected-Collection-of-Jekyll-Themes/</loc>
+    <loc>http://blog.ybbz.site/2015/10/16/Selected-Collection-of-Jekyll-Themes/</loc>
     
     <lastmod>2016-04-02T08:20:50.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2015-08-30-The-Rule-of-Chinese-Writing-Style/</loc>
+    <loc>http://blog.ybbz.site/2015/08/30/The-Rule-of-Chinese-Writing-Style/</loc>
     
     <lastmod>2016-04-02T08:20:46.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2015-08-20-Office-Tools/</loc>
+    <loc>http://blog.ybbz.site/2015/08/20/Office-Tools/</loc>
     
     <lastmod>2016-04-02T08:20:42.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2015-08-19-Markdown-Syntax/</loc>
+    <loc>http://blog.ybbz.site/2015/08/19/Markdown-Syntax/</loc>
     
     <lastmod>2016-04-02T08:20:38.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2015-08-18-Github-Pages-Blog/</loc>
+    <loc>http://blog.ybbz.site/2015/08/18/Github-Pages-Blog/</loc>
     
     <lastmod>2016-04-02T08:20:30.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2015-05-31-Mac-OS-Apps/</loc>
+    <loc>http://blog.ybbz.site/2015/05/31/Mac-OS-Apps/</loc>
     
     <lastmod>2016-04-02T08:20:26.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2011-11-02-Rule-of-Search/</loc>
+    <loc>http://blog.ybbz.site/2011/11/02/Rule-of-Search/</loc>
     
     <lastmod>2016-04-02T08:20:20.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2016-03-17-text-mining-distance-similar/</loc>
+    <loc>http://blog.ybbz.site/2016/03/17/text-mining-distance-similar/</loc>
     
     <lastmod>2016-04-02T08:17:40.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2016-03-12-kNN-Python/</loc>
+    <loc>http://blog.ybbz.site/2016/03/12/kNN-Python/</loc>
     
     <lastmod>2016-04-02T08:17:31.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2016-03-01-text-mining/</loc>
+    <loc>http://blog.ybbz.site/2016/03/01/text-mining/</loc>
     
     <lastmod>2016-04-02T08:17:22.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2016-02-28-data-mining-algorithm/</loc>
+    <loc>http://blog.ybbz.site/2016/02/28/data-mining-algorithm/</loc>
     
     <lastmod>2016-04-02T08:17:14.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2016-03-07-database-names-cut-and-statistics/</loc>
+    <loc>http://blog.ybbz.site/2016/03/07/database-names-cut-and-statistics/</loc>
     
     <lastmod>2016-04-02T08:16:58.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2016-03-29-algorithm/</loc>
+    <loc>http://blog.ybbz.site/2016/03/29/algorithm/</loc>
     
     <lastmod>2016-04-02T07:02:30.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2016-03-29-Ajax-Flask-Python-Web-Server/</loc>
+    <loc>http://blog.ybbz.site/2016/03/29/Ajax-Flask-Python-Web-Server/</loc>
     
     <lastmod>2016-04-02T07:02:08.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2016-03-26-crawl-get-html-img/</loc>
+    <loc>http://blog.ybbz.site/2016/03/26/crawl-get-html-img/</loc>
     
     <lastmod>2016-04-02T07:00:58.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2016-03-24-terminal-telnet/</loc>
+    <loc>http://blog.ybbz.site/2016/03/24/terminal-telnet/</loc>
     
     <lastmod>2016-04-02T06:59:51.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2016-03-15-App-develop/</loc>
+    <loc>http://blog.ybbz.site/2016/03/15/App-develop/</loc>
     
     <lastmod>2016-04-02T06:56:36.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2016-02-29-Mac-mysql-connector-python/</loc>
+    <loc>http://blog.ybbz.site/2016/02/29/Mac-mysql-connector-python/</loc>
     
     <lastmod>2016-04-02T06:52:10.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2016-02-28-Python-jieba/</loc>
+    <loc>http://blog.ybbz.site/2016/02/28/Python-jieba/</loc>
     
     <lastmod>2016-04-02T06:50:23.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2016-02-22-Python-foundation-Web-Flask/</loc>
+    <loc>http://blog.ybbz.site/2016/02/22/Python-foundation-Web-Flask/</loc>
     
     <lastmod>2016-04-02T06:49:45.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2016-02-22-Python-foundation-five-http/</loc>
+    <loc>http://blog.ybbz.site/2016/02/22/Python-foundation-five-http/</loc>
     
     <lastmod>2016-04-02T06:49:22.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2016-02-21-Python-foundation-three-IO/</loc>
+    <loc>http://blog.ybbz.site/2016/02/21/Python-foundation-three-IO/</loc>
     
     <lastmod>2016-04-02T06:48:06.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2016-02-20-Python-foundation-two-regular/</loc>
+    <loc>http://blog.ybbz.site/2016/02/20/Python-foundation-two-regular/</loc>
     
     <lastmod>2016-04-02T06:47:01.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2016-01-19-Sequel-Pro-Mac-Mysql-Client/</loc>
+    <loc>http://blog.ybbz.site/2016/01/19/Sequel%20Pro-Mac-Mysql-Client/</loc>
     
     <lastmod>2016-04-02T06:44:59.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2016-01-07-AsyncHttpClient-Volley-post-header/</loc>
+    <loc>http://blog.ybbz.site/2016/01/07/AsyncHttpClient-Volley-post-header/</loc>
     
     <lastmod>2016-04-02T06:44:21.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2015-12-14-RoboBinding-two-ImageView/</loc>
+    <loc>http://blog.ybbz.site/2015/12/14/RoboBinding-two-ImageView/</loc>
     
     <lastmod>2016-04-02T06:43:14.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2015-12-14-RoboBinding-three-HTTP/</loc>
+    <loc>http://blog.ybbz.site/2015/12/14/RoboBinding-three-HTTP/</loc>
     
     <lastmod>2016-04-02T06:42:53.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2015-12-14-RoboBinding-one-TextView-EditText/</loc>
+    <loc>http://blog.ybbz.site/2015/12/14/RoboBinding-one-TextView-EditText/</loc>
     
     <lastmod>2016-04-02T06:42:24.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2015-12-06-Yii2-Markdown/</loc>
+    <loc>http://blog.ybbz.site/2015/12/06/Yii2-Markdown/</loc>
     
     <lastmod>2016-04-02T06:41:15.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2015-11-02-CentOS7-Apache-VirtualHost/</loc>
+    <loc>http://blog.ybbz.site/2015/11/02/CentOS7-Apache-VirtualHost/</loc>
     
     <lastmod>2016-04-02T06:40:17.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2015-11-01-Sublime-Text-Markdown/</loc>
+    <loc>http://blog.ybbz.site/2015/11/01/Sublime-Text-Markdown/</loc>
     
     <lastmod>2016-04-02T06:39:24.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2015-12-12-JS-nodes/</loc>
+    <loc>http://blog.ybbz.site/2015/12/12/JS-nodes/</loc>
     
     <lastmod>2016-04-01T09:52:35.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2016-03-18-server-configuration-2/</loc>
+    <loc>http://blog.ybbz.site/2015/12/25/Android-SlidingMenu/</loc>
     
     <lastmod>2016-04-01T09:52:35.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2016-03-19-Python-shell-ipython/</loc>
+    <loc>http://blog.ybbz.site/2016/03/18/server-configuration-1/</loc>
     
     <lastmod>2016-04-01T09:52:35.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2015-12-25-Android-SlidingMenu/</loc>
+    <loc>http://blog.ybbz.site/2016/03/19/Python-shell-ipython/</loc>
     
     <lastmod>2016-04-01T09:52:35.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2015-11-21-Linux-MySQL/</loc>
+    <loc>http://blog.ybbz.site/2016/02/21/Python-foundation-four-libs/</loc>
     
     <lastmod>2016-04-01T09:52:35.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2016-02-21-Python-foundation-four-libs/</loc>
+    <loc>http://blog.ybbz.site/2016/03/18/server-configuration-2/</loc>
     
     <lastmod>2016-04-01T09:52:35.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/01/Old-Posts-2016-03-18-server-configuration-1/</loc>
+    <loc>http://blog.ybbz.site/2015/11/21/Linux-MySQL/</loc>
     
     <lastmod>2016-04-01T09:52:35.000Z</lastmod>
     
