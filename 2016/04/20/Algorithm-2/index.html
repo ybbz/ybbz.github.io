@@ -59,10 +59,9 @@
 <meta name="description" content="在Python中，可以通过以下方式表达根号
 1234567import matha = 2 ** 0.5print(a)b = math.sqrt(2)print(b)c = math.pow(2, 0.5)print(c)
 算法一
-
 sqrt(num)在区间（left, right）内
 计算middle=(left＋right)/2，
-如果middle-num&amp;gt;0，那么sqrt(num)就">
+如果middle-num&amp;gt;0，那么sqrt(num)就在">
 <meta property="og:type" content="article">
 <meta property="og:title" content="根号值逼近问题的算法">
 <meta property="og:url" content="http://blog.ybbz.site/2016/04/20/Algorithm-2/index.html">
@@ -70,20 +69,18 @@ sqrt(num)在区间（left, right）内
 <meta property="og:description" content="在Python中，可以通过以下方式表达根号
 1234567import matha = 2 ** 0.5print(a)b = math.sqrt(2)print(b)c = math.pow(2, 0.5)print(c)
 算法一
-
 sqrt(num)在区间（left, right）内
 计算middle=(left＋right)/2，
-如果middle-num&amp;gt;0，那么sqrt(num)就">
-<meta property="og:updated_time" content="2016-04-23T09:28:01.000Z">
+如果middle-num&amp;gt;0，那么sqrt(num)就在">
+<meta property="og:updated_time" content="2016-04-23T12:35:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="根号值逼近问题的算法">
 <meta name="twitter:description" content="在Python中，可以通过以下方式表达根号
 1234567import matha = 2 ** 0.5print(a)b = math.sqrt(2)print(b)c = math.pow(2, 0.5)print(c)
 算法一
-
 sqrt(num)在区间（left, right）内
 计算middle=(left＋right)/2，
-如果middle-num&amp;gt;0，那么sqrt(num)就">
+如果middle-num&amp;gt;0，那么sqrt(num)就在">
 
 
 
@@ -96,7 +93,7 @@ sqrt(num)在区间（left, right）内
     motion: true,
     duoshuo: {
       userId: 6231437225821734000,
-      author: '博主'
+      author: '八宝粥'
     }
   };
 </script>
@@ -358,8 +355,7 @@ sqrt(num)在区间（left, right）内
       
         <p>在Python中，可以通过以下方式表达根号</p>
 <figure class="highlight moonscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="built_in">math</span></span><br><span class="line">a = <span class="number">2</span> ** <span class="number">0.5</span></span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line">b = <span class="built_in">math</span>.sqrt(<span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(b)</span><br><span class="line">c = <span class="built_in">math</span>.pow(<span class="number">2</span>, <span class="number">0.5</span>)</span><br><span class="line"><span class="built_in">print</span>(c)</span><br></pre></td></tr></table></figure>
-<p><strong>算法一</strong></p>
-<ul>
+<h3 id="算法一"><a href="#算法一" class="headerlink" title="算法一"></a>算法一</h3><ul>
 <li>sqrt(num)在区间（left, right）内</li>
 <li>计算middle=(left＋right)/2，</li>
 <li>如果middle-num&gt;0，那么sqrt(num)就在区间(left, middle)之间</li>
@@ -367,8 +363,7 @@ sqrt(num)在区间（left, right）内
 <li>设定误差限在0.001，即上面减法的差值的绝对值小于0.001，便不再计算</li>
 </ul>
 <figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">def sqrt_2(left, <span class="literal">right</span>, <span class="built_in">num</span>):</span><br><span class="line">    <span class="keyword">middle</span> = (left + <span class="literal">right</span>) / <span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">middle</span> - <span class="built_in">num</span> &gt; <span class="number">0.001</span>:</span><br><span class="line">        <span class="literal">return</span> sqrt_2(left, <span class="keyword">middle</span>, <span class="built_in">num</span>)</span><br><span class="line">    elif <span class="keyword">middle</span> - <span class="built_in">num</span> &lt; <span class="number">-0.001</span>:</span><br><span class="line">        <span class="literal">return</span> sqrt_2(<span class="keyword">middle</span>, <span class="literal">right</span>, <span class="built_in">num</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="literal">return</span> <span class="keyword">middle</span></span><br><span class="line"></span><br><span class="line">print(sqrt_2(<span class="number">1</span>, <span class="number">2</span>, b))</span><br></pre></td></tr></table></figure>
-<p><strong>算法二</strong></p>
-<ul>
+<h3 id="算法二"><a href="#算法二" class="headerlink" title="算法二"></a>算法二</h3><ul>
 <li>((sqrt(x)-sqrt(num/x))^2=0的根就是sqrt(num)</li>
 <li>上面公式变形为sqrt(num)=(x+num/x)/2</li>
 <li>设定误差限在0.001，并重复计算</li>
@@ -381,6 +376,11 @@ sqrt(num)在区间（left, right）内
     <div>
       
         
+<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/qrcode.jpg" alt="八宝粥 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
       
     </div>
 
@@ -405,16 +405,16 @@ sqrt(num)在区间（left, right）内
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/20/SWRL/" rel="next" title="SWRL(A Semantic Web Rule Language Combining OWL and RuleML)">
-                <i class="fa fa-chevron-left"></i> SWRL(A Semantic Web Rule Language Combining OWL and RuleML)
+              <a href="/2016/04/20/Algorithm-3/" rel="next" title="判断两个单向链表是否相交">
+                <i class="fa fa-chevron-left"></i> 判断两个单向链表是否相交
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/20/Algorithm-3/" rel="prev" title="判断两个单向链表是否相交">
-                判断两个单向链表是否相交 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/22/SWRL/" rel="prev" title="SWRL(A Semantic Web Rule Language Combining OWL and RuleML)">
+                SWRL(A Semantic Web Rule Language Combining OWL and RuleML) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -588,7 +588,7 @@ sqrt(num)在区间（left, right）内
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#算法一"><span class="nav-number">1.</span> <span class="nav-text">算法一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法二"><span class="nav-number">2.</span> <span class="nav-text">算法二</span></a></li></ol></div>
             
           </div>
         </section>
@@ -720,6 +720,10 @@ sqrt(num)在区间（left, right）内
   </script>
 
   
+    
+      
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
     
   
 

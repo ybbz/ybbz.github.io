@@ -56,45 +56,21 @@
 
 
 
-<meta name="description" content="MySQL配置
-pip3 install PyMySQL
-＃ 在__init__.py添加如下内容：
-import pymysql
-pymysql.install_as_MySQLdb()
-项目配置
-# settings.py
-DATABASES = {
-    &amp;apos;default&amp;apos;: {
-        &amp;apos;ENGINE&amp;apos;: &amp;apos;django.db.b">
+<meta name="description" content="MySQL配置1234pip3 install PyMySQL＃ 在__init__.py添加如下内容：import pymysqlpymysql.install_as_MySQLdb()
+项目配置123456789101112131415161718192021222324252627282930313233343536# settings.pyDATABASES = &amp;#123;    &apos;de">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Django学习笔记三：Django博客实战">
 <meta property="og:url" content="http://blog.ybbz.site/2016/04/04/Django-foundation-three/index.html">
 <meta property="og:site_name" content="八宝粥的博客">
-<meta property="og:description" content="MySQL配置
-pip3 install PyMySQL
-＃ 在__init__.py添加如下内容：
-import pymysql
-pymysql.install_as_MySQLdb()
-项目配置
-# settings.py
-DATABASES = {
-    &amp;apos;default&amp;apos;: {
-        &amp;apos;ENGINE&amp;apos;: &amp;apos;django.db.b">
-<meta property="og:image" content="http://ybbz.github.io/img/blog/IMG_20160404_1.jpeg">
-<meta property="og:updated_time" content="2016-04-23T09:27:18.000Z">
+<meta property="og:description" content="MySQL配置1234pip3 install PyMySQL＃ 在__init__.py添加如下内容：import pymysqlpymysql.install_as_MySQLdb()
+项目配置123456789101112131415161718192021222324252627282930313233343536# settings.pyDATABASES = &amp;#123;    &apos;de">
+<meta property="og:image" content="http://ybbz.github.io/images/blog/IMG_20160404_1.jpeg">
+<meta property="og:updated_time" content="2016-04-23T12:41:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Django学习笔记三：Django博客实战">
-<meta name="twitter:description" content="MySQL配置
-pip3 install PyMySQL
-＃ 在__init__.py添加如下内容：
-import pymysql
-pymysql.install_as_MySQLdb()
-项目配置
-# settings.py
-DATABASES = {
-    &amp;apos;default&amp;apos;: {
-        &amp;apos;ENGINE&amp;apos;: &amp;apos;django.db.b">
-<meta name="twitter:image" content="http://ybbz.github.io/img/blog/IMG_20160404_1.jpeg">
+<meta name="twitter:description" content="MySQL配置1234pip3 install PyMySQL＃ 在__init__.py添加如下内容：import pymysqlpymysql.install_as_MySQLdb()
+项目配置123456789101112131415161718192021222324252627282930313233343536# settings.pyDATABASES = &amp;#123;    &apos;de">
+<meta name="twitter:image" content="http://ybbz.github.io/images/blog/IMG_20160404_1.jpeg">
 
 
 
@@ -107,7 +83,7 @@ DATABASES = {
     motion: true,
     duoshuo: {
       userId: 6231437225821734000,
-      author: '博主'
+      author: '八宝粥'
     }
   };
 </script>
@@ -367,51 +343,10 @@ DATABASES = {
       
 
       
-        <p>MySQL配置</p>
-<pre><code>pip3 install PyMySQL
-＃ 在__init__.py添加如下内容：
-import pymysql
-pymysql.install_as_MySQLdb()
-</code></pre><p>项目配置</p>
-<pre><code># settings.py
-DATABASES = {
-    &apos;default&apos;: {
-        &apos;ENGINE&apos;: &apos;django.db.backends.mysql&apos;,
-        &apos;NAME&apos;: &apos;blog&apos;,
-        &apos;USER&apos;: &apos;username&apos;,
-        &apos;PASSWORD&apos;: &apos;password&apos;,
-        &apos;HOST&apos;: &apos;localhost&apos;,
-        &apos;PORT&apos;: &apos;3306&apos;,
-    }
-}
-# models.py
-class Blog(models.Model):
-title = models.CharField(max_length=50)
-category = models.CharField(max_length=20, blank=True)
-create_time = models.CharField(max_length=20)
-content = models.TextField(blank=True, null=True)
-# views.py
-def home(request):
-    posts = Blog.objects.all()
-    paginator = Paginator(posts, 5)
-    page = request.GET.get(&apos;page&apos;)
-    try:
-        post_list = paginator.page(page)
-    except PageNotAnInteger:
-        post_list = paginator.page(1)
-    except EmptyPage:
-        post_list = paginator.paginator(paginator.num_pages)
-    return render(request, &apos;home2.html&apos;, {&apos;post_list&apos;: post_list})
-#urls.py
-from app.views import home
-urlpatterns = [
-              ......
-              url(r&apos;^home$&apos;, home, name=&apos;home&apos;),
-              ......
-          ]
-</code></pre><p>效果图如下（待完善…）：</p>
-<p><img src="http://ybbz.github.io/img/blog/IMG_20160404_1.jpeg" alt="20160404_1"></p>
-<p>Github仓库：<a href="https://github.com/ybbz/django-blog" target="_blank" rel="external">django-blog</a>{:target=”_blank”}</p>
+        <h3 id="MySQL配置"><a href="#MySQL配置" class="headerlink" title="MySQL配置"></a>MySQL配置</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">pip3</span> <span class="selector-tag">install</span> <span class="selector-tag">PyMySQL</span></span><br><span class="line">＃ 在__<span class="selector-tag">init__</span><span class="selector-class">.py</span>添加如下内容：</span><br><span class="line"><span class="selector-tag">import</span> <span class="selector-tag">pymysql</span></span><br><span class="line"><span class="selector-tag">pymysql</span><span class="selector-class">.install_as_MySQLdb</span>()</span><br></pre></td></tr></table></figure>
+<h3 id="项目配置"><a href="#项目配置" class="headerlink" title="项目配置"></a>项目配置</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># settings.py</span></span><br><span class="line">DATABASES = &#123;</span><br><span class="line">    <span class="string">'default'</span>: &#123;</span><br><span class="line">        <span class="string">'ENGINE'</span>: <span class="string">'django.db.backends.mysql'</span>,</span><br><span class="line">        <span class="string">'NAME'</span>: <span class="string">'blog'</span>,</span><br><span class="line">        <span class="string">'USER'</span>: <span class="string">'username'</span>,</span><br><span class="line">        <span class="string">'PASSWORD'</span>: <span class="string">'password'</span>,</span><br><span class="line">        <span class="string">'HOST'</span>: <span class="string">'localhost'</span>,</span><br><span class="line">        <span class="string">'PORT'</span>: <span class="string">'3306'</span>,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># models.py</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Blog</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">title = models.CharField(max_length=<span class="number">50</span>)</span><br><span class="line">category = models.CharField(max_length=<span class="number">20</span>, blank=<span class="keyword">True</span>)</span><br><span class="line">create_time = models.CharField(max_length=<span class="number">20</span>)</span><br><span class="line">content = models.TextField(blank=<span class="keyword">True</span>, null=<span class="keyword">True</span>)</span><br><span class="line"><span class="comment"># views.py</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">home</span><span class="params">(request)</span>:</span></span><br><span class="line">    posts = Blog.objects.all()</span><br><span class="line">    paginator = Paginator(posts, <span class="number">5</span>)</span><br><span class="line">    page = request.GET.get(<span class="string">'page'</span>)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        post_list = paginator.page(page)</span><br><span class="line">    <span class="keyword">except</span> PageNotAnInteger:</span><br><span class="line">        post_list = paginator.page(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">except</span> EmptyPage:</span><br><span class="line">        post_list = paginator.paginator(paginator.num_pages)</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">'home2.html'</span>, &#123;<span class="string">'post_list'</span>: post_list&#125;)</span><br><span class="line"><span class="comment">#urls.py</span></span><br><span class="line"><span class="keyword">from</span> app.views <span class="keyword">import</span> home</span><br><span class="line">urlpatterns = [</span><br><span class="line">              ......</span><br><span class="line">              url(<span class="string">r'^home$'</span>, home, name=<span class="string">'home'</span>),</span><br><span class="line">              ......</span><br><span class="line">          ]</span><br></pre></td></tr></table></figure>
+<h3 id="效果图（待完善…）"><a href="#效果图（待完善…）" class="headerlink" title="效果图（待完善…）"></a>效果图（待完善…）</h3><p><img src="http://ybbz.github.io/images/blog/IMG_20160404_1.jpeg" alt="20160404_1"></p>
+<p>Github仓库：<a href="https://github.com/ybbz/django-blog" target="_blank" rel="external">django-blog</a></p>
 
       
     </div>
@@ -419,6 +354,11 @@ urlpatterns = [
     <div>
       
         
+<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/qrcode.jpg" alt="八宝粥 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
       
     </div>
 
@@ -443,8 +383,8 @@ urlpatterns = [
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/03/Django-foundation-one/" rel="next" title="Django学习笔记一：创建新App及其常用命令">
-                <i class="fa fa-chevron-left"></i> Django学习笔记一：创建新App及其常用命令
+              <a href="/2016/04/03/Django-foundation-two/" rel="next" title="Django学习笔记二：优化博客展示，抓取博文并保存到数据库">
+                <i class="fa fa-chevron-left"></i> Django学习笔记二：优化博客展示，抓取博文并保存到数据库
               </a>
             
           </div>
@@ -626,7 +566,7 @@ urlpatterns = [
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL配置"><span class="nav-number">1.</span> <span class="nav-text">MySQL配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目配置"><span class="nav-number">2.</span> <span class="nav-text">项目配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效果图（待完善…）"><span class="nav-number">3.</span> <span class="nav-text">效果图（待完善…）</span></a></li></ol></div>
             
           </div>
         </section>
@@ -758,6 +698,10 @@ urlpatterns = [
   </script>
 
   
+    
+      
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
     
   
 

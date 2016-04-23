@@ -64,13 +64,13 @@
 <meta property="og:site_name" content="八宝粥的博客">
 <meta property="og:description" content="自从去年年底开始，走上了Jekyll+Github+Markdown这条不归路，先是把CSDN上面的一些博客迁移过来，然后就是经常写一些自己在平时学习、开发过程中的心得体会，不见得有人看。权当技术总结，外加练习写作表达了。
 这种简洁优雅的表达方式，简直让人沉醉。不禁回想上大学（本科）时，也曾折腾了一段时间Wordpress，当时也写了一些内容、交了一些博友，可总有一种无病呻吟的感觉，后来不想写了，">
-<meta property="og:image" content="http://ybbz.github.io/img/blog/IMG_20160402_1.jpeg">
-<meta property="og:updated_time" content="2016-04-23T09:27:10.000Z">
+<meta property="og:image" content="http://ybbz.github.io/images/blog/IMG_20160402_1.jpeg">
+<meta property="og:updated_time" content="2016-04-23T12:41:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Django学习笔记二：优化博客展示，抓取博文并保存到数据库">
 <meta name="twitter:description" content="自从去年年底开始，走上了Jekyll+Github+Markdown这条不归路，先是把CSDN上面的一些博客迁移过来，然后就是经常写一些自己在平时学习、开发过程中的心得体会，不见得有人看。权当技术总结，外加练习写作表达了。
 这种简洁优雅的表达方式，简直让人沉醉。不禁回想上大学（本科）时，也曾折腾了一段时间Wordpress，当时也写了一些内容、交了一些博友，可总有一种无病呻吟的感觉，后来不想写了，">
-<meta name="twitter:image" content="http://ybbz.github.io/img/blog/IMG_20160402_1.jpeg">
+<meta name="twitter:image" content="http://ybbz.github.io/images/blog/IMG_20160402_1.jpeg">
 
 
 
@@ -83,7 +83,7 @@
     motion: true,
     duoshuo: {
       userId: 6231437225821734000,
-      author: '博主'
+      author: '八宝粥'
     }
   };
 </script>
@@ -347,7 +347,7 @@
 <p>这种简洁优雅的表达方式，简直让人沉醉。不禁回想上大学（本科）时，也曾折腾了一段时间Wordpress，当时也写了一些内容、交了一些博友，可总有一种无病呻吟的感觉，后来不想写了，也没给服务器续费，就没了。之后，就是偶尔在CSDN上面做一些总结；可也没有很认真的对待。再后来，看了一些类似“我为什么要写博客”这样的文章，觉得说的很有道理，醍醐灌顶。于是，就在这儿安了家。我的朋友圈子里，几乎没有人写博客；虽然“孤单”，我却乐在其中。有时兴致来了，还把自己觉得不错的博文，在新建的公众号推送一下。</p>
 <p>我在Github上fork的这个博客模版，文章有categories和tags这两个属性，可是页面展示出来的，只有tags，而categories却没有做展示。那么，问题来了！文章是需要有一个分类的，而一个文章却可能有多个标签。就想着，能不能加一个分类页面，更好的为文章分类。于是，就开始看模版的代码。据说Jekyll使用的是Ruby，我对Ruby完全不了解，但是不同语言之间是有规律可循的，这不，我就发现了规律：tags页面使用“for tag in site.tags”对标签进行遍历，于是我试了一下“for category in site.categories”，对分类进行遍历然后就通了。</p>
 <p>这样，事情就好办了。在Tags.md同级目录（即网站根目录）新建Categories.md,把tags替换成categories，代码如下：</p>
-<p><img src="http://ybbz.github.io/img/blog/IMG_20160402_1.jpeg" alt="20160402_1"></p>
+<p><img src="http://ybbz.github.io/images/blog/IMG_20160402_1.jpeg" alt="20160402_1"></p>
 <p>剩下的问题就是，分类页面和标签页面的样式完全一样，于是便有了下面的想法，打算做出来看看效果如何。</p>
 <p>大概思路是：</p>
 <ul>
@@ -356,39 +356,19 @@
 <li>从数据库中查询博客信息并做展示（此篇咱不分析，如有兴趣请关注本博客后续的文章）</li>
 </ul>
 <p>代码如下：</p>
-<pre><code>from urllib.request import urlopen
-from bs4 import BeautifulSoup
-import mysql.connector
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">from urllib.request <span class="built_in">import</span> urlopen</span><br><span class="line">from bs4 <span class="built_in">import</span> BeautifulSoup</span><br><span class="line"><span class="built_in">import</span> mysql.connector</span><br><span class="line"></span><br><span class="line"><span class="attr">url</span> = 'http://blog.ybbz.site/Categories/'</span><br><span class="line"><span class="attr">html</span> = urlopen(url)</span><br><span class="line"><span class="attr">bsObj</span> = BeautifulSoup(html, 'lxml')</span><br><span class="line"><span class="attr">uls</span> = bsObj.findAll('ul', &#123;'class': 'listing'&#125;)</span><br><span class="line"><span class="attr">cate_list</span> = []</span><br><span class="line">for ul <span class="keyword">in</span> uls:</span><br><span class="line">    <span class="attr">cate</span> = ul.h4.string</span><br><span class="line">    for li <span class="keyword">in</span> ul.findAll('li'):</span><br><span class="line">        cate_list.append((str(cate), str(li.time.string), str(li.a.string)))</span><br><span class="line">print(cate_list)</span><br><span class="line"></span><br><span class="line"><span class="attr">host</span> = 'your hostname'</span><br><span class="line"><span class="attr">user</span> = 'your username'</span><br><span class="line"><span class="attr">passwd</span> = 'your password'</span><br><span class="line"><span class="attr">db</span> = 'your database'</span><br><span class="line"><span class="comment"># connect database</span></span><br><span class="line"><span class="attr">conn</span> = mysql.connector.connect(<span class="attr">host=host,</span> <span class="attr">user=user,</span> <span class="attr">passwd=passwd,</span> <span class="attr">db=db)</span></span><br><span class="line"><span class="attr">cursor</span> = conn.cursor()</span><br><span class="line"><span class="comment"># save blogs</span></span><br><span class="line"><span class="attr">sql</span> = <span class="string">"insert into blog(category,create_time,title) values(%s, %s, %s)"</span></span><br><span class="line">cursor.executemany(sql, cate_list)</span><br><span class="line">conn.commit()</span><br></pre></td></tr></table></figure>
 
-url = &apos;http://blog.ybbz.site/Categories/&apos;
-html = urlopen(url)
-bsObj = BeautifulSoup(html, &apos;lxml&apos;)
-uls = bsObj.findAll(&apos;ul&apos;, {&apos;class&apos;: &apos;listing&apos;})
-cate_list = []
-for ul in uls:
-    cate = ul.h4.string
-    for li in ul.findAll(&apos;li&apos;):
-        cate_list.append((str(cate), str(li.time.string), str(li.a.string)))
-print(cate_list)
-
-host = &apos;your hostname&apos;
-user = &apos;your username&apos;
-passwd = &apos;your password&apos;
-db = &apos;your database&apos;
-# connect database
-conn = mysql.connector.connect(host=host, user=user, passwd=passwd, db=db)
-cursor = conn.cursor()
-# save blogs
-sql = &quot;insert into blog(category,create_time,title) values(%s, %s, %s)&quot;
-cursor.executemany(sql, cate_list)
-conn.commit()
-</code></pre>
       
     </div>
     
     <div>
       
         
+<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/qrcode.jpg" alt="八宝粥 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
       
     </div>
 
@@ -415,16 +395,16 @@ conn.commit()
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/01/machine-learning-notes/" rel="next" title="读书笔记:《机器学习实践:测试驱动的开发方法》">
-                <i class="fa fa-chevron-left"></i> 读书笔记:《机器学习实践:测试驱动的开发方法》
+              <a href="/2016/04/03/Django-foundation-one/" rel="next" title="Django学习笔记一：创建新App及其常用命令">
+                <i class="fa fa-chevron-left"></i> Django学习笔记一：创建新App及其常用命令
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/03/Django-foundation-one/" rel="prev" title="Django学习笔记一：创建新App及其常用命令">
-                Django学习笔记一：创建新App及其常用命令 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/04/Django-foundation-three/" rel="prev" title="Django学习笔记三：Django博客实战">
+                Django学习笔记三：Django博客实战 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -730,6 +710,10 @@ conn.commit()
   </script>
 
   
+    
+      
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
     
   
 

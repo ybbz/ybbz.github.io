@@ -80,14 +80,14 @@
 百度地图API
 测试内容如下：
 使用百度地图A">
-<meta property="og:image" content="http://ybbz.github.io/img/blog/IMG_20160408_1.png">
-<meta property="og:image" content="http://ybbz.github.io/img/blog/IMG_20160408_3.png">
-<meta property="og:image" content="http://ybbz.github.io/img/blog/IMG_20160408_2.png">
-<meta property="og:image" content="http://ybbz.github.io/img/blog/IMG_20160408_4.png">
-<meta property="og:image" content="http://ybbz.github.io/img/blog/IMG_20160408_5.png">
-<meta property="og:image" content="http://ybbz.github.io/img/blog/IMG_20160408_6.png">
-<meta property="og:image" content="http://ybbz.github.io/img/blog/IMG_20160408_7.png">
-<meta property="og:updated_time" content="2016-04-23T09:27:36.000Z">
+<meta property="og:image" content="http://ybbz.github.io/images/blog/IMG_20160408_1.png">
+<meta property="og:image" content="http://ybbz.github.io/images/blog/IMG_20160408_3.png">
+<meta property="og:image" content="http://ybbz.github.io/images/blog/IMG_20160408_2.png">
+<meta property="og:image" content="http://ybbz.github.io/images/blog/IMG_20160408_4.png">
+<meta property="og:image" content="http://ybbz.github.io/images/blog/IMG_20160408_5.png">
+<meta property="og:image" content="http://ybbz.github.io/images/blog/IMG_20160408_6.png">
+<meta property="og:image" content="http://ybbz.github.io/images/blog/IMG_20160408_7.png">
+<meta property="og:updated_time" content="2016-04-23T12:39:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用百度地图API定位">
 <meta name="twitter:description" content="对于利用地图来定位展示这方面一直挺好奇的，之前倒是用过百度地图API，但也只是简单的利用地图生成器，给网站加一个地图地址。就像下面这样：
@@ -100,7 +100,7 @@
 百度地图API
 测试内容如下：
 使用百度地图A">
-<meta name="twitter:image" content="http://ybbz.github.io/img/blog/IMG_20160408_1.png">
+<meta name="twitter:image" content="http://ybbz.github.io/images/blog/IMG_20160408_1.png">
 
 
 
@@ -113,7 +113,7 @@
     motion: true,
     duoshuo: {
       userId: 6231437225821734000,
-      author: '博主'
+      author: '八宝粥'
     }
   };
 </script>
@@ -374,105 +374,25 @@
 
       
         <p>对于利用地图来定位展示这方面一直挺好奇的，之前倒是用过百度地图API，但也只是简单的利用地图生成器，给网站加一个地图地址。就像下面这样：</p>
-<p><img src="http://ybbz.github.io/img/blog/IMG_20160408_1.png" alt="20160408_1"></p>
+<p><img src="http://ybbz.github.io/images/blog/IMG_20160408_1.png" alt="20160408_1"></p>
 <p>今天便针对地图做了一番尝试，记录如下。</p>
 <h3 id="微信地图"><a href="#微信地图" class="headerlink" title="微信地图"></a>微信地图</h3><p>大家应该都使用过微信的发送/共享位置功能，效果如下：</p>
-<p><img src="http://ybbz.github.io/img/blog/IMG_20160408_3.png" alt="20160408_3"></p>
+<p><img src="http://ybbz.github.io/images/blog/IMG_20160408_3.png" alt="20160408_3"></p>
 <p>现在很多公司都会依托微信公众号做开发，以期更好的展示或者直接利用公众号交易。而微信平台开发便涉及地图功能：</p>
-<p><img src="http://ybbz.github.io/img/blog/IMG_20160408_2.png" alt="20160408_2"></p>
-<h3 id="百度地图API"><a href="#百度地图API" class="headerlink" title="百度地图API"></a>百度地图API</h3><p><img src="http://ybbz.github.io/img/blog/IMG_20160408_4.png" alt="20160408_4"></p>
+<p><img src="http://ybbz.github.io/images/blog/IMG_20160408_2.png" alt="20160408_2"></p>
+<h3 id="百度地图API"><a href="#百度地图API" class="headerlink" title="百度地图API"></a>百度地图API</h3><p><img src="http://ybbz.github.io/images/blog/IMG_20160408_4.png" alt="20160408_4"></p>
 <p><em>测试内容如下：</em></p>
-<p><strong>使用百度地图API功能</strong></p>
-<pre><code>// 百度地图API功能
-var map = new BMap.Map(&quot;allmap&quot;);    // 创建Map实例
-var point = new BMap.Point(116.3640600000, 39.9961000000);
-map.centerAndZoom(point, 15);  // 初始化地图,设置中心点坐标和地图级别
-map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
-map.setCurrentCity(&quot;北京&quot;);          // 设置地图显示的城市
-map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
-</code></pre><p><strong>利用浏览器定位（其他还有IP/城市名/经纬度定位等）</strong></p>
-<pre><code>//浏览器定位
-var geolocation = new BMap.Geolocation();
-geolocation.getCurrentPosition(function (r) {
-    if (this.getStatus() == BMAP_STATUS_SUCCESS) {
-        var mk = new BMap.Marker(r.point);
-        map.addOverlay(mk);
-        map.panTo(r.point);
-        //alert(&apos;您的位置：&apos; + r.point.lng + &apos;,&apos; + r.point.lat);
-    }
-    else {
-        alert(&apos;failed&apos; + this.getStatus());
-    }
-}, {enableHighAccuracy: true})
-</code></pre><p><strong>添加带有定位的导航控件</strong></p>
-<pre><code>// 添加带有定位的导航控件
-var navigationControl = new BMap.NavigationControl({
-    // 靠左上角位置
-    anchor: BMAP_ANCHOR_TOP_LEFT,
-    // LARGE类型
-    type: BMAP_NAVIGATION_CONTROL_LARGE,
-    // 启用显示定位
-    enableGeolocation: true
-});
-map.addControl(navigationControl);
-
-// 添加定位控件
-var geolocationControl = new BMap.GeolocationControl();
-geolocationControl.addEventListener(&quot;locationSuccess&quot;, function (e) {
-    // 定位成功事件
-    var address = &quot;&quot;;
-    //address += e.addressComponent.province;
-    address += e.addressComponent.city;
-    address += e.addressComponent.district;
-    address += e.addressComponent.street;
-    address += e.addressComponent.streetNumber;
-    alert(&quot;位置更新成功:&quot; + &quot;\n\r&quot; + address);
-});
-geolocationControl.addEventListener(&quot;locationError&quot;, function (e) {
-    // 定位失败事件
-    alert(e.message);
-});
-map.addControl(geolocationControl);
-</code></pre><p><strong>添加自定义控件</strong></p>
-<pre><code>// 定义一个控件类,即function
-function ZoomControl() {
-    // 默认停靠位置和偏移量
-    this.defaultAnchor = BMAP_ANCHOR_BOTTOM_RIGHT;
-    this.defaultOffset = new BMap.Size(20, 20);
-}
-
-// 通过JavaScript的prototype属性继承于BMap.Control
-ZoomControl.prototype = new BMap.Control();
-
-// 自定义控件必须实现自己的initialize方法,并且将控件的DOM元素返回
-// 在本方法中创建个div元素作为控件的容器,并将其添加到地图容器中
-ZoomControl.prototype.initialize = function (map) {
-    // 创建一个DOM元素
-    var div = document.createElement(&quot;div&quot;);
-    // 添加文字说明
-    div.innerHTML = &quot;&lt;p class=&apos;text&apos;&gt;立即购买&lt;/p&gt;&quot;
-    //div.appendChild(document.createTextNode(&quot;立即下单&quot;));
-    // 设置样式
-    div.className = &quot;btn&quot;;
-    // 绑定事件,点击一次放大两级
-    div.onclick = function (e) {
-        alert(&quot;下单喽~&quot;)
-    }
-    // 添加DOM元素到地图中
-    map.getContainer().appendChild(div);
-    // 将DOM元素返回
-    return div;
-}
-// 创建控件
-var myZoomCtrl = new ZoomControl();
-// 添加到地图当中
-map.addControl(myZoomCtrl);
-</code></pre><p><strong>完整代码：</strong><br><a href="https://github.com/ybbz/IT-Learning/blob/master/HTML/map.html" target="_blank" rel="external">百度地图API测试</a></p>
+<h4 id="使用百度地图API功能"><a href="#使用百度地图API功能" class="headerlink" title="使用百度地图API功能"></a>使用百度地图API功能</h4><figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 百度地图API功能</span></span><br><span class="line"><span class="built_in">var</span> <span class="built_in">map</span> = <span class="literal">new</span> BMap.<span class="built_in">Map</span>(<span class="string">"allmap"</span>);    <span class="comment">// 创建Map实例</span></span><br><span class="line"><span class="built_in">var</span> point = <span class="literal">new</span> BMap.Point(<span class="number">116.3640600000</span>, <span class="number">39.9961000000</span>);</span><br><span class="line"><span class="built_in">map</span>.centerAndZoom(point, <span class="number">15</span>);  <span class="comment">// 初始化地图,设置中心点坐标和地图级别</span></span><br><span class="line"><span class="built_in">map</span>.addControl(<span class="literal">new</span> BMap.MapTypeControl());   <span class="comment">//添加地图类型控件</span></span><br><span class="line"><span class="built_in">map</span>.setCurrentCity(<span class="string">"北京"</span>);          <span class="comment">// 设置地图显示的城市</span></span><br><span class="line"><span class="built_in">map</span>.enableScrollWheelZoom(<span class="literal">true</span>);     <span class="comment">//开启鼠标滚轮缩放</span></span><br></pre></td></tr></table></figure>
+<h4 id="利用浏览器定位"><a href="#利用浏览器定位" class="headerlink" title="利用浏览器定位"></a>利用浏览器定位</h4><p>ps:其他还有IP/城市名/经纬度定位等</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//浏览器定位</span></span><br><span class="line"><span class="keyword">var</span> geolocation = <span class="keyword">new</span> BMap.Geolocation();</span><br><span class="line">geolocation.getCurrentPosition(<span class="function"><span class="keyword">function</span> <span class="params">(r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.getStatus() == BMAP_STATUS_SUCCESS) &#123;</span><br><span class="line">        <span class="keyword">var</span> mk = <span class="keyword">new</span> BMap.Marker(r.point);</span><br><span class="line">        map.addOverlay(mk);</span><br><span class="line">        map.panTo(r.point);</span><br><span class="line">        <span class="comment">//alert('您的位置：' + r.point.lng + ',' + r.point.lat);</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        alert(<span class="string">'failed'</span> + <span class="keyword">this</span>.getStatus());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;, &#123;enableHighAccuracy: <span class="literal">true</span>&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="添加带有定位的导航控件"><a href="#添加带有定位的导航控件" class="headerlink" title="添加带有定位的导航控件"></a>添加带有定位的导航控件</h4><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加带有定位的导航控件</span></span><br><span class="line"><span class="keyword">var</span> navigationControl = <span class="keyword">new</span> BMap.NavigationControl(&#123;</span><br><span class="line">    <span class="comment">// 靠左上角位置</span></span><br><span class="line">    anchor: BMAP_ANCHOR_TOP_LEFT,</span><br><span class="line">    <span class="comment">// LARGE类型</span></span><br><span class="line">    type: BMAP_NAVIGATION_CONTROL_LARGE,</span><br><span class="line">    <span class="comment">// 启用显示定位</span></span><br><span class="line">    enableGeolocation: <span class="literal">true</span></span><br><span class="line">&#125;);</span><br><span class="line">map.addControl(navigationControl);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加定位控件</span></span><br><span class="line"><span class="keyword">var</span> geolocationControl = <span class="keyword">new</span> BMap.GeolocationControl();</span><br><span class="line">geolocationControl.addEventListener(<span class="string">"locationSuccess"</span>, <span class="function"><span class="keyword">function</span> <span class="params">(e)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 定位成功事件</span></span><br><span class="line">    <span class="keyword">var</span> address = <span class="string">""</span>;</span><br><span class="line">    <span class="comment">//address += e.addressComponent.province;</span></span><br><span class="line">    address += e.addressComponent.city;</span><br><span class="line">    address += e.addressComponent.district;</span><br><span class="line">    address += e.addressComponent.street;</span><br><span class="line">    address += e.addressComponent.streetNumber;</span><br><span class="line">    alert(<span class="string">"位置更新成功:"</span> + <span class="string">"\n\r"</span> + address);</span><br><span class="line">&#125;);</span><br><span class="line">geolocationControl.addEventListener(<span class="string">"locationError"</span>, <span class="function"><span class="keyword">function</span> <span class="params">(e)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 定位失败事件</span></span><br><span class="line">    alert(e.message);</span><br><span class="line">&#125;);</span><br><span class="line">map.addControl(geolocationControl);</span><br></pre></td></tr></table></figure>
+<h4 id="添加自定义控件"><a href="#添加自定义控件" class="headerlink" title="添加自定义控件"></a>添加自定义控件</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个控件类,即function</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ZoomControl</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 默认停靠位置和偏移量</span></span><br><span class="line">    <span class="keyword">this</span>.defaultAnchor = BMAP_ANCHOR_BOTTOM_RIGHT;</span><br><span class="line">    <span class="keyword">this</span>.defaultOffset = <span class="keyword">new</span> BMap.Size(<span class="number">20</span>, <span class="number">20</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过JavaScript的prototype属性继承于BMap.Control</span></span><br><span class="line">ZoomControl.prototype = <span class="keyword">new</span> BMap.Control();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 自定义控件必须实现自己的initialize方法,并且将控件的DOM元素返回</span></span><br><span class="line"><span class="comment">// 在本方法中创建个div元素作为控件的容器,并将其添加到地图容器中</span></span><br><span class="line">ZoomControl.prototype.initialize = <span class="function"><span class="keyword">function</span> (<span class="params">map</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 创建一个DOM元素</span></span><br><span class="line">    <span class="keyword">var</span> div = <span class="built_in">document</span>.createElement(<span class="string">"div"</span>);</span><br><span class="line">    <span class="comment">// 添加文字说明</span></span><br><span class="line">    div.innerHTML = <span class="string">"&lt;p class='text'&gt;立即购买&lt;/p&gt;"</span></span><br><span class="line">    <span class="comment">//div.appendChild(document.createTextNode("立即下单"));</span></span><br><span class="line">    <span class="comment">// 设置样式</span></span><br><span class="line">    div.className = <span class="string">"btn"</span>;</span><br><span class="line">    <span class="comment">// 绑定事件,点击一次放大两级</span></span><br><span class="line">    div.onclick = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">        alert(<span class="string">"下单喽~"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 添加DOM元素到地图中</span></span><br><span class="line">    map.getContainer().appendChild(div);</span><br><span class="line">    <span class="comment">// 将DOM元素返回</span></span><br><span class="line">    <span class="keyword">return</span> div;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 创建控件</span></span><br><span class="line"><span class="keyword">var</span> myZoomCtrl = <span class="keyword">new</span> ZoomControl();</span><br><span class="line"><span class="comment">// 添加到地图当中</span></span><br><span class="line">map.addControl(myZoomCtrl);</span><br></pre></td></tr></table></figure>
+<p><strong>完整代码：</strong><br><a href="https://github.com/ybbz/IT-Learning/blob/master/HTML/map.html" target="_blank" rel="external">百度地图API测试</a></p>
 <p><strong>测试效果如下图所示：</strong></p>
-<p><img src="http://ybbz.github.io/img/blog/IMG_20160408_5.png" alt="20160408_5"></p>
+<p><img src="http://ybbz.github.io/images/blog/IMG_20160408_5.png" alt="20160408_5"></p>
 <h3 id="高德地图API"><a href="#高德地图API" class="headerlink" title="高德地图API"></a>高德地图API</h3><p>高德地图也提供类似的服务，从下图来看，和百度类似（高德地图我并没有测试）。</p>
-<p><img src="http://ybbz.github.io/img/blog/IMG_20160408_6.png" alt="20160408_6"></p>
-<p><img src="http://ybbz.github.io/img/blog/IMG_20160408_7.png" alt="20160408_7"></p>
+<p><img src="http://ybbz.github.io/images/blog/IMG_20160408_6.png" alt="20160408_6"></p>
+<p><img src="http://ybbz.github.io/images/blog/IMG_20160408_7.png" alt="20160408_7"></p>
 
       
     </div>
@@ -480,6 +400,11 @@ map.addControl(myZoomCtrl);
     <div>
       
         
+<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/qrcode.jpg" alt="八宝粥 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
       
     </div>
 
@@ -687,7 +612,7 @@ map.addControl(myZoomCtrl);
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#微信地图"><span class="nav-number">1.</span> <span class="nav-text">微信地图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#百度地图API"><span class="nav-number">2.</span> <span class="nav-text">百度地图API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高德地图API"><span class="nav-number">3.</span> <span class="nav-text">高德地图API</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#微信地图"><span class="nav-number">1.</span> <span class="nav-text">微信地图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#百度地图API"><span class="nav-number">2.</span> <span class="nav-text">百度地图API</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用百度地图API功能"><span class="nav-number">2.1.</span> <span class="nav-text">使用百度地图API功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#利用浏览器定位"><span class="nav-number">2.2.</span> <span class="nav-text">利用浏览器定位</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加带有定位的导航控件"><span class="nav-number">2.3.</span> <span class="nav-text">添加带有定位的导航控件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加自定义控件"><span class="nav-number">2.4.</span> <span class="nav-text">添加自定义控件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高德地图API"><span class="nav-number">3.</span> <span class="nav-text">高德地图API</span></a></li></ol></div>
             
           </div>
         </section>
@@ -819,6 +744,10 @@ map.addControl(myZoomCtrl);
   </script>
 
   
+    
+      
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
     
   
 

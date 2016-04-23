@@ -17,9 +17,9 @@
   
   <entry>
     <title>OWL Web本体语言指南</title>
-    <link href="http://blog.ybbz.site/2016/04/20/OWL-SWRL/"/>
-    <id>http://blog.ybbz.site/2016/04/20/OWL-SWRL/</id>
-    <published>2016-04-19T16:00:00.000Z</published>
+    <link href="http://blog.ybbz.site/2016/04/22/OWL-SWRL/"/>
+    <id>http://blog.ybbz.site/2016/04/22/OWL-SWRL/</id>
+    <published>2016-04-21T16:00:00.000Z</published>
     <updated>2016-04-23T09:28:16.000Z</updated>
     
     <content type="html">&lt;p&gt;这篇指南是转载的，不过经过了一定的加工（删减、排版），主要是为了方便自己查找及阅读（毕竟官方的排版不怎么适合我这种强迫症），也删去了一些自己用不到的部分。读者也可查看下面引用中的译文及原文。&lt;/p&gt;
@@ -646,90 +646,10 @@
   </entry>
   
   <entry>
-    <title>判断两个单向链表是否相交</title>
-    <link href="http://blog.ybbz.site/2016/04/20/Algorithm-3/"/>
-    <id>http://blog.ybbz.site/2016/04/20/Algorithm-3/</id>
-    <published>2016-04-19T16:00:00.000Z</published>
-    <updated>2016-04-23T09:28:08.000Z</updated>
-    
-    <content type="html">&lt;p&gt;问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;算法一&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;对链表一进行遍历，在遍历到每一个节点时，都在链表二中进行遍历，看是否有重复的节点。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;算法一改进&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;以空间换时间：将链表二存入字典，然后遍历链表一，判断是否在于字典中。简化后，时间复杂度变为 O(n+m)，但空间复杂度较高。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;算法二&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;算法二的思路基于以下两个原理：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;两个单向链表相交后，必然无法再分开。&lt;/li&gt;
-&lt;li&gt;两个单项链表相交后，尾节点一定相同。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;假设两个链表相交，很容易证明两个链表的尾元素是相同的。&lt;br&gt;逆反命题：两个链表的尾元素相同时，两个链表一定相交。&lt;br&gt;（注意：相同的节点不仅仅要求值相同，而是“同一个”，也就是指针地址相同。）&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;算法一&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;对链表一进行遍历，在遍历到每一个节点时，都在链表二中进行遍历，看是否有重复的节点。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;算法一改进&lt;/strong
-    
-    </summary>
-    
-      <category term="Algorithm" scheme="http://blog.ybbz.site/categories/Algorithm/"/>
-    
-    
-      <category term="Algorithm" scheme="http://blog.ybbz.site/tags/Algorithm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>根号值逼近问题的算法</title>
-    <link href="http://blog.ybbz.site/2016/04/20/Algorithm-2/"/>
-    <id>http://blog.ybbz.site/2016/04/20/Algorithm-2/</id>
-    <published>2016-04-19T16:00:00.000Z</published>
-    <updated>2016-04-23T09:28:01.000Z</updated>
-    
-    <content type="html">&lt;p&gt;在Python中，可以通过以下方式表达根号&lt;/p&gt;
-&lt;figure class=&quot;highlight moonscript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;math&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;a = &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; ** &lt;span class=&quot;number&quot;&gt;0.5&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;print&lt;/span&gt;(a)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;b = &lt;span class=&quot;built_in&quot;&gt;math&lt;/span&gt;.sqrt(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;print&lt;/span&gt;(b)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;c = &lt;span class=&quot;built_in&quot;&gt;math&lt;/span&gt;.pow(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;0.5&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;print&lt;/span&gt;(c)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;算法一&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;sqrt(num)在区间（left, right）内&lt;/li&gt;
-&lt;li&gt;计算middle=(left＋right)/2，&lt;/li&gt;
-&lt;li&gt;如果middle-num&amp;gt;0，那么sqrt(num)就在区间(left, middle)之间&lt;/li&gt;
-&lt;li&gt;如果middle-num&amp;lt;0，那么sqrt(num)就在区间(middle, right)之间&lt;/li&gt;
-&lt;li&gt;设定误差限在0.001，即上面减法的差值的绝对值小于0.001，便不再计算&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight livecodeserver&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;def sqrt_2(left, &lt;span class=&quot;literal&quot;&gt;right&lt;/span&gt;, &lt;span class=&quot;built_in&quot;&gt;num&lt;/span&gt;):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;middle&lt;/span&gt; = (left + &lt;span class=&quot;literal&quot;&gt;right&lt;/span&gt;) / &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;middle&lt;/span&gt; - &lt;span class=&quot;built_in&quot;&gt;num&lt;/span&gt; &amp;gt; &lt;span class=&quot;number&quot;&gt;0.001&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;literal&quot;&gt;return&lt;/span&gt; sqrt_2(left, &lt;span class=&quot;keyword&quot;&gt;middle&lt;/span&gt;, &lt;span class=&quot;built_in&quot;&gt;num&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    elif &lt;span class=&quot;keyword&quot;&gt;middle&lt;/span&gt; - &lt;span class=&quot;built_in&quot;&gt;num&lt;/span&gt; &amp;lt; &lt;span class=&quot;number&quot;&gt;-0.001&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;literal&quot;&gt;return&lt;/span&gt; sqrt_2(&lt;span class=&quot;keyword&quot;&gt;middle&lt;/span&gt;, &lt;span class=&quot;literal&quot;&gt;right&lt;/span&gt;, &lt;span class=&quot;built_in&quot;&gt;num&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;literal&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;middle&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(sqrt_2(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, b))&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;算法二&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;((sqrt(x)-sqrt(num/x))^2=0的根就是sqrt(num)&lt;/li&gt;
-&lt;li&gt;上面公式变形为sqrt(num)=(x+num/x)/2&lt;/li&gt;
-&lt;li&gt;设定误差限在0.001，并重复计算&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;sqrt_1&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(num, x)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    result = (x + num / x) / &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; math.fabs(result - b) &amp;lt; &lt;span class=&quot;number&quot;&gt;0.001&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; result&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; sqrt_1(num, result)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(sqrt_1(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(sqrt_1(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(sqrt_1(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在Python中，可以通过以下方式表达根号&lt;/p&gt;
-&lt;figure class=&quot;highlight moonscript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span cl
-    
-    </summary>
-    
-      <category term="Algorithm" scheme="http://blog.ybbz.site/categories/Algorithm/"/>
-    
-    
-      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
-    
-      <category term="Algorithm" scheme="http://blog.ybbz.site/tags/Algorithm/"/>
-    
-  </entry>
-  
-  <entry>
     <title>SWRL(A Semantic Web Rule Language Combining OWL and RuleML)</title>
-    <link href="http://blog.ybbz.site/2016/04/20/SWRL/"/>
-    <id>http://blog.ybbz.site/2016/04/20/SWRL/</id>
-    <published>2016-04-19T16:00:00.000Z</published>
+    <link href="http://blog.ybbz.site/2016/04/22/SWRL/"/>
+    <id>http://blog.ybbz.site/2016/04/22/SWRL/</id>
+    <published>2016-04-21T16:00:00.000Z</published>
     <updated>2016-04-23T10:46:05.000Z</updated>
     
     <content type="html">&lt;p&gt;The Ontology root element of the OWL XML Presentation Syntax is extended to include “imp” (implication rule) and “var” (variable declaration) axioms as found under the rulebase root of RuleML.&lt;/p&gt;
@@ -804,18 +724,91 @@
   </entry>
   
   <entry>
+    <title>根号值逼近问题的算法</title>
+    <link href="http://blog.ybbz.site/2016/04/20/Algorithm-2/"/>
+    <id>http://blog.ybbz.site/2016/04/20/Algorithm-2/</id>
+    <published>2016-04-19T16:00:00.000Z</published>
+    <updated>2016-04-23T12:35:23.000Z</updated>
+    
+    <content type="html">&lt;p&gt;在Python中，可以通过以下方式表达根号&lt;/p&gt;
+&lt;figure class=&quot;highlight moonscript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;math&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;a = &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; ** &lt;span class=&quot;number&quot;&gt;0.5&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;print&lt;/span&gt;(a)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;b = &lt;span class=&quot;built_in&quot;&gt;math&lt;/span&gt;.sqrt(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;print&lt;/span&gt;(b)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;c = &lt;span class=&quot;built_in&quot;&gt;math&lt;/span&gt;.pow(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;0.5&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;print&lt;/span&gt;(c)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;算法一&quot;&gt;&lt;a href=&quot;#算法一&quot; class=&quot;headerlink&quot; title=&quot;算法一&quot;&gt;&lt;/a&gt;算法一&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;sqrt(num)在区间（left, right）内&lt;/li&gt;
+&lt;li&gt;计算middle=(left＋right)/2，&lt;/li&gt;
+&lt;li&gt;如果middle-num&amp;gt;0，那么sqrt(num)就在区间(left, middle)之间&lt;/li&gt;
+&lt;li&gt;如果middle-num&amp;lt;0，那么sqrt(num)就在区间(middle, right)之间&lt;/li&gt;
+&lt;li&gt;设定误差限在0.001，即上面减法的差值的绝对值小于0.001，便不再计算&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight livecodeserver&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;def sqrt_2(left, &lt;span class=&quot;literal&quot;&gt;right&lt;/span&gt;, &lt;span class=&quot;built_in&quot;&gt;num&lt;/span&gt;):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;middle&lt;/span&gt; = (left + &lt;span class=&quot;literal&quot;&gt;right&lt;/span&gt;) / &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;middle&lt;/span&gt; - &lt;span class=&quot;built_in&quot;&gt;num&lt;/span&gt; &amp;gt; &lt;span class=&quot;number&quot;&gt;0.001&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;literal&quot;&gt;return&lt;/span&gt; sqrt_2(left, &lt;span class=&quot;keyword&quot;&gt;middle&lt;/span&gt;, &lt;span class=&quot;built_in&quot;&gt;num&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    elif &lt;span class=&quot;keyword&quot;&gt;middle&lt;/span&gt; - &lt;span class=&quot;built_in&quot;&gt;num&lt;/span&gt; &amp;lt; &lt;span class=&quot;number&quot;&gt;-0.001&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;literal&quot;&gt;return&lt;/span&gt; sqrt_2(&lt;span class=&quot;keyword&quot;&gt;middle&lt;/span&gt;, &lt;span class=&quot;literal&quot;&gt;right&lt;/span&gt;, &lt;span class=&quot;built_in&quot;&gt;num&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;literal&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;middle&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(sqrt_2(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, b))&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;算法二&quot;&gt;&lt;a href=&quot;#算法二&quot; class=&quot;headerlink&quot; title=&quot;算法二&quot;&gt;&lt;/a&gt;算法二&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;((sqrt(x)-sqrt(num/x))^2=0的根就是sqrt(num)&lt;/li&gt;
+&lt;li&gt;上面公式变形为sqrt(num)=(x+num/x)/2&lt;/li&gt;
+&lt;li&gt;设定误差限在0.001，并重复计算&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;sqrt_1&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(num, x)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    result = (x + num / x) / &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; math.fabs(result - b) &amp;lt; &lt;span class=&quot;number&quot;&gt;0.001&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; result&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; sqrt_1(num, result)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(sqrt_1(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(sqrt_1(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(sqrt_1(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在Python中，可以通过以下方式表达根号&lt;/p&gt;
+&lt;figure class=&quot;highlight moonscript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span cl
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="http://blog.ybbz.site/categories/Algorithm/"/>
+    
+    
+      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
+    
+      <category term="Algorithm" scheme="http://blog.ybbz.site/tags/Algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>判断两个单向链表是否相交</title>
+    <link href="http://blog.ybbz.site/2016/04/20/Algorithm-3/"/>
+    <id>http://blog.ybbz.site/2016/04/20/Algorithm-3/</id>
+    <published>2016-04-19T16:00:00.000Z</published>
+    <updated>2016-04-23T12:35:04.000Z</updated>
+    
+    <content type="html">&lt;p&gt;问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。&lt;/p&gt;
+&lt;h3 id=&quot;算法一&quot;&gt;&lt;a href=&quot;#算法一&quot; class=&quot;headerlink&quot; title=&quot;算法一&quot;&gt;&lt;/a&gt;算法一&lt;/h3&gt;&lt;p&gt;对链表一进行遍历，在遍历到每一个节点时，都在链表二中进行遍历，看是否有重复的节点。&lt;/p&gt;
+&lt;h4 id=&quot;算法一改进&quot;&gt;&lt;a href=&quot;#算法一改进&quot; class=&quot;headerlink&quot; title=&quot;算法一改进&quot;&gt;&lt;/a&gt;算法一改进&lt;/h4&gt;&lt;p&gt;以空间换时间：将链表二存入字典，然后遍历链表一，判断是否在于字典中。简化后，时间复杂度变为 O(n+m)，但空间复杂度较高。&lt;/p&gt;
+&lt;h3 id=&quot;算法二&quot;&gt;&lt;a href=&quot;#算法二&quot; class=&quot;headerlink&quot; title=&quot;算法二&quot;&gt;&lt;/a&gt;算法二&lt;/h3&gt;&lt;p&gt;算法二的思路基于以下两个原理：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;两个单向链表相交后，必然无法再分开。&lt;/li&gt;
+&lt;li&gt;两个单项链表相交后，尾节点一定相同。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;假设两个链表相交，很容易证明两个链表的尾元素是相同的。&lt;br&gt;逆反命题：两个链表的尾元素相同时，两个链表一定相交。&lt;br&gt;（注意：相同的节点不仅仅要求值相同，而是“同一个”，也就是指针地址相同。）&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。&lt;/p&gt;
+&lt;h3 id=&quot;算法一&quot;&gt;&lt;a href=&quot;#算法一&quot; class=&quot;headerlink&quot; title=&quot;算法一&quot;&gt;&lt;/a&gt;算法一&lt;/h3&gt;&lt;p&gt;对链表一进行遍历，在遍历到每一个节点时，都在链表二中进
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="http://blog.ybbz.site/categories/Algorithm/"/>
+    
+    
+      <category term="Algorithm" scheme="http://blog.ybbz.site/tags/Algorithm/"/>
+    
+  </entry>
+  
+  <entry>
     <title>庆祝我的第一个独立APP上线</title>
     <link href="http://blog.ybbz.site/2016/04/18/my-first-andorid-app-online/"/>
     <id>http://blog.ybbz.site/2016/04/18/my-first-andorid-app-online/</id>
     <published>2016-04-17T16:00:00.000Z</published>
-    <updated>2016-04-23T09:27:54.000Z</updated>
+    <updated>2016-04-23T12:35:49.000Z</updated>
     
     <content type="html">&lt;p&gt;所谓独立，就是说这个APP是我私人开发的，不牵扯其他任何个人或组织。之前一直自称Android工程师，可是并没有自己上线的作品；至于Android项目么，要么是和队友们一块儿合作的，不敢冠上自己的名字；要么就是自己做着玩的，压根没想过要发布。&lt;/p&gt;
 &lt;p&gt;Mr.葵，是我上个月的一时兴趣开发的，关于它的更多介绍，可以在&lt;a href=&quot;http://blog.ybbz.site/android/2016/03/15/App-develop/&quot;&gt;记一次有趣的App开发之旅&lt;/a&gt;中找到。不过为了顺利上线，这几天对它进行了一部分的改造。&lt;/p&gt;
 &lt;p&gt;有关这个APP，核心就是一个功能，记录自己的生活事宜，并做统计分析（好吧，其实数据挖掘和分析才是我的真正关注点）；然后又按照自己的兴趣，加了几个小功能，比如今日天气、星座运势、历史上的今天等。当然，并不止于此，下一版本，可能会增加其他有意思的功能。&lt;/p&gt;
 &lt;p&gt;有关用户注册与登录，可以通过手机号注册/登录，或者新浪微博第三方登录。我想说的是，因为短信服务基本都是收费的，所以我没有集成短信服务；因此注册时并没有短信验证码，这是一个不足之处。&lt;/p&gt;
 &lt;p&gt;关于上线，就只在360手机助手和应用宝提交了；说说360吧，5分钟左右，就给我审核通过并上线了，当时还是蛮激动的（360，我为你点赞；至于应用宝，还在审核中）。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160418_1.jpeg&quot; alt=&quot;20160418_1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160418_1.jpeg&quot; alt=&quot;20160418_1&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;下载地址：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://zhushou.360.cn/detail/index/soft_id/3261474?recrefer=SE_D_Mr.%E8%91%B5&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;360手机助手&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://android.myapp.com/myapp/detail.htm?apkName=com.kui.activity&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;应用宝&lt;/a&gt;&lt;/p&gt;
@@ -834,6 +827,85 @@
     
     
       <category term="Android" scheme="http://blog.ybbz.site/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《Hadoop海量数据处理》读书笔记2:Hadoop环境准备</title>
+    <link href="http://blog.ybbz.site/2016/04/15/Hadoop-foundation-two/"/>
+    <id>http://blog.ybbz.site/2016/04/15/Hadoop-foundation-two/</id>
+    <published>2016-04-14T16:00:00.000Z</published>
+    <updated>2016-04-23T09:28:47.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;Hadoop架构&quot;&gt;&lt;a href=&quot;#Hadoop架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h3&gt;&lt;p&gt;Hadoop主要由两部分构成：分布式文件系统HDFS和分布式计算框架MapReduce；HDFS主要是用于海量数据的存储，MapReduce则是对存储在HDFS中的数据进行分布式计算。&lt;/p&gt;
+&lt;h4 id=&quot;Hadoop-HDFS架构&quot;&gt;&lt;a href=&quot;#Hadoop-HDFS架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop HDFS架构&quot;&gt;&lt;/a&gt;Hadoop HDFS架构&lt;/h4&gt;&lt;p&gt;构成HDFS集群的主要是两类节点（主从模式，管理者－工作者模式）：一个NameNode（管理者）和多个DataNode（工作者），SecondaryNameNode作为NameNode镜像数据备份。&lt;/p&gt;
+&lt;p&gt;表：HDFS守护进程&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;守护进程&lt;/th&gt;
+&lt;th&gt;集群中的数目&lt;/th&gt;
+&lt;th&gt;作用&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;NameNode&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;存储文件系统的元数据，存储文件与数据块映射，并提供文件系统的全景图&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SecondaryNameNode&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;备份NameNode数据，并负责镜像与NameNode日志数据的合并&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DataNode&lt;/td&gt;
+&lt;td&gt;多个(至少一个)&lt;/td&gt;
+&lt;td&gt;存储块数据&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&quot;Hadoop-MapReduce架构&quot;&gt;&lt;a href=&quot;#Hadoop-MapReduce架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop MapReduce架构&quot;&gt;&lt;/a&gt;Hadoop MapReduce架构&lt;/h4&gt;&lt;p&gt;构成MapReduce集群为两类节点（主从模式）：JobTracker和TaskTracker。&lt;/p&gt;
+&lt;p&gt;表：MapReduce守护进程&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;守护进程&lt;/th&gt;
+&lt;th&gt;集群中的数目&lt;/th&gt;
+&lt;th&gt;作用&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;JobTracker&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;负责接受客户端作业提交，调度任务到TaskTracker上运行，并提供监控TaskTracker及任务进度等管理功能&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TaskTracker&lt;/td&gt;
+&lt;td&gt;多个(至少一个)&lt;/td&gt;
+&lt;td&gt;实例化用户程序，在本地执行任务并周期性地向JobTracker汇报状态&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&quot;Hadoop架构-1&quot;&gt;&lt;a href=&quot;#Hadoop架构-1&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h4&gt;&lt;p&gt;HDFS集群和MapReduce集群其实由一些守护进程组成，而所有这些守护进程和运行它们的节点就构成了Hadoop集群。这个集群的NameNode进程和JobTracker进程在一个节点上运行，而DataNode进程和TaskTracker进程在同一个节点上运行。（DataNode和TaskTracker需要配对部署在同一个节点，NameNode和JobTracker并不一定部署在同一个节点；生产环境，建议NameNode和JobTracker分开部署）。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Hadoop架构&quot;&gt;&lt;a href=&quot;#Hadoop架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h3&gt;&lt;p&gt;Hadoop主要由两部分构成：分布式文件系统HDFS和分布式计算框架MapReduce；HD
+    
+    </summary>
+    
+      <category term="Hadoop" scheme="http://blog.ybbz.site/categories/Hadoop/"/>
+    
+    
+      <category term="Hadoop" scheme="http://blog.ybbz.site/tags/Hadoop/"/>
+    
+      <category term="云计算" scheme="http://blog.ybbz.site/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/"/>
+    
+      <category term="大数据" scheme="http://blog.ybbz.site/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
     
   </entry>
   
@@ -940,104 +1012,25 @@
   </entry>
   
   <entry>
-    <title>《Hadoop海量数据处理》读书笔记2:Hadoop环境准备</title>
-    <link href="http://blog.ybbz.site/2016/04/15/Hadoop-foundation-two/"/>
-    <id>http://blog.ybbz.site/2016/04/15/Hadoop-foundation-two/</id>
-    <published>2016-04-14T16:00:00.000Z</published>
-    <updated>2016-04-23T09:28:47.000Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;Hadoop架构&quot;&gt;&lt;a href=&quot;#Hadoop架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h3&gt;&lt;p&gt;Hadoop主要由两部分构成：分布式文件系统HDFS和分布式计算框架MapReduce；HDFS主要是用于海量数据的存储，MapReduce则是对存储在HDFS中的数据进行分布式计算。&lt;/p&gt;
-&lt;h4 id=&quot;Hadoop-HDFS架构&quot;&gt;&lt;a href=&quot;#Hadoop-HDFS架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop HDFS架构&quot;&gt;&lt;/a&gt;Hadoop HDFS架构&lt;/h4&gt;&lt;p&gt;构成HDFS集群的主要是两类节点（主从模式，管理者－工作者模式）：一个NameNode（管理者）和多个DataNode（工作者），SecondaryNameNode作为NameNode镜像数据备份。&lt;/p&gt;
-&lt;p&gt;表：HDFS守护进程&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;守护进程&lt;/th&gt;
-&lt;th&gt;集群中的数目&lt;/th&gt;
-&lt;th&gt;作用&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;NameNode&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;存储文件系统的元数据，存储文件与数据块映射，并提供文件系统的全景图&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;SecondaryNameNode&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;备份NameNode数据，并负责镜像与NameNode日志数据的合并&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;DataNode&lt;/td&gt;
-&lt;td&gt;多个(至少一个)&lt;/td&gt;
-&lt;td&gt;存储块数据&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h4 id=&quot;Hadoop-MapReduce架构&quot;&gt;&lt;a href=&quot;#Hadoop-MapReduce架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop MapReduce架构&quot;&gt;&lt;/a&gt;Hadoop MapReduce架构&lt;/h4&gt;&lt;p&gt;构成MapReduce集群为两类节点（主从模式）：JobTracker和TaskTracker。&lt;/p&gt;
-&lt;p&gt;表：MapReduce守护进程&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;守护进程&lt;/th&gt;
-&lt;th&gt;集群中的数目&lt;/th&gt;
-&lt;th&gt;作用&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;JobTracker&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;负责接受客户端作业提交，调度任务到TaskTracker上运行，并提供监控TaskTracker及任务进度等管理功能&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;TaskTracker&lt;/td&gt;
-&lt;td&gt;多个(至少一个)&lt;/td&gt;
-&lt;td&gt;实例化用户程序，在本地执行任务并周期性地向JobTracker汇报状态&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h4 id=&quot;Hadoop架构-1&quot;&gt;&lt;a href=&quot;#Hadoop架构-1&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h4&gt;&lt;p&gt;HDFS集群和MapReduce集群其实由一些守护进程组成，而所有这些守护进程和运行它们的节点就构成了Hadoop集群。这个集群的NameNode进程和JobTracker进程在一个节点上运行，而DataNode进程和TaskTracker进程在同一个节点上运行。（DataNode和TaskTracker需要配对部署在同一个节点，NameNode和JobTracker并不一定部署在同一个节点；生产环境，建议NameNode和JobTracker分开部署）。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;Hadoop架构&quot;&gt;&lt;a href=&quot;#Hadoop架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h3&gt;&lt;p&gt;Hadoop主要由两部分构成：分布式文件系统HDFS和分布式计算框架MapReduce；HD
-    
-    </summary>
-    
-      <category term="Hadoop" scheme="http://blog.ybbz.site/categories/Hadoop/"/>
-    
-    
-      <category term="Hadoop" scheme="http://blog.ybbz.site/tags/Hadoop/"/>
-    
-      <category term="云计算" scheme="http://blog.ybbz.site/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/"/>
-    
-      <category term="大数据" scheme="http://blog.ybbz.site/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
-    
-  </entry>
-  
-  <entry>
     <title>微信公众平台开发实践</title>
     <link href="http://blog.ybbz.site/2016/04/11/WeChat-public-platform-development-practices/"/>
     <id>http://blog.ybbz.site/2016/04/11/WeChat-public-platform-development-practices/</id>
     <published>2016-04-10T16:00:00.000Z</published>
-    <updated>2016-04-23T09:27:47.000Z</updated>
+    <updated>2016-04-23T12:39:32.000Z</updated>
     
     <content type="html">&lt;p&gt;今天中午去图书馆还书&amp;amp;&amp;amp;借书，偶然看到一本《微信公众平台开发最佳实践》，想着竟然这也有教材了？于是就借回来看了一下，拿自己的微信公众号（硬性植入：八宝粥）当小白鼠，实践了其中一部分。&lt;/p&gt;
 &lt;p&gt;开发需要有自己的服务器，这本书上说的新浪SAE不错，于是我也就打算用SAE试试。之前就用过SAE，不过很久没用了；登录了一看，欠费了！！！我那“挺尸”了好几年的WordPress博客，竟然还在收费。为了接着用，就充了10块钱。顺便把博客删了。&lt;/p&gt;
 &lt;h3 id=&quot;服务器端的验证文件-PHP实现&quot;&gt;&lt;a href=&quot;#服务器端的验证文件-PHP实现&quot; class=&quot;headerlink&quot; title=&quot;服务器端的验证文件(PHP实现)&quot;&gt;&lt;/a&gt;服务器端的验证文件(PHP实现)&lt;/h3&gt;&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;56&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;57&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;58&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;59&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;60&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;61&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;62&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;63&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;65&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;66&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;67&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;68&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;69&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;70&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;71&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;define(&lt;span class=&quot;string&quot;&gt;&quot;TOKEN&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;weixin&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$wechatObj = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; wechatCallbackapiTest();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;isset&lt;/span&gt;($_GET[&lt;span class=&quot;string&quot;&gt;&#39;echostr&#39;&lt;/span&gt;])) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    $wechatObj-&amp;gt;valid();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    $wechatObj-&amp;gt;responseMsg();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;wechatCallbackapiTest&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//验证签名&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;valid&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $echoStr = $_GET[&lt;span class=&quot;string&quot;&gt;&quot;echostr&quot;&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;($this-&amp;gt;checkSignature())&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;echo&lt;/span&gt; $echoStr;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;exit&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;checkSignature&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $signature = $_GET[&lt;span class=&quot;string&quot;&gt;&quot;signature&quot;&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $timestamp = $_GET[&lt;span class=&quot;string&quot;&gt;&quot;timestamp&quot;&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $nonce = $_GET[&lt;span class=&quot;string&quot;&gt;&quot;nonce&quot;&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $token = TOKEN;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $tmpArr = &lt;span class=&quot;keyword&quot;&gt;array&lt;/span&gt;($token, $timestamp, $nonce);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        sort($tmpArr, SORT_STRING);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $tmpStr = implode( $tmpArr );&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $tmpStr = sha1( $tmpStr );&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;( $tmpStr == $signature )&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;false&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//响应消息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;responseMsg&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $postStr = $GLOBALS[&lt;span class=&quot;string&quot;&gt;&quot;HTTP_RAW_POST_DATA&quot;&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (!&lt;span class=&quot;keyword&quot;&gt;empty&lt;/span&gt;($postStr))&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            $postObj = simplexml_load_string($postStr, &lt;span class=&quot;string&quot;&gt;&#39;SimpleXMLElement&#39;&lt;/span&gt;, LIBXML_NOCDATA);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            $fromUsername = $postObj-&amp;gt;FromUserName;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            $toUsername = $postObj-&amp;gt;ToUserName;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            $keyword = trim($postObj-&amp;gt;Content);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            $time = time();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            $textTpl = &lt;span class=&quot;string&quot;&gt;&quot;&amp;lt;xml&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        &amp;lt;ToUserName&amp;gt;&amp;lt;![CDATA[%s]]&amp;gt;&amp;lt;/ToUserName&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        &amp;lt;FromUserName&amp;gt;&amp;lt;![CDATA[%s]]&amp;gt;&amp;lt;/FromUserName&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        &amp;lt;CreateTime&amp;gt;%s&amp;lt;/CreateTime&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        &amp;lt;MsgType&amp;gt;&amp;lt;![CDATA[%s]]&amp;gt;&amp;lt;/MsgType&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        &amp;lt;Content&amp;gt;&amp;lt;![CDATA[%s]]&amp;gt;&amp;lt;/Content&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        &amp;lt;FuncFlag&amp;gt;0&amp;lt;/FuncFlag&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        &amp;lt;/xml&amp;gt;&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;($keyword == &lt;span class=&quot;string&quot;&gt;&quot;?&quot;&lt;/span&gt; || $keyword == &lt;span class=&quot;string&quot;&gt;&quot;？&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                $msgType = &lt;span class=&quot;string&quot;&gt;&quot;text&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                $contentStr = date(&lt;span class=&quot;string&quot;&gt;&quot;Y-m-d H:i:s&quot;&lt;/span&gt;,time());&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;echo&lt;/span&gt; $resultStr;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;exit&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;微信公众平台配置&quot;&gt;&lt;a href=&quot;#微信公众平台配置&quot; class=&quot;headerlink&quot; title=&quot;微信公众平台配置&quot;&gt;&lt;/a&gt;微信公众平台配置&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160411_1.png&quot; alt=&quot;20160411_1&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;微信公众平台配置&quot;&gt;&lt;a href=&quot;#微信公众平台配置&quot; class=&quot;headerlink&quot; title=&quot;微信公众平台配置&quot;&gt;&lt;/a&gt;微信公众平台配置&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160411_1.png&quot; alt=&quot;20160411_1&quot;&gt;&lt;/p&gt;
 &lt;p&gt;终于走到验证服务器这一步，点击提交。可是提交了很多次，无论如何都是“Token验证失败”，尝试了很多次，也试了网上的一些解决办法，没用。&lt;/p&gt;
 &lt;p&gt;于是回到起点，老老实实的在自己的阿里云服务器上新建一个虚拟机，解析域名，ftp上传验证文件。然后就成功了……&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160411_2.png&quot; alt=&quot;20160411_2&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160411_2.png&quot; alt=&quot;20160411_2&quot;&gt;&lt;/p&gt;
 &lt;p&gt;不过，验证成功后，公众号原本的自动回复和自定义菜单功能就不能使用了，因为需要自己在服务器端配置。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160411_3.png&quot; alt=&quot;20160411_3&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160411_4.png&quot; alt=&quot;20160411_4&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160411_3.png&quot; alt=&quot;20160411_3&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160411_4.png&quot; alt=&quot;20160411_4&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;基础接口&quot;&gt;&lt;a href=&quot;#基础接口&quot; class=&quot;headerlink&quot; title=&quot;基础接口&quot;&gt;&lt;/a&gt;基础接口&lt;/h3&gt;&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//用户发送的消息类型判断&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;switch&lt;/span&gt; ($RX_TYPE)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;text&quot;&lt;/span&gt;:    &lt;span class=&quot;comment&quot;&gt;//文本消息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $result = $this-&amp;gt;receiveText($postObj);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;break&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;image&quot;&lt;/span&gt;:   &lt;span class=&quot;comment&quot;&gt;//图片消息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $result = $this-&amp;gt;receiveImage($postObj);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;break&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;voice&quot;&lt;/span&gt;:   &lt;span class=&quot;comment&quot;&gt;//语音消息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $result = $this-&amp;gt;receiveVoice($postObj);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;break&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;video&quot;&lt;/span&gt;:   &lt;span class=&quot;comment&quot;&gt;//视频消息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $result = $this-&amp;gt;receiveVideo($postObj);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;break&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;location&quot;&lt;/span&gt;:&lt;span class=&quot;comment&quot;&gt;//位置消息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $result = $this-&amp;gt;receiveLocation($postObj);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;break&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;link&quot;&lt;/span&gt;:    &lt;span class=&quot;comment&quot;&gt;//链接消息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $result = $this-&amp;gt;receiveLink($postObj);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;break&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;event&quot;&lt;/span&gt;:   &lt;span class=&quot;comment&quot;&gt;//事件消息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $result = $this-&amp;gt;receiveEvent($postObj);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;break&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;default&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $result = &lt;span class=&quot;string&quot;&gt;&quot;unknow msg type: &quot;&lt;/span&gt;.$RX_TYPE;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;break&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;echo&lt;/span&gt; $result;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;后面还有很多接口，比如自定义菜单、微信支付、微信小店等，不过需要通过微信认证才能具有接口权限；而微信认证暂不支持个人类型的公众帐号申请微信认证。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160411_5.png&quot; alt=&quot;20160411_5&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160411_5.png&quot; alt=&quot;20160411_5&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;完整代码：&lt;/strong&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/ybbz/IT-Learning/blob/master/PHP/wechat/index.php&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;微信公众平台开发实践&lt;/a&gt;&lt;/p&gt;
 </content>
     
@@ -1062,114 +1055,34 @@
     <link href="http://blog.ybbz.site/2016/04/08/map-practice/"/>
     <id>http://blog.ybbz.site/2016/04/08/map-practice/</id>
     <published>2016-04-07T16:00:00.000Z</published>
-    <updated>2016-04-23T09:27:36.000Z</updated>
+    <updated>2016-04-23T12:39:13.000Z</updated>
     
     <content type="html">&lt;p&gt;对于利用地图来定位展示这方面一直挺好奇的，之前倒是用过百度地图API，但也只是简单的利用地图生成器，给网站加一个地图地址。就像下面这样：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160408_1.png&quot; alt=&quot;20160408_1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160408_1.png&quot; alt=&quot;20160408_1&quot;&gt;&lt;/p&gt;
 &lt;p&gt;今天便针对地图做了一番尝试，记录如下。&lt;/p&gt;
 &lt;h3 id=&quot;微信地图&quot;&gt;&lt;a href=&quot;#微信地图&quot; class=&quot;headerlink&quot; title=&quot;微信地图&quot;&gt;&lt;/a&gt;微信地图&lt;/h3&gt;&lt;p&gt;大家应该都使用过微信的发送/共享位置功能，效果如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160408_3.png&quot; alt=&quot;20160408_3&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160408_3.png&quot; alt=&quot;20160408_3&quot;&gt;&lt;/p&gt;
 &lt;p&gt;现在很多公司都会依托微信公众号做开发，以期更好的展示或者直接利用公众号交易。而微信平台开发便涉及地图功能：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160408_2.png&quot; alt=&quot;20160408_2&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;百度地图API&quot;&gt;&lt;a href=&quot;#百度地图API&quot; class=&quot;headerlink&quot; title=&quot;百度地图API&quot;&gt;&lt;/a&gt;百度地图API&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160408_4.png&quot; alt=&quot;20160408_4&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160408_2.png&quot; alt=&quot;20160408_2&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;百度地图API&quot;&gt;&lt;a href=&quot;#百度地图API&quot; class=&quot;headerlink&quot; title=&quot;百度地图API&quot;&gt;&lt;/a&gt;百度地图API&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160408_4.png&quot; alt=&quot;20160408_4&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;测试内容如下：&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;使用百度地图API功能&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;// 百度地图API功能
-var map = new BMap.Map(&amp;quot;allmap&amp;quot;);    // 创建Map实例
-var point = new BMap.Point(116.3640600000, 39.9961000000);
-map.centerAndZoom(point, 15);  // 初始化地图,设置中心点坐标和地图级别
-map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
-map.setCurrentCity(&amp;quot;北京&amp;quot;);          // 设置地图显示的城市
-map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;利用浏览器定位（其他还有IP/城市名/经纬度定位等）&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;//浏览器定位
-var geolocation = new BMap.Geolocation();
-geolocation.getCurrentPosition(function (r) {
-    if (this.getStatus() == BMAP_STATUS_SUCCESS) {
-        var mk = new BMap.Marker(r.point);
-        map.addOverlay(mk);
-        map.panTo(r.point);
-        //alert(&amp;apos;您的位置：&amp;apos; + r.point.lng + &amp;apos;,&amp;apos; + r.point.lat);
-    }
-    else {
-        alert(&amp;apos;failed&amp;apos; + this.getStatus());
-    }
-}, {enableHighAccuracy: true})
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;添加带有定位的导航控件&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;// 添加带有定位的导航控件
-var navigationControl = new BMap.NavigationControl({
-    // 靠左上角位置
-    anchor: BMAP_ANCHOR_TOP_LEFT,
-    // LARGE类型
-    type: BMAP_NAVIGATION_CONTROL_LARGE,
-    // 启用显示定位
-    enableGeolocation: true
-});
-map.addControl(navigationControl);
-
-// 添加定位控件
-var geolocationControl = new BMap.GeolocationControl();
-geolocationControl.addEventListener(&amp;quot;locationSuccess&amp;quot;, function (e) {
-    // 定位成功事件
-    var address = &amp;quot;&amp;quot;;
-    //address += e.addressComponent.province;
-    address += e.addressComponent.city;
-    address += e.addressComponent.district;
-    address += e.addressComponent.street;
-    address += e.addressComponent.streetNumber;
-    alert(&amp;quot;位置更新成功:&amp;quot; + &amp;quot;\n\r&amp;quot; + address);
-});
-geolocationControl.addEventListener(&amp;quot;locationError&amp;quot;, function (e) {
-    // 定位失败事件
-    alert(e.message);
-});
-map.addControl(geolocationControl);
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;添加自定义控件&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;// 定义一个控件类,即function
-function ZoomControl() {
-    // 默认停靠位置和偏移量
-    this.defaultAnchor = BMAP_ANCHOR_BOTTOM_RIGHT;
-    this.defaultOffset = new BMap.Size(20, 20);
-}
-
-// 通过JavaScript的prototype属性继承于BMap.Control
-ZoomControl.prototype = new BMap.Control();
-
-// 自定义控件必须实现自己的initialize方法,并且将控件的DOM元素返回
-// 在本方法中创建个div元素作为控件的容器,并将其添加到地图容器中
-ZoomControl.prototype.initialize = function (map) {
-    // 创建一个DOM元素
-    var div = document.createElement(&amp;quot;div&amp;quot;);
-    // 添加文字说明
-    div.innerHTML = &amp;quot;&amp;lt;p class=&amp;apos;text&amp;apos;&amp;gt;立即购买&amp;lt;/p&amp;gt;&amp;quot;
-    //div.appendChild(document.createTextNode(&amp;quot;立即下单&amp;quot;));
-    // 设置样式
-    div.className = &amp;quot;btn&amp;quot;;
-    // 绑定事件,点击一次放大两级
-    div.onclick = function (e) {
-        alert(&amp;quot;下单喽~&amp;quot;)
-    }
-    // 添加DOM元素到地图中
-    map.getContainer().appendChild(div);
-    // 将DOM元素返回
-    return div;
-}
-// 创建控件
-var myZoomCtrl = new ZoomControl();
-// 添加到地图当中
-map.addControl(myZoomCtrl);
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;完整代码：&lt;/strong&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/ybbz/IT-Learning/blob/master/HTML/map.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;百度地图API测试&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&quot;使用百度地图API功能&quot;&gt;&lt;a href=&quot;#使用百度地图API功能&quot; class=&quot;headerlink&quot; title=&quot;使用百度地图API功能&quot;&gt;&lt;/a&gt;使用百度地图API功能&lt;/h4&gt;&lt;figure class=&quot;highlight lasso&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 百度地图API功能&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;map&lt;/span&gt; = &lt;span class=&quot;literal&quot;&gt;new&lt;/span&gt; BMap.&lt;span class=&quot;built_in&quot;&gt;Map&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;allmap&quot;&lt;/span&gt;);    &lt;span class=&quot;comment&quot;&gt;// 创建Map实例&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;var&lt;/span&gt; point = &lt;span class=&quot;literal&quot;&gt;new&lt;/span&gt; BMap.Point(&lt;span class=&quot;number&quot;&gt;116.3640600000&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;39.9961000000&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;map&lt;/span&gt;.centerAndZoom(point, &lt;span class=&quot;number&quot;&gt;15&lt;/span&gt;);  &lt;span class=&quot;comment&quot;&gt;// 初始化地图,设置中心点坐标和地图级别&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;map&lt;/span&gt;.addControl(&lt;span class=&quot;literal&quot;&gt;new&lt;/span&gt; BMap.MapTypeControl());   &lt;span class=&quot;comment&quot;&gt;//添加地图类型控件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;map&lt;/span&gt;.setCurrentCity(&lt;span class=&quot;string&quot;&gt;&quot;北京&quot;&lt;/span&gt;);          &lt;span class=&quot;comment&quot;&gt;// 设置地图显示的城市&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;map&lt;/span&gt;.enableScrollWheelZoom(&lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;);     &lt;span class=&quot;comment&quot;&gt;//开启鼠标滚轮缩放&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;利用浏览器定位&quot;&gt;&lt;a href=&quot;#利用浏览器定位&quot; class=&quot;headerlink&quot; title=&quot;利用浏览器定位&quot;&gt;&lt;/a&gt;利用浏览器定位&lt;/h4&gt;&lt;p&gt;ps:其他还有IP/城市名/经纬度定位等&lt;/p&gt;
+&lt;figure class=&quot;highlight actionscript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//浏览器定位&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; geolocation = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; BMap.Geolocation();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;geolocation.getCurrentPosition(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;params&quot;&gt;(r)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.getStatus() == BMAP_STATUS_SUCCESS) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; mk = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; BMap.Marker(r.point);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        map.addOverlay(mk);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        map.panTo(r.point);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;//alert(&#39;您的位置：&#39; + r.point.lng + &#39;,&#39; + r.point.lat);&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        alert(&lt;span class=&quot;string&quot;&gt;&#39;failed&#39;&lt;/span&gt; + &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.getStatus());&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;, &amp;#123;enableHighAccuracy: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;添加带有定位的导航控件&quot;&gt;&lt;a href=&quot;#添加带有定位的导航控件&quot; class=&quot;headerlink&quot; title=&quot;添加带有定位的导航控件&quot;&gt;&lt;/a&gt;添加带有定位的导航控件&lt;/h4&gt;&lt;figure class=&quot;highlight actionscript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 添加带有定位的导航控件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; navigationControl = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; BMap.NavigationControl(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 靠左上角位置&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    anchor: BMAP_ANCHOR_TOP_LEFT,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// LARGE类型&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    type: BMAP_NAVIGATION_CONTROL_LARGE,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 启用显示定位&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    enableGeolocation: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;map.addControl(navigationControl);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 添加定位控件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; geolocationControl = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; BMap.GeolocationControl();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;geolocationControl.addEventListener(&lt;span class=&quot;string&quot;&gt;&quot;locationSuccess&quot;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;params&quot;&gt;(e)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 定位成功事件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; address = &lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//address += e.addressComponent.province;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    address += e.addressComponent.city;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    address += e.addressComponent.district;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    address += e.addressComponent.street;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    address += e.addressComponent.streetNumber;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    alert(&lt;span class=&quot;string&quot;&gt;&quot;位置更新成功:&quot;&lt;/span&gt; + &lt;span class=&quot;string&quot;&gt;&quot;\n\r&quot;&lt;/span&gt; + address);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;geolocationControl.addEventListener(&lt;span class=&quot;string&quot;&gt;&quot;locationError&quot;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;params&quot;&gt;(e)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 定位失败事件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    alert(e.message);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;map.addControl(geolocationControl);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;添加自定义控件&quot;&gt;&lt;a href=&quot;#添加自定义控件&quot; class=&quot;headerlink&quot; title=&quot;添加自定义控件&quot;&gt;&lt;/a&gt;添加自定义控件&lt;/h4&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 定义一个控件类,即function&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;ZoomControl&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 默认停靠位置和偏移量&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.defaultAnchor = BMAP_ANCHOR_BOTTOM_RIGHT;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.defaultOffset = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; BMap.Size(&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 通过JavaScript的prototype属性继承于BMap.Control&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ZoomControl.prototype = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; BMap.Control();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 自定义控件必须实现自己的initialize方法,并且将控件的DOM元素返回&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 在本方法中创建个div元素作为控件的容器,并将其添加到地图容器中&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ZoomControl.prototype.initialize = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;map&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 创建一个DOM元素&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; div = &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.createElement(&lt;span class=&quot;string&quot;&gt;&quot;div&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 添加文字说明&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    div.innerHTML = &lt;span class=&quot;string&quot;&gt;&quot;&amp;lt;p class=&#39;text&#39;&amp;gt;立即购买&amp;lt;/p&amp;gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//div.appendChild(document.createTextNode(&quot;立即下单&quot;));&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 设置样式&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    div.className = &lt;span class=&quot;string&quot;&gt;&quot;btn&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 绑定事件,点击一次放大两级&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    div.onclick = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;e&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        alert(&lt;span class=&quot;string&quot;&gt;&quot;下单喽~&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 添加DOM元素到地图中&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    map.getContainer().appendChild(div);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 将DOM元素返回&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; div;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 创建控件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; myZoomCtrl = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ZoomControl();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 添加到地图当中&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;map.addControl(myZoomCtrl);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;完整代码：&lt;/strong&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/ybbz/IT-Learning/blob/master/HTML/map.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;百度地图API测试&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;测试效果如下图所示：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160408_5.png&quot; alt=&quot;20160408_5&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160408_5.png&quot; alt=&quot;20160408_5&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;高德地图API&quot;&gt;&lt;a href=&quot;#高德地图API&quot; class=&quot;headerlink&quot; title=&quot;高德地图API&quot;&gt;&lt;/a&gt;高德地图API&lt;/h3&gt;&lt;p&gt;高德地图也提供类似的服务，从下图来看，和百度类似（高德地图我并没有测试）。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160408_6.png&quot; alt=&quot;20160408_6&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160408_7.png&quot; alt=&quot;20160408_7&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160408_6.png&quot; alt=&quot;20160408_6&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160408_7.png&quot; alt=&quot;20160408_7&quot;&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
     
       &lt;p&gt;对于利用地图来定位展示这方面一直挺好奇的，之前倒是用过百度地图API，但也只是简单的利用地图生成器，给网站加一个地图地址。就像下面这样：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160408_1.png&quot; 
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160408_1.pn
     
     </summary>
     
@@ -1187,35 +1100,24 @@ map.addControl(myZoomCtrl);
     <link href="http://blog.ybbz.site/2016/04/06/MacBook-Pages-Papers-EndNote/"/>
     <id>http://blog.ybbz.site/2016/04/06/MacBook-Pages-Papers-EndNote/</id>
     <published>2016-04-05T16:00:00.000Z</published>
-    <updated>2016-04-23T10:01:56.000Z</updated>
+    <updated>2016-04-23T12:18:54.000Z</updated>
     
     <content type="html">&lt;p&gt;之前一直用Papers3进行文献管理，确实好用。最近要写论文，就想着能否用Papers3来引用文献，于是进行了一番探索，记录如下。&lt;/p&gt;
-&lt;p&gt;###相关配置&lt;/p&gt;
-&lt;ul&gt;
+&lt;h3 id=&quot;相关配置&quot;&gt;&lt;a href=&quot;#相关配置&quot; class=&quot;headerlink&quot; title=&quot;相关配置&quot;&gt;&lt;/a&gt;相关配置&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;MacBook 10.9&lt;/li&gt;
 &lt;li&gt;Pages 5.2&lt;/li&gt;
 &lt;li&gt;Papers 3.3.3&lt;/li&gt;
 &lt;li&gt;EndNote X7&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;###Papers3添加引用&lt;/p&gt;
-&lt;p&gt;1.开启引用（Papers-Preferences-Citations）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160406_1.png&quot; alt=&quot;20160406_1&quot;&gt;&lt;/p&gt;
-&lt;p&gt;2.在文档中引用（在Pages文档中双击control键）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160406_2.png&quot; alt=&quot;20160406_2&quot;&gt;  &lt;/p&gt;
+&lt;h3 id=&quot;Papers3添加引用&quot;&gt;&lt;a href=&quot;#Papers3添加引用&quot; class=&quot;headerlink&quot; title=&quot;Papers3添加引用&quot;&gt;&lt;/a&gt;Papers3添加引用&lt;/h3&gt;&lt;h4 id=&quot;1-开启引用（Papers-Preferences-Citations）&quot;&gt;&lt;a href=&quot;#1-开启引用（Papers-Preferences-Citations）&quot; class=&quot;headerlink&quot; title=&quot;1.开启引用（Papers-Preferences-Citations）&quot;&gt;&lt;/a&gt;1.开启引用（Papers-Preferences-Citations）&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160406_1.png&quot; alt=&quot;20160406_1&quot;&gt;&lt;/p&gt;
+&lt;h4 id=&quot;2-在文档中引用（在Pages文档中双击control键）&quot;&gt;&lt;a href=&quot;#2-在文档中引用（在Pages文档中双击control键）&quot; class=&quot;headerlink&quot; title=&quot;2.在文档中引用（在Pages文档中双击control键）&quot;&gt;&lt;/a&gt;2.在文档中引用（在Pages文档中双击control键）&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160406_2.png&quot; alt=&quot;20160406_2&quot;&gt;  &lt;/p&gt;
 &lt;p&gt;一般来说，到这一步就可以引用成功了!&lt;br&gt;然而，上图提示“Cannot Insert Citation”，说是我的Pages版本不支持。&lt;br&gt;至于“Copy to Clipboard”这种功能，显然不是我想要的；于是就有了下面的步骤。&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;注：使用Papers管理文献不在本文讨论范围内，读者自行探索～&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;###EndNote添加引用&lt;/p&gt;
-&lt;p&gt;1.Papers3导出（File-Export-Refman RIS File）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160406_3.png&quot; alt=&quot;20160406_3&quot;&gt;  &lt;/p&gt;
-&lt;p&gt;2.EndNote导入（File-Import-demo.ris）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160406_4.png&quot; alt=&quot;20160406_4&quot;&gt;  &lt;/p&gt;
-&lt;p&gt;###Pages添加引用&lt;/p&gt;
-&lt;p&gt;1.安装EndNote插件  &lt;/p&gt;
-&lt;p&gt;插件下载地址：&lt;a href=&quot;https://support.apple.com/kb/DL1692?locale=en_US&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Pages EndNote Plug-in v2.0&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;2.在文档中引用&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160406_5.png&quot; alt=&quot;20160406_5&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160406_6.png&quot; alt=&quot;20160406_6&quot;&gt;  &lt;/p&gt;
-&lt;p&gt;###参考资料&lt;/p&gt;
-&lt;ol&gt;
+&lt;h3 id=&quot;EndNote添加引用&quot;&gt;&lt;a href=&quot;#EndNote添加引用&quot; class=&quot;headerlink&quot; title=&quot;EndNote添加引用&quot;&gt;&lt;/a&gt;EndNote添加引用&lt;/h3&gt;&lt;h4 id=&quot;1-Papers3导出（File-Export-Refman-RIS-File）&quot;&gt;&lt;a href=&quot;#1-Papers3导出（File-Export-Refman-RIS-File）&quot; class=&quot;headerlink&quot; title=&quot;1.Papers3导出（File-Export-Refman RIS File）&quot;&gt;&lt;/a&gt;1.Papers3导出（File-Export-Refman RIS File）&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160406_3.png&quot; alt=&quot;20160406_3&quot;&gt;  &lt;/p&gt;
+&lt;h4 id=&quot;2-EndNote导入（File-Import-demo-ris）&quot;&gt;&lt;a href=&quot;#2-EndNote导入（File-Import-demo-ris）&quot; class=&quot;headerlink&quot; title=&quot;2.EndNote导入（File-Import-demo.ris）&quot;&gt;&lt;/a&gt;2.EndNote导入（File-Import-demo.ris）&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160406_4.png&quot; alt=&quot;20160406_4&quot;&gt;  &lt;/p&gt;
+&lt;h3 id=&quot;Pages添加引用&quot;&gt;&lt;a href=&quot;#Pages添加引用&quot; class=&quot;headerlink&quot; title=&quot;Pages添加引用&quot;&gt;&lt;/a&gt;Pages添加引用&lt;/h3&gt;&lt;h4 id=&quot;1-安装EndNote插件&quot;&gt;&lt;a href=&quot;#1-安装EndNote插件&quot; class=&quot;headerlink&quot; title=&quot;1.安装EndNote插件&quot;&gt;&lt;/a&gt;1.安装EndNote插件&lt;/h4&gt;&lt;p&gt;插件下载地址：&lt;a href=&quot;https://support.apple.com/kb/DL1692?locale=en_US&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Pages EndNote Plug-in v2.0&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&quot;2-在文档中引用&quot;&gt;&lt;a href=&quot;#2-在文档中引用&quot; class=&quot;headerlink&quot; title=&quot;2.在文档中引用&quot;&gt;&lt;/a&gt;2.在文档中引用&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160406_5.png&quot; alt=&quot;20160406_5&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160406_6.png&quot; alt=&quot;20160406_6&quot;&gt;  &lt;/p&gt;
+&lt;h3 id=&quot;参考资料&quot;&gt;&lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot; title=&quot;参考资料&quot;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;&lt;a href=&quot;http://support.mekentosj.com/kb/papers2/citations-in-pages-with-papers-2-for-mac&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Citations in Pages with Papers 2 for Mac&lt;/a&gt;  &lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://www.360doc.com/content/11/1231/18/7660968_176344103.shtml&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Mac科研神器【文献管理】Papers&lt;/a&gt;  &lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/21910307&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Pages中插入Endnote引文是灰色的不可用状态&lt;/a&gt;  &lt;/li&gt;
@@ -1226,11 +1128,7 @@ map.addControl(myZoomCtrl);
     <summary type="html">
     
       &lt;p&gt;之前一直用Papers3进行文献管理，确实好用。最近要写论文，就想着能否用Papers3来引用文献，于是进行了一番探索，记录如下。&lt;/p&gt;
-&lt;p&gt;###相关配置&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;MacBook 10.9&lt;/li&gt;
-&lt;li&gt;Pages 5.2&lt;/li&gt;
-&lt;li&gt;Pa
+&lt;h3 id=&quot;相关配置&quot;&gt;&lt;a href=&quot;#相关配置&quot; class=&quot;headerlink&quot; title=&quot;相关配置&quot;&gt;&lt;/a&gt;相
     
     </summary>
     
@@ -1252,169 +1150,17 @@ map.addControl(myZoomCtrl);
     <link href="http://blog.ybbz.site/2016/04/04/Django-foundation-three/"/>
     <id>http://blog.ybbz.site/2016/04/04/Django-foundation-three/</id>
     <published>2016-04-03T16:00:00.000Z</published>
-    <updated>2016-04-23T09:27:18.000Z</updated>
+    <updated>2016-04-23T12:41:19.000Z</updated>
     
-    <content type="html">&lt;p&gt;MySQL配置&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;pip3 install PyMySQL
-＃ 在__init__.py添加如下内容：
-import pymysql
-pymysql.install_as_MySQLdb()
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;项目配置&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;# settings.py
-DATABASES = {
-    &amp;apos;default&amp;apos;: {
-        &amp;apos;ENGINE&amp;apos;: &amp;apos;django.db.backends.mysql&amp;apos;,
-        &amp;apos;NAME&amp;apos;: &amp;apos;blog&amp;apos;,
-        &amp;apos;USER&amp;apos;: &amp;apos;username&amp;apos;,
-        &amp;apos;PASSWORD&amp;apos;: &amp;apos;password&amp;apos;,
-        &amp;apos;HOST&amp;apos;: &amp;apos;localhost&amp;apos;,
-        &amp;apos;PORT&amp;apos;: &amp;apos;3306&amp;apos;,
-    }
-}
-# models.py
-class Blog(models.Model):
-title = models.CharField(max_length=50)
-category = models.CharField(max_length=20, blank=True)
-create_time = models.CharField(max_length=20)
-content = models.TextField(blank=True, null=True)
-# views.py
-def home(request):
-    posts = Blog.objects.all()
-    paginator = Paginator(posts, 5)
-    page = request.GET.get(&amp;apos;page&amp;apos;)
-    try:
-        post_list = paginator.page(page)
-    except PageNotAnInteger:
-        post_list = paginator.page(1)
-    except EmptyPage:
-        post_list = paginator.paginator(paginator.num_pages)
-    return render(request, &amp;apos;home2.html&amp;apos;, {&amp;apos;post_list&amp;apos;: post_list})
-#urls.py
-from app.views import home
-urlpatterns = [
-              ......
-              url(r&amp;apos;^home$&amp;apos;, home, name=&amp;apos;home&amp;apos;),
-              ......
-          ]
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;效果图如下（待完善…）：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160404_1.jpeg&quot; alt=&quot;20160404_1&quot;&gt;&lt;/p&gt;
-&lt;p&gt;Github仓库：&lt;a href=&quot;https://github.com/ybbz/django-blog&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;django-blog&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
+    <content type="html">&lt;h3 id=&quot;MySQL配置&quot;&gt;&lt;a href=&quot;#MySQL配置&quot; class=&quot;headerlink&quot; title=&quot;MySQL配置&quot;&gt;&lt;/a&gt;MySQL配置&lt;/h3&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;pip3&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;PyMySQL&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;＃ 在__&lt;span class=&quot;selector-tag&quot;&gt;init__&lt;/span&gt;&lt;span class=&quot;selector-class&quot;&gt;.py&lt;/span&gt;添加如下内容：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;pymysql&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;pymysql&lt;/span&gt;&lt;span class=&quot;selector-class&quot;&gt;.install_as_MySQLdb&lt;/span&gt;()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;项目配置&quot;&gt;&lt;a href=&quot;#项目配置&quot; class=&quot;headerlink&quot; title=&quot;项目配置&quot;&gt;&lt;/a&gt;项目配置&lt;/h3&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# settings.py&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;DATABASES = &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;default&#39;&lt;/span&gt;: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;ENGINE&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;django.db.backends.mysql&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;NAME&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;blog&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;USER&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;username&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;PASSWORD&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;password&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;HOST&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;localhost&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;PORT&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;3306&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# models.py&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Blog&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(models.Model)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;title = models.CharField(max_length=&lt;span class=&quot;number&quot;&gt;50&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;category = models.CharField(max_length=&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;, blank=&lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;create_time = models.CharField(max_length=&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;content = models.TextField(blank=&lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;, null=&lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# views.py&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;home&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(request)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    posts = Blog.objects.all()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    paginator = Paginator(posts, &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    page = request.GET.get(&lt;span class=&quot;string&quot;&gt;&#39;page&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;try&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        post_list = paginator.page(page)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;except&lt;/span&gt; PageNotAnInteger:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        post_list = paginator.page(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;except&lt;/span&gt; EmptyPage:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        post_list = paginator.paginator(paginator.num_pages)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; render(request, &lt;span class=&quot;string&quot;&gt;&#39;home2.html&#39;&lt;/span&gt;, &amp;#123;&lt;span class=&quot;string&quot;&gt;&#39;post_list&#39;&lt;/span&gt;: post_list&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#urls.py&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; app.views &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; home&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;urlpatterns = [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;              ......&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;              url(&lt;span class=&quot;string&quot;&gt;r&#39;^home$&#39;&lt;/span&gt;, home, name=&lt;span class=&quot;string&quot;&gt;&#39;home&#39;&lt;/span&gt;),&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;              ......&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          ]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;效果图（待完善…）&quot;&gt;&lt;a href=&quot;#效果图（待完善…）&quot; class=&quot;headerlink&quot; title=&quot;效果图（待完善…）&quot;&gt;&lt;/a&gt;效果图（待完善…）&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160404_1.jpeg&quot; alt=&quot;20160404_1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Github仓库：&lt;a href=&quot;https://github.com/ybbz/django-blog&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;django-blog&lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;p&gt;MySQL配置&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;pip3 install PyMySQL
-＃ 在__init__.py添加如下内容：
-import pymysql
-pymysql.install_as_MySQLdb()
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;项目配置&lt;/p&gt;
-&lt;p
-    
-    </summary>
-    
-      <category term="Python" scheme="http://blog.ybbz.site/categories/Python/"/>
-    
-    
-      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
-    
-      <category term="Django" scheme="http://blog.ybbz.site/tags/Django/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Django学习笔记一：创建新App及其常用命令</title>
-    <link href="http://blog.ybbz.site/2016/04/03/Django-foundation-one/"/>
-    <id>http://blog.ybbz.site/2016/04/03/Django-foundation-one/</id>
-    <published>2016-04-02T16:00:00.000Z</published>
-    <updated>2016-04-23T09:27:01.000Z</updated>
-    
-    <content type="html">&lt;p&gt;清明节假期，正是读书、学习的好时候；别人都出去玩了，然而我仍然在“学习”。之前一直对Django很感兴趣（因为很多人提到了它，而我也有打算在未来用Python重构PHP做的系统），因此就学习了一下&lt;/p&gt;
-&lt;p&gt;创建新的项目&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;django-admin.py startproject my_project
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;创建新的App&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;# 在Django项目(my_project)的根目录下执行
-python3 manage.py startapp my_app
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;启动Django中的开发服务器&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;# make new migrations
-python3 manage.py makemigrations
-# apply all migrations
-python3 manage.py migrate
-# run server
-python3 manage.py runserver
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;创建models&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;class App1(models.Model):
-    title = models.CharField(max_length=100)
-    category = models.CharField(max_length=50, blank=True)
-    date_time = models.DateTimeField(auto_now_add=True)
-
-    def __unicode__(self):
-        return self.title
-
-    class Meta:
-        ordering = [&amp;apos;-date_time&amp;apos;]
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;进入Django中的交互式shell&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;python3 manage.py shell
-from app1.models import App1
-# create(增加操作)
-App1.objects.create(title=&amp;apos;title&amp;apos;,category=&amp;apos;category1&amp;apos;)
-# all和get(查看操作)
-App1.objects.all()
-App1.objects.get(id=1)
-# update(修改操作)
-demo = App1.objects.get(id=1)
-demo.title
-demo.title=&amp;apos;title2&amp;apos;
-# delete(删除操作)
-demo.delete()
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;创建一个超级用户&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;python3 manage.py createsuperuser
-# 输入http://127.0.0.1:8000/admin登录后台
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;数据库信息的增加和删除，admin.py中增加代码&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;from article.models import App1
-admin.site.register(App1)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Views和URL操作&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;# views.py
-from django.http import HttpResponse
-def home(request):
-    return HttpResponse(&amp;quot;Hello World, Django&amp;quot;)
-# urls.py
-url(r&amp;apos;^$&amp;apos;, &amp;apos;app1.views.home&amp;apos;)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;URL传参&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;# views.py
-def detail(request, number):
-    return HttpResponse(&amp;quot;The number is %s.&amp;quot; % number)
-# urls.py
-url(r&amp;apos;^([0-9]+)/&amp;apos;, &amp;apos;app1.views.detail&amp;apos;, name=&amp;apos;detail&amp;apos;)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;URL传参查询数据库&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;# views.py
-def database(request, args):
-    post = App1.objects.all()[int(args)]
-    str = (&amp;quot;title = %s, category = %s, date_time = %s&amp;quot; % (post.title, post.category, post.date_time))
-    return HttpResponse(str)
-# urls.py
-url(r&amp;apos;^id/([0-9])+/&amp;apos;, &amp;apos;article.views.database&amp;apos;, name=&amp;apos;database&amp;apos;),
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;将代码上传到Github&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;# 在github中新建仓库django-blog
-# 在项目根目录下执行
-git init
-git remote add Django
-git@github.com:ybbz/django-blog.git
-git add .
-git status
-git commit -m &amp;quot;django blog init&amp;quot;
-git pull Django master &amp;amp;&amp;amp; git push Django master
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Error: That port is already in use.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;ps aux | grep -i manage
-kill -9 ****
-python3 manage.py runserver
-&lt;/code&gt;&lt;/pre&gt;</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;清明节假期，正是读书、学习的好时候；别人都出去玩了，然而我仍然在“学习”。之前一直对Django很感兴趣（因为很多人提到了它，而我也有打算在未来用Python重构PHP做的系统），因此就学习了一下&lt;/p&gt;
-&lt;p&gt;创建新的项目&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;django-ad
+      &lt;h3 id=&quot;MySQL配置&quot;&gt;&lt;a href=&quot;#MySQL配置&quot; class=&quot;headerlink&quot; title=&quot;MySQL配置&quot;&gt;&lt;/a&gt;MySQL配置&lt;/h3&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;g
     
     </summary>
     
@@ -1432,13 +1178,13 @@ python3 manage.py runserver
     <link href="http://blog.ybbz.site/2016/04/03/Django-foundation-two/"/>
     <id>http://blog.ybbz.site/2016/04/03/Django-foundation-two/</id>
     <published>2016-04-02T16:00:00.000Z</published>
-    <updated>2016-04-23T09:27:10.000Z</updated>
+    <updated>2016-04-23T12:41:56.000Z</updated>
     
     <content type="html">&lt;p&gt;自从去年年底开始，走上了Jekyll+Github+Markdown这条不归路，先是把CSDN上面的一些博客迁移过来，然后就是经常写一些自己在平时学习、开发过程中的心得体会，不见得有人看。权当技术总结，外加练习写作表达了。&lt;/p&gt;
 &lt;p&gt;这种简洁优雅的表达方式，简直让人沉醉。不禁回想上大学（本科）时，也曾折腾了一段时间Wordpress，当时也写了一些内容、交了一些博友，可总有一种无病呻吟的感觉，后来不想写了，也没给服务器续费，就没了。之后，就是偶尔在CSDN上面做一些总结；可也没有很认真的对待。再后来，看了一些类似“我为什么要写博客”这样的文章，觉得说的很有道理，醍醐灌顶。于是，就在这儿安了家。我的朋友圈子里，几乎没有人写博客；虽然“孤单”，我却乐在其中。有时兴致来了，还把自己觉得不错的博文，在新建的公众号推送一下。&lt;/p&gt;
 &lt;p&gt;我在Github上fork的这个博客模版，文章有categories和tags这两个属性，可是页面展示出来的，只有tags，而categories却没有做展示。那么，问题来了！文章是需要有一个分类的，而一个文章却可能有多个标签。就想着，能不能加一个分类页面，更好的为文章分类。于是，就开始看模版的代码。据说Jekyll使用的是Ruby，我对Ruby完全不了解，但是不同语言之间是有规律可循的，这不，我就发现了规律：tags页面使用“for tag in site.tags”对标签进行遍历，于是我试了一下“for category in site.categories”，对分类进行遍历然后就通了。&lt;/p&gt;
 &lt;p&gt;这样，事情就好办了。在Tags.md同级目录（即网站根目录）新建Categories.md,把tags替换成categories，代码如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160402_1.jpeg&quot; alt=&quot;20160402_1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160402_1.jpeg&quot; alt=&quot;20160402_1&quot;&gt;&lt;/p&gt;
 &lt;p&gt;剩下的问题就是，分类页面和标签页面的样式完全一样，于是便有了下面的想法，打算做出来看看效果如何。&lt;/p&gt;
 &lt;p&gt;大概思路是：&lt;/p&gt;
 &lt;ul&gt;
@@ -1447,33 +1193,8 @@ python3 manage.py runserver
 &lt;li&gt;从数据库中查询博客信息并做展示（此篇咱不分析，如有兴趣请关注本博客后续的文章）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;代码如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;from urllib.request import urlopen
-from bs4 import BeautifulSoup
-import mysql.connector
-
-url = &amp;apos;http://blog.ybbz.site/Categories/&amp;apos;
-html = urlopen(url)
-bsObj = BeautifulSoup(html, &amp;apos;lxml&amp;apos;)
-uls = bsObj.findAll(&amp;apos;ul&amp;apos;, {&amp;apos;class&amp;apos;: &amp;apos;listing&amp;apos;})
-cate_list = []
-for ul in uls:
-    cate = ul.h4.string
-    for li in ul.findAll(&amp;apos;li&amp;apos;):
-        cate_list.append((str(cate), str(li.time.string), str(li.a.string)))
-print(cate_list)
-
-host = &amp;apos;your hostname&amp;apos;
-user = &amp;apos;your username&amp;apos;
-passwd = &amp;apos;your password&amp;apos;
-db = &amp;apos;your database&amp;apos;
-# connect database
-conn = mysql.connector.connect(host=host, user=user, passwd=passwd, db=db)
-cursor = conn.cursor()
-# save blogs
-sql = &amp;quot;insert into blog(category,create_time,title) values(%s, %s, %s)&amp;quot;
-cursor.executemany(sql, cate_list)
-conn.commit()
-&lt;/code&gt;&lt;/pre&gt;</content>
+&lt;figure class=&quot;highlight nix&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;from urllib.request &lt;span class=&quot;built_in&quot;&gt;import&lt;/span&gt; urlopen&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from bs4 &lt;span class=&quot;built_in&quot;&gt;import&lt;/span&gt; BeautifulSoup&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;import&lt;/span&gt; mysql.connector&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;url&lt;/span&gt; = &#39;http://blog.ybbz.site/Categories/&#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;html&lt;/span&gt; = urlopen(url)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;bsObj&lt;/span&gt; = BeautifulSoup(html, &#39;lxml&#39;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;uls&lt;/span&gt; = bsObj.findAll(&#39;ul&#39;, &amp;#123;&#39;class&#39;: &#39;listing&#39;&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;cate_list&lt;/span&gt; = []&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;for ul &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; uls:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;cate&lt;/span&gt; = ul.h4.string&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    for li &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; ul.findAll(&#39;li&#39;):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        cate_list.append((str(cate), str(li.time.string), str(li.a.string)))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(cate_list)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;host&lt;/span&gt; = &#39;your hostname&#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;user&lt;/span&gt; = &#39;your username&#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;passwd&lt;/span&gt; = &#39;your password&#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;db&lt;/span&gt; = &#39;your database&#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# connect database&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;conn&lt;/span&gt; = mysql.connector.connect(&lt;span class=&quot;attr&quot;&gt;host=host,&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;user=user,&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;passwd=passwd,&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;db=db)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;cursor&lt;/span&gt; = conn.cursor()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# save blogs&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;sql&lt;/span&gt; = &lt;span class=&quot;string&quot;&gt;&quot;insert into blog(category,create_time,title) values(%s, %s, %s)&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cursor.executemany(sql, cate_list)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;conn.commit()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
     
     <summary type="html">
     
@@ -1494,11 +1215,49 @@ conn.commit()
   </entry>
   
   <entry>
+    <title>Django学习笔记一：创建新App及其常用命令</title>
+    <link href="http://blog.ybbz.site/2016/04/03/Django-foundation-one/"/>
+    <id>http://blog.ybbz.site/2016/04/03/Django-foundation-one/</id>
+    <published>2016-04-02T16:00:00.000Z</published>
+    <updated>2016-04-23T12:44:25.000Z</updated>
+    
+    <content type="html">&lt;p&gt;清明节假期，正是读书、学习的好时候；别人都出去玩了，然而我仍然在“学习”。之前一直对Django很感兴趣（因为很多人提到了它，而我也有打算在未来用Python重构PHP做的系统），因此就学习了一下&lt;/p&gt;
+&lt;h3 id=&quot;创建新的项目&quot;&gt;&lt;a href=&quot;#创建新的项目&quot; class=&quot;headerlink&quot; title=&quot;创建新的项目&quot;&gt;&lt;/a&gt;创建新的项目&lt;/h3&gt;&lt;figure class=&quot;highlight stylus&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;django-admin&lt;span class=&quot;selector-class&quot;&gt;.py&lt;/span&gt; startproject my_project&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;创建新的App&quot;&gt;&lt;a href=&quot;#创建新的App&quot; class=&quot;headerlink&quot; title=&quot;创建新的App&quot;&gt;&lt;/a&gt;创建新的App&lt;/h3&gt;&lt;figure class=&quot;highlight nginx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 在Django项目(my_project)的根目录下执行&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;python3&lt;/span&gt; manage.py startapp my_app&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;启动Django中的开发服务器&quot;&gt;&lt;a href=&quot;#启动Django中的开发服务器&quot; class=&quot;headerlink&quot; title=&quot;启动Django中的开发服务器&quot;&gt;&lt;/a&gt;启动Django中的开发服务器&lt;/h3&gt;&lt;figure class=&quot;highlight vim&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# &lt;span class=&quot;keyword&quot;&gt;make&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; migrations&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;python3&lt;/span&gt; manage.&lt;span class=&quot;keyword&quot;&gt;py&lt;/span&gt; makemigrations&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# apply &lt;span class=&quot;keyword&quot;&gt;all&lt;/span&gt; migrations&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;python3&lt;/span&gt; manage.&lt;span class=&quot;keyword&quot;&gt;py&lt;/span&gt; migrate&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# run server&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;python3&lt;/span&gt; manage.&lt;span class=&quot;keyword&quot;&gt;py&lt;/span&gt; runserver&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;创建models&quot;&gt;&lt;a href=&quot;#创建models&quot; class=&quot;headerlink&quot; title=&quot;创建models&quot;&gt;&lt;/a&gt;创建models&lt;/h3&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;App1&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(models.Model)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    title = models.CharField(max_length=&lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    category = models.CharField(max_length=&lt;span class=&quot;number&quot;&gt;50&lt;/span&gt;, blank=&lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    date_time = models.DateTimeField(auto_now_add=&lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;__unicode__&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(self)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; self.title&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Meta&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ordering = [&lt;span class=&quot;string&quot;&gt;&#39;-date_time&#39;&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;进入Django中的交互式shell&quot;&gt;&lt;a href=&quot;#进入Django中的交互式shell&quot; class=&quot;headerlink&quot; title=&quot;进入Django中的交互式shell&quot;&gt;&lt;/a&gt;进入Django中的交互式shell&lt;/h3&gt;&lt;figure class=&quot;highlight vim&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;python3&lt;/span&gt; manage.&lt;span class=&quot;keyword&quot;&gt;py&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;shell&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from app1.models import App1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# create(增加操作)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;App1.objects.create(title=&lt;span class=&quot;string&quot;&gt;&#39;title&#39;&lt;/span&gt;,category=&lt;span class=&quot;string&quot;&gt;&#39;category1&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# &lt;span class=&quot;keyword&quot;&gt;all&lt;/span&gt;和&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt;(查看操作)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;App1.objects.&lt;span class=&quot;keyword&quot;&gt;all&lt;/span&gt;()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;App1.objects.&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt;(id=&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# &lt;span class=&quot;keyword&quot;&gt;update&lt;/span&gt;(修改操作)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;demo = App1.objects.&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt;(id=&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;demo.title&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;demo.title=&lt;span class=&quot;string&quot;&gt;&#39;title2&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# &lt;span class=&quot;keyword&quot;&gt;delete&lt;/span&gt;(删除操作)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;demo.&lt;span class=&quot;keyword&quot;&gt;delete&lt;/span&gt;()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;创建一个超级用户&quot;&gt;&lt;a href=&quot;#创建一个超级用户&quot; class=&quot;headerlink&quot; title=&quot;创建一个超级用户&quot;&gt;&lt;/a&gt;创建一个超级用户&lt;/h3&gt;&lt;figure class=&quot;highlight arduino&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;python3 manage.py createsuperuser&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;# 输入http:&lt;span class=&quot;comment&quot;&gt;//127.0.0.1:8000/admin登录后台&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;数据库信息的增加和删除，admin-py中增加代码&quot;&gt;&lt;a href=&quot;#数据库信息的增加和删除，admin-py中增加代码&quot; class=&quot;headerlink&quot; title=&quot;数据库信息的增加和删除，admin.py中增加代码&quot;&gt;&lt;/a&gt;数据库信息的增加和删除，admin.py中增加代码&lt;/h3&gt;&lt;figure class=&quot;highlight stylus&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;from &lt;span class=&quot;selector-tag&quot;&gt;article&lt;/span&gt;&lt;span class=&quot;selector-class&quot;&gt;.models&lt;/span&gt; import App1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;admin&lt;span class=&quot;selector-class&quot;&gt;.site&lt;/span&gt;&lt;span class=&quot;selector-class&quot;&gt;.register&lt;/span&gt;(App1)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;Views和URL操作&quot;&gt;&lt;a href=&quot;#Views和URL操作&quot; class=&quot;headerlink&quot; title=&quot;Views和URL操作&quot;&gt;&lt;/a&gt;Views和URL操作&lt;/h3&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# views.py&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; django.http &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; HttpResponse&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;home&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(request)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; HttpResponse(&lt;span class=&quot;string&quot;&gt;&quot;Hello World, Django&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# urls.py&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;url(&lt;span class=&quot;string&quot;&gt;r&#39;^$&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;app1.views.home&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;URL传参&quot;&gt;&lt;a href=&quot;#URL传参&quot; class=&quot;headerlink&quot; title=&quot;URL传参&quot;&gt;&lt;/a&gt;URL传参&lt;/h3&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# views.py&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;detail&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(request, number)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; HttpResponse(&lt;span class=&quot;string&quot;&gt;&quot;The number is %s.&quot;&lt;/span&gt; % number)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# urls.py&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;url(&lt;span class=&quot;string&quot;&gt;r&#39;^([0-9]+)/&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;app1.views.detail&#39;&lt;/span&gt;, name=&lt;span class=&quot;string&quot;&gt;&#39;detail&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;URL传参查询数据库&quot;&gt;&lt;a href=&quot;#URL传参查询数据库&quot; class=&quot;headerlink&quot; title=&quot;URL传参查询数据库&quot;&gt;&lt;/a&gt;URL传参查询数据库&lt;/h3&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# views.py&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;database&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(request, args)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    post = App1.objects.all()[int(args)]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    str = (&lt;span class=&quot;string&quot;&gt;&quot;title = %s, category = %s, date_time = %s&quot;&lt;/span&gt; % (post.title, post.category, post.date_time))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; HttpResponse(str)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# urls.py&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;url(&lt;span class=&quot;string&quot;&gt;r&#39;^id/([0-9])+/&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;article.views.database&#39;&lt;/span&gt;, name=&lt;span class=&quot;string&quot;&gt;&#39;database&#39;&lt;/span&gt;),&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;将代码上传到Github&quot;&gt;&lt;a href=&quot;#将代码上传到Github&quot; class=&quot;headerlink&quot; title=&quot;将代码上传到Github&quot;&gt;&lt;/a&gt;将代码上传到Github&lt;/h3&gt;&lt;figure class=&quot;highlight crmsh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 在github中新建仓库django-blog&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 在项目根目录下执行&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git init&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git remote add Django&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git@github.com:ybbz/django-blog.git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git add .&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git status&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git commit -m &lt;span class=&quot;string&quot;&gt;&quot;django blog init&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git pull Django &lt;span class=&quot;keyword&quot;&gt;master&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;&amp;amp;&amp;amp; git&lt;/span&gt; push Django &lt;span class=&quot;literal&quot;&gt;master&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;Error-That-port-is-already-in-use&quot;&gt;&lt;a href=&quot;#Error-That-port-is-already-in-use&quot; class=&quot;headerlink&quot; title=&quot;Error: That port is already in use.&quot;&gt;&lt;/a&gt;Error: That port is already in use.&lt;/h3&gt;&lt;figure class=&quot;highlight vim&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;ps&lt;/span&gt; aux | &lt;span class=&quot;keyword&quot;&gt;grep&lt;/span&gt; -i manage&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;kill -&lt;span class=&quot;number&quot;&gt;9&lt;/span&gt; ****&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;python3&lt;/span&gt; manage.&lt;span class=&quot;keyword&quot;&gt;py&lt;/span&gt; runserver&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;清明节假期，正是读书、学习的好时候；别人都出去玩了，然而我仍然在“学习”。之前一直对Django很感兴趣（因为很多人提到了它，而我也有打算在未来用Python重构PHP做的系统），因此就学习了一下&lt;/p&gt;
+&lt;h3 id=&quot;创建新的项目&quot;&gt;&lt;a href=&quot;#创建新的项目&quot; 
+    
+    </summary>
+    
+      <category term="Python" scheme="http://blog.ybbz.site/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
+    
+      <category term="Django" scheme="http://blog.ybbz.site/tags/Django/"/>
+    
+  </entry>
+  
+  <entry>
     <title>读书笔记:《机器学习实践:测试驱动的开发方法》</title>
     <link href="http://blog.ybbz.site/2016/04/01/machine-learning-notes/"/>
     <id>http://blog.ybbz.site/2016/04/01/machine-learning-notes/</id>
     <published>2016-03-31T16:00:00.000Z</published>
-    <updated>2016-04-23T09:26:54.000Z</updated>
+    <updated>2016-04-23T12:44:56.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;strong&gt;《机器学习实践:测试驱动的开发方法》&lt;/strong&gt;（Thoughtful Machine Learning:A Test-Driven Approach），在图书馆看到了这本书，当时浏览了目录，觉得挺中意的，就借回来了。然而看了前言之后，我就对这本书不抱有太大的希望了，原因无他，作者用的是Ruby而非Python。我对自己的定位只是Python入门、任重而道远，因此并不打算跳入Ruby的“火坑”。&lt;/p&gt;
 &lt;p&gt;可是这并不妨碍我阅读这本书，毕竟，机器学习的算法思想都是相通的，并不妨碍我去学习。下面，简单记录一下看这本书时候的一些体会。&lt;/p&gt;
@@ -1690,6 +1449,80 @@ P(A3|A1,A2)=P(A1,A2|A3)P(A3)/P(A1,A2)=P(A1,A2,A3)/P(A1,A2)=P(A3)P(A1|A3)P(A2|A3)
   </entry>
   
   <entry>
+    <title>一道算法题</title>
+    <link href="http://blog.ybbz.site/2016/03/29/algorithm/"/>
+    <id>http://blog.ybbz.site/2016/03/29/algorithm/</id>
+    <published>2016-03-28T16:00:00.000Z</published>
+    <updated>2016-04-23T09:26:42.000Z</updated>
+    
+    <content type="html">&lt;p&gt;题目如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;已知list1 = [20, 6, 15, 53, 47],已经排好序&lt;/li&gt;
+&lt;li&gt;已知list2 = [(6, ‘John’, ‘20’), (15, ‘Kim’, ‘18’),(20, ‘David’, ‘21’), (47, ‘Amy’, ‘23’), (53, ‘Mary’, ‘20’)]&lt;/li&gt;
+&lt;li&gt;把list2按照list1中的顺序重新排序，并把排序结果封装成json字符串，得到list3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;代码如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;list1 = [20, 6, 15, 53, 47]
+list2 = [(6, &amp;apos;John&amp;apos;, &amp;apos;20&amp;apos;), (15, &amp;apos;Kim&amp;apos;, &amp;apos;18&amp;apos;),
+         (20, &amp;apos;David&amp;apos;, &amp;apos;21&amp;apos;), (47, &amp;apos;Amy&amp;apos;, &amp;apos;23&amp;apos;), (53, &amp;apos;Mary&amp;apos;, &amp;apos;20&amp;apos;)]
+print(list1)
+print(list2)
+
+list3 = []
+# count = len(list1)
+# for i in range(0, count):
+#     dict = {}
+#     id = list1[i]
+#     dict[&amp;apos;id&amp;apos;] = id
+#     j = 0
+#     while j &amp;lt; count and list2[j][0] != id:
+#         j += 1
+#     dict[&amp;apos;name&amp;apos;] = list2[j][1]
+#     dict[&amp;apos;age&amp;apos;] = list2[j][2]
+#     list3.append(dict)
+
+
+# list2_dict = {}
+# for item2 in list2:
+#     list2_dict[item2[0]] = (item2[1], item2[2])
+# for item1 in list1:
+#     dict = {}
+#     dict[&amp;apos;id&amp;apos;] = item1
+#     dict[&amp;apos;name&amp;apos;] = list2_dict[item1][0]
+#     dict[&amp;apos;age&amp;apos;] = list2_dict[item1][1]
+#     list3.append(dict)
+
+list2_dict = {}
+for item2 in list2:
+    list2_dict[item2[0]] = {&amp;apos;name&amp;apos;: item2[1], &amp;apos;age&amp;apos;: item2[2]}
+for item1 in list1:
+    dict = list2_dict[item1]
+    dict[&amp;apos;id&amp;apos;] = item1
+    list3.append(dict)
+
+print(list3)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;^_^ 感谢我的本科室友~&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;题目如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;已知list1 = [20, 6, 15, 53, 47],已经排好序&lt;/li&gt;
+&lt;li&gt;已知list2 = [(6, ‘John’, ‘20’), (15, ‘Kim’, ‘18’),(20, ‘David’, ‘21’), (47,
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="http://blog.ybbz.site/categories/Algorithm/"/>
+    
+    
+      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
+    
+      <category term="Algorithm" scheme="http://blog.ybbz.site/tags/Algorithm/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Ajax跨域访问Flask构建的Python Web服务器</title>
     <link href="http://blog.ybbz.site/2016/03/29/Ajax-Flask-Python-Web-Server/"/>
     <id>http://blog.ybbz.site/2016/03/29/Ajax-Flask-Python-Web-Server/</id>
@@ -1809,80 +1642,6 @@ print(decode)
   </entry>
   
   <entry>
-    <title>一道算法题</title>
-    <link href="http://blog.ybbz.site/2016/03/29/algorithm/"/>
-    <id>http://blog.ybbz.site/2016/03/29/algorithm/</id>
-    <published>2016-03-28T16:00:00.000Z</published>
-    <updated>2016-04-23T09:26:42.000Z</updated>
-    
-    <content type="html">&lt;p&gt;题目如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;已知list1 = [20, 6, 15, 53, 47],已经排好序&lt;/li&gt;
-&lt;li&gt;已知list2 = [(6, ‘John’, ‘20’), (15, ‘Kim’, ‘18’),(20, ‘David’, ‘21’), (47, ‘Amy’, ‘23’), (53, ‘Mary’, ‘20’)]&lt;/li&gt;
-&lt;li&gt;把list2按照list1中的顺序重新排序，并把排序结果封装成json字符串，得到list3&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;代码如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;list1 = [20, 6, 15, 53, 47]
-list2 = [(6, &amp;apos;John&amp;apos;, &amp;apos;20&amp;apos;), (15, &amp;apos;Kim&amp;apos;, &amp;apos;18&amp;apos;),
-         (20, &amp;apos;David&amp;apos;, &amp;apos;21&amp;apos;), (47, &amp;apos;Amy&amp;apos;, &amp;apos;23&amp;apos;), (53, &amp;apos;Mary&amp;apos;, &amp;apos;20&amp;apos;)]
-print(list1)
-print(list2)
-
-list3 = []
-# count = len(list1)
-# for i in range(0, count):
-#     dict = {}
-#     id = list1[i]
-#     dict[&amp;apos;id&amp;apos;] = id
-#     j = 0
-#     while j &amp;lt; count and list2[j][0] != id:
-#         j += 1
-#     dict[&amp;apos;name&amp;apos;] = list2[j][1]
-#     dict[&amp;apos;age&amp;apos;] = list2[j][2]
-#     list3.append(dict)
-
-
-# list2_dict = {}
-# for item2 in list2:
-#     list2_dict[item2[0]] = (item2[1], item2[2])
-# for item1 in list1:
-#     dict = {}
-#     dict[&amp;apos;id&amp;apos;] = item1
-#     dict[&amp;apos;name&amp;apos;] = list2_dict[item1][0]
-#     dict[&amp;apos;age&amp;apos;] = list2_dict[item1][1]
-#     list3.append(dict)
-
-list2_dict = {}
-for item2 in list2:
-    list2_dict[item2[0]] = {&amp;apos;name&amp;apos;: item2[1], &amp;apos;age&amp;apos;: item2[2]}
-for item1 in list1:
-    dict = list2_dict[item1]
-    dict[&amp;apos;id&amp;apos;] = item1
-    list3.append(dict)
-
-print(list3)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;^_^ 感谢我的本科室友~&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;题目如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;已知list1 = [20, 6, 15, 53, 47],已经排好序&lt;/li&gt;
-&lt;li&gt;已知list2 = [(6, ‘John’, ‘20’), (15, ‘Kim’, ‘18’),(20, ‘David’, ‘21’), (47,
-    
-    </summary>
-    
-      <category term="Algorithm" scheme="http://blog.ybbz.site/categories/Algorithm/"/>
-    
-    
-      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
-    
-      <category term="Algorithm" scheme="http://blog.ybbz.site/tags/Algorithm/"/>
-    
-  </entry>
-  
-  <entry>
     <title>随笔：写在三月末</title>
     <link href="http://blog.ybbz.site/2016/03/28/Just-write-about-my-life/"/>
     <id>http://blog.ybbz.site/2016/03/28/Just-write-about-my-life/</id>
@@ -1916,123 +1675,6 @@ print(list3)
     
     
       <category term="Life" scheme="http://blog.ybbz.site/tags/Life/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>爬虫实战：抓取在iBeiKe的所有发帖信息保存到数据库，进行可视化分析</title>
-    <link href="http://blog.ybbz.site/2016/03/27/crawl-ibeike/"/>
-    <id>http://blog.ybbz.site/2016/03/27/crawl-ibeike/</id>
-    <published>2016-03-26T16:00:00.000Z</published>
-    <updated>2016-04-23T09:26:19.000Z</updated>
-    
-    <content type="html">&lt;blockquote&gt;
-&lt;p&gt;iBeiKe网站，或简称iBeiKe（中文：爱北科，英文缩写：IBK）是北京科技大学学生会下属的技术性学生组织iBeiKe团队建立和维护的网站，主要服务于北京科技大学的师生。网站成立于2001年3月，时称“北科大学生之家”。iBeiKe网站是北京科技大学学生会的宣传门户，同时也是一个综合性的学生网站及校园服务网站。iBeiKe网站也是北京科技大学历史最长的学生网站。网站的标语是“网上网下，一样精彩”。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;博主本科时期在iBeiKe担任了n年的版主和总版主（好吧，现在好像还没卸任？），挥洒了无数的青春与汗水。也结交了无数的基友（有男有女又老又少）。。。&lt;/p&gt;
-&lt;p&gt;声明：用爬虫抓取数据，没有任何坏心思，纯粹的兴趣与技术交流，抓的也都是自己的数据，不侵犯他人隐私。若牵扯到各方利益，请联系我！&lt;/p&gt;
-&lt;p&gt;言归正传～～～github传送门：&lt;a href=&quot;https://github.com/ybbz/crawler&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;crawl_ibeike1/2&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
-&lt;p&gt;效果图如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160330_1.png&quot; alt=&quot;20160330_1&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160330_2.png&quot; alt=&quot;20160330_2&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;抓取数据并清洗，保存到数据库&quot;&gt;&lt;a href=&quot;#抓取数据并清洗，保存到数据库&quot; class=&quot;headerlink&quot; title=&quot;抓取数据并清洗，保存到数据库&quot;&gt;&lt;/a&gt;抓取数据并清洗，保存到数据库&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;# encoding=utf-8
-
-import httplib2
-import mysql.connector
-from bs4 import BeautifulSoup
-
-result = []
-pageNum = &amp;apos;total page number&amp;apos;
-uid = &amp;apos;your uid&amp;apos;
-cookie = &amp;quot;your cookies&amp;quot;
-
-url = &amp;apos;http://city.ibeike.com/home.php?mod=space&amp;amp;uid=&amp;apos; + uid + &amp;apos;&amp;amp;do=thread&amp;amp;view=me&amp;amp;order=dateline&amp;amp;from=space&amp;amp;page=&amp;apos;
-
-headers = {&amp;quot;Connection&amp;quot;: &amp;quot;keep-alive&amp;quot;,
-           &amp;quot;Cookie&amp;quot;: cookie,
-           &amp;quot;Content-Type&amp;quot;: &amp;quot;application/xhtml+xml&amp;quot;}
-
-for page in range(1, pageNum + 1):
-    cur_page = page
-    url_full = url + str(cur_page)
-    # http request
-    http = httplib2.Http()
-    response, content = http.request(url_full, &amp;quot;GET&amp;quot;, headers=headers)
-    if response.status == 200:
-        # print(response)
-        # print(content.decode(&amp;apos;utf-8&amp;apos;))
-        soup = BeautifulSoup(content, &amp;quot;lxml&amp;quot;)
-        table = soup.find_all(&amp;apos;table&amp;apos;)[1]
-        tr = table.find_all(&amp;apos;tr&amp;apos;, class_=&amp;apos;&amp;apos;)
-        for item in tr:
-            item_list = []
-            # print(item.prettify())
-            item_title = item.th.a.string
-            item_group = item.find_all(&amp;apos;td&amp;apos;, class_=&amp;apos;&amp;apos;)[0].a.string
-            item_reply = item.select(&amp;apos;td[class=&amp;quot;num&amp;quot;]&amp;apos;)[0].a.string
-            item_watch = item.select(&amp;apos;td[class=&amp;quot;num&amp;quot;]&amp;apos;)[0].em.string
-            # save to the result list
-            item = (str(item_title), str(item_group), int(item_reply), int(item_watch))
-            result.append(item)
-print(result)
-
-# connect database
-conn = mysql.connector.connect(host=&amp;quot;hostname&amp;quot;, user=&amp;quot;username&amp;quot;, passwd=&amp;quot;password&amp;quot;, db=&amp;quot;database&amp;quot;)
-cursor = conn.cursor()
-# save data
-sql = &amp;quot;insert into ibeike(title,groups,reply,watch) values(%s,%s,%s,%s)&amp;quot;
-cursor.executemany(sql, result)
-conn.commit()
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;数据分析与数据可视化&quot;&gt;&lt;a href=&quot;#数据分析与数据可视化&quot; class=&quot;headerlink&quot; title=&quot;数据分析与数据可视化&quot;&gt;&lt;/a&gt;数据分析与数据可视化&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;# encoding=utf-8
-
-import mysql.connector
-import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
-
-# connect database
-conn = mysql.connector.connect(host=&amp;quot;hostname&amp;quot;, user=&amp;quot;username&amp;quot;,passwd=&amp;quot;password&amp;quot;, db=&amp;quot;database&amp;quot;)
-cursor = conn.cursor()
-# query data
-cursor.execute(&amp;apos;select count(*),max(reply),min(reply),max(watch),min(watch) from ibeike&amp;apos;)
-values1 = cursor.fetchall()
-print(&amp;quot;ibeike:totally&amp;quot; + str(values1[0][0]) + &amp;quot;data&amp;quot;)
-list = [(&amp;apos;highest reply&amp;apos;, values1[0][1]), (&amp;apos;lowest reply&amp;apos;, values1[0][2]),(&amp;apos;hightest watch&amp;apos;, values1[0][3]),(&amp;apos;lowest watch&amp;apos;, values1[0][4])]
-# draw picture
-budget = pd.DataFrame(list, columns=[&amp;apos;type&amp;apos;, &amp;apos;count&amp;apos;])
-sns.set_style(&amp;quot;darkgrid&amp;quot;)
-bar_plot = sns.barplot(x=budget[&amp;quot;type&amp;quot;], y=budget[&amp;quot;count&amp;quot;],palette=&amp;quot;muted&amp;quot;, order=budget[&amp;quot;type&amp;quot;].tolist())
-plt.show()
-
-# query data
-cursor.execute(&amp;apos;select count(id),groups from ibeike group by groups&amp;apos;)
-values2 = cursor.fetchall()
-values2.append((values1[0][0], &amp;apos;all sort&amp;apos;))
-result = sorted(values2)
-result.reverse()
-# draw picture
-budget = pd.DataFrame(result, columns=[&amp;apos;count&amp;apos;, &amp;apos;sort&amp;apos;])
-sns.set_style(&amp;quot;darkgrid&amp;quot;)
-bar_plot = sns.barplot(x=budget[&amp;quot;sort&amp;quot;], y=budget[&amp;quot;count&amp;quot;],palette=&amp;quot;muted&amp;quot;, order=budget[&amp;quot;sort&amp;quot;].tolist())
-plt.xticks(rotation=30)
-plt.show()
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;参考资料：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://cuiqingcai.com/1319.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Python爬虫利器二之Beautiful Soup的用法&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;iBeiKe网站，或简称iBeiKe（中文：爱北科，英文缩写：IBK）是北京科技大学学生会下属的技术性学生组织iBeiKe团队建立和维护的网站，主要服务于北京科技大学的师生。网站成立于2001年3月，时称“北科大学生之家”。iBeiKe网站是北京科
-    
-    </summary>
-    
-      <category term="Crawler" scheme="http://blog.ybbz.site/categories/Crawler/"/>
-    
-    
-      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
-    
-      <category term="Crawler" scheme="http://blog.ybbz.site/tags/Crawler/"/>
     
   </entry>
   
@@ -2154,6 +1796,123 @@ print(&amp;apos;draw : done.&amp;apos;)
     
       &lt;p&gt;github传送门：&lt;a href=&quot;https://github.com/ybbz/crawler&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;crawl_weibo&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
 &lt;p&gt;声明：用爬虫抓取数据，没有
+    
+    </summary>
+    
+      <category term="Crawler" scheme="http://blog.ybbz.site/categories/Crawler/"/>
+    
+    
+      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
+    
+      <category term="Crawler" scheme="http://blog.ybbz.site/tags/Crawler/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>爬虫实战：抓取在iBeiKe的所有发帖信息保存到数据库，进行可视化分析</title>
+    <link href="http://blog.ybbz.site/2016/03/27/crawl-ibeike/"/>
+    <id>http://blog.ybbz.site/2016/03/27/crawl-ibeike/</id>
+    <published>2016-03-26T16:00:00.000Z</published>
+    <updated>2016-04-23T09:26:19.000Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;iBeiKe网站，或简称iBeiKe（中文：爱北科，英文缩写：IBK）是北京科技大学学生会下属的技术性学生组织iBeiKe团队建立和维护的网站，主要服务于北京科技大学的师生。网站成立于2001年3月，时称“北科大学生之家”。iBeiKe网站是北京科技大学学生会的宣传门户，同时也是一个综合性的学生网站及校园服务网站。iBeiKe网站也是北京科技大学历史最长的学生网站。网站的标语是“网上网下，一样精彩”。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;博主本科时期在iBeiKe担任了n年的版主和总版主（好吧，现在好像还没卸任？），挥洒了无数的青春与汗水。也结交了无数的基友（有男有女又老又少）。。。&lt;/p&gt;
+&lt;p&gt;声明：用爬虫抓取数据，没有任何坏心思，纯粹的兴趣与技术交流，抓的也都是自己的数据，不侵犯他人隐私。若牵扯到各方利益，请联系我！&lt;/p&gt;
+&lt;p&gt;言归正传～～～github传送门：&lt;a href=&quot;https://github.com/ybbz/crawler&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;crawl_ibeike1/2&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
+&lt;p&gt;效果图如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160330_1.png&quot; alt=&quot;20160330_1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160330_2.png&quot; alt=&quot;20160330_2&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;抓取数据并清洗，保存到数据库&quot;&gt;&lt;a href=&quot;#抓取数据并清洗，保存到数据库&quot; class=&quot;headerlink&quot; title=&quot;抓取数据并清洗，保存到数据库&quot;&gt;&lt;/a&gt;抓取数据并清洗，保存到数据库&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;# encoding=utf-8
+
+import httplib2
+import mysql.connector
+from bs4 import BeautifulSoup
+
+result = []
+pageNum = &amp;apos;total page number&amp;apos;
+uid = &amp;apos;your uid&amp;apos;
+cookie = &amp;quot;your cookies&amp;quot;
+
+url = &amp;apos;http://city.ibeike.com/home.php?mod=space&amp;amp;uid=&amp;apos; + uid + &amp;apos;&amp;amp;do=thread&amp;amp;view=me&amp;amp;order=dateline&amp;amp;from=space&amp;amp;page=&amp;apos;
+
+headers = {&amp;quot;Connection&amp;quot;: &amp;quot;keep-alive&amp;quot;,
+           &amp;quot;Cookie&amp;quot;: cookie,
+           &amp;quot;Content-Type&amp;quot;: &amp;quot;application/xhtml+xml&amp;quot;}
+
+for page in range(1, pageNum + 1):
+    cur_page = page
+    url_full = url + str(cur_page)
+    # http request
+    http = httplib2.Http()
+    response, content = http.request(url_full, &amp;quot;GET&amp;quot;, headers=headers)
+    if response.status == 200:
+        # print(response)
+        # print(content.decode(&amp;apos;utf-8&amp;apos;))
+        soup = BeautifulSoup(content, &amp;quot;lxml&amp;quot;)
+        table = soup.find_all(&amp;apos;table&amp;apos;)[1]
+        tr = table.find_all(&amp;apos;tr&amp;apos;, class_=&amp;apos;&amp;apos;)
+        for item in tr:
+            item_list = []
+            # print(item.prettify())
+            item_title = item.th.a.string
+            item_group = item.find_all(&amp;apos;td&amp;apos;, class_=&amp;apos;&amp;apos;)[0].a.string
+            item_reply = item.select(&amp;apos;td[class=&amp;quot;num&amp;quot;]&amp;apos;)[0].a.string
+            item_watch = item.select(&amp;apos;td[class=&amp;quot;num&amp;quot;]&amp;apos;)[0].em.string
+            # save to the result list
+            item = (str(item_title), str(item_group), int(item_reply), int(item_watch))
+            result.append(item)
+print(result)
+
+# connect database
+conn = mysql.connector.connect(host=&amp;quot;hostname&amp;quot;, user=&amp;quot;username&amp;quot;, passwd=&amp;quot;password&amp;quot;, db=&amp;quot;database&amp;quot;)
+cursor = conn.cursor()
+# save data
+sql = &amp;quot;insert into ibeike(title,groups,reply,watch) values(%s,%s,%s,%s)&amp;quot;
+cursor.executemany(sql, result)
+conn.commit()
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;数据分析与数据可视化&quot;&gt;&lt;a href=&quot;#数据分析与数据可视化&quot; class=&quot;headerlink&quot; title=&quot;数据分析与数据可视化&quot;&gt;&lt;/a&gt;数据分析与数据可视化&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;# encoding=utf-8
+
+import mysql.connector
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# connect database
+conn = mysql.connector.connect(host=&amp;quot;hostname&amp;quot;, user=&amp;quot;username&amp;quot;,passwd=&amp;quot;password&amp;quot;, db=&amp;quot;database&amp;quot;)
+cursor = conn.cursor()
+# query data
+cursor.execute(&amp;apos;select count(*),max(reply),min(reply),max(watch),min(watch) from ibeike&amp;apos;)
+values1 = cursor.fetchall()
+print(&amp;quot;ibeike:totally&amp;quot; + str(values1[0][0]) + &amp;quot;data&amp;quot;)
+list = [(&amp;apos;highest reply&amp;apos;, values1[0][1]), (&amp;apos;lowest reply&amp;apos;, values1[0][2]),(&amp;apos;hightest watch&amp;apos;, values1[0][3]),(&amp;apos;lowest watch&amp;apos;, values1[0][4])]
+# draw picture
+budget = pd.DataFrame(list, columns=[&amp;apos;type&amp;apos;, &amp;apos;count&amp;apos;])
+sns.set_style(&amp;quot;darkgrid&amp;quot;)
+bar_plot = sns.barplot(x=budget[&amp;quot;type&amp;quot;], y=budget[&amp;quot;count&amp;quot;],palette=&amp;quot;muted&amp;quot;, order=budget[&amp;quot;type&amp;quot;].tolist())
+plt.show()
+
+# query data
+cursor.execute(&amp;apos;select count(id),groups from ibeike group by groups&amp;apos;)
+values2 = cursor.fetchall()
+values2.append((values1[0][0], &amp;apos;all sort&amp;apos;))
+result = sorted(values2)
+result.reverse()
+# draw picture
+budget = pd.DataFrame(result, columns=[&amp;apos;count&amp;apos;, &amp;apos;sort&amp;apos;])
+sns.set_style(&amp;quot;darkgrid&amp;quot;)
+bar_plot = sns.barplot(x=budget[&amp;quot;sort&amp;quot;], y=budget[&amp;quot;count&amp;quot;],palette=&amp;quot;muted&amp;quot;, order=budget[&amp;quot;sort&amp;quot;].tolist())
+plt.xticks(rotation=30)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;参考资料：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://cuiqingcai.com/1319.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Python爬虫利器二之Beautiful Soup的用法&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;iBeiKe网站，或简称iBeiKe（中文：爱北科，英文缩写：IBK）是北京科技大学学生会下属的技术性学生组织iBeiKe团队建立和维护的网站，主要服务于北京科技大学的师生。网站成立于2001年3月，时称“北科大学生之家”。iBeiKe网站是北京科
     
     </summary>
     

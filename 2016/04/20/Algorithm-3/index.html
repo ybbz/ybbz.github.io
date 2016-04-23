@@ -57,42 +57,33 @@
 
 
 <meta name="description" content="问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。
-算法一
-对链表一进行遍历，在遍历到每一个节点时，都在链表二中进行遍历，看是否有重复的节点。
-算法一改进
-以空间换时间：将链表二存入字典，然后遍历链表一，判断是否在于字典中。简化后，时间复杂度变为 O(n+m)，但空间复杂度较高。
-算法二
-算法二的思路基于以下两个原理：
+算法一对链表一进行遍历，在遍历到每一个节点时，都在链表二中进行遍历，看是否有重复的节点。
+算法一改进以空间换时间：将链表二存入字典，然后遍历链表一，判断是否在于字典中。简化后，时间复杂度变为 O(n+m)，但空间复杂度较高。
+算法二算法二的思路基于以下两个原理：
 
 两个单向链表相交后，必然无法再分开。
-两个单项链表相交后，尾节点">
+两个单项链表相交后，尾节点一定相">
 <meta property="og:type" content="article">
 <meta property="og:title" content="判断两个单向链表是否相交">
 <meta property="og:url" content="http://blog.ybbz.site/2016/04/20/Algorithm-3/index.html">
 <meta property="og:site_name" content="八宝粥的博客">
 <meta property="og:description" content="问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。
-算法一
-对链表一进行遍历，在遍历到每一个节点时，都在链表二中进行遍历，看是否有重复的节点。
-算法一改进
-以空间换时间：将链表二存入字典，然后遍历链表一，判断是否在于字典中。简化后，时间复杂度变为 O(n+m)，但空间复杂度较高。
-算法二
-算法二的思路基于以下两个原理：
+算法一对链表一进行遍历，在遍历到每一个节点时，都在链表二中进行遍历，看是否有重复的节点。
+算法一改进以空间换时间：将链表二存入字典，然后遍历链表一，判断是否在于字典中。简化后，时间复杂度变为 O(n+m)，但空间复杂度较高。
+算法二算法二的思路基于以下两个原理：
 
 两个单向链表相交后，必然无法再分开。
-两个单项链表相交后，尾节点">
-<meta property="og:updated_time" content="2016-04-23T09:28:08.000Z">
+两个单项链表相交后，尾节点一定相">
+<meta property="og:updated_time" content="2016-04-23T12:35:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="判断两个单向链表是否相交">
 <meta name="twitter:description" content="问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。
-算法一
-对链表一进行遍历，在遍历到每一个节点时，都在链表二中进行遍历，看是否有重复的节点。
-算法一改进
-以空间换时间：将链表二存入字典，然后遍历链表一，判断是否在于字典中。简化后，时间复杂度变为 O(n+m)，但空间复杂度较高。
-算法二
-算法二的思路基于以下两个原理：
+算法一对链表一进行遍历，在遍历到每一个节点时，都在链表二中进行遍历，看是否有重复的节点。
+算法一改进以空间换时间：将链表二存入字典，然后遍历链表一，判断是否在于字典中。简化后，时间复杂度变为 O(n+m)，但空间复杂度较高。
+算法二算法二的思路基于以下两个原理：
 
 两个单向链表相交后，必然无法再分开。
-两个单项链表相交后，尾节点">
+两个单项链表相交后，尾节点一定相">
 
 
 
@@ -105,7 +96,7 @@
     motion: true,
     duoshuo: {
       userId: 6231437225821734000,
-      author: '博主'
+      author: '八宝粥'
     }
   };
 </script>
@@ -366,12 +357,9 @@
 
       
         <p>问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。</p>
-<p><strong>算法一</strong></p>
-<p>对链表一进行遍历，在遍历到每一个节点时，都在链表二中进行遍历，看是否有重复的节点。</p>
-<p><strong>算法一改进</strong></p>
-<p>以空间换时间：将链表二存入字典，然后遍历链表一，判断是否在于字典中。简化后，时间复杂度变为 O(n+m)，但空间复杂度较高。</p>
-<p><strong>算法二</strong></p>
-<p>算法二的思路基于以下两个原理：</p>
+<h3 id="算法一"><a href="#算法一" class="headerlink" title="算法一"></a>算法一</h3><p>对链表一进行遍历，在遍历到每一个节点时，都在链表二中进行遍历，看是否有重复的节点。</p>
+<h4 id="算法一改进"><a href="#算法一改进" class="headerlink" title="算法一改进"></a>算法一改进</h4><p>以空间换时间：将链表二存入字典，然后遍历链表一，判断是否在于字典中。简化后，时间复杂度变为 O(n+m)，但空间复杂度较高。</p>
+<h3 id="算法二"><a href="#算法二" class="headerlink" title="算法二"></a>算法二</h3><p>算法二的思路基于以下两个原理：</p>
 <ul>
 <li>两个单向链表相交后，必然无法再分开。</li>
 <li>两个单项链表相交后，尾节点一定相同。</li>
@@ -384,6 +372,11 @@
     <div>
       
         
+<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/qrcode.jpg" alt="八宝粥 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
       
     </div>
 
@@ -406,16 +399,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/20/Algorithm-2/" rel="next" title="根号值逼近问题的算法">
-                <i class="fa fa-chevron-left"></i> 根号值逼近问题的算法
+              <a href="/2016/04/18/my-first-andorid-app-online/" rel="next" title="庆祝我的第一个独立APP上线">
+                <i class="fa fa-chevron-left"></i> 庆祝我的第一个独立APP上线
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/20/OWL-SWRL/" rel="prev" title="OWL Web本体语言指南">
-                OWL Web本体语言指南 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/20/Algorithm-2/" rel="prev" title="根号值逼近问题的算法">
+                根号值逼近问题的算法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -589,7 +582,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#算法一"><span class="nav-number">1.</span> <span class="nav-text">算法一</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法一改进"><span class="nav-number">1.1.</span> <span class="nav-text">算法一改进</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法二"><span class="nav-number">2.</span> <span class="nav-text">算法二</span></a></li></ol></div>
             
           </div>
         </section>
@@ -721,6 +714,10 @@
   </script>
 
   
+    
+      
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
     
   
 
