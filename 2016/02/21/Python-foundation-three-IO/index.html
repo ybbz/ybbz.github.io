@@ -56,28 +56,16 @@
 
 
 
-<meta name="description" content="读文件# 打开文件,&amp;apos;r&amp;apos;表示读，
-f = open(&amp;apos;/Users/ybbz/Desktop/test.txt&amp;apos;, &amp;apos;r&amp;apos;)
-# read()方法一次读取文件的全部内容，Python把内容读到内存，用一个str对象表示
-print(f.read())
-# 文件使用完毕后必须关闭，文件对象会占用操作系统的资源，操作系统同一时间能打开的文件">
+<meta name="description" content="读文件12345678910111213141516171819202122232425262728293031323334353637383940# 打开文件,&apos;r&apos;表示读，f = open(&apos;/Users/ybbz/Desktop/test.txt&apos;, &apos;r&apos;)# read()方法一次读取文件的全部内容，Python把内容读到内存，用一个str对象表示print(f.read())# 文件使用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python基础知识总结三：IO编程">
 <meta property="og:url" content="http://blog.ybbz.site/2016/02/21/Python-foundation-three-IO/index.html">
 <meta property="og:site_name" content="八宝粥的博客">
-<meta property="og:description" content="读文件# 打开文件,&amp;apos;r&amp;apos;表示读，
-f = open(&amp;apos;/Users/ybbz/Desktop/test.txt&amp;apos;, &amp;apos;r&amp;apos;)
-# read()方法一次读取文件的全部内容，Python把内容读到内存，用一个str对象表示
-print(f.read())
-# 文件使用完毕后必须关闭，文件对象会占用操作系统的资源，操作系统同一时间能打开的文件">
-<meta property="og:updated_time" content="2016-04-23T09:22:56.000Z">
+<meta property="og:description" content="读文件12345678910111213141516171819202122232425262728293031323334353637383940# 打开文件,&apos;r&apos;表示读，f = open(&apos;/Users/ybbz/Desktop/test.txt&apos;, &apos;r&apos;)# read()方法一次读取文件的全部内容，Python把内容读到内存，用一个str对象表示print(f.read())# 文件使用">
+<meta property="og:updated_time" content="2016-04-23T13:09:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python基础知识总结三：IO编程">
-<meta name="twitter:description" content="读文件# 打开文件,&amp;apos;r&amp;apos;表示读，
-f = open(&amp;apos;/Users/ybbz/Desktop/test.txt&amp;apos;, &amp;apos;r&amp;apos;)
-# read()方法一次读取文件的全部内容，Python把内容读到内存，用一个str对象表示
-print(f.read())
-# 文件使用完毕后必须关闭，文件对象会占用操作系统的资源，操作系统同一时间能打开的文件">
+<meta name="twitter:description" content="读文件12345678910111213141516171819202122232425262728293031323334353637383940# 打开文件,&apos;r&apos;表示读，f = open(&apos;/Users/ybbz/Desktop/test.txt&apos;, &apos;r&apos;)# read()方法一次读取文件的全部内容，Python把内容读到内存，用一个str对象表示print(f.read())# 文件使用">
 
 
 
@@ -350,168 +338,13 @@ print(f.read())
       
 
       
-        <h3 id="读文件"><a href="#读文件" class="headerlink" title="读文件"></a>读文件</h3><pre><code># 打开文件,&apos;r&apos;表示读，
-f = open(&apos;/Users/ybbz/Desktop/test.txt&apos;, &apos;r&apos;)
-# read()方法一次读取文件的全部内容，Python把内容读到内存，用一个str对象表示
-print(f.read())
-# 文件使用完毕后必须关闭，文件对象会占用操作系统的资源，操作系统同一时间能打开的文件数量也是有限的
-f.close()
+        <h3 id="读文件"><a href="#读文件" class="headerlink" title="读文件"></a>读文件</h3><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打开文件,'r'表示读，</span></span><br><span class="line">f = <span class="built_in">open</span>(<span class="string">'/Users/ybbz/Desktop/test.txt'</span>, <span class="string">'r'</span>)</span><br><span class="line"><span class="comment"># read()方法一次读取文件的全部内容，Python把内容读到内存，用一个str对象表示</span></span><br><span class="line">print(f.<span class="built_in">read</span>())</span><br><span class="line"><span class="comment"># 文件使用完毕后必须关闭，文件对象会占用操作系统的资源，操作系统同一时间能打开的文件数量也是有限的</span></span><br><span class="line">f.<span class="built_in">close</span>()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 文件读写时可能产生IOError，一旦出错，后面的f.close()就不会调用。</span></span><br><span class="line"><span class="comment"># 为了保证无论是否出错都能正确地关闭文件，使用try ... finally来实现：</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    f = <span class="built_in">open</span>(<span class="string">'/Users/ybbz/Desktop/test.txt'</span>, <span class="string">'r'</span>)</span><br><span class="line">    print(f.<span class="built_in">read</span>())</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    <span class="keyword">if</span> f:</span><br><span class="line">        f.<span class="built_in">close</span>()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Python引入了with语句来自动帮我们调用close()方法</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'/Users/ybbz/Desktop/test.txt'</span>, <span class="string">'r'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    print(f.<span class="built_in">read</span>())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果文件很小，read()一次性读取最方便</span></span><br><span class="line"><span class="comment"># 如果不能确定文件大小，反复调用read(size),每次最多读取size个字节的内容</span></span><br><span class="line"><span class="comment"># 调用readline()可以每次读取一行内容</span></span><br><span class="line"><span class="comment"># 如果是配置文件,调用readlines(),一次读取所有内容并按行返回list</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'/Users/ybbz/Desktop/test.txt'</span>, <span class="string">'r'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">line</span> <span class="keyword">in</span> f.readlines():</span><br><span class="line">        print(<span class="string">'逐行:'</span> + <span class="built_in">line</span>.strip())  <span class="comment"># 把末尾的'\n'删掉</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取二进制文件，比如图片、视频等，用'rb'模式打开文件</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'/Users/ybbz/Desktop/cos.png'</span>, <span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    print(f.<span class="built_in">read</span>())  <span class="comment"># 十六进制表示的字节</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 给open()函数传入encoding参数</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'/Users/ybbz/Desktop/test.txt'</span>, <span class="string">'r'</span>, encoding=<span class="string">'gbk'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    print(f.<span class="built_in">read</span>())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 忽略非法编码的字符</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'/Users/ybbz/Desktop/test.txt'</span>, <span class="string">'r'</span>, encoding=<span class="string">'gbk'</span>, errors=<span class="string">'ignore'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    print(f.<span class="built_in">read</span>())</span><br></pre></td></tr></table></figure>
+<h3 id="写文件"><a href="#写文件" class="headerlink" title="写文件"></a>写文件</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"># 当我们写文件时，操作系统往往不会立刻把数据写入磁盘，而是放到内存缓存起来，空闲的时候再慢慢写入。</span><br><span class="line"># 只有调用<span class="keyword">close</span>()方法时，操作系统才保证把没有写入的数据全部写入磁盘。</span><br><span class="line"># 调用<span class="keyword">open</span>()函数时，传入标识符<span class="string">'w'</span>或者<span class="string">'wb'</span>表示写文本文件或写二进制文件</span><br><span class="line"># 要写入特定编码的文本文件，给<span class="keyword">open</span>()函数传入encoding参数</span><br><span class="line"></span><br><span class="line">with <span class="keyword">open</span>(<span class="string">'/Users/ybbz/Desktop/test.txt'</span>, <span class="string">'w'</span>) <span class="keyword">as</span> <span class="keyword">f</span>:</span><br><span class="line">    <span class="keyword">f</span>.<span class="keyword">write</span>(<span class="string">'one'</span>)</span><br><span class="line"></span><br><span class="line"># <span class="string">'r'</span>    <span class="keyword">open</span> <span class="keyword">for</span> reading (default)</span><br><span class="line"># <span class="string">'w'</span>    <span class="keyword">open</span> <span class="keyword">for</span> writing, truncating the <span class="keyword">file</span> <span class="keyword">first</span></span><br><span class="line"># <span class="string">'x'</span>    <span class="keyword">open</span> <span class="keyword">for</span> exclusive creation, failing <span class="keyword">if</span> the <span class="keyword">file</span> already <span class="built_in">exists</span></span><br><span class="line"># <span class="string">'a'</span>    <span class="keyword">open</span> <span class="keyword">for</span> writing, appending <span class="keyword">to</span> the end of the <span class="keyword">file</span> <span class="keyword">if</span> it <span class="built_in">exists</span></span><br><span class="line"># <span class="string">'b'</span>    binary <span class="keyword">mode</span></span><br><span class="line"># <span class="string">'t'</span>    text <span class="keyword">mode</span> (default)</span><br><span class="line"># <span class="string">'+'</span>    <span class="keyword">open</span> <span class="keyword">a</span> disk <span class="keyword">file</span> <span class="keyword">for</span> updating (reading <span class="built_in">and</span> writing)</span><br><span class="line"># <span class="string">'U'</span>    universal newlines <span class="keyword">mode</span> (deprecated)</span><br><span class="line"></span><br><span class="line"># <span class="keyword">w</span>是覆盖，<span class="keyword">a</span>是续写</span><br><span class="line"></span><br><span class="line">with <span class="keyword">open</span>(<span class="string">'/Users/ybbz/Desktop/test.txt'</span>, <span class="string">'a'</span>) <span class="keyword">as</span> <span class="keyword">f</span>:</span><br><span class="line">    <span class="keyword">f</span>.<span class="keyword">write</span>(<span class="string">'two'</span>)</span><br><span class="line"></span><br><span class="line">with <span class="keyword">open</span>(<span class="string">'/Users/ybbz/Desktop/test.txt'</span>, <span class="string">'a+'</span>) <span class="keyword">as</span> <span class="keyword">f</span>:</span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">line</span> in <span class="keyword">f</span>.readlines():</span><br><span class="line">        <span class="keyword">print</span>(<span class="built_in">line</span>.strip())</span><br><span class="line">    <span class="keyword">f</span>.<span class="keyword">write</span>(<span class="string">'three'</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="在内存中读写数据"><a href="#在内存中读写数据" class="headerlink" title="在内存中读写数据"></a>在内存中读写数据</h3><p>StringIO和BytesIO是在内存中操作str和bytes的方法，使得和读写文件具有一致的接口。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> io <span class="keyword">import</span> StringIO</span><br><span class="line"><span class="keyword">from</span> io <span class="keyword">import</span> BytesIO</span><br><span class="line"></span><br><span class="line"><span class="comment"># StringIO:在内存中读写数据(str)</span></span><br><span class="line"><span class="comment"># BytesIO:在内存中读写数据(bytes)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 把str写入StringIO:创建一个StringIO,像文件一样写入</span></span><br><span class="line">f1 = StringIO()</span><br><span class="line">f1.write(<span class="string">'Hello World'</span>)</span><br><span class="line">print(f1.getvalue())  <span class="comment"># getvalue()方法获取写入后的str</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取StringIO:用一个str初始化StringIO,像读文件一样读取</span></span><br><span class="line">f2 = StringIO(<span class="string">'Hello!\nWorld!\nTom!'</span>)</span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">    s = f2.readline()</span><br><span class="line">    <span class="keyword">if</span> s == <span class="string">''</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    print(s.strip())</span><br><span class="line"></span><br><span class="line"><span class="comment"># StringIO操作的只能是str,如果要操作二进制数据,就需要使用BytesIO</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个BytesIO，然后写入一些bytes</span></span><br><span class="line">f3 = BytesIO()</span><br><span class="line">f3.write(<span class="string">'中文'</span>.encode(<span class="string">'utf-8'</span>))</span><br><span class="line">print(f3.getvalue())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用一个bytes初始化BytesIO,像读文件一样读取：</span></span><br><span class="line">f4 = BytesIO(<span class="string">b'\xe4\xb8\xad\xe6\x96\x87'</span>)</span><br><span class="line">print(f4.read())</span><br></pre></td></tr></table></figure>
+<h3 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h3><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">import pickle</span><br><span class="line"></span><br><span class="line"><span class="comment"># 我们把变量从内存中变成可存储或传输的过程称之为序列化，在Python中叫pickling</span></span><br><span class="line"><span class="comment"># 序列化之后，就可以把序列化后的内容写入磁盘，或者通过网络传输到别的机器上</span></span><br><span class="line"><span class="comment"># 反过来，把变量内容从序列化的对象重新读到内存里称之为反序列化，即unpickling</span></span><br><span class="line"><span class="comment"># 只能用Pickle保存那些不重要的数据，不能成功地反序列化也没关系</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">d = dict(name=<span class="string">'Tom'</span>, age=<span class="number">28</span>, score=<span class="number">88</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># pickle.dumps()把任意对象序列化成一个bytes</span></span><br><span class="line">pickle.dumps(d)</span><br><span class="line"></span><br><span class="line"><span class="comment"># pickle.dump()把对象序列化后写入一个file-like Object</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'/Users/ybbz/Desktop/test.txt'</span>, <span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    pickle.dump(d, f)</span><br><span class="line"></span><br><span class="line"><span class="comment"># pickle.loads()方法反序列化出对象</span></span><br><span class="line"><span class="comment"># pickle.load()方法从一个file-like Object中直接反序列化出对象</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'/Users/ybbz/Desktop/test.txt'</span>, <span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    d = pickle.<span class="built_in">load</span>(f)</span><br><span class="line">    print(d)</span><br></pre></td></tr></table></figure>
+<h3 id="序列化之json"><a href="#序列化之json" class="headerlink" title="序列化之json"></a>序列化之json</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line">d = dict(name=<span class="string">'Tom'</span>, age=<span class="number">28</span>, score=<span class="number">88</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># dumps()方法返回一个str,内容就是标准的JSON</span></span><br><span class="line"><span class="comment"># dump()方法可以直接把JSON写入一个file-like Object</span></span><br><span class="line">print(json.dumps(d))</span><br><span class="line"></span><br><span class="line"><span class="comment"># loads()方法把JSON的字符串反序列化</span></span><br><span class="line"><span class="comment"># load()方法从file-like Object中读取字符串并反序列化</span></span><br><span class="line">json_str = <span class="string">'&#123;"name": "John","age": 28, "score": 88&#125;'</span></span><br><span class="line">print(json.loads(json_str))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, age, score)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line">        self.score = score</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 为Student专门写一个转换函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">student2dict</span><span class="params">(std)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="string">'name'</span>: std.name,</span><br><span class="line">        <span class="string">'age'</span>: std.age,</span><br><span class="line">        <span class="string">'score'</span>: std.score</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dict2student</span><span class="params">(d)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> Student(d[<span class="string">'name'</span>], d[<span class="string">'age'</span>], d[<span class="string">'score'</span>])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">s = Student(<span class="string">'Lucy'</span>, <span class="number">28</span>, <span class="number">88</span>)</span><br><span class="line"><span class="comment"># default把任意对象变成可序列为JSON的对象</span></span><br><span class="line"><span class="comment"># print(json.dumps(s, default=student2dict))</span></span><br><span class="line"><span class="comment"># 通常class的实例有__dict__属性，它是一个dict，用来存储实例变量</span></span><br><span class="line">print(json.dumps(s, default=<span class="keyword">lambda</span> obj: obj.__dict__))</span><br><span class="line"></span><br><span class="line">json_str = <span class="string">'&#123;"name": "Lily","age": 28, "score": 88&#125;'</span></span><br><span class="line"><span class="comment"># object_hook函数负责把dict转换为Student实例</span></span><br><span class="line">print(json.loads(json_str, object_hook=dict2student))</span><br></pre></td></tr></table></figure>
 
-# 文件读写时可能产生IOError，一旦出错，后面的f.close()就不会调用。
-# 为了保证无论是否出错都能正确地关闭文件，使用try ... finally来实现：
-try:
-    f = open(&apos;/Users/ybbz/Desktop/test.txt&apos;, &apos;r&apos;)
-    print(f.read())
-finally:
-    if f:
-        f.close()
-
-# Python引入了with语句来自动帮我们调用close()方法
-with open(&apos;/Users/ybbz/Desktop/test.txt&apos;, &apos;r&apos;) as f:
-    print(f.read())
-
-# 如果文件很小，read()一次性读取最方便
-# 如果不能确定文件大小，反复调用read(size),每次最多读取size个字节的内容
-# 调用readline()可以每次读取一行内容
-# 如果是配置文件,调用readlines(),一次读取所有内容并按行返回list
-
-with open(&apos;/Users/ybbz/Desktop/test.txt&apos;, &apos;r&apos;) as f:
-    for line in f.readlines():
-        print(&apos;逐行:&apos; + line.strip())  # 把末尾的&apos;\n&apos;删掉
-
-# 读取二进制文件，比如图片、视频等，用&apos;rb&apos;模式打开文件
-with open(&apos;/Users/ybbz/Desktop/cos.png&apos;, &apos;rb&apos;) as f:
-    print(f.read())  # 十六进制表示的字节
-
-# 给open()函数传入encoding参数
-with open(&apos;/Users/ybbz/Desktop/test.txt&apos;, &apos;r&apos;, encoding=&apos;gbk&apos;) as f:
-    print(f.read())
-
-# 忽略非法编码的字符
-with open(&apos;/Users/ybbz/Desktop/test.txt&apos;, &apos;r&apos;, encoding=&apos;gbk&apos;, errors=&apos;ignore&apos;) as f:
-    print(f.read())
-</code></pre><h3 id="写文件"><a href="#写文件" class="headerlink" title="写文件"></a>写文件</h3><pre><code># 当我们写文件时，操作系统往往不会立刻把数据写入磁盘，而是放到内存缓存起来，空闲的时候再慢慢写入。
-# 只有调用close()方法时，操作系统才保证把没有写入的数据全部写入磁盘。
-# 调用open()函数时，传入标识符&apos;w&apos;或者&apos;wb&apos;表示写文本文件或写二进制文件
-# 要写入特定编码的文本文件，给open()函数传入encoding参数
-
-with open(&apos;/Users/ybbz/Desktop/test.txt&apos;, &apos;w&apos;) as f:
-    f.write(&apos;one&apos;)
-
-# &apos;r&apos;    open for reading (default)
-# &apos;w&apos;    open for writing, truncating the file first
-# &apos;x&apos;    open for exclusive creation, failing if the file already exists
-# &apos;a&apos;    open for writing, appending to the end of the file if it exists
-# &apos;b&apos;    binary mode
-# &apos;t&apos;    text mode (default)
-# &apos;+&apos;    open a disk file for updating (reading and writing)
-# &apos;U&apos;    universal newlines mode (deprecated)
-
-# w是覆盖，a是续写
-
-with open(&apos;/Users/ybbz/Desktop/test.txt&apos;, &apos;a&apos;) as f:
-    f.write(&apos;two&apos;)
-
-with open(&apos;/Users/ybbz/Desktop/test.txt&apos;, &apos;a+&apos;) as f:
-    for line in f.readlines():
-        print(line.strip())
-    f.write(&apos;three&apos;)
-</code></pre><h3 id="在内存中读写数据"><a href="#在内存中读写数据" class="headerlink" title="在内存中读写数据"></a>在内存中读写数据</h3><p>StringIO和BytesIO是在内存中操作str和bytes的方法，使得和读写文件具有一致的接口。</p>
-<pre><code>from io import StringIO
-from io import BytesIO
-
-# StringIO:在内存中读写数据(str)
-# BytesIO:在内存中读写数据(bytes)
-
-# 把str写入StringIO:创建一个StringIO,像文件一样写入
-f1 = StringIO()
-f1.write(&apos;Hello World&apos;)
-print(f1.getvalue())  # getvalue()方法获取写入后的str
-
-# 读取StringIO:用一个str初始化StringIO,像读文件一样读取
-f2 = StringIO(&apos;Hello!\nWorld!\nTom!&apos;)
-while True:
-    s = f2.readline()
-    if s == &apos;&apos;:
-        break
-    print(s.strip())
-
-# StringIO操作的只能是str,如果要操作二进制数据,就需要使用BytesIO
-
-# 创建一个BytesIO，然后写入一些bytes
-f3 = BytesIO()
-f3.write(&apos;中文&apos;.encode(&apos;utf-8&apos;))
-print(f3.getvalue())
-
-# 用一个bytes初始化BytesIO,像读文件一样读取：
-f4 = BytesIO(b&apos;\xe4\xb8\xad\xe6\x96\x87&apos;)
-print(f4.read())
-</code></pre><h3 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h3><pre><code>import pickle
-
-# 我们把变量从内存中变成可存储或传输的过程称之为序列化，在Python中叫pickling
-# 序列化之后，就可以把序列化后的内容写入磁盘，或者通过网络传输到别的机器上
-# 反过来，把变量内容从序列化的对象重新读到内存里称之为反序列化，即unpickling
-# 只能用Pickle保存那些不重要的数据，不能成功地反序列化也没关系
-
-
-d = dict(name=&apos;Tom&apos;, age=28, score=88)
-
-# pickle.dumps()把任意对象序列化成一个bytes
-pickle.dumps(d)
-
-# pickle.dump()把对象序列化后写入一个file-like Object
-with open(&apos;/Users/ybbz/Desktop/test.txt&apos;, &apos;wb&apos;) as f:
-    pickle.dump(d, f)
-
-# pickle.loads()方法反序列化出对象
-# pickle.load()方法从一个file-like Object中直接反序列化出对象
-with open(&apos;/Users/ybbz/Desktop/test.txt&apos;, &apos;rb&apos;) as f:
-    d = pickle.load(f)
-    print(d)
-</code></pre><h3 id="序列化之json"><a href="#序列化之json" class="headerlink" title="序列化之json"></a>序列化之json</h3><pre><code>import json
-
-d = dict(name=&apos;Tom&apos;, age=28, score=88)
-
-# dumps()方法返回一个str,内容就是标准的JSON
-# dump()方法可以直接把JSON写入一个file-like Object
-print(json.dumps(d))
-
-# loads()方法把JSON的字符串反序列化
-# load()方法从file-like Object中读取字符串并反序列化
-json_str = &apos;{&quot;name&quot;: &quot;John&quot;,&quot;age&quot;: 28, &quot;score&quot;: 88}&apos;
-print(json.loads(json_str))
-
-
-class Student(object):
-    def __init__(self, name, age, score):
-        self.name = name
-        self.age = age
-        self.score = score
-
-
-# 为Student专门写一个转换函数
-def student2dict(std):
-    return {
-        &apos;name&apos;: std.name,
-        &apos;age&apos;: std.age,
-        &apos;score&apos;: std.score
-    }
-
-
-def dict2student(d):
-    return Student(d[&apos;name&apos;], d[&apos;age&apos;], d[&apos;score&apos;])
-
-
-s = Student(&apos;Lucy&apos;, 28, 88)
-# default把任意对象变成可序列为JSON的对象
-# print(json.dumps(s, default=student2dict))
-# 通常class的实例有__dict__属性，它是一个dict，用来存储实例变量
-print(json.dumps(s, default=lambda obj: obj.__dict__))
-
-json_str = &apos;{&quot;name&quot;: &quot;Lily&quot;,&quot;age&quot;: 28, &quot;score&quot;: 88}&apos;
-# object_hook函数负责把dict转换为Student实例
-print(json.loads(json_str, object_hook=dict2student))
-</code></pre>
       
     </div>
     
@@ -547,16 +380,16 @@ print(json.loads(json_str, object_hook=dict2student))
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/02/20/Python-foundation-two-regular/" rel="next" title="Python基础知识总结二：正则表达式">
-                <i class="fa fa-chevron-left"></i> Python基础知识总结二：正则表达式
+              <a href="/2016/02/21/Python-foundation-four-libs/" rel="next" title="Python基础知识总结四：常用模块">
+                <i class="fa fa-chevron-left"></i> Python基础知识总结四：常用模块
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/02/21/Python-foundation-four-libs/" rel="prev" title="Python基础知识总结四：常用模块">
-                Python基础知识总结四：常用模块 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/02/22/Python-foundation-Web-Flask/" rel="prev" title="Python基础知识总结六：Web开发之Flask">
+                Python基础知识总结六：Web开发之Flask <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

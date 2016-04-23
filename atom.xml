@@ -724,6 +724,38 @@
   </entry>
   
   <entry>
+    <title>判断两个单向链表是否相交</title>
+    <link href="http://blog.ybbz.site/2016/04/20/Algorithm-3/"/>
+    <id>http://blog.ybbz.site/2016/04/20/Algorithm-3/</id>
+    <published>2016-04-19T16:00:00.000Z</published>
+    <updated>2016-04-23T12:35:04.000Z</updated>
+    
+    <content type="html">&lt;p&gt;问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。&lt;/p&gt;
+&lt;h3 id=&quot;算法一&quot;&gt;&lt;a href=&quot;#算法一&quot; class=&quot;headerlink&quot; title=&quot;算法一&quot;&gt;&lt;/a&gt;算法一&lt;/h3&gt;&lt;p&gt;对链表一进行遍历，在遍历到每一个节点时，都在链表二中进行遍历，看是否有重复的节点。&lt;/p&gt;
+&lt;h4 id=&quot;算法一改进&quot;&gt;&lt;a href=&quot;#算法一改进&quot; class=&quot;headerlink&quot; title=&quot;算法一改进&quot;&gt;&lt;/a&gt;算法一改进&lt;/h4&gt;&lt;p&gt;以空间换时间：将链表二存入字典，然后遍历链表一，判断是否在于字典中。简化后，时间复杂度变为 O(n+m)，但空间复杂度较高。&lt;/p&gt;
+&lt;h3 id=&quot;算法二&quot;&gt;&lt;a href=&quot;#算法二&quot; class=&quot;headerlink&quot; title=&quot;算法二&quot;&gt;&lt;/a&gt;算法二&lt;/h3&gt;&lt;p&gt;算法二的思路基于以下两个原理：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;两个单向链表相交后，必然无法再分开。&lt;/li&gt;
+&lt;li&gt;两个单项链表相交后，尾节点一定相同。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;假设两个链表相交，很容易证明两个链表的尾元素是相同的。&lt;br&gt;逆反命题：两个链表的尾元素相同时，两个链表一定相交。&lt;br&gt;（注意：相同的节点不仅仅要求值相同，而是“同一个”，也就是指针地址相同。）&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。&lt;/p&gt;
+&lt;h3 id=&quot;算法一&quot;&gt;&lt;a href=&quot;#算法一&quot; class=&quot;headerlink&quot; title=&quot;算法一&quot;&gt;&lt;/a&gt;算法一&lt;/h3&gt;&lt;p&gt;对链表一进行遍历，在遍历到每一个节点时，都在链表二中进
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="http://blog.ybbz.site/categories/Algorithm/"/>
+    
+    
+      <category term="Algorithm" scheme="http://blog.ybbz.site/tags/Algorithm/"/>
+    
+  </entry>
+  
+  <entry>
     <title>根号值逼近问题的算法</title>
     <link href="http://blog.ybbz.site/2016/04/20/Algorithm-2/"/>
     <id>http://blog.ybbz.site/2016/04/20/Algorithm-2/</id>
@@ -765,38 +797,6 @@
   </entry>
   
   <entry>
-    <title>判断两个单向链表是否相交</title>
-    <link href="http://blog.ybbz.site/2016/04/20/Algorithm-3/"/>
-    <id>http://blog.ybbz.site/2016/04/20/Algorithm-3/</id>
-    <published>2016-04-19T16:00:00.000Z</published>
-    <updated>2016-04-23T12:35:04.000Z</updated>
-    
-    <content type="html">&lt;p&gt;问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。&lt;/p&gt;
-&lt;h3 id=&quot;算法一&quot;&gt;&lt;a href=&quot;#算法一&quot; class=&quot;headerlink&quot; title=&quot;算法一&quot;&gt;&lt;/a&gt;算法一&lt;/h3&gt;&lt;p&gt;对链表一进行遍历，在遍历到每一个节点时，都在链表二中进行遍历，看是否有重复的节点。&lt;/p&gt;
-&lt;h4 id=&quot;算法一改进&quot;&gt;&lt;a href=&quot;#算法一改进&quot; class=&quot;headerlink&quot; title=&quot;算法一改进&quot;&gt;&lt;/a&gt;算法一改进&lt;/h4&gt;&lt;p&gt;以空间换时间：将链表二存入字典，然后遍历链表一，判断是否在于字典中。简化后，时间复杂度变为 O(n+m)，但空间复杂度较高。&lt;/p&gt;
-&lt;h3 id=&quot;算法二&quot;&gt;&lt;a href=&quot;#算法二&quot; class=&quot;headerlink&quot; title=&quot;算法二&quot;&gt;&lt;/a&gt;算法二&lt;/h3&gt;&lt;p&gt;算法二的思路基于以下两个原理：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;两个单向链表相交后，必然无法再分开。&lt;/li&gt;
-&lt;li&gt;两个单项链表相交后，尾节点一定相同。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;假设两个链表相交，很容易证明两个链表的尾元素是相同的。&lt;br&gt;逆反命题：两个链表的尾元素相同时，两个链表一定相交。&lt;br&gt;（注意：相同的节点不仅仅要求值相同，而是“同一个”，也就是指针地址相同。）&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。&lt;/p&gt;
-&lt;h3 id=&quot;算法一&quot;&gt;&lt;a href=&quot;#算法一&quot; class=&quot;headerlink&quot; title=&quot;算法一&quot;&gt;&lt;/a&gt;算法一&lt;/h3&gt;&lt;p&gt;对链表一进行遍历，在遍历到每一个节点时，都在链表二中进
-    
-    </summary>
-    
-      <category term="Algorithm" scheme="http://blog.ybbz.site/categories/Algorithm/"/>
-    
-    
-      <category term="Algorithm" scheme="http://blog.ybbz.site/tags/Algorithm/"/>
-    
-  </entry>
-  
-  <entry>
     <title>庆祝我的第一个独立APP上线</title>
     <link href="http://blog.ybbz.site/2016/04/18/my-first-andorid-app-online/"/>
     <id>http://blog.ybbz.site/2016/04/18/my-first-andorid-app-online/</id>
@@ -827,85 +827,6 @@
     
     
       <category term="Android" scheme="http://blog.ybbz.site/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《Hadoop海量数据处理》读书笔记2:Hadoop环境准备</title>
-    <link href="http://blog.ybbz.site/2016/04/15/Hadoop-foundation-two/"/>
-    <id>http://blog.ybbz.site/2016/04/15/Hadoop-foundation-two/</id>
-    <published>2016-04-14T16:00:00.000Z</published>
-    <updated>2016-04-23T09:28:47.000Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;Hadoop架构&quot;&gt;&lt;a href=&quot;#Hadoop架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h3&gt;&lt;p&gt;Hadoop主要由两部分构成：分布式文件系统HDFS和分布式计算框架MapReduce；HDFS主要是用于海量数据的存储，MapReduce则是对存储在HDFS中的数据进行分布式计算。&lt;/p&gt;
-&lt;h4 id=&quot;Hadoop-HDFS架构&quot;&gt;&lt;a href=&quot;#Hadoop-HDFS架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop HDFS架构&quot;&gt;&lt;/a&gt;Hadoop HDFS架构&lt;/h4&gt;&lt;p&gt;构成HDFS集群的主要是两类节点（主从模式，管理者－工作者模式）：一个NameNode（管理者）和多个DataNode（工作者），SecondaryNameNode作为NameNode镜像数据备份。&lt;/p&gt;
-&lt;p&gt;表：HDFS守护进程&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;守护进程&lt;/th&gt;
-&lt;th&gt;集群中的数目&lt;/th&gt;
-&lt;th&gt;作用&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;NameNode&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;存储文件系统的元数据，存储文件与数据块映射，并提供文件系统的全景图&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;SecondaryNameNode&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;备份NameNode数据，并负责镜像与NameNode日志数据的合并&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;DataNode&lt;/td&gt;
-&lt;td&gt;多个(至少一个)&lt;/td&gt;
-&lt;td&gt;存储块数据&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h4 id=&quot;Hadoop-MapReduce架构&quot;&gt;&lt;a href=&quot;#Hadoop-MapReduce架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop MapReduce架构&quot;&gt;&lt;/a&gt;Hadoop MapReduce架构&lt;/h4&gt;&lt;p&gt;构成MapReduce集群为两类节点（主从模式）：JobTracker和TaskTracker。&lt;/p&gt;
-&lt;p&gt;表：MapReduce守护进程&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;守护进程&lt;/th&gt;
-&lt;th&gt;集群中的数目&lt;/th&gt;
-&lt;th&gt;作用&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;JobTracker&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;负责接受客户端作业提交，调度任务到TaskTracker上运行，并提供监控TaskTracker及任务进度等管理功能&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;TaskTracker&lt;/td&gt;
-&lt;td&gt;多个(至少一个)&lt;/td&gt;
-&lt;td&gt;实例化用户程序，在本地执行任务并周期性地向JobTracker汇报状态&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h4 id=&quot;Hadoop架构-1&quot;&gt;&lt;a href=&quot;#Hadoop架构-1&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h4&gt;&lt;p&gt;HDFS集群和MapReduce集群其实由一些守护进程组成，而所有这些守护进程和运行它们的节点就构成了Hadoop集群。这个集群的NameNode进程和JobTracker进程在一个节点上运行，而DataNode进程和TaskTracker进程在同一个节点上运行。（DataNode和TaskTracker需要配对部署在同一个节点，NameNode和JobTracker并不一定部署在同一个节点；生产环境，建议NameNode和JobTracker分开部署）。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;Hadoop架构&quot;&gt;&lt;a href=&quot;#Hadoop架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h3&gt;&lt;p&gt;Hadoop主要由两部分构成：分布式文件系统HDFS和分布式计算框架MapReduce；HD
-    
-    </summary>
-    
-      <category term="Hadoop" scheme="http://blog.ybbz.site/categories/Hadoop/"/>
-    
-    
-      <category term="Hadoop" scheme="http://blog.ybbz.site/tags/Hadoop/"/>
-    
-      <category term="云计算" scheme="http://blog.ybbz.site/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/"/>
-    
-      <category term="大数据" scheme="http://blog.ybbz.site/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
     
   </entry>
   
@@ -997,6 +918,85 @@
     
       &lt;h3 id=&quot;Hadoop定义&quot;&gt;&lt;a href=&quot;#Hadoop定义&quot; class=&quot;headerlink&quot; title=&quot;Hadoop定义&quot;&gt;&lt;/a&gt;Hadoop定义&lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;Apache软件基金会（ASF）：Hadoop软件库是一个框架，允
+    
+    </summary>
+    
+      <category term="Hadoop" scheme="http://blog.ybbz.site/categories/Hadoop/"/>
+    
+    
+      <category term="Hadoop" scheme="http://blog.ybbz.site/tags/Hadoop/"/>
+    
+      <category term="云计算" scheme="http://blog.ybbz.site/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/"/>
+    
+      <category term="大数据" scheme="http://blog.ybbz.site/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《Hadoop海量数据处理》读书笔记2:Hadoop环境准备</title>
+    <link href="http://blog.ybbz.site/2016/04/15/Hadoop-foundation-two/"/>
+    <id>http://blog.ybbz.site/2016/04/15/Hadoop-foundation-two/</id>
+    <published>2016-04-14T16:00:00.000Z</published>
+    <updated>2016-04-23T09:28:47.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;Hadoop架构&quot;&gt;&lt;a href=&quot;#Hadoop架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h3&gt;&lt;p&gt;Hadoop主要由两部分构成：分布式文件系统HDFS和分布式计算框架MapReduce；HDFS主要是用于海量数据的存储，MapReduce则是对存储在HDFS中的数据进行分布式计算。&lt;/p&gt;
+&lt;h4 id=&quot;Hadoop-HDFS架构&quot;&gt;&lt;a href=&quot;#Hadoop-HDFS架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop HDFS架构&quot;&gt;&lt;/a&gt;Hadoop HDFS架构&lt;/h4&gt;&lt;p&gt;构成HDFS集群的主要是两类节点（主从模式，管理者－工作者模式）：一个NameNode（管理者）和多个DataNode（工作者），SecondaryNameNode作为NameNode镜像数据备份。&lt;/p&gt;
+&lt;p&gt;表：HDFS守护进程&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;守护进程&lt;/th&gt;
+&lt;th&gt;集群中的数目&lt;/th&gt;
+&lt;th&gt;作用&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;NameNode&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;存储文件系统的元数据，存储文件与数据块映射，并提供文件系统的全景图&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SecondaryNameNode&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;备份NameNode数据，并负责镜像与NameNode日志数据的合并&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DataNode&lt;/td&gt;
+&lt;td&gt;多个(至少一个)&lt;/td&gt;
+&lt;td&gt;存储块数据&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&quot;Hadoop-MapReduce架构&quot;&gt;&lt;a href=&quot;#Hadoop-MapReduce架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop MapReduce架构&quot;&gt;&lt;/a&gt;Hadoop MapReduce架构&lt;/h4&gt;&lt;p&gt;构成MapReduce集群为两类节点（主从模式）：JobTracker和TaskTracker。&lt;/p&gt;
+&lt;p&gt;表：MapReduce守护进程&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;守护进程&lt;/th&gt;
+&lt;th&gt;集群中的数目&lt;/th&gt;
+&lt;th&gt;作用&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;JobTracker&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;负责接受客户端作业提交，调度任务到TaskTracker上运行，并提供监控TaskTracker及任务进度等管理功能&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TaskTracker&lt;/td&gt;
+&lt;td&gt;多个(至少一个)&lt;/td&gt;
+&lt;td&gt;实例化用户程序，在本地执行任务并周期性地向JobTracker汇报状态&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&quot;Hadoop架构-1&quot;&gt;&lt;a href=&quot;#Hadoop架构-1&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h4&gt;&lt;p&gt;HDFS集群和MapReduce集群其实由一些守护进程组成，而所有这些守护进程和运行它们的节点就构成了Hadoop集群。这个集群的NameNode进程和JobTracker进程在一个节点上运行，而DataNode进程和TaskTracker进程在同一个节点上运行。（DataNode和TaskTracker需要配对部署在同一个节点，NameNode和JobTracker并不一定部署在同一个节点；生产环境，建议NameNode和JobTracker分开部署）。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Hadoop架构&quot;&gt;&lt;a href=&quot;#Hadoop架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h3&gt;&lt;p&gt;Hadoop主要由两部分构成：分布式文件系统HDFS和分布式计算框架MapReduce；HD
     
     </summary>
     
@@ -1174,6 +1174,44 @@
   </entry>
   
   <entry>
+    <title>Django学习笔记一：创建新App及其常用命令</title>
+    <link href="http://blog.ybbz.site/2016/04/03/Django-foundation-one/"/>
+    <id>http://blog.ybbz.site/2016/04/03/Django-foundation-one/</id>
+    <published>2016-04-02T16:00:00.000Z</published>
+    <updated>2016-04-23T12:44:25.000Z</updated>
+    
+    <content type="html">&lt;p&gt;清明节假期，正是读书、学习的好时候；别人都出去玩了，然而我仍然在“学习”。之前一直对Django很感兴趣（因为很多人提到了它，而我也有打算在未来用Python重构PHP做的系统），因此就学习了一下&lt;/p&gt;
+&lt;h3 id=&quot;创建新的项目&quot;&gt;&lt;a href=&quot;#创建新的项目&quot; class=&quot;headerlink&quot; title=&quot;创建新的项目&quot;&gt;&lt;/a&gt;创建新的项目&lt;/h3&gt;&lt;figure class=&quot;highlight stylus&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;django-admin&lt;span class=&quot;selector-class&quot;&gt;.py&lt;/span&gt; startproject my_project&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;创建新的App&quot;&gt;&lt;a href=&quot;#创建新的App&quot; class=&quot;headerlink&quot; title=&quot;创建新的App&quot;&gt;&lt;/a&gt;创建新的App&lt;/h3&gt;&lt;figure class=&quot;highlight nginx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 在Django项目(my_project)的根目录下执行&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;python3&lt;/span&gt; manage.py startapp my_app&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;启动Django中的开发服务器&quot;&gt;&lt;a href=&quot;#启动Django中的开发服务器&quot; class=&quot;headerlink&quot; title=&quot;启动Django中的开发服务器&quot;&gt;&lt;/a&gt;启动Django中的开发服务器&lt;/h3&gt;&lt;figure class=&quot;highlight vim&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# &lt;span class=&quot;keyword&quot;&gt;make&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; migrations&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;python3&lt;/span&gt; manage.&lt;span class=&quot;keyword&quot;&gt;py&lt;/span&gt; makemigrations&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# apply &lt;span class=&quot;keyword&quot;&gt;all&lt;/span&gt; migrations&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;python3&lt;/span&gt; manage.&lt;span class=&quot;keyword&quot;&gt;py&lt;/span&gt; migrate&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# run server&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;python3&lt;/span&gt; manage.&lt;span class=&quot;keyword&quot;&gt;py&lt;/span&gt; runserver&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;创建models&quot;&gt;&lt;a href=&quot;#创建models&quot; class=&quot;headerlink&quot; title=&quot;创建models&quot;&gt;&lt;/a&gt;创建models&lt;/h3&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;App1&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(models.Model)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    title = models.CharField(max_length=&lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    category = models.CharField(max_length=&lt;span class=&quot;number&quot;&gt;50&lt;/span&gt;, blank=&lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    date_time = models.DateTimeField(auto_now_add=&lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;__unicode__&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(self)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; self.title&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Meta&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ordering = [&lt;span class=&quot;string&quot;&gt;&#39;-date_time&#39;&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;进入Django中的交互式shell&quot;&gt;&lt;a href=&quot;#进入Django中的交互式shell&quot; class=&quot;headerlink&quot; title=&quot;进入Django中的交互式shell&quot;&gt;&lt;/a&gt;进入Django中的交互式shell&lt;/h3&gt;&lt;figure class=&quot;highlight vim&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;python3&lt;/span&gt; manage.&lt;span class=&quot;keyword&quot;&gt;py&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;shell&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from app1.models import App1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# create(增加操作)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;App1.objects.create(title=&lt;span class=&quot;string&quot;&gt;&#39;title&#39;&lt;/span&gt;,category=&lt;span class=&quot;string&quot;&gt;&#39;category1&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# &lt;span class=&quot;keyword&quot;&gt;all&lt;/span&gt;和&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt;(查看操作)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;App1.objects.&lt;span class=&quot;keyword&quot;&gt;all&lt;/span&gt;()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;App1.objects.&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt;(id=&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# &lt;span class=&quot;keyword&quot;&gt;update&lt;/span&gt;(修改操作)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;demo = App1.objects.&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt;(id=&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;demo.title&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;demo.title=&lt;span class=&quot;string&quot;&gt;&#39;title2&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# &lt;span class=&quot;keyword&quot;&gt;delete&lt;/span&gt;(删除操作)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;demo.&lt;span class=&quot;keyword&quot;&gt;delete&lt;/span&gt;()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;创建一个超级用户&quot;&gt;&lt;a href=&quot;#创建一个超级用户&quot; class=&quot;headerlink&quot; title=&quot;创建一个超级用户&quot;&gt;&lt;/a&gt;创建一个超级用户&lt;/h3&gt;&lt;figure class=&quot;highlight arduino&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;python3 manage.py createsuperuser&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;# 输入http:&lt;span class=&quot;comment&quot;&gt;//127.0.0.1:8000/admin登录后台&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;数据库信息的增加和删除，admin-py中增加代码&quot;&gt;&lt;a href=&quot;#数据库信息的增加和删除，admin-py中增加代码&quot; class=&quot;headerlink&quot; title=&quot;数据库信息的增加和删除，admin.py中增加代码&quot;&gt;&lt;/a&gt;数据库信息的增加和删除，admin.py中增加代码&lt;/h3&gt;&lt;figure class=&quot;highlight stylus&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;from &lt;span class=&quot;selector-tag&quot;&gt;article&lt;/span&gt;&lt;span class=&quot;selector-class&quot;&gt;.models&lt;/span&gt; import App1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;admin&lt;span class=&quot;selector-class&quot;&gt;.site&lt;/span&gt;&lt;span class=&quot;selector-class&quot;&gt;.register&lt;/span&gt;(App1)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;Views和URL操作&quot;&gt;&lt;a href=&quot;#Views和URL操作&quot; class=&quot;headerlink&quot; title=&quot;Views和URL操作&quot;&gt;&lt;/a&gt;Views和URL操作&lt;/h3&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# views.py&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; django.http &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; HttpResponse&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;home&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(request)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; HttpResponse(&lt;span class=&quot;string&quot;&gt;&quot;Hello World, Django&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# urls.py&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;url(&lt;span class=&quot;string&quot;&gt;r&#39;^$&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;app1.views.home&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;URL传参&quot;&gt;&lt;a href=&quot;#URL传参&quot; class=&quot;headerlink&quot; title=&quot;URL传参&quot;&gt;&lt;/a&gt;URL传参&lt;/h3&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# views.py&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;detail&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(request, number)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; HttpResponse(&lt;span class=&quot;string&quot;&gt;&quot;The number is %s.&quot;&lt;/span&gt; % number)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# urls.py&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;url(&lt;span class=&quot;string&quot;&gt;r&#39;^([0-9]+)/&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;app1.views.detail&#39;&lt;/span&gt;, name=&lt;span class=&quot;string&quot;&gt;&#39;detail&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;URL传参查询数据库&quot;&gt;&lt;a href=&quot;#URL传参查询数据库&quot; class=&quot;headerlink&quot; title=&quot;URL传参查询数据库&quot;&gt;&lt;/a&gt;URL传参查询数据库&lt;/h3&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# views.py&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;database&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(request, args)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    post = App1.objects.all()[int(args)]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    str = (&lt;span class=&quot;string&quot;&gt;&quot;title = %s, category = %s, date_time = %s&quot;&lt;/span&gt; % (post.title, post.category, post.date_time))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; HttpResponse(str)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# urls.py&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;url(&lt;span class=&quot;string&quot;&gt;r&#39;^id/([0-9])+/&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;article.views.database&#39;&lt;/span&gt;, name=&lt;span class=&quot;string&quot;&gt;&#39;database&#39;&lt;/span&gt;),&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;将代码上传到Github&quot;&gt;&lt;a href=&quot;#将代码上传到Github&quot; class=&quot;headerlink&quot; title=&quot;将代码上传到Github&quot;&gt;&lt;/a&gt;将代码上传到Github&lt;/h3&gt;&lt;figure class=&quot;highlight crmsh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 在github中新建仓库django-blog&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 在项目根目录下执行&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git init&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git remote add Django&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git@github.com:ybbz/django-blog.git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git add .&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git status&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git commit -m &lt;span class=&quot;string&quot;&gt;&quot;django blog init&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git pull Django &lt;span class=&quot;keyword&quot;&gt;master&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;&amp;amp;&amp;amp; git&lt;/span&gt; push Django &lt;span class=&quot;literal&quot;&gt;master&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;Error-That-port-is-already-in-use&quot;&gt;&lt;a href=&quot;#Error-That-port-is-already-in-use&quot; class=&quot;headerlink&quot; title=&quot;Error: That port is already in use.&quot;&gt;&lt;/a&gt;Error: That port is already in use.&lt;/h3&gt;&lt;figure class=&quot;highlight vim&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;ps&lt;/span&gt; aux | &lt;span class=&quot;keyword&quot;&gt;grep&lt;/span&gt; -i manage&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;kill -&lt;span class=&quot;number&quot;&gt;9&lt;/span&gt; ****&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;python3&lt;/span&gt; manage.&lt;span class=&quot;keyword&quot;&gt;py&lt;/span&gt; runserver&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;清明节假期，正是读书、学习的好时候；别人都出去玩了，然而我仍然在“学习”。之前一直对Django很感兴趣（因为很多人提到了它，而我也有打算在未来用Python重构PHP做的系统），因此就学习了一下&lt;/p&gt;
+&lt;h3 id=&quot;创建新的项目&quot;&gt;&lt;a href=&quot;#创建新的项目&quot; 
+    
+    </summary>
+    
+      <category term="Python" scheme="http://blog.ybbz.site/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
+    
+      <category term="Django" scheme="http://blog.ybbz.site/tags/Django/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Django学习笔记二：优化博客展示，抓取博文并保存到数据库</title>
     <link href="http://blog.ybbz.site/2016/04/03/Django-foundation-two/"/>
     <id>http://blog.ybbz.site/2016/04/03/Django-foundation-two/</id>
@@ -1209,44 +1247,6 @@
       <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
     
       <category term="Crawler" scheme="http://blog.ybbz.site/tags/Crawler/"/>
-    
-      <category term="Django" scheme="http://blog.ybbz.site/tags/Django/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Django学习笔记一：创建新App及其常用命令</title>
-    <link href="http://blog.ybbz.site/2016/04/03/Django-foundation-one/"/>
-    <id>http://blog.ybbz.site/2016/04/03/Django-foundation-one/</id>
-    <published>2016-04-02T16:00:00.000Z</published>
-    <updated>2016-04-23T12:44:25.000Z</updated>
-    
-    <content type="html">&lt;p&gt;清明节假期，正是读书、学习的好时候；别人都出去玩了，然而我仍然在“学习”。之前一直对Django很感兴趣（因为很多人提到了它，而我也有打算在未来用Python重构PHP做的系统），因此就学习了一下&lt;/p&gt;
-&lt;h3 id=&quot;创建新的项目&quot;&gt;&lt;a href=&quot;#创建新的项目&quot; class=&quot;headerlink&quot; title=&quot;创建新的项目&quot;&gt;&lt;/a&gt;创建新的项目&lt;/h3&gt;&lt;figure class=&quot;highlight stylus&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;django-admin&lt;span class=&quot;selector-class&quot;&gt;.py&lt;/span&gt; startproject my_project&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;创建新的App&quot;&gt;&lt;a href=&quot;#创建新的App&quot; class=&quot;headerlink&quot; title=&quot;创建新的App&quot;&gt;&lt;/a&gt;创建新的App&lt;/h3&gt;&lt;figure class=&quot;highlight nginx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 在Django项目(my_project)的根目录下执行&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;python3&lt;/span&gt; manage.py startapp my_app&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;启动Django中的开发服务器&quot;&gt;&lt;a href=&quot;#启动Django中的开发服务器&quot; class=&quot;headerlink&quot; title=&quot;启动Django中的开发服务器&quot;&gt;&lt;/a&gt;启动Django中的开发服务器&lt;/h3&gt;&lt;figure class=&quot;highlight vim&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# &lt;span class=&quot;keyword&quot;&gt;make&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; migrations&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;python3&lt;/span&gt; manage.&lt;span class=&quot;keyword&quot;&gt;py&lt;/span&gt; makemigrations&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# apply &lt;span class=&quot;keyword&quot;&gt;all&lt;/span&gt; migrations&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;python3&lt;/span&gt; manage.&lt;span class=&quot;keyword&quot;&gt;py&lt;/span&gt; migrate&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# run server&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;python3&lt;/span&gt; manage.&lt;span class=&quot;keyword&quot;&gt;py&lt;/span&gt; runserver&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;创建models&quot;&gt;&lt;a href=&quot;#创建models&quot; class=&quot;headerlink&quot; title=&quot;创建models&quot;&gt;&lt;/a&gt;创建models&lt;/h3&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;App1&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(models.Model)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    title = models.CharField(max_length=&lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    category = models.CharField(max_length=&lt;span class=&quot;number&quot;&gt;50&lt;/span&gt;, blank=&lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    date_time = models.DateTimeField(auto_now_add=&lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;__unicode__&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(self)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; self.title&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Meta&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ordering = [&lt;span class=&quot;string&quot;&gt;&#39;-date_time&#39;&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;进入Django中的交互式shell&quot;&gt;&lt;a href=&quot;#进入Django中的交互式shell&quot; class=&quot;headerlink&quot; title=&quot;进入Django中的交互式shell&quot;&gt;&lt;/a&gt;进入Django中的交互式shell&lt;/h3&gt;&lt;figure class=&quot;highlight vim&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;python3&lt;/span&gt; manage.&lt;span class=&quot;keyword&quot;&gt;py&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;shell&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from app1.models import App1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# create(增加操作)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;App1.objects.create(title=&lt;span class=&quot;string&quot;&gt;&#39;title&#39;&lt;/span&gt;,category=&lt;span class=&quot;string&quot;&gt;&#39;category1&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# &lt;span class=&quot;keyword&quot;&gt;all&lt;/span&gt;和&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt;(查看操作)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;App1.objects.&lt;span class=&quot;keyword&quot;&gt;all&lt;/span&gt;()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;App1.objects.&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt;(id=&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# &lt;span class=&quot;keyword&quot;&gt;update&lt;/span&gt;(修改操作)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;demo = App1.objects.&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt;(id=&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;demo.title&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;demo.title=&lt;span class=&quot;string&quot;&gt;&#39;title2&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# &lt;span class=&quot;keyword&quot;&gt;delete&lt;/span&gt;(删除操作)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;demo.&lt;span class=&quot;keyword&quot;&gt;delete&lt;/span&gt;()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;创建一个超级用户&quot;&gt;&lt;a href=&quot;#创建一个超级用户&quot; class=&quot;headerlink&quot; title=&quot;创建一个超级用户&quot;&gt;&lt;/a&gt;创建一个超级用户&lt;/h3&gt;&lt;figure class=&quot;highlight arduino&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;python3 manage.py createsuperuser&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;# 输入http:&lt;span class=&quot;comment&quot;&gt;//127.0.0.1:8000/admin登录后台&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;数据库信息的增加和删除，admin-py中增加代码&quot;&gt;&lt;a href=&quot;#数据库信息的增加和删除，admin-py中增加代码&quot; class=&quot;headerlink&quot; title=&quot;数据库信息的增加和删除，admin.py中增加代码&quot;&gt;&lt;/a&gt;数据库信息的增加和删除，admin.py中增加代码&lt;/h3&gt;&lt;figure class=&quot;highlight stylus&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;from &lt;span class=&quot;selector-tag&quot;&gt;article&lt;/span&gt;&lt;span class=&quot;selector-class&quot;&gt;.models&lt;/span&gt; import App1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;admin&lt;span class=&quot;selector-class&quot;&gt;.site&lt;/span&gt;&lt;span class=&quot;selector-class&quot;&gt;.register&lt;/span&gt;(App1)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;Views和URL操作&quot;&gt;&lt;a href=&quot;#Views和URL操作&quot; class=&quot;headerlink&quot; title=&quot;Views和URL操作&quot;&gt;&lt;/a&gt;Views和URL操作&lt;/h3&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# views.py&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; django.http &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; HttpResponse&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;home&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(request)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; HttpResponse(&lt;span class=&quot;string&quot;&gt;&quot;Hello World, Django&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# urls.py&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;url(&lt;span class=&quot;string&quot;&gt;r&#39;^$&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;app1.views.home&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;URL传参&quot;&gt;&lt;a href=&quot;#URL传参&quot; class=&quot;headerlink&quot; title=&quot;URL传参&quot;&gt;&lt;/a&gt;URL传参&lt;/h3&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# views.py&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;detail&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(request, number)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; HttpResponse(&lt;span class=&quot;string&quot;&gt;&quot;The number is %s.&quot;&lt;/span&gt; % number)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# urls.py&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;url(&lt;span class=&quot;string&quot;&gt;r&#39;^([0-9]+)/&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;app1.views.detail&#39;&lt;/span&gt;, name=&lt;span class=&quot;string&quot;&gt;&#39;detail&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;URL传参查询数据库&quot;&gt;&lt;a href=&quot;#URL传参查询数据库&quot; class=&quot;headerlink&quot; title=&quot;URL传参查询数据库&quot;&gt;&lt;/a&gt;URL传参查询数据库&lt;/h3&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# views.py&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;database&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(request, args)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    post = App1.objects.all()[int(args)]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    str = (&lt;span class=&quot;string&quot;&gt;&quot;title = %s, category = %s, date_time = %s&quot;&lt;/span&gt; % (post.title, post.category, post.date_time))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; HttpResponse(str)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# urls.py&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;url(&lt;span class=&quot;string&quot;&gt;r&#39;^id/([0-9])+/&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;article.views.database&#39;&lt;/span&gt;, name=&lt;span class=&quot;string&quot;&gt;&#39;database&#39;&lt;/span&gt;),&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;将代码上传到Github&quot;&gt;&lt;a href=&quot;#将代码上传到Github&quot; class=&quot;headerlink&quot; title=&quot;将代码上传到Github&quot;&gt;&lt;/a&gt;将代码上传到Github&lt;/h3&gt;&lt;figure class=&quot;highlight crmsh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 在github中新建仓库django-blog&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 在项目根目录下执行&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git init&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git remote add Django&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git@github.com:ybbz/django-blog.git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git add .&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git status&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git commit -m &lt;span class=&quot;string&quot;&gt;&quot;django blog init&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git pull Django &lt;span class=&quot;keyword&quot;&gt;master&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;&amp;amp;&amp;amp; git&lt;/span&gt; push Django &lt;span class=&quot;literal&quot;&gt;master&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;Error-That-port-is-already-in-use&quot;&gt;&lt;a href=&quot;#Error-That-port-is-already-in-use&quot; class=&quot;headerlink&quot; title=&quot;Error: That port is already in use.&quot;&gt;&lt;/a&gt;Error: That port is already in use.&lt;/h3&gt;&lt;figure class=&quot;highlight vim&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;ps&lt;/span&gt; aux | &lt;span class=&quot;keyword&quot;&gt;grep&lt;/span&gt; -i manage&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;kill -&lt;span class=&quot;number&quot;&gt;9&lt;/span&gt; ****&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;python3&lt;/span&gt; manage.&lt;span class=&quot;keyword&quot;&gt;py&lt;/span&gt; runserver&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;清明节假期，正是读书、学习的好时候；别人都出去玩了，然而我仍然在“学习”。之前一直对Django很感兴趣（因为很多人提到了它，而我也有打算在未来用Python重构PHP做的系统），因此就学习了一下&lt;/p&gt;
-&lt;h3 id=&quot;创建新的项目&quot;&gt;&lt;a href=&quot;#创建新的项目&quot; 
-    
-    </summary>
-    
-      <category term="Python" scheme="http://blog.ybbz.site/categories/Python/"/>
-    
-    
-      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
     
       <category term="Django" scheme="http://blog.ybbz.site/tags/Django/"/>
     
@@ -1453,7 +1453,7 @@ P(A3|A1,A2)=P(A1,A2|A3)P(A3)/P(A1,A2)=P(A1,A2,A3)/P(A1,A2)=P(A3)P(A1|A3)P(A2|A3)
     <link href="http://blog.ybbz.site/2016/03/29/algorithm/"/>
     <id>http://blog.ybbz.site/2016/03/29/algorithm/</id>
     <published>2016-03-28T16:00:00.000Z</published>
-    <updated>2016-04-23T09:26:42.000Z</updated>
+    <updated>2016-04-23T12:54:08.000Z</updated>
     
     <content type="html">&lt;p&gt;题目如下：&lt;/p&gt;
 &lt;ul&gt;
@@ -1462,46 +1462,8 @@ P(A3|A1,A2)=P(A1,A2|A3)P(A3)/P(A1,A2)=P(A1,A2,A3)/P(A1,A2)=P(A3)P(A1|A3)P(A2|A3)
 &lt;li&gt;把list2按照list1中的顺序重新排序，并把排序结果封装成json字符串，得到list3&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;代码如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;list1 = [20, 6, 15, 53, 47]
-list2 = [(6, &amp;apos;John&amp;apos;, &amp;apos;20&amp;apos;), (15, &amp;apos;Kim&amp;apos;, &amp;apos;18&amp;apos;),
-         (20, &amp;apos;David&amp;apos;, &amp;apos;21&amp;apos;), (47, &amp;apos;Amy&amp;apos;, &amp;apos;23&amp;apos;), (53, &amp;apos;Mary&amp;apos;, &amp;apos;20&amp;apos;)]
-print(list1)
-print(list2)
-
-list3 = []
-# count = len(list1)
-# for i in range(0, count):
-#     dict = {}
-#     id = list1[i]
-#     dict[&amp;apos;id&amp;apos;] = id
-#     j = 0
-#     while j &amp;lt; count and list2[j][0] != id:
-#         j += 1
-#     dict[&amp;apos;name&amp;apos;] = list2[j][1]
-#     dict[&amp;apos;age&amp;apos;] = list2[j][2]
-#     list3.append(dict)
-
-
-# list2_dict = {}
-# for item2 in list2:
-#     list2_dict[item2[0]] = (item2[1], item2[2])
-# for item1 in list1:
-#     dict = {}
-#     dict[&amp;apos;id&amp;apos;] = item1
-#     dict[&amp;apos;name&amp;apos;] = list2_dict[item1][0]
-#     dict[&amp;apos;age&amp;apos;] = list2_dict[item1][1]
-#     list3.append(dict)
-
-list2_dict = {}
-for item2 in list2:
-    list2_dict[item2[0]] = {&amp;apos;name&amp;apos;: item2[1], &amp;apos;age&amp;apos;: item2[2]}
-for item1 in list1:
-    dict = list2_dict[item1]
-    dict[&amp;apos;id&amp;apos;] = item1
-    list3.append(dict)
-
-print(list3)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;^_^ 感谢我的本科室友~&lt;/p&gt;
+&lt;figure class=&quot;highlight vala&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;list1 = [&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;15&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;53&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;47&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;list2 = [(&lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;John&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;20&#39;&lt;/span&gt;), (&lt;span class=&quot;number&quot;&gt;15&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;Kim&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;18&#39;&lt;/span&gt;),&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         (&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;David&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;21&#39;&lt;/span&gt;), (&lt;span class=&quot;number&quot;&gt;47&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;Amy&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;23&#39;&lt;/span&gt;), (&lt;span class=&quot;number&quot;&gt;53&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;Mary&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;20&#39;&lt;/span&gt;)]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(list1)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(list2)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;list3 = []&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;# count = len(list1)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;# for i in range(0, count):&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     dict = &amp;#123;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     id = list1[i]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     dict[&#39;id&#39;] = id&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     j = 0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     while j &amp;lt; count and list2[j][0] != id:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#         j += 1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     dict[&#39;name&#39;] = list2[j][1]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     dict[&#39;age&#39;] = list2[j][2]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     list3.append(dict)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;# list2_dict = &amp;#123;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;# for item2 in list2:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     list2_dict[item2[0]] = (item2[1], item2[2])&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;# for item1 in list1:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     dict = &amp;#123;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     dict[&#39;id&#39;] = item1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     dict[&#39;name&#39;] = list2_dict[item1][0]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     dict[&#39;age&#39;] = list2_dict[item1][1]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     list3.append(dict)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;list2_dict = &amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; item2 in list2:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    list2_dict[item2[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;]] = &amp;#123;&lt;span class=&quot;string&quot;&gt;&#39;name&#39;&lt;/span&gt;: item2[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;], &lt;span class=&quot;string&quot;&gt;&#39;age&#39;&lt;/span&gt;: item2[&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;]&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; item1 in list1:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    dict = list2_dict[item1]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    dict[&lt;span class=&quot;string&quot;&gt;&#39;id&#39;&lt;/span&gt;] = item1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    list3.append(dict)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(list3)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;^_^ 感谢我的本科室友~&lt;/p&gt;
 </content>
     
     <summary type="html">
@@ -1527,33 +1489,12 @@ print(list3)
     <link href="http://blog.ybbz.site/2016/03/29/Ajax-Flask-Python-Web-Server/"/>
     <id>http://blog.ybbz.site/2016/03/29/Ajax-Flask-Python-Web-Server/</id>
     <published>2016-03-28T16:00:00.000Z</published>
-    <updated>2016-04-23T09:26:34.000Z</updated>
+    <updated>2016-04-23T12:55:43.000Z</updated>
     
     <content type="html">&lt;p&gt;看到标题，你可能会觉得博主比较奇葩，为什么要把事情搞得这么复杂？其实博主也不想这样，只是去年已经用PHP搭建好了系统，而且功能、UI等也基本调试的差不多了；现在要借助Python强大而方便的数据分析功能来分析数据，最简单直接的也就是这么做了。或许之后，会考虑用Django等来重构整个系统，但这并不是现在的重点。&lt;/p&gt;
 &lt;h3 id=&quot;利用Ajax跨域访问Flask服务器&quot;&gt;&lt;a href=&quot;#利用Ajax跨域访问Flask服务器&quot; class=&quot;headerlink&quot; title=&quot;利用Ajax跨域访问Flask服务器&quot;&gt;&lt;/a&gt;利用Ajax跨域访问Flask服务器&lt;/h3&gt;&lt;p&gt;Web前端通过Ajax请求Flask服务器的接口：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
-    $(document).ready(function(){
-        $(&amp;quot;#click_demo&amp;quot;).click(function(){
-            //http request
-            $.post(&amp;quot;http://127.0.0.1:8080/demo&amp;quot;,
-            {
-               name:$(&amp;quot;#param&amp;quot;).text(),
-            },
-            function(data,status){
-                //alert(&amp;quot;status：&amp;quot; + status + &amp;quot;\ndata：&amp;quot; + data);
-                var myobj=eval(data);
-                var result=&amp;apos;&amp;apos;;
-                for (var i = 0;i &amp;lt; myobj.length;i++) {
-                    var item=&amp;apos;&amp;lt;p&amp;gt;&amp;apos;+myobj[i].name+&amp;apos;&amp;lt;/p&amp;gt;&amp;apos;;
-                    result=result+item;
-                }
-                $(&amp;quot;#result-element&amp;quot;)[0].innerHTML=result;
-                $(&amp;quot;#result-element&amp;quot;).show();
-            });
-        });
-    });
-&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Ajax跨域请求的时候可以在服务端设置header信息，来达到跨域请求的目的（不需要通过jsonp的方式设置ajax参数）：&lt;/p&gt;
+&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;javascript&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    $(&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;).ready(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $(&lt;span class=&quot;string&quot;&gt;&quot;#click_demo&quot;&lt;/span&gt;).click(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;comment&quot;&gt;//http request&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            $.post(&lt;span class=&quot;string&quot;&gt;&quot;http://127.0.0.1:8080/demo&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;               name:$(&lt;span class=&quot;string&quot;&gt;&quot;#param&quot;&lt;/span&gt;).text(),&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;data,status&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;comment&quot;&gt;//alert(&quot;status：&quot; + status + &quot;\ndata：&quot; + data);&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; myobj=&lt;span class=&quot;built_in&quot;&gt;eval&lt;/span&gt;(data);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; result=&lt;span class=&quot;string&quot;&gt;&#39;&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;i &amp;lt; myobj.length;i++) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; item=&lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;p&amp;gt;&#39;&lt;/span&gt;+myobj[i].name+&lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;/p&amp;gt;&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    result=result+item;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                $(&lt;span class=&quot;string&quot;&gt;&quot;#result-element&quot;&lt;/span&gt;)[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;].innerHTML=result;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                $(&lt;span class=&quot;string&quot;&gt;&quot;#result-element&quot;&lt;/span&gt;).show();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Ajax跨域请求的时候可以在服务端设置header信息，来达到跨域请求的目的（不需要通过jsonp的方式设置ajax参数）：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;Response.AddHeader(&amp;quot;Access-Control-Allow-Origin&amp;quot;, &amp;quot;*&amp;quot;);
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Flask服务器端代码如下：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;@app.route(&amp;apos;/demo&amp;apos;, methods=[&amp;apos;POST&amp;apos;])
@@ -1566,62 +1507,13 @@ def home():
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;Python操作Json&quot;&gt;&lt;a href=&quot;#Python操作Json&quot; class=&quot;headerlink&quot; title=&quot;Python操作Json&quot;&gt;&lt;/a&gt;Python操作Json&lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;JSON (JavaScript Object Notation), specified by RFC 7159 (which obsoletes RFC 4627) and by ECMA-404, is a lightweight data interchange format inspired by JavaScript object literal syntax (although it is not a strict subset of JavaScript).&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;import json
-
-list1 = [20, 6, 15, 53, 47]
-list2 = [(6, &amp;apos;John&amp;apos;, &amp;apos;20&amp;apos;), (20, &amp;apos;David&amp;apos;, &amp;apos;21&amp;apos;), (47, &amp;apos;Amy&amp;apos;, &amp;apos;23&amp;apos;), (15, &amp;apos;Kim&amp;apos;, &amp;apos;18&amp;apos;), (53, &amp;apos;Mary&amp;apos;, &amp;apos;20&amp;apos;)]
-
-list3 = []
-for a in list2:
-    dict = {}
-    dict[&amp;apos;id&amp;apos;] = a[0]
-    dict[&amp;apos;name&amp;apos;] = a[1]
-    dict[&amp;apos;age&amp;apos;] = a[2]
-    list3.append(dict)
-result = {}
-result[&amp;apos;id&amp;apos;] = list1
-result[&amp;apos;data&amp;apos;] = list3
-
-json1 = json.dumps(list1)
-json2 = json.dumps(list2)
-json3 = json.dumps(list3)
-json4 = json.dumps(result)
-print(json1)
-print(json2)
-print(json3)
-print(json4)
-
-decode = json.loads(json4)
-print(decode)
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;JS解析Json数据&quot;&gt;&lt;a href=&quot;#JS解析Json数据&quot; class=&quot;headerlink&quot; title=&quot;JS解析Json数据&quot;&gt;&lt;/a&gt;JS解析Json数据&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;SCRIPT LANGUAGE=&amp;quot;JavaScript&amp;quot;&amp;gt;
-    var t=&amp;quot;{&amp;apos;firstName&amp;apos;: &amp;apos;cyra&amp;apos;, &amp;apos;lastName&amp;apos;: &amp;apos;richardson&amp;apos;, &amp;apos;address&amp;apos;: { &amp;apos;streetAddress&amp;apos;: &amp;apos;1 Microsoft way&amp;apos;, &amp;apos;city&amp;apos;: &amp;apos;Redmond&amp;apos;, &amp;apos;state&amp;apos;: &amp;apos;WA&amp;apos;, &amp;apos;postalCode&amp;apos;: 98052 },&amp;apos;phoneNumbers&amp;apos;: [ &amp;apos;425-777-7777&amp;apos;,&amp;apos;206-777-7777&amp;apos; ] }&amp;quot;;
-    var jsonobj=eval(&amp;apos;(&amp;apos;+t+&amp;apos;)&amp;apos;);
-    alert(jsonobj.firstName);
-    alert(jsonobj.lastName);
-
-
-    var t2=&amp;quot;[{name:&amp;apos;zhangsan&amp;apos;,age:&amp;apos;24&amp;apos;},{name:&amp;apos;lisi&amp;apos;,age:&amp;apos;30&amp;apos;},{name:&amp;apos;wangwu&amp;apos;,age:&amp;apos;16&amp;apos;},{name:&amp;apos;tianqi&amp;apos;,age:&amp;apos;7&amp;apos;}] &amp;quot;;
-    var myobj=eval(t2);
-    for(var i=0;i&amp;lt;myobj.length;i++){
-        alert(myobj[i].name);
-        alert(myobj[i].age);
-    }
-
-    var t3=&amp;quot;[[&amp;apos;14113295100&amp;apos;,&amp;apos;社旗县国税局桥头税务所&amp;apos;,&amp;apos;社旗县城郊乡长江路西段&amp;apos;]]&amp;quot;;
-    //通过eval()函数可以将JSON字符串转化为对象
-    var obj = eval(t3);
-    for(var i=0;i&amp;lt;obj.length;i++){
-        for(var j=0;j&amp;lt;obj[i].length;j++){
-            alert(obj[i][j]);
-        }
-    }
-&amp;lt;/SCRIPT&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;参考资料：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/mahatmasmile/archive/2013/03/29/2989505.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Ajax跨域请求&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/25860304/how-do-i-set-response-headers-in-flask&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;How do I set response headers in Flask?&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://flask.pocoo.org/docs/0.10/api/#response-objects&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Flask API&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://docs.python.org/3/library/json.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Python操作json的API&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.360doc.com/content/16/0329/20/32081299_546351123.shtml&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;JS解析json数据（如何将json字符串转化为数组）&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
+&lt;figure class=&quot;highlight stylus&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;import json&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;list1 = [&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;15&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;53&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;47&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;list2 = [(&lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;John&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;20&#39;&lt;/span&gt;), (&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;David&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;21&#39;&lt;/span&gt;), (&lt;span class=&quot;number&quot;&gt;47&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;Amy&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;23&#39;&lt;/span&gt;), (&lt;span class=&quot;number&quot;&gt;15&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;Kim&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;18&#39;&lt;/span&gt;), (&lt;span class=&quot;number&quot;&gt;53&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;Mary&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;20&#39;&lt;/span&gt;)]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;list3 = []&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; list2:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    dict = &amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    dict[&lt;span class=&quot;string&quot;&gt;&#39;id&#39;&lt;/span&gt;] = &lt;span class=&quot;selector-tag&quot;&gt;a&lt;/span&gt;[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    dict[&lt;span class=&quot;string&quot;&gt;&#39;name&#39;&lt;/span&gt;] = &lt;span class=&quot;selector-tag&quot;&gt;a&lt;/span&gt;[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    dict[&lt;span class=&quot;string&quot;&gt;&#39;age&#39;&lt;/span&gt;] = &lt;span class=&quot;selector-tag&quot;&gt;a&lt;/span&gt;[&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    list3.append(dict)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;result = &amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;result[&lt;span class=&quot;string&quot;&gt;&#39;id&#39;&lt;/span&gt;] = list1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;result[&lt;span class=&quot;string&quot;&gt;&#39;data&#39;&lt;/span&gt;] = list3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;json1 = json.dumps(list1)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;json2 = json.dumps(list2)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;json3 = json.dumps(list3)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;json4 = json.dumps(result)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;title&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(json1)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;title&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(json2)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;title&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(json3)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;title&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(json4)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;decode = json.loads(json4)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;title&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(decode)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;JS解析Json数据&quot;&gt;&lt;a href=&quot;#JS解析Json数据&quot; class=&quot;headerlink&quot; title=&quot;JS解析Json数据&quot;&gt;&lt;/a&gt;JS解析Json数据&lt;/h3&gt;&lt;figure class=&quot;highlight scilab&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;SCRIPT LANGUAGE=&lt;span class=&quot;string&quot;&gt;&quot;JavaScript&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    var t=&lt;span class=&quot;string&quot;&gt;&quot;&amp;#123;&#39;&lt;/span&gt;firstName&#39;: &lt;span class=&quot;string&quot;&gt;&#39;cyra&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;lastName&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;richardson&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;address&#39;&lt;/span&gt;: &amp;#123; &lt;span class=&quot;string&quot;&gt;&#39;streetAddress&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;1 Microsoft way&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;city&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;Redmond&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;state&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;WA&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;postalCode&#39;&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;98052&lt;/span&gt; &amp;#125;,&lt;span class=&quot;string&quot;&gt;&#39;phoneNumbers&#39;&lt;/span&gt;: [ &lt;span class=&quot;string&quot;&gt;&#39;425-777-7777&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;206-777-7777&#39;&lt;/span&gt; ] &amp;#125;&lt;span class=&quot;string&quot;&gt;&quot;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    var jsonobj=eval(&#39;&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;+t+&#39;&lt;/span&gt;)&lt;span class=&quot;string&quot;&gt;&#39;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    alert(jsonobj.firstName);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    alert(jsonobj.lastName);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    var t2=&quot;&lt;/span&gt;[&amp;#123;name:&lt;span class=&quot;string&quot;&gt;&#39;zhangsan&#39;&lt;/span&gt;,age:&lt;span class=&quot;string&quot;&gt;&#39;24&#39;&lt;/span&gt;&amp;#125;,&amp;#123;name:&lt;span class=&quot;string&quot;&gt;&#39;lisi&#39;&lt;/span&gt;,age:&lt;span class=&quot;string&quot;&gt;&#39;30&#39;&lt;/span&gt;&amp;#125;,&amp;#123;name:&lt;span class=&quot;string&quot;&gt;&#39;wangwu&#39;&lt;/span&gt;,age:&lt;span class=&quot;string&quot;&gt;&#39;16&#39;&lt;/span&gt;&amp;#125;,&amp;#123;name:&lt;span class=&quot;string&quot;&gt;&#39;tianqi&#39;&lt;/span&gt;,age:&lt;span class=&quot;string&quot;&gt;&#39;7&#39;&lt;/span&gt;&amp;#125;] &lt;span class=&quot;string&quot;&gt;&quot;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    var myobj=eval(t2);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    for(var i=0;i&amp;lt;myobj.length;i++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        alert(myobj[i].name);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        alert(myobj[i].age);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    var t3=&quot;&lt;/span&gt;[[&lt;span class=&quot;string&quot;&gt;&#39;14113295100&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;社旗县国税局桥头税务所&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;社旗县城郊乡长江路西段&#39;&lt;/span&gt;]]&lt;span class=&quot;string&quot;&gt;&quot;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    //通过eval()函数可以将JSON字符串转化为对象&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    var obj = eval(t3);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    for(var i=0;i&amp;lt;obj.length;i++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        for(var j=0;j&amp;lt;obj[i].length;j++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            alert(obj[i][j]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/SCRIPT&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;参考资料&quot;&gt;&lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot; title=&quot;参考资料&quot;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/mahatmasmile/archive/2013/03/29/2989505.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Ajax跨域请求&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/25860304/how-do-i-set-response-headers-in-flask&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;How do I set response headers in Flask?&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://flask.pocoo.org/docs/0.10/api/#response-objects&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Flask API&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.python.org/3/library/json.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Python操作json的API&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.360doc.com/content/16/0329/20/32081299_546351123.shtml&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;JS解析json数据（如何将json字符串转化为数组）&lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
@@ -1646,7 +1538,7 @@ print(decode)
     <link href="http://blog.ybbz.site/2016/03/28/Just-write-about-my-life/"/>
     <id>http://blog.ybbz.site/2016/03/28/Just-write-about-my-life/</id>
     <published>2016-03-27T16:00:00.000Z</published>
-    <updated>2016-04-23T09:26:27.000Z</updated>
+    <updated>2016-04-23T12:56:04.000Z</updated>
     
     <content type="html">&lt;p&gt;这个学期，虽然才刚刚开始，但是已经历了太多事情！&lt;/p&gt;
 &lt;p&gt;先是2月份过完年返校，从年前实习的公司离职，在公司实习的经历让我很愉快，因为可以安心的写代码、搞研究，这于我，就够了！离职后，希望把研究生课题尽快搞定；课题方面，倒也算是取得了一些进展，可也并不能让人满意，还需要努力，希望后续会顺利吧。&lt;/p&gt;
@@ -1659,9 +1551,9 @@ print(decode)
 &lt;p&gt;今天还和一个经管的博士后学姐在图书馆咖啡厅讨论了快两个小时，也算是跨学科交流吧，很有收获。就这些吧，还是先把心沉下来，好好的搞科研。写在三月末，迎接崭新的四月！&lt;/p&gt;
 &lt;p&gt;最后的最后，推荐一个Mac上好用的图片压缩方法，不想使用额外的软件（PS等）对照片作处理的话，图个方便的话，可以一试，反正我很喜欢这种方式：&lt;br&gt;1.用mac自带的预览打开图片；2.工具－调整大小；3.文件－存储&lt;br&gt;另外，如果想对照片做更多处理的话，也可以使用Mac自带的iPhoto来编辑图片。&lt;/p&gt;
 &lt;p&gt;效果图如下，第一张是校园随手拍的夜景，后两张是黑马运动会前一晚操场调试大屏幕时拍的。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160328_1.jpg&quot; alt=&quot;20160328_1&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160328_2.jpg&quot; alt=&quot;20160328_2&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160328_3.jpg&quot; alt=&quot;20160328_3&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160328_1.jpg&quot; alt=&quot;20160328_1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160328_2.jpg&quot; alt=&quot;20160328_2&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160328_3.jpg&quot; alt=&quot;20160328_3&quot;&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
@@ -1679,234 +1571,25 @@ print(decode)
   </entry>
   
   <entry>
-    <title>爬虫实战：抓取某人所有微博并处理，绘制top30关键词的图表</title>
-    <link href="http://blog.ybbz.site/2016/03/27/crawl_weibo/"/>
-    <id>http://blog.ybbz.site/2016/03/27/crawl_weibo/</id>
-    <published>2016-03-26T16:00:00.000Z</published>
-    <updated>2016-04-23T09:25:43.000Z</updated>
-    
-    <content type="html">&lt;p&gt;github传送门：&lt;a href=&quot;https://github.com/ybbz/crawler&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;crawl_weibo&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
-&lt;p&gt;声明：用爬虫抓取数据，没有任何坏心思，纯粹的兴趣与技术交流，抓的也都是自己的数据，不侵犯他人隐私。若牵扯到各方利益，请联系我！&lt;/p&gt;
-&lt;p&gt;效果图如下：&lt;br&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160327_1.png&quot; alt=&quot;20160327_1&quot;&gt;&lt;/p&gt;
-&lt;p&gt;代码如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;# encoding=utf-8
-
-import requests
-from lxml import etree
-import jieba
-import csv
-import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
-
-result = &amp;apos;&amp;apos;
-count = 1
-user_id = &amp;apos;your weibo user_id&amp;apos;
-cookie = {&amp;quot;Cookie&amp;quot;: &amp;apos;your weibo cookie&amp;apos;}
-download_path = &amp;apos;/Users/ybbz/Downloads/weibo/&amp;apos;
-
-print(&amp;apos;crawl the text of your weibo: start...&amp;apos;)
-
-# get total page number
-html = requests.get(&amp;apos;http://weibo.cn/%d/profile?page=1&amp;apos; % user_id, cookies=cookie).content
-selector = etree.HTML(html)
-pageNum = int((selector.xpath(&amp;apos;//input[@name=&amp;quot;mp&amp;quot;]&amp;apos;)[0].attrib[&amp;apos;value&amp;apos;]))
-
-# crawl your weibo
-for page in range(1, pageNum + 1):
-    # for page in range(1, 2):
-    # get lxml
-    url = &amp;apos;http://weibo.cn/%d/profile?page=%d&amp;apos; % (user_id, page)
-    lxml1 = requests.get(url, cookies=cookie).content
-    # get text
-    selector = etree.HTML(lxml1)
-    content = selector.xpath(&amp;apos;//span[@class=&amp;quot;ctt&amp;quot;]&amp;apos;)
-    for each in content:
-        text = each.xpath(&amp;apos;string(.)&amp;apos;)
-        text = &amp;quot;%d :&amp;quot; % count + text + &amp;quot;\n&amp;quot;
-        result += text
-        count += 1
-
-# write the result to the document
-with open(download_path + str(user_id), &amp;apos;w&amp;apos;) as f:
-    f.write(result)
-
-print(&amp;apos;crawl : done, a total of %d data.&amp;apos; % (count - 1))
-######################################################
-print(&amp;apos;analyze the text of your weibo : start...&amp;apos;)
-
-stop_list = []
-word_list = []
-word_dict = {}
-word_frequency = []
-
-file_stopwords = &amp;apos;stopwords.txt&amp;apos;
-
-# read stopwords.txt,get stop words list
-with open(file_stopwords, &amp;apos;r&amp;apos;) as f_stop:
-    f_stop_text = f_stop.read()
-    stop_list = f_stop_text.split(&amp;apos;\n&amp;apos;)
-
-# cut the text result of your weibo with jieba
-result_cut = jieba.cut_for_search(result)
-
-# remove all stop words,get the new word list
-for cut in result_cut:
-    if not (cut.strip() in stop_list):
-        word_list.append(cut)
-
-# statistics frequency of the new word list
-for word in word_list:
-    if word not in word_dict:
-        word_dict[word] = 1
-    else:
-        word_dict[word] += 1
-
-# get the list of frequency
-for key in word_dict:
-    word_frequency.append((word_dict[key], key))
-
-# sort the result and get top20
-word_30 = sorted(word_frequency)[-30:]
-word_30.reverse()
-
-print(&amp;apos;analyze : done.&amp;apos;)
-######################################################
-print(&amp;apos;draw : start...&amp;apos;)
-
-csv_path = &amp;apos;/Users/ybbz/Downloads/weibo/weibo.csv&amp;apos;
-
-# write top30 result to csv document
-with open(csv_path, &amp;apos;w&amp;apos;) as f:
-    f_csv = csv.writer(f)
-    f_csv.writerow([&amp;apos;frequency&amp;apos;, &amp;apos;word&amp;apos;])
-    f_csv.writerows(word_30)
-
-# read data and draw picture
-budget = pd.read_csv(csv_path)
-sns.set_style(&amp;quot;darkgrid&amp;quot;)
-bar_plot = sns.barplot(x=budget[&amp;quot;word&amp;quot;], y=budget[&amp;quot;frequency&amp;quot;], palette=&amp;quot;muted&amp;quot;, order=budget[&amp;quot;word&amp;quot;].tolist())
-plt.xticks(rotation=0)
-plt.show()
-
-print(&amp;apos;draw : done.&amp;apos;)
-&lt;/code&gt;&lt;/pre&gt;</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;github传送门：&lt;a href=&quot;https://github.com/ybbz/crawler&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;crawl_weibo&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
-&lt;p&gt;声明：用爬虫抓取数据，没有
-    
-    </summary>
-    
-      <category term="Crawler" scheme="http://blog.ybbz.site/categories/Crawler/"/>
-    
-    
-      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
-    
-      <category term="Crawler" scheme="http://blog.ybbz.site/tags/Crawler/"/>
-    
-  </entry>
-  
-  <entry>
     <title>爬虫实战：抓取在iBeiKe的所有发帖信息保存到数据库，进行可视化分析</title>
     <link href="http://blog.ybbz.site/2016/03/27/crawl-ibeike/"/>
     <id>http://blog.ybbz.site/2016/03/27/crawl-ibeike/</id>
     <published>2016-03-26T16:00:00.000Z</published>
-    <updated>2016-04-23T09:26:19.000Z</updated>
+    <updated>2016-04-23T12:56:57.000Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;iBeiKe网站，或简称iBeiKe（中文：爱北科，英文缩写：IBK）是北京科技大学学生会下属的技术性学生组织iBeiKe团队建立和维护的网站，主要服务于北京科技大学的师生。网站成立于2001年3月，时称“北科大学生之家”。iBeiKe网站是北京科技大学学生会的宣传门户，同时也是一个综合性的学生网站及校园服务网站。iBeiKe网站也是北京科技大学历史最长的学生网站。网站的标语是“网上网下，一样精彩”。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;博主本科时期在iBeiKe担任了n年的版主和总版主（好吧，现在好像还没卸任？），挥洒了无数的青春与汗水。也结交了无数的基友（有男有女又老又少）。。。&lt;/p&gt;
 &lt;p&gt;声明：用爬虫抓取数据，没有任何坏心思，纯粹的兴趣与技术交流，抓的也都是自己的数据，不侵犯他人隐私。若牵扯到各方利益，请联系我！&lt;/p&gt;
-&lt;p&gt;言归正传～～～github传送门：&lt;a href=&quot;https://github.com/ybbz/crawler&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;crawl_ibeike1/2&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
+&lt;p&gt;言归正传～～～github传送门：&lt;a href=&quot;https://github.com/ybbz/crawler&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;crawl_ibeike1/2&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;效果图如下：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160330_1.png&quot; alt=&quot;20160330_1&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/img/blog/IMG_20160330_2.png&quot; alt=&quot;20160330_2&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;抓取数据并清洗，保存到数据库&quot;&gt;&lt;a href=&quot;#抓取数据并清洗，保存到数据库&quot; class=&quot;headerlink&quot; title=&quot;抓取数据并清洗，保存到数据库&quot;&gt;&lt;/a&gt;抓取数据并清洗，保存到数据库&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;# encoding=utf-8
-
-import httplib2
-import mysql.connector
-from bs4 import BeautifulSoup
-
-result = []
-pageNum = &amp;apos;total page number&amp;apos;
-uid = &amp;apos;your uid&amp;apos;
-cookie = &amp;quot;your cookies&amp;quot;
-
-url = &amp;apos;http://city.ibeike.com/home.php?mod=space&amp;amp;uid=&amp;apos; + uid + &amp;apos;&amp;amp;do=thread&amp;amp;view=me&amp;amp;order=dateline&amp;amp;from=space&amp;amp;page=&amp;apos;
-
-headers = {&amp;quot;Connection&amp;quot;: &amp;quot;keep-alive&amp;quot;,
-           &amp;quot;Cookie&amp;quot;: cookie,
-           &amp;quot;Content-Type&amp;quot;: &amp;quot;application/xhtml+xml&amp;quot;}
-
-for page in range(1, pageNum + 1):
-    cur_page = page
-    url_full = url + str(cur_page)
-    # http request
-    http = httplib2.Http()
-    response, content = http.request(url_full, &amp;quot;GET&amp;quot;, headers=headers)
-    if response.status == 200:
-        # print(response)
-        # print(content.decode(&amp;apos;utf-8&amp;apos;))
-        soup = BeautifulSoup(content, &amp;quot;lxml&amp;quot;)
-        table = soup.find_all(&amp;apos;table&amp;apos;)[1]
-        tr = table.find_all(&amp;apos;tr&amp;apos;, class_=&amp;apos;&amp;apos;)
-        for item in tr:
-            item_list = []
-            # print(item.prettify())
-            item_title = item.th.a.string
-            item_group = item.find_all(&amp;apos;td&amp;apos;, class_=&amp;apos;&amp;apos;)[0].a.string
-            item_reply = item.select(&amp;apos;td[class=&amp;quot;num&amp;quot;]&amp;apos;)[0].a.string
-            item_watch = item.select(&amp;apos;td[class=&amp;quot;num&amp;quot;]&amp;apos;)[0].em.string
-            # save to the result list
-            item = (str(item_title), str(item_group), int(item_reply), int(item_watch))
-            result.append(item)
-print(result)
-
-# connect database
-conn = mysql.connector.connect(host=&amp;quot;hostname&amp;quot;, user=&amp;quot;username&amp;quot;, passwd=&amp;quot;password&amp;quot;, db=&amp;quot;database&amp;quot;)
-cursor = conn.cursor()
-# save data
-sql = &amp;quot;insert into ibeike(title,groups,reply,watch) values(%s,%s,%s,%s)&amp;quot;
-cursor.executemany(sql, result)
-conn.commit()
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;数据分析与数据可视化&quot;&gt;&lt;a href=&quot;#数据分析与数据可视化&quot; class=&quot;headerlink&quot; title=&quot;数据分析与数据可视化&quot;&gt;&lt;/a&gt;数据分析与数据可视化&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;# encoding=utf-8
-
-import mysql.connector
-import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
-
-# connect database
-conn = mysql.connector.connect(host=&amp;quot;hostname&amp;quot;, user=&amp;quot;username&amp;quot;,passwd=&amp;quot;password&amp;quot;, db=&amp;quot;database&amp;quot;)
-cursor = conn.cursor()
-# query data
-cursor.execute(&amp;apos;select count(*),max(reply),min(reply),max(watch),min(watch) from ibeike&amp;apos;)
-values1 = cursor.fetchall()
-print(&amp;quot;ibeike:totally&amp;quot; + str(values1[0][0]) + &amp;quot;data&amp;quot;)
-list = [(&amp;apos;highest reply&amp;apos;, values1[0][1]), (&amp;apos;lowest reply&amp;apos;, values1[0][2]),(&amp;apos;hightest watch&amp;apos;, values1[0][3]),(&amp;apos;lowest watch&amp;apos;, values1[0][4])]
-# draw picture
-budget = pd.DataFrame(list, columns=[&amp;apos;type&amp;apos;, &amp;apos;count&amp;apos;])
-sns.set_style(&amp;quot;darkgrid&amp;quot;)
-bar_plot = sns.barplot(x=budget[&amp;quot;type&amp;quot;], y=budget[&amp;quot;count&amp;quot;],palette=&amp;quot;muted&amp;quot;, order=budget[&amp;quot;type&amp;quot;].tolist())
-plt.show()
-
-# query data
-cursor.execute(&amp;apos;select count(id),groups from ibeike group by groups&amp;apos;)
-values2 = cursor.fetchall()
-values2.append((values1[0][0], &amp;apos;all sort&amp;apos;))
-result = sorted(values2)
-result.reverse()
-# draw picture
-budget = pd.DataFrame(result, columns=[&amp;apos;count&amp;apos;, &amp;apos;sort&amp;apos;])
-sns.set_style(&amp;quot;darkgrid&amp;quot;)
-bar_plot = sns.barplot(x=budget[&amp;quot;sort&amp;quot;], y=budget[&amp;quot;count&amp;quot;],palette=&amp;quot;muted&amp;quot;, order=budget[&amp;quot;sort&amp;quot;].tolist())
-plt.xticks(rotation=30)
-plt.show()
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;参考资料：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://cuiqingcai.com/1319.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Python爬虫利器二之Beautiful Soup的用法&lt;/a&gt;{:target=”_blank”}&lt;/p&gt;
+&lt;h3 id=&quot;抓取数据并清洗，保存到数据库&quot;&gt;&lt;a href=&quot;#抓取数据并清洗，保存到数据库&quot; class=&quot;headerlink&quot; title=&quot;抓取数据并清洗，保存到数据库&quot;&gt;&lt;/a&gt;抓取数据并清洗，保存到数据库&lt;/h3&gt;&lt;figure class=&quot;highlight nix&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# encoding=utf-8&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;import&lt;/span&gt; httplib2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;import&lt;/span&gt; mysql.connector&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from bs4 &lt;span class=&quot;built_in&quot;&gt;import&lt;/span&gt; BeautifulSoup&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;result&lt;/span&gt; = []&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;pageNum&lt;/span&gt; = &#39;total page number&#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;uid&lt;/span&gt; = &#39;your uid&#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;cookie&lt;/span&gt; = &lt;span class=&quot;string&quot;&gt;&quot;your cookies&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;url&lt;/span&gt; = &#39;http://city.ibeike.com/home.php?&lt;span class=&quot;attr&quot;&gt;mod=space&amp;amp;uid=&#39;&lt;/span&gt; + uid + &#39;&amp;amp;&lt;span class=&quot;attr&quot;&gt;do=thread&amp;amp;view=me&amp;amp;order=dateline&amp;amp;from=space&amp;amp;page=&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;headers&lt;/span&gt; = &amp;#123;&lt;span class=&quot;string&quot;&gt;&quot;Connection&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;keep-alive&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;           &lt;span class=&quot;string&quot;&gt;&quot;Cookie&quot;&lt;/span&gt;: cookie,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;           &lt;span class=&quot;string&quot;&gt;&quot;Content-Type&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;application/xhtml+xml&quot;&lt;/span&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;for page &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; range(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, pageNum + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;cur_page&lt;/span&gt; = page&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;url_full&lt;/span&gt; = url + str(cur_page)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# http request&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;http&lt;/span&gt; = httplib2.Http()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    response, &lt;span class=&quot;attr&quot;&gt;content&lt;/span&gt; = http.request(url_full, &lt;span class=&quot;string&quot;&gt;&quot;GET&quot;&lt;/span&gt;, &lt;span class=&quot;attr&quot;&gt;headers=headers)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; response.&lt;span class=&quot;attr&quot;&gt;status&lt;/span&gt; == &lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;# print(response)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;# print(content.decode(&#39;utf-8&#39;))&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;attr&quot;&gt;soup&lt;/span&gt; = BeautifulSoup(content, &lt;span class=&quot;string&quot;&gt;&quot;lxml&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;attr&quot;&gt;table&lt;/span&gt; = soup.find_all(&#39;table&#39;)[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;attr&quot;&gt;tr&lt;/span&gt; = table.find_all(&#39;tr&#39;, &lt;span class=&quot;attr&quot;&gt;class_=&#39;&#39;)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        for item &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; tr:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;attr&quot;&gt;item_list&lt;/span&gt; = []&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;comment&quot;&gt;# print(item.prettify())&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;attr&quot;&gt;item_title&lt;/span&gt; = item.th.a.string&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;attr&quot;&gt;item_group&lt;/span&gt; = item.find_all(&#39;td&#39;, &lt;span class=&quot;attr&quot;&gt;class_=&#39;&#39;)[0].a.string&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;attr&quot;&gt;item_reply&lt;/span&gt; = item.select(&#39;td[&lt;span class=&quot;attr&quot;&gt;class=&quot;num&quot;]&#39;)[0].a.string&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;attr&quot;&gt;item_watch&lt;/span&gt; = item.select(&#39;td[&lt;span class=&quot;attr&quot;&gt;class=&quot;num&quot;]&#39;)[0].em.string&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;comment&quot;&gt;# save to the result list&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;attr&quot;&gt;item&lt;/span&gt; = (str(item_title), str(item_group), int(item_reply), int(item_watch))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            result.append(item)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(result)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# connect database&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;conn&lt;/span&gt; = mysql.connector.connect(&lt;span class=&quot;attr&quot;&gt;host=&quot;hostname&quot;,&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;user=&quot;username&quot;,&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;passwd=&quot;password&quot;,&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;db=&quot;database&quot;)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;cursor&lt;/span&gt; = conn.cursor()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# save data&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;sql&lt;/span&gt; = &lt;span class=&quot;string&quot;&gt;&quot;insert into ibeike(title,groups,reply,watch) values(%s,%s,%s,%s)&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cursor.executemany(sql, result)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;conn.commit()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;数据分析与数据可视化&quot;&gt;&lt;a href=&quot;#数据分析与数据可视化&quot; class=&quot;headerlink&quot; title=&quot;数据分析与数据可视化&quot;&gt;&lt;/a&gt;数据分析与数据可视化&lt;/h3&gt;&lt;figure class=&quot;highlight markdown&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;section&quot;&gt;# encoding=utf-8&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;import mysql.connector&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;import pandas as pd&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;import seaborn as sns&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;import matplotlib.pyplot as plt&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;section&quot;&gt;# connect database&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;conn = mysql.connector.connect(host=&quot;hostname&quot;, user=&quot;username&quot;,passwd=&quot;password&quot;, db=&quot;database&quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cursor = conn.cursor()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;section&quot;&gt;# query data&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cursor.execute(&#39;select count(*),max(reply),min(reply),max(watch),min(watch) from ibeike&#39;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;values1 = cursor.fetchall()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(&quot;ibeike:totally&quot; + str(values1[&lt;span class=&quot;string&quot;&gt;0&lt;/span&gt;][&lt;span class=&quot;symbol&quot;&gt;0&lt;/span&gt;]) + &quot;data&quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;list = [&lt;span class=&quot;string&quot;&gt;(&#39;highest reply&#39;, values1[0&lt;/span&gt;][&lt;span class=&quot;symbol&quot;&gt;1&lt;/span&gt;]), (&#39;lowest reply&#39;, values1[&lt;span class=&quot;string&quot;&gt;0&lt;/span&gt;][&lt;span class=&quot;symbol&quot;&gt;2&lt;/span&gt;]),(&#39;hightest watch&#39;, values1[&lt;span class=&quot;string&quot;&gt;0&lt;/span&gt;][&lt;span class=&quot;symbol&quot;&gt;3&lt;/span&gt;]),(&#39;lowest watch&#39;, values1[&lt;span class=&quot;string&quot;&gt;0&lt;/span&gt;][&lt;span class=&quot;symbol&quot;&gt;4&lt;/span&gt;])]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;section&quot;&gt;# draw picture&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;budget = pd.DataFrame(list, columns=[&#39;type&#39;, &#39;count&#39;])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sns.set_style(&quot;darkgrid&quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;bar_plot = sns.barplot(x=budget[&quot;type&quot;], y=budget[&quot;count&quot;],palette=&quot;muted&quot;, order=budget[&quot;type&quot;].tolist())&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;plt.show()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;section&quot;&gt;# query data&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cursor.execute(&#39;select count(id),groups from ibeike group by groups&#39;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;values2 = cursor.fetchall()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;values2.append((values1[&lt;span class=&quot;string&quot;&gt;0&lt;/span&gt;][&lt;span class=&quot;symbol&quot;&gt;0&lt;/span&gt;], &#39;all sort&#39;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;result = sorted(values2)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;result.reverse()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;section&quot;&gt;# draw picture&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;budget = pd.DataFrame(result, columns=[&#39;count&#39;, &#39;sort&#39;])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sns.set_style(&quot;darkgrid&quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;bar_plot = sns.barplot(x=budget[&quot;sort&quot;], y=budget[&quot;count&quot;],palette=&quot;muted&quot;, order=budget[&quot;sort&quot;].tolist())&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;plt.xticks(rotation=30)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;plt.show()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;参考资料：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://cuiqingcai.com/1319.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Python爬虫利器二之Beautiful Soup的用法&lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
@@ -1926,49 +1609,51 @@ plt.show()
   </entry>
   
   <entry>
+    <title>爬虫实战：抓取某人所有微博并处理，绘制top30关键词的图表</title>
+    <link href="http://blog.ybbz.site/2016/03/27/crawl_weibo/"/>
+    <id>http://blog.ybbz.site/2016/03/27/crawl_weibo/</id>
+    <published>2016-03-26T16:00:00.000Z</published>
+    <updated>2016-04-23T12:58:11.000Z</updated>
+    
+    <content type="html">&lt;p&gt;github传送门：&lt;a href=&quot;https://github.com/ybbz/crawler&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;crawl_weibo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;声明：用爬虫抓取数据，没有任何坏心思，纯粹的兴趣与技术交流，抓的也都是自己的数据，不侵犯他人隐私。若牵扯到各方利益，请联系我！&lt;/p&gt;
+&lt;p&gt;效果图如下：&lt;br&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160327_1.png&quot; alt=&quot;20160327_1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;代码如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight vim&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;56&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;57&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;58&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;59&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;60&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;61&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;62&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;63&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;65&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;66&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;67&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;68&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;69&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;70&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;71&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;72&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;73&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;74&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;75&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;76&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;77&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;78&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;79&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;80&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;81&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;82&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;83&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;84&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;85&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;86&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;87&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;88&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;89&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;90&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;91&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;92&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;93&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;94&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;95&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;96&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;97&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# encoding=utf-&lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;import requests&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from lxml import etree&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;import jieba&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;import csv&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;import pandas &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; pd&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;import seaborn &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; sns&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;import matplotlib.pyplot &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; plt&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;result = &lt;span class=&quot;string&quot;&gt;&#39;&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;count&lt;/span&gt; = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;user_id = &lt;span class=&quot;string&quot;&gt;&#39;your weibo user_id&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cookie = &amp;#123;&lt;span class=&quot;string&quot;&gt;&quot;Cookie&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;your weibo cookie&#39;&lt;/span&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;download_path = &lt;span class=&quot;string&quot;&gt;&#39;/Users/ybbz/Downloads/weibo/&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;crawl the text of your weibo: start...&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# &lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; total page &lt;span class=&quot;keyword&quot;&gt;number&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;html = requests.&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;http://weibo.cn/%d/profile?page=1&#39;&lt;/span&gt; % user_id, cookies=cookie).content&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;selector = etree.HTML(html)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pageNum = &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;((selector.xpath(&lt;span class=&quot;string&quot;&gt;&#39;//input[@name=&quot;mp&quot;]&#39;&lt;/span&gt;)[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;].attrib[&lt;span class=&quot;string&quot;&gt;&#39;value&#39;&lt;/span&gt;]))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# crawl your weibo&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; page in &lt;span class=&quot;built_in&quot;&gt;range&lt;/span&gt;(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, pageNum + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    # &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; page in &lt;span class=&quot;built_in&quot;&gt;range&lt;/span&gt;(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    # &lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; lxml&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    url = &lt;span class=&quot;string&quot;&gt;&#39;http://weibo.cn/%d/profile?page=%d&#39;&lt;/span&gt; % (user_id, page)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    lxml1 = requests.&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt;(url, cookies=cookie).content&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    # &lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; text&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    selector = etree.HTML(lxml1)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    content = selector.xpath(&lt;span class=&quot;string&quot;&gt;&#39;//span[@class=&quot;ctt&quot;]&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; each in conten&lt;span class=&quot;variable&quot;&gt;t:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        text = each.xpath(&lt;span class=&quot;string&quot;&gt;&#39;string(.)&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        text = &lt;span class=&quot;string&quot;&gt;&quot;%d :&quot;&lt;/span&gt; % &lt;span class=&quot;built_in&quot;&gt;count&lt;/span&gt; + text + &lt;span class=&quot;string&quot;&gt;&quot;\n&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        result += text&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;count&lt;/span&gt; += &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# &lt;span class=&quot;keyword&quot;&gt;write&lt;/span&gt; the result &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; the document&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;with &lt;span class=&quot;keyword&quot;&gt;open&lt;/span&gt;(download_path + str(user_id), &lt;span class=&quot;string&quot;&gt;&#39;w&#39;&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;f&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;f&lt;/span&gt;.&lt;span class=&quot;keyword&quot;&gt;write&lt;/span&gt;(result)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;crawl : done, a total of %d data.&#39;&lt;/span&gt; % (&lt;span class=&quot;built_in&quot;&gt;count&lt;/span&gt; - &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;analyze the text of your weibo : start...&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;stop_list = []&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;word_list = []&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;word_dict = &amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;word_frequency = []&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;file_stopwords = &lt;span class=&quot;string&quot;&gt;&#39;stopwords.txt&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# &lt;span class=&quot;keyword&quot;&gt;read&lt;/span&gt; stopwords.txt,&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;stop&lt;/span&gt; words &lt;span class=&quot;keyword&quot;&gt;list&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;with &lt;span class=&quot;keyword&quot;&gt;open&lt;/span&gt;(file_stopwords, &lt;span class=&quot;string&quot;&gt;&#39;r&#39;&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; f_stop:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    f_stop_text = f_stop.&lt;span class=&quot;keyword&quot;&gt;read&lt;/span&gt;()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    stop_list = f_stop_text.&lt;span class=&quot;keyword&quot;&gt;split&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;\n&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# cut the text result of your weibo with jieba&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;result_cut = jieba.cut_for_search(result)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# &lt;span class=&quot;built_in&quot;&gt;remove&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;all&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;stop&lt;/span&gt; words,&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; the &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; word &lt;span class=&quot;keyword&quot;&gt;list&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; cut in result_cu&lt;span class=&quot;variable&quot;&gt;t:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; not (cut.strip() in stop_list):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        word_list.&lt;span class=&quot;keyword&quot;&gt;append&lt;/span&gt;(cut)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# statistics frequency of the &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; word &lt;span class=&quot;keyword&quot;&gt;list&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; word in word_lis&lt;span class=&quot;variable&quot;&gt;t:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; word not in word_dic&lt;span class=&quot;variable&quot;&gt;t:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        word_dict[word] = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        word_dict[word] += &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# &lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; the &lt;span class=&quot;keyword&quot;&gt;list&lt;/span&gt; of frequency&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; key in word_dic&lt;span class=&quot;variable&quot;&gt;t:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    word_frequency.&lt;span class=&quot;keyword&quot;&gt;append&lt;/span&gt;((word_dict[key], key))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# &lt;span class=&quot;keyword&quot;&gt;sort&lt;/span&gt; the result &lt;span class=&quot;built_in&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; top20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;word_30 = sorted(word_frequency)[-&lt;span class=&quot;number&quot;&gt;30&lt;/span&gt;:]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;word_30.&lt;span class=&quot;built_in&quot;&gt;reverse&lt;/span&gt;()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;analyze : done.&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;draw : start...&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;csv_path = &lt;span class=&quot;string&quot;&gt;&#39;/Users/ybbz/Downloads/weibo/weibo.csv&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# &lt;span class=&quot;keyword&quot;&gt;write&lt;/span&gt; top30 result &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; csv document&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;with &lt;span class=&quot;keyword&quot;&gt;open&lt;/span&gt;(csv_path, &lt;span class=&quot;string&quot;&gt;&#39;w&#39;&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;f&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    f_csv = csv.writer(&lt;span class=&quot;keyword&quot;&gt;f&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    f_csv.writerow([&lt;span class=&quot;string&quot;&gt;&#39;frequency&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;word&#39;&lt;/span&gt;])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    f_csv.writerows(word_30)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# &lt;span class=&quot;keyword&quot;&gt;read&lt;/span&gt; data &lt;span class=&quot;built_in&quot;&gt;and&lt;/span&gt; draw picture&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;budget = pd.read_csv(csv_path)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sns.set_style(&lt;span class=&quot;string&quot;&gt;&quot;darkgrid&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;bar_plot = sns.barplot(&lt;span class=&quot;keyword&quot;&gt;x&lt;/span&gt;=budget[&lt;span class=&quot;string&quot;&gt;&quot;word&quot;&lt;/span&gt;], &lt;span class=&quot;keyword&quot;&gt;y&lt;/span&gt;=budget[&lt;span class=&quot;string&quot;&gt;&quot;frequency&quot;&lt;/span&gt;], palette=&lt;span class=&quot;string&quot;&gt;&quot;muted&quot;&lt;/span&gt;, order=budget[&lt;span class=&quot;string&quot;&gt;&quot;word&quot;&lt;/span&gt;].tolist())&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;plt.xticks(rotation=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;plt.show()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;github传送门：&lt;a href=&quot;https://github.com/ybbz/crawler&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;crawl_weibo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;声明：用爬虫抓取数据，没有任何坏心思，纯粹的兴趣与技术交流，抓
+    
+    </summary>
+    
+      <category term="Crawler" scheme="http://blog.ybbz.site/categories/Crawler/"/>
+    
+    
+      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
+    
+      <category term="Crawler" scheme="http://blog.ybbz.site/tags/Crawler/"/>
+    
+  </entry>
+  
+  <entry>
     <title>爬虫入门：抓取网页所有图片并保存到本地</title>
     <link href="http://blog.ybbz.site/2016/03/26/crawl-get-html-img/"/>
     <id>http://blog.ybbz.site/2016/03/26/crawl-get-html-img/</id>
     <published>2016-03-25T16:00:00.000Z</published>
-    <updated>2016-04-23T09:25:37.000Z</updated>
+    <updated>2016-04-23T12:58:36.000Z</updated>
     
     <content type="html">&lt;p&gt;从img标签中爬取到的src图片链接可能是相对或者绝对路径，视网站情况而定，具体的可以审查元素看一下。如果是相对路径，则需要补全（下面的代码就是这种情况）。如果两者都有，则需要再另外处理了。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;from urllib import request, parse
-import re
-
-def get_html_img(url):
-    req = request.Request(url)
-    with request.urlopen(req) as f:
-        print(&amp;apos;Status:&amp;apos;, f.status, f.reason)
-        for k, v in f.getheaders():
-            print(&amp;apos;%s: %s&amp;apos; % (k, v))
-        content = f.read()
-        print(&amp;apos;Content:&amp;apos;, content)
-        body = re.findall(&amp;apos;&amp;lt;body&amp;gt;(.*?)&amp;lt;/body&amp;gt;&amp;apos;, str(content), re.S)
-        img_urls = re.findall(&amp;apos;src=&amp;quot;(.*?)&amp;quot;&amp;apos;, str(body), re.S)
-        count = 1
-        local_dir = &amp;apos;/Users/Downloads/&amp;apos;
-        print(&amp;quot;download images start ……&amp;quot;)
-        for img_url in img_urls:
-            img_url_full = url + img_url
-            # 下载图片
-            local_name = local_dir + str(count) + &amp;apos;.jpg&amp;apos;
-            count += 1
-            try:
-                request.urlretrieve(img_url_full, local_name)
-            except Exception as e:
-                continue
-        print(&amp;quot;download images success !&amp;quot;)
-
-url = &amp;apos;http://www.xxx.com&amp;apos;
-get_html_img(url)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在Github新建了一个仓库，记录自己写的&lt;a href=&quot;https://github.com/ybbz/crawler&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;爬虫&lt;/a&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; urllib &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; request, parse&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; re&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;get_html_img&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(url)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    req = request.Request(url)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;with&lt;/span&gt; request.urlopen(req) &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; f:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        print(&lt;span class=&quot;string&quot;&gt;&#39;Status:&#39;&lt;/span&gt;, f.status, f.reason)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; k, v &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; f.getheaders():&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            print(&lt;span class=&quot;string&quot;&gt;&#39;%s: %s&#39;&lt;/span&gt; % (k, v))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        content = f.read()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        print(&lt;span class=&quot;string&quot;&gt;&#39;Content:&#39;&lt;/span&gt;, content)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        body = re.findall(&lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;body&amp;gt;(.*?)&amp;lt;/body&amp;gt;&#39;&lt;/span&gt;, str(content), re.S)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        img_urls = re.findall(&lt;span class=&quot;string&quot;&gt;&#39;src=&quot;(.*?)&quot;&#39;&lt;/span&gt;, str(body), re.S)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        count = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        local_dir = &lt;span class=&quot;string&quot;&gt;&#39;/Users/Downloads/&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        print(&lt;span class=&quot;string&quot;&gt;&quot;download images start ……&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; img_url &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; img_urls:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            img_url_full = url + img_url&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;comment&quot;&gt;# 下载图片&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            local_name = local_dir + str(count) + &lt;span class=&quot;string&quot;&gt;&#39;.jpg&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            count += &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;try&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                request.urlretrieve(img_url_full, local_name)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;except&lt;/span&gt; Exception &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; e:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;continue&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        print(&lt;span class=&quot;string&quot;&gt;&quot;download images success !&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;url = &lt;span class=&quot;string&quot;&gt;&#39;http://www.xxx.com&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;get_html_img(url)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;在Github新建了一个仓库，记录自己写的&lt;a href=&quot;https://github.com/ybbz/crawler&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;爬虫&lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
     
       &lt;p&gt;从img标签中爬取到的src图片链接可能是相对或者绝对路径，视网站情况而定，具体的可以审查元素看一下。如果是相对路径，则需要补全（下面的代码就是这种情况）。如果两者都有，则需要再另外处理了。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;from urllib import request
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;tab
     
     </summary>
     

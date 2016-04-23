@@ -66,7 +66,7 @@
 <meta property="og:description" content="正则表达式(regular expression)描述了一种字符串匹配的模式，可以用来检查一个串是否含有某种子串、将匹配的子串做替换或者从某个串中取出符合某个条件的子串等。
 正则表达式是由普通字符（例如字符 a 到 z）以及特殊字符（称为”元字符”）组成的文字模式。模式描述在搜索文本时要匹配的一个或多个字符串。正则表达式作为一个模板，将某个字符模式与所搜索的字符串进行匹配。
 在正则表达式中，如果直">
-<meta property="og:updated_time" content="2016-04-23T09:22:43.000Z">
+<meta property="og:updated_time" content="2016-04-23T13:11:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python基础知识总结二：正则表达式">
 <meta name="twitter:description" content="正则表达式(regular expression)描述了一种字符串匹配的模式，可以用来检查一个串是否含有某种子串、将匹配的子串做替换或者从某个串中取出符合某个条件的子串等。
@@ -348,48 +348,9 @@
 <p>正则表达式是由普通字符（例如字符 a 到 z）以及特殊字符（称为”元字符”）组成的文字模式。模式描述在搜索文本时要匹配的一个或多个字符串。正则表达式作为一个模板，将某个字符模式与所搜索的字符串进行匹配。</p>
 <p>在正则表达式中，如果直接给出字符，就是精确匹配。用\d可以匹配一个数字，\w可以匹配一个字母或数字。<br>要匹配变长的字符，在正则表达式中，用*表示任意个字符（包括0个），用+表示至少一个字符，用?表示0个或1个字符，用{n}表示n个字符，用{n,m}表示n-m个字符。</p>
 <p>做更精确地匹配，可以用[]表示范围；A1B可以匹配A或B；^表示行的开头；$表示行的结束。</p>
-<p>Python正则表达式练习，来源：<a href="http://www.liaoxuefeng.com/" target="_blank" rel="external">廖雪峰的官方网站</a>{:target=”_blank”}</p>
-<pre><code>import re
+<p>Python正则表达式练习，来源：<a href="http://www.liaoxuefeng.com/" target="_blank" rel="external">廖雪峰的官方网站</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">print(<span class="string">'re模块'</span>)</span><br><span class="line"></span><br><span class="line">test = <span class="string">'010-123456'</span></span><br><span class="line"><span class="keyword">if</span> re.match(<span class="string">r'\d&#123;3&#125;\-\d&#123;3,8&#125;'</span>, test):</span><br><span class="line">    print(<span class="string">'ok'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'failed'</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">'切分字符串'</span>)</span><br><span class="line">print(<span class="string">'a b   c'</span>.split(<span class="string">' '</span>))</span><br><span class="line">print(re.split(<span class="string">r'\s+'</span>, <span class="string">'a b   c'</span>))</span><br><span class="line">print(re.split(<span class="string">r'[\s\,]+'</span>, <span class="string">'a,b, c  d'</span>))</span><br><span class="line">print(re.split(<span class="string">r'[\s\,\;]+'</span>, <span class="string">'a,b;; c  d'</span>))</span><br><span class="line"></span><br><span class="line">print(<span class="string">'分组'</span>)</span><br><span class="line"></span><br><span class="line">m = re.match(<span class="string">r'^(\d&#123;3&#125;)-(\d&#123;3,8&#125;)$'</span>, <span class="string">'010-12345'</span>)</span><br><span class="line">print(m)</span><br><span class="line">print(m.group(<span class="number">0</span>))</span><br><span class="line">print(m.group(<span class="number">1</span>))</span><br><span class="line">print(m.group(<span class="number">2</span>))</span><br><span class="line"></span><br><span class="line">t = <span class="string">'19:05:30'</span></span><br><span class="line">m = re.match(</span><br><span class="line">    <span class="string">r'^(0[0-9]|1[0-9]|2[0-3]|[0-9])\:(0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9]|[0-9])\:(0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9]|[0-9])$'</span>,</span><br><span class="line">    t)</span><br><span class="line">print(m.groups())</span><br><span class="line"></span><br><span class="line">print(<span class="string">'贪婪匹配'</span>)</span><br><span class="line">print(re.match(<span class="string">r'^(\d+)(0*)$'</span>, <span class="string">'102300'</span>).groups())</span><br><span class="line">print(re.match(<span class="string">r'^(\d+?)(0*)$'</span>, <span class="string">'102300'</span>).groups())</span><br><span class="line"></span><br><span class="line">email1 = <span class="string">'someone@gmail.com'</span></span><br><span class="line">email2 = <span class="string">'bill.gates@microsoft.com'</span></span><br><span class="line"><span class="keyword">if</span> re.match(<span class="string">r'\w+\@[a-zA-Z]+\.com'</span>, email2):</span><br><span class="line">    print(<span class="string">'ok'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'failed'</span>)</span><br></pre></td></tr></table></figure>
 
-print(&apos;re模块&apos;)
-
-test = &apos;010-123456&apos;
-if re.match(r&apos;\d{3}\-\d{3,8}&apos;, test):
-    print(&apos;ok&apos;)
-else:
-    print(&apos;failed&apos;)
-
-print(&apos;切分字符串&apos;)
-print(&apos;a b   c&apos;.split(&apos; &apos;))
-print(re.split(r&apos;\s+&apos;, &apos;a b   c&apos;))
-print(re.split(r&apos;[\s\,]+&apos;, &apos;a,b, c  d&apos;))
-print(re.split(r&apos;[\s\,\;]+&apos;, &apos;a,b;; c  d&apos;))
-
-print(&apos;分组&apos;)
-
-m = re.match(r&apos;^(\d{3})-(\d{3,8})$&apos;, &apos;010-12345&apos;)
-print(m)
-print(m.group(0))
-print(m.group(1))
-print(m.group(2))
-
-t = &apos;19:05:30&apos;
-m = re.match(
-    r&apos;^(0[0-9]|1[0-9]|2[0-3]|[0-9])\:(0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9]|[0-9])\:(0[0-9]|1[0-9]|2[0-9]|3[0-9]|4[0-9]|5[0-9]|[0-9])$&apos;,
-    t)
-print(m.groups())
-
-print(&apos;贪婪匹配&apos;)
-print(re.match(r&apos;^(\d+)(0*)$&apos;, &apos;102300&apos;).groups())
-print(re.match(r&apos;^(\d+?)(0*)$&apos;, &apos;102300&apos;).groups())
-
-email1 = &apos;someone@gmail.com&apos;
-email2 = &apos;bill.gates@microsoft.com&apos;
-if re.match(r&apos;\w+\@[a-zA-Z]+\.com&apos;, email2):
-    print(&apos;ok&apos;)
-else:
-    print(&apos;failed&apos;)
-</code></pre>
       
     </div>
     
@@ -433,8 +394,8 @@ else:
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/02/21/Python-foundation-three-IO/" rel="prev" title="Python基础知识总结三：IO编程">
-                Python基础知识总结三：IO编程 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/02/21/Python-foundation-four-libs/" rel="prev" title="Python基础知识总结四：常用模块">
+                Python基础知识总结四：常用模块 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

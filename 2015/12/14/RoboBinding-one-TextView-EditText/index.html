@@ -62,7 +62,7 @@
 <meta property="og:url" content="http://blog.ybbz.site/2015/12/14/RoboBinding-one-TextView-EditText/index.html">
 <meta property="og:site_name" content="八宝粥的博客">
 <meta property="og:description" content="RoboBinding简介RoboBinding是一个实现了数据绑定 Presentation Model(MVVM)模式的Android开源框架。从简单的角度看，他移除了如addXXListener()，findViewById()这些不必要的代码，连如BufferKnife那样的InjectView都不需要，因为你的代码一般不需要依赖于这些界面组件信息。项目的中文文档地址是：http://ro">
-<meta property="og:updated_time" content="2016-04-23T09:21:15.000Z">
+<meta property="og:updated_time" content="2016-04-23T13:16:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RoboBinding探究一：TextView及EditText基础实现">
 <meta name="twitter:description" content="RoboBinding简介RoboBinding是一个实现了数据绑定 Presentation Model(MVVM)模式的Android开源框架。从简单的角度看，他移除了如addXXListener()，findViewById()这些不必要的代码，连如BufferKnife那样的InjectView都不需要，因为你的代码一般不需要依赖于这些界面组件信息。项目的中文文档地址是：http://ro">
@@ -338,97 +338,11 @@
       
 
       
-        <h2 id="RoboBinding简介"><a href="#RoboBinding简介" class="headerlink" title="RoboBinding简介"></a>RoboBinding简介</h2><p>RoboBinding是一个实现了数据绑定 Presentation Model(MVVM)模式的Android开源框架。从简单的角度看，他移除了如addXXListener()，findViewById()这些不必要的代码，连如BufferKnife那样的InjectView都不需要，因为你的代码一般不需要依赖于这些界面组件信息。<br>项目的中文文档地址是：<a href="http://robobinding.github.io/RoboBinding/index.zh.html" target="_blank" rel="external">http://robobinding.github.io/RoboBinding/index.zh.html</a><br>项目github 地址<a href="https://github.com/RoboBinding" target="_blank" rel="external">https://github.com/RoboBinding</a></p>
-<h2 id="RoboBinding基础实现"><a href="#RoboBinding基础实现" class="headerlink" title="RoboBinding基础实现"></a>RoboBinding基础实现</h2><p>###R.layout.activity_test</p>
-<pre><code>&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
-    xmlns:bind=&quot;http://robobinding.org/android&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    android:orientation=&quot;vertical&quot;
-    tools:ignore=&quot;MissingPrefix&quot; &gt;
+        <h2 id="RoboBinding简介"><a href="#RoboBinding简介" class="headerlink" title="RoboBinding简介"></a>RoboBinding简介</h2><p>RoboBinding是一个实现了数据绑定 Presentation Model(MVVM)模式的Android开源框架。从简单的角度看，他移除了如addXXListener()，findViewById()这些不必要的代码，连如BufferKnife那样的InjectView都不需要，因为你的代码一般不需要依赖于这些界面组件信息。<br>项目的中文文档地址是：<a href="http://robobinding.github.io/RoboBinding/index.zh.html" target="_blank" rel="external">http://robobinding.github.io/RoboBinding/index.zh.html</a><br>项目github 地址：<a href="https://github.com/RoboBinding" target="_blank" rel="external">https://github.com/RoboBinding</a></p>
+<h2 id="RoboBinding基础实现"><a href="#RoboBinding基础实现" class="headerlink" title="RoboBinding基础实现"></a>RoboBinding基础实现</h2><h3 id="R-layout-activity-test"><a href="#R-layout-activity-test" class="headerlink" title="R.layout.activity_test"></a>R.layout.activity_test</h3><figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">LinearLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></span><br><span class="line">    <span class="attr">xmlns:bind</span>=<span class="string">"http://robobinding.org/android"</span></span><br><span class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span><br><span class="line">    <span class="attr">android:orientation</span>=<span class="string">"vertical"</span></span><br><span class="line">    <span class="attr">tools:ignore</span>=<span class="string">"MissingPrefix"</span> &gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">TextView</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">        <span class="attr">bind:text</span>=<span class="string">"</span></span></span><span class="template-variable">&#123;hello&#125;</span><span class="xml"><span class="tag"><span class="string">"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">LinearLayout</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">        <span class="attr">android:orientation</span>=<span class="string">"horizontal"</span> &gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">TextView</span></span><br><span class="line">            <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span><br><span class="line">            <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">            <span class="attr">android:text</span>=<span class="string">"Name:"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">EditText</span></span><br><span class="line">            <span class="attr">android:layout_width</span>=<span class="string">"fill_parent"</span></span><br><span class="line">            <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">            <span class="attr">bind:text</span>=<span class="string">"$</span></span></span><span class="template-variable">&#123;name&#125;</span><span class="xml"><span class="tag"><span class="string">"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">Button</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">        <span class="attr">android:text</span>=<span class="string">"Say Hello"</span></span><br><span class="line">        <span class="attr">bind:onClick</span>=<span class="string">"sayHello"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="TestActivity"><a href="#TestActivity" class="headerlink" title="TestActivity"></a>TestActivity</h3><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">TestActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="keyword">protected</span> void onCreate(<span class="type">Bundle</span> savedInstanceState) &#123;</span><br><span class="line">		<span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">		<span class="type">PresentationModel</span> presentationModel = <span class="keyword">new</span> <span class="type">PresentationModel</span>();</span><br><span class="line">		<span class="type">ViewBinder</span> viewBinder = createViewBinder();</span><br><span class="line">		<span class="type">View</span> rootView = viewBinder.inflateAndBind(<span class="type">R</span>.layout.activity_test,</span><br><span class="line">				presentationModel);</span><br><span class="line">		setContentView(rootView);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> <span class="type">ViewBinder</span> createViewBinder() &#123;</span><br><span class="line">		<span class="type">BinderFactory</span> reusableBinderFactory = <span class="keyword">new</span> <span class="type">BinderFactoryBuilder</span>()</span><br><span class="line">				.build();</span><br><span class="line">		<span class="keyword">return</span> reusableBinderFactory.createViewBinder(<span class="keyword">this</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="PresentationModel"><a href="#PresentationModel" class="headerlink" title="PresentationModel"></a>PresentationModel</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@org</span>.robobinding.annotation.PresentationModel</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PresentationModel</span> <span class="keyword">implements</span> <span class="title">HasPresentationModelChangeSupport</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> PresentationModelChangeSupport changeSupport;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">PresentationModel</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		changeSupport = <span class="keyword">new</span> PresentationModelChangeSupport(<span class="keyword">this</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getHello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> name + <span class="string">": hello Android MVVM(Presentation Model)!"</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		changeSupport.firePropertyChange(<span class="string">"hello"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> PresentationModelChangeSupport <span class="title">getPresentationModelChangeSupport</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> changeSupport;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    &lt;TextView
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        bind:text=&quot;{hello}&quot; /&gt;
-
-    &lt;LinearLayout
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:orientation=&quot;horizontal&quot; &gt;
-
-        &lt;TextView
-            android:layout_width=&quot;wrap_content&quot;
-            android:layout_height=&quot;wrap_content&quot;
-            android:text=&quot;Name:&quot; /&gt;
-
-        &lt;EditText
-            android:layout_width=&quot;fill_parent&quot;
-            android:layout_height=&quot;wrap_content&quot;
-            bind:text=&quot;${name}&quot; /&gt;
-    &lt;/LinearLayout&gt;
-
-    &lt;Button
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:text=&quot;Say Hello&quot;
-        bind:onClick=&quot;sayHello&quot; /&gt;
-
-&lt;/LinearLayout&gt;
-</code></pre><p>###TestActivity</p>
-<pre><code>public class TestActivity extends Activity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        PresentationModel presentationModel = new PresentationModel();
-        ViewBinder viewBinder = createViewBinder();
-        View rootView = viewBinder.inflateAndBind(R.layout.activity_test,
-                presentationModel);
-        setContentView(rootView);
-    }
-
-    private ViewBinder createViewBinder() {
-        BinderFactory reusableBinderFactory = new BinderFactoryBuilder()
-                .build();
-        return reusableBinderFactory.createViewBinder(this);
-    }
-
-}
-</code></pre><p>###PresentationModel</p>
-<pre><code>@org.robobinding.annotation.PresentationModel
-public class PresentationModel implements HasPresentationModelChangeSupport {
-    private PresentationModelChangeSupport changeSupport;
-    private String name;
-
-    public PresentationModel() {
-        changeSupport = new PresentationModelChangeSupport(this);
-    }
-
-    public String getHello() {
-        return name + &quot;: hello Android MVVM(Presentation Model)!&quot;;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void sayHello() {
-        changeSupport.firePropertyChange(&quot;hello&quot;);
-    }
-
-    @Override
-    public PresentationModelChangeSupport getPresentationModelChangeSupport() {
-        return changeSupport;
-    }
-
-}
-</code></pre>
       
     </div>
     
@@ -466,8 +380,8 @@ public class PresentationModel implements HasPresentationModelChangeSupport {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/14/RoboBinding-two-ImageView/" rel="next" title="RoboBinding探究二：ImageView及自定义控件实现">
-                <i class="fa fa-chevron-left"></i> RoboBinding探究二：ImageView及自定义控件实现
+              <a href="/2015/12/12/JS-nodes/" rel="next" title="JavaScript中获取节点的兄弟、父、子节点的各种问题">
+                <i class="fa fa-chevron-left"></i> JavaScript中获取节点的兄弟、父、子节点的各种问题
               </a>
             
           </div>
@@ -649,7 +563,7 @@ public class PresentationModel implements HasPresentationModelChangeSupport {
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#RoboBinding简介"><span class="nav-number">1.</span> <span class="nav-text">RoboBinding简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RoboBinding基础实现"><span class="nav-number">2.</span> <span class="nav-text">RoboBinding基础实现</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#RoboBinding简介"><span class="nav-number">1.</span> <span class="nav-text">RoboBinding简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RoboBinding基础实现"><span class="nav-number">2.</span> <span class="nav-text">RoboBinding基础实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#R-layout-activity-test"><span class="nav-number">2.1.</span> <span class="nav-text">R.layout.activity_test</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TestActivity"><span class="nav-number">2.2.</span> <span class="nav-text">TestActivity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PresentationModel"><span class="nav-number">2.3.</span> <span class="nav-text">PresentationModel</span></a></li></ol></li></ol></div>
             
           </div>
         </section>

@@ -74,7 +74,7 @@
 把list2按照list1中的顺序重新排序，并把排序结果封装成json字符串，得到list3
 
 代">
-<meta property="og:updated_time" content="2016-04-23T09:26:42.000Z">
+<meta property="og:updated_time" content="2016-04-23T12:54:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一道算法题">
 <meta name="twitter:description" content="题目如下：
@@ -363,46 +363,8 @@
 <li>把list2按照list1中的顺序重新排序，并把排序结果封装成json字符串，得到list3</li>
 </ul>
 <p>代码如下：</p>
-<pre><code>list1 = [20, 6, 15, 53, 47]
-list2 = [(6, &apos;John&apos;, &apos;20&apos;), (15, &apos;Kim&apos;, &apos;18&apos;),
-         (20, &apos;David&apos;, &apos;21&apos;), (47, &apos;Amy&apos;, &apos;23&apos;), (53, &apos;Mary&apos;, &apos;20&apos;)]
-print(list1)
-print(list2)
-
-list3 = []
-# count = len(list1)
-# for i in range(0, count):
-#     dict = {}
-#     id = list1[i]
-#     dict[&apos;id&apos;] = id
-#     j = 0
-#     while j &lt; count and list2[j][0] != id:
-#         j += 1
-#     dict[&apos;name&apos;] = list2[j][1]
-#     dict[&apos;age&apos;] = list2[j][2]
-#     list3.append(dict)
-
-
-# list2_dict = {}
-# for item2 in list2:
-#     list2_dict[item2[0]] = (item2[1], item2[2])
-# for item1 in list1:
-#     dict = {}
-#     dict[&apos;id&apos;] = item1
-#     dict[&apos;name&apos;] = list2_dict[item1][0]
-#     dict[&apos;age&apos;] = list2_dict[item1][1]
-#     list3.append(dict)
-
-list2_dict = {}
-for item2 in list2:
-    list2_dict[item2[0]] = {&apos;name&apos;: item2[1], &apos;age&apos;: item2[2]}
-for item1 in list1:
-    dict = list2_dict[item1]
-    dict[&apos;id&apos;] = item1
-    list3.append(dict)
-
-print(list3)
-</code></pre><p>^_^ 感谢我的本科室友~</p>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">list1 = [<span class="number">20</span>, <span class="number">6</span>, <span class="number">15</span>, <span class="number">53</span>, <span class="number">47</span>]</span><br><span class="line">list2 = [(<span class="number">6</span>, <span class="string">'John'</span>, <span class="string">'20'</span>), (<span class="number">15</span>, <span class="string">'Kim'</span>, <span class="string">'18'</span>),</span><br><span class="line">         (<span class="number">20</span>, <span class="string">'David'</span>, <span class="string">'21'</span>), (<span class="number">47</span>, <span class="string">'Amy'</span>, <span class="string">'23'</span>), (<span class="number">53</span>, <span class="string">'Mary'</span>, <span class="string">'20'</span>)]</span><br><span class="line">print(list1)</span><br><span class="line">print(list2)</span><br><span class="line"></span><br><span class="line">list3 = []</span><br><span class="line"><span class="meta"># count = len(list1)</span></span><br><span class="line"><span class="meta"># for i in range(0, count):</span></span><br><span class="line"><span class="meta">#     dict = &#123;&#125;</span></span><br><span class="line"><span class="meta">#     id = list1[i]</span></span><br><span class="line"><span class="meta">#     dict['id'] = id</span></span><br><span class="line"><span class="meta">#     j = 0</span></span><br><span class="line"><span class="meta">#     while j &lt; count and list2[j][0] != id:</span></span><br><span class="line"><span class="meta">#         j += 1</span></span><br><span class="line"><span class="meta">#     dict['name'] = list2[j][1]</span></span><br><span class="line"><span class="meta">#     dict['age'] = list2[j][2]</span></span><br><span class="line"><span class="meta">#     list3.append(dict)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta"># list2_dict = &#123;&#125;</span></span><br><span class="line"><span class="meta"># for item2 in list2:</span></span><br><span class="line"><span class="meta">#     list2_dict[item2[0]] = (item2[1], item2[2])</span></span><br><span class="line"><span class="meta"># for item1 in list1:</span></span><br><span class="line"><span class="meta">#     dict = &#123;&#125;</span></span><br><span class="line"><span class="meta">#     dict['id'] = item1</span></span><br><span class="line"><span class="meta">#     dict['name'] = list2_dict[item1][0]</span></span><br><span class="line"><span class="meta">#     dict['age'] = list2_dict[item1][1]</span></span><br><span class="line"><span class="meta">#     list3.append(dict)</span></span><br><span class="line"></span><br><span class="line">list2_dict = &#123;&#125;</span><br><span class="line"><span class="keyword">for</span> item2 in list2:</span><br><span class="line">    list2_dict[item2[<span class="number">0</span>]] = &#123;<span class="string">'name'</span>: item2[<span class="number">1</span>], <span class="string">'age'</span>: item2[<span class="number">2</span>]&#125;</span><br><span class="line"><span class="keyword">for</span> item1 in list1:</span><br><span class="line">    dict = list2_dict[item1]</span><br><span class="line">    dict[<span class="string">'id'</span>] = item1</span><br><span class="line">    list3.append(dict)</span><br><span class="line"></span><br><span class="line">print(list3)</span><br></pre></td></tr></table></figure>
+<p>^_^ 感谢我的本科室友~</p>
 
       
     </div>

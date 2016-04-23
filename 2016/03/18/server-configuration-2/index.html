@@ -74,7 +74,7 @@ rpm -qa |grep ssh
 yum install ssh
 sudo apt-get install openssh-server   #Ubuntu等
 3.安装好了之后，开启ssh服务">
-<meta property="og:updated_time" content="2016-04-23T09:25:15.000Z">
+<meta property="og:updated_time" content="2016-04-23T13:01:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我在新服务器配置上走过的那些坑(2)">
 <meta name="twitter:description" content="配置SSH服务SSH作为Linux远程连接重要的方式，如何配置安装linux系统的SSH服务?
@@ -389,7 +389,7 @@ ln -s /usr/python3.5/bin/pip3 /usr/bin/pip3
 </code></pre><h3 id="yum源问题"><a href="#yum源问题" class="headerlink" title="yum源问题"></a>yum源问题</h3><p>DNS或者IPV6的问题（校园网用户略坑）</p>
 <h3 id="urlopen-error-unknown-url-type-https"><a href="#urlopen-error-unknown-url-type-https" class="headerlink" title="urlopen error unknown url type: https"></a>urlopen error unknown url type: https</h3><p>在网上找到了这个<a href="https://support.serverdensity.com/hc/en-us/articles/201670413-urlopen-error-unknown-url-type-https" target="_blank" rel="external">解决方案</a>，同时也参考了该<a href="http://blog.csdn.net/zyz511919766/article/details/25049365" target="_blank" rel="external">博客</a></p>
 <blockquote>
-<p>This happens if your system does not have SSL installed with Python. You need to recompile Python with SSL on:<br>Steps:<br>1.Download and install OpenSSL, if you don’t have it already.<br>2.Download Python source and rebuild Python (the usual steps of configure, make and make install). Python’s configure script should be able to pick up your existing SSL libraries automatically and build a shared library _ssl.so.</p>
+<p>This happens if your system does not have SSL installed with Python. You need to recompile Python with SSL on:<br>Steps:<br>1.Download and install OpenSSL, if you don’t have it already.<br>2.Download Python source and rebuild Python (the usual steps of configure, make and make install). Python’s configure script should be able to pick up your existing SSL libraries automatically and build a shared library -ssl.so.</p>
 <p>也就是说：python内置的urllib模块不支持https协议，是因为编译安装python之前没有编译安装类似于openssl这样的SSL库。因此需要安装openssl-devel，之后再重新编译Python。</p>
 </blockquote>
 <pre><code>sudo yum install openssl-devel

@@ -64,7 +64,7 @@
 <meta property="og:site_name" content="八宝粥的博客">
 <meta property="og:description" content="看到标题，你可能会觉得博主比较奇葩，为什么要把事情搞得这么复杂？其实博主也不想这样，只是去年已经用PHP搭建好了系统，而且功能、UI等也基本调试的差不多了；现在要借助Python强大而方便的数据分析功能来分析数据，最简单直接的也就是这么做了。或许之后，会考虑用Django等来重构整个系统，但这并不是现在的重点。
 利用Ajax跨域访问Flask服务器Web前端通过Ajax请求Flask服务器的接口：">
-<meta property="og:updated_time" content="2016-04-23T09:26:34.000Z">
+<meta property="og:updated_time" content="2016-04-23T12:55:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ajax跨域访问Flask构建的Python Web服务器">
 <meta name="twitter:description" content="看到标题，你可能会觉得博主比较奇葩，为什么要把事情搞得这么复杂？其实博主也不想这样，只是去年已经用PHP搭建好了系统，而且功能、UI等也基本调试的差不多了；现在要借助Python强大而方便的数据分析功能来分析数据，最简单直接的也就是这么做了。或许之后，会考虑用Django等来重构整个系统，但这并不是现在的重点。
@@ -343,29 +343,8 @@
       
         <p>看到标题，你可能会觉得博主比较奇葩，为什么要把事情搞得这么复杂？其实博主也不想这样，只是去年已经用PHP搭建好了系统，而且功能、UI等也基本调试的差不多了；现在要借助Python强大而方便的数据分析功能来分析数据，最简单直接的也就是这么做了。或许之后，会考虑用Django等来重构整个系统，但这并不是现在的重点。</p>
 <h3 id="利用Ajax跨域访问Flask服务器"><a href="#利用Ajax跨域访问Flask服务器" class="headerlink" title="利用Ajax跨域访问Flask服务器"></a>利用Ajax跨域访问Flask服务器</h3><p>Web前端通过Ajax请求Flask服务器的接口：</p>
-<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
-    $(document).ready(function(){
-        $(&quot;#click_demo&quot;).click(function(){
-            //http request
-            $.post(&quot;http://127.0.0.1:8080/demo&quot;,
-            {
-               name:$(&quot;#param&quot;).text(),
-            },
-            function(data,status){
-                //alert(&quot;status：&quot; + status + &quot;\ndata：&quot; + data);
-                var myobj=eval(data);
-                var result=&apos;&apos;;
-                for (var i = 0;i &lt; myobj.length;i++) {
-                    var item=&apos;&lt;p&gt;&apos;+myobj[i].name+&apos;&lt;/p&gt;&apos;;
-                    result=result+item;
-                }
-                $(&quot;#result-element&quot;)[0].innerHTML=result;
-                $(&quot;#result-element&quot;).show();
-            });
-        });
-    });
-&lt;/script&gt;
-</code></pre><p>Ajax跨域请求的时候可以在服务端设置header信息，来达到跨域请求的目的（不需要通过jsonp的方式设置ajax参数）：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">    $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        $(<span class="string">"#click_demo"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="comment">//http request</span></span><br><span class="line">            $.post(<span class="string">"http://127.0.0.1:8080/demo"</span>,</span><br><span class="line">            &#123;</span><br><span class="line">               name:$(<span class="string">"#param"</span>).text(),</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="function"><span class="keyword">function</span>(<span class="params">data,status</span>)</span>&#123;</span><br><span class="line">                <span class="comment">//alert("status：" + status + "\ndata：" + data);</span></span><br><span class="line">                <span class="keyword">var</span> myobj=<span class="built_in">eval</span>(data);</span><br><span class="line">                <span class="keyword">var</span> result=<span class="string">''</span>;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; myobj.length;i++) &#123;</span><br><span class="line">                    <span class="keyword">var</span> item=<span class="string">'&lt;p&gt;'</span>+myobj[i].name+<span class="string">'&lt;/p&gt;'</span>;</span><br><span class="line">                    result=result+item;</span><br><span class="line">                &#125;</span><br><span class="line">                $(<span class="string">"#result-element"</span>)[<span class="number">0</span>].innerHTML=result;</span><br><span class="line">                $(<span class="string">"#result-element"</span>).show();</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Ajax跨域请求的时候可以在服务端设置header信息，来达到跨域请求的目的（不需要通过jsonp的方式设置ajax参数）：</p>
 <pre><code>Response.AddHeader(&quot;Access-Control-Allow-Origin&quot;, &quot;*&quot;);
 </code></pre><p>Flask服务器端代码如下：</p>
 <pre><code>@app.route(&apos;/demo&apos;, methods=[&apos;POST&apos;])
@@ -378,62 +357,13 @@ def home():
 </code></pre><h3 id="Python操作Json"><a href="#Python操作Json" class="headerlink" title="Python操作Json"></a>Python操作Json</h3><blockquote>
 <p>JSON (JavaScript Object Notation), specified by RFC 7159 (which obsoletes RFC 4627) and by ECMA-404, is a lightweight data interchange format inspired by JavaScript object literal syntax (although it is not a strict subset of JavaScript).</p>
 </blockquote>
-<pre><code>import json
-
-list1 = [20, 6, 15, 53, 47]
-list2 = [(6, &apos;John&apos;, &apos;20&apos;), (20, &apos;David&apos;, &apos;21&apos;), (47, &apos;Amy&apos;, &apos;23&apos;), (15, &apos;Kim&apos;, &apos;18&apos;), (53, &apos;Mary&apos;, &apos;20&apos;)]
-
-list3 = []
-for a in list2:
-    dict = {}
-    dict[&apos;id&apos;] = a[0]
-    dict[&apos;name&apos;] = a[1]
-    dict[&apos;age&apos;] = a[2]
-    list3.append(dict)
-result = {}
-result[&apos;id&apos;] = list1
-result[&apos;data&apos;] = list3
-
-json1 = json.dumps(list1)
-json2 = json.dumps(list2)
-json3 = json.dumps(list3)
-json4 = json.dumps(result)
-print(json1)
-print(json2)
-print(json3)
-print(json4)
-
-decode = json.loads(json4)
-print(decode)
-</code></pre><h3 id="JS解析Json数据"><a href="#JS解析Json数据" class="headerlink" title="JS解析Json数据"></a>JS解析Json数据</h3><pre><code>&lt;SCRIPT LANGUAGE=&quot;JavaScript&quot;&gt;
-    var t=&quot;{&apos;firstName&apos;: &apos;cyra&apos;, &apos;lastName&apos;: &apos;richardson&apos;, &apos;address&apos;: { &apos;streetAddress&apos;: &apos;1 Microsoft way&apos;, &apos;city&apos;: &apos;Redmond&apos;, &apos;state&apos;: &apos;WA&apos;, &apos;postalCode&apos;: 98052 },&apos;phoneNumbers&apos;: [ &apos;425-777-7777&apos;,&apos;206-777-7777&apos; ] }&quot;;
-    var jsonobj=eval(&apos;(&apos;+t+&apos;)&apos;);
-    alert(jsonobj.firstName);
-    alert(jsonobj.lastName);
-
-
-    var t2=&quot;[{name:&apos;zhangsan&apos;,age:&apos;24&apos;},{name:&apos;lisi&apos;,age:&apos;30&apos;},{name:&apos;wangwu&apos;,age:&apos;16&apos;},{name:&apos;tianqi&apos;,age:&apos;7&apos;}] &quot;;
-    var myobj=eval(t2);
-    for(var i=0;i&lt;myobj.length;i++){
-        alert(myobj[i].name);
-        alert(myobj[i].age);
-    }
-
-    var t3=&quot;[[&apos;14113295100&apos;,&apos;社旗县国税局桥头税务所&apos;,&apos;社旗县城郊乡长江路西段&apos;]]&quot;;
-    //通过eval()函数可以将JSON字符串转化为对象
-    var obj = eval(t3);
-    for(var i=0;i&lt;obj.length;i++){
-        for(var j=0;j&lt;obj[i].length;j++){
-            alert(obj[i][j]);
-        }
-    }
-&lt;/SCRIPT&gt;
-</code></pre><p>参考资料：</p>
-<p><a href="http://www.cnblogs.com/mahatmasmile/archive/2013/03/29/2989505.html" target="_blank" rel="external">Ajax跨域请求</a>{:target=”_blank”}</p>
-<p><a href="http://stackoverflow.com/questions/25860304/how-do-i-set-response-headers-in-flask" target="_blank" rel="external">How do I set response headers in Flask?</a>{:target=”_blank”}</p>
-<p><a href="http://flask.pocoo.org/docs/0.10/api/#response-objects" target="_blank" rel="external">Flask API</a>{:target=”_blank”}</p>
-<p><a href="https://docs.python.org/3/library/json.html" target="_blank" rel="external">Python操作json的API</a>{:target=”_blank”}</p>
-<p><a href="http://www.360doc.com/content/16/0329/20/32081299_546351123.shtml" target="_blank" rel="external">JS解析json数据（如何将json字符串转化为数组）</a>{:target=”_blank”}</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">import json</span><br><span class="line"></span><br><span class="line">list1 = [<span class="number">20</span>, <span class="number">6</span>, <span class="number">15</span>, <span class="number">53</span>, <span class="number">47</span>]</span><br><span class="line">list2 = [(<span class="number">6</span>, <span class="string">'John'</span>, <span class="string">'20'</span>), (<span class="number">20</span>, <span class="string">'David'</span>, <span class="string">'21'</span>), (<span class="number">47</span>, <span class="string">'Amy'</span>, <span class="string">'23'</span>), (<span class="number">15</span>, <span class="string">'Kim'</span>, <span class="string">'18'</span>), (<span class="number">53</span>, <span class="string">'Mary'</span>, <span class="string">'20'</span>)]</span><br><span class="line"></span><br><span class="line">list3 = []</span><br><span class="line"><span class="keyword">for</span> <span class="selector-tag">a</span> <span class="keyword">in</span> list2:</span><br><span class="line">    dict = &#123;&#125;</span><br><span class="line">    dict[<span class="string">'id'</span>] = <span class="selector-tag">a</span>[<span class="number">0</span>]</span><br><span class="line">    dict[<span class="string">'name'</span>] = <span class="selector-tag">a</span>[<span class="number">1</span>]</span><br><span class="line">    dict[<span class="string">'age'</span>] = <span class="selector-tag">a</span>[<span class="number">2</span>]</span><br><span class="line">    list3.append(dict)</span><br><span class="line">result = &#123;&#125;</span><br><span class="line">result[<span class="string">'id'</span>] = list1</span><br><span class="line">result[<span class="string">'data'</span>] = list3</span><br><span class="line"></span><br><span class="line">json1 = json.dumps(list1)</span><br><span class="line">json2 = json.dumps(list2)</span><br><span class="line">json3 = json.dumps(list3)</span><br><span class="line">json4 = json.dumps(result)</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(json1)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(json2)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(json3)</span></span></span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(json4)</span></span></span><br><span class="line"></span><br><span class="line">decode = json.loads(json4)</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(decode)</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="JS解析Json数据"><a href="#JS解析Json数据" class="headerlink" title="JS解析Json数据"></a>JS解析Json数据</h3><figure class="highlight scilab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;SCRIPT LANGUAGE=<span class="string">"JavaScript"</span>&gt;</span><br><span class="line">    var t=<span class="string">"&#123;'</span>firstName': <span class="string">'cyra'</span>, <span class="string">'lastName'</span>: <span class="string">'richardson'</span>, <span class="string">'address'</span>: &#123; <span class="string">'streetAddress'</span>: <span class="string">'1 Microsoft way'</span>, <span class="string">'city'</span>: <span class="string">'Redmond'</span>, <span class="string">'state'</span>: <span class="string">'WA'</span>, <span class="string">'postalCode'</span>: <span class="number">98052</span> &#125;,<span class="string">'phoneNumbers'</span>: [ <span class="string">'425-777-7777'</span>,<span class="string">'206-777-7777'</span> ] &#125;<span class="string">";</span><br><span class="line">    var jsonobj=eval('</span>(<span class="string">'+t+'</span>)<span class="string">');</span><br><span class="line">    alert(jsonobj.firstName);</span><br><span class="line">    alert(jsonobj.lastName);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    var t2="</span>[&#123;name:<span class="string">'zhangsan'</span>,age:<span class="string">'24'</span>&#125;,&#123;name:<span class="string">'lisi'</span>,age:<span class="string">'30'</span>&#125;,&#123;name:<span class="string">'wangwu'</span>,age:<span class="string">'16'</span>&#125;,&#123;name:<span class="string">'tianqi'</span>,age:<span class="string">'7'</span>&#125;] <span class="string">";</span><br><span class="line">    var myobj=eval(t2);</span><br><span class="line">    for(var i=0;i&lt;myobj.length;i++)&#123;</span><br><span class="line">        alert(myobj[i].name);</span><br><span class="line">        alert(myobj[i].age);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    var t3="</span>[[<span class="string">'14113295100'</span>,<span class="string">'社旗县国税局桥头税务所'</span>,<span class="string">'社旗县城郊乡长江路西段'</span>]]<span class="string">";</span><br><span class="line">    //通过eval()函数可以将JSON字符串转化为对象</span><br><span class="line">    var obj = eval(t3);</span><br><span class="line">    for(var i=0;i&lt;obj.length;i++)&#123;</span><br><span class="line">        for(var j=0;j&lt;obj[i].length;j++)&#123;</span><br><span class="line">            alert(obj[i][j]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/SCRIPT&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><a href="http://www.cnblogs.com/mahatmasmile/archive/2013/03/29/2989505.html" target="_blank" rel="external">Ajax跨域请求</a></p>
+<p><a href="http://stackoverflow.com/questions/25860304/how-do-i-set-response-headers-in-flask" target="_blank" rel="external">How do I set response headers in Flask?</a></p>
+<p><a href="http://flask.pocoo.org/docs/0.10/api/#response-objects" target="_blank" rel="external">Flask API</a></p>
+<p><a href="https://docs.python.org/3/library/json.html" target="_blank" rel="external">Python操作json的API</a></p>
+<p><a href="http://www.360doc.com/content/16/0329/20/32081299_546351123.shtml" target="_blank" rel="external">JS解析json数据（如何将json字符串转化为数组）</a></p>
 
       
     </div>
@@ -655,7 +585,7 @@ print(decode)
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#利用Ajax跨域访问Flask服务器"><span class="nav-number">1.</span> <span class="nav-text">利用Ajax跨域访问Flask服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python操作Json"><span class="nav-number">2.</span> <span class="nav-text">Python操作Json</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JS解析Json数据"><span class="nav-number">3.</span> <span class="nav-text">JS解析Json数据</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#利用Ajax跨域访问Flask服务器"><span class="nav-number">1.</span> <span class="nav-text">利用Ajax跨域访问Flask服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python操作Json"><span class="nav-number">2.</span> <span class="nav-text">Python操作Json</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JS解析Json数据"><span class="nav-number">3.</span> <span class="nav-text">JS解析Json数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
           </div>
         </section>

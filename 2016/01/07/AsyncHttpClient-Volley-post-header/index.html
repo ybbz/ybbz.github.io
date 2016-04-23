@@ -57,30 +57,18 @@
 
 
 <meta name="description" content="AsyncHttpClient与Volley的post请求、header验证比较
-###AsyncHttpClient
-AsyncHttpClient client = new AsyncHttpClient();
-// 请求参数的封装对象
-RequestParams params = new RequestParams();
-params.put(&amp;quot;param1&amp;quot;, para">
+AsyncHttpClient1234567891011121314151617181920212223242526272829303132AsyncHttpClient client = new AsyncHttpClient();// 请求参数的封装对象RequestParams params = new Req">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AsyncHttpClient与Volley的post请求、header验证比较">
 <meta property="og:url" content="http://blog.ybbz.site/2016/01/07/AsyncHttpClient-Volley-post-header/index.html">
 <meta property="og:site_name" content="八宝粥的博客">
 <meta property="og:description" content="AsyncHttpClient与Volley的post请求、header验证比较
-###AsyncHttpClient
-AsyncHttpClient client = new AsyncHttpClient();
-// 请求参数的封装对象
-RequestParams params = new RequestParams();
-params.put(&amp;quot;param1&amp;quot;, para">
-<meta property="og:updated_time" content="2016-04-23T09:22:11.000Z">
+AsyncHttpClient1234567891011121314151617181920212223242526272829303132AsyncHttpClient client = new AsyncHttpClient();// 请求参数的封装对象RequestParams params = new Req">
+<meta property="og:updated_time" content="2016-04-23T13:13:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AsyncHttpClient与Volley的post请求、header验证比较">
 <meta name="twitter:description" content="AsyncHttpClient与Volley的post请求、header验证比较
-###AsyncHttpClient
-AsyncHttpClient client = new AsyncHttpClient();
-// 请求参数的封装对象
-RequestParams params = new RequestParams();
-params.put(&amp;quot;param1&amp;quot;, para">
+AsyncHttpClient1234567891011121314151617181920212223242526272829303132AsyncHttpClient client = new AsyncHttpClient();// 请求参数的封装对象RequestParams params = new Req">
 
 
 
@@ -354,73 +342,9 @@ params.put(&amp;quot;param1&amp;quot;, para">
 
       
         <p>AsyncHttpClient与Volley的post请求、header验证比较</p>
-<p>###AsyncHttpClient</p>
-<pre><code>AsyncHttpClient client = new AsyncHttpClient();
-// 请求参数的封装对象
-RequestParams params = new RequestParams();
-params.put(&quot;param1&quot;, param1);
-params.put(&quot;param2&quot;, param2);
-//addHeader
-client.addHeader(&quot;phone&quot;, phone);
-client.addHeader(&quot;key&quot;, key);
-// 执行post方法
-client.post(API.DEMO_URL, params,
-    new AsyncHttpResponseHandler() {
-        @Override
-        public void onSuccess(int statusCode, Header[] headers,
-                byte[] responseBody) {
-            if (statusCode == 200) {
-                try {
-                    JSONObject response = new JSONObject(
-                            new String(responseBody));
-                    Log.e(&quot;TAG&quot;, response.toString());
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            } else {
-                //
-            }
-        }
-        @Override
-        public void onFailure(int statusCode, Header[] headers,
-                byte[] responseBody, Throwable error) {
-            error.printStackTrace();
-        }
-    });
-</code></pre><p>###Volley</p>
-<pre><code>private void sendComment2(String msg) {
-    RequestQueue requestQueue = Volley
-            .newRequestQueue(getApplicationContext());
-    Map&lt;String, String&gt; params = new HashMap&lt;String, String&gt;();
-    params.put(&quot;param1&quot;, param1);
-    params.put(&quot;param2&quot;, param2);
-    JSONObject jsonObject = new JSONObject(params);
-    JsonRequest&lt;JSONObject&gt; jsonRequest = new JsonObjectRequest(
-            Method.POST, API.DEMO_URL, jsonObject,
-            new Response.Listener&lt;JSONObject&gt;() {
-                @Override
-                public void onResponse(JSONObject response) {
-                    Log.e(TAG, response.toString());
+<h3 id="AsyncHttpClient"><a href="#AsyncHttpClient" class="headerlink" title="AsyncHttpClient"></a>AsyncHttpClient</h3><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">AsyncHttpClient client = <span class="keyword">new</span> AsyncHttpClient();</span><br><span class="line"><span class="comment">// 请求参数的封装对象</span></span><br><span class="line">RequestParams params = <span class="keyword">new</span> RequestParams();</span><br><span class="line">params.put(<span class="string">"param1"</span>, param1);</span><br><span class="line">params.put(<span class="string">"param2"</span>, param2);</span><br><span class="line"><span class="comment">//addHeader</span></span><br><span class="line">client.addHeader(<span class="string">"phone"</span>, phone);</span><br><span class="line">client.addHeader(<span class="string">"key"</span>, key);</span><br><span class="line"><span class="comment">// 执行post方法</span></span><br><span class="line">client.post(API.DEMO_URL, params,</span><br><span class="line">	<span class="keyword">new</span> AsyncHttpResponseHandler() &#123;</span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onSuccess</span><span class="params">(<span class="keyword">int</span> statusCode, Header[] headers,</span><br><span class="line">				<span class="keyword">byte</span>[] responseBody)</span> </span>&#123;</span><br><span class="line">			<span class="keyword">if</span> (statusCode == <span class="number">200</span>) &#123;</span><br><span class="line">				<span class="keyword">try</span> &#123;</span><br><span class="line">					JSONObject response = <span class="keyword">new</span> JSONObject(</span><br><span class="line">							<span class="keyword">new</span> String(responseBody));</span><br><span class="line">					Log.e(<span class="string">"TAG"</span>, response.toString());</span><br><span class="line">				&#125; <span class="keyword">catch</span> (JSONException e) &#123;</span><br><span class="line">					e.printStackTrace();</span><br><span class="line">				&#125;</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="comment">//</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onFailure</span><span class="params">(<span class="keyword">int</span> statusCode, Header[] headers,</span><br><span class="line">				<span class="keyword">byte</span>[] responseBody, Throwable <span class="keyword">error</span>)</span> </span>&#123;</span><br><span class="line">			<span class="keyword">error</span>.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="Volley"><a href="#Volley" class="headerlink" title="Volley"></a>Volley</h3><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> sendComment2(<span class="keyword">String</span> msg) &#123;</span><br><span class="line">	RequestQueue requestQueue = Volley</span><br><span class="line">			.newRequestQueue(getApplicationContext());</span><br><span class="line">	Map&lt;<span class="keyword">String</span>, <span class="keyword">String</span>&gt; params = <span class="keyword">new</span> <span class="keyword">HashMap</span>&lt;<span class="keyword">String</span>, <span class="keyword">String</span>&gt;();</span><br><span class="line">	params.put(<span class="string">"param1"</span>, param1);</span><br><span class="line">	params.put(<span class="string">"param2"</span>, param2);</span><br><span class="line">	<span class="keyword">JSONObject</span> jsonObject = <span class="keyword">new</span> <span class="keyword">JSONObject</span>(params);</span><br><span class="line">	JsonRequest&lt;<span class="keyword">JSONObject</span>&gt; jsonRequest = <span class="keyword">new</span> JsonObjectRequest(</span><br><span class="line">			Method.POST, API.DEMO_URL, jsonObject,</span><br><span class="line">			<span class="keyword">new</span> Response.Listener&lt;<span class="keyword">JSONObject</span>&gt;() &#123;</span><br><span class="line">				@Override</span><br><span class="line">				<span class="keyword">public</span> <span class="keyword">void</span> onResponse(<span class="keyword">JSONObject</span> response) &#123;</span><br><span class="line">					Log.e(TAG, response.toString());</span><br><span class="line"></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;, <span class="keyword">new</span> Response.ErrorListener() &#123;</span><br><span class="line">				@Override</span><br><span class="line">				<span class="keyword">public</span> <span class="keyword">void</span> onErrorResponse(VolleyError error) &#123;</span><br><span class="line">					Log.e(TAG, error.getMessage(), error);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;) &#123;</span><br><span class="line">		@Override</span><br><span class="line">		<span class="keyword">public</span> Map&lt;<span class="keyword">String</span>, <span class="keyword">String</span>&gt; getHeaders() <span class="keyword">throws</span> AuthFailureError &#123;</span><br><span class="line">			<span class="comment">// header验证</span></span><br><span class="line">			<span class="keyword">HashMap</span>&lt;<span class="keyword">String</span>, <span class="keyword">String</span>&gt; headers = <span class="keyword">new</span> <span class="keyword">HashMap</span>&lt;<span class="keyword">String</span>, <span class="keyword">String</span>&gt;();</span><br><span class="line">			headers.put(<span class="string">"phone"</span>, phone);</span><br><span class="line">			headers.put(<span class="string">"key"</span>, <span class="built_in">key</span>);</span><br><span class="line">			<span class="keyword">return</span> headers;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">	requestQueue.<span class="built_in">add</span>(jsonRequest);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-                }
-            }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    Log.e(TAG, error.getMessage(), error);
-                }
-            }) {
-        @Override
-        public Map&lt;String, String&gt; getHeaders() throws AuthFailureError {
-            // header验证
-            HashMap&lt;String, String&gt; headers = new HashMap&lt;String, String&gt;();
-            headers.put(&quot;phone&quot;, phone);
-            headers.put(&quot;key&quot;, key);
-            return headers;
-        }
-    };
-    requestQueue.add(jsonRequest);
-}
-</code></pre>
       
     </div>
     
@@ -643,7 +567,7 @@ client.post(API.DEMO_URL, params,
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#AsyncHttpClient"><span class="nav-number">1.</span> <span class="nav-text">AsyncHttpClient</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Volley"><span class="nav-number">2.</span> <span class="nav-text">Volley</span></a></li></ol></div>
             
           </div>
         </section>

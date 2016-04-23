@@ -62,12 +62,12 @@
 <meta property="og:url" content="http://blog.ybbz.site/2016/03/17/text-mining-distance-similar/index.html">
 <meta property="og:site_name" content="八宝粥的博客">
 <meta property="og:description" content="前几天在图书馆找了一本数据科学的书（Doing Data Science），昨天浏览了前几章，里面讲到从事数据科学要具备的种种理论和技能（数据可视化、机器学习、数学、统计学、计算机科学、沟通技巧、领域知识等），细思恐极，一个人怎么可能精通那么多？就算用精通这些的人组成一个团队，那么，你在团队中又该发挥怎么的作用？作为计算机专业的学生，该如何对待统计学、线性代数、概率论等数学知识（因为本科学的那些脱">
-<meta property="og:image" content="http://ybbz.github.io/img/blog/IMG_20160317.png">
-<meta property="og:updated_time" content="2016-04-23T09:25:04.000Z">
+<meta property="og:image" content="http://ybbz.github.io/images/blog/IMG_20160317.png">
+<meta property="og:updated_time" content="2016-04-23T13:01:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于欧氏距离、余弦相似度及多文本分类的思考">
 <meta name="twitter:description" content="前几天在图书馆找了一本数据科学的书（Doing Data Science），昨天浏览了前几章，里面讲到从事数据科学要具备的种种理论和技能（数据可视化、机器学习、数学、统计学、计算机科学、沟通技巧、领域知识等），细思恐极，一个人怎么可能精通那么多？就算用精通这些的人组成一个团队，那么，你在团队中又该发挥怎么的作用？作为计算机专业的学生，该如何对待统计学、线性代数、概率论等数学知识（因为本科学的那些脱">
-<meta name="twitter:image" content="http://ybbz.github.io/img/blog/IMG_20160317.png">
+<meta name="twitter:image" content="http://ybbz.github.io/images/blog/IMG_20160317.png">
 
 
 
@@ -347,7 +347,7 @@
 <p>而使用欧式距离或者余弦相似度来做度量的时候，有一个前提，就是两个点或者两个向量（假设此处比较的是两个对象），需要在同一个维度（比如在三维空间，x轴对应x轴，y轴对应y轴，z轴对应z轴，不然没有可比性）。</p>
 <p>基于余弦相似度的文本分类算法是这么实现的：先对训练文本分词并剔除停用词，得到训练词条，然后根据训练词条把训练文本中的所有词映射到n维空间的一个向量上（训练向量），再计算测试文本组成的向量（测试向量）与训练向量的夹角余弦值，即可得到训练文本与测试文本的相似程度。</p>
 <p>根据以上的处理过程，在处理两个文本相似性的时候，建立两个向量，需要将这两个向量映射在同一个n维空间，然后再计算。而如果要同时比较一个文本与另外多个（假设100个）文本的相似性，则需要选择同一个参考系，即101个向量在同一维度空间。这时候向量空间的映射就很重要了。而这个环节中，还有一个问题，就是新的向量是否要加入到原向量空间中之后再比较。比如，原训练集文本分词后组成的词库中有100个词（即100维空间），这时候新文本的分词结果显示（假设已剔除停用词），有一个词不在原词库中；那么，是否要把新词入库（原词库），再做统一的空间映射呢？</p>
-<p><img src="http://ybbz.github.io/img/blog/IMG_20160317.png" alt="20160317"></p>
+<p><img src="http://ybbz.github.io/images/blog/IMG_20160317.png" alt="20160317"></p>
 <p>答案是不需要！我们可以看一下上面的余弦公式的分子部分，是Ai*Bi，也就是说，即使新向量中出现了新词，训练的100个向量中却没有这个词，那么这部分的乘积还是零，与是否入库无关（而是否入库，却是与模型、业务相关的操作）。</p>
 <p>不禁反思，改进算法的时候，一定要考虑新增加的步骤所带来的结果是怎样的，这样也就可以分析出相关步骤的必要性了。</p>
 <p>20160328补充说明：</p>

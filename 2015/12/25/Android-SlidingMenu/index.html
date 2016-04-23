@@ -57,30 +57,18 @@
 
 
 <meta name="description" content="主页点击后退键时：若SlidingMenu显示，则隐藏；若SlidingMenu不显示，则双击退出App
-@Override
-public boolean onKeyDown(int keyCode, KeyEvent event) {
-    // 截获后退键
-    if (keyCode == KeyEvent.KEYCODE_BACK) {
-        if (slidingMenu.">
+123456789101112131415161718192021@Overridepublic boolean onKeyDown(int keyCode, KeyEvent event) &amp;#123;	// 截获后退键	if (keyCode == KeyEvent.KEYCODE_BAC">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android中SlidingMenu与后退按钮事件">
 <meta property="og:url" content="http://blog.ybbz.site/2015/12/25/Android-SlidingMenu/index.html">
 <meta property="og:site_name" content="八宝粥的博客">
 <meta property="og:description" content="主页点击后退键时：若SlidingMenu显示，则隐藏；若SlidingMenu不显示，则双击退出App
-@Override
-public boolean onKeyDown(int keyCode, KeyEvent event) {
-    // 截获后退键
-    if (keyCode == KeyEvent.KEYCODE_BACK) {
-        if (slidingMenu.">
-<meta property="og:updated_time" content="2016-04-23T09:21:43.000Z">
+123456789101112131415161718192021@Overridepublic boolean onKeyDown(int keyCode, KeyEvent event) &amp;#123;	// 截获后退键	if (keyCode == KeyEvent.KEYCODE_BAC">
+<meta property="og:updated_time" content="2016-04-23T13:13:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android中SlidingMenu与后退按钮事件">
 <meta name="twitter:description" content="主页点击后退键时：若SlidingMenu显示，则隐藏；若SlidingMenu不显示，则双击退出App
-@Override
-public boolean onKeyDown(int keyCode, KeyEvent event) {
-    // 截获后退键
-    if (keyCode == KeyEvent.KEYCODE_BACK) {
-        if (slidingMenu.">
+123456789101112131415161718192021@Overridepublic boolean onKeyDown(int keyCode, KeyEvent event) &amp;#123;	// 截获后退键	if (keyCode == KeyEvent.KEYCODE_BAC">
 
 
 
@@ -354,28 +342,8 @@ public boolean onKeyDown(int keyCode, KeyEvent event) {
 
       
         <p>主页点击后退键时：若SlidingMenu显示，则隐藏；若SlidingMenu不显示，则双击退出App</p>
-<pre><code>@Override
-public boolean onKeyDown(int keyCode, KeyEvent event) {
-    // 截获后退键
-    if (keyCode == KeyEvent.KEYCODE_BACK) {
-        if (slidingMenu.isMenuShowing()) {
-            slidingMenu.toggle();
-            return true;
-        }
-        long currentTime = new Date().getTime();
-        // 如果时间间隔大于2秒, 不处理
-        if ((currentTime - preTime) &gt; TWO_SECOND) {
-            // 显示消息
-            Toast.makeText(this, &quot;再按一次退出&quot;, Toast.LENGTH_SHORT).show();
-            // 更新时间
-            preTime = currentTime;
-            // 截获事件,不再处理
-            return true;
-        }
-    }
-    return super.onKeyDown(keyCode, event);
-}
-</code></pre>
+<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">boolean</span> <span class="title">onKeyDown</span><span class="params">(<span class="keyword">int</span> keyCode, KeyEvent event)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// 截获后退键</span></span><br><span class="line">	<span class="keyword">if</span> (keyCode == KeyEvent.KEYCODE_BACK) &#123;</span><br><span class="line">		<span class="keyword">if</span> (slidingMenu.isMenuShowing()) &#123;</span><br><span class="line">			slidingMenu.toggle();</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">long</span> currentTime = <span class="keyword">new</span> Date().getTime();</span><br><span class="line">		<span class="comment">// 如果时间间隔大于2秒, 不处理</span></span><br><span class="line">		<span class="keyword">if</span> ((currentTime - preTime) &gt; TWO_SECOND) &#123;</span><br><span class="line">			<span class="comment">// 显示消息</span></span><br><span class="line">			Toast.makeText(<span class="keyword">this</span>, <span class="string">"再按一次退出"</span>, Toast.LENGTH_SHORT).show();</span><br><span class="line">			<span class="comment">// 更新时间</span></span><br><span class="line">			preTime = currentTime;</span><br><span class="line">			<span class="comment">// 截获事件,不再处理</span></span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">return</span> <span class="keyword">super</span>.<span class="title">onKeyDown</span><span class="params">(keyCode, event)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -409,8 +377,8 @@ public boolean onKeyDown(int keyCode, KeyEvent event) {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/14/RoboBinding-three-HTTP/" rel="next" title="RoboBinding探究三：网络请求实现">
-                <i class="fa fa-chevron-left"></i> RoboBinding探究三：网络请求实现
+              <a href="/2015/12/14/RoboBinding-two-ImageView/" rel="next" title="RoboBinding探究二：ImageView及自定义控件实现">
+                <i class="fa fa-chevron-left"></i> RoboBinding探究二：ImageView及自定义控件实现
               </a>
             
           </div>

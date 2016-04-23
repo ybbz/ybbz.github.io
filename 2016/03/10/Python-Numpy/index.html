@@ -56,31 +56,34 @@
 
 
 
-<meta name="description" content="简介Numpy官网{:target=”_blank”}中的介绍：
+<meta name="description" content="Numpy官网中的介绍：
 
 NumPy is the fundamental package for scientific computing with Python. It contains among other things:
 
 a powerful N-dimensional array object
-sophisticated (broadcast">
+sophisticated (broadcasting) functions
+tools">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NumPy探索">
 <meta property="og:url" content="http://blog.ybbz.site/2016/03/10/Python-Numpy/index.html">
 <meta property="og:site_name" content="八宝粥的博客">
-<meta property="og:description" content="简介Numpy官网{:target=”_blank”}中的介绍：
+<meta property="og:description" content="Numpy官网中的介绍：
 
 NumPy is the fundamental package for scientific computing with Python. It contains among other things:
 
 a powerful N-dimensional array object
-sophisticated (broadcast">
-<meta property="og:updated_time" content="2016-04-23T09:24:22.000Z">
+sophisticated (broadcasting) functions
+tools">
+<meta property="og:updated_time" content="2016-04-23T13:03:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NumPy探索">
-<meta name="twitter:description" content="简介Numpy官网{:target=”_blank”}中的介绍：
+<meta name="twitter:description" content="Numpy官网中的介绍：
 
 NumPy is the fundamental package for scientific computing with Python. It contains among other things:
 
 a powerful N-dimensional array object
-sophisticated (broadcast">
+sophisticated (broadcasting) functions
+tools">
 
 
 
@@ -353,7 +356,7 @@ sophisticated (broadcast">
       
 
       
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><a href="http://www.numpy.org/" target="_blank" rel="external">Numpy官网</a>{:target=”_blank”}中的介绍：</p>
+        <p><a href="http://www.numpy.org/" target="_blank" rel="external">Numpy官网</a>中的介绍：</p>
 <ul>
 <li><p>NumPy is the fundamental package for scientific computing with Python. It contains among other things:</p>
 <ul>
@@ -367,30 +370,8 @@ sophisticated (broadcast">
 </li>
 </ul>
 <p>Numpy是Python的一个科学计算的库，提供了矩阵运算的功能等。</p>
-<pre><code>import numpy as np
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">import numpy as <span class="built_in">np</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">np</span>.version.version)</span><br><span class="line"></span><br><span class="line"># numpy.<span class="built_in">array</span>:多维数组</span><br><span class="line"># 以tuple或list变量为参数产生一维/二维数组</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">np</span>.<span class="built_in">array</span>((<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>)))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">np</span>.<span class="built_in">array</span>([<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>], dtype=<span class="built_in">np</span>.int32))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">np</span>.<span class="built_in">array</span>([[<span class="number">1</span>, <span class="number">3</span>], [<span class="number">5</span>, <span class="number">6</span>]]))</span><br><span class="line"></span><br><span class="line"># numpy.arange:</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">np</span>.arange(<span class="number">8</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">np</span>.arange(<span class="number">8</span>).reshape(<span class="number">2</span>, <span class="number">4</span>))</span><br><span class="line"></span><br><span class="line"># numpy.linspace(从<span class="number">2</span>到<span class="number">3</span>中产生<span class="number">3</span>个数)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">np</span>.linspace(<span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>))</span><br><span class="line"></span><br><span class="line"># numpy.zeros，numpy.ones，numpy.eye等构造特定矩阵</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">np</span>.zeros(<span class="number">5</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">np</span>.ones(<span class="number">5</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">np</span>.zeros((<span class="number">3</span>, <span class="number">5</span>)))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">np</span>.ones((<span class="number">3</span>, <span class="number">5</span>)))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">np</span>.eye(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
 
-print(np.version.version)
-
-# numpy.array:多维数组
-# 以tuple或list变量为参数产生一维/二维数组
-print(np.array((1, 2, 3, 4)))
-print(np.array([5, 6, 7, 8], dtype=np.int32))
-print(np.array([[1, 3], [5, 6]]))
-
-# numpy.arange:
-print(np.arange(8))
-print(np.arange(8).reshape(2, 4))
-
-# numpy.linspace(从2到3中产生3个数)
-print(np.linspace(2, 3, 3))
-
-# numpy.zeros，numpy.ones，numpy.eye等构造特定矩阵
-print(np.zeros(5))
-print(np.ones(5))
-print(np.zeros((3, 5)))
-print(np.ones((3, 5)))
-print(np.eye(3))
-</code></pre>
       
     </div>
     
@@ -609,7 +590,7 @@ print(np.eye(3))
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>

@@ -57,30 +57,18 @@
 
 
 <meta name="description" content="JS中获取节点的兄弟、父、子节点，一般情况下通过这种方式获取：
-var chils= s.childNodes;  //得到s的全部子节点
-var par=s.parentNode;   //得到s的父节点
-var ns=s.nextSibling;   //获得s的下一个兄弟节点
-var ps=s.previousSbiling;  //得到s的上一个兄弟节点
-var fc=s.firstChi">
+123456var chils= s.childNodes;  //得到s的全部子节点var par=s.parentNode;   //得到s的父节点var ns=s.nextSibling;   //获得s的下一个兄弟节点var ps=s.previousSbiling;  //得到s的上一个兄弟节点var fc=s.firstC">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript中获取节点的兄弟、父、子节点的各种问题">
 <meta property="og:url" content="http://blog.ybbz.site/2015/12/12/JS-nodes/index.html">
 <meta property="og:site_name" content="八宝粥的博客">
 <meta property="og:description" content="JS中获取节点的兄弟、父、子节点，一般情况下通过这种方式获取：
-var chils= s.childNodes;  //得到s的全部子节点
-var par=s.parentNode;   //得到s的父节点
-var ns=s.nextSibling;   //获得s的下一个兄弟节点
-var ps=s.previousSbiling;  //得到s的上一个兄弟节点
-var fc=s.firstChi">
-<meta property="og:updated_time" content="2016-04-23T09:21:06.000Z">
+123456var chils= s.childNodes;  //得到s的全部子节点var par=s.parentNode;   //得到s的父节点var ns=s.nextSibling;   //获得s的下一个兄弟节点var ps=s.previousSbiling;  //得到s的上一个兄弟节点var fc=s.firstC">
+<meta property="og:updated_time" content="2016-04-23T13:17:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript中获取节点的兄弟、父、子节点的各种问题">
 <meta name="twitter:description" content="JS中获取节点的兄弟、父、子节点，一般情况下通过这种方式获取：
-var chils= s.childNodes;  //得到s的全部子节点
-var par=s.parentNode;   //得到s的父节点
-var ns=s.nextSibling;   //获得s的下一个兄弟节点
-var ps=s.previousSbiling;  //得到s的上一个兄弟节点
-var fc=s.firstChi">
+123456var chils= s.childNodes;  //得到s的全部子节点var par=s.parentNode;   //得到s的父节点var ns=s.nextSibling;   //获得s的下一个兄弟节点var ps=s.previousSbiling;  //得到s的上一个兄弟节点var fc=s.firstC">
 
 
 
@@ -354,27 +342,12 @@ var fc=s.firstChi">
 
       
         <p>JS中获取节点的兄弟、父、子节点，一般情况下通过这种方式获取：</p>
-<pre><code>var chils= s.childNodes;  //得到s的全部子节点
-var par=s.parentNode;   //得到s的父节点
-var ns=s.nextSibling;   //获得s的下一个兄弟节点
-var ps=s.previousSbiling;  //得到s的上一个兄弟节点
-var fc=s.firstChild;   //获得s的第一个子节点
-var lc=s.lastChild;   //获得s的最后一个子节点
-</code></pre><p>获取div的下一个div时，发现通过nextSibling的方式获取不到，于是使用childNodes遍历的方式解决问题：</p>
-<pre><code>function agree(obj,aid){
-    var divParent=obj.parentNode;
-    var divChilds=divParent.childNodes;
-    var divNext;
-    for (var i = 0; i &lt;divChilds.length; i++) {
-        if (divChilds[i].className == &apos;media-right disagree&apos;)
-            divNext=divChilds[i];
-    }
-}
-</code></pre><p>后来发现，还是可以通过nextSibling的方式的：</p>
-<pre><code>function agree(obj,aid){
-    var divNext=obj.nextSibling;
-}
-</code></pre><p>原因是……在web前端代码中相邻元素（即上面例中的div）不换行、不空格就行了……</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> chils= s.childNodes;  <span class="comment">//得到s的全部子节点</span></span><br><span class="line"><span class="keyword">var</span> par=s.parentNode;   <span class="comment">//得到s的父节点</span></span><br><span class="line"><span class="keyword">var</span> ns=s.nextSibling;   <span class="comment">//获得s的下一个兄弟节点</span></span><br><span class="line"><span class="keyword">var</span> ps=s.previousSbiling;  <span class="comment">//得到s的上一个兄弟节点</span></span><br><span class="line"><span class="keyword">var</span> fc=s.firstChild;   <span class="comment">//获得s的第一个子节点</span></span><br><span class="line"><span class="keyword">var</span> lc=s.lastChild;   <span class="comment">//获得s的最后一个子节点</span></span><br></pre></td></tr></table></figure>
+<p>获取div的下一个div时，发现通过nextSibling的方式获取不到，于是使用childNodes遍历的方式解决问题：</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">agree</span><span class="params">(obj,aid)</span></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> divParent=obj.parentNode;</span><br><span class="line">    <span class="keyword">var</span> divChilds=divParent.childNodes;</span><br><span class="line">    <span class="keyword">var</span> divNext;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt;divChilds.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (divChilds[i].className == <span class="string">'media-right disagree'</span>)</span><br><span class="line">            divNext=divChilds[i];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>后来发现，还是可以通过nextSibling的方式的：</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">agree</span><span class="params">(obj,aid)</span></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> divNext=obj.nextSibling;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>原因是……在web前端代码中相邻元素（即上面例中的div）不换行、不空格就行了……</p>
 
       
     </div>
@@ -417,8 +390,8 @@ var lc=s.lastChild;   //获得s的最后一个子节点
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/12/14/RoboBinding-two-ImageView/" rel="prev" title="RoboBinding探究二：ImageView及自定义控件实现">
-                RoboBinding探究二：ImageView及自定义控件实现 <i class="fa fa-chevron-right"></i>
+              <a href="/2015/12/14/RoboBinding-one-TextView-EditText/" rel="prev" title="RoboBinding探究一：TextView及EditText基础实现">
+                RoboBinding探究一：TextView及EditText基础实现 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

@@ -64,7 +64,7 @@
 <meta property="og:description" content="iBeiKe网站，或简称iBeiKe（中文：爱北科，英文缩写：IBK）是北京科技大学学生会下属的技术性学生组织iBeiKe团队建立和维护的网站，主要服务于北京科技大学的师生。网站成立于2001年3月，时称“北科大学生之家”。iBeiKe网站是北京科技大学学生会的宣传门户，同时也是一个综合性的学生网站及校园服务网站。iBeiKe网站也是北京科技大学历史最长的学生网站。网站的标语是“网上网下，一样精">
 <meta property="og:image" content="http://ybbz.github.io/img/blog/IMG_20160330_1.png">
 <meta property="og:image" content="http://ybbz.github.io/img/blog/IMG_20160330_2.png">
-<meta property="og:updated_time" content="2016-04-23T09:26:19.000Z">
+<meta property="og:updated_time" content="2016-04-23T12:56:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="爬虫实战：抓取在iBeiKe的所有发帖信息保存到数据库，进行可视化分析">
 <meta name="twitter:description" content="iBeiKe网站，或简称iBeiKe（中文：爱北科，英文缩写：IBK）是北京科技大学学生会下属的技术性学生组织iBeiKe团队建立和维护的网站，主要服务于北京科技大学的师生。网站成立于2001年3月，时称“北科大学生之家”。iBeiKe网站是北京科技大学学生会的宣传门户，同时也是一个综合性的学生网站及校园服务网站。iBeiKe网站也是北京科技大学历史最长的学生网站。网站的标语是“网上网下，一样精">
@@ -346,93 +346,14 @@
 </blockquote>
 <p>博主本科时期在iBeiKe担任了n年的版主和总版主（好吧，现在好像还没卸任？），挥洒了无数的青春与汗水。也结交了无数的基友（有男有女又老又少）。。。</p>
 <p>声明：用爬虫抓取数据，没有任何坏心思，纯粹的兴趣与技术交流，抓的也都是自己的数据，不侵犯他人隐私。若牵扯到各方利益，请联系我！</p>
-<p>言归正传～～～github传送门：<a href="https://github.com/ybbz/crawler" target="_blank" rel="external">crawl_ibeike1/2</a>{:target=”_blank”}</p>
+<p>言归正传～～～github传送门：<a href="https://github.com/ybbz/crawler" target="_blank" rel="external">crawl_ibeike1/2</a></p>
 <p>效果图如下：</p>
 <p><img src="http://ybbz.github.io/img/blog/IMG_20160330_1.png" alt="20160330_1"></p>
 <p><img src="http://ybbz.github.io/img/blog/IMG_20160330_2.png" alt="20160330_2"></p>
-<h3 id="抓取数据并清洗，保存到数据库"><a href="#抓取数据并清洗，保存到数据库" class="headerlink" title="抓取数据并清洗，保存到数据库"></a>抓取数据并清洗，保存到数据库</h3><pre><code># encoding=utf-8
-
-import httplib2
-import mysql.connector
-from bs4 import BeautifulSoup
-
-result = []
-pageNum = &apos;total page number&apos;
-uid = &apos;your uid&apos;
-cookie = &quot;your cookies&quot;
-
-url = &apos;http://city.ibeike.com/home.php?mod=space&amp;uid=&apos; + uid + &apos;&amp;do=thread&amp;view=me&amp;order=dateline&amp;from=space&amp;page=&apos;
-
-headers = {&quot;Connection&quot;: &quot;keep-alive&quot;,
-           &quot;Cookie&quot;: cookie,
-           &quot;Content-Type&quot;: &quot;application/xhtml+xml&quot;}
-
-for page in range(1, pageNum + 1):
-    cur_page = page
-    url_full = url + str(cur_page)
-    # http request
-    http = httplib2.Http()
-    response, content = http.request(url_full, &quot;GET&quot;, headers=headers)
-    if response.status == 200:
-        # print(response)
-        # print(content.decode(&apos;utf-8&apos;))
-        soup = BeautifulSoup(content, &quot;lxml&quot;)
-        table = soup.find_all(&apos;table&apos;)[1]
-        tr = table.find_all(&apos;tr&apos;, class_=&apos;&apos;)
-        for item in tr:
-            item_list = []
-            # print(item.prettify())
-            item_title = item.th.a.string
-            item_group = item.find_all(&apos;td&apos;, class_=&apos;&apos;)[0].a.string
-            item_reply = item.select(&apos;td[class=&quot;num&quot;]&apos;)[0].a.string
-            item_watch = item.select(&apos;td[class=&quot;num&quot;]&apos;)[0].em.string
-            # save to the result list
-            item = (str(item_title), str(item_group), int(item_reply), int(item_watch))
-            result.append(item)
-print(result)
-
-# connect database
-conn = mysql.connector.connect(host=&quot;hostname&quot;, user=&quot;username&quot;, passwd=&quot;password&quot;, db=&quot;database&quot;)
-cursor = conn.cursor()
-# save data
-sql = &quot;insert into ibeike(title,groups,reply,watch) values(%s,%s,%s,%s)&quot;
-cursor.executemany(sql, result)
-conn.commit()
-</code></pre><h3 id="数据分析与数据可视化"><a href="#数据分析与数据可视化" class="headerlink" title="数据分析与数据可视化"></a>数据分析与数据可视化</h3><pre><code># encoding=utf-8
-
-import mysql.connector
-import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
-
-# connect database
-conn = mysql.connector.connect(host=&quot;hostname&quot;, user=&quot;username&quot;,passwd=&quot;password&quot;, db=&quot;database&quot;)
-cursor = conn.cursor()
-# query data
-cursor.execute(&apos;select count(*),max(reply),min(reply),max(watch),min(watch) from ibeike&apos;)
-values1 = cursor.fetchall()
-print(&quot;ibeike:totally&quot; + str(values1[0][0]) + &quot;data&quot;)
-list = [(&apos;highest reply&apos;, values1[0][1]), (&apos;lowest reply&apos;, values1[0][2]),(&apos;hightest watch&apos;, values1[0][3]),(&apos;lowest watch&apos;, values1[0][4])]
-# draw picture
-budget = pd.DataFrame(list, columns=[&apos;type&apos;, &apos;count&apos;])
-sns.set_style(&quot;darkgrid&quot;)
-bar_plot = sns.barplot(x=budget[&quot;type&quot;], y=budget[&quot;count&quot;],palette=&quot;muted&quot;, order=budget[&quot;type&quot;].tolist())
-plt.show()
-
-# query data
-cursor.execute(&apos;select count(id),groups from ibeike group by groups&apos;)
-values2 = cursor.fetchall()
-values2.append((values1[0][0], &apos;all sort&apos;))
-result = sorted(values2)
-result.reverse()
-# draw picture
-budget = pd.DataFrame(result, columns=[&apos;count&apos;, &apos;sort&apos;])
-sns.set_style(&quot;darkgrid&quot;)
-bar_plot = sns.barplot(x=budget[&quot;sort&quot;], y=budget[&quot;count&quot;],palette=&quot;muted&quot;, order=budget[&quot;sort&quot;].tolist())
-plt.xticks(rotation=30)
-plt.show()
-</code></pre><p>参考资料：</p>
-<p><a href="http://cuiqingcai.com/1319.html" target="_blank" rel="external">Python爬虫利器二之Beautiful Soup的用法</a>{:target=”_blank”}</p>
+<h3 id="抓取数据并清洗，保存到数据库"><a href="#抓取数据并清洗，保存到数据库" class="headerlink" title="抓取数据并清洗，保存到数据库"></a>抓取数据并清洗，保存到数据库</h3><figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># encoding=utf-8</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">import</span> httplib2</span><br><span class="line"><span class="built_in">import</span> mysql.connector</span><br><span class="line">from bs4 <span class="built_in">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line"><span class="attr">result</span> = []</span><br><span class="line"><span class="attr">pageNum</span> = 'total page number'</span><br><span class="line"><span class="attr">uid</span> = 'your uid'</span><br><span class="line"><span class="attr">cookie</span> = <span class="string">"your cookies"</span></span><br><span class="line"></span><br><span class="line"><span class="attr">url</span> = 'http://city.ibeike.com/home.php?<span class="attr">mod=space&amp;uid='</span> + uid + '&amp;<span class="attr">do=thread&amp;view=me&amp;order=dateline&amp;from=space&amp;page='</span></span><br><span class="line"></span><br><span class="line"><span class="attr">headers</span> = &#123;<span class="string">"Connection"</span>: <span class="string">"keep-alive"</span>,</span><br><span class="line">           <span class="string">"Cookie"</span>: cookie,</span><br><span class="line">           <span class="string">"Content-Type"</span>: <span class="string">"application/xhtml+xml"</span>&#125;</span><br><span class="line"></span><br><span class="line">for page <span class="keyword">in</span> range(<span class="number">1</span>, pageNum + <span class="number">1</span>):</span><br><span class="line">    <span class="attr">cur_page</span> = page</span><br><span class="line">    <span class="attr">url_full</span> = url + str(cur_page)</span><br><span class="line">    <span class="comment"># http request</span></span><br><span class="line">    <span class="attr">http</span> = httplib2.Http()</span><br><span class="line">    response, <span class="attr">content</span> = http.request(url_full, <span class="string">"GET"</span>, <span class="attr">headers=headers)</span></span><br><span class="line">    <span class="keyword">if</span> response.<span class="attr">status</span> == <span class="number">200</span>:</span><br><span class="line">        <span class="comment"># print(response)</span></span><br><span class="line">        <span class="comment"># print(content.decode('utf-8'))</span></span><br><span class="line">        <span class="attr">soup</span> = BeautifulSoup(content, <span class="string">"lxml"</span>)</span><br><span class="line">        <span class="attr">table</span> = soup.find_all('table')[<span class="number">1</span>]</span><br><span class="line">        <span class="attr">tr</span> = table.find_all('tr', <span class="attr">class_='')</span></span><br><span class="line">        for item <span class="keyword">in</span> tr:</span><br><span class="line">            <span class="attr">item_list</span> = []</span><br><span class="line">            <span class="comment"># print(item.prettify())</span></span><br><span class="line">            <span class="attr">item_title</span> = item.th.a.string</span><br><span class="line">            <span class="attr">item_group</span> = item.find_all('td', <span class="attr">class_='')[0].a.string</span></span><br><span class="line">            <span class="attr">item_reply</span> = item.select('td[<span class="attr">class="num"]')[0].a.string</span></span><br><span class="line">            <span class="attr">item_watch</span> = item.select('td[<span class="attr">class="num"]')[0].em.string</span></span><br><span class="line">            <span class="comment"># save to the result list</span></span><br><span class="line">            <span class="attr">item</span> = (str(item_title), str(item_group), int(item_reply), int(item_watch))</span><br><span class="line">            result.append(item)</span><br><span class="line">print(result)</span><br><span class="line"></span><br><span class="line"><span class="comment"># connect database</span></span><br><span class="line"><span class="attr">conn</span> = mysql.connector.connect(<span class="attr">host="hostname",</span> <span class="attr">user="username",</span> <span class="attr">passwd="password",</span> <span class="attr">db="database")</span></span><br><span class="line"><span class="attr">cursor</span> = conn.cursor()</span><br><span class="line"><span class="comment"># save data</span></span><br><span class="line"><span class="attr">sql</span> = <span class="string">"insert into ibeike(title,groups,reply,watch) values(%s,%s,%s,%s)"</span></span><br><span class="line">cursor.executemany(sql, result)</span><br><span class="line">conn.commit()</span><br></pre></td></tr></table></figure>
+<h3 id="数据分析与数据可视化"><a href="#数据分析与数据可视化" class="headerlink" title="数据分析与数据可视化"></a>数据分析与数据可视化</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># encoding=utf-8</span></span><br><span class="line"></span><br><span class="line">import mysql.connector</span><br><span class="line">import pandas as pd</span><br><span class="line">import seaborn as sns</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line"></span><br><span class="line"><span class="section"># connect database</span></span><br><span class="line">conn = mysql.connector.connect(host="hostname", user="username",passwd="password", db="database")</span><br><span class="line">cursor = conn.cursor()</span><br><span class="line"><span class="section"># query data</span></span><br><span class="line">cursor.execute('select count(*),max(reply),min(reply),max(watch),min(watch) from ibeike')</span><br><span class="line">values1 = cursor.fetchall()</span><br><span class="line">print("ibeike:totally" + str(values1[<span class="string">0</span>][<span class="symbol">0</span>]) + "data")</span><br><span class="line">list = [<span class="string">('highest reply', values1[0</span>][<span class="symbol">1</span>]), ('lowest reply', values1[<span class="string">0</span>][<span class="symbol">2</span>]),('hightest watch', values1[<span class="string">0</span>][<span class="symbol">3</span>]),('lowest watch', values1[<span class="string">0</span>][<span class="symbol">4</span>])]</span><br><span class="line"><span class="section"># draw picture</span></span><br><span class="line">budget = pd.DataFrame(list, columns=['type', 'count'])</span><br><span class="line">sns.set_style("darkgrid")</span><br><span class="line">bar_plot = sns.barplot(x=budget["type"], y=budget["count"],palette="muted", order=budget["type"].tolist())</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line"><span class="section"># query data</span></span><br><span class="line">cursor.execute('select count(id),groups from ibeike group by groups')</span><br><span class="line">values2 = cursor.fetchall()</span><br><span class="line">values2.append((values1[<span class="string">0</span>][<span class="symbol">0</span>], 'all sort'))</span><br><span class="line">result = sorted(values2)</span><br><span class="line">result.reverse()</span><br><span class="line"><span class="section"># draw picture</span></span><br><span class="line">budget = pd.DataFrame(result, columns=['count', 'sort'])</span><br><span class="line">sns.set_style("darkgrid")</span><br><span class="line">bar_plot = sns.barplot(x=budget["sort"], y=budget["count"],palette="muted", order=budget["sort"].tolist())</span><br><span class="line">plt.xticks(rotation=30)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>参考资料：</p>
+<p><a href="http://cuiqingcai.com/1319.html" target="_blank" rel="external">Python爬虫利器二之Beautiful Soup的用法</a></p>
 
       
     </div>
@@ -469,16 +390,16 @@ plt.show()
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/26/crawl-get-html-img/" rel="next" title="爬虫入门：抓取网页所有图片并保存到本地">
-                <i class="fa fa-chevron-left"></i> 爬虫入门：抓取网页所有图片并保存到本地
+              <a href="/2016/03/27/crawl_weibo/" rel="next" title="爬虫实战：抓取某人所有微博并处理，绘制top30关键词的图表">
+                <i class="fa fa-chevron-left"></i> 爬虫实战：抓取某人所有微博并处理，绘制top30关键词的图表
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/03/27/crawl_weibo/" rel="prev" title="爬虫实战：抓取某人所有微博并处理，绘制top30关键词的图表">
-                爬虫实战：抓取某人所有微博并处理，绘制top30关键词的图表 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/03/28/Just-write-about-my-life/" rel="prev" title="随笔：写在三月末">
+                随笔：写在三月末 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

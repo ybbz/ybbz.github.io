@@ -57,33 +57,18 @@
 
 
 <meta name="description" content="从img标签中爬取到的src图片链接可能是相对或者绝对路径，视网站情况而定，具体的可以审查元素看一下。如果是相对路径，则需要补全（下面的代码就是这种情况）。如果两者都有，则需要再另外处理了。
-from urllib import request, parse
-import re
-
-def get_html_img(url):
-    req = request.Request(url)
-    w">
+1234567891011121314151617181920212223242526272829from urllib import request, parseimport redef get_html_">
 <meta property="og:type" content="article">
 <meta property="og:title" content="爬虫入门：抓取网页所有图片并保存到本地">
 <meta property="og:url" content="http://blog.ybbz.site/2016/03/26/crawl-get-html-img/index.html">
 <meta property="og:site_name" content="八宝粥的博客">
 <meta property="og:description" content="从img标签中爬取到的src图片链接可能是相对或者绝对路径，视网站情况而定，具体的可以审查元素看一下。如果是相对路径，则需要补全（下面的代码就是这种情况）。如果两者都有，则需要再另外处理了。
-from urllib import request, parse
-import re
-
-def get_html_img(url):
-    req = request.Request(url)
-    w">
-<meta property="og:updated_time" content="2016-04-23T09:25:37.000Z">
+1234567891011121314151617181920212223242526272829from urllib import request, parseimport redef get_html_">
+<meta property="og:updated_time" content="2016-04-23T12:58:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="爬虫入门：抓取网页所有图片并保存到本地">
 <meta name="twitter:description" content="从img标签中爬取到的src图片链接可能是相对或者绝对路径，视网站情况而定，具体的可以审查元素看一下。如果是相对路径，则需要补全（下面的代码就是这种情况）。如果两者都有，则需要再另外处理了。
-from urllib import request, parse
-import re
-
-def get_html_img(url):
-    req = request.Request(url)
-    w">
+1234567891011121314151617181920212223242526272829from urllib import request, parseimport redef get_html_">
 
 
 
@@ -357,36 +342,8 @@ def get_html_img(url):
 
       
         <p>从img标签中爬取到的src图片链接可能是相对或者绝对路径，视网站情况而定，具体的可以审查元素看一下。如果是相对路径，则需要补全（下面的代码就是这种情况）。如果两者都有，则需要再另外处理了。</p>
-<pre><code>from urllib import request, parse
-import re
-
-def get_html_img(url):
-    req = request.Request(url)
-    with request.urlopen(req) as f:
-        print(&apos;Status:&apos;, f.status, f.reason)
-        for k, v in f.getheaders():
-            print(&apos;%s: %s&apos; % (k, v))
-        content = f.read()
-        print(&apos;Content:&apos;, content)
-        body = re.findall(&apos;&lt;body&gt;(.*?)&lt;/body&gt;&apos;, str(content), re.S)
-        img_urls = re.findall(&apos;src=&quot;(.*?)&quot;&apos;, str(body), re.S)
-        count = 1
-        local_dir = &apos;/Users/Downloads/&apos;
-        print(&quot;download images start ……&quot;)
-        for img_url in img_urls:
-            img_url_full = url + img_url
-            # 下载图片
-            local_name = local_dir + str(count) + &apos;.jpg&apos;
-            count += 1
-            try:
-                request.urlretrieve(img_url_full, local_name)
-            except Exception as e:
-                continue
-        print(&quot;download images success !&quot;)
-
-url = &apos;http://www.xxx.com&apos;
-get_html_img(url)
-</code></pre><p>在Github新建了一个仓库，记录自己写的<a href="https://github.com/ybbz/crawler" target="_blank" rel="external">爬虫</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request, parse</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_html_img</span><span class="params">(url)</span>:</span></span><br><span class="line">    req = request.Request(url)</span><br><span class="line">    <span class="keyword">with</span> request.urlopen(req) <span class="keyword">as</span> f:</span><br><span class="line">        print(<span class="string">'Status:'</span>, f.status, f.reason)</span><br><span class="line">        <span class="keyword">for</span> k, v <span class="keyword">in</span> f.getheaders():</span><br><span class="line">            print(<span class="string">'%s: %s'</span> % (k, v))</span><br><span class="line">        content = f.read()</span><br><span class="line">        print(<span class="string">'Content:'</span>, content)</span><br><span class="line">        body = re.findall(<span class="string">'&lt;body&gt;(.*?)&lt;/body&gt;'</span>, str(content), re.S)</span><br><span class="line">        img_urls = re.findall(<span class="string">'src="(.*?)"'</span>, str(body), re.S)</span><br><span class="line">        count = <span class="number">1</span></span><br><span class="line">        local_dir = <span class="string">'/Users/Downloads/'</span></span><br><span class="line">        print(<span class="string">"download images start ……"</span>)</span><br><span class="line">        <span class="keyword">for</span> img_url <span class="keyword">in</span> img_urls:</span><br><span class="line">            img_url_full = url + img_url</span><br><span class="line">            <span class="comment"># 下载图片</span></span><br><span class="line">            local_name = local_dir + str(count) + <span class="string">'.jpg'</span></span><br><span class="line">            count += <span class="number">1</span></span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                request.urlretrieve(img_url_full, local_name)</span><br><span class="line">            <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">        print(<span class="string">"download images success !"</span>)</span><br><span class="line"></span><br><span class="line">url = <span class="string">'http://www.xxx.com'</span></span><br><span class="line">get_html_img(url)</span><br></pre></td></tr></table></figure>
+<p>在Github新建了一个仓库，记录自己写的<a href="https://github.com/ybbz/crawler" target="_blank" rel="external">爬虫</a></p>
 
       
     </div>
@@ -431,8 +388,8 @@ get_html_img(url)
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/03/27/crawl-ibeike/" rel="prev" title="爬虫实战：抓取在iBeiKe的所有发帖信息保存到数据库，进行可视化分析">
-                爬虫实战：抓取在iBeiKe的所有发帖信息保存到数据库，进行可视化分析 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/03/27/crawl_weibo/" rel="prev" title="爬虫实战：抓取某人所有微博并处理，绘制top30关键词的图表">
+                爬虫实战：抓取某人所有微博并处理，绘制top30关键词的图表 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

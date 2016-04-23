@@ -56,34 +56,16 @@
 
 
 
-<meta name="description" content="###ImageActivity
-public class ImageActivity extends Activity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        ImagePresenta">
+<meta name="description" content="ImageActivity12345678910111213141516171819202122public class ImageActivity extends Activity &amp;#123;	@Override	protected void onCreate(Bundle savedInstanceState) &amp;#123;		super.onCreate(savedInstanceStat">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RoboBinding探究二：ImageView及自定义控件实现">
 <meta property="og:url" content="http://blog.ybbz.site/2015/12/14/RoboBinding-two-ImageView/index.html">
 <meta property="og:site_name" content="八宝粥的博客">
-<meta property="og:description" content="###ImageActivity
-public class ImageActivity extends Activity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        ImagePresenta">
-<meta property="og:updated_time" content="2016-04-23T09:21:34.000Z">
+<meta property="og:description" content="ImageActivity12345678910111213141516171819202122public class ImageActivity extends Activity &amp;#123;	@Override	protected void onCreate(Bundle savedInstanceState) &amp;#123;		super.onCreate(savedInstanceStat">
+<meta property="og:updated_time" content="2016-04-23T13:14:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RoboBinding探究二：ImageView及自定义控件实现">
-<meta name="twitter:description" content="###ImageActivity
-public class ImageActivity extends Activity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        ImagePresenta">
+<meta name="twitter:description" content="ImageActivity12345678910111213141516171819202122public class ImageActivity extends Activity &amp;#123;	@Override	protected void onCreate(Bundle savedInstanceState) &amp;#123;		super.onCreate(savedInstanceStat">
 
 
 
@@ -356,105 +338,12 @@ public class ImageActivity extends Activity {
       
 
       
-        <p>###ImageActivity</p>
-<pre><code>public class ImageActivity extends Activity {
+        <h3 id="ImageActivity"><a href="#ImageActivity" class="headerlink" title="ImageActivity"></a>ImageActivity</h3><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">ImageActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="keyword">protected</span> void onCreate(<span class="type">Bundle</span> savedInstanceState) &#123;</span><br><span class="line">		<span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">		<span class="type">ImagePresentationModel</span> presentationModel = <span class="keyword">new</span> <span class="type">ImagePresentationModel</span>();</span><br><span class="line">		initializeContentView(<span class="type">R</span>.layout.activity_image, presentationModel);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> void initializeContentView(int layoutId, <span class="type">Object</span> presentationModel) &#123;</span><br><span class="line">		<span class="type">ViewBinder</span> viewBinder = createViewBinder();</span><br><span class="line">		<span class="type">View</span> rootView = viewBinder.inflateAndBind(layoutId, presentationModel);</span><br><span class="line">		setContentView(rootView);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> <span class="type">ViewBinder</span> createViewBinder() &#123;</span><br><span class="line">		<span class="type">BinderFactory</span> binderFactory = <span class="keyword">new</span> <span class="type">BinderFactoryBuilder</span>().add(</span><br><span class="line">				<span class="keyword">new</span> <span class="type">MylayoutBinding</span>().forView(<span class="type">MyLayout</span>.<span class="keyword">class</span>)).build();</span><br><span class="line">		<span class="keyword">return</span> binderFactory.createViewBinder(<span class="keyword">this</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="R-layout-activity-image"><a href="#R-layout-activity-image" class="headerlink" title="R.layout.activity_image"></a>R.layout.activity_image</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;LinearLayout xmln<span class="variable">s:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    xmln<span class="variable">s:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></span><br><span class="line">    xmln<span class="variable">s:bind</span>=<span class="string">"http://robobinding.org/android"</span></span><br><span class="line">    android:layout_width=<span class="string">"match_parent"</span></span><br><span class="line">    android:layout_height=<span class="string">"match_parent"</span></span><br><span class="line">    android:orientation=<span class="string">"vertical"</span></span><br><span class="line">    tool<span class="variable">s:ignore</span>=<span class="string">"MissingPrefix"</span> &gt;</span><br><span class="line"></span><br><span class="line">    &lt;<span class="keyword">com</span>.test.model.MyLayout</span><br><span class="line">        android:layout_width=<span class="string">"match_parent"</span></span><br><span class="line">        android:layout_height=<span class="string">"wrap_content"</span></span><br><span class="line">        bind:image=<span class="string">"&#123;image&#125;"</span> /&gt;</span><br><span class="line"></span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="PresentationModel"><a href="#PresentationModel" class="headerlink" title="PresentationModel"></a>PresentationModel</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyLayout</span> <span class="keyword">extends</span> <span class="title">LinearLayout</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> ImageView image;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">MyLayout</span><span class="params">(Context context, AttributeSet attrs)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>(context, attrs, R.layout.mylayout);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="title">MyLayout</span><span class="params">(Context context, AttributeSet attrs, <span class="keyword">int</span> layoutId)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>(context, attrs);</span><br><span class="line">		LayoutInflater inflater = (LayoutInflater) context</span><br><span class="line">				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);</span><br><span class="line">		inflater.inflate(layoutId, <span class="keyword">this</span>);</span><br><span class="line">		image = (ImageView) findViewById(R.id.image);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@SuppressLint</span>(<span class="string">"NewApi"</span>)</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setImage</span><span class="params">(<span class="keyword">int</span> drawable)</span> </span>&#123;</span><br><span class="line">		image.setImageResource(drawable);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="R-layout-mylayout"><a href="#R-layout-mylayout" class="headerlink" title="R.layout.mylayout"></a>R.layout.mylayout</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span><span class="meta">?&gt;</span></span></span><br><span class="line"><span class="tag">&lt;<span class="name">LinearLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">    <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">    <span class="attr">android:orientation</span>=<span class="string">"vertical"</span> &gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">ImageView</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/image"</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="R-layout-mylayout-1"><a href="#R-layout-mylayout-1" class="headerlink" title="R.layout.mylayout"></a>R.layout.mylayout</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@org</span>.robobinding.annotation.PresentationModel</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ImagePresentationModel</span> <span class="keyword">implements</span></span><br><span class="line">		<span class="title">HasPresentationModelChangeSupport</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> PresentationModelChangeSupport changeSupport;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">ImagePresentationModel</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		changeSupport = <span class="keyword">new</span> PresentationModelChangeSupport(<span class="keyword">this</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> PresentationModelChangeSupport <span class="title">getPresentationModelChangeSupport</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> changeSupport;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getImage</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> R.drawable.test;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">changeImage</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		changeSupport.firePropertyChange(<span class="string">"image1"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        ImagePresentationModel presentationModel = new ImagePresentationModel();
-        initializeContentView(R.layout.activity_image, presentationModel);
-    }
-
-    private void initializeContentView(int layoutId, Object presentationModel) {
-        ViewBinder viewBinder = createViewBinder();
-        View rootView = viewBinder.inflateAndBind(layoutId, presentationModel);
-        setContentView(rootView);
-    }
-
-    private ViewBinder createViewBinder() {
-        BinderFactory binderFactory = new BinderFactoryBuilder().add(
-                new MylayoutBinding().forView(MyLayout.class)).build();
-        return binderFactory.createViewBinder(this);
-    }
-
-}
-</code></pre><p>###R.layout.activity_image</p>
-<pre><code>&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
-    xmlns:bind=&quot;http://robobinding.org/android&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    android:orientation=&quot;vertical&quot;
-    tools:ignore=&quot;MissingPrefix&quot; &gt;
-
-    &lt;com.test.model.MyLayout
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        bind:image=&quot;{image}&quot; /&gt;
-
-&lt;/LinearLayout&gt;
-</code></pre><p>###PresentationModel</p>
-<pre><code>public class MyLayout extends LinearLayout {
-
-    private ImageView image;
-
-    public MyLayout(Context context, AttributeSet attrs) {
-        this(context, attrs, R.layout.mylayout);
-    }
-
-    protected MyLayout(Context context, AttributeSet attrs, int layoutId) {
-        super(context, attrs);
-        LayoutInflater inflater = (LayoutInflater) context
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        inflater.inflate(layoutId, this);
-        image = (ImageView) findViewById(R.id.image);
-    }
-
-    @SuppressLint(&quot;NewApi&quot;)
-    public void setImage(int drawable) {
-        image.setImageResource(drawable);
-    }
-
-}
-</code></pre><p>###R.layout.mylayout</p>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;wrap_content&quot;
-    android:orientation=&quot;vertical&quot; &gt;
-
-    &lt;ImageView
-        android:id=&quot;@+id/image&quot;
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot; /&gt;
-
-&lt;/LinearLayout&gt;
-</code></pre><p>###R.layout.mylayout</p>
-<pre><code>@org.robobinding.annotation.PresentationModel
-public class ImagePresentationModel implements
-        HasPresentationModelChangeSupport {
-    private PresentationModelChangeSupport changeSupport;
-
-    public ImagePresentationModel() {
-        changeSupport = new PresentationModelChangeSupport(this);
-    }
-
-    @Override
-    public PresentationModelChangeSupport getPresentationModelChangeSupport() {
-        return changeSupport;
-    }
-
-    public int getImage() {
-        return R.drawable.test;
-    }
-
-    public void changeImage() {
-        changeSupport.firePropertyChange(&quot;image1&quot;);
-    }
-
-}
-</code></pre>
       
     </div>
     
@@ -492,16 +381,16 @@ public class ImagePresentationModel implements
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/12/JS-nodes/" rel="next" title="JavaScript中获取节点的兄弟、父、子节点的各种问题">
-                <i class="fa fa-chevron-left"></i> JavaScript中获取节点的兄弟、父、子节点的各种问题
+              <a href="/2015/12/14/RoboBinding-three-HTTP/" rel="next" title="RoboBinding探究三：网络请求实现">
+                <i class="fa fa-chevron-left"></i> RoboBinding探究三：网络请求实现
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/12/14/RoboBinding-one-TextView-EditText/" rel="prev" title="RoboBinding探究一：TextView及EditText基础实现">
-                RoboBinding探究一：TextView及EditText基础实现 <i class="fa fa-chevron-right"></i>
+              <a href="/2015/12/25/Android-SlidingMenu/" rel="prev" title="Android中SlidingMenu与后退按钮事件">
+                Android中SlidingMenu与后退按钮事件 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -675,7 +564,7 @@ public class ImagePresentationModel implements
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ImageActivity"><span class="nav-number">1.</span> <span class="nav-text">ImageActivity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#R-layout-activity-image"><span class="nav-number">2.</span> <span class="nav-text">R.layout.activity_image</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PresentationModel"><span class="nav-number">3.</span> <span class="nav-text">PresentationModel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#R-layout-mylayout"><span class="nav-number">4.</span> <span class="nav-text">R.layout.mylayout</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#R-layout-mylayout-1"><span class="nav-number">5.</span> <span class="nav-text">R.layout.mylayout</span></a></li></ol></div>
             
           </div>
         </section>

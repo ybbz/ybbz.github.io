@@ -56,31 +56,28 @@
 
 
 
-<meta name="description" content="Linux下导入、导出MySQL数据库命令一、导出数据库用mysqldump命令（注意mysql的安装路径，即此命令的路径）：
-1、导出数据和表结构：
+<meta name="description" content="Linux下导入、导出MySQL数据库命令导出数据库用mysqldump命令（注意mysql的安装路径，即此命令的路径）：1、导出数据和表结构：
 mysqldump -u 用户名 -p 密码 数据库名 &amp;gt; 数据库名.sql
 #/usr/local/mysql/bin/   mysqldump -u root -p abc &amp;gt; abc.sql
 2、只导出表结构
-mysqldump">
+mysqldump -u">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux下MySQL命令大全">
 <meta property="og:url" content="http://blog.ybbz.site/2015/11/21/Linux-MySQL/index.html">
 <meta property="og:site_name" content="八宝粥的博客">
-<meta property="og:description" content="Linux下导入、导出MySQL数据库命令一、导出数据库用mysqldump命令（注意mysql的安装路径，即此命令的路径）：
-1、导出数据和表结构：
+<meta property="og:description" content="Linux下导入、导出MySQL数据库命令导出数据库用mysqldump命令（注意mysql的安装路径，即此命令的路径）：1、导出数据和表结构：
 mysqldump -u 用户名 -p 密码 数据库名 &amp;gt; 数据库名.sql
 #/usr/local/mysql/bin/   mysqldump -u root -p abc &amp;gt; abc.sql
 2、只导出表结构
-mysqldump">
-<meta property="og:updated_time" content="2016-04-23T09:20:39.000Z">
+mysqldump -u">
+<meta property="og:updated_time" content="2016-04-23T13:19:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux下MySQL命令大全">
-<meta name="twitter:description" content="Linux下导入、导出MySQL数据库命令一、导出数据库用mysqldump命令（注意mysql的安装路径，即此命令的路径）：
-1、导出数据和表结构：
+<meta name="twitter:description" content="Linux下导入、导出MySQL数据库命令导出数据库用mysqldump命令（注意mysql的安装路径，即此命令的路径）：1、导出数据和表结构：
 mysqldump -u 用户名 -p 密码 数据库名 &amp;gt; 数据库名.sql
 #/usr/local/mysql/bin/   mysqldump -u root -p abc &amp;gt; abc.sql
 2、只导出表结构
-mysqldump">
+mysqldump -u">
 
 
 
@@ -353,16 +350,14 @@ mysqldump">
       
 
       
-        <h3 id="Linux下导入、导出MySQL数据库命令"><a href="#Linux下导入、导出MySQL数据库命令" class="headerlink" title="Linux下导入、导出MySQL数据库命令"></a>Linux下导入、导出MySQL数据库命令</h3><p>一、导出数据库用mysqldump命令（注意mysql的安装路径，即此命令的路径）：</p>
-<p>1、导出数据和表结构：</p>
+        <h2 id="Linux下导入、导出MySQL数据库命令"><a href="#Linux下导入、导出MySQL数据库命令" class="headerlink" title="Linux下导入、导出MySQL数据库命令"></a>Linux下导入、导出MySQL数据库命令</h2><h3 id="导出数据库用mysqldump命令（注意mysql的安装路径，即此命令的路径）："><a href="#导出数据库用mysqldump命令（注意mysql的安装路径，即此命令的路径）：" class="headerlink" title="导出数据库用mysqldump命令（注意mysql的安装路径，即此命令的路径）："></a>导出数据库用mysqldump命令（注意mysql的安装路径，即此命令的路径）：</h3><p>1、导出数据和表结构：</p>
 <pre><code>mysqldump -u 用户名 -p 密码 数据库名 &gt; 数据库名.sql
 #/usr/local/mysql/bin/   mysqldump -u root -p abc &gt; abc.sql
 </code></pre><p>2、只导出表结构</p>
 <pre><code>mysqldump -u 用户名 -p 密码 -d 数据库名 &gt; 数据库名.sql
 #/usr/local/mysql/bin/   mysqldump -u root -p -d abc &gt; abc.sql
 #/usr/local/mysql/bin/ ---&gt;  mysql的data目录
-</code></pre><p>二、导入数据库</p>
-<p>1、首先建空数据库</p>
+</code></pre><h3 id="导入数据库"><a href="#导入数据库" class="headerlink" title="导入数据库"></a>导入数据库</h3><p>1、首先建空数据库</p>
 <pre><code>mysql&gt;create database abc;
 </code></pre><p>2、导入数据库</p>
 <p>方法一：</p>
@@ -375,7 +370,7 @@ mysqldump">
 </code></pre><p>方法二：</p>
 <pre><code>mysql -u用户名 -p密码 数据库名 &lt; 数据库名.sql
 #mysql -uabc_f -p abc &lt; abc.sql
-</code></pre><h3 id="Linux下MySQL命令大全"><a href="#Linux下MySQL命令大全" class="headerlink" title="Linux下MySQL命令大全"></a>Linux下MySQL命令大全</h3><p>1.linux下启动mysql的命令：</p>
+</code></pre><h2 id="Linux下MySQL命令大全"><a href="#Linux下MySQL命令大全" class="headerlink" title="Linux下MySQL命令大全"></a>Linux下MySQL命令大全</h2><p>1.linux下启动mysql的命令：</p>
 <pre><code>mysqladmin start
 /ect/init.d/mysql start (前面为mysql的安装路径)
 </code></pre><p>2.linux下重启mysql的命令：</p>
@@ -400,8 +395,7 @@ grant select on 数据库.* to 用户名@登录主机 identified by &quot;密码
 grant select,insert,update,delete on *.* to &quot; Identified by &quot;123&quot;;
 </code></pre><p>7.跳过授权访问mysql</p>
 <pre><code>mysqld_safe --user=mysql --skip-grant-tables --skip-networking &amp;
-</code></pre><p>二、有关mysql数据库方面的操作</p>
-<p>必须首先登录到mysql中，有关操作都是在mysql的提示符下进行，而且每个命令以分号结束</p>
+</code></pre><h2 id="有关mysql数据库方面的操作"><a href="#有关mysql数据库方面的操作" class="headerlink" title="有关mysql数据库方面的操作"></a>有关mysql数据库方面的操作</h2><p>必须首先登录到mysql中，有关操作都是在mysql的提示符下进行，而且每个命令以分号结束</p>
 <p>1、显示数据库列表。</p>
 <pre><code>show databases;
 </code></pre><p>2、显示库中的数据表：</p>
@@ -646,7 +640,7 @@ alter database db_name default character set gbk;
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux下导入、导出MySQL数据库命令"><span class="nav-number">1.</span> <span class="nav-text">Linux下导入、导出MySQL数据库命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux下MySQL命令大全"><span class="nav-number">2.</span> <span class="nav-text">Linux下MySQL命令大全</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux下导入、导出MySQL数据库命令"><span class="nav-number">1.</span> <span class="nav-text">Linux下导入、导出MySQL数据库命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#导出数据库用mysqldump命令（注意mysql的安装路径，即此命令的路径）："><span class="nav-number">1.1.</span> <span class="nav-text">导出数据库用mysqldump命令（注意mysql的安装路径，即此命令的路径）：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#导入数据库"><span class="nav-number">1.2.</span> <span class="nav-text">导入数据库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux下MySQL命令大全"><span class="nav-number">2.</span> <span class="nav-text">Linux下MySQL命令大全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有关mysql数据库方面的操作"><span class="nav-number">3.</span> <span class="nav-text">有关mysql数据库方面的操作</span></a></li></ol></div>
             
           </div>
         </section>

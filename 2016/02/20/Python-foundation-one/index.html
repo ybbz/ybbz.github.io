@@ -56,34 +56,19 @@
 
 
 
-<meta name="description" content="获取时间日期import datetime
-# 获得当前时间并格式化
-def getTime():
-    now = datetime.datetime.now()  # 这是时间数组格式
-    formatTime = now.strftime(&amp;quot;%Y-%m-%d %H:%M:%S&amp;quot;)  # 转换为指定的格式:
-    return formatTime
-for循环获取数">
+<meta name="description" content="获取时间日期123456import datetime# 获得当前时间并格式化def getTime():    now = datetime.datetime.now()  # 这是时间数组格式    formatTime = now.strftime(&quot;%Y-%m-%d %H:%M:%S&quot;)  # 转换为指定的格式:    return formatTime
+for循环获取数组的下标和元素12">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python基础知识总结一">
 <meta property="og:url" content="http://blog.ybbz.site/2016/02/20/Python-foundation-one/index.html">
 <meta property="og:site_name" content="八宝粥的博客">
-<meta property="og:description" content="获取时间日期import datetime
-# 获得当前时间并格式化
-def getTime():
-    now = datetime.datetime.now()  # 这是时间数组格式
-    formatTime = now.strftime(&amp;quot;%Y-%m-%d %H:%M:%S&amp;quot;)  # 转换为指定的格式:
-    return formatTime
-for循环获取数">
-<meta property="og:updated_time" content="2016-04-23T09:22:30.000Z">
+<meta property="og:description" content="获取时间日期123456import datetime# 获得当前时间并格式化def getTime():    now = datetime.datetime.now()  # 这是时间数组格式    formatTime = now.strftime(&quot;%Y-%m-%d %H:%M:%S&quot;)  # 转换为指定的格式:    return formatTime
+for循环获取数组的下标和元素12">
+<meta property="og:updated_time" content="2016-04-23T13:12:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python基础知识总结一">
-<meta name="twitter:description" content="获取时间日期import datetime
-# 获得当前时间并格式化
-def getTime():
-    now = datetime.datetime.now()  # 这是时间数组格式
-    formatTime = now.strftime(&amp;quot;%Y-%m-%d %H:%M:%S&amp;quot;)  # 转换为指定的格式:
-    return formatTime
-for循环获取数">
+<meta name="twitter:description" content="获取时间日期123456import datetime# 获得当前时间并格式化def getTime():    now = datetime.datetime.now()  # 这是时间数组格式    formatTime = now.strftime(&quot;%Y-%m-%d %H:%M:%S&quot;)  # 转换为指定的格式:    return formatTime
+for循环获取数组的下标和元素12">
 
 
 
@@ -356,37 +341,14 @@ for循环获取数">
       
 
       
-        <h4 id="获取时间日期"><a href="#获取时间日期" class="headerlink" title="获取时间日期"></a>获取时间日期</h4><pre><code>import datetime
-# 获得当前时间并格式化
-def getTime():
-    now = datetime.datetime.now()  # 这是时间数组格式
-    formatTime = now.strftime(&quot;%Y-%m-%d %H:%M:%S&quot;)  # 转换为指定的格式:
-    return formatTime
-</code></pre><h4 id="for循环获取数组的下标和元素"><a href="#for循环获取数组的下标和元素" class="headerlink" title="for循环获取数组的下标和元素"></a>for循环获取数组的下标和元素</h4><pre><code>for value in list:
-    print(value)
-for index,value in enumerate(list):
-    print(&apos;index is %d, value is %d&apos; % (index,val))
-</code></pre><h4 id="绘制函数曲线"><a href="#绘制函数曲线" class="headerlink" title="绘制函数曲线"></a>绘制函数曲线</h4><pre><code>import pylab as pl
-import numpy as np
-import matplotlib.pyplot as plt
-# sin,cos
-x = np.arange(-8, 8, 0.1)
-y1 = np.sin(x)
-y2 = np.cos(x)
-plt.plot(x, y1)
-plt.plot(x, y2)
-plt.show()
-# log
-x = pl.arange(1, 100)
-pl.plot(x, pl.log10(x))
-pl.show()
-</code></pre><h4 id="分割字符串"><a href="#分割字符串" class="headerlink" title="分割字符串"></a>分割字符串</h4><p>split()通过指定分隔符对字符串进行切片，如果参数num有指定值，则仅分隔num个子字符串</p>
-<pre><code>str.split()  #分隔符默认为空格
-str.split(&quot; &quot;, num)
-</code></pre><h4 id="替换字符串"><a href="#替换字符串" class="headerlink" title="替换字符串"></a>替换字符串</h4><p>replace()方法把字符串中的旧字符串替换成新字符串，如果指定参数max，则替换不超过max次</p>
-<pre><code>str.replace(old, new)
-str.replace(old, new, max)
-</code></pre>
+        <h4 id="获取时间日期"><a href="#获取时间日期" class="headerlink" title="获取时间日期"></a>获取时间日期</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="comment"># 获得当前时间并格式化</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getTime</span><span class="params">()</span>:</span></span><br><span class="line">    now = datetime.datetime.now()  <span class="comment"># 这是时间数组格式</span></span><br><span class="line">    formatTime = now.strftime(<span class="string">"%Y-%m-%d %H:%M:%S"</span>)  <span class="comment"># 转换为指定的格式:</span></span><br><span class="line">    <span class="keyword">return</span> formatTime</span><br></pre></td></tr></table></figure>
+<h4 id="for循环获取数组的下标和元素"><a href="#for循环获取数组的下标和元素" class="headerlink" title="for循环获取数组的下标和元素"></a>for循环获取数组的下标和元素</h4><figure class="highlight ocaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="keyword">value</span> <span class="keyword">in</span> <span class="built_in">list</span>:</span><br><span class="line">    print(<span class="keyword">value</span>)</span><br><span class="line"><span class="keyword">for</span> index,<span class="keyword">value</span> <span class="keyword">in</span> enumerate(<span class="built_in">list</span>):</span><br><span class="line">    print(<span class="symbol">'index</span> is %d, <span class="keyword">value</span> is %d' % (index,<span class="keyword">val</span>))</span><br></pre></td></tr></table></figure>
+<h4 id="绘制函数曲线"><a href="#绘制函数曲线" class="headerlink" title="绘制函数曲线"></a>绘制函数曲线</h4><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import pylab <span class="keyword">as</span> <span class="keyword">pl</span></span><br><span class="line">import numpy <span class="keyword">as</span> np</span><br><span class="line">import matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"># sin,<span class="built_in">cos</span></span><br><span class="line">x = np.arange(-8, 8, 0.1)</span><br><span class="line">y1 = np.<span class="built_in">sin</span>(x)</span><br><span class="line">y2 = np.<span class="built_in">cos</span>(x)</span><br><span class="line">plt.<span class="keyword">plot</span>(x, y1)</span><br><span class="line">plt.<span class="keyword">plot</span>(x, y2)</span><br><span class="line">plt.show()</span><br><span class="line"># <span class="built_in">log</span></span><br><span class="line">x = <span class="keyword">pl</span>.arange(1, 100)</span><br><span class="line"><span class="keyword">pl</span>.<span class="keyword">plot</span>(x, <span class="keyword">pl</span>.<span class="built_in">log10</span>(x))</span><br><span class="line"><span class="keyword">pl</span>.show()</span><br></pre></td></tr></table></figure>
+<h4 id="分割字符串"><a href="#分割字符串" class="headerlink" title="分割字符串"></a>分割字符串</h4><p>split()通过指定分隔符对字符串进行切片，如果参数num有指定值，则仅分隔num个子字符串</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str.<span class="built_in">split</span>()  <span class="comment">#分隔符默认为空格</span></span><br><span class="line">str.<span class="built_in">split</span>(<span class="string">" "</span>, <span class="built_in">num</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="替换字符串"><a href="#替换字符串" class="headerlink" title="替换字符串"></a>替换字符串</h4><p>replace()方法把字符串中的旧字符串替换成新字符串，如果指定参数max，则替换不超过max次</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str.<span class="built_in">replace</span>(old, <span class="built_in">new</span>)</span><br><span class="line">str.<span class="built_in">replace</span>(old, <span class="built_in">new</span>, <span class="built_in">max</span>)</span><br></pre></td></tr></table></figure>
+
       
     </div>
     

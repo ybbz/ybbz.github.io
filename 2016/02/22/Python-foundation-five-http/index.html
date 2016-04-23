@@ -57,33 +57,18 @@
 
 
 <meta name="description" content="Socket是网络编程的一个抽象概念。通常我们用一个Socket表示“打开了一个网络链接”，而打开一个Socket需要知道目标计算机的IP地址和端口号，再指定协议类型即可。
-import socket
-
-# 创建一个socket:
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-# 建立连接:
-s.connect((&amp;apos;www.s">
+123456789101112131415161718192021222324import socket# 创建一个socket:s = socket.socket(socket.AF_INET, socket.SOCK_ST">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python基础知识总结五：网络编程">
 <meta property="og:url" content="http://blog.ybbz.site/2016/02/22/Python-foundation-five-http/index.html">
 <meta property="og:site_name" content="八宝粥的博客">
 <meta property="og:description" content="Socket是网络编程的一个抽象概念。通常我们用一个Socket表示“打开了一个网络链接”，而打开一个Socket需要知道目标计算机的IP地址和端口号，再指定协议类型即可。
-import socket
-
-# 创建一个socket:
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-# 建立连接:
-s.connect((&amp;apos;www.s">
-<meta property="og:updated_time" content="2016-04-23T09:23:02.000Z">
+123456789101112131415161718192021222324import socket# 创建一个socket:s = socket.socket(socket.AF_INET, socket.SOCK_ST">
+<meta property="og:updated_time" content="2016-04-23T13:07:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python基础知识总结五：网络编程">
 <meta name="twitter:description" content="Socket是网络编程的一个抽象概念。通常我们用一个Socket表示“打开了一个网络链接”，而打开一个Socket需要知道目标计算机的IP地址和端口号，再指定协议类型即可。
-import socket
-
-# 创建一个socket:
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-# 建立连接:
-s.connect((&amp;apos;www.s">
+123456789101112131415161718192021222324import socket# 创建一个socket:s = socket.socket(socket.AF_INET, socket.SOCK_ST">
 
 
 
@@ -357,77 +342,10 @@ s.connect((&amp;apos;www.s">
 
       
         <p>Socket是网络编程的一个抽象概念。通常我们用一个Socket表示“打开了一个网络链接”，而打开一个Socket需要知道目标计算机的IP地址和端口号，再指定协议类型即可。</p>
-<pre><code>import socket
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">import socket</span><br><span class="line"></span><br><span class="line"><span class="meta"># 创建一个socket:</span></span><br><span class="line">s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</span><br><span class="line"><span class="meta"># 建立连接:</span></span><br><span class="line">s.<span class="built_in">connect</span>((<span class="string">'www.sina.com.cn'</span>, <span class="number">80</span>))  <span class="meta"># 参数是一个tuple，包含地址和端口号</span></span><br><span class="line"><span class="meta"># 发送数据:</span></span><br><span class="line">s.send(b<span class="string">'GET / HTTP/1.1\r\nHost: www.sina.com.cn\r\nConnection: close\r\n\r\n'</span>)</span><br><span class="line"><span class="meta"># 接收数据:</span></span><br><span class="line"><span class="built_in">buffer</span> = []</span><br><span class="line"><span class="built_in">while</span> True:</span><br><span class="line">    <span class="meta"># 每次最多接收1k字节:</span></span><br><span class="line">    d = s.recv(<span class="number">1024</span>)</span><br><span class="line">    <span class="built_in">if</span> d:</span><br><span class="line">        <span class="built_in">buffer</span>.append(d)</span><br><span class="line">    <span class="built_in">else</span>:</span><br><span class="line">        <span class="built_in">break</span></span><br><span class="line">data = b<span class="string">''</span>.join(<span class="built_in">buffer</span>)</span><br><span class="line"><span class="meta"># 关闭连接:</span></span><br><span class="line">s.<span class="built_in">close</span>()</span><br><span class="line"><span class="meta"># 接收到的数据包括HTTP头和网页本身，把HTTP头和网页分离</span></span><br><span class="line">header, html = data.split(b<span class="string">'\r\n\r\n'</span>, <span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(header.decode(<span class="string">'utf-8'</span>))</span><br><span class="line"><span class="built_in">print</span>(html.decode(<span class="string">'utf-8'</span>))</span><br></pre></td></tr></table></figure>
+<p>一个客户端和服务器的完整例子</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket, threading, time</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个基于IPv4和TCP协议的socket：</span></span><br><span class="line">s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</span><br><span class="line"><span class="comment"># 监听端口:</span></span><br><span class="line">s.bind((<span class="string">'127.0.0.1'</span>, <span class="number">9999</span>))</span><br><span class="line"><span class="comment"># 调用listen()监听端口，传入的参数指定等待连接的最大数量</span></span><br><span class="line">s.listen(<span class="number">5</span>)</span><br><span class="line">print(<span class="string">'Waiting for connection...'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 每个连接都必须创建新线程（或进程）来处理</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">tcplink</span><span class="params">(sock, addr)</span>:</span></span><br><span class="line">    print(<span class="string">'Accept new connection from %s:%s...'</span> % addr)</span><br><span class="line">    sock.send(<span class="string">b'Welcome!'</span>)</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        data = sock.recv(<span class="number">1024</span>)</span><br><span class="line">        time.sleep(<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> data <span class="keyword">or</span> data.decode(<span class="string">'utf-8'</span>) == <span class="string">'exit'</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        sock.send((<span class="string">'Hello, %s!'</span> % data.decode(<span class="string">'utf-8'</span>)).encode(<span class="string">'utf-8'</span>))</span><br><span class="line">    sock.close()</span><br><span class="line">    print(<span class="string">'Connection from %s:%s closed.'</span> % addr)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 服务器程序通过一个永久循环来接受来自客户端的连接，accept()会等待并返回一个客户端的连接</span></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">    <span class="comment"># 接受一个新连接:</span></span><br><span class="line">    sock, addr = s.accept()</span><br><span class="line">    <span class="comment"># 创建新线程来处理TCP连接:</span></span><br><span class="line">    t = threading.Thread(target=tcplink, args=(sock, addr))</span><br><span class="line">    t.start()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 客户端程序</span></span><br><span class="line">s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</span><br><span class="line"><span class="comment"># 建立连接:</span></span><br><span class="line">s.connect((<span class="string">'127.0.0.1'</span>, <span class="number">9999</span>))</span><br><span class="line"><span class="comment"># 接收欢迎消息:</span></span><br><span class="line">print(s.recv(<span class="number">1024</span>).decode(<span class="string">'utf-8'</span>))</span><br><span class="line"><span class="keyword">for</span> data <span class="keyword">in</span> [<span class="string">b'Michael'</span>, <span class="string">b'Tracy'</span>, <span class="string">b'Sarah'</span>]:</span><br><span class="line">    <span class="comment"># 发送数据:</span></span><br><span class="line">    s.send(data)</span><br><span class="line">    print(s.recv(<span class="number">1024</span>).decode(<span class="string">'utf-8'</span>))</span><br><span class="line">s.send(<span class="string">b'exit'</span>)</span><br><span class="line">s.close()</span><br></pre></td></tr></table></figure>
 
-# 创建一个socket:
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-# 建立连接:
-s.connect((&apos;www.sina.com.cn&apos;, 80))  # 参数是一个tuple，包含地址和端口号
-# 发送数据:
-s.send(b&apos;GET / HTTP/1.1\r\nHost: www.sina.com.cn\r\nConnection: close\r\n\r\n&apos;)
-# 接收数据:
-buffer = []
-while True:
-    # 每次最多接收1k字节:
-    d = s.recv(1024)
-    if d:
-        buffer.append(d)
-    else:
-        break
-data = b&apos;&apos;.join(buffer)
-# 关闭连接:
-s.close()
-# 接收到的数据包括HTTP头和网页本身，把HTTP头和网页分离
-header, html = data.split(b&apos;\r\n\r\n&apos;, 1)
-print(header.decode(&apos;utf-8&apos;))
-print(html.decode(&apos;utf-8&apos;))
-</code></pre><p>一个客户端和服务器的完整例子</p>
-<pre><code>import socket, threading, time
-
-# 创建一个基于IPv4和TCP协议的socket：
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-# 监听端口:
-s.bind((&apos;127.0.0.1&apos;, 9999))
-# 调用listen()监听端口，传入的参数指定等待连接的最大数量
-s.listen(5)
-print(&apos;Waiting for connection...&apos;)
-
-
-# 每个连接都必须创建新线程（或进程）来处理
-def tcplink(sock, addr):
-    print(&apos;Accept new connection from %s:%s...&apos; % addr)
-    sock.send(b&apos;Welcome!&apos;)
-    while True:
-        data = sock.recv(1024)
-        time.sleep(1)
-        if not data or data.decode(&apos;utf-8&apos;) == &apos;exit&apos;:
-            break
-        sock.send((&apos;Hello, %s!&apos; % data.decode(&apos;utf-8&apos;)).encode(&apos;utf-8&apos;))
-    sock.close()
-    print(&apos;Connection from %s:%s closed.&apos; % addr)
-
-
-# 服务器程序通过一个永久循环来接受来自客户端的连接，accept()会等待并返回一个客户端的连接
-while True:
-    # 接受一个新连接:
-    sock, addr = s.accept()
-    # 创建新线程来处理TCP连接:
-    t = threading.Thread(target=tcplink, args=(sock, addr))
-    t.start()
-
-# 客户端程序
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-# 建立连接:
-s.connect((&apos;127.0.0.1&apos;, 9999))
-# 接收欢迎消息:
-print(s.recv(1024).decode(&apos;utf-8&apos;))
-for data in [b&apos;Michael&apos;, b&apos;Tracy&apos;, b&apos;Sarah&apos;]:
-    # 发送数据:
-    s.send(data)
-    print(s.recv(1024).decode(&apos;utf-8&apos;))
-s.send(b&apos;exit&apos;)
-s.close()
-</code></pre>
       
     </div>
     
@@ -471,8 +389,8 @@ s.close()
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/02/28/data-mining-algorithm/" rel="prev" title="数据挖掘十大算法">
-                数据挖掘十大算法 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/02/28/Python-jieba/" rel="prev" title="Python使用结巴中文分词组件">
+                Python使用结巴中文分词组件 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

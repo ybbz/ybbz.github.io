@@ -56,37 +56,16 @@
 
 
 
-<meta name="description" content="###TestActivity
-@SuppressLint(&amp;quot;HandlerLeak&amp;quot;)
-public class TestActivity extends Activity {
-
-    private Handler mHandler;
-    private PresentationModelChangeSupport changeSupport;
-
-    @Overr">
+<meta name="description" content="TestActivity123456789101112131415161718192021222324252627282930313233343536373839404142@SuppressLint(&quot;HandlerLeak&quot;)public class TestActivity extends Activity &amp;#123;	private Handler mHandler;	private P">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RoboBinding探究三：网络请求实现">
 <meta property="og:url" content="http://blog.ybbz.site/2015/12/14/RoboBinding-three-HTTP/index.html">
 <meta property="og:site_name" content="八宝粥的博客">
-<meta property="og:description" content="###TestActivity
-@SuppressLint(&amp;quot;HandlerLeak&amp;quot;)
-public class TestActivity extends Activity {
-
-    private Handler mHandler;
-    private PresentationModelChangeSupport changeSupport;
-
-    @Overr">
-<meta property="og:updated_time" content="2016-04-23T09:21:23.000Z">
+<meta property="og:description" content="TestActivity123456789101112131415161718192021222324252627282930313233343536373839404142@SuppressLint(&quot;HandlerLeak&quot;)public class TestActivity extends Activity &amp;#123;	private Handler mHandler;	private P">
+<meta property="og:updated_time" content="2016-04-23T13:15:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RoboBinding探究三：网络请求实现">
-<meta name="twitter:description" content="###TestActivity
-@SuppressLint(&amp;quot;HandlerLeak&amp;quot;)
-public class TestActivity extends Activity {
-
-    private Handler mHandler;
-    private PresentationModelChangeSupport changeSupport;
-
-    @Overr">
+<meta name="twitter:description" content="TestActivity123456789101112131415161718192021222324252627282930313233343536373839404142@SuppressLint(&quot;HandlerLeak&quot;)public class TestActivity extends Activity &amp;#123;	private Handler mHandler;	private P">
 
 
 
@@ -359,124 +338,10 @@ public class TestActivity extends Activity {
       
 
       
-        <p>###TestActivity</p>
-<pre><code>@SuppressLint(&quot;HandlerLeak&quot;)
-public class TestActivity extends Activity {
+        <h3 id="TestActivity"><a href="#TestActivity" class="headerlink" title="TestActivity"></a>TestActivity</h3><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SuppressLint</span>(<span class="string">"HandlerLeak"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> Handler mHandler;</span><br><span class="line">	<span class="keyword">private</span> PresentationModelChangeSupport changeSupport;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="keyword">protected</span> <span class="function"><span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">		PresentationModel presentationModel = <span class="keyword">new</span> PresentationModel(</span><br><span class="line">				TestActivity.<span class="keyword">this</span>);</span><br><span class="line">		changeSupport = presentationModel.getPresentationModelChangeSupport();</span><br><span class="line">		ViewBinder viewBinder = createViewBinder();</span><br><span class="line">		View rootView = viewBinder.inflateAndBind(R.layout.activity_test,</span><br><span class="line">				presentationModel);</span><br><span class="line">		setContentView(rootView);</span><br><span class="line">		<span class="comment">// 处理消息，更新UI</span></span><br><span class="line">		mHandler = <span class="keyword">new</span> Handler() &#123;</span><br><span class="line">			<span class="meta">@Override</span></span><br><span class="line">			<span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">handleMessage</span><span class="params">(Message msg)</span> </span>&#123;</span><br><span class="line">				<span class="keyword">switch</span> (msg.what) &#123;</span><br><span class="line">				<span class="keyword">case</span> <span class="number">0x01</span>:</span><br><span class="line">					changeSupport.firePropertyChange(<span class="string">"http"</span>);</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				<span class="keyword">default</span>:</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> <span class="function">ViewBinder <span class="title">createViewBinder</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		BinderFactory reusableBinderFactory = <span class="keyword">new</span> BinderFactoryBuilder()</span><br><span class="line">				.build();</span><br><span class="line">		<span class="function"><span class="keyword">return</span> reusableBinderFactory.<span class="title">createViewBinder</span><span class="params">(<span class="keyword">this</span>)</span></span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="function">Handler <span class="title">getHandler</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> mHandler;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="PresentationModel"><a href="#PresentationModel" class="headerlink" title="PresentationModel"></a>PresentationModel</h3><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@org</span>.robobinding.annotation.PresentationModel</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PresentationModel</span> <span class="keyword">implements</span> <span class="title">HasPresentationModelChangeSupport</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> PresentationModelChangeSupport changeSupport;</span><br><span class="line">	<span class="keyword">private</span> String result;</span><br><span class="line">	<span class="keyword">private</span> TestActivity context;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">PresentationModel</span><span class="params">(TestActivity context)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.context = context;</span><br><span class="line">		changeSupport = <span class="keyword">new</span> PresentationModelChangeSupport(<span class="keyword">this</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="function">String <span class="title">getHttp</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"网络数据："</span> + result;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">httpRequest</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		changeSupport.firePropertyChange(<span class="string">"http"</span>);</span><br><span class="line">		<span class="comment">// 网络请求</span></span><br><span class="line">		myRequest();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">myRequest</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		AsyncHttpClient client = <span class="keyword">new</span> AsyncHttpClient();</span><br><span class="line">		String urlString = <span class="string">"http://apis.baidu.com/apistore/weatherservice/citylist"</span>;</span><br><span class="line">		client.get(urlString, <span class="keyword">new</span> AsyncHttpResponseHandler() &#123;</span><br><span class="line">			<span class="meta">@Override</span></span><br><span class="line">			<span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onSuccess</span><span class="params">(String response)</span> </span>&#123;</span><br><span class="line">				result = response;</span><br><span class="line">				Log.e(<span class="string">"网络请求成功"</span>, response);</span><br><span class="line">				<span class="comment">//</span></span><br><span class="line">				Handler <span class="keyword">handler</span> = context.getHandler();</span><br><span class="line">				<span class="keyword">if</span> (<span class="keyword">handler</span> != <span class="keyword">null</span>) &#123;</span><br><span class="line">					Message msg = <span class="keyword">handler</span>.obtainMessage();</span><br><span class="line">					msg.what = <span class="number">0x01</span>;</span><br><span class="line">					<span class="keyword">handler</span>.sendMessage(msg);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="meta">@Override</span></span><br><span class="line">			<span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onFailure</span><span class="params">(Throwable arg0)</span> </span>&#123;</span><br><span class="line">				Log.e(<span class="string">"网络请求失败"</span>, <span class="string">"失败"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="keyword">public</span> <span class="function">PresentationModelChangeSupport <span class="title">getPresentationModelChangeSupport</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> changeSupport;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="R-layout-activity-test"><a href="#R-layout-activity-test" class="headerlink" title="R.layout.activity_test"></a>R.layout.activity_test</h3><figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">LinearLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></span><br><span class="line">    <span class="attr">xmlns:bind</span>=<span class="string">"http://robobinding.org/android"</span></span><br><span class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span><br><span class="line">    <span class="attr">android:orientation</span>=<span class="string">"vertical"</span></span><br><span class="line">    <span class="attr">tools:ignore</span>=<span class="string">"MissingPrefix"</span> &gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">TextView</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">        <span class="attr">android:layout_marginTop</span>=<span class="string">"30dp"</span></span><br><span class="line">        <span class="attr">bind:text</span>=<span class="string">"</span></span></span><span class="template-variable">&#123;http&#125;</span><span class="xml"><span class="tag"><span class="string">"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">Button</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">        <span class="attr">android:text</span>=<span class="string">"网络请求"</span></span><br><span class="line">        <span class="attr">bind:onClick</span>=<span class="string">"httpRequest"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
-    private Handler mHandler;
-    private PresentationModelChangeSupport changeSupport;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        PresentationModel presentationModel = new PresentationModel(
-                TestActivity.this);
-        changeSupport = presentationModel.getPresentationModelChangeSupport();
-        ViewBinder viewBinder = createViewBinder();
-        View rootView = viewBinder.inflateAndBind(R.layout.activity_test,
-                presentationModel);
-        setContentView(rootView);
-        // 处理消息，更新UI
-        mHandler = new Handler() {
-            @Override
-            public void handleMessage(Message msg) {
-                switch (msg.what) {
-                case 0x01:
-                    changeSupport.firePropertyChange(&quot;http&quot;);
-                    break;
-                default:
-                    break;
-                }
-            }
-        };
-
-    }
-
-    private ViewBinder createViewBinder() {
-        BinderFactory reusableBinderFactory = new BinderFactoryBuilder()
-                .build();
-        return reusableBinderFactory.createViewBinder(this);
-    }
-
-    public Handler getHandler() {
-        return mHandler;
-    }
-}
-</code></pre><p>###PresentationModel</p>
-<pre><code>@org.robobinding.annotation.PresentationModel
-public class PresentationModel implements HasPresentationModelChangeSupport {
-    private PresentationModelChangeSupport changeSupport;
-    private String result;
-    private TestActivity context;
-
-    public PresentationModel(TestActivity context) {
-        this.context = context;
-        changeSupport = new PresentationModelChangeSupport(this);
-    }
-
-    public String getHttp() {
-        return &quot;网络数据：&quot; + result;
-    }
-
-    public void httpRequest() {
-        changeSupport.firePropertyChange(&quot;http&quot;);
-        // 网络请求
-        myRequest();
-    }
-
-    public void myRequest() {
-        AsyncHttpClient client = new AsyncHttpClient();
-        String urlString = &quot;http://apis.baidu.com/apistore/weatherservice/citylist&quot;;
-        client.get(urlString, new AsyncHttpResponseHandler() {
-            @Override
-            public void onSuccess(String response) {
-                result = response;
-                Log.e(&quot;网络请求成功&quot;, response);
-                //
-                Handler handler = context.getHandler();
-                if (handler != null) {
-                    Message msg = handler.obtainMessage();
-                    msg.what = 0x01;
-                    handler.sendMessage(msg);
-                }
-            }
-
-            @Override
-            public void onFailure(Throwable arg0) {
-                Log.e(&quot;网络请求失败&quot;, &quot;失败&quot;);
-            }
-        });
-    }
-
-    @Override
-    public PresentationModelChangeSupport getPresentationModelChangeSupport() {
-        return changeSupport;
-    }
-
-}
-</code></pre><p>###R.layout.activity_test</p>
-<pre><code>&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
-    xmlns:bind=&quot;http://robobinding.org/android&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    android:orientation=&quot;vertical&quot;
-    tools:ignore=&quot;MissingPrefix&quot; &gt;
-
-    &lt;TextView
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:layout_marginTop=&quot;30dp&quot;
-        bind:text=&quot;{http}&quot; /&gt;
-
-    &lt;Button
-        android:layout_width=&quot;wrap_content&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:text=&quot;网络请求&quot;
-        bind:onClick=&quot;httpRequest&quot; /&gt;
-
-&lt;/LinearLayout&gt;
-</code></pre>
       
     </div>
     
@@ -522,8 +387,8 @@ public class PresentationModel implements HasPresentationModelChangeSupport {
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/12/25/Android-SlidingMenu/" rel="prev" title="Android中SlidingMenu与后退按钮事件">
-                Android中SlidingMenu与后退按钮事件 <i class="fa fa-chevron-right"></i>
+              <a href="/2015/12/14/RoboBinding-two-ImageView/" rel="prev" title="RoboBinding探究二：ImageView及自定义控件实现">
+                RoboBinding探究二：ImageView及自定义控件实现 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -697,7 +562,7 @@ public class PresentationModel implements HasPresentationModelChangeSupport {
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#TestActivity"><span class="nav-number">1.</span> <span class="nav-text">TestActivity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PresentationModel"><span class="nav-number">2.</span> <span class="nav-text">PresentationModel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#R-layout-activity-test"><span class="nav-number">3.</span> <span class="nav-text">R.layout.activity_test</span></a></li></ol></div>
             
           </div>
         </section>

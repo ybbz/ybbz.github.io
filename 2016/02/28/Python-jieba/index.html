@@ -92,7 +92,7 @@ MIT 授权协议
 安装说明代码对 Python 2/3 均兼容
 
 全自动安装：easy_install jieba">
-<meta property="og:updated_time" content="2016-04-23T09:23:24.000Z">
+<meta property="og:updated_time" content="2016-04-23T13:04:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python使用结巴中文分词组件">
 <meta name="twitter:description" content="特点
@@ -403,21 +403,8 @@ MIT 授权协议
 <li>手动安装：将 jieba 目录放置于当前目录或者 site-packages 目录</li>
 <li>通过 <code>import jieba</code> 来引用</li>
 </ul>
-<h2 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h2><pre><code># encoding=utf-8
-import jieba
+<h2 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h2><figure class="highlight monkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># encoding=utf-8</span></span><br><span class="line"><span class="keyword">import</span> jieba</span><br><span class="line"></span><br><span class="line">seg_list = jieba.cut(<span class="string">"我来到北京清华大学"</span>, cut_all=<span class="literal">True</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">"Full Mode: "</span> + <span class="string">"/ "</span>.join(seg_list))<span class="meta">  # 全模式</span></span><br><span class="line"></span><br><span class="line">seg_list = jieba.cut(<span class="string">"我来到北京清华大学"</span>, cut_all=<span class="literal">False</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">"Default Mode: "</span> + <span class="string">"/ "</span>.join(seg_list))<span class="meta">  # 精确模式</span></span><br><span class="line"></span><br><span class="line">seg_list = jieba.cut(<span class="string">"他来到了网易杭研大厦"</span>)<span class="meta">  # 默认是精确模式</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">", "</span>.join(seg_list))</span><br><span class="line"></span><br><span class="line">seg_list = jieba.cut_for_search(<span class="string">"小明硕士毕业于中国科学院计算所，后在日本京都大学深造"</span>)<span class="meta">  # 搜索引擎模式</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">", "</span>.join(seg_list))</span><br></pre></td></tr></table></figure>
 
-seg_list = jieba.cut(&quot;我来到北京清华大学&quot;, cut_all=True)
-print(&quot;Full Mode: &quot; + &quot;/ &quot;.join(seg_list))  # 全模式
-
-seg_list = jieba.cut(&quot;我来到北京清华大学&quot;, cut_all=False)
-print(&quot;Default Mode: &quot; + &quot;/ &quot;.join(seg_list))  # 精确模式
-
-seg_list = jieba.cut(&quot;他来到了网易杭研大厦&quot;)  # 默认是精确模式
-print(&quot;, &quot;.join(seg_list))
-
-seg_list = jieba.cut_for_search(&quot;小明硕士毕业于中国科学院计算所，后在日本京都大学深造&quot;)  # 搜索引擎模式
-print(&quot;, &quot;.join(seg_list))
-</code></pre>
       
     </div>
     
@@ -453,16 +440,16 @@ print(&quot;, &quot;.join(seg_list))
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/02/28/data-mining-algorithm/" rel="next" title="数据挖掘十大算法">
-                <i class="fa fa-chevron-left"></i> 数据挖掘十大算法
+              <a href="/2016/02/22/Python-foundation-five-http/" rel="next" title="Python基础知识总结五：网络编程">
+                <i class="fa fa-chevron-left"></i> Python基础知识总结五：网络编程
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/02/29/Mac-mysql-connector-python/" rel="prev" title="Mac平台安装mysql-connector-python">
-                Mac平台安装mysql-connector-python <i class="fa fa-chevron-right"></i>
+              <a href="/2016/02/28/data-mining-algorithm/" rel="prev" title="数据挖掘十大算法">
+                数据挖掘十大算法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

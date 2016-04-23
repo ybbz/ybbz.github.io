@@ -82,7 +82,7 @@ Bottle：Bottle和Flask都属于轻量级的Web框架。
 
 
 Flask是一个使用 Python 编写的轻量级 Web">
-<meta property="og:updated_time" content="2016-04-23T09:23:12.000Z">
+<meta property="og:updated_time" content="2016-04-23T13:07:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python基础知识总结六：Web开发之Flask">
 <meta name="twitter:description" content="常见的Python Web框架
@@ -379,39 +379,14 @@ Flask是一个使用 Python 编写的轻量级 Web">
 <li>Bottle：Bottle和Flask都属于轻量级的Web框架。</li>
 </ul>
 </blockquote>
-<p>Flask是一个使用 Python 编写的轻量级 Web 应用框架。Flask 依赖着两个外部库：Jinja2 模板引擎以及 Werkzeug WSGI 工具集。<br><a href="http://flask.pocoo.org/" target="_blank" rel="external">Flask官方网站</a>{:target=”_blank”}<br><a href="http://www.pythondoc.com/flask/index.html" target="_blank" rel="external">Flask官方教程中文版</a>{:target=”_blank”}</p>
+<p>Flask是一个使用 Python 编写的轻量级 Web 应用框架。Flask 依赖着两个外部库：Jinja2 模板引擎以及 Werkzeug WSGI 工具集。  </p>
+<ul>
+<li><a href="http://flask.pocoo.org/" target="_blank" rel="external">Flask官方网站</a>  </li>
+<li><a href="http://www.pythondoc.com/flask/index.html" target="_blank" rel="external">Flask官方教程中文版</a></li>
+</ul>
 <p>一个简单的使用Flask的例子：</p>
-<pre><code>from flask import Flask
-from flask import request
-
-app = Flask(__name__)
-
-
-@app.route(&apos;/&apos;, methods=[&apos;GET&apos;, &apos;POST&apos;])
-def home():
-    return &apos;&lt;h1&gt;Home&lt;/h1&gt;&apos;
-
-
-@app.route(&apos;/signin&apos;, methods=[&apos;GET&apos;])
-def signin_form():
-    return &apos;&apos;&apos;&lt;form action=&quot;/signin&quot; method=&quot;post&quot;&gt;
-              &lt;p&gt;&lt;input name=&quot;username&quot;&gt;&lt;/p&gt;
-              &lt;p&gt;&lt;input name=&quot;password&quot; type=&quot;password&quot;&gt;&lt;/p&gt;
-              &lt;p&gt;&lt;button type=&quot;submit&quot;&gt;Sign In&lt;/button&gt;&lt;/p&gt;
-              &lt;/form&gt;&apos;&apos;&apos;
-
-
-@app.route(&apos;/signin&apos;, methods=[&apos;POST&apos;])
-def signin():
-    # 需要从request对象读取表单内容：
-    if request.form[&apos;username&apos;] == &apos;admin&apos; and request.form[&apos;password&apos;] == &apos;password&apos;:
-        return &apos;&lt;h3&gt;Hello, admin!&lt;/h3&gt;&apos;
-    return &apos;&lt;h3&gt;Bad username or password.&lt;/h3&gt;&apos;
-
-
-if __name__ == &apos;__main__&apos;:
-    app.run()
-</code></pre><p>一个使用Flask开发的MVC模式的例子：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> request</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/', methods=['GET', 'POST'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">home</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'&lt;h1&gt;Home&lt;/h1&gt;'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/signin', methods=['GET'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">signin_form</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'''&lt;form action="/signin" method="post"&gt;</span><br><span class="line">              &lt;p&gt;&lt;input name="username"&gt;&lt;/p&gt;</span><br><span class="line">              &lt;p&gt;&lt;input name="password" type="password"&gt;&lt;/p&gt;</span><br><span class="line">              &lt;p&gt;&lt;button type="submit"&gt;Sign In&lt;/button&gt;&lt;/p&gt;</span><br><span class="line">              &lt;/form&gt;'''</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/signin', methods=['POST'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">signin</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 需要从request对象读取表单内容：</span></span><br><span class="line">    <span class="keyword">if</span> request.form[<span class="string">'username'</span>] == <span class="string">'admin'</span> <span class="keyword">and</span> request.form[<span class="string">'password'</span>] == <span class="string">'password'</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'&lt;h3&gt;Hello, admin!&lt;/h3&gt;'</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'&lt;h3&gt;Bad username or password.&lt;/h3&gt;'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure>
+<p>一个使用Flask开发的MVC模式的例子：</p>
 <p>项目结构</p>
 <ul>
 <li>app.py</li>
@@ -423,78 +398,14 @@ if __name__ == &apos;__main__&apos;:
 </li>
 </ul>
 <p>app.py</p>
-<pre><code>from flask import Flask, request, render_template
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, request, render_template</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Flask通过render_template()函数来实现模板的渲染。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/', methods=['GET', 'POST'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">home</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">'home.html'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/signin', methods=['GET'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">signin_form</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">'form.html'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/signin', methods=['POST'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">signin</span><span class="params">()</span>:</span></span><br><span class="line">    username = request.form[<span class="string">'username'</span>]</span><br><span class="line">    password = request.form[<span class="string">'password'</span>]</span><br><span class="line">    <span class="keyword">if</span> username == <span class="string">'admin'</span> <span class="keyword">and</span> password == <span class="string">'password'</span>:</span><br><span class="line">        <span class="keyword">return</span> render_template(<span class="string">'result.html'</span>, username=username)</span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">'form.html'</span>, message=<span class="string">'Bad username or password'</span>, username=username)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure>
+<p>home.html</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Home<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">"font-style:italic"</span>&gt;</span>Home<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>form.html</p>
+<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Please Sign In<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    </span><span class="template-tag">&#123;% <span class="name"><span class="name">if</span></span> message %&#125;</span><span class="xml"></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"color:red"</span>&gt;</span></span><span class="template-variable">&#123;&#123; message &#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    </span><span class="template-tag">&#123;% <span class="name"><span class="name">endif</span></span> %&#125;</span><span class="xml"></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/signin"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">legend</span>&gt;</span>Please sign in:<span class="tag">&lt;/<span class="name">legend</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">placeholder</span>=<span class="string">"Username"</span> <span class="attr">value</span>=<span class="string">"</span></span></span><span class="template-variable">&#123;&#123; username &#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">placeholder</span>=<span class="string">"Password"</span> <span class="attr">type</span>=<span class="string">"password"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span>Sign In<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>result.html</p>
+<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Welcome, </span><span class="template-variable">&#123;&#123; username &#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>Welcome, </span><span class="template-variable">&#123;&#123; username &#125;&#125;</span><span class="xml">!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
-app = Flask(__name__)
-
-
-# Flask通过render_template()函数来实现模板的渲染。
-
-@app.route(&apos;/&apos;, methods=[&apos;GET&apos;, &apos;POST&apos;])
-def home():
-    return render_template(&apos;home.html&apos;)
-
-
-@app.route(&apos;/signin&apos;, methods=[&apos;GET&apos;])
-def signin_form():
-    return render_template(&apos;form.html&apos;)
-
-
-@app.route(&apos;/signin&apos;, methods=[&apos;POST&apos;])
-def signin():
-    username = request.form[&apos;username&apos;]
-    password = request.form[&apos;password&apos;]
-    if username == &apos;admin&apos; and password == &apos;password&apos;:
-        return render_template(&apos;result.html&apos;, username=username)
-    return render_template(&apos;form.html&apos;, message=&apos;Bad username or password&apos;, username=username)
-
-
-if __name__ == &apos;__main__&apos;:
-    app.run()
-</code></pre><p>home.html</p>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;Home&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h1 style=&quot;font-style:italic&quot;&gt;Home&lt;/h1&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre><p>form.html</p>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;Please Sign In&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    {% if message %}
-	    <p style="color:red">{{ message }}</p>
-	    {% endif %}
-    &lt;form action=&quot;/signin&quot; method=&quot;post&quot;&gt;
-        &lt;legend&gt;Please sign in:&lt;/legend&gt;
-        &lt;p&gt;&lt;input name=&quot;username&quot; placeholder=&quot;Username&quot; value=&quot;{{ username }}&quot;&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;input name=&quot;password&quot; placeholder=&quot;Password&quot; type=&quot;password&quot;&gt;&lt;/p&gt;
-        &lt;p&gt;
-            &lt;button type=&quot;submit&quot;&gt;Sign In&lt;/button&gt;
-        &lt;/p&gt;
-    &lt;/form&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre><p>result.html</p>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;Welcome, {{ username }}&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;p&gt;Welcome, {{ username }}!&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
       
     </div>
     
@@ -532,8 +443,8 @@ if __name__ == &apos;__main__&apos;:
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/02/21/Python-foundation-four-libs/" rel="next" title="Python基础知识总结四：常用模块">
-                <i class="fa fa-chevron-left"></i> Python基础知识总结四：常用模块
+              <a href="/2016/02/21/Python-foundation-three-IO/" rel="next" title="Python基础知识总结三：IO编程">
+                <i class="fa fa-chevron-left"></i> Python基础知识总结三：IO编程
               </a>
             
           </div>
