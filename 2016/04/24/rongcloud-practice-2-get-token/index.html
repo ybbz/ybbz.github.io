@@ -1,0 +1,836 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android,SDK," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="八宝粥的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="PHP服务器端接口配置服务器端使用的是PHP框架Yii2（MVC架构）,首先需要进行以下配置：
+1.在user表中增加字段rong_token保存从融云服务器请求到的token
+alter table user add rong_token varchar(20) Null;
+2.在项目的API模块下新建apis文件夹（其他方式亦可），并添加文件ServerAPI.php
+服务器端SDK下载地址(">
+<meta property="og:type" content="article">
+<meta property="og:title" content="融云实践二：获取token(PHP+Android)">
+<meta property="og:url" content="http://blog.ybbz.site/2016/04/24/rongcloud-practice-2-get-token/index.html">
+<meta property="og:site_name" content="八宝粥的博客">
+<meta property="og:description" content="PHP服务器端接口配置服务器端使用的是PHP框架Yii2（MVC架构）,首先需要进行以下配置：
+1.在user表中增加字段rong_token保存从融云服务器请求到的token
+alter table user add rong_token varchar(20) Null;
+2.在项目的API模块下新建apis文件夹（其他方式亦可），并添加文件ServerAPI.php
+服务器端SDK下载地址(">
+<meta property="og:updated_time" content="2016-04-24T15:22:47.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="融云实践二：获取token(PHP+Android)">
+<meta name="twitter:description" content="PHP服务器端接口配置服务器端使用的是PHP框架Yii2（MVC架构）,首先需要进行以下配置：
+1.在user表中增加字段rong_token保存从融云服务器请求到的token
+alter table user add rong_token varchar(20) Null;
+2.在项目的API模块下新建apis文件夹（其他方式亦可），并添加文件ServerAPI.php
+服务器端SDK下载地址(">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6231437225821734000,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> 融云实践二：获取token(PHP+Android) | 八宝粥的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?bf48638c9f88aa67b7f9a0135affb55a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">八宝粥的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">这一切都是命运石之门的选择</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'N5TsjPBKJizg_ME62S5-','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                融云实践二：获取token(PHP+Android)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-24T22:18:38+08:00" content="2016-04-24">
+              2016-04-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/24/rongcloud-practice-2-get-token/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/24/rongcloud-practice-2-get-token/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/04/24/rongcloud-practice-2-get-token/" class="leancloud_visitors" data-flag-title="融云实践二：获取token(PHP+Android)">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="PHP服务器端接口配置"><a href="#PHP服务器端接口配置" class="headerlink" title="PHP服务器端接口配置"></a>PHP服务器端接口配置</h3><p>服务器端使用的是PHP框架Yii2（MVC架构）,首先需要进行以下配置：</p>
+<p>1.在user表中增加字段rong_token保存从融云服务器请求到的token</p>
+<pre><code>alter table user add rong_token varchar(20) Null;
+</code></pre><p>2.在项目的API模块下新建apis文件夹（其他方式亦可），并添加文件ServerAPI.php</p>
+<p>服务器端SDK下载地址(PHP版)：<a href="https://github.com/rongcloud/server-sdk-php" target="_blank" rel="external">server-sdk-php</a></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> <span class="title">api</span>\<span class="title">apis</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 融云server API 接口 新版 1.0</span><br><span class="line"> * Class ServerAPI</span><br><span class="line"> * <span class="doctag">@author</span>  caolong</span><br><span class="line"> * <span class="doctag">@date</span>    2014-12-10  15:30</span><br><span class="line"> * <span class="doctag">@modify</span>  2015-02-02  10:21</span><br><span class="line"> *</span><br><span class="line"> */</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ServerAPI</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> $appKey;                <span class="comment">//appKey</span></span><br><span class="line">    <span class="keyword">private</span> $appSecret;             <span class="comment">//secret</span></span><br><span class="line">    <span class="keyword">const</span>   SERVERAPIURL = <span class="string">'https://api.cn.ronghub.com'</span>;    <span class="comment">//请求服务地址</span></span><br><span class="line">    <span class="keyword">private</span> $format;                <span class="comment">//数据格式 json/xml</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">($appKey,$appSecret,$format = <span class="string">'json'</span>)</span></span>&#123;</span><br><span class="line">        $this-&gt;appKey = $appKey;</span><br><span class="line">        $this-&gt;appSecret = $appSecret;</span><br><span class="line">        $this-&gt;format = $format;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getToken</span><span class="params">($userId, $name, $portraitUri)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="keyword">empty</span>($userId))</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> <span class="keyword">Exception</span>(<span class="string">'用户 Id 不能为空'</span>);</span><br><span class="line">            <span class="keyword">if</span>(<span class="keyword">empty</span>($name))</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> <span class="keyword">Exception</span>(<span class="string">'用户名称 不能为空'</span>);</span><br><span class="line">            <span class="keyword">if</span>(<span class="keyword">empty</span>($portraitUri))</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> <span class="keyword">Exception</span>(<span class="string">'用户头像 URI 不能为空'</span>);</span><br><span class="line"></span><br><span class="line">            $ret = $this-&gt;curl(<span class="string">'/user/getToken'</span>,<span class="keyword">array</span>(<span class="string">'userId'</span>=&gt;$userId,<span class="string">'name'</span>=&gt;$name,<span class="string">'portraitUri'</span>=&gt;$portraitUri));</span><br><span class="line">            <span class="keyword">if</span>(<span class="keyword">empty</span>($ret))</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> <span class="keyword">Exception</span>(<span class="string">'请求失败'</span>);</span><br><span class="line">            <span class="keyword">return</span> $ret;</span><br><span class="line">        &#125;<span class="keyword">catch</span> (<span class="keyword">Exception</span> $e) &#123;</span><br><span class="line">            print_r($e-&gt;getMessage());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ......</span><br><span class="line">    ......</span><br><span class="line">    ......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>3.在controllers文件夹下新建RongController.php</p>
+<p><a href="http://www.rongcloud.cn/docs/server.html#获取_Token_方法" target="_blank" rel="external">Server开发指南：获取Token方法</a></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">api</span>\<span class="title">controllers</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">Yii</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">yii</span>\<span class="title">web</span>\<span class="title">Controller</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">common</span>\<span class="title">models</span>\<span class="title">User</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">api</span>\<span class="title">apis</span>\<span class="title">ServerAPI</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RongController</span> <span class="keyword">extends</span> <span class="title">Controller</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="comment">//从融云请求token，并将结果返回给客户端</span></span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">actionToken</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">isset</span>($_GET[<span class="string">'uid'</span>]))</span><br><span class="line">        &#123;</span><br><span class="line">        	$uid=$_GET[<span class="string">'uid'</span>];</span><br><span class="line">			$user=User::findOne($uid);</span><br><span class="line">			<span class="keyword">if</span> (!$user) &#123;</span><br><span class="line">                $result[<span class="string">'error'</span>] = <span class="number">1</span>;</span><br><span class="line">				$result[<span class="string">'msg'</span>] = <span class="string">'用户不存在'</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                $p = <span class="keyword">new</span> ServerAPI(<span class="string">'appKey'</span>,<span class="string">'AppSecret'</span>);</span><br><span class="line">				$r_json = $p-&gt;getToken($user-&gt;id ,$user-&gt;username, $user-&gt;avatar);</span><br><span class="line">				$r = json_decode($r_json);</span><br><span class="line">				<span class="keyword">if</span>($r-&gt;code == <span class="number">200</span>)&#123;</span><br><span class="line">					<span class="comment">//保存rongcloud token</span></span><br><span class="line">					$user-&gt;rong_token = $r-&gt;token;</span><br><span class="line">					$user-&gt;save();</span><br><span class="line">					<span class="comment">//返回json</span></span><br><span class="line">					$result[<span class="string">'error'</span>] = <span class="number">0</span>;</span><br><span class="line">					$result[<span class="string">'msg'</span>] = <span class="string">"success"</span>;</span><br><span class="line">					$result[<span class="string">'uid'</span>] = $r-&gt;userId;</span><br><span class="line">					$result[<span class="string">'token'</span>] = $r-&gt;token;</span><br><span class="line">				&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">					$result[<span class="string">'error'</span>] = <span class="number">1</span>;</span><br><span class="line">					$result[<span class="string">'msg'</span>] = <span class="string">'获取token失败'</span>;</span><br><span class="line">				&#125;</span><br><span class="line">            &#125;</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			$result[<span class="string">'error'</span>] = <span class="number">1</span>;</span><br><span class="line">			$result[<span class="string">'msg'</span>] = <span class="string">"参数错误"</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">echo</span> json_encode($result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>根据官方说法：</p>
+<blockquote>
+<p>客户端通过融云 SDK 每次连接服务器时，都需要向服务器提供 Token，以便验证身份。后续登录过程中，就不必再向融云请求 Token，由 App Server 直接提供之前保存过的 Token。如果您的 App 是免登录设计，也可以将 Token 保存在 App 本地（注意保证本地数据存储安全），直接登录。App 获取 Token 后，根据情况可选择在 App 本地保留当前用户的 Token，如果 Token 失效，还需要提供相应的代码重新向服务器获取 Token。在 融云开发者平台 设置 Token 有效期，默认永久有效，除非您在开发者后台刷新 App Secret ，Token 可以获取多次，但之前的仍然可用。</p>
+</blockquote>
+<p>因此，上面actionToken中的代码只是作为首次调试，实际使用中仍需继续完善。</p>
+<h3 id="Android客户端实现"><a href="#Android客户端实现" class="headerlink" title="Android客户端实现"></a>Android客户端实现</h3><p>Android客户端实现如下（网络请求使用AsyncHttpClient框架）：</p>
+<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">void</span> <span class="title">getToken</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 客户端网络请求</span></span><br><span class="line">    AsyncHttpClient client = <span class="keyword">new</span> AsyncHttpClient();</span><br><span class="line">    <span class="comment">// 创建请求参数的封装的对象</span></span><br><span class="line">    RequestParams params = <span class="keyword">new</span> RequestParams();</span><br><span class="line">    params.put(<span class="string">"uid"</span>, uid);</span><br><span class="line">    <span class="comment">// 执行post方法</span></span><br><span class="line">    client.post(API.RONG_TOKEN, params,</span><br><span class="line">            <span class="keyword">new</span> AsyncHttpResponseHandler() &#123;</span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onSuccess</span><span class="params">(<span class="keyword">int</span> statusCode, Header[] headers,</span><br><span class="line">                        <span class="keyword">byte</span>[] responseBody)</span> </span>&#123;</span><br><span class="line">                    <span class="keyword">if</span> (statusCode == <span class="number">200</span>) &#123;</span><br><span class="line">                        <span class="keyword">try</span> &#123;</span><br><span class="line">                            JSONObject response = <span class="keyword">new</span> JSONObject(</span><br><span class="line">                                    <span class="keyword">new</span> String(responseBody));</span><br><span class="line">                            Log.e(<span class="string">"RONG_TOKEN"</span>, response.toString());</span><br><span class="line">                        &#125; <span class="keyword">catch</span> (JSONException e) &#123;</span><br><span class="line">                            e.printStackTrace();</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        Toast.makeText(MainActivity.<span class="keyword">this</span>, <span class="string">"网络异常，稍后再试"</span>,</span><br><span class="line">                                Toast.LENGTH_SHORT).show();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onFailure</span><span class="params">(<span class="keyword">int</span> statusCode, Header[] headers,</span><br><span class="line">                        <span class="keyword">byte</span>[] responseBody, Throwable <span class="keyword">error</span>)</span> </span>&#123;</span><br><span class="line">                    <span class="keyword">error</span>.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="客户端与融云服务器建立连接"><a href="#客户端与融云服务器建立连接" class="headerlink" title="客户端与融云服务器建立连接"></a>客户端与融云服务器建立连接</h3><p>客户端拿到了token，就可以通过RongIM建立与融云服务器的连接：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">private</span> <span class="selector-tag">void</span> <span class="selector-tag">connect</span>(String token) &#123;</span><br><span class="line">    <span class="selector-tag">if</span> (getApplicationInfo().packageName.equals(App</span><br><span class="line">            .getCurProcessName(getApplicationContext()))) &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 建立与服务器的连接</span></span><br><span class="line">        <span class="selector-tag">RongIM</span><span class="selector-class">.connect</span>(token, new RongIMClient.ConnectCallback() &#123;</span><br><span class="line"></span><br><span class="line">            <span class="variable">@Override</span></span><br><span class="line">            public void onSuccess(String userid) &#123;</span><br><span class="line">                Log<span class="selector-class">.e</span>(<span class="string">"LoginActivity"</span>, <span class="string">"--onSuccess"</span> + userid);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="variable">@Override</span></span><br><span class="line">            public void onError(RongIMClient.ErrorCode errorCode) &#123;</span><br><span class="line">                Log<span class="selector-class">.e</span>(<span class="string">"LoginActivity"</span>, <span class="string">"--onError"</span> + errorCode);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>建立连接之后，就可以进行更多的操作了，详情可以查阅官方文档：</p>
+<ul>
+<li><a href="http://www.rongcloud.cn/docs/server.html" target="_blank" rel="external">Server 开发指南</a></li>
+<li><a href="http://www.rongcloud.cn/docs/android.html" target="_blank" rel="external">Android SDK 开发指南</a></li>
+</ul>
+
+      
+    </div>
+    
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/qrcode.jpg" alt="八宝粥 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+            <a href="/tags/SDK/" rel="tag">#SDK</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/24/rongcloud-practice-1-introduction/" rel="next" title="融云实践一：快速入门">
+                <i class="fa fa-chevron-left"></i> 融云实践一：快速入门
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/04/24/rongcloud-practice-2-get-token/"
+     data-title="融云实践二：获取token(PHP+Android)"
+     data-content=""
+     data-url="http://blog.ybbz.site/2016/04/24/rongcloud-practice-2-get-token/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/24/rongcloud-practice-2-get-token/"
+           data-title="融云实践二：获取token(PHP+Android)" data-url="http://blog.ybbz.site/2016/04/24/rongcloud-practice-2-get-token/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="八宝粥" />
+          <p class="site-author-name" itemprop="name">八宝粥</p>
+          <p class="site-description motion-element" itemprop="description">这一切都是命运石之门的选择</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">61</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">49</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ybbz" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/1005955131" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/ba-bao-zhou-73" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-globe"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#PHP服务器端接口配置"><span class="nav-number">1.</span> <span class="nav-text">PHP服务器端接口配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Android客户端实现"><span class="nav-number">2.</span> <span class="nav-text">Android客户端实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#客户端与融云服务器建立连接"><span class="nav-number">3.</span> <span class="nav-text">客户端与融云服务器建立连接</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">八宝粥</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"babaozhou"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("xKIXPQjqdy6UtStIi4iDbH8J-gzGzoHsz", "P2fn57Oe1oP1KAHUrFRnWpSH");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>

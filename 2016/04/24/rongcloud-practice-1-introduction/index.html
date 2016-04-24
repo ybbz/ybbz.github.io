@@ -38,7 +38,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android,RoboBinding,MVVM," />
+  <meta name="keywords" content="Android,SDK," />
 
 
 
@@ -56,16 +56,22 @@
 
 
 
-<meta name="description" content="ImageActivity12345678910111213141516171819202122public class ImageActivity extends Activity &amp;#123;	@Override	protected void onCreate(Bundle savedInstanceState) &amp;#123;		super.onCreate(savedInstanceStat">
+<meta name="description" content="简介
+融云是国内首家专业的即时通讯云服务提供商，专注为互联网、移动互联网开发者提供免费的即时通讯基础能力和云端服务。通过融云平台，开发者不必搭建服务端硬件环境，就可以将即时通讯、实时网络能力快速集成至应用中。
+针对开发者所需的不同场景，融云平台提供了一系列产品、技术解决方案，包括：客户端 IM 组件，客户端 IM 基础库，Web SDK，服务端 REST API 等。利用这些解决方案，开发者可以直">
 <meta property="og:type" content="article">
-<meta property="og:title" content="RoboBinding探究二：ImageView及自定义控件实现">
-<meta property="og:url" content="http://blog.ybbz.site/2015/12/14/RoboBinding-two-ImageView/index.html">
+<meta property="og:title" content="融云实践一：快速入门">
+<meta property="og:url" content="http://blog.ybbz.site/2016/04/24/rongcloud-practice-1-introduction/index.html">
 <meta property="og:site_name" content="八宝粥的博客">
-<meta property="og:description" content="ImageActivity12345678910111213141516171819202122public class ImageActivity extends Activity &amp;#123;	@Override	protected void onCreate(Bundle savedInstanceState) &amp;#123;		super.onCreate(savedInstanceStat">
-<meta property="og:updated_time" content="2016-04-23T13:14:43.000Z">
+<meta property="og:description" content="简介
+融云是国内首家专业的即时通讯云服务提供商，专注为互联网、移动互联网开发者提供免费的即时通讯基础能力和云端服务。通过融云平台，开发者不必搭建服务端硬件环境，就可以将即时通讯、实时网络能力快速集成至应用中。
+针对开发者所需的不同场景，融云平台提供了一系列产品、技术解决方案，包括：客户端 IM 组件，客户端 IM 基础库，Web SDK，服务端 REST API 等。利用这些解决方案，开发者可以直">
+<meta property="og:updated_time" content="2016-04-24T16:15:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="RoboBinding探究二：ImageView及自定义控件实现">
-<meta name="twitter:description" content="ImageActivity12345678910111213141516171819202122public class ImageActivity extends Activity &amp;#123;	@Override	protected void onCreate(Bundle savedInstanceState) &amp;#123;		super.onCreate(savedInstanceStat">
+<meta name="twitter:title" content="融云实践一：快速入门">
+<meta name="twitter:description" content="简介
+融云是国内首家专业的即时通讯云服务提供商，专注为互联网、移动互联网开发者提供免费的即时通讯基础能力和云端服务。通过融云平台，开发者不必搭建服务端硬件环境，就可以将即时通讯、实时网络能力快速集成至应用中。
+针对开发者所需的不同场景，融云平台提供了一系列产品、技术解决方案，包括：客户端 IM 组件，客户端 IM 基础库，Web SDK，服务端 REST API 等。利用这些解决方案，开发者可以直">
 
 
 
@@ -83,7 +89,7 @@
   };
 </script>
 
-  <title> RoboBinding探究二：ImageView及自定义控件实现 | 八宝粥的博客 </title>
+  <title> 融云实践一：快速入门 | 八宝粥的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -263,7 +269,7 @@
             
             
               
-                RoboBinding探究二：ImageView及自定义控件实现
+                融云实践一：快速入门
               
             
           </h1>
@@ -275,8 +281,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-12-14T00:00:00+08:00" content="2015-12-14">
-              2015-12-14
+            <time itemprop="dateCreated" datetime="2016-04-24T14:10:23+08:00" content="2016-04-24">
+              2016-04-24
             </time>
           </span>
 
@@ -305,8 +311,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/12/14/RoboBinding-two-ImageView/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/14/RoboBinding-two-ImageView/" itemprop="commentsCount"></span>
+                <a href="/2016/04/24/rongcloud-practice-1-introduction/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/24/rongcloud-practice-1-introduction/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -316,7 +322,7 @@
 
           
           
-             <span id="/2015/12/14/RoboBinding-two-ImageView/" class="leancloud_visitors" data-flag-title="RoboBinding探究二：ImageView及自定义控件实现">
+             <span id="/2016/04/24/rongcloud-practice-1-introduction/" class="leancloud_visitors" data-flag-title="融云实践一：快速入门">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -338,11 +344,39 @@
       
 
       
-        <h3 id="ImageActivity"><a href="#ImageActivity" class="headerlink" title="ImageActivity"></a>ImageActivity</h3><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">ImageActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="keyword">protected</span> void onCreate(<span class="type">Bundle</span> savedInstanceState) &#123;</span><br><span class="line">		<span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">		<span class="type">ImagePresentationModel</span> presentationModel = <span class="keyword">new</span> <span class="type">ImagePresentationModel</span>();</span><br><span class="line">		initializeContentView(<span class="type">R</span>.layout.activity_image, presentationModel);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> void initializeContentView(int layoutId, <span class="type">Object</span> presentationModel) &#123;</span><br><span class="line">		<span class="type">ViewBinder</span> viewBinder = createViewBinder();</span><br><span class="line">		<span class="type">View</span> rootView = viewBinder.inflateAndBind(layoutId, presentationModel);</span><br><span class="line">		setContentView(rootView);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> <span class="type">ViewBinder</span> createViewBinder() &#123;</span><br><span class="line">		<span class="type">BinderFactory</span> binderFactory = <span class="keyword">new</span> <span class="type">BinderFactoryBuilder</span>().add(</span><br><span class="line">				<span class="keyword">new</span> <span class="type">MylayoutBinding</span>().forView(<span class="type">MyLayout</span>.<span class="keyword">class</span>)).build();</span><br><span class="line">		<span class="keyword">return</span> binderFactory.createViewBinder(<span class="keyword">this</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="R-layout-activity-image"><a href="#R-layout-activity-image" class="headerlink" title="R.layout.activity_image"></a>R.layout.activity_image</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;LinearLayout xmln<span class="variable">s:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    xmln<span class="variable">s:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></span><br><span class="line">    xmln<span class="variable">s:bind</span>=<span class="string">"http://robobinding.org/android"</span></span><br><span class="line">    android:layout_width=<span class="string">"match_parent"</span></span><br><span class="line">    android:layout_height=<span class="string">"match_parent"</span></span><br><span class="line">    android:orientation=<span class="string">"vertical"</span></span><br><span class="line">    tool<span class="variable">s:ignore</span>=<span class="string">"MissingPrefix"</span> &gt;</span><br><span class="line"></span><br><span class="line">    &lt;<span class="keyword">com</span>.test.model.MyLayout</span><br><span class="line">        android:layout_width=<span class="string">"match_parent"</span></span><br><span class="line">        android:layout_height=<span class="string">"wrap_content"</span></span><br><span class="line">        bind:image=<span class="string">"&#123;image&#125;"</span> /&gt;</span><br><span class="line"></span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="PresentationModel"><a href="#PresentationModel" class="headerlink" title="PresentationModel"></a>PresentationModel</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyLayout</span> <span class="keyword">extends</span> <span class="title">LinearLayout</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> ImageView image;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">MyLayout</span><span class="params">(Context context, AttributeSet attrs)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>(context, attrs, R.layout.mylayout);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="title">MyLayout</span><span class="params">(Context context, AttributeSet attrs, <span class="keyword">int</span> layoutId)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>(context, attrs);</span><br><span class="line">		LayoutInflater inflater = (LayoutInflater) context</span><br><span class="line">				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);</span><br><span class="line">		inflater.inflate(layoutId, <span class="keyword">this</span>);</span><br><span class="line">		image = (ImageView) findViewById(R.id.image);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@SuppressLint</span>(<span class="string">"NewApi"</span>)</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setImage</span><span class="params">(<span class="keyword">int</span> drawable)</span> </span>&#123;</span><br><span class="line">		image.setImageResource(drawable);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="R-layout-mylayout"><a href="#R-layout-mylayout" class="headerlink" title="R.layout.mylayout"></a>R.layout.mylayout</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span><span class="meta">?&gt;</span></span></span><br><span class="line"><span class="tag">&lt;<span class="name">LinearLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">    <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span><br><span class="line">    <span class="attr">android:orientation</span>=<span class="string">"vertical"</span> &gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">ImageView</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/image"</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="R-layout-mylayout-1"><a href="#R-layout-mylayout-1" class="headerlink" title="R.layout.mylayout"></a>R.layout.mylayout</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@org</span>.robobinding.annotation.PresentationModel</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ImagePresentationModel</span> <span class="keyword">implements</span></span><br><span class="line">		<span class="title">HasPresentationModelChangeSupport</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> PresentationModelChangeSupport changeSupport;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">ImagePresentationModel</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		changeSupport = <span class="keyword">new</span> PresentationModelChangeSupport(<span class="keyword">this</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> PresentationModelChangeSupport <span class="title">getPresentationModelChangeSupport</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> changeSupport;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getImage</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> R.drawable.test;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">changeImage</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		changeSupport.firePropertyChange(<span class="string">"image1"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><blockquote>
+<p>融云是国内首家专业的即时通讯云服务提供商，专注为互联网、移动互联网开发者提供免费的即时通讯基础能力和云端服务。通过融云平台，开发者不必搭建服务端硬件环境，就可以将即时通讯、实时网络能力快速集成至应用中。</p>
+<p>针对开发者所需的不同场景，融云平台提供了一系列产品、技术解决方案，包括：客户端 IM 组件，客户端 IM 基础库，Web SDK，服务端 REST API 等。利用这些解决方案，开发者可以直接在自己的应用中构建出即时通讯产品，也可以无限创意出自己的即时通讯场景。</p>
+<p>融云 SDK 包括两部分：IM 界面组件和 IM 通讯能力库。</p>
+</blockquote>
+<h3 id="集成流程"><a href="#集成流程" class="headerlink" title="集成流程"></a>集成流程</h3><p>融云的集成流程中几个关键环节需要注意：</p>
+<ol>
+<li>App 服务端换取 Token 流程，可以参考 <a href="http://www.rongcloud.cn/docs/server.html#_获取_Token_方法" target="_blank" rel="external">Server 开发文档 - 获取 Token 方法</a></li>
+<li>客户端集成流程，可以参考 <a href="http://www.rongcloud.cn/docs/android.html" target="_blank" rel="external">Android 开发指南</a> 或者 <a href="http://www.rongcloud.cn/docs/ios.html" target="_blank" rel="external">iOS 开发指南</a></li>
+<li>UI 界面自定义，可以参考 <a href="http://www.rongcloud.cn/docs/android.html#_UI_自定义" target="_blank" rel="external">Android 开发指南 - UI 自定义</a> 或者 <a href="http://www.rongcloud.cn/docs/ios.html#_UI_自定义" target="_blank" rel="external">iOS 开发指南 - UI 自定义</a></li>
+</ol>
+<h3 id="Server-开发指南"><a href="#Server-开发指南" class="headerlink" title="Server 开发指南"></a>Server 开发指南</h3><ul>
+<li>用户服务：从 App 服务端管理用户状态，获取身份认证令牌等。</li>
+<li>群组服务：从 App 服务端管理群组成员信息。</li>
+<li>聊天室服务：从 App 服务端管理聊天室信息。</li>
+<li>消息发送服务：从 App 服务端发送各种类型消息。</li>
+<li>消息路由服务：提供融云服务端到 App 服务端的消息路由服务。</li>
+<li>消息历史记录服务：提供 App 用户聊天消息历史记录下载服务。</li>
+</ul>
+<h3 id="Android-SDK-开发指南"><a href="#Android-SDK-开发指南" class="headerlink" title="Android SDK 开发指南"></a>Android SDK 开发指南</h3><h4 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h4><ol>
+<li>注册开发者帐号</li>
+<li>下载 SDK</li>
+<li>创建应用</li>
+<li>获取 Token</li>
+</ol>
+<h4 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h4><ul>
+<li><a href="http://blog.rongcloud.cn/?p=404" target="_blank" rel="external">融云 SDK 2.0 集成详解 – Eclipse</a></li>
+<li><a href="http://blog.rongcloud.cn/?p=392" target="_blank" rel="external">融云 SDK 2.0 集成详解 – Android Studio</a></li>
+</ul>
+<h4 id="快速集成"><a href="#快速集成" class="headerlink" title="快速集成"></a>快速集成</h4><ul>
+<li><a href="https://github.com/rongcloud/demo-app-android-quick-start" target="_blank" rel="external">Android Studio 快速集成</a></li>
+<li><a href="https://github.com/rongcloud/demo-app-android-quick-start-eclipse" target="_blank" rel="external">Eclipse 快速集成</a></li>
+</ul>
 
       
     </div>
@@ -370,9 +404,7 @@
           
             <a href="/tags/Android/" rel="tag">#Android</a>
           
-            <a href="/tags/RoboBinding/" rel="tag">#RoboBinding</a>
-          
-            <a href="/tags/MVVM/" rel="tag">#MVVM</a>
+            <a href="/tags/SDK/" rel="tag">#SDK</a>
           
         </div>
       
@@ -381,16 +413,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/12/JS-nodes/" rel="next" title="JavaScript中获取节点的兄弟、父、子节点的各种问题">
-                <i class="fa fa-chevron-left"></i> JavaScript中获取节点的兄弟、父、子节点的各种问题
+              <a href="/2016/04/23/manage-blog-images/" rel="next" title="如何管理博客图片">
+                <i class="fa fa-chevron-left"></i> 如何管理博客图片
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/12/14/RoboBinding-one-TextView-EditText/" rel="prev" title="RoboBinding探究一：TextView及EditText基础实现">
-                RoboBinding探究一：TextView及EditText基础实现 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/24/rongcloud-practice-2-get-token/" rel="prev" title="融云实践二：获取token(PHP+Android)">
+                融云实践二：获取token(PHP+Android) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -406,10 +438,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/12/14/RoboBinding-two-ImageView/"
-     data-title="RoboBinding探究二：ImageView及自定义控件实现"
+        <div class="ds-share flat" data-thread-key="2016/04/24/rongcloud-practice-1-introduction/"
+     data-title="融云实践一：快速入门"
      data-content=""
-     data-url="http://blog.ybbz.site/2015/12/14/RoboBinding-two-ImageView/">
+     data-url="http://blog.ybbz.site/2016/04/24/rongcloud-practice-1-introduction/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -436,8 +468,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/12/14/RoboBinding-two-ImageView/"
-           data-title="RoboBinding探究二：ImageView及自定义控件实现" data-url="http://blog.ybbz.site/2015/12/14/RoboBinding-two-ImageView/">
+      <div class="ds-thread" data-thread-key="2016/04/24/rongcloud-practice-1-introduction/"
+           data-title="融云实践一：快速入门" data-url="http://blog.ybbz.site/2016/04/24/rongcloud-practice-1-introduction/">
       </div>
     
   </div>
@@ -564,7 +596,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ImageActivity"><span class="nav-number">1.</span> <span class="nav-text">ImageActivity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#R-layout-activity-image"><span class="nav-number">2.</span> <span class="nav-text">R.layout.activity_image</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PresentationModel"><span class="nav-number">3.</span> <span class="nav-text">PresentationModel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#R-layout-mylayout"><span class="nav-number">4.</span> <span class="nav-text">R.layout.mylayout</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#R-layout-mylayout-1"><span class="nav-number">5.</span> <span class="nav-text">R.layout.mylayout</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#集成流程"><span class="nav-number">2.</span> <span class="nav-text">集成流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Server-开发指南"><span class="nav-number">3.</span> <span class="nav-text">Server 开发指南</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Android-SDK-开发指南"><span class="nav-number">4.</span> <span class="nav-text">Android SDK 开发指南</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#前期准备"><span class="nav-number">4.1.</span> <span class="nav-text">前期准备</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建项目"><span class="nav-number">4.2.</span> <span class="nav-text">创建项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快速集成"><span class="nav-number">4.3.</span> <span class="nav-text">快速集成</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
