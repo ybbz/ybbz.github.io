@@ -38,7 +38,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Ontology,OWL,SWRL," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -56,19 +56,15 @@
 
 
 
-<meta name="description" content="The Ontology root element of the OWL XML Presentation Syntax is extended to include “imp” (implication rule) and “var” (variable declaration) axioms as found under the rulebase root of RuleML.
-element">
-<meta property="og:type" content="article">
-<meta property="og:title" content="SWRL(A Semantic Web Rule Language Combining OWL and RuleML)">
-<meta property="og:url" content="http://blog.ybbz.site/2016/04/22/SWRL/index.html">
+<meta name="description" content="这一切都是命运石之门的选择">
+<meta property="og:type" content="website">
+<meta property="og:title" content="八宝粥的博客">
+<meta property="og:url" content="http://blog.ybbz.site/archives/page/7/index.html">
 <meta property="og:site_name" content="八宝粥的博客">
-<meta property="og:description" content="The Ontology root element of the OWL XML Presentation Syntax is extended to include “imp” (implication rule) and “var” (variable declaration) axioms as found under the rulebase root of RuleML.
-element">
-<meta property="og:updated_time" content="2016-04-23T10:46:05.000Z">
+<meta property="og:description" content="这一切都是命运石之门的选择">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SWRL(A Semantic Web Rule Language Combining OWL and RuleML)">
-<meta name="twitter:description" content="The Ontology root element of the OWL XML Presentation Syntax is extended to include “imp” (implication rule) and “var” (variable declaration) axioms as found under the rulebase root of RuleML.
-element">
+<meta name="twitter:title" content="八宝粥的博客">
+<meta name="twitter:description" content="这一切都是命运石之门的选择">
 
 
 
@@ -86,7 +82,7 @@ element">
   };
 </script>
 
-  <title> SWRL(A Semantic Web Rule Language Combining OWL and RuleML) | 八宝粥的博客 </title>
+  <title> 归档 | 八宝粥的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -117,7 +113,7 @@ element">
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container one-collumn sidebar-position-left  page-archive  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -245,238 +241,69 @@ element">
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-collapse">
+    <span class="archive-move-on"></span>
+
+    <span class="archive-page-counter">
+      
+      
+       
+        
+      好! 目前共计 61 篇日志。 继续努力。
+    </span>
+
     
 
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                SWRL(A Semantic Web Rule Language Combining OWL and RuleML)
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-22T00:00:00+08:00" content="2016-04-22">
-              2016-04-22
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Ontology/" itemprop="url" rel="index">
-                    <span itemprop="name">Ontology</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/22/SWRL/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/22/SWRL/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/04/22/SWRL/" class="leancloud_visitors" data-flag-title="SWRL(A Semantic Web Rule Language Combining OWL and RuleML)">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
-      
-        <p>The Ontology root element of the OWL XML Presentation Syntax is extended to include “imp” (implication rule) and “var” (variable declaration) axioms as found under the rulebase root of RuleML.</p>
-<p>element Ontology</p>
-<pre><code>&lt;swrlx:Ontology
-  swrlx:name = xsd:anyURI &gt;
-  Content: (owlx:VersionInfo | owlx:PriorVersion | owlx:BackwardCompatibleWith |
-            owlx:IncompatibleWith | owlx:Imports | owlx:Annotation |
-            owlx:Class[axiom] | owlx:EnumeratedClass(D,F) |
-            owlx:SubClassOf(D,F) | owlx:EquivalentClasses | owlx:DisjointClasses(D,F) |
-            owlx:DatatypeProperty | owlx:ObjectProperty |
-            owlx:SubPropertyOf | owlx:EquivalentProperties |
-            owlx:Individual[axiom] | owlx:SameIndividual | owlx:DifferentIndividuals |
-            ruleml:imp[axiom] | ruleml:var[axiom])*
-&lt;/swrlx:Ontology&gt;
-</code></pre><p>Attribute:    swrlx:name - refers to a name of this ontology, which is the base URI of this element.<br>Note:    This is the root element of OWL documents in the XML presentation syntax, while rdf:RDF is used as the document root for OWL in RDF/XML.<br>We then simply need to add the relevant syntax for variables and rules.</p>
-<h3 id="variable"><a href="#variable" class="headerlink" title="variable"></a>variable</h3><p>Variable (var) axioms are statements about variables, indicating that the given string is to be used as a variable.</p>
-<p>element ruleml:var[axiom]</p>
-<pre><code>&lt;ruleml:var&gt;xsd:string&lt;/ruleml:var&gt;
-</code></pre><p>Parents:swrlx:Ontology<br>A var axiom simply defines the existence of a variable. This is taken from the RuleML namespace. For example:</p>
-<pre><code>Example 5-1
-&lt;ruleml:var&gt;x1&lt;/ruleml:var&gt;
-</code></pre><h3 id="implication"><a href="#implication" class="headerlink" title="implication"></a>implication</h3><p>Rule axioms (imp elements) are similar to SubClassOf axioms. They are taken from the RuleML namespace. A rule axiom can be read as a logical implication between the antecedent (_body) and consequent (_head). Like SubClassOf axioms, rules may include annotations. A rule axiom may optionally be named.</p>
-<p>element ruleml:imp[axiom] [Parents:swrlx:Ontology]</p>
-<pre><code>&lt;ruleml:imp&gt;
-  Content: ( _rlab?, owlx:Annotation*, _body, _head )
-&lt;/ruleml:imp&gt;
-</code></pre><p>Note:This element allows one to say that every binding that satisfies the _body of the rule must also satisfy the _head of the rule.</p>
-<p><em>A rule axiom may optionally be named using a URI.</em></p>
-<h3 id="rlab"><a href="#rlab" class="headerlink" title="rlab"></a>rlab</h3><p>element ruleml:_rlab [Parents:ruleml:imp  ]</p>
-<pre><code>&lt;ruleml:_rlab
-  ruleml:href = xsd:anyURI (required)&gt;
-  Content: ( )
-&lt;/ruleml:_rlab&gt;
-</code></pre><h3 id="body"><a href="#body" class="headerlink" title="body"></a>body</h3><p>Both _body and _head are lists of atoms and are read as the conjunction of the component atoms.</p>
-<p>element ruleml:_body [Parents:ruleml:imp]</p>
-<pre><code>&lt;ruleml:_body&gt;
-  Content: ( swrlx:atom* )
-&lt;/ruleml:_body&gt;
-</code></pre><h3 id="head"><a href="#head" class="headerlink" title="head"></a>head</h3><p>element ruleml:_head [Parents:ruleml:imp]</p>
-<pre><code>&lt;ruleml:_head&gt;
-  Content: ( swrlx:atom* )
-&lt;/ruleml:_head&gt;
-</code></pre><h3 id="atoms"><a href="#atoms" class="headerlink" title="atoms"></a>atoms</h3><p>Atoms can be formed from unary predicates (classes), binary predicates (properties), equalities or inequalities.</p>
-<p>Model group swrlx:atom [Parents:ruleml:_body, ruleml:_head]</p>
-<pre><code>Content: (swrlx:classAtom | swrlx:datarangeAtom |
-        swrlx:individualPropertyAtom | swrlx:datavaluedPropertyAtom |
-        swrlx:sameIndividualAtom | swrlx:differentIndividualsAtom |
-        swrlx:builtinAtom)
-</code></pre><p>Class atoms consist of a description and either an individual name or a variable name.</p>
-<p>element swrlx:classAtom [Parents:swrlx:atom]</p>
-<pre><code>&lt;swrlx:classAtom&gt;
-  Content: ( owlx:description, swrlx:iObject )
-&lt;/swrlx:classAtom&gt;
-</code></pre>
-      
-    </div>
-    
-    <div>
       
         
-<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-    <img id="wechat_subscriber_qcode" src="/images/qrcode.jpg" alt="八宝粥 wechat" style="width: 200px; max-width: 100%;"/>
-    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
-</div>
-
-      
-    </div>
-
-    <div>
-      
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Ontology/" rel="tag">#Ontology</a>
-          
-            <a href="/tags/OWL/" rel="tag">#OWL</a>
-          
-            <a href="/tags/SWRL/" rel="tag">#SWRL</a>
-          
+        <div class="collection-title">
+          <h2 class="archive-year motion-element" id="archive-year-2015">2015</h2>
         </div>
       
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/04/20/Algorithm-3/" rel="next" title="判断两个单向链表是否相交">
-                <i class="fa fa-chevron-left"></i> 判断两个单向链表是否相交
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/22/OWL-SWRL/" rel="prev" title="OWL Web本体语言指南">
-                OWL Web本体语言指南 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
       
 
       
-      
-    </footer>
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
+        
+            <a class="post-title-link" href="/2015/08/18/Github-Pages-Blog/" itemprop="url">
+              
+                <span itemprop="name">GitHub 博客简明使用指南</span>
+              
+            </a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2015-08-18T00:00:00+08:00"
+              content="2015-08-18" >
+          08-18
+        </time>
+      </div>
+
+    </header>
   </article>
 
 
 
-    <div class="post-spread">
-      
-        <div class="ds-share flat" data-thread-key="2016/04/22/SWRL/"
-     data-title="SWRL(A Semantic Web Rule Language Combining OWL and RuleML)"
-     data-content=""
-     data-url="http://blog.ybbz.site/2016/04/22/SWRL/">
-  <div class="ds-share-inline">
-    <ul  class="ds-share-icons-16">
+    
 
-      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+  </section>
 
-    </ul>
-    <div class="ds-share-icons-more">
-    </div>
-  </div>
-</div>
-      
-    </div>
-  </div>
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/archives/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/6/">6</a><span class="page-number current">7</span>
+  </nav>
+
+
 
 
           </div>
@@ -484,14 +311,6 @@ element">
 
 
           
-  <div class="comments" id="comments">
-    
-      <div class="ds-thread" data-thread-key="2016/04/22/SWRL/"
-           data-title="SWRL(A Semantic Web Rule Language Combining OWL and RuleML)" data-url="http://blog.ybbz.site/2016/04/22/SWRL/">
-      </div>
-    
-  </div>
-
 
         </div>
         
@@ -511,17 +330,8 @@ element">
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -532,7 +342,7 @@ element">
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">58</span>
+              <span class="site-state-item-count">61</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -549,7 +359,7 @@ element">
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-count">49</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -607,17 +417,6 @@ element">
 
       </section>
 
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#variable"><span class="nav-number">1.</span> <span class="nav-text">variable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#implication"><span class="nav-number">2.</span> <span class="nav-text">implication</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rlab"><span class="nav-number">3.</span> <span class="nav-text">rlab</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#body"><span class="nav-number">4.</span> <span class="nav-text">body</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#head"><span class="nav-number">5.</span> <span class="nav-text">head</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#atoms"><span class="nav-number">6.</span> <span class="nav-text">atoms</span></a></li></ol></div>
-            
-          </div>
-        </section>
       
 
     </div>
@@ -714,9 +513,11 @@ element">
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
+  
+    <script type="text/javascript" id="motion.page.archive">
+      $('.archive-year').velocity('transition.slideLeftIn');
+    </script>
+  
 
 
   

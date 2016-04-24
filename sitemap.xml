@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.ybbz.site/2016/04/23/manage-blog-images/</loc>
+    
+    <lastmod>2016-04-24T15:45:17.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2016/04/24/rongcloud-practice-2-get-token/</loc>
+    
+    <lastmod>2016-04-24T15:22:47.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2016/03/05/OWL-SWRL-Guide/</loc>
+    
+    <lastmod>2016-04-24T15:05:12.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2016/03/05/OWL-Guide/</loc>
+    
+    <lastmod>2016-04-24T15:03:17.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2016/04/24/rongcloud-practice-1-introduction/</loc>
+    
+    <lastmod>2016-04-24T07:35:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.ybbz.site/about/index.html</loc>
     
     <lastmod>2016-04-23T13:31:41.000Z</lastmod>
@@ -289,13 +324,6 @@
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/04/22/SWRL/</loc>
-    
-    <lastmod>2016-04-23T10:46:05.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.ybbz.site/2016/04/15/Hadoop-foundation-two/</loc>
     
     <lastmod>2016-04-23T09:28:47.000Z</lastmod>
@@ -306,13 +334,6 @@
     <loc>http://blog.ybbz.site/2016/04/15/Hadoop-foundation-one/</loc>
     
     <lastmod>2016-04-23T09:28:41.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.ybbz.site/2016/04/22/OWL-SWRL/</loc>
-    
-    <lastmod>2016-04-23T09:28:16.000Z</lastmod>
     
   </url>
   
