@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.ybbz.site/2015/11/05/CentOS7-Nginx-install/</loc>
+    
+    <lastmod>2016-04-25T07:35:47.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.ybbz.site/2016/04/24/rongcloud-practice-2-get-token/</loc>
     
     <lastmod>2016-04-24T16:30:49.000Z</lastmod>

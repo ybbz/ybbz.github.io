@@ -38,7 +38,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Mac,vim," />
+  <meta name="keywords" content="Linux,CentOS7,Nginx," />
 
 
 
@@ -56,46 +56,33 @@
 
 
 
-<meta name="description" content="VIM以前玩 Python 及之前用 Git 因为不熟悉 Vim 遇到了很多坑，进而导致屡次学习各项语言的放弃…惨痛教训就源于这莫名其妙的 Vim…
-整理一下思路，重新出发。
-Vi/Vim 分三种模式：
-
-指令模式 默认进入界面时的模式，此时只支持 Vi/Vim 的指令
-编辑模式 此模式下才能输入指令或做修改
-选择模式
-
-常用指令
-i 在指令模式下，按「i」激活编辑模式；
-esc 在非指令模式下，">
+<meta name="description" content="1.安装Nginx
+1yum install nginx
+2.启动Nginx
+1systemctl start nginx
+3.启动失败的解决办法
+123#Job for nginx.service failed.#&apos;systemctl status nginx.service&apos; and &apos;journalctl -xn&apos; for details.systemctl status nginx.ser">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VIM">
-<meta property="og:url" content="http://blog.ybbz.site/2015/10/20/VIM/index.html">
+<meta property="og:title" content="CentOS7安装并配置Nginx">
+<meta property="og:url" content="http://blog.ybbz.site/2015/11/05/CentOS7-Nginx-install/index.html">
 <meta property="og:site_name" content="八宝粥的博客">
-<meta property="og:description" content="VIM以前玩 Python 及之前用 Git 因为不熟悉 Vim 遇到了很多坑，进而导致屡次学习各项语言的放弃…惨痛教训就源于这莫名其妙的 Vim…
-整理一下思路，重新出发。
-Vi/Vim 分三种模式：
-
-指令模式 默认进入界面时的模式，此时只支持 Vi/Vim 的指令
-编辑模式 此模式下才能输入指令或做修改
-选择模式
-
-常用指令
-i 在指令模式下，按「i」激活编辑模式；
-esc 在非指令模式下，">
-<meta property="og:updated_time" content="2016-04-23T09:20:03.000Z">
+<meta property="og:description" content="1.安装Nginx
+1yum install nginx
+2.启动Nginx
+1systemctl start nginx
+3.启动失败的解决办法
+123#Job for nginx.service failed.#&apos;systemctl status nginx.service&apos; and &apos;journalctl -xn&apos; for details.systemctl status nginx.ser">
+<meta property="og:image" content="http://7xsjt1.com2.z0.glb.clouddn.com/IMG_20151105_1.png">
+<meta property="og:updated_time" content="2016-04-25T07:35:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VIM">
-<meta name="twitter:description" content="VIM以前玩 Python 及之前用 Git 因为不熟悉 Vim 遇到了很多坑，进而导致屡次学习各项语言的放弃…惨痛教训就源于这莫名其妙的 Vim…
-整理一下思路，重新出发。
-Vi/Vim 分三种模式：
-
-指令模式 默认进入界面时的模式，此时只支持 Vi/Vim 的指令
-编辑模式 此模式下才能输入指令或做修改
-选择模式
-
-常用指令
-i 在指令模式下，按「i」激活编辑模式；
-esc 在非指令模式下，">
+<meta name="twitter:title" content="CentOS7安装并配置Nginx">
+<meta name="twitter:description" content="1.安装Nginx
+1yum install nginx
+2.启动Nginx
+1systemctl start nginx
+3.启动失败的解决办法
+123#Job for nginx.service failed.#&apos;systemctl status nginx.service&apos; and &apos;journalctl -xn&apos; for details.systemctl status nginx.ser">
+<meta name="twitter:image" content="http://7xsjt1.com2.z0.glb.clouddn.com/IMG_20151105_1.png">
 
 
 
@@ -113,7 +100,7 @@ esc 在非指令模式下，">
   };
 </script>
 
-  <title> VIM | 八宝粥的博客 </title>
+  <title> CentOS7安装并配置Nginx | 八宝粥的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -293,7 +280,7 @@ esc 在非指令模式下，">
             
             
               
-                VIM
+                CentOS7安装并配置Nginx
               
             
           </h1>
@@ -305,8 +292,8 @@ esc 在非指令模式下，">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-10-20T00:00:00+08:00" content="2015-10-20">
-              2015-10-20
+            <time itemprop="dateCreated" datetime="2015-11-05T00:00:00+08:00" content="2015-11-05">
+              2015-11-05
             </time>
           </span>
 
@@ -319,8 +306,8 @@ esc 在非指令模式下，">
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Tool/" itemprop="url" rel="index">
-                    <span itemprop="name">Tool</span>
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
                   </a>
                 </span>
 
@@ -335,8 +322,8 @@ esc 在非指令模式下，">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/10/20/VIM/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/20/VIM/" itemprop="commentsCount"></span>
+                <a href="/2015/11/05/CentOS7-Nginx-install/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/05/CentOS7-Nginx-install/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -346,7 +333,7 @@ esc 在非指令模式下，">
 
           
           
-             <span id="/2015/10/20/VIM/" class="leancloud_visitors" data-flag-title="VIM">
+             <span id="/2015/11/05/CentOS7-Nginx-install/" class="leancloud_visitors" data-flag-title="CentOS7安装并配置Nginx">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -368,49 +355,23 @@ esc 在非指令模式下，">
       
 
       
-        <h2 id="VIM"><a href="#VIM" class="headerlink" title="VIM"></a>VIM</h2><p>以前玩 Python 及之前用 Git 因为不熟悉 Vim 遇到了很多坑，进而导致屡次学习各项语言的放弃…惨痛教训就源于这莫名其妙的 Vim…</p>
-<p>整理一下思路，重新出发。</p>
-<p>Vi/Vim 分三种模式：</p>
-<ol>
-<li>指令模式 默认进入界面时的模式，此时只支持 Vi/Vim 的指令</li>
-<li>编辑模式 此模式下才能输入指令或做修改</li>
-<li>选择模式</li>
-</ol>
-<h2 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h2><ul>
-<li>i 在指令模式下，按「i」激活编辑模式；</li>
-<li>esc 在非指令模式下，按 esc 键退出</li>
-<li>:wq 保存并退出</li>
-</ul>
-<h2 id="编辑模式常用指令"><a href="#编辑模式常用指令" class="headerlink" title="编辑模式常用指令"></a>编辑模式常用指令</h2><p>在指令模式下的一些其他选项</p>
-<h3 id="编辑快捷键"><a href="#编辑快捷键" class="headerlink" title="编辑快捷键"></a>编辑快捷键</h3><ul>
-<li>:w 保存当前文件</li>
-<li>:q 退出，如文件有修改则需用强制模式退出</li>
-<li>:q! 强制退出，不保存修改</li>
-<li>:wq 保存并退出</li>
-</ul>
-<h2 id="选择模式常用指令"><a href="#选择模式常用指令" class="headerlink" title="选择模式常用指令"></a>选择模式常用指令</h2><h3 id="光标移动快捷键"><a href="#光标移动快捷键" class="headerlink" title="光标移动快捷键"></a>光标移动快捷键</h3><p>k - 上 j - 下  h - 左 l - 右</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th><strong>k</strong></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>h</strong></td>
-<td></td>
-<td><strong>l</strong></td>
-</tr>
-<tr>
-<td></td>
-<td><strong>j</strong></td>
-</tr>
-</tbody>
-</table>
-<h3 id="翻页"><a href="#翻页" class="headerlink" title="翻页"></a>翻页</h3><p>Control + f<br>Control + b</p>
-<h2 id="命令行进入设定退出"><a href="#命令行进入设定退出" class="headerlink" title="命令行进入设定退出"></a>命令行进入设定退出</h2><p>Ctrl + C 退出</p>
+        <p>1.安装Nginx</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install</span> nginx</span><br></pre></td></tr></table></figure>
+<p>2.启动Nginx</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="literal">start</span> nginx</span><br></pre></td></tr></table></figure>
+<p>3.启动失败的解决办法</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#Job</span> <span class="keyword">for</span> nginx<span class="selector-class">.service</span> failed.</span><br><span class="line">#<span class="string">'systemctl status nginx.service'</span> and <span class="string">'journalctl -xn'</span> <span class="keyword">for</span> <span class="selector-tag">details</span>.</span><br><span class="line">systemctl status nginx.service</span><br></pre></td></tr></table></figure>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">nginx.service - nginx - high performance web server</span><br><span class="line"><span class="symbol">   Loaded:</span> loaded (<span class="regexp">/usr/</span>lib<span class="regexp">/systemd/</span>system/nginx.service; disabled)</span><br><span class="line"><span class="symbol">   Active:</span> failed (<span class="string">Result:</span> exit-code)</span><br><span class="line"><span class="symbol">     Docs:</span> <span class="string">http:</span><span class="comment">//nginx.org/en/docs/</span></span><br><span class="line"><span class="symbol">  Process:</span> <span class="number">26216</span> ExecStart=<span class="regexp">/usr/</span>sbin<span class="regexp">/nginx -c /</span>etc<span class="regexp">/nginx/</span>nginx.conf (code=exited, status=<span class="number">1</span>/FAILURE)</span><br><span class="line"><span class="symbol">  Process:</span> <span class="number">26213</span> ExecStartPre=<span class="regexp">/usr/</span>sbin<span class="regexp">/nginx -t -c /</span>etc<span class="regexp">/nginx/</span>nginx.conf (code=exited, status=<span class="number">0</span>/SUCCESS)</span><br><span class="line"></span><br><span class="line">nginx[<span class="number">26213</span>]: <span class="string">nginx:</span> configuration file <span class="regexp">/etc/</span>nginx/ng...ul</span><br><span class="line">nginx[<span class="number">26216</span>]: <span class="string">nginx:</span> [emerg] bind() to <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>:<span class="number">80</span> fai...e)</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+<p>4.修改Nginx端口</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> /etc/nginx/<span class="keyword">conf</span>.<span class="built_in">d</span></span><br><span class="line">vi default.<span class="keyword">conf</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#default.conf</span></span><br><span class="line"><span class="keyword">server</span> &#123;</span><br><span class="line">    listen       <span class="number">80</span>;</span><br><span class="line">    server_name  localhost;</span><br><span class="line">    location / &#123;</span><br><span class="line">        root   html;</span><br><span class="line">        <span class="keyword">index</span>  <span class="keyword">index</span>.html <span class="keyword">index</span>.htm;</span><br><span class="line">    &#125;</span><br><span class="line">    ……</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在default.conf中将80端口改为其他端口，如88等。</p>
+<p>5.开启远程服务器端口</p>
+<figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=88/tcp --permanent</span><br><span class="line"></span><br><span class="line">#命令含义：</span><br><span class="line">-<span class="ruby">-zone <span class="comment">#作用域</span></span><br><span class="line"></span>-<span class="ruby">-add-port=<span class="number">80</span>/tcp  <span class="comment">#添加端口，格式为：端口/通讯协议</span></span><br><span class="line"></span>-<span class="ruby">-permanent   <span class="comment">#永久生效，没有此参数重启后失效</span></span></span><br></pre></td></tr></table></figure>
+<p>6.重启防火墙</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd <span class="comment">--reload</span></span><br></pre></td></tr></table></figure>
+<p>7.打开浏览器访问</p>
+<p><img src="http://7xsjt1.com2.z0.glb.clouddn.com/IMG_20151105_1.png" alt="nginx"></p>
 
       
     </div>
@@ -436,9 +397,11 @@ esc 在非指令模式下，">
       
         <div class="post-tags">
           
-            <a href="/tags/Mac/" rel="tag">#Mac</a>
+            <a href="/tags/Linux/" rel="tag">#Linux</a>
           
-            <a href="/tags/vim/" rel="tag">#vim</a>
+            <a href="/tags/CentOS7/" rel="tag">#CentOS7</a>
+          
+            <a href="/tags/Nginx/" rel="tag">#Nginx</a>
           
         </div>
       
@@ -447,16 +410,16 @@ esc 在非指令模式下，">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/10/19/Build-Your-First-GitHub-Pages-Blog/" rel="next" title="打造你的 GitHub Pages 专属博客（小白教程）">
-                <i class="fa fa-chevron-left"></i> 打造你的 GitHub Pages 专属博客（小白教程）
+              <a href="/2015/11/02/CentOS7-Apache-VirtualHost/" rel="next" title="CentOS7配置Apache多站点VirtualHost">
+                <i class="fa fa-chevron-left"></i> CentOS7配置Apache多站点VirtualHost
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/11/01/Sublime-Text-Markdown/" rel="prev" title="Sublime Text配置Markdown预览插件">
-                Sublime Text配置Markdown预览插件 <i class="fa fa-chevron-right"></i>
+              <a href="/2015/11/21/Linux-MySQL/" rel="prev" title="Linux下MySQL命令大全">
+                Linux下MySQL命令大全 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -472,10 +435,10 @@ esc 在非指令模式下，">
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/10/20/VIM/"
-     data-title="VIM"
+        <div class="ds-share flat" data-thread-key="2015/11/05/CentOS7-Nginx-install/"
+     data-title="CentOS7安装并配置Nginx"
      data-content=""
-     data-url="http://blog.ybbz.site/2015/10/20/VIM/">
+     data-url="http://blog.ybbz.site/2015/11/05/CentOS7-Nginx-install/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -502,8 +465,8 @@ esc 在非指令模式下，">
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/10/20/VIM/"
-           data-title="VIM" data-url="http://blog.ybbz.site/2015/10/20/VIM/">
+      <div class="ds-thread" data-thread-key="2015/11/05/CentOS7-Nginx-install/"
+           data-title="CentOS7安装并配置Nginx" data-url="http://blog.ybbz.site/2015/11/05/CentOS7-Nginx-install/">
       </div>
     
   </div>
@@ -630,7 +593,7 @@ esc 在非指令模式下，">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#VIM"><span class="nav-number">1.</span> <span class="nav-text">VIM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用指令"><span class="nav-number">2.</span> <span class="nav-text">常用指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编辑模式常用指令"><span class="nav-number">3.</span> <span class="nav-text">编辑模式常用指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑快捷键"><span class="nav-number">3.1.</span> <span class="nav-text">编辑快捷键</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择模式常用指令"><span class="nav-number">4.</span> <span class="nav-text">选择模式常用指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#光标移动快捷键"><span class="nav-number">4.1.</span> <span class="nav-text">光标移动快捷键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#翻页"><span class="nav-number">4.2.</span> <span class="nav-text">翻页</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令行进入设定退出"><span class="nav-number">5.</span> <span class="nav-text">命令行进入设定退出</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>
