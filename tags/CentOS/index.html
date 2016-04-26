@@ -56,31 +56,15 @@
 
 
 
-<meta name="description" content="安装uwsgipip3 install uwsgi
-测试uwsgi是否正常
-新建test.py文件，内容如下：
-def application(env, start_response):
-        start_response(&amp;apos;200 OK&amp;apos;, [(&amp;apos;Content-Type&amp;apos;,&amp;apos;text/html&amp;apos;)])
-        ret">
-<meta property="og:type" content="article">
-<meta property="og:title" content="django">
-<meta property="og:url" content="http://blog.ybbz.site/2016/04/25/django/index.html">
+<meta name="description" content="这一切都是命运石之门的选择">
+<meta property="og:type" content="website">
+<meta property="og:title" content="八宝粥的博客">
+<meta property="og:url" content="http://blog.ybbz.site/tags/CentOS/index.html">
 <meta property="og:site_name" content="八宝粥的博客">
-<meta property="og:description" content="安装uwsgipip3 install uwsgi
-测试uwsgi是否正常
-新建test.py文件，内容如下：
-def application(env, start_response):
-        start_response(&amp;apos;200 OK&amp;apos;, [(&amp;apos;Content-Type&amp;apos;,&amp;apos;text/html&amp;apos;)])
-        ret">
-<meta property="og:updated_time" content="2016-04-25T11:04:34.000Z">
+<meta property="og:description" content="这一切都是命运石之门的选择">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="django">
-<meta name="twitter:description" content="安装uwsgipip3 install uwsgi
-测试uwsgi是否正常
-新建test.py文件，内容如下：
-def application(env, start_response):
-        start_response(&amp;apos;200 OK&amp;apos;, [(&amp;apos;Content-Type&amp;apos;,&amp;apos;text/html&amp;apos;)])
-        ret">
+<meta name="twitter:title" content="八宝粥的博客">
+<meta name="twitter:description" content="这一切都是命运石之门的选择">
 
 
 
@@ -98,7 +82,7 @@ def application(env, start_response):
   };
 </script>
 
-  <title> django | 八宝粥的博客 </title>
+  <title> 标签: CentOS | 八宝粥的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -129,7 +113,7 @@ def application(env, start_response):
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container one-collumn sidebar-position-left  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -257,167 +241,46 @@ def application(env, start_response):
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <div id="posts" class="posts-collapse">
+    <div class="collection-title">
+      <h2 >
+        CentOS
+        <small>标签</small>
+      </h2>
+    </div>
 
     
-      <header class="post-header">
+      
 
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
+            <a class="post-title-link" href="/2016/04/25/CentOS-Nginx-Django/" itemprop="url">
               
-                django
+                <span itemprop="name">CentOS＋Nginx＋Django部署问题</span>
               
-            
-          </h1>
+            </a>
         
+      </h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-25T16:47:33+08:00" content="2016-04-25">
-              2016-04-25
-            </time>
-          </span>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2016-04-25T00:00:00+08:00"
+              content="2016-04-25" >
+          04-25
+        </time>
+      </div>
 
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/25/django/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/25/django/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/04/25/django/" class="leancloud_visitors" data-flag-title="django">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h3 id="安装uwsgi"><a href="#安装uwsgi" class="headerlink" title="安装uwsgi"></a>安装uwsgi</h3><pre><code>pip3 install uwsgi
-</code></pre><p>测试uwsgi是否正常</p>
-<p>新建test.py文件，内容如下：</p>
-<pre><code>def application(env, start_response):
-        start_response(&apos;200 OK&apos;, [(&apos;Content-Type&apos;,&apos;text/html&apos;)])
-        return &quot;Hello World&quot;
-</code></pre><p>然后在终端运行：</p>
-<pre><code>uwsgi --http :3000 --wsgi-file test.py
-</code></pre><h3 id="安装django"><a href="#安装django" class="headerlink" title="安装django"></a>安装django</h3><pre><code>pip3 install django
-</code></pre><p>测试django是否正常，运行</p>
-<pre><code>django-admin.py startproject demosite
-python3 manage.py runserver 0.0.0.0:3000
-</code></pre><p><img src="" alt="django"></p>
-<h3 id="使用uwsgi测试运行django"><a href="#使用uwsgi测试运行django" class="headerlink" title="使用uwsgi测试运行django"></a>使用uwsgi测试运行django</h3><pre><code>uwsgi --http :3000 --chdir /root/demosite --module demosite.wsgi
-</code></pre><h3 id="继续配置"><a href="#继续配置" class="headerlink" title="继续配置"></a>继续配置</h3>
-      
-    </div>
-    
-    <div>
-      
-        
-<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-    <img id="wechat_subscriber_qcode" src="/images/qrcode.jpg" alt="八宝粥 wechat" style="width: 200px; max-width: 100%;"/>
-    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
-</div>
-
-      
-    </div>
-
-    <div>
-      
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/04/24/rongcloud-practice-2-get-token/" rel="next" title="融云实践二：获取token(PHP+Android)">
-                <i class="fa fa-chevron-left"></i> 融云实践二：获取token(PHP+Android)
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
+    </header>
   </article>
 
 
-
-    <div class="post-spread">
-      
-        <div class="ds-share flat" data-thread-key="2016/04/25/django/"
-     data-title="django"
-     data-content=""
-     data-url="http://blog.ybbz.site/2016/04/25/django/">
-  <div class="ds-share-inline">
-    <ul  class="ds-share-icons-16">
-
-      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-
-    </ul>
-    <div class="ds-share-icons-more">
-    </div>
+    
   </div>
-</div>
-      
-    </div>
-  </div>
+
+  
 
 
           </div>
@@ -425,14 +288,6 @@ python3 manage.py runserver 0.0.0.0:3000
 
 
           
-  <div class="comments" id="comments">
-    
-      <div class="ds-thread" data-thread-key="2016/04/25/django/"
-           data-title="django" data-url="http://blog.ybbz.site/2016/04/25/django/">
-      </div>
-    
-  </div>
-
 
         </div>
         
@@ -452,17 +307,8 @@ python3 manage.py runserver 0.0.0.0:3000
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -490,7 +336,7 @@ python3 manage.py runserver 0.0.0.0:3000
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">50</span>
+                <span class="site-state-item-count">52</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -548,17 +394,6 @@ python3 manage.py runserver 0.0.0.0:3000
 
       </section>
 
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装uwsgi"><span class="nav-number">1.</span> <span class="nav-text">安装uwsgi</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装django"><span class="nav-number">2.</span> <span class="nav-text">安装django</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用uwsgi测试运行django"><span class="nav-number">3.</span> <span class="nav-text">使用uwsgi测试运行django</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#继续配置"><span class="nav-number">4.</span> <span class="nav-text">继续配置</span></a></li></ol></div>
-            
-          </div>
-        </section>
       
 
     </div>
@@ -655,10 +490,6 @@ python3 manage.py runserver 0.0.0.0:3000
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
-
 
   
 
