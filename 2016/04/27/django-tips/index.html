@@ -38,7 +38,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Linux,CentOS7,Nginx," />
+  <meta name="keywords" content="Python,Django," />
 
 
 
@@ -56,33 +56,28 @@
 
 
 
-<meta name="description" content="1.安装Nginx
-1yum install nginx
-2.启动Nginx
-1systemctl start nginx
-3.启动失败的解决办法
-12#Job for nginx.service failed.&apos;systemctl status nginx.service&apos; and &apos;journalctl -xn&apos; for details.systemctl status nginx.servi">
+<meta name="description" content="中文语言支持Django后台的默认语言是英语，可以修改为中文。在settings.py中添加：
+12LANGUAGE_CODE = &apos;zh-CN&apos;TIME_ZONE = &apos;Asia/Shanghai&apos;
+后台使用BootStrapDjango后台的默认样式有些简陋，可以安装并使用Bootstrap
+1.安装django-admin-bootstrapped：
+1pip3 install django">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CentOS7安装并配置Nginx">
-<meta property="og:url" content="http://blog.ybbz.site/2015/11/05/CentOS7-Nginx-install/index.html">
+<meta property="og:title" content="Django后台中的一些小技巧">
+<meta property="og:url" content="http://blog.ybbz.site/2016/04/27/django-tips/index.html">
 <meta property="og:site_name" content="八宝粥的博客">
-<meta property="og:description" content="1.安装Nginx
-1yum install nginx
-2.启动Nginx
-1systemctl start nginx
-3.启动失败的解决办法
-12#Job for nginx.service failed.&apos;systemctl status nginx.service&apos; and &apos;journalctl -xn&apos; for details.systemctl status nginx.servi">
-<meta property="og:image" content="http://7xsjt1.com2.z0.glb.clouddn.com/IMG_20151105_1.png">
-<meta property="og:updated_time" content="2016-04-25T08:15:55.000Z">
+<meta property="og:description" content="中文语言支持Django后台的默认语言是英语，可以修改为中文。在settings.py中添加：
+12LANGUAGE_CODE = &apos;zh-CN&apos;TIME_ZONE = &apos;Asia/Shanghai&apos;
+后台使用BootStrapDjango后台的默认样式有些简陋，可以安装并使用Bootstrap
+1.安装django-admin-bootstrapped：
+1pip3 install django">
+<meta property="og:updated_time" content="2016-04-27T16:24:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CentOS7安装并配置Nginx">
-<meta name="twitter:description" content="1.安装Nginx
-1yum install nginx
-2.启动Nginx
-1systemctl start nginx
-3.启动失败的解决办法
-12#Job for nginx.service failed.&apos;systemctl status nginx.service&apos; and &apos;journalctl -xn&apos; for details.systemctl status nginx.servi">
-<meta name="twitter:image" content="http://7xsjt1.com2.z0.glb.clouddn.com/IMG_20151105_1.png">
+<meta name="twitter:title" content="Django后台中的一些小技巧">
+<meta name="twitter:description" content="中文语言支持Django后台的默认语言是英语，可以修改为中文。在settings.py中添加：
+12LANGUAGE_CODE = &apos;zh-CN&apos;TIME_ZONE = &apos;Asia/Shanghai&apos;
+后台使用BootStrapDjango后台的默认样式有些简陋，可以安装并使用Bootstrap
+1.安装django-admin-bootstrapped：
+1pip3 install django">
 
 
 
@@ -100,7 +95,7 @@
   };
 </script>
 
-  <title> CentOS7安装并配置Nginx | 八宝粥的博客 </title>
+  <title> Django后台中的一些小技巧 | 八宝粥的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -280,7 +275,7 @@
             
             
               
-                CentOS7安装并配置Nginx
+                Django后台中的一些小技巧
               
             
           </h1>
@@ -292,8 +287,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-11-05T00:00:00+08:00" content="2015-11-05">
-              2015-11-05
+            <time itemprop="dateCreated" datetime="2016-04-27T00:00:00+08:00" content="2016-04-27">
+              2016-04-27
             </time>
           </span>
 
@@ -306,8 +301,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
                   </a>
                 </span>
 
@@ -322,8 +317,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/11/05/CentOS7-Nginx-install/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/05/CentOS7-Nginx-install/" itemprop="commentsCount"></span>
+                <a href="/2016/04/27/django-tips/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/27/django-tips/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -333,7 +328,7 @@
 
           
           
-             <span id="/2015/11/05/CentOS7-Nginx-install/" class="leancloud_visitors" data-flag-title="CentOS7安装并配置Nginx">
+             <span id="/2016/04/27/django-tips/" class="leancloud_visitors" data-flag-title="Django后台中的一些小技巧">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -355,25 +350,28 @@
       
 
       
-        <p>1.安装Nginx</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install</span> nginx</span><br></pre></td></tr></table></figure>
-<p>2.启动Nginx</p>
-<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="literal">start</span> nginx</span><br></pre></td></tr></table></figure>
-<p>3.启动失败的解决办法</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#Job</span> <span class="keyword">for</span> nginx<span class="selector-class">.service</span> failed.<span class="string">'systemctl status nginx.service'</span> and <span class="string">'journalctl -xn'</span> <span class="keyword">for</span> <span class="selector-tag">details</span>.</span><br><span class="line">systemctl status nginx.service</span><br></pre></td></tr></table></figure>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">nginx.service - nginx - high performance web server</span><br><span class="line"><span class="symbol">   Loaded:</span> loaded (<span class="regexp">/usr/</span>lib<span class="regexp">/systemd/</span>system/nginx.service; disabled)</span><br><span class="line"><span class="symbol">   Active:</span> failed (<span class="string">Result:</span> exit-code)</span><br><span class="line"><span class="symbol">     Docs:</span> <span class="string">http:</span><span class="comment">//nginx.org/en/docs/</span></span><br><span class="line"><span class="symbol">  Process:</span> <span class="number">26216</span> ExecStart=<span class="regexp">/usr/</span>sbin<span class="regexp">/nginx -c /</span>etc<span class="regexp">/nginx/</span>nginx.conf (code=exited, status=<span class="number">1</span>/FAILURE)</span><br><span class="line"><span class="symbol">  Process:</span> <span class="number">26213</span> ExecStartPre=<span class="regexp">/usr/</span>sbin<span class="regexp">/nginx -t -c /</span>etc<span class="regexp">/nginx/</span>nginx.conf (code=exited, status=<span class="number">0</span>/SUCCESS)</span><br><span class="line"></span><br><span class="line">nginx[<span class="number">26213</span>]: <span class="string">nginx:</span> configuration file <span class="regexp">/etc/</span>nginx/ng...ul</span><br><span class="line">nginx[<span class="number">26216</span>]: <span class="string">nginx:</span> [emerg] bind() to <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>:<span class="number">80</span> fai...e)</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
-<p>4.修改Nginx端口</p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> /etc/nginx/<span class="keyword">conf</span>.<span class="built_in">d</span></span><br><span class="line">vi default.<span class="keyword">conf</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#default.conf</span></span><br><span class="line"><span class="keyword">server</span> &#123;</span><br><span class="line">    listen       <span class="number">80</span>;</span><br><span class="line">    server_name  localhost;</span><br><span class="line">    location / &#123;</span><br><span class="line">        root   html;</span><br><span class="line">        <span class="keyword">index</span>  <span class="keyword">index</span>.html <span class="keyword">index</span>.htm;</span><br><span class="line">    &#125;</span><br><span class="line">    ……</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在default.conf中将80端口改为其他端口，如88等。</p>
-<p>5.开启远程服务器端口</p>
-<figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=88/tcp --permanent</span><br><span class="line"></span><br><span class="line">#命令含义：</span><br><span class="line">-<span class="ruby">-zone <span class="comment">#作用域</span></span><br><span class="line"></span>-<span class="ruby">-add-port=<span class="number">80</span>/tcp  <span class="comment">#添加端口，格式为：端口/通讯协议</span></span><br><span class="line"></span>-<span class="ruby">-permanent   <span class="comment">#永久生效，没有此参数重启后失效</span></span></span><br></pre></td></tr></table></figure>
-<p>6.重启防火墙</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd <span class="comment">--reload</span></span><br></pre></td></tr></table></figure>
-<p>7.打开浏览器访问</p>
-<p><img src="http://7xsjt1.com2.z0.glb.clouddn.com/IMG_20151105_1.png" alt="nginx"></p>
-<p>8.Nginx配置多个端口</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span>       <span class="number">81</span>;</span><br><span class="line">    <span class="attribute">server_name</span>  localhost;</span><br><span class="line">    <span class="attribute">location</span> / &#123;</span><br><span class="line">        <span class="attribute">root</span>   /usr/share/nginx/test1;</span><br><span class="line">        <span class="attribute">index</span>  index.html index.htm;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">#error_page  404              /404.html;</span></span><br><span class="line">    <span class="attribute">error_page</span>   <span class="number">500</span> <span class="number">502</span> <span class="number">503</span> <span class="number">504</span>  /50x.html;</span><br><span class="line">    <span class="attribute">location</span> = /50x.html &#123;</span><br><span class="line">        <span class="attribute">root</span>   /usr/share/nginx/test1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span>       <span class="number">82</span>;</span><br><span class="line">    <span class="attribute">server_name</span>  localhost;</span><br><span class="line">    <span class="attribute">location</span> / &#123;</span><br><span class="line">        <span class="attribute">root</span>   /usr/share/nginx/test2;</span><br><span class="line">        <span class="attribute">index</span>  index.html index.htm;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">#error_page  404              /404.html;</span></span><br><span class="line">    <span class="attribute">error_page</span>   <span class="number">500</span> <span class="number">502</span> <span class="number">503</span> <span class="number">504</span>  /50x.html;</span><br><span class="line">    <span class="attribute">location</span> = /50x.html &#123;</span><br><span class="line">        <span class="attribute">root</span>   /usr/share/nginx/test2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h3 id="中文语言支持"><a href="#中文语言支持" class="headerlink" title="中文语言支持"></a>中文语言支持</h3><p>Django后台的默认语言是英语，可以修改为中文。在settings.py中添加：</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">LANGUAGE_CODE</span> = <span class="string">'zh-CN'</span></span><br><span class="line"><span class="attr">TIME_ZONE</span> = <span class="string">'Asia/Shanghai'</span></span><br></pre></td></tr></table></figure>
+<h3 id="后台使用BootStrap"><a href="#后台使用BootStrap" class="headerlink" title="后台使用BootStrap"></a>后台使用BootStrap</h3><p>Django后台的默认样式有些简陋，可以安装并使用Bootstrap</p>
+<p>1.安装django-admin-bootstrapped：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 <span class="keyword">install</span> django-<span class="keyword">admin</span>-bootstrapped</span><br></pre></td></tr></table></figure>
+<p>2.在INSTALLED_APPS(settings.py)中添加：</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'bootstrap3'</span>,                  <span class="meta">#放在admin前面</span></span><br><span class="line"><span class="string">'django_admin_bootstrapped'</span>,   <span class="meta">#放在admin前面</span></span><br><span class="line"><span class="string">'django.contrib.admin'</span>,</span><br></pre></td></tr></table></figure>
+<h3 id="后台列表页自定义样式"><a href="#后台列表页自定义样式" class="headerlink" title="后台列表页自定义样式"></a>后台列表页自定义样式</h3><p>可以在admin.py中自己设置显示列数、分页、搜索、过滤等功能</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"><span class="keyword">from</span> app.models <span class="keyword">import</span> Blog</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BlogAdmin</span><span class="params">(admin.ModelAdmin)</span>:</span></span><br><span class="line">    list_display = (<span class="string">'title'</span>, <span class="string">'content'</span>, <span class="string">'catalog'</span>)</span><br><span class="line">    list_per_page = <span class="number">10</span></span><br><span class="line">    search_fields = [<span class="string">'title'</span>, ]</span><br><span class="line">    list_editable = [<span class="string">'category'</span>, ]</span><br><span class="line">    list_filter = [<span class="string">'create_time'</span>, ]</span><br><span class="line"><span class="comment"># Register your models here.</span></span><br><span class="line">admin.site.register(Blog, BlogAdmin)</span><br></pre></td></tr></table></figure>
+<h3 id="自定义列显示"><a href="#自定义列显示" class="headerlink" title="自定义列显示"></a>自定义列显示</h3><p>1.修改models.py</p>
+<p>比如下面通过self_name将title和content拼接到一块儿显示</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Article</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    title = models.CharField(<span class="string">u'标题'</span>, max_length=<span class="number">100</span>)</span><br><span class="line">    category = models.CharField(<span class="string">u'分类'</span>, max_length=<span class="number">50</span>, blank=<span class="keyword">True</span>)</span><br><span class="line">    content = models.TextField(<span class="string">u'内容'</span>, blank=<span class="keyword">True</span>, null=<span class="keyword">True</span>)</span><br><span class="line">    create_time = models.DateTimeField(<span class="string">u'创建时间'</span>, auto_now_add=<span class="keyword">True</span>)</span><br><span class="line">    update_time = models.DateTimeField(<span class="string">u'修改时间'</span>, auto_now=<span class="keyword">True</span>, null=<span class="keyword">True</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.title</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        ordering = [<span class="string">'-create_time'</span>]</span><br><span class="line">        verbose_name = <span class="string">u'文章'</span></span><br><span class="line">        verbose_name_plural = <span class="string">u'文章管理'</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">my_property</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.title + <span class="string">":"</span> + self.content</span><br><span class="line"></span><br><span class="line">    my_property.short_description = <span class="string">"self"</span></span><br><span class="line"></span><br><span class="line">    self_name = property(my_property)</span><br></pre></td></tr></table></figure>
+<p>2.修改admin.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ArticleAdmin</span><span class="params">(admin.ModelAdmin)</span>:</span></span><br><span class="line">    list_display = (<span class="string">'title'</span>, <span class="string">'category'</span>, <span class="string">'self_name'</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="上传图片及显示"><a href="#上传图片及显示" class="headerlink" title="上传图片及显示"></a>上传图片及显示</h3><p>1.修改models.py</p>
+<p>使用图片控件ImageField</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">image</span> = models.ImageField(upload_to=<span class="string">'images'</span>, blank=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<p>2.修改settings.py</p>
+<p>STATIC_ROOT和MEDIA_ROOT需要设置不同路径</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">STATIC_URL</span> = <span class="string">'/static/'</span></span><br><span class="line"><span class="attr">STATIC_ROOT</span> = os.path.join(BASE_DIR, <span class="string">'article/static'</span>)</span><br><span class="line"><span class="attr">MEDIA_URL</span> = <span class="string">'/upload/'</span></span><br><span class="line"><span class="attr">MEDIA_ROOT</span> = os.path.join(BASE_DIR, <span class="string">'article/upload'</span>)</span><br></pre></td></tr></table></figure>
+<p>3.修改urls.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">urlpatterns = [</span><br><span class="line">                  url(<span class="string">r'^admin/'</span>, include(admin.site.urls)),</span><br><span class="line">                  ......</span><br><span class="line">              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)</span><br><span class="line">                + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -399,11 +397,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Linux/" rel="tag">#Linux</a>
+            <a href="/tags/Python/" rel="tag">#Python</a>
           
-            <a href="/tags/CentOS7/" rel="tag">#CentOS7</a>
-          
-            <a href="/tags/Nginx/" rel="tag">#Nginx</a>
+            <a href="/tags/Django/" rel="tag">#Django</a>
           
         </div>
       
@@ -412,17 +408,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/11/02/CentOS7-Apache-VirtualHost/" rel="next" title="CentOS7配置Apache多站点VirtualHost">
-                <i class="fa fa-chevron-left"></i> CentOS7配置Apache多站点VirtualHost
+              <a href="/2016/04/25/CentOS-Nginx-Django/" rel="next" title="CentOS＋Nginx＋Django部署问题">
+                <i class="fa fa-chevron-left"></i> CentOS＋Nginx＋Django部署问题
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/11/21/Linux-MySQL/" rel="prev" title="Linux下MySQL命令大全">
-                Linux下MySQL命令大全 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -437,10 +429,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/11/05/CentOS7-Nginx-install/"
-     data-title="CentOS7安装并配置Nginx"
+        <div class="ds-share flat" data-thread-key="2016/04/27/django-tips/"
+     data-title="Django后台中的一些小技巧"
      data-content=""
-     data-url="http://blog.ybbz.site/2015/11/05/CentOS7-Nginx-install/">
+     data-url="http://blog.ybbz.site/2016/04/27/django-tips/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -467,8 +459,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/11/05/CentOS7-Nginx-install/"
-           data-title="CentOS7安装并配置Nginx" data-url="http://blog.ybbz.site/2015/11/05/CentOS7-Nginx-install/">
+      <div class="ds-thread" data-thread-key="2016/04/27/django-tips/"
+           data-title="Django后台中的一些小技巧" data-url="http://blog.ybbz.site/2016/04/27/django-tips/">
       </div>
     
   </div>
@@ -595,7 +587,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#中文语言支持"><span class="nav-number">1.</span> <span class="nav-text">中文语言支持</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后台使用BootStrap"><span class="nav-number">2.</span> <span class="nav-text">后台使用BootStrap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后台列表页自定义样式"><span class="nav-number">3.</span> <span class="nav-text">后台列表页自定义样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义列显示"><span class="nav-number">4.</span> <span class="nav-text">自定义列显示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上传图片及显示"><span class="nav-number">5.</span> <span class="nav-text">上传图片及显示</span></a></li></ol></div>
             
           </div>
         </section>
