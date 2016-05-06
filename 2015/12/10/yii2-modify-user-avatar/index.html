@@ -38,7 +38,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Tool,Images," />
+  <meta name="keywords" content="PHP,Yii2," />
 
 
 
@@ -56,30 +56,19 @@
 
 
 
-<meta name="description" content="很多时候，我们需要在博客文章中插入图片。那么，如何管理自己的博客图片呢？以下是我用过的几种方式。
-百度相册这种方法是以前公司的运营小伙伴告诉我的，将图片上传到百度相册再复制链接。我尝试着在博客中使用了这种方式，当时发现的确可以，但是，后来发现这种外链会被GitHub屏蔽，这样的话文章中的图片就无法显示。
-
-GitHub Pages当百度相册不能用的时候，我便尝试使用了这种办法，可以解决博客配图的需">
+<meta name="description" content="1.新建model，命名为UserAvatarUploadForm
+123456789101112131415161718192021222324252627282930313233343536373839404142&amp;lt;?phpnamespace frontend\models;use Yii;use yii\base\Model;use common\models\User;class U">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何管理博客图片">
-<meta property="og:url" content="http://blog.ybbz.site/2016/04/23/manage-blog-images/index.html">
+<meta property="og:title" content="Yii2修改用户头像">
+<meta property="og:url" content="http://blog.ybbz.site/2015/12/10/yii2-modify-user-avatar/index.html">
 <meta property="og:site_name" content="八宝粥的博客">
-<meta property="og:description" content="很多时候，我们需要在博客文章中插入图片。那么，如何管理自己的博客图片呢？以下是我用过的几种方式。
-百度相册这种方法是以前公司的运营小伙伴告诉我的，将图片上传到百度相册再复制链接。我尝试着在博客中使用了这种方式，当时发现的确可以，但是，后来发现这种外链会被GitHub屏蔽，这样的话文章中的图片就无法显示。
-
-GitHub Pages当百度相册不能用的时候，我便尝试使用了这种办法，可以解决博客配图的需">
-<meta property="og:image" content="http://7xsjt1.com2.z0.glb.clouddn.com/IMG_20160424_1.jpeg">
-<meta property="og:image" content="http://7xsjt1.com2.z0.glb.clouddn.com/IMG_20160424_4.jpeg">
-<meta property="og:image" content="http://7xsjt1.com2.z0.glb.clouddn.com/IMG_20160424_2.jpeg">
-<meta property="og:image" content="http://7xsjt1.com2.z0.glb.clouddn.com/IMG_20160424_3.jpeg">
-<meta property="og:updated_time" content="2016-04-24T15:45:17.000Z">
+<meta property="og:description" content="1.新建model，命名为UserAvatarUploadForm
+123456789101112131415161718192021222324252627282930313233343536373839404142&amp;lt;?phpnamespace frontend\models;use Yii;use yii\base\Model;use common\models\User;class U">
+<meta property="og:updated_time" content="2016-05-06T00:52:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何管理博客图片">
-<meta name="twitter:description" content="很多时候，我们需要在博客文章中插入图片。那么，如何管理自己的博客图片呢？以下是我用过的几种方式。
-百度相册这种方法是以前公司的运营小伙伴告诉我的，将图片上传到百度相册再复制链接。我尝试着在博客中使用了这种方式，当时发现的确可以，但是，后来发现这种外链会被GitHub屏蔽，这样的话文章中的图片就无法显示。
-
-GitHub Pages当百度相册不能用的时候，我便尝试使用了这种办法，可以解决博客配图的需">
-<meta name="twitter:image" content="http://7xsjt1.com2.z0.glb.clouddn.com/IMG_20160424_1.jpeg">
+<meta name="twitter:title" content="Yii2修改用户头像">
+<meta name="twitter:description" content="1.新建model，命名为UserAvatarUploadForm
+123456789101112131415161718192021222324252627282930313233343536373839404142&amp;lt;?phpnamespace frontend\models;use Yii;use yii\base\Model;use common\models\User;class U">
 
 
 
@@ -97,7 +86,7 @@ GitHub Pages当百度相册不能用的时候，我便尝试使用了这种办�
   };
 </script>
 
-  <title> 如何管理博客图片 | 八宝粥的博客 </title>
+  <title> Yii2修改用户头像 | 八宝粥的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -277,7 +266,7 @@ GitHub Pages当百度相册不能用的时候，我便尝试使用了这种办�
             
             
               
-                如何管理博客图片
+                Yii2修改用户头像
               
             
           </h1>
@@ -289,8 +278,8 @@ GitHub Pages当百度相册不能用的时候，我便尝试使用了这种办�
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-23T14:08:45+08:00" content="2016-04-23">
-              2016-04-23
+            <time itemprop="dateCreated" datetime="2015-12-10T00:00:00+08:00" content="2015-12-10">
+              2015-12-10
             </time>
           </span>
 
@@ -303,8 +292,8 @@ GitHub Pages当百度相册不能用的时候，我便尝试使用了这种办�
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Tool/" itemprop="url" rel="index">
-                    <span itemprop="name">Tool</span>
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
                   </a>
                 </span>
 
@@ -319,8 +308,8 @@ GitHub Pages当百度相册不能用的时候，我便尝试使用了这种办�
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/23/manage-blog-images/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/23/manage-blog-images/" itemprop="commentsCount"></span>
+                <a href="/2015/12/10/yii2-modify-user-avatar/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/10/yii2-modify-user-avatar/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -330,7 +319,7 @@ GitHub Pages当百度相册不能用的时候，我便尝试使用了这种办�
 
           
           
-             <span id="/2016/04/23/manage-blog-images/" class="leancloud_visitors" data-flag-title="如何管理博客图片">
+             <span id="/2015/12/10/yii2-modify-user-avatar/" class="leancloud_visitors" data-flag-title="Yii2修改用户头像">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -352,16 +341,12 @@ GitHub Pages当百度相册不能用的时候，我便尝试使用了这种办�
       
 
       
-        <p>很多时候，我们需要在博客文章中插入图片。那么，如何管理自己的博客图片呢？以下是我用过的几种方式。</p>
-<h3 id="百度相册"><a href="#百度相册" class="headerlink" title="百度相册"></a>百度相册</h3><p>这种方法是以前公司的运营小伙伴告诉我的，将图片上传到百度相册再复制链接。我尝试着在博客中使用了这种方式，当时发现的确可以，但是，后来发现这种外链会被GitHub屏蔽，这样的话文章中的图片就无法显示。</p>
-<p><img src="http://7xsjt1.com2.z0.glb.clouddn.com/IMG_20160424_1.jpeg" alt="img1"></p>
-<h3 id="GitHub-Pages"><a href="#GitHub-Pages" class="headerlink" title="GitHub Pages"></a>GitHub Pages</h3><p>当百度相册不能用的时候，我便尝试使用了这种办法，可以解决博客配图的需求，但是缺点很明显。这样会使得GitHub Pages有些臃肿，也无法在MarkDown编辑器中预览图片效果；除非先把图片push（Jekyll）或者deploy（Hexo）上去，再写博客…好处是，只要你使用GitHub Pages写博客，这种方法就不会过时、也不收费！</p>
-<p><img src="http://7xsjt1.com2.z0.glb.clouddn.com/IMG_20160424_4.jpeg" alt="img4"></p>
-<h3 id="七牛云存储"><a href="#七牛云存储" class="headerlink" title="七牛云存储"></a>七牛云存储</h3><p><a href="http://www.qiniu.com" target="_blank" rel="external">七牛云存储</a>是大家经常使用的一种方式，也是在各种场合被推荐的最多的一种方式。七牛云存储有10G的免费存储空间，每个月10G流量；一般来说，都够用了；还可以绑定自己的域名。至于以后会不会收费之类的……附<a href="https://segmentfault.com/qiniu" target="_blank" rel="external">七牛云存储问答社区</a></p>
-<p><img src="http://7xsjt1.com2.z0.glb.clouddn.com/IMG_20160424_2.jpeg" alt="img2"></p>
-<p><img src="http://7xsjt1.com2.z0.glb.clouddn.com/IMG_20160424_3.jpeg" alt="img3"></p>
-<h3 id="自己的服务器"><a href="#自己的服务器" class="headerlink" title="自己的服务器"></a>自己的服务器</h3><p>用自己的服务器（阿里云／青云…），是我写着写着想到的。貌似是一种万能的方式，不止图片，可以管理所有资源，私密的or公开的。只是我不知道有多少人在用，反正我没有用^ ^</p>
-<h3 id="其他方式"><a href="#其他方式" class="headerlink" title="其他方式"></a>其他方式</h3><p>如果读者有其他办法，也可以推荐给我。大家一起交流、学习。（抱拳！）</p>
+        <p>1.新建model，命名为UserAvatarUploadForm</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">frontend</span>\<span class="title">models</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">Yii</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">yii</span>\<span class="title">base</span>\<span class="title">Model</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">common</span>\<span class="title">models</span>\<span class="title">User</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserAvatarUploadForm</span> <span class="keyword">extends</span> <span class="title">Model</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> $user_image;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">rules</span><span class="params">()</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> [</span><br><span class="line">			[<span class="string">'user_image'</span>,<span class="string">'required'</span>],</span><br><span class="line">			[[<span class="string">'user_image'</span>], <span class="string">'file'</span>, <span class="string">'skipOnEmpty'</span> =&gt; <span class="keyword">false</span>, <span class="string">'extensions'</span> =&gt; <span class="string">'png, jpg'</span>],</span><br><span class="line">        ];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">attributeLabels</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> [</span><br><span class="line">			<span class="string">'user_image'</span> =&gt; <span class="string">'修改头像'</span>,</span><br><span class="line">		];</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">upload</span><span class="params">()</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> ($this-&gt;validate()) &#123;</span><br><span class="line">			$path = <span class="string">'uploads/avatar/'</span> . time() . <span class="string">'.'</span> . $this-&gt;user_image-&gt;extension;</span><br><span class="line">            $this-&gt;user_image-&gt;saveAs($path);</span><br><span class="line">			$user =	User::findOne(\Yii::$app-&gt;user-&gt;id);</span><br><span class="line">			$user-&gt;avatar =	$path;</span><br><span class="line">			<span class="keyword">if</span>($user-&gt;update()!==<span class="keyword">false</span>)&#123;</span><br><span class="line">				<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">			&#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>2.在UserController中增加actionAvatar</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">actionAvatar</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="comment">//用户个人信息</span></span><br><span class="line">    $userModel = User::findOne(Yii::$app-&gt;user-&gt;identity-&gt;id);</span><br><span class="line">    <span class="comment">//修改用户头像</span></span><br><span class="line">    $model = <span class="keyword">new</span> UserAvatarUploadForm();</span><br><span class="line">    <span class="keyword">if</span>(Yii::$app-&gt;request-&gt;isPost)&#123;</span><br><span class="line">        $model-&gt;user_image = UploadedFile::getInstance($model, <span class="string">'user_image'</span>);</span><br><span class="line">        <span class="keyword">if</span> ($model-&gt;upload()) &#123;</span><br><span class="line">            Yii::$app-&gt;session-&gt;setFlash(<span class="string">'success'</span>, <span class="string">'用户头像修改成功'</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            Yii::$app-&gt;session-&gt;setFlash(<span class="string">'error'</span>, <span class="string">'用户头像修改失败'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> $this-&gt;refresh();</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> $this-&gt;render(<span class="string">'avatar'</span>, [</span><br><span class="line">            <span class="string">'model'</span> =&gt; $model,</span><br><span class="line">            <span class="string">'userModel'</span> =&gt; $userModel,</span><br><span class="line">        ]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>3.在views中新建avatar.php</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">yii</span>\<span class="title">helpers</span>\<span class="title">Html</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">yii</span>\<span class="title">bootstrap</span>\<span class="title">ActiveForm</span>;</span><br><span class="line"></span><br><span class="line">$this-&gt;title = <span class="string">'修改头像'</span>;</span><br><span class="line">$this-&gt;params[<span class="string">'breadcrumbs'</span>][] = $this-&gt;title;</span><br><span class="line"><span class="meta">?&gt;</span></span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-lg-3"</span>&gt;</span></span><br><span class="line">		...</span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-lg-9"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"preview"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"&lt;?= Html::encode($userModel-&gt;avatar)?&gt;"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	    <span class="php"><span class="meta">&lt;?php</span> $form = ActiveForm::begin([</span><br><span class="line">		    <span class="string">'id'</span> =&gt; <span class="string">'user-avatar-upload-form'</span>,</span><br><span class="line">		    <span class="string">'options'</span> =&gt; [<span class="string">'enctype'</span> =&gt; <span class="string">'multipart/form-data'</span>]</span><br><span class="line">		]); <span class="meta">?&gt;</span></span></span><br><span class="line">        <span class="php"><span class="meta">&lt;?</span>= $form-&gt;field($model, <span class="string">'user_image'</span>)-&gt;fileInput() <span class="meta">?&gt;</span></span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span></span><br><span class="line">            <span class="php"><span class="meta">&lt;?</span>= Html::submitButton(<span class="string">'提交'</span>, [<span class="string">'class'</span> =&gt; <span class="string">'btn btn-primary'</span>]) <span class="meta">?&gt;</span></span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="php"><span class="meta">&lt;?php</span> ActiveForm::end(); <span class="meta">?&gt;</span></span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -387,9 +372,9 @@ GitHub Pages当百度相册不能用的时候，我便尝试使用了这种办�
       
         <div class="post-tags">
           
-            <a href="/tags/Tool/" rel="tag">#Tool</a>
+            <a href="/tags/PHP/" rel="tag">#PHP</a>
           
-            <a href="/tags/Images/" rel="tag">#Images</a>
+            <a href="/tags/Yii2/" rel="tag">#Yii2</a>
           
         </div>
       
@@ -398,16 +383,16 @@ GitHub Pages当百度相册不能用的时候，我便尝试使用了这种办�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/20/Algorithm-3/" rel="next" title="判断两个单向链表是否相交">
-                <i class="fa fa-chevron-left"></i> 判断两个单向链表是否相交
+              <a href="/2015/12/08/Yii2-send-mail/" rel="next" title="Yii2发送邮件">
+                <i class="fa fa-chevron-left"></i> Yii2发送邮件
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/24/rongcloud-practice-1-introduction/" rel="prev" title="融云实践一：快速入门">
-                融云实践一：快速入门 <i class="fa fa-chevron-right"></i>
+              <a href="/2015/12/12/JS-nodes/" rel="prev" title="JavaScript中获取节点的兄弟、父、子节点的各种问题">
+                JavaScript中获取节点的兄弟、父、子节点的各种问题 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -423,10 +408,10 @@ GitHub Pages当百度相册不能用的时候，我便尝试使用了这种办�
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/04/23/manage-blog-images/"
-     data-title="如何管理博客图片"
+        <div class="ds-share flat" data-thread-key="2015/12/10/yii2-modify-user-avatar/"
+     data-title="Yii2修改用户头像"
      data-content=""
-     data-url="http://blog.ybbz.site/2016/04/23/manage-blog-images/">
+     data-url="http://blog.ybbz.site/2015/12/10/yii2-modify-user-avatar/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -453,8 +438,8 @@ GitHub Pages当百度相册不能用的时候，我便尝试使用了这种办�
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/23/manage-blog-images/"
-           data-title="如何管理博客图片" data-url="http://blog.ybbz.site/2016/04/23/manage-blog-images/">
+      <div class="ds-thread" data-thread-key="2015/12/10/yii2-modify-user-avatar/"
+           data-title="Yii2修改用户头像" data-url="http://blog.ybbz.site/2015/12/10/yii2-modify-user-avatar/">
       </div>
     
   </div>
@@ -581,7 +566,7 @@ GitHub Pages当百度相册不能用的时候，我便尝试使用了这种办�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#百度相册"><span class="nav-number">1.</span> <span class="nav-text">百度相册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GitHub-Pages"><span class="nav-number">2.</span> <span class="nav-text">GitHub Pages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#七牛云存储"><span class="nav-number">3.</span> <span class="nav-text">七牛云存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自己的服务器"><span class="nav-number">4.</span> <span class="nav-text">自己的服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他方式"><span class="nav-number">5.</span> <span class="nav-text">其他方式</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>
