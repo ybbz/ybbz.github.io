@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.ybbz.site/2015/12/10/yii2-env-config/</loc>
+    
+    <lastmod>2016-05-06T07:49:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.ybbz.site/2015/12/10/yii2-modify-user-avatar/</loc>
     
-    <lastmod>2016-05-06T00:52:00.000Z</lastmod>
+    <lastmod>2016-05-06T07:39:58.000Z</lastmod>
     
   </url>
   
