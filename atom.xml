@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.ybbz.site/"/>
-  <updated>2016-04-27T16:24:30.000Z</updated>
+  <updated>2016-05-19T09:04:52.000Z</updated>
   <id>http://blog.ybbz.site/</id>
   
   <author>
@@ -14,6 +14,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Yii2中自定义js的位置</title>
+    <link href="http://blog.ybbz.site/2016/05/19/yii2-js/"/>
+    <id>http://blog.ybbz.site/2016/05/19/yii2-js/</id>
+    <published>2016-05-19T09:02:42.000Z</published>
+    <updated>2016-05-19T09:04:52.000Z</updated>
+    
+    <content type="html">&lt;p&gt;在view中：&lt;/p&gt;
+&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;javascript&quot;&gt;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;?php $&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;-&amp;gt;beginBlock(&lt;span class=&quot;string&quot;&gt;&#39;js_end&#39;&lt;/span&gt;) ?&amp;gt;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    $(&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;).ready(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        alert(&lt;span class=&quot;string&quot;&gt;&#39;alert test&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $(&lt;span class=&quot;string&quot;&gt;&quot;#testBtn&quot;&lt;/span&gt;).click(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            alert(&lt;span class=&quot;string&quot;&gt;&quot;test&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;php&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?php&lt;/span&gt; $this-&amp;gt;endBlock() &lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;php&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?php&lt;/span&gt; $this-&amp;gt;registerJs($this-&amp;gt;blocks[&lt;span class=&quot;string&quot;&gt;&#39;js_end&#39;&lt;/span&gt;], \yii\web\View::POS_END); &lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在view中：&lt;/p&gt;
+&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;b
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Django后台中的一些小技巧</title>
@@ -977,6 +998,42 @@ P(A3|A1,A2)=P(A1,A2|A3)P(A3)/P(A1,A2)=P(A1,A2,A3)/P(A1,A2)=P(A3)P(A1|A3)P(A2|A3)
   </entry>
   
   <entry>
+    <title>一道算法题</title>
+    <link href="http://blog.ybbz.site/2016/03/29/algorithm/"/>
+    <id>http://blog.ybbz.site/2016/03/29/algorithm/</id>
+    <published>2016-03-28T16:00:00.000Z</published>
+    <updated>2016-04-23T12:54:08.000Z</updated>
+    
+    <content type="html">&lt;p&gt;题目如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;已知list1 = [20, 6, 15, 53, 47],已经排好序&lt;/li&gt;
+&lt;li&gt;已知list2 = [(6, ‘John’, ‘20’), (15, ‘Kim’, ‘18’),(20, ‘David’, ‘21’), (47, ‘Amy’, ‘23’), (53, ‘Mary’, ‘20’)]&lt;/li&gt;
+&lt;li&gt;把list2按照list1中的顺序重新排序，并把排序结果封装成json字符串，得到list3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;代码如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight vala&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;list1 = [&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;15&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;53&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;47&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;list2 = [(&lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;John&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;20&#39;&lt;/span&gt;), (&lt;span class=&quot;number&quot;&gt;15&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;Kim&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;18&#39;&lt;/span&gt;),&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         (&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;David&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;21&#39;&lt;/span&gt;), (&lt;span class=&quot;number&quot;&gt;47&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;Amy&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;23&#39;&lt;/span&gt;), (&lt;span class=&quot;number&quot;&gt;53&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;Mary&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;20&#39;&lt;/span&gt;)]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(list1)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(list2)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;list3 = []&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;# count = len(list1)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;# for i in range(0, count):&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     dict = &amp;#123;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     id = list1[i]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     dict[&#39;id&#39;] = id&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     j = 0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     while j &amp;lt; count and list2[j][0] != id:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#         j += 1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     dict[&#39;name&#39;] = list2[j][1]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     dict[&#39;age&#39;] = list2[j][2]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     list3.append(dict)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;# list2_dict = &amp;#123;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;# for item2 in list2:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     list2_dict[item2[0]] = (item2[1], item2[2])&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;# for item1 in list1:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     dict = &amp;#123;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     dict[&#39;id&#39;] = item1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     dict[&#39;name&#39;] = list2_dict[item1][0]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     dict[&#39;age&#39;] = list2_dict[item1][1]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     list3.append(dict)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;list2_dict = &amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; item2 in list2:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    list2_dict[item2[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;]] = &amp;#123;&lt;span class=&quot;string&quot;&gt;&#39;name&#39;&lt;/span&gt;: item2[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;], &lt;span class=&quot;string&quot;&gt;&#39;age&#39;&lt;/span&gt;: item2[&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;]&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; item1 in list1:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    dict = list2_dict[item1]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    dict[&lt;span class=&quot;string&quot;&gt;&#39;id&#39;&lt;/span&gt;] = item1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    list3.append(dict)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(list3)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;^_^ 感谢我的本科室友~&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;题目如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;已知list1 = [20, 6, 15, 53, 47],已经排好序&lt;/li&gt;
+&lt;li&gt;已知list2 = [(6, ‘John’, ‘20’), (15, ‘Kim’, ‘18’),(20, ‘David’, ‘21’), (47,
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="http://blog.ybbz.site/categories/Algorithm/"/>
+    
+    
+      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
+    
+      <category term="Algorithm" scheme="http://blog.ybbz.site/tags/Algorithm/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Ajax跨域访问Flask构建的Python Web服务器</title>
     <link href="http://blog.ybbz.site/2016/03/29/Ajax-Flask-Python-Web-Server/"/>
     <id>http://blog.ybbz.site/2016/03/29/Ajax-Flask-Python-Web-Server/</id>
@@ -1022,79 +1079,6 @@ def home():
       <category term="Flask" scheme="http://blog.ybbz.site/tags/Flask/"/>
     
       <category term="Ajax" scheme="http://blog.ybbz.site/tags/Ajax/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一道算法题</title>
-    <link href="http://blog.ybbz.site/2016/03/29/algorithm/"/>
-    <id>http://blog.ybbz.site/2016/03/29/algorithm/</id>
-    <published>2016-03-28T16:00:00.000Z</published>
-    <updated>2016-04-23T12:54:08.000Z</updated>
-    
-    <content type="html">&lt;p&gt;题目如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;已知list1 = [20, 6, 15, 53, 47],已经排好序&lt;/li&gt;
-&lt;li&gt;已知list2 = [(6, ‘John’, ‘20’), (15, ‘Kim’, ‘18’),(20, ‘David’, ‘21’), (47, ‘Amy’, ‘23’), (53, ‘Mary’, ‘20’)]&lt;/li&gt;
-&lt;li&gt;把list2按照list1中的顺序重新排序，并把排序结果封装成json字符串，得到list3&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;代码如下：&lt;/p&gt;
-&lt;figure class=&quot;highlight vala&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;list1 = [&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;15&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;53&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;47&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;list2 = [(&lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;John&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;20&#39;&lt;/span&gt;), (&lt;span class=&quot;number&quot;&gt;15&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;Kim&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;18&#39;&lt;/span&gt;),&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         (&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;David&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;21&#39;&lt;/span&gt;), (&lt;span class=&quot;number&quot;&gt;47&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;Amy&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;23&#39;&lt;/span&gt;), (&lt;span class=&quot;number&quot;&gt;53&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;Mary&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;20&#39;&lt;/span&gt;)]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(list1)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(list2)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;list3 = []&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;# count = len(list1)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;# for i in range(0, count):&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     dict = &amp;#123;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     id = list1[i]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     dict[&#39;id&#39;] = id&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     j = 0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     while j &amp;lt; count and list2[j][0] != id:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#         j += 1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     dict[&#39;name&#39;] = list2[j][1]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     dict[&#39;age&#39;] = list2[j][2]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     list3.append(dict)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;# list2_dict = &amp;#123;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;# for item2 in list2:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     list2_dict[item2[0]] = (item2[1], item2[2])&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;# for item1 in list1:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     dict = &amp;#123;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     dict[&#39;id&#39;] = item1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     dict[&#39;name&#39;] = list2_dict[item1][0]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     dict[&#39;age&#39;] = list2_dict[item1][1]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#     list3.append(dict)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;list2_dict = &amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; item2 in list2:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    list2_dict[item2[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;]] = &amp;#123;&lt;span class=&quot;string&quot;&gt;&#39;name&#39;&lt;/span&gt;: item2[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;], &lt;span class=&quot;string&quot;&gt;&#39;age&#39;&lt;/span&gt;: item2[&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;]&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; item1 in list1:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    dict = list2_dict[item1]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    dict[&lt;span class=&quot;string&quot;&gt;&#39;id&#39;&lt;/span&gt;] = item1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    list3.append(dict)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(list3)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;^_^ 感谢我的本科室友~&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;题目如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;已知list1 = [20, 6, 15, 53, 47],已经排好序&lt;/li&gt;
-&lt;li&gt;已知list2 = [(6, ‘John’, ‘20’), (15, ‘Kim’, ‘18’),(20, ‘David’, ‘21’), (47,
-    
-    </summary>
-    
-      <category term="Algorithm" scheme="http://blog.ybbz.site/categories/Algorithm/"/>
-    
-    
-      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
-    
-      <category term="Algorithm" scheme="http://blog.ybbz.site/tags/Algorithm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>随笔：写在三月末</title>
-    <link href="http://blog.ybbz.site/2016/03/28/Just-write-about-my-life/"/>
-    <id>http://blog.ybbz.site/2016/03/28/Just-write-about-my-life/</id>
-    <published>2016-03-27T16:00:00.000Z</published>
-    <updated>2016-04-23T12:56:04.000Z</updated>
-    
-    <content type="html">&lt;p&gt;这个学期，虽然才刚刚开始，但是已经历了太多事情！&lt;/p&gt;
-&lt;p&gt;先是2月份过完年返校，从年前实习的公司离职，在公司实习的经历让我很愉快，因为可以安心的写代码、搞研究，这于我，就够了！离职后，希望把研究生课题尽快搞定；课题方面，倒也算是取得了一些进展，可也并不能让人满意，还需要努力，希望后续会顺利吧。&lt;/p&gt;
-&lt;p&gt;上上周接手了一台服务器，想把课题相关的代码放在上面跑，可这过程真是无比曲折。上上周五，安装好了系统，周六周日还算正常；到了上周一，系统挂了，调了很久也没调好。你肯定无法想象，我在一间噪声无比巨大的小机房里，一待就是几小时，出了机房耳朵都嗡嗡地响；可也忍了下来，因为我相信只要坚持下来，我就一定会有收获，到了上周五，终于又调试好了。周六周日运行正常，我也利用周末的时间埋首机房，配置好了各种环境。可是到今天（周一），机器又挂了！完全没理由！或许是我经验不够，看样子只能暂时放弃了。不知道是不是工作日，电压问题……为什么人家阿里云就那么稳定，不怎么出问题。&lt;/p&gt;
-&lt;p&gt;春天到了！满校园的花朵盛开，红的、白的、粉的、黄的、紫的……然而，我却无法欣赏。我竟然对花粉过敏！刚开始我只是以为我感冒了、才打喷嚏，可我除了打喷嚏，也没有其他症状啊？而且，在屋子里状态很好，只要到了室外，马上就开始打喷嚏。为了验证我是真的过敏，我特意走到了一颗开满了花儿的树下，然后，几秒钟之后，我就开始打喷嚏了，喷嚏打的我都流眼泪了。我也终于相信我是过敏了！（奇怪，为什么以前我没发现？）&lt;/p&gt;
-&lt;p&gt;自己在生活各个方面真的是各种迟钝，比如上面说的过敏，再比如，在食堂吃饭，买了饭菜就开始吃的津津有味，过了一会儿，女票问我，你打的这个菜/汤怎么这么咸？我也终于反应过来了，是啊，怎么这么咸！然后对于这些菜/汤，我就无法再入口了。所以，从小到大，我就特别“讨厌”同桌吃饭的人点评饭菜，能等我吃完了你再说吗？&lt;/p&gt;
-&lt;p&gt;有时候晚上睡觉不踏实，便想着去跑步，提前消耗掉每天剩余的精力，再洗澡睡觉。效果嘛，时好时坏吧，和睡觉前的心情、状态也有关系，有时候想的太多就睡不好了……&lt;/p&gt;
-&lt;p&gt;也喜欢上了吃水果，最喜欢吃的是苹果，每次都买一大袋子，吃完了就马上再买；对身体真的很有好处，可以明显感受到身体的变化（那么问题来了？果然是食堂的饭菜不合理吗？）&lt;/p&gt;
-&lt;p&gt;还想再吐槽点儿小事～为嘛每次好心把自行车借给别人，还回来就变样了，每次都要花几十大洋去修理。借了别人的东西，还一点儿不爱惜，谁还会再次借给你？己所不欲，勿施于人！&lt;/p&gt;
-&lt;p&gt;今天还和一个经管的博士后学姐在图书馆咖啡厅讨论了快两个小时，也算是跨学科交流吧，很有收获。就这些吧，还是先把心沉下来，好好的搞科研。写在三月末，迎接崭新的四月！&lt;/p&gt;
-&lt;p&gt;最后的最后，推荐一个Mac上好用的图片压缩方法，不想使用额外的软件（PS等）对照片作处理的话，图个方便的话，可以一试，反正我很喜欢这种方式：&lt;br&gt;1.用mac自带的预览打开图片；2.工具－调整大小；3.文件－存储&lt;br&gt;另外，如果想对照片做更多处理的话，也可以使用Mac自带的iPhoto来编辑图片。&lt;/p&gt;
-&lt;p&gt;效果图如下，第一张是校园随手拍的夜景，后两张是黑马运动会前一晚操场调试大屏幕时拍的。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160328_1.jpg&quot; alt=&quot;20160328_1&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160328_2.jpg&quot; alt=&quot;20160328_2&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160328_3.jpg&quot; alt=&quot;20160328_3&quot;&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这个学期，虽然才刚刚开始，但是已经历了太多事情！&lt;/p&gt;
-&lt;p&gt;先是2月份过完年返校，从年前实习的公司离职，在公司实习的经历让我很愉快，因为可以安心的写代码、搞研究，这于我，就够了！离职后，希望把研究生课题尽快搞定；课题方面，倒也算是取得了一些进展，可也并不能让人满意，还需
-    
-    </summary>
-    
-      <category term="Life" scheme="http://blog.ybbz.site/categories/Life/"/>
-    
-    
-      <category term="Life" scheme="http://blog.ybbz.site/tags/Life/"/>
     
   </entry>
   

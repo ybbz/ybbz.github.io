@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.ybbz.site/2016/05/19/yii2-js/</loc>
+    
+    <lastmod>2016-05-19T09:04:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2015/12/02/mac-php-config/</loc>
+    
+    <lastmod>2016-05-14T08:42:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2015/12/06/Yii2-migrate/</loc>
+    
+    <lastmod>2016-05-14T06:18:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.ybbz.site/2015/12/10/yii2-env-config/</loc>
     
     <lastmod>2016-05-06T07:49:08.000Z</lastmod>
