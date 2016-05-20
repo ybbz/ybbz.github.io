@@ -38,7 +38,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="PHP,Yii2," />
 
 
 
@@ -56,15 +56,19 @@
 
 
 
-<meta name="description" content="这一切都是命运石之门的选择">
-<meta property="og:type" content="website">
-<meta property="og:title" content="八宝粥的博客">
-<meta property="og:url" content="http://blog.ybbz.site/archives/2016/05/index.html">
+<meta name="description" content="在view中：
+123456789101112&amp;lt;script&amp;gt;      &amp;lt;?php $this-&amp;gt;beginBlock(&apos;js_end&apos;) ?&amp;gt;      $(document).ready(function()&amp;#123;        alert(&apos;alert test&apos;);        $(&quot;#testBtn&quot;).click(function()&amp;#123;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Yii2中自定义js的位置">
+<meta property="og:url" content="http://blog.ybbz.site/2015/12/10/yii2-js/index.html">
 <meta property="og:site_name" content="八宝粥的博客">
-<meta property="og:description" content="这一切都是命运石之门的选择">
+<meta property="og:description" content="在view中：
+123456789101112&amp;lt;script&amp;gt;      &amp;lt;?php $this-&amp;gt;beginBlock(&apos;js_end&apos;) ?&amp;gt;      $(document).ready(function()&amp;#123;        alert(&apos;alert test&apos;);        $(&quot;#testBtn&quot;).click(function()&amp;#123;">
+<meta property="og:updated_time" content="2016-05-20T06:39:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="八宝粥的博客">
-<meta name="twitter:description" content="这一切都是命运石之门的选择">
+<meta name="twitter:title" content="Yii2中自定义js的位置">
+<meta name="twitter:description" content="在view中：
+123456789101112&amp;lt;script&amp;gt;      &amp;lt;?php $this-&amp;gt;beginBlock(&apos;js_end&apos;) ?&amp;gt;      $(document).ready(function()&amp;#123;        alert(&apos;alert test&apos;);        $(&quot;#testBtn&quot;).click(function()&amp;#123;">
 
 
 
@@ -82,7 +86,7 @@
   };
 </script>
 
-  <title> 归档 | 八宝粥的博客 </title>
+  <title> Yii2中自定义js的位置 | 八宝粥的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -113,7 +117,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -241,65 +245,186 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-       
-        
-      好! 目前共计 70 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
 
-      
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Yii2中自定义js的位置
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-12-10T00:00:00+08:00" content="2015-12-10">
+              2015-12-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/12/10/yii2-js/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/10/yii2-js/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2015/12/10/yii2-js/" class="leancloud_visitors" data-flag-title="Yii2中自定义js的位置">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
       
 
       
+        <p>在view中：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript">  </span><br><span class="line">    &lt;?php $<span class="keyword">this</span>-&gt;beginBlock(<span class="string">'js_end'</span>) ?&gt;  </span><br><span class="line">    $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="string">'alert test'</span>);</span><br><span class="line">        $(<span class="string">"#testBtn"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            alert(<span class="string">"test"</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="xml"><span class="php"><span class="meta">&lt;?php</span> $this-&gt;endBlock() <span class="meta">?&gt;</span></span></span><br><span class="line"></span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="php"><span class="meta">&lt;?php</span> $this-&gt;registerJs($this-&gt;blocks[<span class="string">'js_end'</span>], \yii\web\View::POS_END); <span class="meta">?&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div>
+      
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
+<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/qrcode.jpg" alt="八宝粥 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PHP/" rel="tag">#PHP</a>
+          
+            <a href="/tags/Yii2/" rel="tag">#Yii2</a>
+          
         </div>
       
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/12/08/Yii2-send-mail/" rel="next" title="Yii2发送邮件">
+                <i class="fa fa-chevron-left"></i> Yii2发送邮件
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/12/10/yii2-env-config/" rel="prev" title="Yii2环境配置">
+                Yii2环境配置 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/05/19/yii2-js/" itemprop="url">
-              
-                <span itemprop="name">Yii2中自定义js的位置</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-05-19T17:02:42+08:00"
-              content="2016-05-19" >
-          05-19
-        </time>
-      </div>
-
-    </header>
+      
+    </footer>
   </article>
 
 
 
-    
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2015/12/10/yii2-js/"
+     data-title="Yii2中自定义js的位置"
+     data-content=""
+     data-url="http://blog.ybbz.site/2015/12/10/yii2-js/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
 
-  </section>
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
 
-  
-
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
 
 
           </div>
@@ -307,6 +432,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/12/10/yii2-js/"
+           data-title="Yii2中自定义js的位置" data-url="http://blog.ybbz.site/2015/12/10/yii2-js/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -326,8 +459,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -413,6 +555,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -509,11 +662,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
 
 
   
