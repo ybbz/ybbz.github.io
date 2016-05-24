@@ -2,6 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.ybbz.site/2016/05/22/yii2-qiniu-upload-file/</loc>
+    
+    <lastmod>2016-05-24T16:04:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2016/05/22/yii2-detailview/</loc>
+    
+    <lastmod>2016-05-24T16:01:54.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2016/05/23/linux-shell-and-crontab/</loc>
+    
+    <lastmod>2016-05-23T07:58:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2016/05/23/linux-nginx-log-goaccess/</loc>
+    
+    <lastmod>2016-05-23T06:17:10.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2016/05/23/linux-command/</loc>
+    
+    <lastmod>2016-05-23T05:00:18.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2015/11/05/CentOS7-Nginx-install/</loc>
+    
+    <lastmod>2016-05-23T03:31:22.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2015/12/08/yii2-date-picker/</loc>
+    
+    <lastmod>2016-05-21T02:02:53.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.ybbz.site/2015/12/10/yii2-js/</loc>
     
     <lastmod>2016-05-20T06:39:04.000Z</lastmod>
@@ -54,13 +103,6 @@
     <loc>http://blog.ybbz.site/2015/12/08/Yii2-send-mail/</loc>
     
     <lastmod>2016-04-26T15:51:05.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.ybbz.site/2015/11/05/CentOS7-Nginx-install/</loc>
-    
-    <lastmod>2016-04-25T08:15:55.000Z</lastmod>
     
   </url>
   
