@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.ybbz.site/"/>
-  <updated>2016-05-23T06:17:10.000Z</updated>
+  <updated>2016-05-23T07:58:05.000Z</updated>
   <id>http://blog.ybbz.site/</id>
   
   <author>
@@ -14,6 +14,83 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux编写Shell脚本与定时执行</title>
+    <link href="http://blog.ybbz.site/2016/05/23/linux-shell-and-crontab/"/>
+    <id>http://blog.ybbz.site/2016/05/23/linux-shell-and-crontab/</id>
+    <published>2016-05-22T16:00:00.000Z</published>
+    <updated>2016-05-23T07:58:05.000Z</updated>
+    
+    <content type="html">&lt;p&gt;1.编写Shell脚本&lt;/p&gt;
+&lt;p&gt;vi test.sh&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#!/bin/bash&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#goaccess&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;goaccess &lt;span class=&quot;_&quot;&gt;-f&lt;/span&gt; access.log --no-csv-summary -o csv &amp;gt; test.csv&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;2.crontab定时执行&lt;/p&gt;
+&lt;p&gt;cat /etc/crontab&lt;/p&gt;
+&lt;p&gt;/etc/init.d/cron status&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1.编写Shell脚本&lt;/p&gt;
+&lt;p&gt;vi test.sh&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span 
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://blog.ybbz.site/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://blog.ybbz.site/tags/Linux/"/>
+    
+      <category term="Shell" scheme="http://blog.ybbz.site/tags/Shell/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux命令</title>
+    <link href="http://blog.ybbz.site/2016/05/23/linux-command/"/>
+    <id>http://blog.ybbz.site/2016/05/23/linux-command/</id>
+    <published>2016-05-22T16:00:00.000Z</published>
+    <updated>2016-05-23T05:00:18.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;tail-命令&quot;&gt;&lt;a href=&quot;#tail-命令&quot; class=&quot;headerlink&quot; title=&quot;tail 命令&quot;&gt;&lt;/a&gt;tail 命令&lt;/h3&gt;&lt;p&gt;1.命令格式&lt;/p&gt;
+&lt;p&gt;tail[必要参数][选择参数][文件]&lt;/p&gt;
+&lt;p&gt;2.命令功能&lt;/p&gt;
+&lt;p&gt;用于显示指定文件末尾内容，不指定文件时，作为输入信息进行处理。常用查看日志文件。&lt;/p&gt;
+&lt;p&gt;3.命令参数：&lt;/p&gt;
+&lt;figure class=&quot;highlight haml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-&lt;span class=&quot;ruby&quot;&gt;f 循环读取&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;q 不显示处理信息&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;v 显示详细的处理信息&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;c&amp;lt;数目&amp;gt; 显示的字节数&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;n&amp;lt;行数&amp;gt; 显示行数&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;-pid=PID 与-f合用,表示在进程ID,PID死掉之后结束.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;q, --quiet, --silent 从不输出给出文件名的首部&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;s, --sleep-interval=S 与-f合用,表示在每次反复的间隔休眠S秒&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;4.使用实例：  &lt;/p&gt;
+&lt;figure class=&quot;highlight fortran&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;tail -n &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;access&lt;/span&gt;.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;tail -f &lt;span class=&quot;keyword&quot;&gt;access&lt;/span&gt;.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;ln-命令&quot;&gt;&lt;a href=&quot;#ln-命令&quot; class=&quot;headerlink&quot; title=&quot;ln 命令&quot;&gt;&lt;/a&gt;ln 命令&lt;/h3&gt;&lt;p&gt;1.命令格式&lt;/p&gt;
+&lt;p&gt;ln [参数][源文件或目录][目标文件或目录]&lt;/p&gt;
+&lt;p&gt;2.命令功能&lt;/p&gt;
+&lt;p&gt;Linux文件系统中，有所谓的链接(link)，我们可以将其视为档案的别名，而链接又可分为两种 : 硬链接(hard link)与软链接(symbolic link)，硬链接的意思是一个档案可以有多个名称，而软链接的方式则是产生一个特殊的档案，该档案的内容是指向另一个档案的位置。硬链接是存在同一个文件系统中，而软链接却可以跨越不同的文件系统。&lt;/p&gt;
+&lt;p&gt;软链接：&lt;br&gt;1.软链接，以路径的形式存在。类似于Windows操作系统中的快捷方式&lt;br&gt;2.软链接可以 跨文件系统 ，硬链接不可以&lt;br&gt;3.软链接可以对一个不存在的文件名进行链接&lt;br&gt;4.软链接可以对目录进行链接&lt;/p&gt;
+&lt;p&gt;硬链接:&lt;br&gt;1.硬链接，以文件副本的形式存在。但不占用实际空间。&lt;br&gt;2.不允许给目录创建硬链接&lt;br&gt;3.硬链接只有在同一个文件系统中才能创建&lt;/p&gt;
+&lt;p&gt;3.命令参数&lt;/p&gt;
+&lt;figure class=&quot;highlight haml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;#必要参数:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-&lt;span class=&quot;ruby&quot;&gt;b 删除，覆盖以前建立的链接&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;d 允许超级用户制作目录的硬链接&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;f 强制执行&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;i 交互模式，文件存在则提示用户是否覆盖&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;n 把符号链接视为一般目录&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;s 软链接(符号链接)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;v 显示详细的处理过程&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;#选择参数:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-&lt;span class=&quot;ruby&quot;&gt;S “-S&amp;lt;字尾备份字符串&amp;gt; ”或 “--suffix=&amp;lt;字尾备份字符串&amp;gt;”&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;V “-V&amp;lt;备份方式&amp;gt;”或“--version-control=&amp;lt;备份方式&amp;gt;”&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;-help 显示帮助信息&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;-version 显示版本信息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;4.使用实例&lt;/p&gt;
+&lt;p&gt;实例1：给文件创建软链接&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ln &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;2013.log link2013&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;实例2：给文件创建硬链接&lt;br&gt;&lt;figure class=&quot;highlight gauss&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;ln&lt;/span&gt; log2013.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt; ln2013&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Ubuntu常用命令&quot;&gt;&lt;a href=&quot;#Ubuntu常用命令&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu常用命令&quot;&gt;&lt;/a&gt;Ubuntu常用命令&lt;/h3&gt;&lt;figure class=&quot;highlight arduino&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;apt-&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; install xxx 安装&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;apt-&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;remove&lt;/span&gt; xxx 卸载但不删除配置&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;apt-&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; purge xxx 卸载并且删除相关配置&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;# another&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;remove&lt;/span&gt; --purge xxx&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; update&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;参考资料：&lt;br&gt;&lt;a href=&quot;http://www.cnblogs.com/peida/tag/每日一linux命令/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;每日一linux命令&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;tail-命令&quot;&gt;&lt;a href=&quot;#tail-命令&quot; class=&quot;headerlink&quot; title=&quot;tail 命令&quot;&gt;&lt;/a&gt;tail 命令&lt;/h3&gt;&lt;p&gt;1.命令格式&lt;/p&gt;
+&lt;p&gt;tail[必要参数][选择参数][文件]&lt;/p&gt;
+&lt;p&gt;2.命令功能&lt;/
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://blog.ybbz.site/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://blog.ybbz.site/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>日志分析工具GoAccess</title>
@@ -95,83 +172,6 @@
       <category term="GoAccess" scheme="http://blog.ybbz.site/tags/GoAccess/"/>
     
       <category term="Log" scheme="http://blog.ybbz.site/tags/Log/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux编写Shell脚本与定时执行</title>
-    <link href="http://blog.ybbz.site/2016/05/23/linux-shell-and-crontab/"/>
-    <id>http://blog.ybbz.site/2016/05/23/linux-shell-and-crontab/</id>
-    <published>2016-05-22T16:00:00.000Z</published>
-    <updated>2016-05-23T07:58:05.000Z</updated>
-    
-    <content type="html">&lt;p&gt;1.编写Shell脚本&lt;/p&gt;
-&lt;p&gt;vi test.sh&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#!/bin/bash&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#goaccess&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;goaccess &lt;span class=&quot;_&quot;&gt;-f&lt;/span&gt; access.log --no-csv-summary -o csv &amp;gt; test.csv&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;2.crontab定时执行&lt;/p&gt;
-&lt;p&gt;cat /etc/crontab&lt;/p&gt;
-&lt;p&gt;/etc/init.d/cron status&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;1.编写Shell脚本&lt;/p&gt;
-&lt;p&gt;vi test.sh&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span 
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://blog.ybbz.site/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="http://blog.ybbz.site/tags/Linux/"/>
-    
-      <category term="Shell" scheme="http://blog.ybbz.site/tags/Shell/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux命令</title>
-    <link href="http://blog.ybbz.site/2016/05/23/linux-command/"/>
-    <id>http://blog.ybbz.site/2016/05/23/linux-command/</id>
-    <published>2016-05-22T16:00:00.000Z</published>
-    <updated>2016-05-23T05:00:18.000Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;tail-命令&quot;&gt;&lt;a href=&quot;#tail-命令&quot; class=&quot;headerlink&quot; title=&quot;tail 命令&quot;&gt;&lt;/a&gt;tail 命令&lt;/h3&gt;&lt;p&gt;1.命令格式&lt;/p&gt;
-&lt;p&gt;tail[必要参数][选择参数][文件]&lt;/p&gt;
-&lt;p&gt;2.命令功能&lt;/p&gt;
-&lt;p&gt;用于显示指定文件末尾内容，不指定文件时，作为输入信息进行处理。常用查看日志文件。&lt;/p&gt;
-&lt;p&gt;3.命令参数：&lt;/p&gt;
-&lt;figure class=&quot;highlight haml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-&lt;span class=&quot;ruby&quot;&gt;f 循环读取&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;q 不显示处理信息&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;v 显示详细的处理信息&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;c&amp;lt;数目&amp;gt; 显示的字节数&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;n&amp;lt;行数&amp;gt; 显示行数&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;-pid=PID 与-f合用,表示在进程ID,PID死掉之后结束.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;q, --quiet, --silent 从不输出给出文件名的首部&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;s, --sleep-interval=S 与-f合用,表示在每次反复的间隔休眠S秒&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;4.使用实例：  &lt;/p&gt;
-&lt;figure class=&quot;highlight fortran&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;tail -n &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;access&lt;/span&gt;.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;tail -f &lt;span class=&quot;keyword&quot;&gt;access&lt;/span&gt;.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;ln-命令&quot;&gt;&lt;a href=&quot;#ln-命令&quot; class=&quot;headerlink&quot; title=&quot;ln 命令&quot;&gt;&lt;/a&gt;ln 命令&lt;/h3&gt;&lt;p&gt;1.命令格式&lt;/p&gt;
-&lt;p&gt;ln [参数][源文件或目录][目标文件或目录]&lt;/p&gt;
-&lt;p&gt;2.命令功能&lt;/p&gt;
-&lt;p&gt;Linux文件系统中，有所谓的链接(link)，我们可以将其视为档案的别名，而链接又可分为两种 : 硬链接(hard link)与软链接(symbolic link)，硬链接的意思是一个档案可以有多个名称，而软链接的方式则是产生一个特殊的档案，该档案的内容是指向另一个档案的位置。硬链接是存在同一个文件系统中，而软链接却可以跨越不同的文件系统。&lt;/p&gt;
-&lt;p&gt;软链接：&lt;br&gt;1.软链接，以路径的形式存在。类似于Windows操作系统中的快捷方式&lt;br&gt;2.软链接可以 跨文件系统 ，硬链接不可以&lt;br&gt;3.软链接可以对一个不存在的文件名进行链接&lt;br&gt;4.软链接可以对目录进行链接&lt;/p&gt;
-&lt;p&gt;硬链接:&lt;br&gt;1.硬链接，以文件副本的形式存在。但不占用实际空间。&lt;br&gt;2.不允许给目录创建硬链接&lt;br&gt;3.硬链接只有在同一个文件系统中才能创建&lt;/p&gt;
-&lt;p&gt;3.命令参数&lt;/p&gt;
-&lt;figure class=&quot;highlight haml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;#必要参数:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-&lt;span class=&quot;ruby&quot;&gt;b 删除，覆盖以前建立的链接&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;d 允许超级用户制作目录的硬链接&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;f 强制执行&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;i 交互模式，文件存在则提示用户是否覆盖&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;n 把符号链接视为一般目录&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;s 软链接(符号链接)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;v 显示详细的处理过程&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;#选择参数:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-&lt;span class=&quot;ruby&quot;&gt;S “-S&amp;lt;字尾备份字符串&amp;gt; ”或 “--suffix=&amp;lt;字尾备份字符串&amp;gt;”&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;V “-V&amp;lt;备份方式&amp;gt;”或“--version-control=&amp;lt;备份方式&amp;gt;”&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;-help 显示帮助信息&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;-version 显示版本信息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;4.使用实例&lt;/p&gt;
-&lt;p&gt;实例1：给文件创建软链接&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ln &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;2013.log link2013&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;实例2：给文件创建硬链接&lt;br&gt;&lt;figure class=&quot;highlight gauss&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;ln&lt;/span&gt; log2013.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt; ln2013&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Ubuntu常用命令&quot;&gt;&lt;a href=&quot;#Ubuntu常用命令&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu常用命令&quot;&gt;&lt;/a&gt;Ubuntu常用命令&lt;/h3&gt;&lt;figure class=&quot;highlight arduino&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;apt-&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; install xxx 安装&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;apt-&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;remove&lt;/span&gt; xxx 卸载但不删除配置&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;apt-&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; purge xxx 卸载并且删除相关配置&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;# another&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;remove&lt;/span&gt; --purge xxx&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; update&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;参考资料：&lt;br&gt;&lt;a href=&quot;http://www.cnblogs.com/peida/tag/每日一linux命令/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;每日一linux命令&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;tail-命令&quot;&gt;&lt;a href=&quot;#tail-命令&quot; class=&quot;headerlink&quot; title=&quot;tail 命令&quot;&gt;&lt;/a&gt;tail 命令&lt;/h3&gt;&lt;p&gt;1.命令格式&lt;/p&gt;
-&lt;p&gt;tail[必要参数][选择参数][文件]&lt;/p&gt;
-&lt;p&gt;2.命令功能&lt;/
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://blog.ybbz.site/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="http://blog.ybbz.site/tags/Linux/"/>
     
   </entry>
   
@@ -473,6 +473,38 @@ python3 manage.py runserver 0.0.0.0:3000
   </entry>
   
   <entry>
+    <title>判断两个单向链表是否相交</title>
+    <link href="http://blog.ybbz.site/2016/04/20/Algorithm-3/"/>
+    <id>http://blog.ybbz.site/2016/04/20/Algorithm-3/</id>
+    <published>2016-04-19T16:00:00.000Z</published>
+    <updated>2016-04-23T12:35:04.000Z</updated>
+    
+    <content type="html">&lt;p&gt;问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。&lt;/p&gt;
+&lt;h3 id=&quot;算法一&quot;&gt;&lt;a href=&quot;#算法一&quot; class=&quot;headerlink&quot; title=&quot;算法一&quot;&gt;&lt;/a&gt;算法一&lt;/h3&gt;&lt;p&gt;对链表一进行遍历，在遍历到每一个节点时，都在链表二中进行遍历，看是否有重复的节点。&lt;/p&gt;
+&lt;h4 id=&quot;算法一改进&quot;&gt;&lt;a href=&quot;#算法一改进&quot; class=&quot;headerlink&quot; title=&quot;算法一改进&quot;&gt;&lt;/a&gt;算法一改进&lt;/h4&gt;&lt;p&gt;以空间换时间：将链表二存入字典，然后遍历链表一，判断是否在于字典中。简化后，时间复杂度变为 O(n+m)，但空间复杂度较高。&lt;/p&gt;
+&lt;h3 id=&quot;算法二&quot;&gt;&lt;a href=&quot;#算法二&quot; class=&quot;headerlink&quot; title=&quot;算法二&quot;&gt;&lt;/a&gt;算法二&lt;/h3&gt;&lt;p&gt;算法二的思路基于以下两个原理：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;两个单向链表相交后，必然无法再分开。&lt;/li&gt;
+&lt;li&gt;两个单项链表相交后，尾节点一定相同。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;假设两个链表相交，很容易证明两个链表的尾元素是相同的。&lt;br&gt;逆反命题：两个链表的尾元素相同时，两个链表一定相交。&lt;br&gt;（注意：相同的节点不仅仅要求值相同，而是“同一个”，也就是指针地址相同。）&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。&lt;/p&gt;
+&lt;h3 id=&quot;算法一&quot;&gt;&lt;a href=&quot;#算法一&quot; class=&quot;headerlink&quot; title=&quot;算法一&quot;&gt;&lt;/a&gt;算法一&lt;/h3&gt;&lt;p&gt;对链表一进行遍历，在遍历到每一个节点时，都在链表二中进
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="http://blog.ybbz.site/categories/Algorithm/"/>
+    
+    
+      <category term="Algorithm" scheme="http://blog.ybbz.site/tags/Algorithm/"/>
+    
+  </entry>
+  
+  <entry>
     <title>根号值逼近问题的算法</title>
     <link href="http://blog.ybbz.site/2016/04/20/Algorithm-2/"/>
     <id>http://blog.ybbz.site/2016/04/20/Algorithm-2/</id>
@@ -508,38 +540,6 @@ python3 manage.py runserver 0.0.0.0:3000
     
     
       <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
-    
-      <category term="Algorithm" scheme="http://blog.ybbz.site/tags/Algorithm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>判断两个单向链表是否相交</title>
-    <link href="http://blog.ybbz.site/2016/04/20/Algorithm-3/"/>
-    <id>http://blog.ybbz.site/2016/04/20/Algorithm-3/</id>
-    <published>2016-04-19T16:00:00.000Z</published>
-    <updated>2016-04-23T12:35:04.000Z</updated>
-    
-    <content type="html">&lt;p&gt;问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。&lt;/p&gt;
-&lt;h3 id=&quot;算法一&quot;&gt;&lt;a href=&quot;#算法一&quot; class=&quot;headerlink&quot; title=&quot;算法一&quot;&gt;&lt;/a&gt;算法一&lt;/h3&gt;&lt;p&gt;对链表一进行遍历，在遍历到每一个节点时，都在链表二中进行遍历，看是否有重复的节点。&lt;/p&gt;
-&lt;h4 id=&quot;算法一改进&quot;&gt;&lt;a href=&quot;#算法一改进&quot; class=&quot;headerlink&quot; title=&quot;算法一改进&quot;&gt;&lt;/a&gt;算法一改进&lt;/h4&gt;&lt;p&gt;以空间换时间：将链表二存入字典，然后遍历链表一，判断是否在于字典中。简化后，时间复杂度变为 O(n+m)，但空间复杂度较高。&lt;/p&gt;
-&lt;h3 id=&quot;算法二&quot;&gt;&lt;a href=&quot;#算法二&quot; class=&quot;headerlink&quot; title=&quot;算法二&quot;&gt;&lt;/a&gt;算法二&lt;/h3&gt;&lt;p&gt;算法二的思路基于以下两个原理：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;两个单向链表相交后，必然无法再分开。&lt;/li&gt;
-&lt;li&gt;两个单项链表相交后，尾节点一定相同。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;假设两个链表相交，很容易证明两个链表的尾元素是相同的。&lt;br&gt;逆反命题：两个链表的尾元素相同时，两个链表一定相交。&lt;br&gt;（注意：相同的节点不仅仅要求值相同，而是“同一个”，也就是指针地址相同。）&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。&lt;/p&gt;
-&lt;h3 id=&quot;算法一&quot;&gt;&lt;a href=&quot;#算法一&quot; class=&quot;headerlink&quot; title=&quot;算法一&quot;&gt;&lt;/a&gt;算法一&lt;/h3&gt;&lt;p&gt;对链表一进行遍历，在遍历到每一个节点时，都在链表二中进
-    
-    </summary>
-    
-      <category term="Algorithm" scheme="http://blog.ybbz.site/categories/Algorithm/"/>
-    
     
       <category term="Algorithm" scheme="http://blog.ybbz.site/tags/Algorithm/"/>
     
