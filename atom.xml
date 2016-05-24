@@ -176,34 +176,6 @@
   </entry>
   
   <entry>
-    <title>Yii2使用七牛云存储上传文件</title>
-    <link href="http://blog.ybbz.site/2016/05/22/yii2-qiniu-upload-file/"/>
-    <id>http://blog.ybbz.site/2016/05/22/yii2-qiniu-upload-file/</id>
-    <published>2016-05-21T16:00:00.000Z</published>
-    <updated>2016-05-24T16:04:48.000Z</updated>
-    
-    <content type="html">&lt;p&gt;待完善…&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;待完善…&lt;/p&gt;
-
-    
-    </summary>
-    
-      <category term="PHP" scheme="http://blog.ybbz.site/categories/PHP/"/>
-    
-    
-      <category term="PHP" scheme="http://blog.ybbz.site/tags/PHP/"/>
-    
-      <category term="Yii2" scheme="http://blog.ybbz.site/tags/Yii2/"/>
-    
-      <category term="Qiniu" scheme="http://blog.ybbz.site/tags/Qiniu/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Yii2自定义DetailView的显示内容</title>
     <link href="http://blog.ybbz.site/2016/05/22/yii2-detailview/"/>
     <id>http://blog.ybbz.site/2016/05/22/yii2-detailview/</id>
@@ -233,6 +205,34 @@
       <category term="PHP" scheme="http://blog.ybbz.site/tags/PHP/"/>
     
       <category term="Yii2" scheme="http://blog.ybbz.site/tags/Yii2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Yii2使用七牛云存储上传文件</title>
+    <link href="http://blog.ybbz.site/2016/05/22/yii2-qiniu-upload-file/"/>
+    <id>http://blog.ybbz.site/2016/05/22/yii2-qiniu-upload-file/</id>
+    <published>2016-05-21T16:00:00.000Z</published>
+    <updated>2016-05-24T16:04:48.000Z</updated>
+    
+    <content type="html">&lt;p&gt;待完善…&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;待完善…&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="PHP" scheme="http://blog.ybbz.site/categories/PHP/"/>
+    
+    
+      <category term="PHP" scheme="http://blog.ybbz.site/tags/PHP/"/>
+    
+      <category term="Yii2" scheme="http://blog.ybbz.site/tags/Yii2/"/>
+    
+      <category term="Qiniu" scheme="http://blog.ybbz.site/tags/Qiniu/"/>
     
   </entry>
   
