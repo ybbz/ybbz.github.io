@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.ybbz.site/"/>
-  <updated>2016-05-23T07:58:05.000Z</updated>
+  <updated>2016-05-25T05:52:03.000Z</updated>
   <id>http://blog.ybbz.site/</id>
   
   <author>
@@ -14,6 +14,45 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ubuntu配置Apache2+PHP+Yii2</title>
+    <link href="http://blog.ybbz.site/2016/05/25/ubuntu-apache2/"/>
+    <id>http://blog.ybbz.site/2016/05/25/ubuntu-apache2/</id>
+    <published>2016-05-24T16:00:00.000Z</published>
+    <updated>2016-05-25T05:52:03.000Z</updated>
+    
+    <content type="html">&lt;p&gt;命令行安装Apache&lt;/p&gt;
+&lt;figure class=&quot;highlight vim&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; install apache2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;cd&lt;/span&gt; /etc/apache2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo &lt;span class=&quot;keyword&quot;&gt;vi&lt;/span&gt; apache2.&lt;span class=&quot;keyword&quot;&gt;conf&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo &lt;span class=&quot;keyword&quot;&gt;vi&lt;/span&gt; ports.&lt;span class=&quot;keyword&quot;&gt;conf&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo /etc/init.d/apache2 status&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo /etc/init.d/apache2 restart&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;apache2: Could not reliably determine the server’s fully qualified domain name,&lt;br&gt;… waiting apache2: Could not reliably determine the server’s fully qualified domain name, using 127.0.1.1 for ServerName&lt;/p&gt;
+&lt;figure class=&quot;highlight gradle&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo vim &lt;span class=&quot;regexp&quot;&gt;/etc/&lt;/span&gt;apache2&lt;span class=&quot;regexp&quot;&gt;/sites-available/&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;000&lt;/span&gt;-&lt;span class=&quot;keyword&quot;&gt;default&lt;/span&gt;.conf&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;打开&lt;span class=&quot;keyword&quot;&gt;default&lt;/span&gt;文件后，在&lt;span class=&quot;keyword&quot;&gt;default&lt;/span&gt;文件顶端加入：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ServerName &lt;span class=&quot;number&quot;&gt;127.0&lt;/span&gt;.&lt;span class=&quot;number&quot;&gt;0.1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;端口扫描工具&lt;/p&gt;
+&lt;figure class=&quot;highlight vala&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#安装&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-&lt;span class=&quot;keyword&quot;&gt;get&lt;/span&gt; install nmap&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#扫描本地端口&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;nmap localhost&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo lsof -i :&lt;span class=&quot;number&quot;&gt;9999&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo netstat -nap|grep&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;安装PHP&lt;/p&gt;
+&lt;figure class=&quot;highlight applescript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-&lt;span class=&quot;keyword&quot;&gt;get&lt;/span&gt; install libapache2-&lt;span class=&quot;keyword&quot;&gt;mod&lt;/span&gt;-php5 php5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;安装Yii2&lt;/p&gt;
+&lt;figure class=&quot;highlight stata&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;wget https:&lt;span class=&quot;comment&quot;&gt;//github.com/yiisoft/yii2/releases/download/2.0.8/yii-advanced-app-2.0.8.tgz&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo tar  zxvf  yii-advanced-&lt;span class=&quot;keyword&quot;&gt;app&lt;/span&gt;-2.0.8.tgz  -C /&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt;/www/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;cd&lt;/span&gt; /&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt;/www/advanced&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;php init&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;命令行安装Apache&lt;/p&gt;
+&lt;figure class=&quot;highlight vim&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/spa
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://blog.ybbz.site/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://blog.ybbz.site/tags/Linux/"/>
+    
+      <category term="PHP" scheme="http://blog.ybbz.site/tags/PHP/"/>
+    
+      <category term="Yii2" scheme="http://blog.ybbz.site/tags/Yii2/"/>
+    
+      <category term="Ubuntu" scheme="http://blog.ybbz.site/tags/Ubuntu/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux编写Shell脚本与定时执行</title>
@@ -176,34 +215,6 @@
   </entry>
   
   <entry>
-    <title>Yii2使用七牛云存储上传文件</title>
-    <link href="http://blog.ybbz.site/2016/05/22/yii2-qiniu-upload-file/"/>
-    <id>http://blog.ybbz.site/2016/05/22/yii2-qiniu-upload-file/</id>
-    <published>2016-05-21T16:00:00.000Z</published>
-    <updated>2016-05-24T16:04:48.000Z</updated>
-    
-    <content type="html">&lt;p&gt;待完善…&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;待完善…&lt;/p&gt;
-
-    
-    </summary>
-    
-      <category term="PHP" scheme="http://blog.ybbz.site/categories/PHP/"/>
-    
-    
-      <category term="PHP" scheme="http://blog.ybbz.site/tags/PHP/"/>
-    
-      <category term="Yii2" scheme="http://blog.ybbz.site/tags/Yii2/"/>
-    
-      <category term="Qiniu" scheme="http://blog.ybbz.site/tags/Qiniu/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Yii2自定义DetailView的显示内容</title>
     <link href="http://blog.ybbz.site/2016/05/22/yii2-detailview/"/>
     <id>http://blog.ybbz.site/2016/05/22/yii2-detailview/</id>
@@ -233,6 +244,34 @@
       <category term="PHP" scheme="http://blog.ybbz.site/tags/PHP/"/>
     
       <category term="Yii2" scheme="http://blog.ybbz.site/tags/Yii2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Yii2使用七牛云存储上传文件</title>
+    <link href="http://blog.ybbz.site/2016/05/22/yii2-qiniu-upload-file/"/>
+    <id>http://blog.ybbz.site/2016/05/22/yii2-qiniu-upload-file/</id>
+    <published>2016-05-21T16:00:00.000Z</published>
+    <updated>2016-05-24T16:04:48.000Z</updated>
+    
+    <content type="html">&lt;p&gt;待完善…&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;待完善…&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="PHP" scheme="http://blog.ybbz.site/categories/PHP/"/>
+    
+    
+      <category term="PHP" scheme="http://blog.ybbz.site/tags/PHP/"/>
+    
+      <category term="Yii2" scheme="http://blog.ybbz.site/tags/Yii2/"/>
+    
+      <category term="Qiniu" scheme="http://blog.ybbz.site/tags/Qiniu/"/>
     
   </entry>
   
@@ -580,85 +619,6 @@ python3 manage.py runserver 0.0.0.0:3000
   </entry>
   
   <entry>
-    <title>《Hadoop海量数据处理》读书笔记2:Hadoop环境准备</title>
-    <link href="http://blog.ybbz.site/2016/04/15/Hadoop-foundation-two/"/>
-    <id>http://blog.ybbz.site/2016/04/15/Hadoop-foundation-two/</id>
-    <published>2016-04-14T16:00:00.000Z</published>
-    <updated>2016-04-23T09:28:47.000Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;Hadoop架构&quot;&gt;&lt;a href=&quot;#Hadoop架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h3&gt;&lt;p&gt;Hadoop主要由两部分构成：分布式文件系统HDFS和分布式计算框架MapReduce；HDFS主要是用于海量数据的存储，MapReduce则是对存储在HDFS中的数据进行分布式计算。&lt;/p&gt;
-&lt;h4 id=&quot;Hadoop-HDFS架构&quot;&gt;&lt;a href=&quot;#Hadoop-HDFS架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop HDFS架构&quot;&gt;&lt;/a&gt;Hadoop HDFS架构&lt;/h4&gt;&lt;p&gt;构成HDFS集群的主要是两类节点（主从模式，管理者－工作者模式）：一个NameNode（管理者）和多个DataNode（工作者），SecondaryNameNode作为NameNode镜像数据备份。&lt;/p&gt;
-&lt;p&gt;表：HDFS守护进程&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;守护进程&lt;/th&gt;
-&lt;th&gt;集群中的数目&lt;/th&gt;
-&lt;th&gt;作用&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;NameNode&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;存储文件系统的元数据，存储文件与数据块映射，并提供文件系统的全景图&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;SecondaryNameNode&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;备份NameNode数据，并负责镜像与NameNode日志数据的合并&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;DataNode&lt;/td&gt;
-&lt;td&gt;多个(至少一个)&lt;/td&gt;
-&lt;td&gt;存储块数据&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h4 id=&quot;Hadoop-MapReduce架构&quot;&gt;&lt;a href=&quot;#Hadoop-MapReduce架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop MapReduce架构&quot;&gt;&lt;/a&gt;Hadoop MapReduce架构&lt;/h4&gt;&lt;p&gt;构成MapReduce集群为两类节点（主从模式）：JobTracker和TaskTracker。&lt;/p&gt;
-&lt;p&gt;表：MapReduce守护进程&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;守护进程&lt;/th&gt;
-&lt;th&gt;集群中的数目&lt;/th&gt;
-&lt;th&gt;作用&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;JobTracker&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;负责接受客户端作业提交，调度任务到TaskTracker上运行，并提供监控TaskTracker及任务进度等管理功能&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;TaskTracker&lt;/td&gt;
-&lt;td&gt;多个(至少一个)&lt;/td&gt;
-&lt;td&gt;实例化用户程序，在本地执行任务并周期性地向JobTracker汇报状态&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h4 id=&quot;Hadoop架构-1&quot;&gt;&lt;a href=&quot;#Hadoop架构-1&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h4&gt;&lt;p&gt;HDFS集群和MapReduce集群其实由一些守护进程组成，而所有这些守护进程和运行它们的节点就构成了Hadoop集群。这个集群的NameNode进程和JobTracker进程在一个节点上运行，而DataNode进程和TaskTracker进程在同一个节点上运行。（DataNode和TaskTracker需要配对部署在同一个节点，NameNode和JobTracker并不一定部署在同一个节点；生产环境，建议NameNode和JobTracker分开部署）。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;Hadoop架构&quot;&gt;&lt;a href=&quot;#Hadoop架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h3&gt;&lt;p&gt;Hadoop主要由两部分构成：分布式文件系统HDFS和分布式计算框架MapReduce；HD
-    
-    </summary>
-    
-      <category term="Hadoop" scheme="http://blog.ybbz.site/categories/Hadoop/"/>
-    
-    
-      <category term="Hadoop" scheme="http://blog.ybbz.site/tags/Hadoop/"/>
-    
-      <category term="云计算" scheme="http://blog.ybbz.site/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/"/>
-    
-      <category term="大数据" scheme="http://blog.ybbz.site/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
-    
-  </entry>
-  
-  <entry>
     <title>《Hadoop海量数据处理》读书笔记1:Hadoop简介</title>
     <link href="http://blog.ybbz.site/2016/04/15/Hadoop-foundation-one/"/>
     <id>http://blog.ybbz.site/2016/04/15/Hadoop-foundation-one/</id>
@@ -746,6 +706,85 @@ python3 manage.py runserver 0.0.0.0:3000
     
       &lt;h3 id=&quot;Hadoop定义&quot;&gt;&lt;a href=&quot;#Hadoop定义&quot; class=&quot;headerlink&quot; title=&quot;Hadoop定义&quot;&gt;&lt;/a&gt;Hadoop定义&lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;Apache软件基金会（ASF）：Hadoop软件库是一个框架，允
+    
+    </summary>
+    
+      <category term="Hadoop" scheme="http://blog.ybbz.site/categories/Hadoop/"/>
+    
+    
+      <category term="Hadoop" scheme="http://blog.ybbz.site/tags/Hadoop/"/>
+    
+      <category term="云计算" scheme="http://blog.ybbz.site/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/"/>
+    
+      <category term="大数据" scheme="http://blog.ybbz.site/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《Hadoop海量数据处理》读书笔记2:Hadoop环境准备</title>
+    <link href="http://blog.ybbz.site/2016/04/15/Hadoop-foundation-two/"/>
+    <id>http://blog.ybbz.site/2016/04/15/Hadoop-foundation-two/</id>
+    <published>2016-04-14T16:00:00.000Z</published>
+    <updated>2016-04-23T09:28:47.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;Hadoop架构&quot;&gt;&lt;a href=&quot;#Hadoop架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h3&gt;&lt;p&gt;Hadoop主要由两部分构成：分布式文件系统HDFS和分布式计算框架MapReduce；HDFS主要是用于海量数据的存储，MapReduce则是对存储在HDFS中的数据进行分布式计算。&lt;/p&gt;
+&lt;h4 id=&quot;Hadoop-HDFS架构&quot;&gt;&lt;a href=&quot;#Hadoop-HDFS架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop HDFS架构&quot;&gt;&lt;/a&gt;Hadoop HDFS架构&lt;/h4&gt;&lt;p&gt;构成HDFS集群的主要是两类节点（主从模式，管理者－工作者模式）：一个NameNode（管理者）和多个DataNode（工作者），SecondaryNameNode作为NameNode镜像数据备份。&lt;/p&gt;
+&lt;p&gt;表：HDFS守护进程&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;守护进程&lt;/th&gt;
+&lt;th&gt;集群中的数目&lt;/th&gt;
+&lt;th&gt;作用&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;NameNode&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;存储文件系统的元数据，存储文件与数据块映射，并提供文件系统的全景图&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SecondaryNameNode&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;备份NameNode数据，并负责镜像与NameNode日志数据的合并&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DataNode&lt;/td&gt;
+&lt;td&gt;多个(至少一个)&lt;/td&gt;
+&lt;td&gt;存储块数据&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&quot;Hadoop-MapReduce架构&quot;&gt;&lt;a href=&quot;#Hadoop-MapReduce架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop MapReduce架构&quot;&gt;&lt;/a&gt;Hadoop MapReduce架构&lt;/h4&gt;&lt;p&gt;构成MapReduce集群为两类节点（主从模式）：JobTracker和TaskTracker。&lt;/p&gt;
+&lt;p&gt;表：MapReduce守护进程&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;守护进程&lt;/th&gt;
+&lt;th&gt;集群中的数目&lt;/th&gt;
+&lt;th&gt;作用&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;JobTracker&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;负责接受客户端作业提交，调度任务到TaskTracker上运行，并提供监控TaskTracker及任务进度等管理功能&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TaskTracker&lt;/td&gt;
+&lt;td&gt;多个(至少一个)&lt;/td&gt;
+&lt;td&gt;实例化用户程序，在本地执行任务并周期性地向JobTracker汇报状态&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&quot;Hadoop架构-1&quot;&gt;&lt;a href=&quot;#Hadoop架构-1&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h4&gt;&lt;p&gt;HDFS集群和MapReduce集群其实由一些守护进程组成，而所有这些守护进程和运行它们的节点就构成了Hadoop集群。这个集群的NameNode进程和JobTracker进程在一个节点上运行，而DataNode进程和TaskTracker进程在同一个节点上运行。（DataNode和TaskTracker需要配对部署在同一个节点，NameNode和JobTracker并不一定部署在同一个节点；生产环境，建议NameNode和JobTracker分开部署）。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Hadoop架构&quot;&gt;&lt;a href=&quot;#Hadoop架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h3&gt;&lt;p&gt;Hadoop主要由两部分构成：分布式文件系统HDFS和分布式计算框架MapReduce；HD
     
     </summary>
     
@@ -917,47 +956,6 @@ python3 manage.py runserver 0.0.0.0:3000
     
     
       <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
-    
-      <category term="Django" scheme="http://blog.ybbz.site/tags/Django/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Django学习笔记二：优化博客展示，抓取博文并保存到数据库</title>
-    <link href="http://blog.ybbz.site/2016/04/03/Django-foundation-two/"/>
-    <id>http://blog.ybbz.site/2016/04/03/Django-foundation-two/</id>
-    <published>2016-04-02T16:00:00.000Z</published>
-    <updated>2016-04-23T12:41:56.000Z</updated>
-    
-    <content type="html">&lt;p&gt;自从去年年底开始，走上了Jekyll+Github+Markdown这条不归路，先是把CSDN上面的一些博客迁移过来，然后就是经常写一些自己在平时学习、开发过程中的心得体会，不见得有人看。权当技术总结，外加练习写作表达了。&lt;/p&gt;
-&lt;p&gt;这种简洁优雅的表达方式，简直让人沉醉。不禁回想上大学（本科）时，也曾折腾了一段时间Wordpress，当时也写了一些内容、交了一些博友，可总有一种无病呻吟的感觉，后来不想写了，也没给服务器续费，就没了。之后，就是偶尔在CSDN上面做一些总结；可也没有很认真的对待。再后来，看了一些类似“我为什么要写博客”这样的文章，觉得说的很有道理，醍醐灌顶。于是，就在这儿安了家。我的朋友圈子里，几乎没有人写博客；虽然“孤单”，我却乐在其中。有时兴致来了，还把自己觉得不错的博文，在新建的公众号推送一下。&lt;/p&gt;
-&lt;p&gt;我在Github上fork的这个博客模版，文章有categories和tags这两个属性，可是页面展示出来的，只有tags，而categories却没有做展示。那么，问题来了！文章是需要有一个分类的，而一个文章却可能有多个标签。就想着，能不能加一个分类页面，更好的为文章分类。于是，就开始看模版的代码。据说Jekyll使用的是Ruby，我对Ruby完全不了解，但是不同语言之间是有规律可循的，这不，我就发现了规律：tags页面使用“for tag in site.tags”对标签进行遍历，于是我试了一下“for category in site.categories”，对分类进行遍历然后就通了。&lt;/p&gt;
-&lt;p&gt;这样，事情就好办了。在Tags.md同级目录（即网站根目录）新建Categories.md,把tags替换成categories，代码如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160402_1.jpeg&quot; alt=&quot;20160402_1&quot;&gt;&lt;/p&gt;
-&lt;p&gt;剩下的问题就是，分类页面和标签页面的样式完全一样，于是便有了下面的想法，打算做出来看看效果如何。&lt;/p&gt;
-&lt;p&gt;大概思路是：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;从Categories页面抓取博客的所有分类，以及每个分类下的文章（时间和标题）&lt;/li&gt;
-&lt;li&gt;将抓取到的内容保存到数据库中（新建blog数据库及表，字段title、create_time、content等）&lt;/li&gt;
-&lt;li&gt;从数据库中查询博客信息并做展示（此篇咱不分析，如有兴趣请关注本博客后续的文章）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;代码如下：&lt;/p&gt;
-&lt;figure class=&quot;highlight nix&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;from urllib.request &lt;span class=&quot;built_in&quot;&gt;import&lt;/span&gt; urlopen&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from bs4 &lt;span class=&quot;built_in&quot;&gt;import&lt;/span&gt; BeautifulSoup&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;import&lt;/span&gt; mysql.connector&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;url&lt;/span&gt; = &#39;http://blog.ybbz.site/Categories/&#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;html&lt;/span&gt; = urlopen(url)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;bsObj&lt;/span&gt; = BeautifulSoup(html, &#39;lxml&#39;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;uls&lt;/span&gt; = bsObj.findAll(&#39;ul&#39;, &amp;#123;&#39;class&#39;: &#39;listing&#39;&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;cate_list&lt;/span&gt; = []&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;for ul &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; uls:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;cate&lt;/span&gt; = ul.h4.string&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    for li &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; ul.findAll(&#39;li&#39;):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        cate_list.append((str(cate), str(li.time.string), str(li.a.string)))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(cate_list)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;host&lt;/span&gt; = &#39;your hostname&#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;user&lt;/span&gt; = &#39;your username&#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;passwd&lt;/span&gt; = &#39;your password&#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;db&lt;/span&gt; = &#39;your database&#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# connect database&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;conn&lt;/span&gt; = mysql.connector.connect(&lt;span class=&quot;attr&quot;&gt;host=host,&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;user=user,&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;passwd=passwd,&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;db=db)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;cursor&lt;/span&gt; = conn.cursor()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# save blogs&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;sql&lt;/span&gt; = &lt;span class=&quot;string&quot;&gt;&quot;insert into blog(category,create_time,title) values(%s, %s, %s)&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cursor.executemany(sql, cate_list)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;conn.commit()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;自从去年年底开始，走上了Jekyll+Github+Markdown这条不归路，先是把CSDN上面的一些博客迁移过来，然后就是经常写一些自己在平时学习、开发过程中的心得体会，不见得有人看。权当技术总结，外加练习写作表达了。&lt;/p&gt;
-&lt;p&gt;这种简洁优雅的表达方式，简直让人沉醉
-    
-    </summary>
-    
-      <category term="Python" scheme="http://blog.ybbz.site/categories/Python/"/>
-    
-    
-      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
-    
-      <category term="Crawler" scheme="http://blog.ybbz.site/tags/Crawler/"/>
     
       <category term="Django" scheme="http://blog.ybbz.site/tags/Django/"/>
     
