@@ -38,7 +38,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Linux," />
+  <meta name="keywords" content="PHP,Yii2,Shell," />
 
 
 
@@ -56,16 +56,22 @@
 
 
 
-<meta name="description" content="test dir">
+<meta name="description" content="一个完整的使用PHP框架（Yii2）进行Shell操作的例子：
+1.在models中新建SearchForm.php
+12345678910111213141516171819class SearchForm extends Model&amp;#123;    public $keyword;    public function rules()    &amp;#123;        return [">
 <meta property="og:type" content="article">
-<meta property="og:title" content="test dir">
-<meta property="og:url" content="http://blog.ybbz.site/2016/05/27/history-2016-05-27-test-dir/index.html">
+<meta property="og:title" content="PHP执行Shell命令（2）">
+<meta property="og:url" content="http://blog.ybbz.site/2016/05/27/php-shell-2/index.html">
 <meta property="og:site_name" content="八宝粥的博客">
-<meta property="og:description" content="test dir">
-<meta property="og:updated_time" content="2016-05-27T06:55:07.000Z">
+<meta property="og:description" content="一个完整的使用PHP框架（Yii2）进行Shell操作的例子：
+1.在models中新建SearchForm.php
+12345678910111213141516171819class SearchForm extends Model&amp;#123;    public $keyword;    public function rules()    &amp;#123;        return [">
+<meta property="og:updated_time" content="2016-05-27T08:14:17.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="test dir">
-<meta name="twitter:description" content="test dir">
+<meta name="twitter:title" content="PHP执行Shell命令（2）">
+<meta name="twitter:description" content="一个完整的使用PHP框架（Yii2）进行Shell操作的例子：
+1.在models中新建SearchForm.php
+12345678910111213141516171819class SearchForm extends Model&amp;#123;    public $keyword;    public function rules()    &amp;#123;        return [">
 
 
 
@@ -83,7 +89,7 @@
   };
 </script>
 
-  <title> test dir | 八宝粥的博客 </title>
+  <title> PHP执行Shell命令（2） | 八宝粥的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -263,7 +269,7 @@
             
             
               
-                test dir
+                PHP执行Shell命令（2）
               
             
           </h1>
@@ -275,7 +281,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-27T14:54:40+08:00" content="2016-05-27">
+            <time itemprop="dateCreated" datetime="2016-05-27T00:00:00+08:00" content="2016-05-27">
               2016-05-27
             </time>
           </span>
@@ -289,8 +295,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
                   </a>
                 </span>
 
@@ -305,8 +311,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/27/history-2016-05-27-test-dir/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/27/history-2016-05-27-test-dir/" itemprop="commentsCount"></span>
+                <a href="/2016/05/27/php-shell-2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/27/php-shell-2/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -316,7 +322,7 @@
 
           
           
-             <span id="/2016/05/27/history-2016-05-27-test-dir/" class="leancloud_visitors" data-flag-title="test dir">
+             <span id="/2016/05/27/php-shell-2/" class="leancloud_visitors" data-flag-title="PHP执行Shell命令（2）">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -338,7 +344,13 @@
       
 
       
-        <p>test dir</p>
+        <p>一个完整的使用PHP框架（Yii2）进行Shell操作的例子：</p>
+<p>1.在models中新建SearchForm.php</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SearchForm</span> <span class="keyword">extends</span> <span class="title">Model</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> $keyword;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">rules</span><span class="params">()</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> [</span><br><span class="line">            [[<span class="string">'keyword'</span>], <span class="string">'required'</span>],</span><br><span class="line">        ];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">attributeLabels</span><span class="params">()</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> [</span><br><span class="line">            <span class="string">'keyword'</span> =&gt; <span class="string">'关键词'</span>,</span><br><span class="line">        ];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.在SiteController.php中添加</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">actionSearch</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    $result = <span class="keyword">array</span>();</span><br><span class="line">    $model = <span class="keyword">new</span> SearchForm();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> ($model-&gt;load(Yii::$app-&gt;request-&gt;post())) &#123;</span><br><span class="line">        $keyword = $model-&gt;keyword;</span><br><span class="line">        $cmd_search = <span class="string">"grep -n "</span>.$keyword.<span class="string">" /var/html/index*"</span>;</span><br><span class="line">        exec($cmd_search, $result, $status);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> $this-&gt;render(<span class="string">'search'</span>, [</span><br><span class="line">        <span class="string">'result'</span> =&gt; $result,</span><br><span class="line">        <span class="string">'model'</span> =&gt; $model,</span><br><span class="line">    ]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>3.在views/site中新建search.php</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"site-search"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">	    <span class="php"><span class="meta">&lt;?php</span> $form = ActiveForm::begin([<span class="string">'id'</span> =&gt; <span class="string">'search-form'</span>]); <span class="meta">?&gt;</span></span></span><br><span class="line"></span><br><span class="line">	    <span class="php"><span class="meta">&lt;?</span>= $form-&gt;field($model, <span class="string">'keyword'</span>)-&gt;textInput([<span class="string">'placeholder'</span>=&gt;<span class="string">'输入关键词'</span>]) <span class="meta">?&gt;</span></span></span><br><span class="line"></span><br><span class="line">	    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span></span><br><span class="line">	        <span class="php"><span class="meta">&lt;?</span>= Html::submitButton(<span class="string">'搜索'</span>, [<span class="string">'class'</span> =&gt; <span class="string">'btn btn-success'</span>]) <span class="meta">?&gt;</span></span></span><br><span class="line">	    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	    <span class="php"><span class="meta">&lt;?php</span> ActiveForm::end(); <span class="meta">?&gt;</span></span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>共搜索到 <span class="php"><span class="meta">&lt;?</span>= count($result) <span class="meta">?&gt;</span></span> 条结果<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">p</span>&gt;</span>搜索结果展示如下：<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    	<span class="php"><span class="meta">&lt;?php</span></span><br><span class="line">    	<span class="keyword">foreach</span> ($result <span class="keyword">as</span> $key=&gt;$value) &#123;</span><br><span class="line">    		<span class="keyword">echo</span> <span class="string">"&lt;p&gt;"</span>.$value.<span class="string">"&lt;/p&gt;"</span>;</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="meta">?&gt;</span></span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -364,7 +376,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Linux/" rel="tag">#Linux</a>
+            <a href="/tags/PHP/" rel="tag">#PHP</a>
+          
+            <a href="/tags/Yii2/" rel="tag">#Yii2</a>
+          
+            <a href="/tags/Shell/" rel="tag">#Shell</a>
           
         </div>
       
@@ -373,8 +389,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/25/ubuntu-apache2/" rel="next" title="Ubuntu配置Apache2+PHP+Yii2">
-                <i class="fa fa-chevron-left"></i> Ubuntu配置Apache2+PHP+Yii2
+              <a href="/2016/05/27/php-shell-1/" rel="next" title="PHP执行Shell命令（1）">
+                <i class="fa fa-chevron-left"></i> PHP执行Shell命令（1）
               </a>
             
           </div>
@@ -394,10 +410,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/05/27/history-2016-05-27-test-dir/"
-     data-title="test dir"
+        <div class="ds-share flat" data-thread-key="2016/05/27/php-shell-2/"
+     data-title="PHP执行Shell命令（2）"
      data-content=""
-     data-url="http://blog.ybbz.site/2016/05/27/history-2016-05-27-test-dir/">
+     data-url="http://blog.ybbz.site/2016/05/27/php-shell-2/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -424,8 +440,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/05/27/history-2016-05-27-test-dir/"
-           data-title="test dir" data-url="http://blog.ybbz.site/2016/05/27/history-2016-05-27-test-dir/">
+      <div class="ds-thread" data-thread-key="2016/05/27/php-shell-2/"
+           data-title="PHP执行Shell命令（2）" data-url="http://blog.ybbz.site/2016/05/27/php-shell-2/">
       </div>
     
   </div>
@@ -470,7 +486,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">80</span>
+              <span class="site-state-item-count">81</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
