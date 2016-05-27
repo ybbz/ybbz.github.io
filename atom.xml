@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.ybbz.site/"/>
-  <updated>2016-05-25T05:52:03.000Z</updated>
+  <updated>2016-05-27T06:55:07.000Z</updated>
   <id>http://blog.ybbz.site/</id>
   
   <author>
@@ -14,6 +14,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test dir</title>
+    <link href="http://blog.ybbz.site/2016/05/27/history-2016-05-27-test-dir/"/>
+    <id>http://blog.ybbz.site/2016/05/27/history-2016-05-27-test-dir/</id>
+    <published>2016-05-27T06:54:40.000Z</published>
+    <updated>2016-05-27T06:55:07.000Z</updated>
+    
+    <content type="html">&lt;p&gt;test dir&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;test dir&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://blog.ybbz.site/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://blog.ybbz.site/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Ubuntu配置Apache2+PHP+Yii2</title>
@@ -55,25 +79,31 @@
   </entry>
   
   <entry>
-    <title>Linux编写Shell脚本与定时执行</title>
+    <title>Linux编写Shell脚本与Crontab定时执行</title>
     <link href="http://blog.ybbz.site/2016/05/23/linux-shell-and-crontab/"/>
     <id>http://blog.ybbz.site/2016/05/23/linux-shell-and-crontab/</id>
     <published>2016-05-22T16:00:00.000Z</published>
-    <updated>2016-05-23T07:58:05.000Z</updated>
+    <updated>2016-05-25T07:17:10.000Z</updated>
     
     <content type="html">&lt;p&gt;1.编写Shell脚本&lt;/p&gt;
-&lt;p&gt;vi test.sh&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#!/bin/bash&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#goaccess&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;goaccess &lt;span class=&quot;_&quot;&gt;-f&lt;/span&gt; access.log --no-csv-summary -o csv &amp;gt; test.csv&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;新建脚本文件&lt;/p&gt;
+&lt;figure class=&quot;highlight nginx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;vi&lt;/span&gt; goaccess&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;添加以下内容&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#!/bin/bash&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#goaccess cron every five minutes&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;_&quot;&gt;-e&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;goaccess &lt;span class=&quot;_&quot;&gt;-f&lt;/span&gt; /var/www/&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;/access.log &lt;span class=&quot;_&quot;&gt;-a&lt;/span&gt; &amp;gt; /var/www/html/report.html&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;exit&lt;/span&gt; 0&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;直接运行脚本&lt;/p&gt;
+&lt;figure class=&quot;highlight armasm&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;bash &lt;/span&gt;goaccess&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;2.crontab定时执行&lt;/p&gt;
-&lt;p&gt;cat /etc/crontab&lt;/p&gt;
-&lt;p&gt;/etc/init.d/cron status&lt;/p&gt;
+&lt;p&gt;新建定时任务&lt;/p&gt;
+&lt;figure class=&quot;highlight dts&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;vi &lt;span class=&quot;meta-keyword&quot;&gt;/etc/&lt;/span&gt;crontab&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;添加以下内容&lt;/p&gt;
+&lt;figure class=&quot;highlight elixir&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;SHELL=&lt;span class=&quot;regexp&quot;&gt;/bin/bash&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;PATH=&lt;span class=&quot;regexp&quot;&gt;/sbin:/bin&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:/usr/sbin&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:/usr/bin&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:/usr/local/bin&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;MAILTO=root&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# For details see man 4 crontabs&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Example of job definition:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# .---------------- minute (0 - 59)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# |  .------------- hour (0 - 23)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# |  |  .---------- day of month (1 - 31)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# |  |  |  |  |&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# *  *  *  *  * user-name  command to be executed&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;*&lt;span class=&quot;regexp&quot;&gt;/5 * * * *  root bash /etc&lt;/span&gt;&lt;span class=&quot;regexp&quot;&gt;/cron.hourly/goaccess&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 </content>
     
     <summary type="html">
     
       &lt;p&gt;1.编写Shell脚本&lt;/p&gt;
-&lt;p&gt;vi test.sh&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span 
+&lt;p&gt;新建脚本文件&lt;/p&gt;
+&lt;figure class=&quot;highlight nginx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/t
     
     </summary>
     
@@ -83,51 +113,6 @@
       <category term="Linux" scheme="http://blog.ybbz.site/tags/Linux/"/>
     
       <category term="Shell" scheme="http://blog.ybbz.site/tags/Shell/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux命令</title>
-    <link href="http://blog.ybbz.site/2016/05/23/linux-command/"/>
-    <id>http://blog.ybbz.site/2016/05/23/linux-command/</id>
-    <published>2016-05-22T16:00:00.000Z</published>
-    <updated>2016-05-23T05:00:18.000Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;tail-命令&quot;&gt;&lt;a href=&quot;#tail-命令&quot; class=&quot;headerlink&quot; title=&quot;tail 命令&quot;&gt;&lt;/a&gt;tail 命令&lt;/h3&gt;&lt;p&gt;1.命令格式&lt;/p&gt;
-&lt;p&gt;tail[必要参数][选择参数][文件]&lt;/p&gt;
-&lt;p&gt;2.命令功能&lt;/p&gt;
-&lt;p&gt;用于显示指定文件末尾内容，不指定文件时，作为输入信息进行处理。常用查看日志文件。&lt;/p&gt;
-&lt;p&gt;3.命令参数：&lt;/p&gt;
-&lt;figure class=&quot;highlight haml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-&lt;span class=&quot;ruby&quot;&gt;f 循环读取&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;q 不显示处理信息&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;v 显示详细的处理信息&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;c&amp;lt;数目&amp;gt; 显示的字节数&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;n&amp;lt;行数&amp;gt; 显示行数&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;-pid=PID 与-f合用,表示在进程ID,PID死掉之后结束.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;q, --quiet, --silent 从不输出给出文件名的首部&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;s, --sleep-interval=S 与-f合用,表示在每次反复的间隔休眠S秒&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;4.使用实例：  &lt;/p&gt;
-&lt;figure class=&quot;highlight fortran&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;tail -n &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;access&lt;/span&gt;.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;tail -f &lt;span class=&quot;keyword&quot;&gt;access&lt;/span&gt;.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;ln-命令&quot;&gt;&lt;a href=&quot;#ln-命令&quot; class=&quot;headerlink&quot; title=&quot;ln 命令&quot;&gt;&lt;/a&gt;ln 命令&lt;/h3&gt;&lt;p&gt;1.命令格式&lt;/p&gt;
-&lt;p&gt;ln [参数][源文件或目录][目标文件或目录]&lt;/p&gt;
-&lt;p&gt;2.命令功能&lt;/p&gt;
-&lt;p&gt;Linux文件系统中，有所谓的链接(link)，我们可以将其视为档案的别名，而链接又可分为两种 : 硬链接(hard link)与软链接(symbolic link)，硬链接的意思是一个档案可以有多个名称，而软链接的方式则是产生一个特殊的档案，该档案的内容是指向另一个档案的位置。硬链接是存在同一个文件系统中，而软链接却可以跨越不同的文件系统。&lt;/p&gt;
-&lt;p&gt;软链接：&lt;br&gt;1.软链接，以路径的形式存在。类似于Windows操作系统中的快捷方式&lt;br&gt;2.软链接可以 跨文件系统 ，硬链接不可以&lt;br&gt;3.软链接可以对一个不存在的文件名进行链接&lt;br&gt;4.软链接可以对目录进行链接&lt;/p&gt;
-&lt;p&gt;硬链接:&lt;br&gt;1.硬链接，以文件副本的形式存在。但不占用实际空间。&lt;br&gt;2.不允许给目录创建硬链接&lt;br&gt;3.硬链接只有在同一个文件系统中才能创建&lt;/p&gt;
-&lt;p&gt;3.命令参数&lt;/p&gt;
-&lt;figure class=&quot;highlight haml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;#必要参数:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-&lt;span class=&quot;ruby&quot;&gt;b 删除，覆盖以前建立的链接&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;d 允许超级用户制作目录的硬链接&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;f 强制执行&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;i 交互模式，文件存在则提示用户是否覆盖&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;n 把符号链接视为一般目录&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;s 软链接(符号链接)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;v 显示详细的处理过程&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;#选择参数:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-&lt;span class=&quot;ruby&quot;&gt;S “-S&amp;lt;字尾备份字符串&amp;gt; ”或 “--suffix=&amp;lt;字尾备份字符串&amp;gt;”&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;V “-V&amp;lt;备份方式&amp;gt;”或“--version-control=&amp;lt;备份方式&amp;gt;”&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;-help 显示帮助信息&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;-version 显示版本信息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;4.使用实例&lt;/p&gt;
-&lt;p&gt;实例1：给文件创建软链接&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ln &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;2013.log link2013&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;实例2：给文件创建硬链接&lt;br&gt;&lt;figure class=&quot;highlight gauss&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;ln&lt;/span&gt; log2013.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt; ln2013&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Ubuntu常用命令&quot;&gt;&lt;a href=&quot;#Ubuntu常用命令&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu常用命令&quot;&gt;&lt;/a&gt;Ubuntu常用命令&lt;/h3&gt;&lt;figure class=&quot;highlight arduino&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;apt-&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; install xxx 安装&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;apt-&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;remove&lt;/span&gt; xxx 卸载但不删除配置&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;apt-&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; purge xxx 卸载并且删除相关配置&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;# another&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;remove&lt;/span&gt; --purge xxx&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; update&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;参考资料：&lt;br&gt;&lt;a href=&quot;http://www.cnblogs.com/peida/tag/每日一linux命令/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;每日一linux命令&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;tail-命令&quot;&gt;&lt;a href=&quot;#tail-命令&quot; class=&quot;headerlink&quot; title=&quot;tail 命令&quot;&gt;&lt;/a&gt;tail 命令&lt;/h3&gt;&lt;p&gt;1.命令格式&lt;/p&gt;
-&lt;p&gt;tail[必要参数][选择参数][文件]&lt;/p&gt;
-&lt;p&gt;2.命令功能&lt;/
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://blog.ybbz.site/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="http://blog.ybbz.site/tags/Linux/"/>
     
   </entry>
   
@@ -215,6 +200,85 @@
   </entry>
   
   <entry>
+    <title>Linux命令</title>
+    <link href="http://blog.ybbz.site/2016/05/23/linux-command/"/>
+    <id>http://blog.ybbz.site/2016/05/23/linux-command/</id>
+    <published>2016-05-22T16:00:00.000Z</published>
+    <updated>2016-05-26T06:00:49.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;tail-命令&quot;&gt;&lt;a href=&quot;#tail-命令&quot; class=&quot;headerlink&quot; title=&quot;tail 命令&quot;&gt;&lt;/a&gt;tail 命令&lt;/h3&gt;&lt;p&gt;1.命令格式&lt;/p&gt;
+&lt;p&gt;tail[必要参数][选择参数][文件]&lt;/p&gt;
+&lt;p&gt;2.命令功能&lt;/p&gt;
+&lt;p&gt;用于显示指定文件末尾内容，不指定文件时，作为输入信息进行处理。常用查看日志文件。&lt;/p&gt;
+&lt;p&gt;3.命令参数：&lt;/p&gt;
+&lt;figure class=&quot;highlight haml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-&lt;span class=&quot;ruby&quot;&gt;f 循环读取&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;q 不显示处理信息&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;v 显示详细的处理信息&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;c&amp;lt;数目&amp;gt; 显示的字节数&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;n&amp;lt;行数&amp;gt; 显示行数&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;-pid=PID 与-f合用,表示在进程ID,PID死掉之后结束.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;q, --quiet, --silent 从不输出给出文件名的首部&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;s, --sleep-interval=S 与-f合用,表示在每次反复的间隔休眠S秒&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;4.使用实例：  &lt;/p&gt;
+&lt;figure class=&quot;highlight fortran&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;tail -n &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;access&lt;/span&gt;.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;tail -f &lt;span class=&quot;keyword&quot;&gt;access&lt;/span&gt;.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;ln-命令&quot;&gt;&lt;a href=&quot;#ln-命令&quot; class=&quot;headerlink&quot; title=&quot;ln 命令&quot;&gt;&lt;/a&gt;ln 命令&lt;/h3&gt;&lt;p&gt;1.命令格式&lt;/p&gt;
+&lt;p&gt;ln [参数][源文件或目录][目标文件或目录]&lt;/p&gt;
+&lt;p&gt;2.命令功能&lt;/p&gt;
+&lt;p&gt;Linux文件系统中，有所谓的链接(link)，我们可以将其视为档案的别名，而链接又可分为两种 : 硬链接(hard link)与软链接(symbolic link)，硬链接的意思是一个档案可以有多个名称，而软链接的方式则是产生一个特殊的档案，该档案的内容是指向另一个档案的位置。硬链接是存在同一个文件系统中，而软链接却可以跨越不同的文件系统。&lt;/p&gt;
+&lt;p&gt;软链接：&lt;br&gt;1.软链接，以路径的形式存在。类似于Windows操作系统中的快捷方式&lt;br&gt;2.软链接可以 跨文件系统 ，硬链接不可以&lt;br&gt;3.软链接可以对一个不存在的文件名进行链接&lt;br&gt;4.软链接可以对目录进行链接&lt;/p&gt;
+&lt;p&gt;硬链接:&lt;br&gt;1.硬链接，以文件副本的形式存在。但不占用实际空间。&lt;br&gt;2.不允许给目录创建硬链接&lt;br&gt;3.硬链接只有在同一个文件系统中才能创建&lt;/p&gt;
+&lt;p&gt;3.命令参数&lt;/p&gt;
+&lt;figure class=&quot;highlight haml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;#必要参数:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-&lt;span class=&quot;ruby&quot;&gt;b 删除，覆盖以前建立的链接&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;d 允许超级用户制作目录的硬链接&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;f 强制执行&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;i 交互模式，文件存在则提示用户是否覆盖&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;n 把符号链接视为一般目录&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;s 软链接(符号链接)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;v 显示详细的处理过程&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;#选择参数:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-&lt;span class=&quot;ruby&quot;&gt;S “-S&amp;lt;字尾备份字符串&amp;gt; ”或 “--suffix=&amp;lt;字尾备份字符串&amp;gt;”&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;V “-V&amp;lt;备份方式&amp;gt;”或“--version-control=&amp;lt;备份方式&amp;gt;”&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;-help 显示帮助信息&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;-version 显示版本信息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;4.使用实例&lt;/p&gt;
+&lt;p&gt;实例1：给文件创建软链接&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ln &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;2013.log link2013&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;实例2：给文件创建硬链接&lt;br&gt;&lt;figure class=&quot;highlight gauss&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;ln&lt;/span&gt; log2013.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt; ln2013&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;grep-命令&quot;&gt;&lt;a href=&quot;#grep-命令&quot; class=&quot;headerlink&quot; title=&quot;grep 命令&quot;&gt;&lt;/a&gt;grep 命令&lt;/h3&gt;&lt;p&gt;Linux系统中grep命令是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹 配的行打印出来。grep全称是Global Regular Expression Print，表示全局正则表达式版本，它的使用权限是所有用户。&lt;br&gt;grep的工作方式是这样的，它在一个或多个文件中搜索字符串模板。如果模板包括空格，则必须被引用，模板后的所有字符串被看作文件名。搜索的结果被送到标准输出，不影响原文件内容。&lt;br&gt;grep可用于shell脚本，因为grep通过返回一个状态值来说明搜索的状态，如果模板搜索成功，则返回0，如果搜索不成功，则返回1，如果搜索的文件不存在，则返回2。我们利用这些返回值就可进行一些自动化的文本处理工作。&lt;/p&gt;
+&lt;p&gt;1.命令格式：&lt;/p&gt;
+&lt;p&gt;grep [option] pattern file&lt;/p&gt;
+&lt;p&gt;2.命令功能：&lt;/p&gt;
+&lt;p&gt;用于过滤/搜索的特定字符。可使用正则表达式能多种命令配合使用，使用上十分灵活。&lt;/p&gt;
+&lt;p&gt;3.命令参数：&lt;/p&gt;
+&lt;h3 id=&quot;Ubuntu常用命令&quot;&gt;&lt;a href=&quot;#Ubuntu常用命令&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu常用命令&quot;&gt;&lt;/a&gt;Ubuntu常用命令&lt;/h3&gt;&lt;figure class=&quot;highlight arduino&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;apt-&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; install xxx 安装&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;apt-&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;remove&lt;/span&gt; xxx 卸载但不删除配置&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;apt-&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; purge xxx 卸载并且删除相关配置&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;# another&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;remove&lt;/span&gt; --purge xxx&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; update&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;参考资料：&lt;br&gt;&lt;a href=&quot;http://www.cnblogs.com/peida/tag/每日一linux命令/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;每日一linux命令&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;tail-命令&quot;&gt;&lt;a href=&quot;#tail-命令&quot; class=&quot;headerlink&quot; title=&quot;tail 命令&quot;&gt;&lt;/a&gt;tail 命令&lt;/h3&gt;&lt;p&gt;1.命令格式&lt;/p&gt;
+&lt;p&gt;tail[必要参数][选择参数][文件]&lt;/p&gt;
+&lt;p&gt;2.命令功能&lt;/
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://blog.ybbz.site/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://blog.ybbz.site/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Yii2使用七牛云存储上传文件</title>
+    <link href="http://blog.ybbz.site/2016/05/22/yii2-qiniu-upload-file/"/>
+    <id>http://blog.ybbz.site/2016/05/22/yii2-qiniu-upload-file/</id>
+    <published>2016-05-21T16:00:00.000Z</published>
+    <updated>2016-05-24T16:04:48.000Z</updated>
+    
+    <content type="html">&lt;p&gt;待完善…&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;待完善…&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="PHP" scheme="http://blog.ybbz.site/categories/PHP/"/>
+    
+    
+      <category term="PHP" scheme="http://blog.ybbz.site/tags/PHP/"/>
+    
+      <category term="Yii2" scheme="http://blog.ybbz.site/tags/Yii2/"/>
+    
+      <category term="Qiniu" scheme="http://blog.ybbz.site/tags/Qiniu/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Yii2自定义DetailView的显示内容</title>
     <link href="http://blog.ybbz.site/2016/05/22/yii2-detailview/"/>
     <id>http://blog.ybbz.site/2016/05/22/yii2-detailview/</id>
@@ -248,19 +312,112 @@
   </entry>
   
   <entry>
-    <title>Yii2使用七牛云存储上传文件</title>
-    <link href="http://blog.ybbz.site/2016/05/22/yii2-qiniu-upload-file/"/>
-    <id>http://blog.ybbz.site/2016/05/22/yii2-qiniu-upload-file/</id>
-    <published>2016-05-21T16:00:00.000Z</published>
-    <updated>2016-05-24T16:04:48.000Z</updated>
+    <title>Yii2使用RESTful API及其认证问题</title>
+    <link href="http://blog.ybbz.site/2016/05/18/yii2-restful-api-auth/"/>
+    <id>http://blog.ybbz.site/2016/05/18/yii2-restful-api-auth/</id>
+    <published>2016-05-17T16:00:00.000Z</published>
+    <updated>2016-05-26T14:09:50.000Z</updated>
     
-    <content type="html">&lt;p&gt;待完善…&lt;/p&gt;
+    <content type="html">&lt;p&gt;Yii 提供了一整套用来简化实现 RESTful 风格的 Web Service 服务的 API。&lt;/p&gt;
+&lt;p&gt;1.修改config/main.php文件，在components添加&lt;/p&gt;
+&lt;figure class=&quot;highlight dart&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;&#39;urlManager&#39;&lt;/span&gt; =&amp;gt; [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;enablePrettyUrl&#39;&lt;/span&gt; =&amp;gt; &lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;enableStrictParsing&#39;&lt;/span&gt; =&amp;gt; &lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;showScriptName&#39;&lt;/span&gt; =&amp;gt; &lt;span class=&quot;keyword&quot;&gt;false&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;rules&#39;&lt;/span&gt; =&amp;gt; [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        [&lt;span class=&quot;string&quot;&gt;&#39;class&#39;&lt;/span&gt; =&amp;gt; &lt;span class=&quot;string&quot;&gt;&#39;yii\rest\UrlRule&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&#39;controller&#39;&lt;/span&gt; =&amp;gt; [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;string&quot;&gt;&#39;......&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;string&quot;&gt;&#39;product&#39;&lt;/span&gt;, &lt;span class=&quot;comment&quot;&gt;//对应ProductController&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            ]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ],&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;2.修改common/models/User.PHP&lt;/p&gt;
+&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;findIdentityByAccessToken&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;($token, $type = null)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt;::findOne([&lt;span class=&quot;string&quot;&gt;&#39;access_token&#39;&lt;/span&gt; =&amp;gt; $token]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;3.在Controllers中新建ProductController.php&lt;/p&gt;
+&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;php&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?php&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;api&lt;/span&gt;\&lt;span class=&quot;title&quot;&gt;controllers&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;common&lt;/span&gt;\&lt;span class=&quot;title&quot;&gt;models&lt;/span&gt;\&lt;span class=&quot;title&quot;&gt;Product&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;yii&lt;/span&gt;\&lt;span class=&quot;title&quot;&gt;rest&lt;/span&gt;\&lt;span class=&quot;title&quot;&gt;ActiveController&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;yii&lt;/span&gt;\&lt;span class=&quot;title&quot;&gt;web&lt;/span&gt;\&lt;span class=&quot;title&quot;&gt;Response&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;yii&lt;/span&gt;\&lt;span class=&quot;title&quot;&gt;filters&lt;/span&gt;\&lt;span class=&quot;title&quot;&gt;auth&lt;/span&gt;\&lt;span class=&quot;title&quot;&gt;CompositeAuth&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;yii&lt;/span&gt;\&lt;span class=&quot;title&quot;&gt;filters&lt;/span&gt;\&lt;span class=&quot;title&quot;&gt;auth&lt;/span&gt;\&lt;span class=&quot;title&quot;&gt;HttpBasicAuth&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;yii&lt;/span&gt;\&lt;span class=&quot;title&quot;&gt;filters&lt;/span&gt;\&lt;span class=&quot;title&quot;&gt;auth&lt;/span&gt;\&lt;span class=&quot;title&quot;&gt;HttpBearerAuth&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;yii&lt;/span&gt;\&lt;span class=&quot;title&quot;&gt;filters&lt;/span&gt;\&lt;span class=&quot;title&quot;&gt;auth&lt;/span&gt;\&lt;span class=&quot;title&quot;&gt;QueryParamAuth&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;CategoryController&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;ActiveController&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; $modelClass = &lt;span class=&quot;string&quot;&gt;&#39;common\models\Product&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;behaviors&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	    $behaviors = &lt;span class=&quot;keyword&quot;&gt;parent&lt;/span&gt;::behaviors();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	    $behaviors[&lt;span class=&quot;string&quot;&gt;&#39;contentNegotiator&#39;&lt;/span&gt;][&lt;span class=&quot;string&quot;&gt;&#39;formats&#39;&lt;/span&gt;][&lt;span class=&quot;string&quot;&gt;&#39;text/html&#39;&lt;/span&gt;] = Response::FORMAT_JSON;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	    $behaviors[&lt;span class=&quot;string&quot;&gt;&#39;authenticator&#39;&lt;/span&gt;] = [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	    	&lt;span class=&quot;comment&quot;&gt;//auth method 1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	        &lt;span class=&quot;comment&quot;&gt;//&#39;class&#39; =&amp;gt; HttpBasicAuth::className(),&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	    	&lt;span class=&quot;comment&quot;&gt;//auth method 2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&#39;class&#39;&lt;/span&gt; =&amp;gt; HttpBearerAuth::className(),&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	    	&lt;span class=&quot;comment&quot;&gt;//auth method 3&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;comment&quot;&gt;//&#39;class&#39; =&amp;gt; QueryParamAuth::className(),&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	    	&lt;span class=&quot;comment&quot;&gt;//auth method 4&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	    	&lt;span class=&quot;string&quot;&gt;&#39;class&#39;&lt;/span&gt; =&amp;gt; CompositeAuth::className(),&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	        &lt;span class=&quot;string&quot;&gt;&#39;authMethods&#39;&lt;/span&gt; =&amp;gt; [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	            HttpBasicAuth::className(),&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	            HttpBearerAuth::className(),&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	            QueryParamAuth::className(),&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	        ],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	    ];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; $behaviors;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;comment&quot;&gt;//直接在响应主体内包含分页信息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; $serializer = [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;class&#39;&lt;/span&gt; =&amp;gt; &lt;span class=&quot;string&quot;&gt;&#39;yii\rest\Serializer&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;collectionEnvelope&#39;&lt;/span&gt; =&amp;gt; &lt;span class=&quot;string&quot;&gt;&#39;items&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;4.可以通过不同的方式进行认证&lt;/p&gt;
+&lt;p&gt;HTTP 基本认证: access token 当作用户名发送，应用在access token可安全存在API使用端的场景，例如，API使用端是运行在一台服务器上的程序。&lt;/p&gt;
+&lt;p&gt;请求参数: access token 当作API URL请求参数发送，例如 &lt;a href=&quot;https://example.com/users?access-token=xxxxxxxx，由于大多数服务器都会保存请求参数到日志，&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://example.com/users?access-token=xxxxxxxx，由于大多数服务器都会保存请求参数到日志，&lt;/a&gt; 这种方式应主要用于JSONP 请求，因为它不能使用HTTP头来发送access token&lt;/p&gt;
+&lt;p&gt;OAuth 2: 使用者从认证服务器上获取基于OAuth2协议的access token，然后通过 HTTP Bearer Tokens 发送到API 服务器。&lt;/p&gt;
+&lt;figure class=&quot;highlight taggerscript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;yii&lt;span class=&quot;symbol&quot;&gt;\f&lt;/span&gt;ilters&lt;span class=&quot;symbol&quot;&gt;\a&lt;/span&gt;uth&lt;span class=&quot;symbol&quot;&gt;\C&lt;/span&gt;ompositeAuth&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;yii&lt;span class=&quot;symbol&quot;&gt;\f&lt;/span&gt;ilters&lt;span class=&quot;symbol&quot;&gt;\a&lt;/span&gt;uth&lt;span class=&quot;symbol&quot;&gt;\H&lt;/span&gt;ttpBasicAuth&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;yii&lt;span class=&quot;symbol&quot;&gt;\f&lt;/span&gt;ilters&lt;span class=&quot;symbol&quot;&gt;\a&lt;/span&gt;uth&lt;span class=&quot;symbol&quot;&gt;\H&lt;/span&gt;ttpBearerAuth&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;yii&lt;span class=&quot;symbol&quot;&gt;\f&lt;/span&gt;ilters&lt;span class=&quot;symbol&quot;&gt;\a&lt;/span&gt;uth&lt;span class=&quot;symbol&quot;&gt;\Q&lt;/span&gt;ueryParamAuth&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;QueryParamAuth:&lt;/p&gt;
+&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;QueryParamAuth&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;AuthMethod&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;/**&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     * &lt;span class=&quot;doctag&quot;&gt;@var&lt;/span&gt; string the parameter name for passing the access token&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; $tokenParam = &lt;span class=&quot;string&quot;&gt;&#39;access-token&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;/**&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     * &lt;span class=&quot;doctag&quot;&gt;@inheritdoc&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;authenticate&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;($user, $request, $response)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $accessToken = $request-&amp;gt;get($this-&amp;gt;tokenParam);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (is_string($accessToken)) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            $identity = $user-&amp;gt;loginByAccessToken($accessToken, get_class($this));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; ($identity !== &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; $identity;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; ($accessToken !== &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            $this-&amp;gt;handleFailure($response);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;HttpBearerAuth:&lt;/p&gt;
+&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;HttpBearerAuth&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;AuthMethod&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;/**&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     * &lt;span class=&quot;doctag&quot;&gt;@var&lt;/span&gt; string the HTTP authentication realm&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; $realm = &lt;span class=&quot;string&quot;&gt;&#39;api&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;/**&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     * &lt;span class=&quot;doctag&quot;&gt;@inheritdoc&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;authenticate&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;($user, $request, $response)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $authHeader = $request-&amp;gt;getHeaders()-&amp;gt;get(&lt;span class=&quot;string&quot;&gt;&#39;Authorization&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; ($authHeader !== &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt; &amp;amp;&amp;amp; preg_match(&lt;span class=&quot;string&quot;&gt;&#39;/^Bearer\s+(.*?)$/&#39;&lt;/span&gt;, $authHeader, $matches)) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            $identity = $user-&amp;gt;loginByAccessToken($matches[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;], get_class($this));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; ($identity === &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                $this-&amp;gt;handleFailure($response);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; $identity;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;/**&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     * &lt;span class=&quot;doctag&quot;&gt;@inheritdoc&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;challenge&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;($response)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $response-&amp;gt;getHeaders()-&amp;gt;set(&lt;span class=&quot;string&quot;&gt;&#39;WWW-Authenticate&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;Bearer realm=\&quot;&amp;#123;$this-&amp;gt;realm&amp;#125;\&quot;&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;HttpBasicAuth:&lt;/p&gt;
+&lt;figure class=&quot;highlight scala&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;HttpBasicAuth&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;AuthMethod&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;/**&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     * @var string the HTTP authentication realm&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    public $realm = &lt;span class=&quot;symbol&quot;&gt;&#39;ap&lt;/span&gt;i&#39;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;/**&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     * @var callable a PHP callable that will authenticate the user with the HTTP basic auth information.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     * The callable receives a username and a password as its parameters. It should return an identity object&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     * that matches the username and password. Null should be returned if there is no such identity.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     *&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     * The following code is a typical implementation of this callable:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     *&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     * ```php&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     * function ($username, $password) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     *     return \app\models\User::findOne([&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     *         &#39;username&#39; =&amp;gt; $username,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     *         &#39;password&#39; =&amp;gt; $password,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     *     ]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     * &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     *&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;pre&gt;&lt;code&gt; *
+ * If this property is not set, the username information will be considered as an access token
+ * while the password information will be ignored. The [[\yii\web\User::loginByAccessToken()]]
+ * method will be called to authenticate and login the user.
+ */
+public $auth;
+
+
+/**
+ * @inheritdoc
+ */
+public function authenticate($user, $request, $response)
+{
+    $username = $request-&amp;gt;getAuthUser();
+    $password = $request-&amp;gt;getAuthPassword();
+
+    if ($this-&amp;gt;auth) {
+        if ($username !== null || $password !== null) {
+            $identity = call_user_func($this-&amp;gt;auth, $username, $password);
+            if ($identity !== null) {
+                $user-&amp;gt;switchIdentity($identity);
+            } else {
+                $this-&amp;gt;handleFailure($response);
+            }
+            return $identity;
+        }
+    } elseif ($username !== null) {
+        $identity = $user-&amp;gt;loginByAccessToken($username, get_class($this));
+        if ($identity === null) {
+            $this-&amp;gt;handleFailure($response);
+        }
+        return $identity;
+    }
+
+    return null;
+}
+
+/**
+ * @inheritdoc
+ */
+public function challenge($response)
+{
+    $response-&amp;gt;getHeaders()-&amp;gt;set(&amp;apos;WWW-Authenticate&amp;apos;, &amp;quot;Basic realm=\&amp;quot;{$this-&amp;gt;realm}\&amp;quot;&amp;quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;}&lt;br&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5.自定义接口参数&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;新建APIAuth继承HttpBearerAuth&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;?php&lt;/p&gt;
+&lt;p&gt;namespace api\filters;&lt;/p&gt;
+&lt;p&gt;use yii\filters\auth\HttpBearerAuth;&lt;/p&gt;
+&lt;p&gt;class APIAuth extends HttpBearerAuth&lt;br&gt;{&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;public $realm = &amp;apos;api&amp;apos;;
+
+public function authenticate($user, $request, $response)
+{
+    $uid = $request-&amp;gt;getHeaders()-&amp;gt;get(&amp;apos;uid&amp;apos;);
+    $phone = $request-&amp;gt;getHeaders()-&amp;gt;get(&amp;apos;phone&amp;apos;);
+    $key = $request-&amp;gt;getHeaders()-&amp;gt;get(&amp;apos;key&amp;apos;);
+    if($key != sha1($uid.$phone)){
+        return null;
+    }
+    $authHeader = $request-&amp;gt;getHeaders()-&amp;gt;get(&amp;apos;Authorization&amp;apos;);
+    if ($authHeader !== null &amp;amp;&amp;amp; preg_match(&amp;apos;/^Bearer\s+(.*?)$/&amp;apos;, $authHeader, $matches)) {
+        $identity = $user-&amp;gt;loginByAccessToken($matches[1], get_class($this));
+        if ($identity === null) {
+            $this-&amp;gt;handleFailure($response);
+        }
+        return $identity;
+    }
+    return null;
+}
+
+public function challenge($response)
+{
+    $response-&amp;gt;getHeaders()-&amp;gt;set(&amp;apos;WWW-Authenticate&amp;apos;, &amp;quot;Bearer realm=\&amp;quot;{$this-&amp;gt;realm}\&amp;quot;&amp;quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;}&lt;br&gt;```&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;p&gt;待完善…&lt;/p&gt;
-
+      &lt;p&gt;Yii 提供了一整套用来简化实现 RESTful 风格的 Web Service 服务的 API。&lt;/p&gt;
+&lt;p&gt;1.修改config/main.php文件，在components添加&lt;/p&gt;
+&lt;figure class=&quot;highlight dart&quot;&gt;&lt;table&gt;&lt;t
     
     </summary>
     
@@ -269,9 +426,49 @@
     
       <category term="PHP" scheme="http://blog.ybbz.site/tags/PHP/"/>
     
-      <category term="Yii2" scheme="http://blog.ybbz.site/tags/Yii2/"/>
+      <category term="Yii" scheme="http://blog.ybbz.site/tags/Yii/"/>
     
-      <category term="Qiniu" scheme="http://blog.ybbz.site/tags/Qiniu/"/>
+      <category term="RESTful" scheme="http://blog.ybbz.site/tags/RESTful/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mac配置使用ssh密钥登录腾讯云服务器</title>
+    <link href="http://blog.ybbz.site/2016/05/15/tencent-qcloud-ssh-login/"/>
+    <id>http://blog.ybbz.site/2016/05/15/tencent-qcloud-ssh-login/</id>
+    <published>2016-05-14T16:00:00.000Z</published>
+    <updated>2016-05-26T03:48:32.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;创建SSH密钥、下载私钥并绑定Linux云服务器&quot;&gt;&lt;a href=&quot;#创建SSH密钥、下载私钥并绑定Linux云服务器&quot; class=&quot;headerlink&quot; title=&quot;创建SSH密钥、下载私钥并绑定Linux云服务器&quot;&gt;&lt;/a&gt;创建SSH密钥、下载私钥并绑定Linux云服务器&lt;/h3&gt;&lt;p&gt;1.登录腾讯云控制台，点击【云服务器】-【SSH密钥】进入密钥窗口。&lt;br&gt;2.点击【创建密钥】按钮，输入密钥名创建一个新密钥。&lt;br&gt;3.创建完密钥后，点击【下载】按钮，下载私钥。&lt;br&gt;4.右键选择刚创建的密钥ID，选择绑定需要登录的Linux服务器进行绑定。  &lt;/p&gt;
+&lt;h3 id=&quot;使用私钥建立SSH通道&quot;&gt;&lt;a href=&quot;#使用私钥建立SSH通道&quot; class=&quot;headerlink&quot; title=&quot;使用私钥建立SSH通道&quot;&gt;&lt;/a&gt;使用私钥建立SSH通道&lt;/h3&gt;&lt;p&gt;请按以下步骤上传私钥：&lt;/p&gt;
+&lt;p&gt;1.修改/etc/ssh/ssh_config文件，找到ForwardAgent项，并设置为yes。&lt;/p&gt;
+&lt;p&gt;2.创建.ssh目录&lt;/p&gt;
+&lt;figure class=&quot;highlight arduino&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;mkdir&lt;/span&gt; ~/.ssh&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;如果用户主目录下已经有.ssh目录，则忽略本条命令&lt;/p&gt;
+&lt;p&gt;3.将您的私钥文件拷贝到~/.ssh目录下，并改名为identity&lt;/p&gt;
+&lt;figure class=&quot;highlight avrasm&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;cp&lt;/span&gt; 您的私钥文件 ~/.ssh/identity&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;4.将您的私钥文件设置权限为600&lt;/p&gt;
+&lt;figure class=&quot;highlight crystal&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;chmod &lt;span class=&quot;number&quot;&gt;600&lt;/span&gt; ~&lt;span class=&quot;regexp&quot;&gt;/.ssh/identity&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;5.启动ssh-agent&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;`ssh-agent`&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;6.加载私钥&lt;/p&gt;
+&lt;figure class=&quot;highlight avrasm&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ssh-&lt;span class=&quot;keyword&quot;&gt;add&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;7.建立ssh加密通道&lt;/p&gt;
+&lt;figure class=&quot;highlight armasm&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;symbol&quot;&gt;ssh&lt;/span&gt; -l root -A 服务器&lt;span class=&quot;built_in&quot;&gt;IP&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;创建SSH密钥、下载私钥并绑定Linux云服务器&quot;&gt;&lt;a href=&quot;#创建SSH密钥、下载私钥并绑定Linux云服务器&quot; class=&quot;headerlink&quot; title=&quot;创建SSH密钥、下载私钥并绑定Linux云服务器&quot;&gt;&lt;/a&gt;创建SSH密钥、下载私钥并绑
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://blog.ybbz.site/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://blog.ybbz.site/tags/Linux/"/>
+    
+      <category term="CentOS" scheme="http://blog.ybbz.site/tags/CentOS/"/>
     
   </entry>
   
@@ -512,6 +709,38 @@ python3 manage.py runserver 0.0.0.0:3000
   </entry>
   
   <entry>
+    <title>判断两个单向链表是否相交</title>
+    <link href="http://blog.ybbz.site/2016/04/20/Algorithm-3/"/>
+    <id>http://blog.ybbz.site/2016/04/20/Algorithm-3/</id>
+    <published>2016-04-19T16:00:00.000Z</published>
+    <updated>2016-04-23T12:35:04.000Z</updated>
+    
+    <content type="html">&lt;p&gt;问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。&lt;/p&gt;
+&lt;h3 id=&quot;算法一&quot;&gt;&lt;a href=&quot;#算法一&quot; class=&quot;headerlink&quot; title=&quot;算法一&quot;&gt;&lt;/a&gt;算法一&lt;/h3&gt;&lt;p&gt;对链表一进行遍历，在遍历到每一个节点时，都在链表二中进行遍历，看是否有重复的节点。&lt;/p&gt;
+&lt;h4 id=&quot;算法一改进&quot;&gt;&lt;a href=&quot;#算法一改进&quot; class=&quot;headerlink&quot; title=&quot;算法一改进&quot;&gt;&lt;/a&gt;算法一改进&lt;/h4&gt;&lt;p&gt;以空间换时间：将链表二存入字典，然后遍历链表一，判断是否在于字典中。简化后，时间复杂度变为 O(n+m)，但空间复杂度较高。&lt;/p&gt;
+&lt;h3 id=&quot;算法二&quot;&gt;&lt;a href=&quot;#算法二&quot; class=&quot;headerlink&quot; title=&quot;算法二&quot;&gt;&lt;/a&gt;算法二&lt;/h3&gt;&lt;p&gt;算法二的思路基于以下两个原理：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;两个单向链表相交后，必然无法再分开。&lt;/li&gt;
+&lt;li&gt;两个单项链表相交后，尾节点一定相同。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;假设两个链表相交，很容易证明两个链表的尾元素是相同的。&lt;br&gt;逆反命题：两个链表的尾元素相同时，两个链表一定相交。&lt;br&gt;（注意：相同的节点不仅仅要求值相同，而是“同一个”，也就是指针地址相同。）&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。&lt;/p&gt;
+&lt;h3 id=&quot;算法一&quot;&gt;&lt;a href=&quot;#算法一&quot; class=&quot;headerlink&quot; title=&quot;算法一&quot;&gt;&lt;/a&gt;算法一&lt;/h3&gt;&lt;p&gt;对链表一进行遍历，在遍历到每一个节点时，都在链表二中进
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="http://blog.ybbz.site/categories/Algorithm/"/>
+    
+    
+      <category term="Algorithm" scheme="http://blog.ybbz.site/tags/Algorithm/"/>
+    
+  </entry>
+  
+  <entry>
     <title>根号值逼近问题的算法</title>
     <link href="http://blog.ybbz.site/2016/04/20/Algorithm-2/"/>
     <id>http://blog.ybbz.site/2016/04/20/Algorithm-2/</id>
@@ -553,38 +782,6 @@ python3 manage.py runserver 0.0.0.0:3000
   </entry>
   
   <entry>
-    <title>判断两个单向链表是否相交</title>
-    <link href="http://blog.ybbz.site/2016/04/20/Algorithm-3/"/>
-    <id>http://blog.ybbz.site/2016/04/20/Algorithm-3/</id>
-    <published>2016-04-19T16:00:00.000Z</published>
-    <updated>2016-04-23T12:35:04.000Z</updated>
-    
-    <content type="html">&lt;p&gt;问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。&lt;/p&gt;
-&lt;h3 id=&quot;算法一&quot;&gt;&lt;a href=&quot;#算法一&quot; class=&quot;headerlink&quot; title=&quot;算法一&quot;&gt;&lt;/a&gt;算法一&lt;/h3&gt;&lt;p&gt;对链表一进行遍历，在遍历到每一个节点时，都在链表二中进行遍历，看是否有重复的节点。&lt;/p&gt;
-&lt;h4 id=&quot;算法一改进&quot;&gt;&lt;a href=&quot;#算法一改进&quot; class=&quot;headerlink&quot; title=&quot;算法一改进&quot;&gt;&lt;/a&gt;算法一改进&lt;/h4&gt;&lt;p&gt;以空间换时间：将链表二存入字典，然后遍历链表一，判断是否在于字典中。简化后，时间复杂度变为 O(n+m)，但空间复杂度较高。&lt;/p&gt;
-&lt;h3 id=&quot;算法二&quot;&gt;&lt;a href=&quot;#算法二&quot; class=&quot;headerlink&quot; title=&quot;算法二&quot;&gt;&lt;/a&gt;算法二&lt;/h3&gt;&lt;p&gt;算法二的思路基于以下两个原理：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;两个单向链表相交后，必然无法再分开。&lt;/li&gt;
-&lt;li&gt;两个单项链表相交后，尾节点一定相同。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;假设两个链表相交，很容易证明两个链表的尾元素是相同的。&lt;br&gt;逆反命题：两个链表的尾元素相同时，两个链表一定相交。&lt;br&gt;（注意：相同的节点不仅仅要求值相同，而是“同一个”，也就是指针地址相同。）&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。&lt;/p&gt;
-&lt;h3 id=&quot;算法一&quot;&gt;&lt;a href=&quot;#算法一&quot; class=&quot;headerlink&quot; title=&quot;算法一&quot;&gt;&lt;/a&gt;算法一&lt;/h3&gt;&lt;p&gt;对链表一进行遍历，在遍历到每一个节点时，都在链表二中进
-    
-    </summary>
-    
-      <category term="Algorithm" scheme="http://blog.ybbz.site/categories/Algorithm/"/>
-    
-    
-      <category term="Algorithm" scheme="http://blog.ybbz.site/tags/Algorithm/"/>
-    
-  </entry>
-  
-  <entry>
     <title>庆祝我的第一个独立APP上线</title>
     <link href="http://blog.ybbz.site/2016/04/18/my-first-andorid-app-online/"/>
     <id>http://blog.ybbz.site/2016/04/18/my-first-andorid-app-online/</id>
@@ -615,6 +812,85 @@ python3 manage.py runserver 0.0.0.0:3000
     
     
       <category term="Android" scheme="http://blog.ybbz.site/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《Hadoop海量数据处理》读书笔记2:Hadoop环境准备</title>
+    <link href="http://blog.ybbz.site/2016/04/15/Hadoop-foundation-two/"/>
+    <id>http://blog.ybbz.site/2016/04/15/Hadoop-foundation-two/</id>
+    <published>2016-04-14T16:00:00.000Z</published>
+    <updated>2016-04-23T09:28:47.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;Hadoop架构&quot;&gt;&lt;a href=&quot;#Hadoop架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h3&gt;&lt;p&gt;Hadoop主要由两部分构成：分布式文件系统HDFS和分布式计算框架MapReduce；HDFS主要是用于海量数据的存储，MapReduce则是对存储在HDFS中的数据进行分布式计算。&lt;/p&gt;
+&lt;h4 id=&quot;Hadoop-HDFS架构&quot;&gt;&lt;a href=&quot;#Hadoop-HDFS架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop HDFS架构&quot;&gt;&lt;/a&gt;Hadoop HDFS架构&lt;/h4&gt;&lt;p&gt;构成HDFS集群的主要是两类节点（主从模式，管理者－工作者模式）：一个NameNode（管理者）和多个DataNode（工作者），SecondaryNameNode作为NameNode镜像数据备份。&lt;/p&gt;
+&lt;p&gt;表：HDFS守护进程&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;守护进程&lt;/th&gt;
+&lt;th&gt;集群中的数目&lt;/th&gt;
+&lt;th&gt;作用&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;NameNode&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;存储文件系统的元数据，存储文件与数据块映射，并提供文件系统的全景图&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SecondaryNameNode&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;备份NameNode数据，并负责镜像与NameNode日志数据的合并&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DataNode&lt;/td&gt;
+&lt;td&gt;多个(至少一个)&lt;/td&gt;
+&lt;td&gt;存储块数据&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&quot;Hadoop-MapReduce架构&quot;&gt;&lt;a href=&quot;#Hadoop-MapReduce架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop MapReduce架构&quot;&gt;&lt;/a&gt;Hadoop MapReduce架构&lt;/h4&gt;&lt;p&gt;构成MapReduce集群为两类节点（主从模式）：JobTracker和TaskTracker。&lt;/p&gt;
+&lt;p&gt;表：MapReduce守护进程&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;守护进程&lt;/th&gt;
+&lt;th&gt;集群中的数目&lt;/th&gt;
+&lt;th&gt;作用&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;JobTracker&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;负责接受客户端作业提交，调度任务到TaskTracker上运行，并提供监控TaskTracker及任务进度等管理功能&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TaskTracker&lt;/td&gt;
+&lt;td&gt;多个(至少一个)&lt;/td&gt;
+&lt;td&gt;实例化用户程序，在本地执行任务并周期性地向JobTracker汇报状态&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&quot;Hadoop架构-1&quot;&gt;&lt;a href=&quot;#Hadoop架构-1&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h4&gt;&lt;p&gt;HDFS集群和MapReduce集群其实由一些守护进程组成，而所有这些守护进程和运行它们的节点就构成了Hadoop集群。这个集群的NameNode进程和JobTracker进程在一个节点上运行，而DataNode进程和TaskTracker进程在同一个节点上运行。（DataNode和TaskTracker需要配对部署在同一个节点，NameNode和JobTracker并不一定部署在同一个节点；生产环境，建议NameNode和JobTracker分开部署）。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Hadoop架构&quot;&gt;&lt;a href=&quot;#Hadoop架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h3&gt;&lt;p&gt;Hadoop主要由两部分构成：分布式文件系统HDFS和分布式计算框架MapReduce；HD
+    
+    </summary>
+    
+      <category term="Hadoop" scheme="http://blog.ybbz.site/categories/Hadoop/"/>
+    
+    
+      <category term="Hadoop" scheme="http://blog.ybbz.site/tags/Hadoop/"/>
+    
+      <category term="云计算" scheme="http://blog.ybbz.site/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/"/>
+    
+      <category term="大数据" scheme="http://blog.ybbz.site/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
     
   </entry>
   
@@ -721,85 +997,6 @@ python3 manage.py runserver 0.0.0.0:3000
   </entry>
   
   <entry>
-    <title>《Hadoop海量数据处理》读书笔记2:Hadoop环境准备</title>
-    <link href="http://blog.ybbz.site/2016/04/15/Hadoop-foundation-two/"/>
-    <id>http://blog.ybbz.site/2016/04/15/Hadoop-foundation-two/</id>
-    <published>2016-04-14T16:00:00.000Z</published>
-    <updated>2016-04-23T09:28:47.000Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;Hadoop架构&quot;&gt;&lt;a href=&quot;#Hadoop架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h3&gt;&lt;p&gt;Hadoop主要由两部分构成：分布式文件系统HDFS和分布式计算框架MapReduce；HDFS主要是用于海量数据的存储，MapReduce则是对存储在HDFS中的数据进行分布式计算。&lt;/p&gt;
-&lt;h4 id=&quot;Hadoop-HDFS架构&quot;&gt;&lt;a href=&quot;#Hadoop-HDFS架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop HDFS架构&quot;&gt;&lt;/a&gt;Hadoop HDFS架构&lt;/h4&gt;&lt;p&gt;构成HDFS集群的主要是两类节点（主从模式，管理者－工作者模式）：一个NameNode（管理者）和多个DataNode（工作者），SecondaryNameNode作为NameNode镜像数据备份。&lt;/p&gt;
-&lt;p&gt;表：HDFS守护进程&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;守护进程&lt;/th&gt;
-&lt;th&gt;集群中的数目&lt;/th&gt;
-&lt;th&gt;作用&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;NameNode&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;存储文件系统的元数据，存储文件与数据块映射，并提供文件系统的全景图&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;SecondaryNameNode&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;备份NameNode数据，并负责镜像与NameNode日志数据的合并&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;DataNode&lt;/td&gt;
-&lt;td&gt;多个(至少一个)&lt;/td&gt;
-&lt;td&gt;存储块数据&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h4 id=&quot;Hadoop-MapReduce架构&quot;&gt;&lt;a href=&quot;#Hadoop-MapReduce架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop MapReduce架构&quot;&gt;&lt;/a&gt;Hadoop MapReduce架构&lt;/h4&gt;&lt;p&gt;构成MapReduce集群为两类节点（主从模式）：JobTracker和TaskTracker。&lt;/p&gt;
-&lt;p&gt;表：MapReduce守护进程&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;守护进程&lt;/th&gt;
-&lt;th&gt;集群中的数目&lt;/th&gt;
-&lt;th&gt;作用&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;JobTracker&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;负责接受客户端作业提交，调度任务到TaskTracker上运行，并提供监控TaskTracker及任务进度等管理功能&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;TaskTracker&lt;/td&gt;
-&lt;td&gt;多个(至少一个)&lt;/td&gt;
-&lt;td&gt;实例化用户程序，在本地执行任务并周期性地向JobTracker汇报状态&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h4 id=&quot;Hadoop架构-1&quot;&gt;&lt;a href=&quot;#Hadoop架构-1&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h4&gt;&lt;p&gt;HDFS集群和MapReduce集群其实由一些守护进程组成，而所有这些守护进程和运行它们的节点就构成了Hadoop集群。这个集群的NameNode进程和JobTracker进程在一个节点上运行，而DataNode进程和TaskTracker进程在同一个节点上运行。（DataNode和TaskTracker需要配对部署在同一个节点，NameNode和JobTracker并不一定部署在同一个节点；生产环境，建议NameNode和JobTracker分开部署）。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;Hadoop架构&quot;&gt;&lt;a href=&quot;#Hadoop架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h3&gt;&lt;p&gt;Hadoop主要由两部分构成：分布式文件系统HDFS和分布式计算框架MapReduce；HD
-    
-    </summary>
-    
-      <category term="Hadoop" scheme="http://blog.ybbz.site/categories/Hadoop/"/>
-    
-    
-      <category term="Hadoop" scheme="http://blog.ybbz.site/tags/Hadoop/"/>
-    
-      <category term="云计算" scheme="http://blog.ybbz.site/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/"/>
-    
-      <category term="大数据" scheme="http://blog.ybbz.site/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
-    
-  </entry>
-  
-  <entry>
     <title>微信公众平台开发实践</title>
     <link href="http://blog.ybbz.site/2016/04/11/WeChat-public-platform-development-practices/"/>
     <id>http://blog.ybbz.site/2016/04/11/WeChat-public-platform-development-practices/</id>
@@ -835,129 +1032,6 @@ python3 manage.py runserver 0.0.0.0:3000
       <category term="PHP" scheme="http://blog.ybbz.site/tags/PHP/"/>
     
       <category term="WeChat" scheme="http://blog.ybbz.site/tags/WeChat/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>利用百度地图API定位</title>
-    <link href="http://blog.ybbz.site/2016/04/08/map-practice/"/>
-    <id>http://blog.ybbz.site/2016/04/08/map-practice/</id>
-    <published>2016-04-07T16:00:00.000Z</published>
-    <updated>2016-04-23T12:39:13.000Z</updated>
-    
-    <content type="html">&lt;p&gt;对于利用地图来定位展示这方面一直挺好奇的，之前倒是用过百度地图API，但也只是简单的利用地图生成器，给网站加一个地图地址。就像下面这样：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160408_1.png&quot; alt=&quot;20160408_1&quot;&gt;&lt;/p&gt;
-&lt;p&gt;今天便针对地图做了一番尝试，记录如下。&lt;/p&gt;
-&lt;h3 id=&quot;微信地图&quot;&gt;&lt;a href=&quot;#微信地图&quot; class=&quot;headerlink&quot; title=&quot;微信地图&quot;&gt;&lt;/a&gt;微信地图&lt;/h3&gt;&lt;p&gt;大家应该都使用过微信的发送/共享位置功能，效果如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160408_3.png&quot; alt=&quot;20160408_3&quot;&gt;&lt;/p&gt;
-&lt;p&gt;现在很多公司都会依托微信公众号做开发，以期更好的展示或者直接利用公众号交易。而微信平台开发便涉及地图功能：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160408_2.png&quot; alt=&quot;20160408_2&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;百度地图API&quot;&gt;&lt;a href=&quot;#百度地图API&quot; class=&quot;headerlink&quot; title=&quot;百度地图API&quot;&gt;&lt;/a&gt;百度地图API&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160408_4.png&quot; alt=&quot;20160408_4&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;测试内容如下：&lt;/em&gt;&lt;/p&gt;
-&lt;h4 id=&quot;使用百度地图API功能&quot;&gt;&lt;a href=&quot;#使用百度地图API功能&quot; class=&quot;headerlink&quot; title=&quot;使用百度地图API功能&quot;&gt;&lt;/a&gt;使用百度地图API功能&lt;/h4&gt;&lt;figure class=&quot;highlight lasso&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 百度地图API功能&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;map&lt;/span&gt; = &lt;span class=&quot;literal&quot;&gt;new&lt;/span&gt; BMap.&lt;span class=&quot;built_in&quot;&gt;Map&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;allmap&quot;&lt;/span&gt;);    &lt;span class=&quot;comment&quot;&gt;// 创建Map实例&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;var&lt;/span&gt; point = &lt;span class=&quot;literal&quot;&gt;new&lt;/span&gt; BMap.Point(&lt;span class=&quot;number&quot;&gt;116.3640600000&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;39.9961000000&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;map&lt;/span&gt;.centerAndZoom(point, &lt;span class=&quot;number&quot;&gt;15&lt;/span&gt;);  &lt;span class=&quot;comment&quot;&gt;// 初始化地图,设置中心点坐标和地图级别&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;map&lt;/span&gt;.addControl(&lt;span class=&quot;literal&quot;&gt;new&lt;/span&gt; BMap.MapTypeControl());   &lt;span class=&quot;comment&quot;&gt;//添加地图类型控件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;map&lt;/span&gt;.setCurrentCity(&lt;span class=&quot;string&quot;&gt;&quot;北京&quot;&lt;/span&gt;);          &lt;span class=&quot;comment&quot;&gt;// 设置地图显示的城市&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;map&lt;/span&gt;.enableScrollWheelZoom(&lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;);     &lt;span class=&quot;comment&quot;&gt;//开启鼠标滚轮缩放&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h4 id=&quot;利用浏览器定位&quot;&gt;&lt;a href=&quot;#利用浏览器定位&quot; class=&quot;headerlink&quot; title=&quot;利用浏览器定位&quot;&gt;&lt;/a&gt;利用浏览器定位&lt;/h4&gt;&lt;p&gt;ps:其他还有IP/城市名/经纬度定位等&lt;/p&gt;
-&lt;figure class=&quot;highlight actionscript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//浏览器定位&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; geolocation = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; BMap.Geolocation();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;geolocation.getCurrentPosition(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;params&quot;&gt;(r)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.getStatus() == BMAP_STATUS_SUCCESS) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; mk = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; BMap.Marker(r.point);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        map.addOverlay(mk);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        map.panTo(r.point);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;//alert(&#39;您的位置：&#39; + r.point.lng + &#39;,&#39; + r.point.lat);&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        alert(&lt;span class=&quot;string&quot;&gt;&#39;failed&#39;&lt;/span&gt; + &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.getStatus());&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;, &amp;#123;enableHighAccuracy: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h4 id=&quot;添加带有定位的导航控件&quot;&gt;&lt;a href=&quot;#添加带有定位的导航控件&quot; class=&quot;headerlink&quot; title=&quot;添加带有定位的导航控件&quot;&gt;&lt;/a&gt;添加带有定位的导航控件&lt;/h4&gt;&lt;figure class=&quot;highlight actionscript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 添加带有定位的导航控件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; navigationControl = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; BMap.NavigationControl(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 靠左上角位置&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    anchor: BMAP_ANCHOR_TOP_LEFT,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// LARGE类型&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    type: BMAP_NAVIGATION_CONTROL_LARGE,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 启用显示定位&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    enableGeolocation: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;map.addControl(navigationControl);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 添加定位控件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; geolocationControl = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; BMap.GeolocationControl();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;geolocationControl.addEventListener(&lt;span class=&quot;string&quot;&gt;&quot;locationSuccess&quot;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;params&quot;&gt;(e)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 定位成功事件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; address = &lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//address += e.addressComponent.province;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    address += e.addressComponent.city;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    address += e.addressComponent.district;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    address += e.addressComponent.street;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    address += e.addressComponent.streetNumber;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    alert(&lt;span class=&quot;string&quot;&gt;&quot;位置更新成功:&quot;&lt;/span&gt; + &lt;span class=&quot;string&quot;&gt;&quot;\n\r&quot;&lt;/span&gt; + address);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;geolocationControl.addEventListener(&lt;span class=&quot;string&quot;&gt;&quot;locationError&quot;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;params&quot;&gt;(e)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 定位失败事件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    alert(e.message);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;map.addControl(geolocationControl);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h4 id=&quot;添加自定义控件&quot;&gt;&lt;a href=&quot;#添加自定义控件&quot; class=&quot;headerlink&quot; title=&quot;添加自定义控件&quot;&gt;&lt;/a&gt;添加自定义控件&lt;/h4&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 定义一个控件类,即function&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;ZoomControl&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 默认停靠位置和偏移量&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.defaultAnchor = BMAP_ANCHOR_BOTTOM_RIGHT;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.defaultOffset = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; BMap.Size(&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 通过JavaScript的prototype属性继承于BMap.Control&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ZoomControl.prototype = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; BMap.Control();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 自定义控件必须实现自己的initialize方法,并且将控件的DOM元素返回&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 在本方法中创建个div元素作为控件的容器,并将其添加到地图容器中&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ZoomControl.prototype.initialize = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;map&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 创建一个DOM元素&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; div = &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.createElement(&lt;span class=&quot;string&quot;&gt;&quot;div&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 添加文字说明&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    div.innerHTML = &lt;span class=&quot;string&quot;&gt;&quot;&amp;lt;p class=&#39;text&#39;&amp;gt;立即购买&amp;lt;/p&amp;gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//div.appendChild(document.createTextNode(&quot;立即下单&quot;));&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 设置样式&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    div.className = &lt;span class=&quot;string&quot;&gt;&quot;btn&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 绑定事件,点击一次放大两级&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    div.onclick = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;e&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        alert(&lt;span class=&quot;string&quot;&gt;&quot;下单喽~&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 添加DOM元素到地图中&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    map.getContainer().appendChild(div);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 将DOM元素返回&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; div;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 创建控件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; myZoomCtrl = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ZoomControl();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 添加到地图当中&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;map.addControl(myZoomCtrl);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;完整代码：&lt;/strong&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/ybbz/IT-Learning/blob/master/HTML/map.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;百度地图API测试&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;测试效果如下图所示：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160408_5.png&quot; alt=&quot;20160408_5&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;高德地图API&quot;&gt;&lt;a href=&quot;#高德地图API&quot; class=&quot;headerlink&quot; title=&quot;高德地图API&quot;&gt;&lt;/a&gt;高德地图API&lt;/h3&gt;&lt;p&gt;高德地图也提供类似的服务，从下图来看，和百度类似（高德地图我并没有测试）。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160408_6.png&quot; alt=&quot;20160408_6&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160408_7.png&quot; alt=&quot;20160408_7&quot;&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;对于利用地图来定位展示这方面一直挺好奇的，之前倒是用过百度地图API，但也只是简单的利用地图生成器，给网站加一个地图地址。就像下面这样：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160408_1.pn
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="http://blog.ybbz.site/categories/JavaScript/"/>
-    
-    
-      <category term="JavaScript" scheme="http://blog.ybbz.site/tags/JavaScript/"/>
-    
-      <category term="API" scheme="http://blog.ybbz.site/tags/API/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mac下(Pages+Papers+EndNote组合)论文写作与文献管理/引用</title>
-    <link href="http://blog.ybbz.site/2016/04/06/MacBook-Pages-Papers-EndNote/"/>
-    <id>http://blog.ybbz.site/2016/04/06/MacBook-Pages-Papers-EndNote/</id>
-    <published>2016-04-05T16:00:00.000Z</published>
-    <updated>2016-04-23T12:18:54.000Z</updated>
-    
-    <content type="html">&lt;p&gt;之前一直用Papers3进行文献管理，确实好用。最近要写论文，就想着能否用Papers3来引用文献，于是进行了一番探索，记录如下。&lt;/p&gt;
-&lt;h3 id=&quot;相关配置&quot;&gt;&lt;a href=&quot;#相关配置&quot; class=&quot;headerlink&quot; title=&quot;相关配置&quot;&gt;&lt;/a&gt;相关配置&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;MacBook 10.9&lt;/li&gt;
-&lt;li&gt;Pages 5.2&lt;/li&gt;
-&lt;li&gt;Papers 3.3.3&lt;/li&gt;
-&lt;li&gt;EndNote X7&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;Papers3添加引用&quot;&gt;&lt;a href=&quot;#Papers3添加引用&quot; class=&quot;headerlink&quot; title=&quot;Papers3添加引用&quot;&gt;&lt;/a&gt;Papers3添加引用&lt;/h3&gt;&lt;h4 id=&quot;1-开启引用（Papers-Preferences-Citations）&quot;&gt;&lt;a href=&quot;#1-开启引用（Papers-Preferences-Citations）&quot; class=&quot;headerlink&quot; title=&quot;1.开启引用（Papers-Preferences-Citations）&quot;&gt;&lt;/a&gt;1.开启引用（Papers-Preferences-Citations）&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160406_1.png&quot; alt=&quot;20160406_1&quot;&gt;&lt;/p&gt;
-&lt;h4 id=&quot;2-在文档中引用（在Pages文档中双击control键）&quot;&gt;&lt;a href=&quot;#2-在文档中引用（在Pages文档中双击control键）&quot; class=&quot;headerlink&quot; title=&quot;2.在文档中引用（在Pages文档中双击control键）&quot;&gt;&lt;/a&gt;2.在文档中引用（在Pages文档中双击control键）&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160406_2.png&quot; alt=&quot;20160406_2&quot;&gt;  &lt;/p&gt;
-&lt;p&gt;一般来说，到这一步就可以引用成功了!&lt;br&gt;然而，上图提示“Cannot Insert Citation”，说是我的Pages版本不支持。&lt;br&gt;至于“Copy to Clipboard”这种功能，显然不是我想要的；于是就有了下面的步骤。&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;注：使用Papers管理文献不在本文讨论范围内，读者自行探索～&lt;/em&gt;&lt;/p&gt;
-&lt;h3 id=&quot;EndNote添加引用&quot;&gt;&lt;a href=&quot;#EndNote添加引用&quot; class=&quot;headerlink&quot; title=&quot;EndNote添加引用&quot;&gt;&lt;/a&gt;EndNote添加引用&lt;/h3&gt;&lt;h4 id=&quot;1-Papers3导出（File-Export-Refman-RIS-File）&quot;&gt;&lt;a href=&quot;#1-Papers3导出（File-Export-Refman-RIS-File）&quot; class=&quot;headerlink&quot; title=&quot;1.Papers3导出（File-Export-Refman RIS File）&quot;&gt;&lt;/a&gt;1.Papers3导出（File-Export-Refman RIS File）&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160406_3.png&quot; alt=&quot;20160406_3&quot;&gt;  &lt;/p&gt;
-&lt;h4 id=&quot;2-EndNote导入（File-Import-demo-ris）&quot;&gt;&lt;a href=&quot;#2-EndNote导入（File-Import-demo-ris）&quot; class=&quot;headerlink&quot; title=&quot;2.EndNote导入（File-Import-demo.ris）&quot;&gt;&lt;/a&gt;2.EndNote导入（File-Import-demo.ris）&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160406_4.png&quot; alt=&quot;20160406_4&quot;&gt;  &lt;/p&gt;
-&lt;h3 id=&quot;Pages添加引用&quot;&gt;&lt;a href=&quot;#Pages添加引用&quot; class=&quot;headerlink&quot; title=&quot;Pages添加引用&quot;&gt;&lt;/a&gt;Pages添加引用&lt;/h3&gt;&lt;h4 id=&quot;1-安装EndNote插件&quot;&gt;&lt;a href=&quot;#1-安装EndNote插件&quot; class=&quot;headerlink&quot; title=&quot;1.安装EndNote插件&quot;&gt;&lt;/a&gt;1.安装EndNote插件&lt;/h4&gt;&lt;p&gt;插件下载地址：&lt;a href=&quot;https://support.apple.com/kb/DL1692?locale=en_US&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Pages EndNote Plug-in v2.0&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&quot;2-在文档中引用&quot;&gt;&lt;a href=&quot;#2-在文档中引用&quot; class=&quot;headerlink&quot; title=&quot;2.在文档中引用&quot;&gt;&lt;/a&gt;2.在文档中引用&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160406_5.png&quot; alt=&quot;20160406_5&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160406_6.png&quot; alt=&quot;20160406_6&quot;&gt;  &lt;/p&gt;
-&lt;h3 id=&quot;参考资料&quot;&gt;&lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot; title=&quot;参考资料&quot;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;&lt;a href=&quot;http://support.mekentosj.com/kb/papers2/citations-in-pages-with-papers-2-for-mac&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Citations in Pages with Papers 2 for Mac&lt;/a&gt;  &lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.360doc.com/content/11/1231/18/7660968_176344103.shtml&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Mac科研神器【文献管理】Papers&lt;/a&gt;  &lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/21910307&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Pages中插入Endnote引文是灰色的不可用状态&lt;/a&gt;  &lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/23138856&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;pages中如何修改/增加endnote引文格式&lt;/a&gt;  &lt;/li&gt;
-&lt;/ol&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;之前一直用Papers3进行文献管理，确实好用。最近要写论文，就想着能否用Papers3来引用文献，于是进行了一番探索，记录如下。&lt;/p&gt;
-&lt;h3 id=&quot;相关配置&quot;&gt;&lt;a href=&quot;#相关配置&quot; class=&quot;headerlink&quot; title=&quot;相关配置&quot;&gt;&lt;/a&gt;相
-    
-    </summary>
-    
-      <category term="Tool" scheme="http://blog.ybbz.site/categories/Tool/"/>
-    
-    
-      <category term="Mac" scheme="http://blog.ybbz.site/tags/Mac/"/>
-    
-      <category term="Pages" scheme="http://blog.ybbz.site/tags/Pages/"/>
-    
-      <category term="Papers" scheme="http://blog.ybbz.site/tags/Papers/"/>
-    
-      <category term="EndNote" scheme="http://blog.ybbz.site/tags/EndNote/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Django学习笔记三：Django博客实战</title>
-    <link href="http://blog.ybbz.site/2016/04/04/Django-foundation-three/"/>
-    <id>http://blog.ybbz.site/2016/04/04/Django-foundation-three/</id>
-    <published>2016-04-03T16:00:00.000Z</published>
-    <updated>2016-04-23T12:41:19.000Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;MySQL配置&quot;&gt;&lt;a href=&quot;#MySQL配置&quot; class=&quot;headerlink&quot; title=&quot;MySQL配置&quot;&gt;&lt;/a&gt;MySQL配置&lt;/h3&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;pip3&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;PyMySQL&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;＃ 在__&lt;span class=&quot;selector-tag&quot;&gt;init__&lt;/span&gt;&lt;span class=&quot;selector-class&quot;&gt;.py&lt;/span&gt;添加如下内容：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;pymysql&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;pymysql&lt;/span&gt;&lt;span class=&quot;selector-class&quot;&gt;.install_as_MySQLdb&lt;/span&gt;()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;项目配置&quot;&gt;&lt;a href=&quot;#项目配置&quot; class=&quot;headerlink&quot; title=&quot;项目配置&quot;&gt;&lt;/a&gt;项目配置&lt;/h3&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# settings.py&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;DATABASES = &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;default&#39;&lt;/span&gt;: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;ENGINE&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;django.db.backends.mysql&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;NAME&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;blog&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;USER&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;username&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;PASSWORD&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;password&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;HOST&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;localhost&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;PORT&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;3306&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# models.py&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Blog&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(models.Model)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;title = models.CharField(max_length=&lt;span class=&quot;number&quot;&gt;50&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;category = models.CharField(max_length=&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;, blank=&lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;create_time = models.CharField(max_length=&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;content = models.TextField(blank=&lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;, null=&lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# views.py&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;home&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(request)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    posts = Blog.objects.all()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    paginator = Paginator(posts, &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    page = request.GET.get(&lt;span class=&quot;string&quot;&gt;&#39;page&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;try&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        post_list = paginator.page(page)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;except&lt;/span&gt; PageNotAnInteger:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        post_list = paginator.page(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;except&lt;/span&gt; EmptyPage:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        post_list = paginator.paginator(paginator.num_pages)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; render(request, &lt;span class=&quot;string&quot;&gt;&#39;home2.html&#39;&lt;/span&gt;, &amp;#123;&lt;span class=&quot;string&quot;&gt;&#39;post_list&#39;&lt;/span&gt;: post_list&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#urls.py&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; app.views &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; home&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;urlpatterns = [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;              ......&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;              url(&lt;span class=&quot;string&quot;&gt;r&#39;^home$&#39;&lt;/span&gt;, home, name=&lt;span class=&quot;string&quot;&gt;&#39;home&#39;&lt;/span&gt;),&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;              ......&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          ]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;效果图（待完善…）&quot;&gt;&lt;a href=&quot;#效果图（待完善…）&quot; class=&quot;headerlink&quot; title=&quot;效果图（待完善…）&quot;&gt;&lt;/a&gt;效果图（待完善…）&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160404_1.jpeg&quot; alt=&quot;20160404_1&quot;&gt;&lt;/p&gt;
-&lt;p&gt;Github仓库：&lt;a href=&quot;https://github.com/ybbz/django-blog&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;django-blog&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;MySQL配置&quot;&gt;&lt;a href=&quot;#MySQL配置&quot; class=&quot;headerlink&quot; title=&quot;MySQL配置&quot;&gt;&lt;/a&gt;MySQL配置&lt;/h3&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;g
-    
-    </summary>
-    
-      <category term="Python" scheme="http://blog.ybbz.site/categories/Python/"/>
-    
-    
-      <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
-    
-      <category term="Django" scheme="http://blog.ybbz.site/tags/Django/"/>
     
   </entry>
   

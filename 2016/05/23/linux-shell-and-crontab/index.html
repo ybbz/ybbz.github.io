@@ -57,30 +57,36 @@
 
 
 <meta name="description" content="1.编写Shell脚本
-vi test.sh
-123#!/bin/bash#goaccessgoaccess -f access.log --no-csv-summary -o csv &amp;gt; test.csv
-2.crontab定时执行
-cat /etc/crontab
-/etc/init.d/cron status">
+新建脚本文件
+1vi goaccess
+添加以下内容
+123456789#!/bin/bash##goaccess cron every five minutesset -egoaccess -f /var/www/log/access.log -a &amp;gt; /var/www/html/report.htmlexit 0
+直接运行脚本
+1bash goaccess
+2.c">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux编写Shell脚本与定时执行">
+<meta property="og:title" content="Linux编写Shell脚本与Crontab定时执行">
 <meta property="og:url" content="http://blog.ybbz.site/2016/05/23/linux-shell-and-crontab/index.html">
 <meta property="og:site_name" content="八宝粥的博客">
 <meta property="og:description" content="1.编写Shell脚本
-vi test.sh
-123#!/bin/bash#goaccessgoaccess -f access.log --no-csv-summary -o csv &amp;gt; test.csv
-2.crontab定时执行
-cat /etc/crontab
-/etc/init.d/cron status">
-<meta property="og:updated_time" content="2016-05-23T07:58:05.000Z">
+新建脚本文件
+1vi goaccess
+添加以下内容
+123456789#!/bin/bash##goaccess cron every five minutesset -egoaccess -f /var/www/log/access.log -a &amp;gt; /var/www/html/report.htmlexit 0
+直接运行脚本
+1bash goaccess
+2.c">
+<meta property="og:updated_time" content="2016-05-25T07:17:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux编写Shell脚本与定时执行">
+<meta name="twitter:title" content="Linux编写Shell脚本与Crontab定时执行">
 <meta name="twitter:description" content="1.编写Shell脚本
-vi test.sh
-123#!/bin/bash#goaccessgoaccess -f access.log --no-csv-summary -o csv &amp;gt; test.csv
-2.crontab定时执行
-cat /etc/crontab
-/etc/init.d/cron status">
+新建脚本文件
+1vi goaccess
+添加以下内容
+123456789#!/bin/bash##goaccess cron every five minutesset -egoaccess -f /var/www/log/access.log -a &amp;gt; /var/www/html/report.htmlexit 0
+直接运行脚本
+1bash goaccess
+2.c">
 
 
 
@@ -98,7 +104,7 @@ cat /etc/crontab
   };
 </script>
 
-  <title> Linux编写Shell脚本与定时执行 | 八宝粥的博客 </title>
+  <title> Linux编写Shell脚本与Crontab定时执行 | 八宝粥的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -278,7 +284,7 @@ cat /etc/crontab
             
             
               
-                Linux编写Shell脚本与定时执行
+                Linux编写Shell脚本与Crontab定时执行
               
             
           </h1>
@@ -331,7 +337,7 @@ cat /etc/crontab
 
           
           
-             <span id="/2016/05/23/linux-shell-and-crontab/" class="leancloud_visitors" data-flag-title="Linux编写Shell脚本与定时执行">
+             <span id="/2016/05/23/linux-shell-and-crontab/" class="leancloud_visitors" data-flag-title="Linux编写Shell脚本与Crontab定时执行">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -354,11 +360,17 @@ cat /etc/crontab
 
       
         <p>1.编写Shell脚本</p>
-<p>vi test.sh</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment">#goaccess</span></span><br><span class="line">goaccess <span class="_">-f</span> access.log --no-csv-summary -o csv &gt; test.csv</span><br></pre></td></tr></table></figure>
+<p>新建脚本文件</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">vi</span> goaccess</span><br></pre></td></tr></table></figure>
+<p>添加以下内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#goaccess cron every five minutes</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> <span class="_">-e</span></span><br><span class="line"></span><br><span class="line">goaccess <span class="_">-f</span> /var/www/<span class="built_in">log</span>/access.log <span class="_">-a</span> &gt; /var/www/html/report.html</span><br><span class="line"></span><br><span class="line"><span class="built_in">exit</span> 0</span><br></pre></td></tr></table></figure>
+<p>直接运行脚本</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bash </span>goaccess</span><br></pre></td></tr></table></figure>
 <p>2.crontab定时执行</p>
-<p>cat /etc/crontab</p>
-<p>/etc/init.d/cron status</p>
+<p>新建定时任务</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi <span class="meta-keyword">/etc/</span>crontab</span><br></pre></td></tr></table></figure>
+<p>添加以下内容</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">SHELL=<span class="regexp">/bin/bash</span></span><br><span class="line">PATH=<span class="regexp">/sbin:/bin</span><span class="symbol">:/usr/sbin</span><span class="symbol">:/usr/bin</span><span class="symbol">:/usr/local/bin</span></span><br><span class="line">MAILTO=root</span><br><span class="line"></span><br><span class="line"><span class="comment"># For details see man 4 crontabs</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Example of job definition:</span></span><br><span class="line"><span class="comment"># .---------------- minute (0 - 59)</span></span><br><span class="line"><span class="comment"># |  .------------- hour (0 - 23)</span></span><br><span class="line"><span class="comment"># |  |  .---------- day of month (1 - 31)</span></span><br><span class="line"><span class="comment"># |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...</span></span><br><span class="line"><span class="comment"># |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat</span></span><br><span class="line"><span class="comment"># |  |  |  |  |</span></span><br><span class="line"><span class="comment"># *  *  *  *  * user-name  command to be executed</span></span><br><span class="line"></span><br><span class="line">*<span class="regexp">/5 * * * *  root bash /etc</span><span class="regexp">/cron.hourly/goaccess</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -395,8 +407,8 @@ cat /etc/crontab
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/23/linux-command/" rel="next" title="Linux命令">
-                <i class="fa fa-chevron-left"></i> Linux命令
+              <a href="/2016/05/23/linux-nginx-log-goaccess/" rel="next" title="日志分析工具GoAccess">
+                <i class="fa fa-chevron-left"></i> 日志分析工具GoAccess
               </a>
             
           </div>
@@ -421,7 +433,7 @@ cat /etc/crontab
     <div class="post-spread">
       
         <div class="ds-share flat" data-thread-key="2016/05/23/linux-shell-and-crontab/"
-     data-title="Linux编写Shell脚本与定时执行"
+     data-title="Linux编写Shell脚本与Crontab定时执行"
      data-content=""
      data-url="http://blog.ybbz.site/2016/05/23/linux-shell-and-crontab/">
   <div class="ds-share-inline">
@@ -451,7 +463,7 @@ cat /etc/crontab
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/05/23/linux-shell-and-crontab/"
-           data-title="Linux编写Shell脚本与定时执行" data-url="http://blog.ybbz.site/2016/05/23/linux-shell-and-crontab/">
+           data-title="Linux编写Shell脚本与Crontab定时执行" data-url="http://blog.ybbz.site/2016/05/23/linux-shell-and-crontab/">
       </div>
     
   </div>
@@ -496,7 +508,7 @@ cat /etc/crontab
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">77</span>
+              <span class="site-state-item-count">80</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -513,7 +525,7 @@ cat /etc/crontab
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">57</span>
+                <span class="site-state-item-count">59</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

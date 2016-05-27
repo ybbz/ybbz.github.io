@@ -72,7 +72,7 @@ tail[必要参数][选择参数][文件]
 用于显示指定文件末尾内容，不指定文件时，作为输入信息进行处理。常用查看日志文件。
 3.命令参数：
 12345678-f 循环读取-q 不显示处理信息-v 显示详细的处理信息-c&amp;lt;数目&amp;gt; 显示的字节数-n&amp;lt;行数&amp;gt; 显示行数--pid=PID 与-f合用,表示在进程ID,PID死掉之后结束.-q">
-<meta property="og:updated_time" content="2016-05-23T05:00:18.000Z">
+<meta property="og:updated_time" content="2016-05-26T06:00:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux命令">
 <meta name="twitter:description" content="tail 命令1.命令格式
@@ -372,6 +372,12 @@ tail[必要参数][选择参数][文件]
 <p>4.使用实例</p>
 <p>实例1：给文件创建软链接<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln <span class="_">-s</span> <span class="built_in">log</span>2013.log link2013</span><br></pre></td></tr></table></figure></p>
 <p>实例2：给文件创建硬链接<br><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ln</span> log2013.<span class="built_in">log</span> ln2013</span><br></pre></td></tr></table></figure></p>
+<h3 id="grep-命令"><a href="#grep-命令" class="headerlink" title="grep 命令"></a>grep 命令</h3><p>Linux系统中grep命令是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹 配的行打印出来。grep全称是Global Regular Expression Print，表示全局正则表达式版本，它的使用权限是所有用户。<br>grep的工作方式是这样的，它在一个或多个文件中搜索字符串模板。如果模板包括空格，则必须被引用，模板后的所有字符串被看作文件名。搜索的结果被送到标准输出，不影响原文件内容。<br>grep可用于shell脚本，因为grep通过返回一个状态值来说明搜索的状态，如果模板搜索成功，则返回0，如果搜索不成功，则返回1，如果搜索的文件不存在，则返回2。我们利用这些返回值就可进行一些自动化的文本处理工作。</p>
+<p>1.命令格式：</p>
+<p>grep [option] pattern file</p>
+<p>2.命令功能：</p>
+<p>用于过滤/搜索的特定字符。可使用正则表达式能多种命令配合使用，使用上十分灵活。</p>
+<p>3.命令参数：</p>
 <h3 id="Ubuntu常用命令"><a href="#Ubuntu常用命令" class="headerlink" title="Ubuntu常用命令"></a>Ubuntu常用命令</h3><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">apt-<span class="built_in">get</span> install xxx 安装</span><br><span class="line">apt-<span class="built_in">get</span> <span class="built_in">remove</span> xxx 卸载但不删除配置</span><br><span class="line">apt-<span class="built_in">get</span> purge xxx 卸载并且删除相关配置</span><br><span class="line"><span class="meta"># another</span></span><br><span class="line">sudo apt-<span class="built_in">get</span> <span class="built_in">remove</span> --purge xxx</span><br><span class="line">sudo apt-<span class="built_in">get</span> update</span><br></pre></td></tr></table></figure>
 <p>参考资料：<br><a href="http://www.cnblogs.com/peida/tag/每日一linux命令/" target="_blank" rel="external">每日一linux命令</a></p>
 
@@ -408,16 +414,16 @@ tail[必要参数][选择参数][文件]
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/23/linux-nginx-log-goaccess/" rel="next" title="日志分析工具GoAccess">
-                <i class="fa fa-chevron-left"></i> 日志分析工具GoAccess
+              <a href="/2016/05/22/yii2-qiniu-upload-file/" rel="next" title="Yii2使用七牛云存储上传文件">
+                <i class="fa fa-chevron-left"></i> Yii2使用七牛云存储上传文件
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/05/23/linux-shell-and-crontab/" rel="prev" title="Linux编写Shell脚本与定时执行">
-                Linux编写Shell脚本与定时执行 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/05/23/linux-nginx-log-goaccess/" rel="prev" title="日志分析工具GoAccess">
+                日志分析工具GoAccess <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -509,7 +515,7 @@ tail[必要参数][选择参数][文件]
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">77</span>
+              <span class="site-state-item-count">80</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -526,7 +532,7 @@ tail[必要参数][选择参数][文件]
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">57</span>
+                <span class="site-state-item-count">59</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -591,7 +597,7 @@ tail[必要参数][选择参数][文件]
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#tail-命令"><span class="nav-number">1.</span> <span class="nav-text">tail 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ln-命令"><span class="nav-number">2.</span> <span class="nav-text">ln 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ubuntu常用命令"><span class="nav-number">3.</span> <span class="nav-text">Ubuntu常用命令</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#tail-命令"><span class="nav-number">1.</span> <span class="nav-text">tail 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ln-命令"><span class="nav-number">2.</span> <span class="nav-text">ln 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#grep-命令"><span class="nav-number">3.</span> <span class="nav-text">grep 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ubuntu常用命令"><span class="nav-number">4.</span> <span class="nav-text">Ubuntu常用命令</span></a></li></ol></div>
             
           </div>
         </section>

@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.ybbz.site/2016/05/27/history-2016-05-27-test-dir/</loc>
+    
+    <lastmod>2016-05-27T06:55:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2016/05/18/yii2-restful-api-auth/</loc>
+    
+    <lastmod>2016-05-26T14:09:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2016/05/23/linux-command/</loc>
+    
+    <lastmod>2016-05-26T06:00:49.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2016/05/15/tencent-qcloud-ssh-login/</loc>
+    
+    <lastmod>2016-05-26T03:48:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2016/05/23/linux-shell-and-crontab/</loc>
+    
+    <lastmod>2016-05-25T07:17:10.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.ybbz.site/2016/05/25/ubuntu-apache2/</loc>
     
     <lastmod>2016-05-25T05:52:03.000Z</lastmod>
@@ -23,23 +58,9 @@
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/05/23/linux-shell-and-crontab/</loc>
-    
-    <lastmod>2016-05-23T07:58:05.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.ybbz.site/2016/05/23/linux-nginx-log-goaccess/</loc>
     
     <lastmod>2016-05-23T06:17:10.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.ybbz.site/2016/05/23/linux-command/</loc>
-    
-    <lastmod>2016-05-23T05:00:18.000Z</lastmod>
     
   </url>
   
