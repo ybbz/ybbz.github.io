@@ -59,7 +59,7 @@
 <meta name="description" content="这一切都是命运石之门的选择">
 <meta property="og:type" content="website">
 <meta property="og:title" content="八宝粥的博客">
-<meta property="og:url" content="http://blog.ybbz.site/tags/Markdown/index.html">
+<meta property="og:url" content="http://blog.ybbz.site/tags/MarkDown/index.html">
 <meta property="og:site_name" content="八宝粥的博客">
 <meta property="og:description" content="这一切都是命运石之门的选择">
 <meta name="twitter:card" content="summary">
@@ -82,7 +82,7 @@
   };
 </script>
 
-  <title> 标签: Markdown | 八宝粥的博客 </title>
+  <title> 标签: MarkDown | 八宝粥的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -244,7 +244,7 @@
   <div id="posts" class="posts-collapse">
     <div class="collection-title">
       <h2 >
-        Markdown
+        MarkDown
         <small>标签</small>
       </h2>
     </div>
@@ -257,37 +257,9 @@
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/2015/12/06/Yii2-Markdown/" itemprop="url">
+            <a class="post-title-link" href="/2016/05/15/yii2-ueditor-and-markdown-editor/" itemprop="url">
               
-                <span itemprop="name">Yii2使用Markdown编辑器</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2015-12-06T00:00:00+08:00"
-              content="2015-12-06" >
-          12-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2015/11/01/Sublime-Text-Markdown/" itemprop="url">
-              
-                <span itemprop="name">Sublime Text配置Markdown预览插件</span>
+                <span itemprop="name">Yii2使用UEditor和MarkDown Editor</span>
               
             </a>
         
@@ -295,37 +267,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2015-11-01T00:00:00+08:00"
-              content="2015-11-01" >
-          11-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2015/08/19/Markdown-Syntax/" itemprop="url">
-              
-                <span itemprop="name">Markdown 简明语法参考</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2015-08-19T00:00:00+08:00"
-              content="2015-08-19" >
-          08-19
+              datetime="2016-05-15T00:00:00+08:00"
+              content="2016-05-15" >
+          05-15
         </time>
       </div>
 
@@ -375,7 +319,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">81</span>
+              <span class="site-state-item-count">82</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -392,7 +336,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">59</span>
+                <span class="site-state-item-count">60</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -644,6 +588,51 @@
             counter.save(null, {
               success: function(counter) {
                 var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>
+nt.getElementById(url));
                 $element.find('.leancloud-visitors-count').text(counter.get('time'));
               },
               error: function(counter, error) {
