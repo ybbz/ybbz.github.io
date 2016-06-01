@@ -2,9 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.ybbz.site/2016/05/22/yii2-qiniu-upload-file/</loc>
+    
+    <lastmod>2016-05-30T04:01:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2016/05/30/nginx-apache/</loc>
+    
+    <lastmod>2016-05-30T01:53:37.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.ybbz.site/2016/05/18/yii2-restful-api-auth/</loc>
     
-    <lastmod>2016-05-29T03:15:39.000Z</lastmod>
+    <lastmod>2016-05-30T01:30:22.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2016/05/10/tencent-qcloud-ssh-login/</loc>
+    
+    <lastmod>2016-05-30T01:30:21.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2016/04/25/CentOS-Nginx-Django/</loc>
+    
+    <lastmod>2016-05-30T01:29:30.000Z</lastmod>
     
   </url>
   
@@ -51,13 +79,6 @@
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/05/10/tencent-qcloud-ssh-login/</loc>
-    
-    <lastmod>2016-05-26T03:48:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.ybbz.site/2016/05/23/linux-shell-and-crontab/</loc>
     
     <lastmod>2016-05-25T07:17:10.000Z</lastmod>
@@ -68,13 +89,6 @@
     <loc>http://blog.ybbz.site/2016/05/25/ubuntu-apache2/</loc>
     
     <lastmod>2016-05-25T05:52:03.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.ybbz.site/2016/05/22/yii2-qiniu-upload-file/</loc>
-    
-    <lastmod>2016-05-24T16:04:48.000Z</lastmod>
     
   </url>
   
@@ -138,13 +152,6 @@
     <loc>http://blog.ybbz.site/2015/12/10/yii2-modify-user-avatar/</loc>
     
     <lastmod>2016-05-06T07:39:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.ybbz.site/2016/04/25/CentOS-Nginx-Django/</loc>
-    
-    <lastmod>2016-04-26T15:58:39.000Z</lastmod>
     
   </url>
   

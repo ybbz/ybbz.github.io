@@ -56,16 +56,28 @@
 
 
 
-<meta name="description" content="待完善…">
+<meta name="description" content="引入Qiniu借鉴了Github上的yii2-qiniu
+在composer.json的require中加入下面的代码并更新。
+1&quot;crazyfd/yii2-qiniu&quot;: &quot;dev-master&quot;,
+在config/params.php中加入一下代码：
+1234567&apos;qiniu&apos; =&amp;gt;[    # 在七牛官网查询相关参数    &apos;accessKey&apos; =&amp;gt; &apos;your access">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Yii2使用七牛云存储上传文件">
 <meta property="og:url" content="http://blog.ybbz.site/2016/05/22/yii2-qiniu-upload-file/index.html">
 <meta property="og:site_name" content="八宝粥的博客">
-<meta property="og:description" content="待完善…">
-<meta property="og:updated_time" content="2016-05-24T16:04:48.000Z">
+<meta property="og:description" content="引入Qiniu借鉴了Github上的yii2-qiniu
+在composer.json的require中加入下面的代码并更新。
+1&quot;crazyfd/yii2-qiniu&quot;: &quot;dev-master&quot;,
+在config/params.php中加入一下代码：
+1234567&apos;qiniu&apos; =&amp;gt;[    # 在七牛官网查询相关参数    &apos;accessKey&apos; =&amp;gt; &apos;your access">
+<meta property="og:updated_time" content="2016-05-30T04:01:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Yii2使用七牛云存储上传文件">
-<meta name="twitter:description" content="待完善…">
+<meta name="twitter:description" content="引入Qiniu借鉴了Github上的yii2-qiniu
+在composer.json的require中加入下面的代码并更新。
+1&quot;crazyfd/yii2-qiniu&quot;: &quot;dev-master&quot;,
+在config/params.php中加入一下代码：
+1234567&apos;qiniu&apos; =&amp;gt;[    # 在七牛官网查询相关参数    &apos;accessKey&apos; =&amp;gt; &apos;your access">
 
 
 
@@ -338,7 +350,17 @@
       
 
       
-        <p>待完善…</p>
+        <h3 id="引入Qiniu"><a href="#引入Qiniu" class="headerlink" title="引入Qiniu"></a>引入Qiniu</h3><p>借鉴了Github上的<a href="https://github.com/crazyfd/yii2-qiniu" target="_blank" rel="external">yii2-qiniu</a></p>
+<p>在composer.json的require中加入下面的代码并更新。</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"crazyfd/yii2-qiniu"</span>: <span class="string">"dev-master"</span>,</span><br></pre></td></tr></table></figure>
+<p>在config/params.php中加入一下代码：</p>
+<figure class="highlight sml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">'qiniu'</span> =&gt;[</span><br><span class="line">    # 在七牛官网查询相关参数</span><br><span class="line">    <span class="symbol">'accessKey'</span> =&gt; <span class="symbol">'your</span> access key',</span><br><span class="line">    <span class="symbol">'secretKey'</span> =&gt; <span class="symbol">'your</span> secret key',</span><br><span class="line">    <span class="symbol">'domain'</span> =&gt; <span class="symbol">'your</span> domain',</span><br><span class="line">    <span class="symbol">'bucket'</span> =&gt; <span class="symbol">'your</span> bucket',</span><br><span class="line">],</span><br></pre></td></tr></table></figure>
+<p>直接使用</p>
+<p>在DemoController.php中加入</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">qiniuUpload</span><span class="params">($file)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    $ak = Yii::$app-&gt;params[<span class="string">'qiniu'</span>][<span class="string">'accessKey'</span>];</span><br><span class="line">    $sk = Yii::$app-&gt;params[<span class="string">'qiniu'</span>][<span class="string">'secretKey'</span>];</span><br><span class="line">    $domain = Yii::$app-&gt;params[<span class="string">'qiniu'</span>][<span class="string">'domain'</span>];</span><br><span class="line">    $bucket = Yii::$app-&gt;params[<span class="string">'qiniu'</span>][<span class="string">'bucket'</span>];</span><br><span class="line">    $qiniu = <span class="keyword">new</span> Qiniu($ak, $sk,$domain, $bucket);</span><br><span class="line">    $key = time();</span><br><span class="line">    $qiniu-&gt;uploadFile($file, $key);</span><br><span class="line">    $url = $qiniu-&gt;getLink($key);</span><br><span class="line">    <span class="keyword">return</span> $url;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">actionCreate</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    $model = <span class="keyword">new</span> Image();</span><br><span class="line">    <span class="keyword">if</span> ($model-&gt;load(Yii::$app-&gt;request-&gt;post())) &#123;</span><br><span class="line">        $file = $_FILES[<span class="string">"myfile"</span>][<span class="string">"tmp_name"</span>];</span><br><span class="line">        <span class="keyword">if</span>(file_exists($file))&#123;</span><br><span class="line">            $response_url = $this-&gt;qiniuUpload($file);</span><br><span class="line">            $model-&gt;image = $response_url;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>($model-&gt;save())&#123;</span><br><span class="line">            <span class="keyword">return</span> $this-&gt;redirect([<span class="string">'view'</span>, <span class="string">'id'</span> =&gt; $model-&gt;id]);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> $this-&gt;render(<span class="string">'create'</span>, [</span><br><span class="line">                <span class="string">'model'</span> =&gt; $model,</span><br><span class="line">                <span class="string">'categories'</span> =&gt; $categories,</span><br><span class="line">            ]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> $this-&gt;render(<span class="string">'create'</span>, [</span><br><span class="line">            <span class="string">'model'</span> =&gt; $model,</span><br><span class="line">            <span class="string">'categories'</span> =&gt; $categories,</span><br><span class="line">        ]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在views/image/form.php中</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="meta">&lt;?php</span> $form = ActiveForm::begin([</span><br><span class="line">    <span class="string">'enableAjaxValidation'</span> =&gt; <span class="keyword">false</span>,</span><br><span class="line">    <span class="string">'options'</span> =&gt; [<span class="string">'enctype'</span> =&gt; <span class="string">'multipart/form-data'</span>]</span><br><span class="line">]); <span class="meta">?&gt;</span></span></span><br><span class="line"><span class="php"><span class="meta">&lt;?</span>= $form-&gt;field($model, <span class="string">'image'</span>)-&gt;fileInput([<span class="string">'name'</span> =&gt; <span class="string">'myfile'</span>]) <span class="meta">?&gt;</span></span></span><br><span class="line"><span class="php"><span class="meta">&lt;?php</span> <span class="keyword">if</span>($model-&gt;image)&#123; <span class="meta">?&gt;</span></span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"preview"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"&lt;?= Html::encode($model-&gt;image)?&gt;"</span> <span class="attr">width</span>=<span class="string">"100px"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="php"><span class="meta">&lt;?php</span> &#125; <span class="meta">?&gt;</span></span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span></span><br><span class="line">    <span class="php"><span class="meta">&lt;?</span>= Html::submitButton($model-&gt;isNewRecord ? <span class="string">'新建'</span> : <span class="string">'更新'</span>, [<span class="string">'class'</span> =&gt; $model-&gt;isNewRecord ? <span class="string">'btn btn-success'</span> : <span class="string">'btn btn-primary'</span>]) <span class="meta">?&gt;</span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="php"><span class="meta">&lt;?php</span> ActiveForm::end(); <span class="meta">?&gt;</span></span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -377,16 +399,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/22/yii2-detailview/" rel="next" title="Yii2自定义DetailView的显示内容">
-                <i class="fa fa-chevron-left"></i> Yii2自定义DetailView的显示内容
+              <a href="/2016/05/18/yii2-restful-api-auth/" rel="next" title="Yii2使用RESTful API及其认证问题">
+                <i class="fa fa-chevron-left"></i> Yii2使用RESTful API及其认证问题
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/05/23/linux-nginx-log-goaccess/" rel="prev" title="日志分析工具GoAccess">
-                日志分析工具GoAccess <i class="fa fa-chevron-right"></i>
+              <a href="/2016/05/22/yii2-detailview/" rel="prev" title="Yii2自定义DetailView的显示内容">
+                Yii2自定义DetailView的显示内容 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -478,7 +500,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">82</span>
+              <span class="site-state-item-count">83</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -495,7 +517,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">60</span>
+                <span class="site-state-item-count">58</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -560,7 +582,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#引入Qiniu"><span class="nav-number">1.</span> <span class="nav-text">引入Qiniu</span></a></li></ol></div>
             
           </div>
         </section>

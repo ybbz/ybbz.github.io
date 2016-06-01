@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.ybbz.site/"/>
-  <updated>2016-05-27T08:14:17.000Z</updated>
+  <updated>2016-05-30T01:53:37.000Z</updated>
   <id>http://blog.ybbz.site/</id>
   
   <author>
@@ -14,6 +14,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Nginx代理Apache服务</title>
+    <link href="http://blog.ybbz.site/2016/05/30/nginx-apache/"/>
+    <id>http://blog.ybbz.site/2016/05/30/nginx-apache/</id>
+    <published>2016-05-29T16:00:00.000Z</published>
+    <updated>2016-05-30T01:53:37.000Z</updated>
+    
+    <content type="html">&lt;p&gt;使用Apache部署PHP服务的时候，80端口已经被占用（Nginx代理），则将Apache的端口配置为其他端口（如8888）；并通过Nginx将Apache服务代理到80端口；实现Web服务的端口统一为80。通过如下方式实现上述过程。&lt;/p&gt;
+&lt;h3 id=&quot;Apache部署PHP服务&quot;&gt;&lt;a href=&quot;#Apache部署PHP服务&quot; class=&quot;headerlink&quot; title=&quot;Apache部署PHP服务&quot;&gt;&lt;/a&gt;Apache部署PHP服务&lt;/h3&gt;&lt;p&gt;配置Apache端口号：&lt;/p&gt;
+&lt;figure class=&quot;highlight vim&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;cd&lt;/span&gt; /etc/apache2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;vi&lt;/span&gt; ports.&lt;span class=&quot;keyword&quot;&gt;conf&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight apache&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;&lt;span class=&quot;nomarkup&quot;&gt;Listen&lt;/span&gt;&lt;/span&gt; 8888&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;配置Apacha虚拟主机服务：&lt;/p&gt;
+&lt;figure class=&quot;highlight vim&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;cd&lt;/span&gt; sites-enabled&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;vi&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;000&lt;/span&gt;-default.&lt;span class=&quot;keyword&quot;&gt;conf&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight apache&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;section&quot;&gt;&amp;lt;VirtualHost *:8888&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;&lt;span class=&quot;nomarkup&quot;&gt;ServerName&lt;/span&gt;&lt;/span&gt; blog.demo.com&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;&lt;span class=&quot;nomarkup&quot;&gt;DocumentRoot&lt;/span&gt;&lt;/span&gt; /var/www/blog/frontend/web&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;DirectoryIndex&lt;/span&gt; index.html index.php&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;section&quot;&gt;&amp;lt;/VirtualHost&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;section&quot;&gt;&amp;lt;Directory &quot;/var/www/blog/frontend/web&quot;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;&lt;span class=&quot;nomarkup&quot;&gt;Options&lt;/span&gt;&lt;/span&gt; +Includes -Indexes&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;AllowOverride&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;All&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;&lt;span class=&quot;nomarkup&quot;&gt;Order&lt;/span&gt;&lt;/span&gt; Deny,Allow&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;&lt;span class=&quot;nomarkup&quot;&gt;Allow&lt;/span&gt;&lt;/span&gt; from &lt;span class=&quot;literal&quot;&gt;All&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;section&quot;&gt;&amp;lt;/Directory&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;Nginx代理Apache服务&quot;&gt;&lt;a href=&quot;#Nginx代理Apache服务&quot; class=&quot;headerlink&quot; title=&quot;Nginx代理Apache服务&quot;&gt;&lt;/a&gt;Nginx代理Apache服务&lt;/h3&gt;&lt;figure class=&quot;highlight vim&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;cd&lt;/span&gt; /etc/nginx&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;vi&lt;/span&gt; server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight nginx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;section&quot;&gt;server&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;listen&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;80&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;server_name&lt;/span&gt;  blog.demo.com;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;access_log&lt;/span&gt;  /var/log/nginx/access.blog.log  main;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;error_log&lt;/span&gt; /var/log/nginx/error.blog.log;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;location&lt;/span&gt; / &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;attribute&quot;&gt;rewrite&lt;/span&gt;&lt;span class=&quot;regexp&quot;&gt; ^/(.*)$&lt;/span&gt; //&lt;span class=&quot;variable&quot;&gt;$1&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;last&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;location&lt;/span&gt;  &lt;span class=&quot;regexp&quot;&gt;~* ^//.*$&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;attribute&quot;&gt;proxy_redirect&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;off&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;attribute&quot;&gt;proxy_set_header&lt;/span&gt; Host &lt;span class=&quot;variable&quot;&gt;$host&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;attribute&quot;&gt;proxy_set_header&lt;/span&gt; X-Real-IP &lt;span class=&quot;variable&quot;&gt;$remote_addr&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;attribute&quot;&gt;proxy_set_header&lt;/span&gt; X-Forwarded-For &lt;span class=&quot;variable&quot;&gt;$proxy_add_x_forwarded_for&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;attribute&quot;&gt;proxy_pass&lt;/span&gt; http://192.168.0.1:8888;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;遇到的问题及解决方法&quot;&gt;&lt;a href=&quot;#遇到的问题及解决方法&quot; class=&quot;headerlink&quot; title=&quot;遇到的问题及解决方法&quot;&gt;&lt;/a&gt;遇到的问题及解决方法&lt;/h3&gt;&lt;p&gt;form跳转错误。解决办法：重写action路径。&lt;/p&gt;
+&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;php&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?php&lt;/span&gt; $form = ActiveForm::begin([&lt;span class=&quot;string&quot;&gt;&#39;id&#39;&lt;/span&gt; =&amp;gt; &lt;span class=&quot;string&quot;&gt;&#39;demo-form&#39;&lt;/span&gt;]); &lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# code ...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;php&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?php&lt;/span&gt; ActiveForm::end(); &lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;将上述默认form修改为：&lt;/p&gt;
+&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;yii&lt;/span&gt;\&lt;span class=&quot;title&quot;&gt;helpers&lt;/span&gt;\&lt;span class=&quot;title&quot;&gt;Url&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?php&lt;/span&gt; $form = ActiveForm::begin([&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;id&#39;&lt;/span&gt; =&amp;gt; &lt;span class=&quot;string&quot;&gt;&#39;demo-form&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;action&#39;&lt;/span&gt; =&amp;gt; Url::toRoute([&lt;span class=&quot;string&quot;&gt;&#39;site/demo&#39;&lt;/span&gt;]),&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;]); &lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# code ...&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?php&lt;/span&gt; ActiveForm::end(); &lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;使用Apache部署PHP服务的时候，80端口已经被占用（Nginx代理），则将Apache的端口配置为其他端口（如8888）；并通过Nginx将Apache服务代理到80端口；实现Web服务的端口统一为80。通过如下方式实现上述过程。&lt;/p&gt;
+&lt;h3 id=&quot;Apache
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://blog.ybbz.site/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://blog.ybbz.site/tags/Linux/"/>
+    
+      <category term="Apache" scheme="http://blog.ybbz.site/tags/Apache/"/>
+    
+      <category term="Nginx" scheme="http://blog.ybbz.site/tags/Nginx/"/>
+    
+      <category term="PHP" scheme="http://blog.ybbz.site/tags/PHP/"/>
+    
+      <category term="Yii2" scheme="http://blog.ybbz.site/tags/Yii2/"/>
+    
+  </entry>
   
   <entry>
     <title>PHP执行Shell命令（2）</title>
@@ -130,6 +174,44 @@
   </entry>
   
   <entry>
+    <title>Linux编写Shell脚本与Crontab定时执行</title>
+    <link href="http://blog.ybbz.site/2016/05/23/linux-shell-and-crontab/"/>
+    <id>http://blog.ybbz.site/2016/05/23/linux-shell-and-crontab/</id>
+    <published>2016-05-22T16:00:00.000Z</published>
+    <updated>2016-05-25T07:17:10.000Z</updated>
+    
+    <content type="html">&lt;p&gt;1.编写Shell脚本&lt;/p&gt;
+&lt;p&gt;新建脚本文件&lt;/p&gt;
+&lt;figure class=&quot;highlight nginx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;vi&lt;/span&gt; goaccess&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;添加以下内容&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#!/bin/bash&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#goaccess cron every five minutes&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;_&quot;&gt;-e&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;goaccess &lt;span class=&quot;_&quot;&gt;-f&lt;/span&gt; /var/www/&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;/access.log &lt;span class=&quot;_&quot;&gt;-a&lt;/span&gt; &amp;gt; /var/www/html/report.html&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;exit&lt;/span&gt; 0&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;直接运行脚本&lt;/p&gt;
+&lt;figure class=&quot;highlight armasm&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;bash &lt;/span&gt;goaccess&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;2.crontab定时执行&lt;/p&gt;
+&lt;p&gt;新建定时任务&lt;/p&gt;
+&lt;figure class=&quot;highlight dts&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;vi &lt;span class=&quot;meta-keyword&quot;&gt;/etc/&lt;/span&gt;crontab&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;添加以下内容&lt;/p&gt;
+&lt;figure class=&quot;highlight elixir&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;SHELL=&lt;span class=&quot;regexp&quot;&gt;/bin/bash&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;PATH=&lt;span class=&quot;regexp&quot;&gt;/sbin:/bin&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:/usr/sbin&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:/usr/bin&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:/usr/local/bin&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;MAILTO=root&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# For details see man 4 crontabs&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Example of job definition:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# .---------------- minute (0 - 59)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# |  .------------- hour (0 - 23)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# |  |  .---------- day of month (1 - 31)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# |  |  |  |  |&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# *  *  *  *  * user-name  command to be executed&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;*&lt;span class=&quot;regexp&quot;&gt;/5 * * * *  root bash /etc&lt;/span&gt;&lt;span class=&quot;regexp&quot;&gt;/cron.hourly/goaccess&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1.编写Shell脚本&lt;/p&gt;
+&lt;p&gt;新建脚本文件&lt;/p&gt;
+&lt;figure class=&quot;highlight nginx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/t
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://blog.ybbz.site/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://blog.ybbz.site/tags/Linux/"/>
+    
+      <category term="Shell" scheme="http://blog.ybbz.site/tags/Shell/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Linux命令</title>
     <link href="http://blog.ybbz.site/2016/05/23/linux-command/"/>
     <id>http://blog.ybbz.site/2016/05/23/linux-command/</id>
@@ -177,44 +259,6 @@
     
     
       <category term="Linux" scheme="http://blog.ybbz.site/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux编写Shell脚本与Crontab定时执行</title>
-    <link href="http://blog.ybbz.site/2016/05/23/linux-shell-and-crontab/"/>
-    <id>http://blog.ybbz.site/2016/05/23/linux-shell-and-crontab/</id>
-    <published>2016-05-22T16:00:00.000Z</published>
-    <updated>2016-05-25T07:17:10.000Z</updated>
-    
-    <content type="html">&lt;p&gt;1.编写Shell脚本&lt;/p&gt;
-&lt;p&gt;新建脚本文件&lt;/p&gt;
-&lt;figure class=&quot;highlight nginx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;vi&lt;/span&gt; goaccess&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;添加以下内容&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#!/bin/bash&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#goaccess cron every five minutes&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;_&quot;&gt;-e&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;goaccess &lt;span class=&quot;_&quot;&gt;-f&lt;/span&gt; /var/www/&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;/access.log &lt;span class=&quot;_&quot;&gt;-a&lt;/span&gt; &amp;gt; /var/www/html/report.html&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;exit&lt;/span&gt; 0&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;直接运行脚本&lt;/p&gt;
-&lt;figure class=&quot;highlight armasm&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;bash &lt;/span&gt;goaccess&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;2.crontab定时执行&lt;/p&gt;
-&lt;p&gt;新建定时任务&lt;/p&gt;
-&lt;figure class=&quot;highlight dts&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;vi &lt;span class=&quot;meta-keyword&quot;&gt;/etc/&lt;/span&gt;crontab&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;添加以下内容&lt;/p&gt;
-&lt;figure class=&quot;highlight elixir&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;SHELL=&lt;span class=&quot;regexp&quot;&gt;/bin/bash&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;PATH=&lt;span class=&quot;regexp&quot;&gt;/sbin:/bin&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:/usr/sbin&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:/usr/bin&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:/usr/local/bin&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;MAILTO=root&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# For details see man 4 crontabs&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Example of job definition:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# .---------------- minute (0 - 59)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# |  .------------- hour (0 - 23)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# |  |  .---------- day of month (1 - 31)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# |  |  |  |  |&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# *  *  *  *  * user-name  command to be executed&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;*&lt;span class=&quot;regexp&quot;&gt;/5 * * * *  root bash /etc&lt;/span&gt;&lt;span class=&quot;regexp&quot;&gt;/cron.hourly/goaccess&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;1.编写Shell脚本&lt;/p&gt;
-&lt;p&gt;新建脚本文件&lt;/p&gt;
-&lt;figure class=&quot;highlight nginx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/t
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://blog.ybbz.site/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="http://blog.ybbz.site/tags/Linux/"/>
-    
-      <category term="Shell" scheme="http://blog.ybbz.site/tags/Shell/"/>
     
   </entry>
   
@@ -302,34 +346,6 @@
   </entry>
   
   <entry>
-    <title>Yii2使用七牛云存储上传文件</title>
-    <link href="http://blog.ybbz.site/2016/05/22/yii2-qiniu-upload-file/"/>
-    <id>http://blog.ybbz.site/2016/05/22/yii2-qiniu-upload-file/</id>
-    <published>2016-05-21T16:00:00.000Z</published>
-    <updated>2016-05-24T16:04:48.000Z</updated>
-    
-    <content type="html">&lt;p&gt;待完善…&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;待完善…&lt;/p&gt;
-
-    
-    </summary>
-    
-      <category term="PHP" scheme="http://blog.ybbz.site/categories/PHP/"/>
-    
-    
-      <category term="PHP" scheme="http://blog.ybbz.site/tags/PHP/"/>
-    
-      <category term="Yii2" scheme="http://blog.ybbz.site/tags/Yii2/"/>
-    
-      <category term="Qiniu" scheme="http://blog.ybbz.site/tags/Qiniu/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Yii2自定义DetailView的显示内容</title>
     <link href="http://blog.ybbz.site/2016/05/22/yii2-detailview/"/>
     <id>http://blog.ybbz.site/2016/05/22/yii2-detailview/</id>
@@ -363,11 +379,48 @@
   </entry>
   
   <entry>
+    <title>Yii2使用七牛云存储上传文件</title>
+    <link href="http://blog.ybbz.site/2016/05/22/yii2-qiniu-upload-file/"/>
+    <id>http://blog.ybbz.site/2016/05/22/yii2-qiniu-upload-file/</id>
+    <published>2016-05-21T16:00:00.000Z</published>
+    <updated>2016-05-30T04:01:00.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;引入Qiniu&quot;&gt;&lt;a href=&quot;#引入Qiniu&quot; class=&quot;headerlink&quot; title=&quot;引入Qiniu&quot;&gt;&lt;/a&gt;引入Qiniu&lt;/h3&gt;&lt;p&gt;借鉴了Github上的&lt;a href=&quot;https://github.com/crazyfd/yii2-qiniu&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;yii2-qiniu&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在composer.json的require中加入下面的代码并更新。&lt;/p&gt;
+&lt;figure class=&quot;highlight 1c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;&quot;crazyfd/yii2-qiniu&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;dev-master&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;在config/params.php中加入一下代码：&lt;/p&gt;
+&lt;figure class=&quot;highlight sml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;symbol&quot;&gt;&#39;qiniu&#39;&lt;/span&gt; =&amp;gt;[&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    # 在七牛官网查询相关参数&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;symbol&quot;&gt;&#39;accessKey&#39;&lt;/span&gt; =&amp;gt; &lt;span class=&quot;symbol&quot;&gt;&#39;your&lt;/span&gt; access key&#39;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;symbol&quot;&gt;&#39;secretKey&#39;&lt;/span&gt; =&amp;gt; &lt;span class=&quot;symbol&quot;&gt;&#39;your&lt;/span&gt; secret key&#39;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;symbol&quot;&gt;&#39;domain&#39;&lt;/span&gt; =&amp;gt; &lt;span class=&quot;symbol&quot;&gt;&#39;your&lt;/span&gt; domain&#39;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;symbol&quot;&gt;&#39;bucket&#39;&lt;/span&gt; =&amp;gt; &lt;span class=&quot;symbol&quot;&gt;&#39;your&lt;/span&gt; bucket&#39;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;],&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;直接使用&lt;/p&gt;
+&lt;p&gt;在DemoController.php中加入&lt;/p&gt;
+&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;qiniuUpload&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;($file)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    $ak = Yii::$app-&amp;gt;params[&lt;span class=&quot;string&quot;&gt;&#39;qiniu&#39;&lt;/span&gt;][&lt;span class=&quot;string&quot;&gt;&#39;accessKey&#39;&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    $sk = Yii::$app-&amp;gt;params[&lt;span class=&quot;string&quot;&gt;&#39;qiniu&#39;&lt;/span&gt;][&lt;span class=&quot;string&quot;&gt;&#39;secretKey&#39;&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    $domain = Yii::$app-&amp;gt;params[&lt;span class=&quot;string&quot;&gt;&#39;qiniu&#39;&lt;/span&gt;][&lt;span class=&quot;string&quot;&gt;&#39;domain&#39;&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    $bucket = Yii::$app-&amp;gt;params[&lt;span class=&quot;string&quot;&gt;&#39;qiniu&#39;&lt;/span&gt;][&lt;span class=&quot;string&quot;&gt;&#39;bucket&#39;&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    $qiniu = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Qiniu($ak, $sk,$domain, $bucket);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    $key = time();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    $qiniu-&amp;gt;uploadFile($file, $key);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    $url = $qiniu-&amp;gt;getLink($key);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; $url;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;actionCreate&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    $model = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Image();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; ($model-&amp;gt;load(Yii::$app-&amp;gt;request-&amp;gt;post())) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $file = $_FILES[&lt;span class=&quot;string&quot;&gt;&quot;myfile&quot;&lt;/span&gt;][&lt;span class=&quot;string&quot;&gt;&quot;tmp_name&quot;&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(file_exists($file))&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            $response_url = $this-&amp;gt;qiniuUpload($file);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            $model-&amp;gt;image = $response_url;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;($model-&amp;gt;save())&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; $this-&amp;gt;redirect([&lt;span class=&quot;string&quot;&gt;&#39;view&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;id&#39;&lt;/span&gt; =&amp;gt; $model-&amp;gt;id]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; $this-&amp;gt;render(&lt;span class=&quot;string&quot;&gt;&#39;create&#39;&lt;/span&gt;, [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;string&quot;&gt;&#39;model&#39;&lt;/span&gt; =&amp;gt; $model,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;string&quot;&gt;&#39;categories&#39;&lt;/span&gt; =&amp;gt; $categories,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            ]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; $this-&amp;gt;render(&lt;span class=&quot;string&quot;&gt;&#39;create&#39;&lt;/span&gt;, [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&#39;model&#39;&lt;/span&gt; =&amp;gt; $model,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&#39;categories&#39;&lt;/span&gt; =&amp;gt; $categories,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;在views/image/form.php中&lt;/p&gt;
+&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;php&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?php&lt;/span&gt; $form = ActiveForm::begin([&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;enableAjaxValidation&#39;&lt;/span&gt; =&amp;gt; &lt;span class=&quot;keyword&quot;&gt;false&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;options&#39;&lt;/span&gt; =&amp;gt; [&lt;span class=&quot;string&quot;&gt;&#39;enctype&#39;&lt;/span&gt; =&amp;gt; &lt;span class=&quot;string&quot;&gt;&#39;multipart/form-data&#39;&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;]); &lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;php&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?&lt;/span&gt;= $form-&amp;gt;field($model, &lt;span class=&quot;string&quot;&gt;&#39;image&#39;&lt;/span&gt;)-&amp;gt;fileInput([&lt;span class=&quot;string&quot;&gt;&#39;name&#39;&lt;/span&gt; =&amp;gt; &lt;span class=&quot;string&quot;&gt;&#39;myfile&#39;&lt;/span&gt;]) &lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;php&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;($model-&amp;gt;image)&amp;#123; &lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;preview&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;&amp;lt;?= Html::encode($model-&amp;gt;image)?&amp;gt;&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;width&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;100px&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;php&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?php&lt;/span&gt; &amp;#125; &lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;form-group&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;php&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?&lt;/span&gt;= Html::submitButton($model-&amp;gt;isNewRecord ? &lt;span class=&quot;string&quot;&gt;&#39;新建&#39;&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;&#39;更新&#39;&lt;/span&gt;, [&lt;span class=&quot;string&quot;&gt;&#39;class&#39;&lt;/span&gt; =&amp;gt; $model-&amp;gt;isNewRecord ? &lt;span class=&quot;string&quot;&gt;&#39;btn btn-success&#39;&lt;/span&gt; : &lt;span class=&quot;string&quot;&gt;&#39;btn btn-primary&#39;&lt;/span&gt;]) &lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;php&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?php&lt;/span&gt; ActiveForm::end(); &lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;引入Qiniu&quot;&gt;&lt;a href=&quot;#引入Qiniu&quot; class=&quot;headerlink&quot; title=&quot;引入Qiniu&quot;&gt;&lt;/a&gt;引入Qiniu&lt;/h3&gt;&lt;p&gt;借鉴了Github上的&lt;a href=&quot;https://github.com/crazyfd/yii
+    
+    </summary>
+    
+      <category term="PHP" scheme="http://blog.ybbz.site/categories/PHP/"/>
+    
+    
+      <category term="PHP" scheme="http://blog.ybbz.site/tags/PHP/"/>
+    
+      <category term="Yii2" scheme="http://blog.ybbz.site/tags/Yii2/"/>
+    
+      <category term="Qiniu" scheme="http://blog.ybbz.site/tags/Qiniu/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Yii2使用RESTful API及其认证问题</title>
     <link href="http://blog.ybbz.site/2016/05/18/yii2-restful-api-auth/"/>
     <id>http://blog.ybbz.site/2016/05/18/yii2-restful-api-auth/</id>
     <published>2016-05-17T16:00:00.000Z</published>
-    <updated>2016-05-29T03:15:39.000Z</updated>
+    <updated>2016-05-30T01:30:22.000Z</updated>
     
     <content type="html">&lt;p&gt;Yii 提供了一整套用来简化实现 RESTful 风格的 Web Service 服务的 API。&lt;/p&gt;
 &lt;p&gt;1.修改config/main.php文件，在components添加&lt;/p&gt;
@@ -405,7 +458,7 @@
     
       <category term="PHP" scheme="http://blog.ybbz.site/tags/PHP/"/>
     
-      <category term="Yii" scheme="http://blog.ybbz.site/tags/Yii/"/>
+      <category term="Yii2" scheme="http://blog.ybbz.site/tags/Yii2/"/>
     
       <category term="RESTful" scheme="http://blog.ybbz.site/tags/RESTful/"/>
     
@@ -459,7 +512,7 @@
     <link href="http://blog.ybbz.site/2016/05/10/tencent-qcloud-ssh-login/"/>
     <id>http://blog.ybbz.site/2016/05/10/tencent-qcloud-ssh-login/</id>
     <published>2016-05-09T16:00:00.000Z</published>
-    <updated>2016-05-26T03:48:32.000Z</updated>
+    <updated>2016-05-30T01:30:21.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;创建SSH密钥、下载私钥并绑定Linux云服务器&quot;&gt;&lt;a href=&quot;#创建SSH密钥、下载私钥并绑定Linux云服务器&quot; class=&quot;headerlink&quot; title=&quot;创建SSH密钥、下载私钥并绑定Linux云服务器&quot;&gt;&lt;/a&gt;创建SSH密钥、下载私钥并绑定Linux云服务器&lt;/h3&gt;&lt;p&gt;1.登录腾讯云控制台，点击【云服务器】-【SSH密钥】进入密钥窗口。&lt;br&gt;2.点击【创建密钥】按钮，输入密钥名创建一个新密钥。&lt;br&gt;3.创建完密钥后，点击【下载】按钮，下载私钥。&lt;br&gt;4.右键选择刚创建的密钥ID，选择绑定需要登录的Linux服务器进行绑定。  &lt;/p&gt;
 &lt;h3 id=&quot;使用私钥建立SSH通道&quot;&gt;&lt;a href=&quot;#使用私钥建立SSH通道&quot; class=&quot;headerlink&quot; title=&quot;使用私钥建立SSH通道&quot;&gt;&lt;/a&gt;使用私钥建立SSH通道&lt;/h3&gt;&lt;p&gt;请按以下步骤上传私钥：&lt;/p&gt;
@@ -490,7 +543,7 @@
     
       <category term="Linux" scheme="http://blog.ybbz.site/tags/Linux/"/>
     
-      <category term="CentOS" scheme="http://blog.ybbz.site/tags/CentOS/"/>
+      <category term="CentOS7" scheme="http://blog.ybbz.site/tags/CentOS7/"/>
     
   </entry>
   
@@ -546,7 +599,7 @@
     <link href="http://blog.ybbz.site/2016/04/25/CentOS-Nginx-Django/"/>
     <id>http://blog.ybbz.site/2016/04/25/CentOS-Nginx-Django/</id>
     <published>2016-04-24T16:00:00.000Z</published>
-    <updated>2016-04-26T15:58:39.000Z</updated>
+    <updated>2016-05-30T01:29:30.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;安装uwsgi&quot;&gt;&lt;a href=&quot;#安装uwsgi&quot; class=&quot;headerlink&quot; title=&quot;安装uwsgi&quot;&gt;&lt;/a&gt;安装uwsgi&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;pip3 install uwsgi
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;测试uwsgi是否正常&lt;/p&gt;
@@ -574,13 +627,13 @@ python3 manage.py runserver 0.0.0.0:3000
       <category term="Python" scheme="http://blog.ybbz.site/categories/Python/"/>
     
     
+      <category term="CentOS7" scheme="http://blog.ybbz.site/tags/CentOS7/"/>
+    
       <category term="Nginx" scheme="http://blog.ybbz.site/tags/Nginx/"/>
     
       <category term="Python" scheme="http://blog.ybbz.site/tags/Python/"/>
     
       <category term="Django" scheme="http://blog.ybbz.site/tags/Django/"/>
-    
-      <category term="CentOS" scheme="http://blog.ybbz.site/tags/CentOS/"/>
     
       <category term="uWSGI" scheme="http://blog.ybbz.site/tags/uWSGI/"/>
     
@@ -731,38 +784,6 @@ python3 manage.py runserver 0.0.0.0:3000
   </entry>
   
   <entry>
-    <title>判断两个单向链表是否相交</title>
-    <link href="http://blog.ybbz.site/2016/04/20/Algorithm-3/"/>
-    <id>http://blog.ybbz.site/2016/04/20/Algorithm-3/</id>
-    <published>2016-04-19T16:00:00.000Z</published>
-    <updated>2016-04-23T12:35:04.000Z</updated>
-    
-    <content type="html">&lt;p&gt;问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。&lt;/p&gt;
-&lt;h3 id=&quot;算法一&quot;&gt;&lt;a href=&quot;#算法一&quot; class=&quot;headerlink&quot; title=&quot;算法一&quot;&gt;&lt;/a&gt;算法一&lt;/h3&gt;&lt;p&gt;对链表一进行遍历，在遍历到每一个节点时，都在链表二中进行遍历，看是否有重复的节点。&lt;/p&gt;
-&lt;h4 id=&quot;算法一改进&quot;&gt;&lt;a href=&quot;#算法一改进&quot; class=&quot;headerlink&quot; title=&quot;算法一改进&quot;&gt;&lt;/a&gt;算法一改进&lt;/h4&gt;&lt;p&gt;以空间换时间：将链表二存入字典，然后遍历链表一，判断是否在于字典中。简化后，时间复杂度变为 O(n+m)，但空间复杂度较高。&lt;/p&gt;
-&lt;h3 id=&quot;算法二&quot;&gt;&lt;a href=&quot;#算法二&quot; class=&quot;headerlink&quot; title=&quot;算法二&quot;&gt;&lt;/a&gt;算法二&lt;/h3&gt;&lt;p&gt;算法二的思路基于以下两个原理：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;两个单向链表相交后，必然无法再分开。&lt;/li&gt;
-&lt;li&gt;两个单项链表相交后，尾节点一定相同。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;假设两个链表相交，很容易证明两个链表的尾元素是相同的。&lt;br&gt;逆反命题：两个链表的尾元素相同时，两个链表一定相交。&lt;br&gt;（注意：相同的节点不仅仅要求值相同，而是“同一个”，也就是指针地址相同。）&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。&lt;/p&gt;
-&lt;h3 id=&quot;算法一&quot;&gt;&lt;a href=&quot;#算法一&quot; class=&quot;headerlink&quot; title=&quot;算法一&quot;&gt;&lt;/a&gt;算法一&lt;/h3&gt;&lt;p&gt;对链表一进行遍历，在遍历到每一个节点时，都在链表二中进
-    
-    </summary>
-    
-      <category term="Algorithm" scheme="http://blog.ybbz.site/categories/Algorithm/"/>
-    
-    
-      <category term="Algorithm" scheme="http://blog.ybbz.site/tags/Algorithm/"/>
-    
-  </entry>
-  
-  <entry>
     <title>根号值逼近问题的算法</title>
     <link href="http://blog.ybbz.site/2016/04/20/Algorithm-2/"/>
     <id>http://blog.ybbz.site/2016/04/20/Algorithm-2/</id>
@@ -804,6 +825,38 @@ python3 manage.py runserver 0.0.0.0:3000
   </entry>
   
   <entry>
+    <title>判断两个单向链表是否相交</title>
+    <link href="http://blog.ybbz.site/2016/04/20/Algorithm-3/"/>
+    <id>http://blog.ybbz.site/2016/04/20/Algorithm-3/</id>
+    <published>2016-04-19T16:00:00.000Z</published>
+    <updated>2016-04-23T12:35:04.000Z</updated>
+    
+    <content type="html">&lt;p&gt;问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。&lt;/p&gt;
+&lt;h3 id=&quot;算法一&quot;&gt;&lt;a href=&quot;#算法一&quot; class=&quot;headerlink&quot; title=&quot;算法一&quot;&gt;&lt;/a&gt;算法一&lt;/h3&gt;&lt;p&gt;对链表一进行遍历，在遍历到每一个节点时，都在链表二中进行遍历，看是否有重复的节点。&lt;/p&gt;
+&lt;h4 id=&quot;算法一改进&quot;&gt;&lt;a href=&quot;#算法一改进&quot; class=&quot;headerlink&quot; title=&quot;算法一改进&quot;&gt;&lt;/a&gt;算法一改进&lt;/h4&gt;&lt;p&gt;以空间换时间：将链表二存入字典，然后遍历链表一，判断是否在于字典中。简化后，时间复杂度变为 O(n+m)，但空间复杂度较高。&lt;/p&gt;
+&lt;h3 id=&quot;算法二&quot;&gt;&lt;a href=&quot;#算法二&quot; class=&quot;headerlink&quot; title=&quot;算法二&quot;&gt;&lt;/a&gt;算法二&lt;/h3&gt;&lt;p&gt;算法二的思路基于以下两个原理：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;两个单向链表相交后，必然无法再分开。&lt;/li&gt;
+&lt;li&gt;两个单项链表相交后，尾节点一定相同。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;假设两个链表相交，很容易证明两个链表的尾元素是相同的。&lt;br&gt;逆反命题：两个链表的尾元素相同时，两个链表一定相交。&lt;br&gt;（注意：相同的节点不仅仅要求值相同，而是“同一个”，也就是指针地址相同。）&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。&lt;/p&gt;
+&lt;h3 id=&quot;算法一&quot;&gt;&lt;a href=&quot;#算法一&quot; class=&quot;headerlink&quot; title=&quot;算法一&quot;&gt;&lt;/a&gt;算法一&lt;/h3&gt;&lt;p&gt;对链表一进行遍历，在遍历到每一个节点时，都在链表二中进
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="http://blog.ybbz.site/categories/Algorithm/"/>
+    
+    
+      <category term="Algorithm" scheme="http://blog.ybbz.site/tags/Algorithm/"/>
+    
+  </entry>
+  
+  <entry>
     <title>庆祝我的第一个独立APP上线</title>
     <link href="http://blog.ybbz.site/2016/04/18/my-first-andorid-app-online/"/>
     <id>http://blog.ybbz.site/2016/04/18/my-first-andorid-app-online/</id>
@@ -834,85 +887,6 @@ python3 manage.py runserver 0.0.0.0:3000
     
     
       <category term="Android" scheme="http://blog.ybbz.site/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《Hadoop海量数据处理》读书笔记2:Hadoop环境准备</title>
-    <link href="http://blog.ybbz.site/2016/04/15/Hadoop-foundation-two/"/>
-    <id>http://blog.ybbz.site/2016/04/15/Hadoop-foundation-two/</id>
-    <published>2016-04-14T16:00:00.000Z</published>
-    <updated>2016-04-23T09:28:47.000Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;Hadoop架构&quot;&gt;&lt;a href=&quot;#Hadoop架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h3&gt;&lt;p&gt;Hadoop主要由两部分构成：分布式文件系统HDFS和分布式计算框架MapReduce；HDFS主要是用于海量数据的存储，MapReduce则是对存储在HDFS中的数据进行分布式计算。&lt;/p&gt;
-&lt;h4 id=&quot;Hadoop-HDFS架构&quot;&gt;&lt;a href=&quot;#Hadoop-HDFS架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop HDFS架构&quot;&gt;&lt;/a&gt;Hadoop HDFS架构&lt;/h4&gt;&lt;p&gt;构成HDFS集群的主要是两类节点（主从模式，管理者－工作者模式）：一个NameNode（管理者）和多个DataNode（工作者），SecondaryNameNode作为NameNode镜像数据备份。&lt;/p&gt;
-&lt;p&gt;表：HDFS守护进程&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;守护进程&lt;/th&gt;
-&lt;th&gt;集群中的数目&lt;/th&gt;
-&lt;th&gt;作用&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;NameNode&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;存储文件系统的元数据，存储文件与数据块映射，并提供文件系统的全景图&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;SecondaryNameNode&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;备份NameNode数据，并负责镜像与NameNode日志数据的合并&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;DataNode&lt;/td&gt;
-&lt;td&gt;多个(至少一个)&lt;/td&gt;
-&lt;td&gt;存储块数据&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h4 id=&quot;Hadoop-MapReduce架构&quot;&gt;&lt;a href=&quot;#Hadoop-MapReduce架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop MapReduce架构&quot;&gt;&lt;/a&gt;Hadoop MapReduce架构&lt;/h4&gt;&lt;p&gt;构成MapReduce集群为两类节点（主从模式）：JobTracker和TaskTracker。&lt;/p&gt;
-&lt;p&gt;表：MapReduce守护进程&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;守护进程&lt;/th&gt;
-&lt;th&gt;集群中的数目&lt;/th&gt;
-&lt;th&gt;作用&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;JobTracker&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;负责接受客户端作业提交，调度任务到TaskTracker上运行，并提供监控TaskTracker及任务进度等管理功能&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;TaskTracker&lt;/td&gt;
-&lt;td&gt;多个(至少一个)&lt;/td&gt;
-&lt;td&gt;实例化用户程序，在本地执行任务并周期性地向JobTracker汇报状态&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h4 id=&quot;Hadoop架构-1&quot;&gt;&lt;a href=&quot;#Hadoop架构-1&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h4&gt;&lt;p&gt;HDFS集群和MapReduce集群其实由一些守护进程组成，而所有这些守护进程和运行它们的节点就构成了Hadoop集群。这个集群的NameNode进程和JobTracker进程在一个节点上运行，而DataNode进程和TaskTracker进程在同一个节点上运行。（DataNode和TaskTracker需要配对部署在同一个节点，NameNode和JobTracker并不一定部署在同一个节点；生产环境，建议NameNode和JobTracker分开部署）。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;Hadoop架构&quot;&gt;&lt;a href=&quot;#Hadoop架构&quot; class=&quot;headerlink&quot; title=&quot;Hadoop架构&quot;&gt;&lt;/a&gt;Hadoop架构&lt;/h3&gt;&lt;p&gt;Hadoop主要由两部分构成：分布式文件系统HDFS和分布式计算框架MapReduce；HD
-    
-    </summary>
-    
-      <category term="Hadoop" scheme="http://blog.ybbz.site/categories/Hadoop/"/>
-    
-    
-      <category term="Hadoop" scheme="http://blog.ybbz.site/tags/Hadoop/"/>
-    
-      <category term="云计算" scheme="http://blog.ybbz.site/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/"/>
-    
-      <category term="大数据" scheme="http://blog.ybbz.site/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
     
   </entry>
   

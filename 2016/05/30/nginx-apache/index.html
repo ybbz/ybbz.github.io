@@ -38,7 +38,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Markdown,Sublime Text," />
+  <meta name="keywords" content="Linux,Apache,Nginx,PHP,Yii2," />
 
 
 
@@ -56,31 +56,28 @@
 
 
 
-<meta name="description" content="Sublime Text配置Markdown预览插件：
-
-打开Sublime Text，按快捷键ctrl/command+shift+P输入install进入install Packages。
-输入Markdown Preview（Markdown预览插件，可以直接生成html进行预览等功能）。
-安装完成，开始使用sublime Text写Markdown文件
-若想预览文件，按快捷键ctrl/c">
+<meta name="description" content="使用Apache部署PHP服务的时候，80端口已经被占用（Nginx代理），则将Apache的端口配置为其他端口（如8888）；并通过Nginx将Apache服务代理到80端口；实现Web服务的端口统一为80。通过如下方式实现上述过程。
+Apache部署PHP服务配置Apache端口号：
+12cd /etc/apache2vi ports.conf
+1Listen 8888
+配置Apacha虚拟主">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Sublime Text配置Markdown预览插件">
-<meta property="og:url" content="http://blog.ybbz.site/2015/11/01/Sublime-Text-Markdown/index.html">
+<meta property="og:title" content="Nginx代理Apache服务">
+<meta property="og:url" content="http://blog.ybbz.site/2016/05/30/nginx-apache/index.html">
 <meta property="og:site_name" content="八宝粥的博客">
-<meta property="og:description" content="Sublime Text配置Markdown预览插件：
-
-打开Sublime Text，按快捷键ctrl/command+shift+P输入install进入install Packages。
-输入Markdown Preview（Markdown预览插件，可以直接生成html进行预览等功能）。
-安装完成，开始使用sublime Text写Markdown文件
-若想预览文件，按快捷键ctrl/c">
-<meta property="og:updated_time" content="2016-04-23T09:20:18.000Z">
+<meta property="og:description" content="使用Apache部署PHP服务的时候，80端口已经被占用（Nginx代理），则将Apache的端口配置为其他端口（如8888）；并通过Nginx将Apache服务代理到80端口；实现Web服务的端口统一为80。通过如下方式实现上述过程。
+Apache部署PHP服务配置Apache端口号：
+12cd /etc/apache2vi ports.conf
+1Listen 8888
+配置Apacha虚拟主">
+<meta property="og:updated_time" content="2016-05-30T01:53:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sublime Text配置Markdown预览插件">
-<meta name="twitter:description" content="Sublime Text配置Markdown预览插件：
-
-打开Sublime Text，按快捷键ctrl/command+shift+P输入install进入install Packages。
-输入Markdown Preview（Markdown预览插件，可以直接生成html进行预览等功能）。
-安装完成，开始使用sublime Text写Markdown文件
-若想预览文件，按快捷键ctrl/c">
+<meta name="twitter:title" content="Nginx代理Apache服务">
+<meta name="twitter:description" content="使用Apache部署PHP服务的时候，80端口已经被占用（Nginx代理），则将Apache的端口配置为其他端口（如8888）；并通过Nginx将Apache服务代理到80端口；实现Web服务的端口统一为80。通过如下方式实现上述过程。
+Apache部署PHP服务配置Apache端口号：
+12cd /etc/apache2vi ports.conf
+1Listen 8888
+配置Apacha虚拟主">
 
 
 
@@ -98,7 +95,7 @@
   };
 </script>
 
-  <title> Sublime Text配置Markdown预览插件 | 八宝粥的博客 </title>
+  <title> Nginx代理Apache服务 | 八宝粥的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -278,7 +275,7 @@
             
             
               
-                Sublime Text配置Markdown预览插件
+                Nginx代理Apache服务
               
             
           </h1>
@@ -290,8 +287,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-11-01T00:00:00+08:00" content="2015-11-01">
-              2015-11-01
+            <time itemprop="dateCreated" datetime="2016-05-30T00:00:00+08:00" content="2016-05-30">
+              2016-05-30
             </time>
           </span>
 
@@ -304,8 +301,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Tool/" itemprop="url" rel="index">
-                    <span itemprop="name">Tool</span>
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
                   </a>
                 </span>
 
@@ -320,8 +317,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/11/01/Sublime-Text-Markdown/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/01/Sublime-Text-Markdown/" itemprop="commentsCount"></span>
+                <a href="/2016/05/30/nginx-apache/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/30/nginx-apache/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -331,7 +328,7 @@
 
           
           
-             <span id="/2015/11/01/Sublime-Text-Markdown/" class="leancloud_visitors" data-flag-title="Sublime Text配置Markdown预览插件">
+             <span id="/2016/05/30/nginx-apache/" class="leancloud_visitors" data-flag-title="Nginx代理Apache服务">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -353,15 +350,19 @@
       
 
       
-        <blockquote>
-<p>Sublime Text配置Markdown预览插件：</p>
-<ul>
-<li>打开Sublime Text，按快捷键ctrl/command+shift+P输入install进入install Packages。</li>
-<li>输入Markdown Preview（Markdown预览插件，可以直接生成html进行预览等功能）。</li>
-<li>安装完成，开始使用sublime Text写Markdown文件</li>
-<li>若想预览文件，按快捷键ctrl/command+shift+P，输入Markdown。即可看到“Markdown Preview：<em>*</em>”的提示选项，选择自己喜欢的方式预览，比如在浏览器中预览等。</li>
-</ul>
-</blockquote>
+        <p>使用Apache部署PHP服务的时候，80端口已经被占用（Nginx代理），则将Apache的端口配置为其他端口（如8888）；并通过Nginx将Apache服务代理到80端口；实现Web服务的端口统一为80。通过如下方式实现上述过程。</p>
+<h3 id="Apache部署PHP服务"><a href="#Apache部署PHP服务" class="headerlink" title="Apache部署PHP服务"></a>Apache部署PHP服务</h3><p>配置Apache端口号：</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> /etc/apache2</span><br><span class="line"><span class="keyword">vi</span> ports.<span class="keyword">conf</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute"><span class="nomarkup">Listen</span></span> 8888</span><br></pre></td></tr></table></figure>
+<p>配置Apacha虚拟主机服务：</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> sites-enabled</span><br><span class="line"><span class="keyword">vi</span> <span class="number">000</span>-default.<span class="keyword">conf</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">&lt;VirtualHost *:8888&gt;</span></span><br><span class="line">    <span class="attribute"><span class="nomarkup">ServerName</span></span> blog.demo.com</span><br><span class="line">    <span class="attribute"><span class="nomarkup">DocumentRoot</span></span> /var/www/blog/frontend/web</span><br><span class="line">    <span class="attribute">DirectoryIndex</span> index.html index.php</span><br><span class="line"><span class="section">&lt;/VirtualHost&gt;</span></span><br><span class="line"><span class="section">&lt;Directory "/var/www/blog/frontend/web"&gt;</span></span><br><span class="line">    <span class="attribute"><span class="nomarkup">Options</span></span> +Includes -Indexes</span><br><span class="line">    <span class="attribute">AllowOverride</span> <span class="literal">All</span></span><br><span class="line">    <span class="attribute"><span class="nomarkup">Order</span></span> Deny,Allow</span><br><span class="line">    <span class="attribute"><span class="nomarkup">Allow</span></span> from <span class="literal">All</span></span><br><span class="line"><span class="section">&lt;/Directory&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Nginx代理Apache服务"><a href="#Nginx代理Apache服务" class="headerlink" title="Nginx代理Apache服务"></a>Nginx代理Apache服务</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> /etc/nginx</span><br><span class="line"><span class="keyword">vi</span> server</span><br></pre></td></tr></table></figure>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">server_name</span>  blog.demo.com;</span><br><span class="line">    <span class="attribute">access_log</span>  /var/log/nginx/access.blog.log  main;</span><br><span class="line">    <span class="attribute">error_log</span> /var/log/nginx/error.blog.log;</span><br><span class="line">    <span class="attribute">location</span> / &#123;</span><br><span class="line">        <span class="attribute">rewrite</span><span class="regexp"> ^/(.*)$</span> //<span class="variable">$1</span> <span class="literal">last</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="attribute">location</span>  <span class="regexp">~* ^//.*$</span> &#123;</span><br><span class="line">        <span class="attribute">proxy_redirect</span> <span class="literal">off</span>;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> Host <span class="variable">$host</span>;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">        <span class="attribute">proxy_pass</span> http://192.168.0.1:8888;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="遇到的问题及解决方法"><a href="#遇到的问题及解决方法" class="headerlink" title="遇到的问题及解决方法"></a>遇到的问题及解决方法</h3><p>form跳转错误。解决办法：重写action路径。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="meta">&lt;?php</span> $form = ActiveForm::begin([<span class="string">'id'</span> =&gt; <span class="string">'demo-form'</span>]); <span class="meta">?&gt;</span></span></span><br><span class="line"># code ...</span><br><span class="line"><span class="php"><span class="meta">&lt;?php</span> ActiveForm::end(); <span class="meta">?&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>将上述默认form修改为：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> <span class="title">yii</span>\<span class="title">helpers</span>\<span class="title">Url</span>;</span><br><span class="line"><span class="meta">&lt;?php</span> $form = ActiveForm::begin([</span><br><span class="line">    <span class="string">'id'</span> =&gt; <span class="string">'demo-form'</span>,</span><br><span class="line">    <span class="string">'action'</span> =&gt; Url::toRoute([<span class="string">'site/demo'</span>]),</span><br><span class="line">]); <span class="meta">?&gt;</span></span><br><span class="line"><span class="comment"># code ...</span></span><br><span class="line"><span class="meta">&lt;?php</span> ActiveForm::end(); <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -387,9 +388,15 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Markdown/" rel="tag">#Markdown</a>
+            <a href="/tags/Linux/" rel="tag">#Linux</a>
           
-            <a href="/tags/Sublime-Text/" rel="tag">#Sublime Text</a>
+            <a href="/tags/Apache/" rel="tag">#Apache</a>
+          
+            <a href="/tags/Nginx/" rel="tag">#Nginx</a>
+          
+            <a href="/tags/PHP/" rel="tag">#PHP</a>
+          
+            <a href="/tags/Yii2/" rel="tag">#Yii2</a>
           
         </div>
       
@@ -398,17 +405,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/10/20/VIM/" rel="next" title="VIM">
-                <i class="fa fa-chevron-left"></i> VIM
+              <a href="/2016/05/27/php-shell-2/" rel="next" title="PHP执行Shell命令（2）">
+                <i class="fa fa-chevron-left"></i> PHP执行Shell命令（2）
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/11/02/CentOS7-Apache-VirtualHost/" rel="prev" title="CentOS7配置Apache多站点VirtualHost">
-                CentOS7配置Apache多站点VirtualHost <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -423,10 +426,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/11/01/Sublime-Text-Markdown/"
-     data-title="Sublime Text配置Markdown预览插件"
+        <div class="ds-share flat" data-thread-key="2016/05/30/nginx-apache/"
+     data-title="Nginx代理Apache服务"
      data-content=""
-     data-url="http://blog.ybbz.site/2015/11/01/Sublime-Text-Markdown/">
+     data-url="http://blog.ybbz.site/2016/05/30/nginx-apache/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -453,8 +456,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/11/01/Sublime-Text-Markdown/"
-           data-title="Sublime Text配置Markdown预览插件" data-url="http://blog.ybbz.site/2015/11/01/Sublime-Text-Markdown/">
+      <div class="ds-thread" data-thread-key="2016/05/30/nginx-apache/"
+           data-title="Nginx代理Apache服务" data-url="http://blog.ybbz.site/2016/05/30/nginx-apache/">
       </div>
     
   </div>
@@ -581,7 +584,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Apache部署PHP服务"><span class="nav-number">1.</span> <span class="nav-text">Apache部署PHP服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nginx代理Apache服务"><span class="nav-number">2.</span> <span class="nav-text">Nginx代理Apache服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#遇到的问题及解决方法"><span class="nav-number">3.</span> <span class="nav-text">遇到的问题及解决方法</span></a></li></ol></div>
             
           </div>
         </section>
