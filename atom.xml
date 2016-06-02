@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.ybbz.site/"/>
-  <updated>2016-05-30T01:53:37.000Z</updated>
+  <updated>2016-06-02T07:43:25.000Z</updated>
   <id>http://blog.ybbz.site/</id>
   
   <author>
@@ -14,6 +14,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux下分割Nginx日志，按日期保存</title>
+    <link href="http://blog.ybbz.site/2016/06/02/linux-nginx-cut-log/"/>
+    <id>http://blog.ybbz.site/2016/06/02/linux-nginx-cut-log/</id>
+    <published>2016-06-01T16:00:00.000Z</published>
+    <updated>2016-06-02T07:43:25.000Z</updated>
+    
+    <content type="html">&lt;p&gt;1.编写shell脚本cutlog&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#!/bin/bash&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#cut log  every day&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;_&quot;&gt;-e&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;D=$(date +%Y%m%d)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;mv /var/&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;/nginx/access.log /var/&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;/nginx/access.&lt;span class=&quot;variable&quot;&gt;$&amp;#123;D&amp;#125;&lt;/span&gt;.log&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;kill&lt;/span&gt; -USR1 $(cat /run/nginx.pid)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;exit&lt;/span&gt; 0&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;2.使用Crontab定时执行&lt;/p&gt;
+&lt;figure class=&quot;highlight basic&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;symbol&quot;&gt;59 &lt;/span&gt;&lt;span class=&quot;number&quot;&gt;23&lt;/span&gt;   * * *   root    bash /etc/cron.daily/cutlog&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;以上表示每天（23:59）执行一次&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1.编写shell脚本cutlog&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://blog.ybbz.site/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://blog.ybbz.site/tags/Linux/"/>
+    
+      <category term="Nginx" scheme="http://blog.ybbz.site/tags/Nginx/"/>
+    
+      <category term="Shell" scheme="http://blog.ybbz.site/tags/Shell/"/>
+    
+  </entry>
   
   <entry>
     <title>Nginx代理Apache服务</title>
@@ -212,57 +244,6 @@
   </entry>
   
   <entry>
-    <title>Linux命令</title>
-    <link href="http://blog.ybbz.site/2016/05/23/linux-command/"/>
-    <id>http://blog.ybbz.site/2016/05/23/linux-command/</id>
-    <published>2016-05-22T16:00:00.000Z</published>
-    <updated>2016-05-26T06:00:49.000Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;tail-命令&quot;&gt;&lt;a href=&quot;#tail-命令&quot; class=&quot;headerlink&quot; title=&quot;tail 命令&quot;&gt;&lt;/a&gt;tail 命令&lt;/h3&gt;&lt;p&gt;1.命令格式&lt;/p&gt;
-&lt;p&gt;tail[必要参数][选择参数][文件]&lt;/p&gt;
-&lt;p&gt;2.命令功能&lt;/p&gt;
-&lt;p&gt;用于显示指定文件末尾内容，不指定文件时，作为输入信息进行处理。常用查看日志文件。&lt;/p&gt;
-&lt;p&gt;3.命令参数：&lt;/p&gt;
-&lt;figure class=&quot;highlight haml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-&lt;span class=&quot;ruby&quot;&gt;f 循环读取&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;q 不显示处理信息&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;v 显示详细的处理信息&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;c&amp;lt;数目&amp;gt; 显示的字节数&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;n&amp;lt;行数&amp;gt; 显示行数&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;-pid=PID 与-f合用,表示在进程ID,PID死掉之后结束.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;q, --quiet, --silent 从不输出给出文件名的首部&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;s, --sleep-interval=S 与-f合用,表示在每次反复的间隔休眠S秒&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;4.使用实例：  &lt;/p&gt;
-&lt;figure class=&quot;highlight fortran&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;tail -n &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;access&lt;/span&gt;.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;tail -f &lt;span class=&quot;keyword&quot;&gt;access&lt;/span&gt;.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;ln-命令&quot;&gt;&lt;a href=&quot;#ln-命令&quot; class=&quot;headerlink&quot; title=&quot;ln 命令&quot;&gt;&lt;/a&gt;ln 命令&lt;/h3&gt;&lt;p&gt;1.命令格式&lt;/p&gt;
-&lt;p&gt;ln [参数][源文件或目录][目标文件或目录]&lt;/p&gt;
-&lt;p&gt;2.命令功能&lt;/p&gt;
-&lt;p&gt;Linux文件系统中，有所谓的链接(link)，我们可以将其视为档案的别名，而链接又可分为两种 : 硬链接(hard link)与软链接(symbolic link)，硬链接的意思是一个档案可以有多个名称，而软链接的方式则是产生一个特殊的档案，该档案的内容是指向另一个档案的位置。硬链接是存在同一个文件系统中，而软链接却可以跨越不同的文件系统。&lt;/p&gt;
-&lt;p&gt;软链接：&lt;br&gt;1.软链接，以路径的形式存在。类似于Windows操作系统中的快捷方式&lt;br&gt;2.软链接可以 跨文件系统 ，硬链接不可以&lt;br&gt;3.软链接可以对一个不存在的文件名进行链接&lt;br&gt;4.软链接可以对目录进行链接&lt;/p&gt;
-&lt;p&gt;硬链接:&lt;br&gt;1.硬链接，以文件副本的形式存在。但不占用实际空间。&lt;br&gt;2.不允许给目录创建硬链接&lt;br&gt;3.硬链接只有在同一个文件系统中才能创建&lt;/p&gt;
-&lt;p&gt;3.命令参数&lt;/p&gt;
-&lt;figure class=&quot;highlight haml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;#必要参数:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-&lt;span class=&quot;ruby&quot;&gt;b 删除，覆盖以前建立的链接&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;d 允许超级用户制作目录的硬链接&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;f 强制执行&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;i 交互模式，文件存在则提示用户是否覆盖&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;n 把符号链接视为一般目录&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;s 软链接(符号链接)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;v 显示详细的处理过程&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;#选择参数:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-&lt;span class=&quot;ruby&quot;&gt;S “-S&amp;lt;字尾备份字符串&amp;gt; ”或 “--suffix=&amp;lt;字尾备份字符串&amp;gt;”&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;V “-V&amp;lt;备份方式&amp;gt;”或“--version-control=&amp;lt;备份方式&amp;gt;”&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;-help 显示帮助信息&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;-version 显示版本信息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;4.使用实例&lt;/p&gt;
-&lt;p&gt;实例1：给文件创建软链接&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ln &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;2013.log link2013&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;实例2：给文件创建硬链接&lt;br&gt;&lt;figure class=&quot;highlight gauss&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;ln&lt;/span&gt; log2013.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt; ln2013&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h3 id=&quot;grep-命令&quot;&gt;&lt;a href=&quot;#grep-命令&quot; class=&quot;headerlink&quot; title=&quot;grep 命令&quot;&gt;&lt;/a&gt;grep 命令&lt;/h3&gt;&lt;p&gt;Linux系统中grep命令是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹 配的行打印出来。grep全称是Global Regular Expression Print，表示全局正则表达式版本，它的使用权限是所有用户。&lt;br&gt;grep的工作方式是这样的，它在一个或多个文件中搜索字符串模板。如果模板包括空格，则必须被引用，模板后的所有字符串被看作文件名。搜索的结果被送到标准输出，不影响原文件内容。&lt;br&gt;grep可用于shell脚本，因为grep通过返回一个状态值来说明搜索的状态，如果模板搜索成功，则返回0，如果搜索不成功，则返回1，如果搜索的文件不存在，则返回2。我们利用这些返回值就可进行一些自动化的文本处理工作。&lt;/p&gt;
-&lt;p&gt;1.命令格式：&lt;/p&gt;
-&lt;p&gt;grep [option] pattern file&lt;/p&gt;
-&lt;p&gt;2.命令功能：&lt;/p&gt;
-&lt;p&gt;用于过滤/搜索的特定字符。可使用正则表达式能多种命令配合使用，使用上十分灵活。&lt;/p&gt;
-&lt;p&gt;3.命令参数：&lt;/p&gt;
-&lt;h3 id=&quot;Ubuntu常用命令&quot;&gt;&lt;a href=&quot;#Ubuntu常用命令&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu常用命令&quot;&gt;&lt;/a&gt;Ubuntu常用命令&lt;/h3&gt;&lt;figure class=&quot;highlight arduino&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;apt-&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; install xxx 安装&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;apt-&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;remove&lt;/span&gt; xxx 卸载但不删除配置&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;apt-&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; purge xxx 卸载并且删除相关配置&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;# another&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;remove&lt;/span&gt; --purge xxx&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; update&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;参考资料：&lt;br&gt;&lt;a href=&quot;http://www.cnblogs.com/peida/tag/每日一linux命令/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;每日一linux命令&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;tail-命令&quot;&gt;&lt;a href=&quot;#tail-命令&quot; class=&quot;headerlink&quot; title=&quot;tail 命令&quot;&gt;&lt;/a&gt;tail 命令&lt;/h3&gt;&lt;p&gt;1.命令格式&lt;/p&gt;
-&lt;p&gt;tail[必要参数][选择参数][文件]&lt;/p&gt;
-&lt;p&gt;2.命令功能&lt;/
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://blog.ybbz.site/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="http://blog.ybbz.site/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
     <title>日志分析工具GoAccess</title>
     <link href="http://blog.ybbz.site/2016/05/23/linux-nginx-log-goaccess/"/>
     <id>http://blog.ybbz.site/2016/05/23/linux-nginx-log-goaccess/</id>
@@ -346,35 +327,53 @@
   </entry>
   
   <entry>
-    <title>Yii2自定义DetailView的显示内容</title>
-    <link href="http://blog.ybbz.site/2016/05/22/yii2-detailview/"/>
-    <id>http://blog.ybbz.site/2016/05/22/yii2-detailview/</id>
-    <published>2016-05-21T16:00:00.000Z</published>
-    <updated>2016-05-24T16:01:54.000Z</updated>
+    <title>Linux命令</title>
+    <link href="http://blog.ybbz.site/2016/05/23/linux-command/"/>
+    <id>http://blog.ybbz.site/2016/05/23/linux-command/</id>
+    <published>2016-05-22T16:00:00.000Z</published>
+    <updated>2016-05-26T06:00:49.000Z</updated>
     
-    <content type="html">&lt;p&gt;假设model中有name，images(图片链接：用;分开)&lt;/p&gt;
-&lt;p&gt;1.在DetailView可以直接这样输出：&lt;/p&gt;
-&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;php&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?&lt;/span&gt;= DetailView::widget([&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;model&#39;&lt;/span&gt; =&amp;gt; $model,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;attributes&#39;&lt;/span&gt; =&amp;gt; [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;name&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;images&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;]) &lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;2.可以通过下述方式进行字符串操作（分割、拼接、组装html标签等）：&lt;/p&gt;
-&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;php&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?&lt;/span&gt;= DetailView::widget([&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;model&#39;&lt;/span&gt; =&amp;gt; $model,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;attributes&#39;&lt;/span&gt; =&amp;gt; [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;name&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&#39;attribute&#39;&lt;/span&gt; =&amp;gt; &lt;span class=&quot;string&quot;&gt;&#39;images&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&#39;format&#39;&lt;/span&gt; =&amp;gt; &lt;span class=&quot;string&quot;&gt;&#39;raw&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&#39;value&#39;&lt;/span&gt; =&amp;gt; count(explode(&lt;span class=&quot;string&quot;&gt;&quot;;&quot;&lt;/span&gt;, $model-&amp;gt;images))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;]) &lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;3.自定义函数，处理数组（比如把images中的所有图片显示出来）&lt;/p&gt;
-&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;php&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?php&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;showImages&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;($array)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $result=&lt;span class=&quot;string&quot;&gt;&#39;&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;foreach&lt;/span&gt;($array &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; $item)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            $result=$result.&lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;img src=&quot;&#39;&lt;/span&gt;.$item.&lt;span class=&quot;string&quot;&gt;&#39;&quot; width=&quot;80&quot; height=&quot;80&quot;&amp;gt;&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; $result;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;php&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?&lt;/span&gt;= DetailView::widget([&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;model&#39;&lt;/span&gt; =&amp;gt; $model,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;attributes&#39;&lt;/span&gt; =&amp;gt; [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;name&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&#39;attribute&#39;&lt;/span&gt; =&amp;gt; &lt;span class=&quot;string&quot;&gt;&#39;images&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&#39;format&#39;&lt;/span&gt; =&amp;gt; &lt;span class=&quot;string&quot;&gt;&#39;raw&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&#39;value&#39;&lt;/span&gt; =&amp;gt; showImages(explode(&lt;span class=&quot;string&quot;&gt;&quot;;&quot;&lt;/span&gt;, $model-&amp;gt;images))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;]) &lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    <content type="html">&lt;h3 id=&quot;tail-命令&quot;&gt;&lt;a href=&quot;#tail-命令&quot; class=&quot;headerlink&quot; title=&quot;tail 命令&quot;&gt;&lt;/a&gt;tail 命令&lt;/h3&gt;&lt;p&gt;1.命令格式&lt;/p&gt;
+&lt;p&gt;tail[必要参数][选择参数][文件]&lt;/p&gt;
+&lt;p&gt;2.命令功能&lt;/p&gt;
+&lt;p&gt;用于显示指定文件末尾内容，不指定文件时，作为输入信息进行处理。常用查看日志文件。&lt;/p&gt;
+&lt;p&gt;3.命令参数：&lt;/p&gt;
+&lt;figure class=&quot;highlight haml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-&lt;span class=&quot;ruby&quot;&gt;f 循环读取&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;q 不显示处理信息&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;v 显示详细的处理信息&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;c&amp;lt;数目&amp;gt; 显示的字节数&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;n&amp;lt;行数&amp;gt; 显示行数&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;-pid=PID 与-f合用,表示在进程ID,PID死掉之后结束.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;q, --quiet, --silent 从不输出给出文件名的首部&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;s, --sleep-interval=S 与-f合用,表示在每次反复的间隔休眠S秒&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;4.使用实例：  &lt;/p&gt;
+&lt;figure class=&quot;highlight fortran&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;tail -n &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;access&lt;/span&gt;.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;tail -f &lt;span class=&quot;keyword&quot;&gt;access&lt;/span&gt;.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;ln-命令&quot;&gt;&lt;a href=&quot;#ln-命令&quot; class=&quot;headerlink&quot; title=&quot;ln 命令&quot;&gt;&lt;/a&gt;ln 命令&lt;/h3&gt;&lt;p&gt;1.命令格式&lt;/p&gt;
+&lt;p&gt;ln [参数][源文件或目录][目标文件或目录]&lt;/p&gt;
+&lt;p&gt;2.命令功能&lt;/p&gt;
+&lt;p&gt;Linux文件系统中，有所谓的链接(link)，我们可以将其视为档案的别名，而链接又可分为两种 : 硬链接(hard link)与软链接(symbolic link)，硬链接的意思是一个档案可以有多个名称，而软链接的方式则是产生一个特殊的档案，该档案的内容是指向另一个档案的位置。硬链接是存在同一个文件系统中，而软链接却可以跨越不同的文件系统。&lt;/p&gt;
+&lt;p&gt;软链接：&lt;br&gt;1.软链接，以路径的形式存在。类似于Windows操作系统中的快捷方式&lt;br&gt;2.软链接可以 跨文件系统 ，硬链接不可以&lt;br&gt;3.软链接可以对一个不存在的文件名进行链接&lt;br&gt;4.软链接可以对目录进行链接&lt;/p&gt;
+&lt;p&gt;硬链接:&lt;br&gt;1.硬链接，以文件副本的形式存在。但不占用实际空间。&lt;br&gt;2.不允许给目录创建硬链接&lt;br&gt;3.硬链接只有在同一个文件系统中才能创建&lt;/p&gt;
+&lt;p&gt;3.命令参数&lt;/p&gt;
+&lt;figure class=&quot;highlight haml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;#必要参数:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-&lt;span class=&quot;ruby&quot;&gt;b 删除，覆盖以前建立的链接&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;d 允许超级用户制作目录的硬链接&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;f 强制执行&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;i 交互模式，文件存在则提示用户是否覆盖&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;n 把符号链接视为一般目录&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;s 软链接(符号链接)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;v 显示详细的处理过程&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;#选择参数:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-&lt;span class=&quot;ruby&quot;&gt;S “-S&amp;lt;字尾备份字符串&amp;gt; ”或 “--suffix=&amp;lt;字尾备份字符串&amp;gt;”&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;V “-V&amp;lt;备份方式&amp;gt;”或“--version-control=&amp;lt;备份方式&amp;gt;”&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;-help 显示帮助信息&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;-&lt;span class=&quot;ruby&quot;&gt;-version 显示版本信息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;4.使用实例&lt;/p&gt;
+&lt;p&gt;实例1：给文件创建软链接&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ln &lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;2013.log link2013&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;实例2：给文件创建硬链接&lt;br&gt;&lt;figure class=&quot;highlight gauss&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;ln&lt;/span&gt; log2013.&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt; ln2013&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;grep-命令&quot;&gt;&lt;a href=&quot;#grep-命令&quot; class=&quot;headerlink&quot; title=&quot;grep 命令&quot;&gt;&lt;/a&gt;grep 命令&lt;/h3&gt;&lt;p&gt;Linux系统中grep命令是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹 配的行打印出来。grep全称是Global Regular Expression Print，表示全局正则表达式版本，它的使用权限是所有用户。&lt;br&gt;grep的工作方式是这样的，它在一个或多个文件中搜索字符串模板。如果模板包括空格，则必须被引用，模板后的所有字符串被看作文件名。搜索的结果被送到标准输出，不影响原文件内容。&lt;br&gt;grep可用于shell脚本，因为grep通过返回一个状态值来说明搜索的状态，如果模板搜索成功，则返回0，如果搜索不成功，则返回1，如果搜索的文件不存在，则返回2。我们利用这些返回值就可进行一些自动化的文本处理工作。&lt;/p&gt;
+&lt;p&gt;1.命令格式：&lt;/p&gt;
+&lt;p&gt;grep [option] pattern file&lt;/p&gt;
+&lt;p&gt;2.命令功能：&lt;/p&gt;
+&lt;p&gt;用于过滤/搜索的特定字符。可使用正则表达式能多种命令配合使用，使用上十分灵活。&lt;/p&gt;
+&lt;p&gt;3.命令参数：&lt;/p&gt;
+&lt;h3 id=&quot;Ubuntu常用命令&quot;&gt;&lt;a href=&quot;#Ubuntu常用命令&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu常用命令&quot;&gt;&lt;/a&gt;Ubuntu常用命令&lt;/h3&gt;&lt;figure class=&quot;highlight arduino&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;apt-&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; install xxx 安装&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;apt-&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;remove&lt;/span&gt; xxx 卸载但不删除配置&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;apt-&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; purge xxx 卸载并且删除相关配置&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;# another&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;remove&lt;/span&gt; --purge xxx&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-&lt;span class=&quot;built_in&quot;&gt;get&lt;/span&gt; update&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;参考资料：&lt;br&gt;&lt;a href=&quot;http://www.cnblogs.com/peida/tag/每日一linux命令/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;每日一linux命令&lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;p&gt;假设model中有name，images(图片链接：用;分开)&lt;/p&gt;
-&lt;p&gt;1.在DetailView可以直接这样输出：&lt;/p&gt;
-&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span 
+      &lt;h3 id=&quot;tail-命令&quot;&gt;&lt;a href=&quot;#tail-命令&quot; class=&quot;headerlink&quot; title=&quot;tail 命令&quot;&gt;&lt;/a&gt;tail 命令&lt;/h3&gt;&lt;p&gt;1.命令格式&lt;/p&gt;
+&lt;p&gt;tail[必要参数][选择参数][文件]&lt;/p&gt;
+&lt;p&gt;2.命令功能&lt;/
     
     </summary>
     
-      <category term="PHP" scheme="http://blog.ybbz.site/categories/PHP/"/>
+      <category term="Linux" scheme="http://blog.ybbz.site/categories/Linux/"/>
     
     
-      <category term="PHP" scheme="http://blog.ybbz.site/tags/PHP/"/>
-    
-      <category term="Yii2" scheme="http://blog.ybbz.site/tags/Yii2/"/>
+      <category term="Linux" scheme="http://blog.ybbz.site/tags/Linux/"/>
     
   </entry>
   
@@ -412,6 +411,39 @@
       <category term="Yii2" scheme="http://blog.ybbz.site/tags/Yii2/"/>
     
       <category term="Qiniu" scheme="http://blog.ybbz.site/tags/Qiniu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Yii2自定义DetailView的显示内容</title>
+    <link href="http://blog.ybbz.site/2016/05/22/yii2-detailview/"/>
+    <id>http://blog.ybbz.site/2016/05/22/yii2-detailview/</id>
+    <published>2016-05-21T16:00:00.000Z</published>
+    <updated>2016-05-24T16:01:54.000Z</updated>
+    
+    <content type="html">&lt;p&gt;假设model中有name，images(图片链接：用;分开)&lt;/p&gt;
+&lt;p&gt;1.在DetailView可以直接这样输出：&lt;/p&gt;
+&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;php&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?&lt;/span&gt;= DetailView::widget([&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;model&#39;&lt;/span&gt; =&amp;gt; $model,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;attributes&#39;&lt;/span&gt; =&amp;gt; [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;name&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;images&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;]) &lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;2.可以通过下述方式进行字符串操作（分割、拼接、组装html标签等）：&lt;/p&gt;
+&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;php&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?&lt;/span&gt;= DetailView::widget([&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;model&#39;&lt;/span&gt; =&amp;gt; $model,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;attributes&#39;&lt;/span&gt; =&amp;gt; [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;name&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&#39;attribute&#39;&lt;/span&gt; =&amp;gt; &lt;span class=&quot;string&quot;&gt;&#39;images&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&#39;format&#39;&lt;/span&gt; =&amp;gt; &lt;span class=&quot;string&quot;&gt;&#39;raw&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&#39;value&#39;&lt;/span&gt; =&amp;gt; count(explode(&lt;span class=&quot;string&quot;&gt;&quot;;&quot;&lt;/span&gt;, $model-&amp;gt;images))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;]) &lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;3.自定义函数，处理数组（比如把images中的所有图片显示出来）&lt;/p&gt;
+&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;php&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?php&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;showImages&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;($array)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $result=&lt;span class=&quot;string&quot;&gt;&#39;&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;foreach&lt;/span&gt;($array &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; $item)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            $result=$result.&lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;img src=&quot;&#39;&lt;/span&gt;.$item.&lt;span class=&quot;string&quot;&gt;&#39;&quot; width=&quot;80&quot; height=&quot;80&quot;&amp;gt;&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; $result;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;php&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?&lt;/span&gt;= DetailView::widget([&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;model&#39;&lt;/span&gt; =&amp;gt; $model,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;attributes&#39;&lt;/span&gt; =&amp;gt; [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;name&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&#39;attribute&#39;&lt;/span&gt; =&amp;gt; &lt;span class=&quot;string&quot;&gt;&#39;images&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&#39;format&#39;&lt;/span&gt; =&amp;gt; &lt;span class=&quot;string&quot;&gt;&#39;raw&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&#39;value&#39;&lt;/span&gt; =&amp;gt; showImages(explode(&lt;span class=&quot;string&quot;&gt;&quot;;&quot;&lt;/span&gt;, $model-&amp;gt;images))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;]) &lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;假设model中有name，images(图片链接：用;分开)&lt;/p&gt;
+&lt;p&gt;1.在DetailView可以直接这样输出：&lt;/p&gt;
+&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span 
+    
+    </summary>
+    
+      <category term="PHP" scheme="http://blog.ybbz.site/categories/PHP/"/>
+    
+    
+      <category term="PHP" scheme="http://blog.ybbz.site/tags/PHP/"/>
+    
+      <category term="Yii2" scheme="http://blog.ybbz.site/tags/Yii2/"/>
     
   </entry>
   
@@ -853,40 +885,6 @@ python3 manage.py runserver 0.0.0.0:3000
     
     
       <category term="Algorithm" scheme="http://blog.ybbz.site/tags/Algorithm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>庆祝我的第一个独立APP上线</title>
-    <link href="http://blog.ybbz.site/2016/04/18/my-first-andorid-app-online/"/>
-    <id>http://blog.ybbz.site/2016/04/18/my-first-andorid-app-online/</id>
-    <published>2016-04-17T16:00:00.000Z</published>
-    <updated>2016-04-23T12:35:49.000Z</updated>
-    
-    <content type="html">&lt;p&gt;所谓独立，就是说这个APP是我私人开发的，不牵扯其他任何个人或组织。之前一直自称Android工程师，可是并没有自己上线的作品；至于Android项目么，要么是和队友们一块儿合作的，不敢冠上自己的名字；要么就是自己做着玩的，压根没想过要发布。&lt;/p&gt;
-&lt;p&gt;Mr.葵，是我上个月的一时兴趣开发的，关于它的更多介绍，可以在&lt;a href=&quot;http://blog.ybbz.site/android/2016/03/15/App-develop/&quot;&gt;记一次有趣的App开发之旅&lt;/a&gt;中找到。不过为了顺利上线，这几天对它进行了一部分的改造。&lt;/p&gt;
-&lt;p&gt;有关这个APP，核心就是一个功能，记录自己的生活事宜，并做统计分析（好吧，其实数据挖掘和分析才是我的真正关注点）；然后又按照自己的兴趣，加了几个小功能，比如今日天气、星座运势、历史上的今天等。当然，并不止于此，下一版本，可能会增加其他有意思的功能。&lt;/p&gt;
-&lt;p&gt;有关用户注册与登录，可以通过手机号注册/登录，或者新浪微博第三方登录。我想说的是，因为短信服务基本都是收费的，所以我没有集成短信服务；因此注册时并没有短信验证码，这是一个不足之处。&lt;/p&gt;
-&lt;p&gt;关于上线，就只在360手机助手和应用宝提交了；说说360吧，5分钟左右，就给我审核通过并上线了，当时还是蛮激动的（360，我为你点赞；至于应用宝，还在审核中）。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://ybbz.github.io/images/blog/IMG_20160418_1.jpeg&quot; alt=&quot;20160418_1&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;下载地址：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://zhushou.360.cn/detail/index/soft_id/3261474?recrefer=SE_D_Mr.%E8%91%B5&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;360手机助手&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://android.myapp.com/myapp/detail.htm?apkName=com.kui.activity&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;应用宝&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://ybbz.site/app/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;APP发布网页&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;更多的，读者可以自己下载安装体验；如果想加入其他功能，也可以告诉我。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;所谓独立，就是说这个APP是我私人开发的，不牵扯其他任何个人或组织。之前一直自称Android工程师，可是并没有自己上线的作品；至于Android项目么，要么是和队友们一块儿合作的，不敢冠上自己的名字；要么就是自己做着玩的，压根没想过要发布。&lt;/p&gt;
-&lt;p&gt;Mr.葵，是我上
-    
-    </summary>
-    
-      <category term="Android" scheme="http://blog.ybbz.site/categories/Android/"/>
-    
-    
-      <category term="Android" scheme="http://blog.ybbz.site/tags/Android/"/>
     
   </entry>
   

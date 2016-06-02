@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.ybbz.site/2016/06/02/linux-nginx-cut-log/</loc>
+    
+    <lastmod>2016-06-02T07:43:25.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.ybbz.site/2016/05/22/yii2-qiniu-upload-file/</loc>
     
     <lastmod>2016-05-30T04:01:00.000Z</lastmod>
