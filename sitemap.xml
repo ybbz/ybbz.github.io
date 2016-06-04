@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.ybbz.site/2016/06/04/classify-bookmarks-with-python/</loc>
+    
+    <lastmod>2016-06-04T11:35:54.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2016/02/20/Python-foundation-two-regular/</loc>
+    
+    <lastmod>2016-06-04T11:19:12.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.ybbz.site/2016/06/02/linux-nginx-cut-log/</loc>
     
     <lastmod>2016-06-02T07:43:25.000Z</lastmod>
@@ -271,13 +285,6 @@
     <loc>http://blog.ybbz.site/2016/02/20/Python-foundation-one/</loc>
     
     <lastmod>2016-04-23T13:12:34.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.ybbz.site/2016/02/20/Python-foundation-two-regular/</loc>
-    
-    <lastmod>2016-04-23T13:11:37.000Z</lastmod>
     
   </url>
   
