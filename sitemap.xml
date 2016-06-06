@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.ybbz.site/2016/06/06/centos7-nginx/</loc>
+    
+    <lastmod>2016-06-06T09:02:36.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2016/06/06/openresty-introduce-and-installation/</loc>
+    
+    <lastmod>2016-06-06T08:59:49.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.ybbz.site/2016/06/04/classify-bookmarks-with-python/</loc>
     
     <lastmod>2016-06-04T11:40:31.000Z</lastmod>
