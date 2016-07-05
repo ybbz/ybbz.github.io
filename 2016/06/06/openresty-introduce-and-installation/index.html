@@ -68,7 +68,7 @@ Lua简介Lua是一个简洁、轻量、可扩展的程序设计语言，其设�
 <meta property="og:image" content="http://7xsjt1.com1.z0.glb.clouddn.com/IMG_20160606_1.png">
 <meta property="og:image" content="http://7xsjt1.com1.z0.glb.clouddn.com/IMG_20160606_3.png">
 <meta property="og:image" content="http://7xsjt1.com1.z0.glb.clouddn.com/IMG_20160606_4.png">
-<meta property="og:updated_time" content="2016-06-06T08:59:49.000Z">
+<meta property="og:updated_time" content="2016-06-15T06:39:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OpenResty安装、配置与使用">
 <meta name="twitter:description" content="OpenResty简介OpenResty 是一个基于 Nginx 与 Lua 的高性能 Web 平台，其内部集成了大量精良的 Lua 库、第三方模块以及大多数的依赖项。用于方便地搭建能够处理超高并发、扩展性极高的动态 Web 应用、Web 服务和动态网关。
@@ -205,39 +205,9 @@ Lua简介Lua是一个简洁、轻量、可扩展的程序设计语言，其设�
       
 
       
-        <li class="menu-item menu-item-search">
-          
-            <a href="#" class="st-search-show-outputs">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
-      
     </ul>
   
 
-  
-    <div class="site-search">
-      
-  <form class="site-search-form">
-  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
-</form>
-
-<script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-  _st('install', 'N5TsjPBKJizg_ME62S5-','2.0.0');
-</script>
-
-
-
-    </div>
   
 </nav>
 
@@ -370,6 +340,8 @@ Lua简介Lua是一个简洁、轻量、可扩展的程序设计语言，其设�
 <p><img src="http://7xsjt1.com1.z0.glb.clouddn.com/IMG_20160606_4.png" alt="IMG_20160606_4"></p>
 <p>参考资料：</p>
 <p><a href="http://openresty.org/en/" target="_blank" rel="external">OpenResty</a><br><a href="http://openresty.org/cn/" target="_blank" rel="external">OpenResty中文站</a><br><a href="https://www.nginx.com/resources/wiki/modules/lua/" target="_blank" rel="external">nginx-lua</a><br><a href="https://github.com/openresty/lua-nginx-module" target="_blank" rel="external">lua-nginx-module</a>  </p>
+<h2 id="20160615更正："><a href="#20160615更正：" class="headerlink" title="20160615更正："></a>20160615更正：</h2><p>实践证明，上面body_filter_by_lua中的代码存在bug，可通过如下方式更正：<br><figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">body_filter_by_lua <span class="comment">'</span></span><br><span class="line">    local maxlen = <span class="number">1000</span></span><br><span class="line">    ngx.ctx.buffered = ngx.ctx.buffered <span class="keyword">or</span> <span class="string">""</span></span><br><span class="line">    <span class="keyword">if</span> <span class="meta">#ngx.ctx.buffered &lt; maxlen then</span></span><br><span class="line">        ngx.ctx.buffered = ngx.ctx.buffered .. <span class="built_in">string</span>.<span class="keyword">sub</span>(ngx.arg[<span class="number">1</span>], <span class="number">1</span>, maxlen - <span class="meta">#ngx.ctx.buffered)</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">if</span> ngx.arg[<span class="number">2</span>] <span class="keyword">then</span></span><br><span class="line">        ngx.var.resp_body = ngx.ctx.buffered</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="comment">';</span></span><br></pre></td></tr></table></figure></p>
+<p>感谢<a href="https://groups.google.com/forum/#!forum/openresty" target="_blank" rel="external">OpenResty 中文邮件列表</a></p>
 
       
     </div>
@@ -419,6 +391,10 @@ Lua简介Lua是一个简洁、轻量、可扩展的程序设计语言，其设�
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/07/Lua-introduction/" rel="prev" title="Lua安装及简单使用">
+                Lua安装及简单使用 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -509,7 +485,7 @@ Lua简介Lua是一个简洁、轻量、可扩展的程序设计语言，其设�
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">87</span>
+              <span class="site-state-item-count">96</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -517,7 +493,7 @@ Lua简介Lua是一个简洁、轻量、可扩展的程序设计语言，其设�
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -526,7 +502,7 @@ Lua简介Lua是一个简洁、轻量、可扩展的程序设计语言，其设�
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">60</span>
+                <span class="site-state-item-count">66</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -591,7 +567,7 @@ Lua简介Lua是一个简洁、轻量、可扩展的程序设计语言，其设�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#OpenResty简介"><span class="nav-number">1.</span> <span class="nav-text">OpenResty简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lua简介"><span class="nav-number">2.</span> <span class="nav-text">Lua简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OpenResty安装"><span class="nav-number">3.</span> <span class="nav-text">OpenResty安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OpenResty启动"><span class="nav-number">4.</span> <span class="nav-text">OpenResty启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OpenResty配置Lua"><span class="nav-number">5.</span> <span class="nav-text">OpenResty配置Lua</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#OpenResty简介"><span class="nav-number">1.</span> <span class="nav-text">OpenResty简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lua简介"><span class="nav-number">2.</span> <span class="nav-text">Lua简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OpenResty安装"><span class="nav-number">3.</span> <span class="nav-text">OpenResty安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OpenResty启动"><span class="nav-number">4.</span> <span class="nav-text">OpenResty启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OpenResty配置Lua"><span class="nav-number">5.</span> <span class="nav-text">OpenResty配置Lua</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#20160615更正："><span class="nav-number">6.</span> <span class="nav-text">20160615更正：</span></a></li></ol></div>
             
           </div>
         </section>

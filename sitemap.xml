@@ -2,16 +2,93 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.ybbz.site/2016/05/30/centos7-nginx/</loc>
+    <loc>http://blog.ybbz.site/2016/06/10/yii2-redis/</loc>
     
-    <lastmod>2016-06-06T09:02:36.000Z</lastmod>
+    <lastmod>2016-07-02T08:54:26.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2016/06/22/jenkins-checkstyle/</loc>
+    
+    <lastmod>2016-07-01T09:28:11.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2016/06/27/eclipse-checkstyle-setting/</loc>
+    
+    <lastmod>2016-07-01T09:10:34.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2016/06/16/jenkins-start/</loc>
+    
+    <lastmod>2016-06-29T07:18:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2016/03/18/server-configuration-2/</loc>
+    
+    <lastmod>2016-06-29T02:26:17.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2016/06/07/Lua-introduction/</loc>
+    
+    <lastmod>2016-06-27T09:32:12.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2016/01/10/laravel-start-2/</loc>
+    
+    <lastmod>2016-06-24T10:19:15.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2016/01/10/laravel-start-1/</loc>
+    
+    <lastmod>2016-06-24T10:12:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2016/06/09/yii2-wechat-development-2-userinfo/</loc>
+    
+    <lastmod>2016-06-22T01:14:19.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://blog.ybbz.site/2016/06/06/openresty-introduce-and-installation/</loc>
     
-    <lastmod>2016-06-06T08:59:49.000Z</lastmod>
+    <lastmod>2016-06-15T06:39:11.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2015/12/01/php-foundation/</loc>
+    
+    <lastmod>2016-06-13T06:49:26.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2016/06/09/yii2-wechat-development-1-token/</loc>
+    
+    <lastmod>2016-06-09T02:54:16.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2016/05/30/centos7-nginx/</loc>
+    
+    <lastmod>2016-06-06T09:02:36.000Z</lastmod>
     
   </url>
   
@@ -89,13 +166,6 @@
     <loc>http://blog.ybbz.site/2016/05/27/php-shell-1/</loc>
     
     <lastmod>2016-05-27T08:04:03.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.ybbz.site/2015/12/01/php-foundation/</loc>
-    
-    <lastmod>2016-05-27T07:25:06.000Z</lastmod>
     
   </url>
   
@@ -376,13 +446,6 @@
     <loc>http://blog.ybbz.site/2016/03/18/server-configuration-1/</loc>
     
     <lastmod>2016-04-23T13:01:25.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.ybbz.site/2016/03/18/server-configuration-2/</loc>
-    
-    <lastmod>2016-04-23T13:01:06.000Z</lastmod>
     
   </url>
   
