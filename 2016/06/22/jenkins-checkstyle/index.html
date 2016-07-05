@@ -38,7 +38,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Jenkins,CI," />
+  <meta name="keywords" content="CI,Jenkins," />
 
 
 
@@ -56,24 +56,32 @@
 
 
 
-<meta name="description" content="服务器配置安装gityum install git
-安装Maven12345678wget http://ftp.riken.jp/net/apache/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.tar.gztar -zxvf apache-maven-3.2.5-bin.tar.gzmv apache-maven-3.2.5 /usr">
+<meta name="description" content="服务器配置安装git1yum install git
+安装Maven12345678wget http://ftp.riken.jp/net/apache/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.tar.gztar -zxvf apache-maven-3.2.5-bin.tar.gzmv apache-maven-3.2.5 /us">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Jenkins检查代码风格">
 <meta property="og:url" content="http://blog.ybbz.site/2016/06/22/jenkins-checkstyle/index.html">
 <meta property="og:site_name" content="八宝粥的博客">
-<meta property="og:description" content="服务器配置安装gityum install git
-安装Maven12345678wget http://ftp.riken.jp/net/apache/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.tar.gztar -zxvf apache-maven-3.2.5-bin.tar.gzmv apache-maven-3.2.5 /usr">
-<meta property="og:image" content="http://7xsjt1.com1.z0.glb.clouddn.com/IMG_20160622_1.png">
-<meta property="og:image" content="http://7xsjt1.com1.z0.glb.clouddn.com/IMG_20160622_2.png">
-<meta property="og:image" content="http://7xsjt1.com1.z0.glb.clouddn.com/IMG_20160622_3.png">
-<meta property="og:image" content="http://7xsjt1.com1.z0.glb.clouddn.com/IMG_20160622_4.png">
-<meta property="og:updated_time" content="2016-07-01T09:28:11.000Z">
+<meta property="og:description" content="服务器配置安装git1yum install git
+安装Maven12345678wget http://ftp.riken.jp/net/apache/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.tar.gztar -zxvf apache-maven-3.2.5-bin.tar.gzmv apache-maven-3.2.5 /us">
+<meta property="og:image" content="http://7xsjt1.com1.z0.glb.clouddn.com/jenkins/check.png">
+<meta property="og:image" content="http://7xsjt1.com1.z0.glb.clouddn.com/jenkins/job.png">
+<meta property="og:image" content="http://7xsjt1.com1.z0.glb.clouddn.com/jenkins/git.png">
+<meta property="og:image" content="http://7xsjt1.com1.z0.glb.clouddn.com/jenkins/ant.png">
+<meta property="og:image" content="http://7xsjt1.com1.z0.glb.clouddn.com/jenkins/checkstyle.png">
+<meta property="og:image" content="http://7xsjt1.com1.z0.glb.clouddn.com/jenkins/checkstyle_result1.png">
+<meta property="og:image" content="http://7xsjt1.com1.z0.glb.clouddn.com/jenkins/checkstyle_result2.png">
+<meta property="og:image" content="http://7xsjt1.com1.z0.glb.clouddn.com/jenkins/checkstyle_result3.png">
+<meta property="og:image" content="http://7xsjt1.com1.z0.glb.clouddn.com/jenkins/hook1.png">
+<meta property="og:image" content="http://7xsjt1.com1.z0.glb.clouddn.com/jenkins/hook2.png">
+<meta property="og:image" content="http://7xsjt1.com1.z0.glb.clouddn.com/jenkins/hook3.png">
+<meta property="og:image" content="http://7xsjt1.com1.z0.glb.clouddn.com/jenkins/hook4.png">
+<meta property="og:updated_time" content="2016-07-05T08:40:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jenkins检查代码风格">
-<meta name="twitter:description" content="服务器配置安装gityum install git
-安装Maven12345678wget http://ftp.riken.jp/net/apache/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.tar.gztar -zxvf apache-maven-3.2.5-bin.tar.gzmv apache-maven-3.2.5 /usr">
-<meta name="twitter:image" content="http://7xsjt1.com1.z0.glb.clouddn.com/IMG_20160622_1.png">
+<meta name="twitter:description" content="服务器配置安装git1yum install git
+安装Maven12345678wget http://ftp.riken.jp/net/apache/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.tar.gztar -zxvf apache-maven-3.2.5-bin.tar.gzmv apache-maven-3.2.5 /us">
+<meta name="twitter:image" content="http://7xsjt1.com1.z0.glb.clouddn.com/jenkins/check.png">
 
 
 
@@ -316,20 +324,51 @@
       
 
       
-        <h2 id="服务器配置"><a href="#服务器配置" class="headerlink" title="服务器配置"></a>服务器配置</h2><h3 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h3><p>yum install git</p>
+        <h2 id="服务器配置"><a href="#服务器配置" class="headerlink" title="服务器配置"></a>服务器配置</h2><h3 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h3><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install</span> git</span><br></pre></td></tr></table></figure>
 <h3 id="安装Maven"><a href="#安装Maven" class="headerlink" title="安装Maven"></a>安装Maven</h3><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">wget http:<span class="comment">//ftp.riken.jp/net/apache/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.tar.gz</span></span><br><span class="line">tar -zxvf apache-maven<span class="number">-3.2</span><span class="number">.5</span>-bin.tar.gz</span><br><span class="line">mv apache-maven<span class="number">-3.2</span><span class="number">.5</span> <span class="meta-keyword">/usr/</span>local/maven</span><br><span class="line">vi <span class="meta-keyword">/etc/</span>profile                        <span class="meta">#配置环境变量</span></span><br><span class="line"><span class="meta"># export MAVEN_HOME=/usr/local/maven   #添加配置信息</span></span><br><span class="line"><span class="meta"># export PATH=$MAVEN_HOME/bin:$PATH</span></span><br><span class="line">source <span class="meta-keyword">/etc/</span>profile                    <span class="meta">#使环境变量生效</span></span><br><span class="line">mvn -v                                 <span class="meta">#验证是否安装成功</span></span><br></pre></td></tr></table></figure>
-<h2 id="Jenkins配置"><a href="#Jenkins配置" class="headerlink" title="Jenkins配置"></a>Jenkins配置</h2><h3 id="Checkstyle简介"><a href="#Checkstyle简介" class="headerlink" title="Checkstyle简介"></a>Checkstyle简介</h3><p><a href="https://wiki.jenkins-ci.org/display/JENKINS/Checkstyle+Plugin" target="_blank" rel="external">Checkstyle Plugin</a> generates the trend report for Checkstyle, an open source static code analysis program.</p>
-<h3 id="Checkstyle安装"><a href="#Checkstyle安装" class="headerlink" title="Checkstyle安装"></a>Checkstyle安装</h3><p>系统管理－管理插件－可选插件－搜索Checkstyle－选择并安装</p>
-<p><img src="http://7xsjt1.com1.z0.glb.clouddn.com/IMG_20160622_1.png" alt="IMG_20160622_1"></p>
-<h3 id="创建任务"><a href="#创建任务" class="headerlink" title="创建任务"></a>创建任务</h3><ol>
-<li>新建－构建maven项目</li>
-<li>通用设置-源码管理-构建触发器-构建</li>
-<li>构建后操作（publish check style analysis results）</li>
-</ol>
-<p><img src="http://7xsjt1.com1.z0.glb.clouddn.com/IMG_20160622_2.png" alt="IMG_20160622_2"></p>
+<h2 id="Jenkins配置"><a href="#Jenkins配置" class="headerlink" title="Jenkins配置"></a>Jenkins配置</h2><h3 id="下载checkstyle"><a href="#下载checkstyle" class="headerlink" title="下载checkstyle"></a>下载checkstyle</h3><p>checkstyle下载地址：<a href="https://sourceforge.net/projects/checkstyle/files/checkstyle/" target="_blank" rel="external">checkstyle</a></p>
+<h3 id="编写ant脚本"><a href="#编写ant脚本" class="headerlink" title="编写ant脚本"></a>编写ant脚本</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span><span class="meta">?&gt;</span></span></span><br><span class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">name</span>=<span class="string">"test"</span> <span class="attr">basedir</span>=<span class="string">"."</span> <span class="attr">default</span>=<span class="string">"checkstyle"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">taskdef</span> <span class="attr">name</span>=<span class="string">"checkstyle"</span> <span class="attr">classname</span>=<span class="string">"com.puppycrawl.tools.checkstyle.ant.CheckstyleAntTask"</span> <span class="attr">classpath</span>=<span class="string">"checkstyle-7.0-all.jar"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">target</span> <span class="attr">name</span>=<span class="string">"checkstyle"</span> <span class="attr">description</span>=<span class="string">"Generates a report of code convention violations."</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">mkdir</span> <span class="attr">dir</span>=<span class="string">"/home/bbz/jenkins/jenkins_home/workspace/test/checkstyle"</span> /&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">checkstyle</span> <span class="attr">config</span>=<span class="string">"sun_checks_eclipse.xml"</span> <span class="attr">failureProperty</span>=<span class="string">"checkstyle.failure"</span> <span class="attr">failOnViolation</span>=<span class="string">"false"</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">formatter</span> <span class="attr">type</span>=<span class="string">"xml"</span> <span class="attr">tofile</span>=<span class="string">"/home/bbz/jenkins/jenkins_home/workspace/test/checkstyle/checkstyle_report.xml"</span> /&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">fileset</span> <span class="attr">dir</span>=<span class="string">"/home/bbz/jenkins/jenkins_home/workspace/test"</span> <span class="attr">includes</span>=<span class="string">"**/*.java"</span> /&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">checkstyle</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">target</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>checkstyle-7.0-all.jar即为上一步下载的jar包</li>
+<li>sun_checks_eclipse.xml是checkstyle的规则配置文件，作者是从eclipse的checkstyle插件(<a href="http://blog.ybbz.site/2016/06/27/eclipse-checkstyle-setting/">Eclipse检查代码风格</a>)导出的，读者也可以尝试其它方式。</li>
+<li>作者在jenkins_home下新建check目录，并将以上文件均放置在该目录下。</li>
+</ul>
+<p><img src="http://7xsjt1.com1.z0.glb.clouddn.com/jenkins/check.png" alt="check"></p>
+<h3 id="安装jenkins插件"><a href="#安装jenkins插件" class="headerlink" title="安装jenkins插件"></a>安装jenkins插件</h3><p>1.安装jenkins插件可以使用在线、离线方式：</p>
+<ul>
+<li>在线：Jenkins－系统管理－管理插件－可选插件－直接安装</li>
+<li>离线：Jenkins－系统管理－管理插件－高级－上传插件</li>
+</ul>
+<p>2.安装以下插件（按需选择即可）：</p>
+<ul>
+<li>Checkstyle Plug-in</li>
+<li>Ant Plugin</li>
+<li>Maven Info Plugin</li>
+<li>Maven Repository Server Plugin</li>
+<li>GitLab Plugin</li>
+<li>Gitlab Hook Plugin</li>
+</ul>
+<h3 id="创建任务"><a href="#创建任务" class="headerlink" title="创建任务"></a>创建任务</h3><p>1.新建－构建一个自由风格的软件项目</p>
+<p><img src="http://7xsjt1.com1.z0.glb.clouddn.com/jenkins/job.png" alt="job"></p>
+<p>2.源码管理-Git</p>
+<p><img src="http://7xsjt1.com1.z0.glb.clouddn.com/jenkins/git.png" alt="git"></p>
+<p>3.构建-Invoke Ant</p>
+<p><img src="http://7xsjt1.com1.z0.glb.clouddn.com/jenkins/ant.png" alt="ant"></p>
+<p>4.构建后操作-publish check style analysis results</p>
+<p><img src="http://7xsjt1.com1.z0.glb.clouddn.com/jenkins/checkstyle.png" alt="checkstyle"></p>
 <h3 id="立即构建"><a href="#立即构建" class="headerlink" title="立即构建"></a>立即构建</h3><p>生成分析报告如下：</p>
-<p><img src="http://7xsjt1.com1.z0.glb.clouddn.com/IMG_20160622_3.png" alt="IMG_20160622_3"></p>
-<p><img src="http://7xsjt1.com1.z0.glb.clouddn.com/IMG_20160622_4.png" alt="IMG_20160622_4"></p>
+<p><img src="http://7xsjt1.com1.z0.glb.clouddn.com/jenkins/checkstyle_result1.png" alt="checkstyle_result1"></p>
+<p><img src="http://7xsjt1.com1.z0.glb.clouddn.com/jenkins/checkstyle_result2.png" alt="checkstyle_result2"></p>
+<p><img src="http://7xsjt1.com1.z0.glb.clouddn.com/jenkins/checkstyle_result3.png" alt="checkstyle_result3"></p>
+<h2 id="GitLab自动构建"><a href="#GitLab自动构建" class="headerlink" title="GitLab自动构建"></a>GitLab自动构建</h2><p>1.Gitlab配置Web hooks（Project-Settings-Web hooks）</p>
+<p><img src="http://7xsjt1.com1.z0.glb.clouddn.com/jenkins/hook1.png" alt="hook1"></p>
+<p>2.Jenkins配置（Jenkins－系统管理-系统设置）</p>
+<p><img src="http://7xsjt1.com1.z0.glb.clouddn.com/jenkins/hook2.png" alt="hook2"></p>
+<p><img src="http://7xsjt1.com1.z0.glb.clouddn.com/jenkins/hook3.png" alt="hook3"></p>
+<p>3.Jenkins项目配置</p>
+<p><img src="http://7xsjt1.com1.z0.glb.clouddn.com/jenkins/hook4.png" alt="hook4"></p>
+<p>参考资料：</p>
+<p><a href="http://qa.blog.163.com/blog/static/19014700220133351850624/" target="_blank" rel="external">Java静态代码检查checkstyle</a></p>
 
       
     </div>
@@ -355,9 +394,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Jenkins/" rel="tag">#Jenkins</a>
-          
             <a href="/tags/CI/" rel="tag">#CI</a>
+          
+            <a href="/tags/Jenkins/" rel="tag">#Jenkins</a>
           
         </div>
       
@@ -549,7 +588,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器配置"><span class="nav-number">1.</span> <span class="nav-text">服务器配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装git"><span class="nav-number">1.1.</span> <span class="nav-text">安装git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Maven"><span class="nav-number">1.2.</span> <span class="nav-text">安装Maven</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jenkins配置"><span class="nav-number">2.</span> <span class="nav-text">Jenkins配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Checkstyle简介"><span class="nav-number">2.1.</span> <span class="nav-text">Checkstyle简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Checkstyle安装"><span class="nav-number">2.2.</span> <span class="nav-text">Checkstyle安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建任务"><span class="nav-number">2.3.</span> <span class="nav-text">创建任务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#立即构建"><span class="nav-number">2.4.</span> <span class="nav-text">立即构建</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器配置"><span class="nav-number">1.</span> <span class="nav-text">服务器配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装git"><span class="nav-number">1.1.</span> <span class="nav-text">安装git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Maven"><span class="nav-number">1.2.</span> <span class="nav-text">安装Maven</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jenkins配置"><span class="nav-number">2.</span> <span class="nav-text">Jenkins配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载checkstyle"><span class="nav-number">2.1.</span> <span class="nav-text">下载checkstyle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编写ant脚本"><span class="nav-number">2.2.</span> <span class="nav-text">编写ant脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装jenkins插件"><span class="nav-number">2.3.</span> <span class="nav-text">安装jenkins插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建任务"><span class="nav-number">2.4.</span> <span class="nav-text">创建任务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#立即构建"><span class="nav-number">2.5.</span> <span class="nav-text">立即构建</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GitLab自动构建"><span class="nav-number">3.</span> <span class="nav-text">GitLab自动构建</span></a></li></ol></div>
             
           </div>
         </section>
