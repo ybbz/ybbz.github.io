@@ -235,8 +235,416 @@
             
               
                 
-                <a class="post-title-link" href="/2016/05/23/linux-command/" itemprop="url">
-                  Linux命令
+                <a class="post-title-link" href="/2016/05/27/php-shell-2/" itemprop="url">
+                  PHP执行Shell命令（2）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-27T00:00:00+08:00" content="2016-05-27">
+              2016-05-27
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/27/php-shell-2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/27/php-shell-2/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/05/27/php-shell-2/" class="leancloud_visitors" data-flag-title="PHP执行Shell命令（2）">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          一个完整的使用PHP框架（Yii2）进行Shell操作的例子：
+1.在models中新建SearchForm.php
+12345678910111213141516171819class SearchForm extends Model&#123;    public $keyword;    pu
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/05/27/php-shell-2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/27/php-shell-1/" itemprop="url">
+                  PHP执行Shell命令（1）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-27T00:00:00+08:00" content="2016-05-27">
+              2016-05-27
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/27/php-shell-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/27/php-shell-1/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/05/27/php-shell-1/" class="leancloud_visitors" data-flag-title="PHP执行Shell命令（1）">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          shell_exec通过 shell 环境执行命令，并且将完整的输出以字符串的方式返回。
+1string shell_exec ( string $cmd )
+举例1：
+123//$cmd_date = 'date';$cmd_date = 'date +%Y-%m-%d';$date = shel
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/05/27/php-shell-1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/25/ubuntu-apache2/" itemprop="url">
+                  Ubuntu配置Apache2+PHP+Yii2
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-25T00:00:00+08:00" content="2016-05-25">
+              2016-05-25
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/25/ubuntu-apache2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/25/ubuntu-apache2/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/05/25/ubuntu-apache2/" class="leancloud_visitors" data-flag-title="Ubuntu配置Apache2+PHP+Yii2">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          命令行安装Apache
+123456sudo apt-get install apache2cd /etc/apache2sudo vi apache2.confsudo vi ports.confsudo /etc/init.d/apache2 statussudo /etc/init.d/apa
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/05/25/ubuntu-apache2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/23/linux-shell-and-crontab/" itemprop="url">
+                  Linux编写Shell脚本与Crontab定时执行
                 </a>
               
             
@@ -279,8 +687,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/23/linux-command/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/23/linux-command/" itemprop="commentsCount"></span>
+                <a href="/2016/05/23/linux-shell-and-crontab/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/23/linux-shell-and-crontab/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -290,7 +698,7 @@
 
           
           
-             <span id="/2016/05/23/linux-command/" class="leancloud_visitors" data-flag-title="Linux命令">
+             <span id="/2016/05/23/linux-shell-and-crontab/" class="leancloud_visitors" data-flag-title="Linux编写Shell脚本与Crontab定时执行">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -314,16 +722,15 @@
       
         
           
-          tail 命令1.命令格式
-tail[必要参数][选择参数][文件]
-2.命令功能
-用于显示指定文件末尾内容，不指定文件时，作为输入信息进行处理。常用查看日志文件。
-3.命令参数：
-12345678-f 循环读取-q 不显示处理信息-v 显示详细的处理信息-c&lt;数目&gt; 显示的字节数-n&
+          1.编写Shell脚本
+新建脚本文件
+1vi goaccess
+添加以下内容
+123456789#!/bin/bash##goaccess cron every five minutesset -egoaccess -f /var/www/log/access.log -a &gt; /var/ww
           ...
 
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/23/linux-command/#more" rel="contents">
+            <a class="btn" href="/2016/05/23/linux-shell-and-crontab/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -509,8 +916,8 @@ GoAccess is an open source real-time web log analyzer and interactive viewer tha
             
               
                 
-                <a class="post-title-link" href="/2016/05/23/linux-shell-and-crontab/" itemprop="url">
-                  Linux编写Shell脚本与Crontab定时执行
+                <a class="post-title-link" href="/2016/05/23/linux-command/" itemprop="url">
+                  Linux命令
                 </a>
               
             
@@ -553,8 +960,8 @@ GoAccess is an open source real-time web log analyzer and interactive viewer tha
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/23/linux-shell-and-crontab/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/23/linux-shell-and-crontab/" itemprop="commentsCount"></span>
+                <a href="/2016/05/23/linux-command/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/23/linux-command/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -564,7 +971,7 @@ GoAccess is an open source real-time web log analyzer and interactive viewer tha
 
           
           
-             <span id="/2016/05/23/linux-shell-and-crontab/" class="leancloud_visitors" data-flag-title="Linux编写Shell脚本与Crontab定时执行">
+             <span id="/2016/05/23/linux-command/" class="leancloud_visitors" data-flag-title="Linux命令">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -588,15 +995,16 @@ GoAccess is an open source real-time web log analyzer and interactive viewer tha
       
         
           
-          1.编写Shell脚本
-新建脚本文件
-1vi goaccess
-添加以下内容
-123456789#!/bin/bash##goaccess cron every five minutesset -egoaccess -f /var/www/log/access.log -a &gt; /var/ww
+          tail 命令1.命令格式
+tail[必要参数][选择参数][文件]
+2.命令功能
+用于显示指定文件末尾内容，不指定文件时，作为输入信息进行处理。常用查看日志文件。
+3.命令参数：
+12345678-f 循环读取-q 不显示处理信息-v 显示详细的处理信息-c&lt;数目&gt; 显示的字节数-n&
           ...
 
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/23/linux-shell-and-crontab/#more" rel="contents">
+            <a class="btn" href="/2016/05/23/linux-command/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1868,416 +2276,6 @@ alter table user add rong_token varchar(20) Null;
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/23/manage-blog-images/" itemprop="url">
-                  如何管理博客图片
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-23T14:08:45+08:00" content="2016-04-23">
-              2016-04-23
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Tool/" itemprop="url" rel="index">
-                    <span itemprop="name">Tool</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/23/manage-blog-images/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/23/manage-blog-images/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/04/23/manage-blog-images/" class="leancloud_visitors" data-flag-title="如何管理博客图片">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          很多时候，我们需要在博客文章中插入图片。那么，如何管理自己的博客图片呢？以下是我用过的几种方式。
-百度相册这种方法是以前公司的运营小伙伴告诉我的，将图片上传到百度相册再复制链接。我尝试着在博客中使用了这种方式，当时发现的确可以，但是，后来发现这种外链会被GitHub屏蔽，这样的话文章中的图片就无法显
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/23/manage-blog-images/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/20/Algorithm-2/" itemprop="url">
-                  根号值逼近问题的算法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-20T00:00:00+08:00" content="2016-04-20">
-              2016-04-20
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
-                    <span itemprop="name">Algorithm</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/20/Algorithm-2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/20/Algorithm-2/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/04/20/Algorithm-2/" class="leancloud_visitors" data-flag-title="根号值逼近问题的算法">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          在Python中，可以通过以下方式表达根号
-1234567import matha = 2 ** 0.5print(a)b = math.sqrt(2)print(b)c = math.pow(2, 0.5)print(c)
-算法一
-sqrt(num)在区间（left, right）内
-计算midd
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/20/Algorithm-2/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/20/Algorithm-3/" itemprop="url">
-                  判断两个单向链表是否相交
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-20T00:00:00+08:00" content="2016-04-20">
-              2016-04-20
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
-                    <span itemprop="name">Algorithm</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/20/Algorithm-3/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/20/Algorithm-3/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/04/20/Algorithm-3/" class="leancloud_visitors" data-flag-title="判断两个单向链表是否相交">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          问题描述：给定两个单向链表，判断链表是否相交（有共同的节点）。
-算法一对链表一进行遍历，在遍历到每一个节点时，都在链表二中进行遍历，看是否有重复的节点。
-算法一改进以空间换时间：将链表二存入字典，然后遍历链表一，判断是否在于字典中。简化后，时间复杂度变为 O(n+m)，但空间复杂度较高。
-算法二算法
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/20/Algorithm-3/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2323,7 +2321,7 @@ sqrt(num)在区间（left, right）内
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">96</span>
+              <span class="site-state-item-count">99</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.ybbz.site/2016/06/09/yii2-wechat-development-3-pay/</loc>
+    
+    <lastmod>2016-07-09T08:05:43.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2016/06/09/yii2-wechat-development-4-config/</loc>
+    
+    <lastmod>2016-07-09T08:05:35.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2016/06/10/yii2-redis-cart/</loc>
+    
+    <lastmod>2016-07-09T07:34:44.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2016/06/10/yii2-redis-view/</loc>
+    
+    <lastmod>2016-07-09T07:34:15.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.ybbz.site/2016/06/09/yii2-wechat-development-2-userinfo/</loc>
     
     <lastmod>2016-07-05T08:49:06.000Z</lastmod>
@@ -19,13 +47,6 @@
     <loc>http://blog.ybbz.site/2016/06/16/jenkins-start/</loc>
     
     <lastmod>2016-07-05T03:06:31.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.ybbz.site/2016/06/10/yii2-redis/</loc>
-    
-    <lastmod>2016-07-02T08:54:26.000Z</lastmod>
     
   </url>
   

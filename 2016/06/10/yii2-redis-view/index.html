@@ -56,27 +56,16 @@
 
 
 
-<meta name="description" content="服务器配置RedisRedis下载安装配置123456wget http://download.redis.io/releases/redis-stable.tar.gztar -xvf redis-stable.tar.gzcd redis-stable/makemake install./utils/install_server.sh
-安装成功
-
-Redis服务查看、开启、关闭12345ps">
+<meta name="description" content="1234567891011//根据IP限制接口访问$ip = $_SERVER[&apos;REMOTE_ADDR&apos;];$redis = Yii::$app-&amp;gt;redis;$redis_ip = $redis-&amp;gt;get(&apos;ip:&apos;.$ip);if ($redis_ip) &amp;#123;    # code...&amp;#125; else &amp;#123;    $redis-&amp;gt;set(&apos;ip:&apos;.$">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Yii2使用Redis缓存购物车">
-<meta property="og:url" content="http://blog.ybbz.site/2016/06/10/yii2-redis/index.html">
+<meta property="og:title" content="Yii2使用Redis：接口访问限制">
+<meta property="og:url" content="http://blog.ybbz.site/2016/06/10/yii2-redis-view/index.html">
 <meta property="og:site_name" content="八宝粥的博客">
-<meta property="og:description" content="服务器配置RedisRedis下载安装配置123456wget http://download.redis.io/releases/redis-stable.tar.gztar -xvf redis-stable.tar.gzcd redis-stable/makemake install./utils/install_server.sh
-安装成功
-
-Redis服务查看、开启、关闭12345ps">
-<meta property="og:image" content="http://7xsjt1.com1.z0.glb.clouddn.com/redis/IMG_20160702_1.png">
-<meta property="og:updated_time" content="2016-07-02T08:54:26.000Z">
+<meta property="og:description" content="1234567891011//根据IP限制接口访问$ip = $_SERVER[&apos;REMOTE_ADDR&apos;];$redis = Yii::$app-&amp;gt;redis;$redis_ip = $redis-&amp;gt;get(&apos;ip:&apos;.$ip);if ($redis_ip) &amp;#123;    # code...&amp;#125; else &amp;#123;    $redis-&amp;gt;set(&apos;ip:&apos;.$">
+<meta property="og:updated_time" content="2016-07-09T07:34:15.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Yii2使用Redis缓存购物车">
-<meta name="twitter:description" content="服务器配置RedisRedis下载安装配置123456wget http://download.redis.io/releases/redis-stable.tar.gztar -xvf redis-stable.tar.gzcd redis-stable/makemake install./utils/install_server.sh
-安装成功
-
-Redis服务查看、开启、关闭12345ps">
-<meta name="twitter:image" content="http://7xsjt1.com1.z0.glb.clouddn.com/redis/IMG_20160702_1.png">
+<meta name="twitter:title" content="Yii2使用Redis：接口访问限制">
+<meta name="twitter:description" content="1234567891011//根据IP限制接口访问$ip = $_SERVER[&apos;REMOTE_ADDR&apos;];$redis = Yii::$app-&amp;gt;redis;$redis_ip = $redis-&amp;gt;get(&apos;ip:&apos;.$ip);if ($redis_ip) &amp;#123;    # code...&amp;#125; else &amp;#123;    $redis-&amp;gt;set(&apos;ip:&apos;.$">
 
 
 
@@ -94,7 +83,7 @@ Redis服务查看、开启、关闭12345ps">
   };
 </script>
 
-  <title> Yii2使用Redis缓存购物车 | 八宝粥的博客 </title>
+  <title> Yii2使用Redis：接口访问限制 | 八宝粥的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -244,7 +233,7 @@ Redis服务查看、开启、关闭12345ps">
             
             
               
-                Yii2使用Redis缓存购物车
+                Yii2使用Redis：接口访问限制
               
             
           </h1>
@@ -286,8 +275,8 @@ Redis服务查看、开启、关闭12345ps">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/06/10/yii2-redis/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/10/yii2-redis/" itemprop="commentsCount"></span>
+                <a href="/2016/06/10/yii2-redis-view/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/10/yii2-redis-view/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -297,7 +286,7 @@ Redis服务查看、开启、关闭12345ps">
 
           
           
-             <span id="/2016/06/10/yii2-redis/" class="leancloud_visitors" data-flag-title="Yii2使用Redis缓存购物车">
+             <span id="/2016/06/10/yii2-redis-view/" class="leancloud_visitors" data-flag-title="Yii2使用Redis：接口访问限制">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -319,16 +308,7 @@ Redis服务查看、开启、关闭12345ps">
       
 
       
-        <h2 id="服务器配置Redis"><a href="#服务器配置Redis" class="headerlink" title="服务器配置Redis"></a>服务器配置Redis</h2><h3 id="Redis下载安装配置"><a href="#Redis下载安装配置" class="headerlink" title="Redis下载安装配置"></a>Redis下载安装配置</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wget http:<span class="comment">//download.redis.io/releases/redis-stable.tar.gz</span></span><br><span class="line">tar -xvf redis-stable<span class="selector-class">.tar</span><span class="selector-class">.gz</span></span><br><span class="line">cd redis-stable/</span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line">./utils/install_server.sh</span><br></pre></td></tr></table></figure>
-<p>安装成功</p>
-<p><img src="http://7xsjt1.com1.z0.glb.clouddn.com/redis/IMG_20160702_1.png" alt="redis"></p>
-<h3 id="Redis服务查看、开启、关闭"><a href="#Redis服务查看、开启、关闭" class="headerlink" title="Redis服务查看、开启、关闭"></a>Redis服务查看、开启、关闭</h3><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ps -ef|grep redis</span><br><span class="line">/etc/init.d/redis_6379 <span class="literal">start</span></span><br><span class="line">/etc/init.d/redis_6379 <span class="literal">stop</span></span><br><span class="line">service redis_6379 <span class="literal">start</span></span><br><span class="line">service redis_6379 <span class="literal">stop</span></span><br></pre></td></tr></table></figure>
-<h2 id="Yii2工程配置Redis"><a href="#Yii2工程配置Redis" class="headerlink" title="Yii2工程配置Redis"></a>Yii2工程配置Redis</h2><h3 id="下载yii2-redis"><a href="#下载yii2-redis" class="headerlink" title="下载yii2-redis"></a>下载yii2-redis</h3><p>在composer.json中添加</p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"yiisoft/yii2-redis"</span>: <span class="string">"~2.0.0"</span></span><br></pre></td></tr></table></figure>
-<p>并执行</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">composer</span> update</span><br></pre></td></tr></table></figure>
-<h3 id="配置common-config-main-php"><a href="#配置common-config-main-php" class="headerlink" title="配置common/config/main.php"></a>配置common/config/main.php</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'components'</span> =&gt; [</span><br><span class="line">        <span class="string">'redis'</span> =&gt; [</span><br><span class="line">            <span class="string">'class'</span> =&gt; <span class="string">'yii\redis\Connection'</span>,</span><br><span class="line">            <span class="string">'hostname'</span> =&gt; <span class="string">'localhost'</span>,</span><br><span class="line">            <span class="string">'port'</span> =&gt; <span class="number">6379</span>,</span><br><span class="line">            <span class="string">'database'</span> =&gt; <span class="number">0</span>,</span><br><span class="line">        ],</span><br><span class="line">    ],</span><br></pre></td></tr></table></figure>
-<h3 id="购物车接口"><a href="#购物车接口" class="headerlink" title="购物车接口"></a>购物车接口</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">actionSetcart</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">isset</span>($_REQUEST[<span class="string">'uid'</span>])&amp;&amp;<span class="keyword">isset</span>($_REQUEST[<span class="string">'cart'</span>])) &#123;</span><br><span class="line">        $uid = $_REQUEST[<span class="string">'uid'</span>];</span><br><span class="line">        $cart = $_REQUEST[<span class="string">'cart'</span>];</span><br><span class="line">        <span class="comment">//Redis保存购物车数据：30分钟</span></span><br><span class="line">        $redis = Yii::$app-&gt;redis;</span><br><span class="line">        $redis-&gt;set(<span class="string">'cart:'</span>.$uid, $cart);</span><br><span class="line">        $redis-&gt;expire(<span class="string">'cart:'</span>.$uid, <span class="number">30</span>*<span class="number">60</span>);</span><br><span class="line">        $result[<span class="string">'error'</span>] = <span class="number">0</span>;</span><br><span class="line">        $result[<span class="string">'msg'</span>] = <span class="string">'保存成功'</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        $result[<span class="string">'error'</span>] = <span class="number">1</span>;</span><br><span class="line">        $result[<span class="string">'msg'</span>] = <span class="string">'参数错误'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> $result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">actionGetcart</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">isset</span>($_REQUEST[<span class="string">'uid'</span>])) &#123;</span><br><span class="line">        $uid = $_REQUEST[<span class="string">'uid'</span>];</span><br><span class="line">        <span class="comment">//Redis保存购物车数据：30分钟</span></span><br><span class="line">        $redis = Yii::$app-&gt;redis;</span><br><span class="line">        $cart = $redis-&gt;get(<span class="string">'cart:'</span>.$uid);</span><br><span class="line">        $result[<span class="string">'error'</span>] = <span class="number">0</span>;</span><br><span class="line">        $result[<span class="string">'msg'</span>] = <span class="string">'获取成功'</span>;</span><br><span class="line">        $result[<span class="string">'cart'</span>] = $cart ? $cart : <span class="string">''</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        $result[<span class="string">'error'</span>] = <span class="number">1</span>;</span><br><span class="line">        $result[<span class="string">'msg'</span>] = <span class="string">'参数错误'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> $result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//根据IP限制接口访问</span></span><br><span class="line">$ip = $_SERVER[<span class="string">'REMOTE_ADDR'</span>];</span><br><span class="line">$redis = Yii::$app-&gt;redis;</span><br><span class="line">$redis_ip = $redis-&gt;get(<span class="string">'ip:'</span>.$ip);</span><br><span class="line"><span class="keyword">if</span> ($redis_ip) &#123;</span><br><span class="line">    <span class="comment"># code...</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    $redis-&gt;set(<span class="string">'ip:'</span>.$ip, <span class="keyword">TRUE</span>);</span><br><span class="line">    $redis-&gt;expire(<span class="string">'ip:'</span>.$ip, <span class="number">60</span>);</span><br><span class="line">    <span class="comment"># code...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -367,8 +347,8 @@ Redis服务查看、开启、关闭12345ps">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/06/09/yii2-wechat-development-2-userinfo/" rel="next" title="Yii2微信开发系列二：获取用户信息">
-                <i class="fa fa-chevron-left"></i> Yii2微信开发系列二：获取用户信息
+              <a href="/2016/06/10/yii2-redis-cart/" rel="next" title="Yii2使用Redis：缓存购物车">
+                <i class="fa fa-chevron-left"></i> Yii2使用Redis：缓存购物车
               </a>
             
           </div>
@@ -392,10 +372,10 @@ Redis服务查看、开启、关闭12345ps">
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/06/10/yii2-redis/"
-     data-title="Yii2使用Redis缓存购物车"
+        <div class="ds-share flat" data-thread-key="2016/06/10/yii2-redis-view/"
+     data-title="Yii2使用Redis：接口访问限制"
      data-content=""
-     data-url="http://blog.ybbz.site/2016/06/10/yii2-redis/">
+     data-url="http://blog.ybbz.site/2016/06/10/yii2-redis-view/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -422,8 +402,8 @@ Redis服务查看、开启、关闭12345ps">
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/06/10/yii2-redis/"
-           data-title="Yii2使用Redis缓存购物车" data-url="http://blog.ybbz.site/2016/06/10/yii2-redis/">
+      <div class="ds-thread" data-thread-key="2016/06/10/yii2-redis-view/"
+           data-title="Yii2使用Redis：接口访问限制" data-url="http://blog.ybbz.site/2016/06/10/yii2-redis-view/">
       </div>
     
   </div>
@@ -468,7 +448,7 @@ Redis服务查看、开启、关闭12345ps">
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">96</span>
+              <span class="site-state-item-count">99</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -550,7 +530,7 @@ Redis服务查看、开启、关闭12345ps">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器配置Redis"><span class="nav-number">1.</span> <span class="nav-text">服务器配置Redis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Redis下载安装配置"><span class="nav-number">1.1.</span> <span class="nav-text">Redis下载安装配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Redis服务查看、开启、关闭"><span class="nav-number">1.2.</span> <span class="nav-text">Redis服务查看、开启、关闭</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Yii2工程配置Redis"><span class="nav-number">2.</span> <span class="nav-text">Yii2工程配置Redis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载yii2-redis"><span class="nav-number">2.1.</span> <span class="nav-text">下载yii2-redis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置common-config-main-php"><span class="nav-number">2.2.</span> <span class="nav-text">配置common/config/main.php</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#购物车接口"><span class="nav-number">2.3.</span> <span class="nav-text">购物车接口</span></a></li></ol></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>
