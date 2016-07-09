@@ -913,8 +913,8 @@ Jenkins简介
             
               
                 
-                <a class="post-title-link" href="/2016/06/09/yii2-wechat-development-3-pay/" itemprop="url">
-                  Yii2微信开发系列三：微信支付
+                <a class="post-title-link" href="/2016/06/09/yii2-wechat-development-2-userinfo/" itemprop="url">
+                  Yii2微信开发系列二：获取用户信息
                 </a>
               
             
@@ -957,8 +957,8 @@ Jenkins简介
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/06/09/yii2-wechat-development-3-pay/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/09/yii2-wechat-development-3-pay/" itemprop="commentsCount"></span>
+                <a href="/2016/06/09/yii2-wechat-development-2-userinfo/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/09/yii2-wechat-development-2-userinfo/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -968,7 +968,7 @@ Jenkins简介
 
           
           
-             <span id="/2016/06/09/yii2-wechat-development-3-pay/" class="leancloud_visitors" data-flag-title="Yii2微信开发系列三：微信支付">
+             <span id="/2016/06/09/yii2-wechat-development-2-userinfo/" class="leancloud_visitors" data-flag-title="Yii2微信开发系列二：获取用户信息">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -992,12 +992,11 @@ Jenkins简介
       
         
           
-          1.微信支付接口：打包支付数据
-123456789101112131415161718192021222324252627public function actionPay()&#123;    if(isset($_REQUEST["uid"])&amp;&amp;isset($_REQUEST[
+          用户表设计12345678910111213141516CREATE TABLE `wechat_user` (  `id` int(11) NOT NULL,  `openid` varchar(255) COLLATE utf8_unicode_ci NOT NULL,  `nickname` 
           ...
 
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/06/09/yii2-wechat-development-3-pay/#more" rel="contents">
+            <a class="btn" href="/2016/06/09/yii2-wechat-development-2-userinfo/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1184,8 +1183,8 @@ Jenkins简介
             
               
                 
-                <a class="post-title-link" href="/2016/06/09/yii2-wechat-development-2-userinfo/" itemprop="url">
-                  Yii2微信开发系列二：获取用户信息
+                <a class="post-title-link" href="/2016/06/09/yii2-wechat-development-3-pay/" itemprop="url">
+                  Yii2微信开发系列三：微信支付
                 </a>
               
             
@@ -1228,8 +1227,8 @@ Jenkins简介
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/06/09/yii2-wechat-development-2-userinfo/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/09/yii2-wechat-development-2-userinfo/" itemprop="commentsCount"></span>
+                <a href="/2016/06/09/yii2-wechat-development-3-pay/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/09/yii2-wechat-development-3-pay/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1239,7 +1238,7 @@ Jenkins简介
 
           
           
-             <span id="/2016/06/09/yii2-wechat-development-2-userinfo/" class="leancloud_visitors" data-flag-title="Yii2微信开发系列二：获取用户信息">
+             <span id="/2016/06/09/yii2-wechat-development-3-pay/" class="leancloud_visitors" data-flag-title="Yii2微信开发系列三：微信支付">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1263,11 +1262,12 @@ Jenkins简介
       
         
           
-          用户表设计12345678910111213141516CREATE TABLE `wechat_user` (  `id` int(11) NOT NULL,  `openid` varchar(255) COLLATE utf8_unicode_ci NOT NULL,  `nickname` 
+          1.微信支付接口：打包支付数据
+123456789101112131415161718192021222324252627public function actionPay()&#123;    if(isset($_REQUEST["uid"])&amp;&amp;isset($_REQUEST[
           ...
 
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/06/09/yii2-wechat-development-2-userinfo/#more" rel="contents">
+            <a class="btn" href="/2016/06/09/yii2-wechat-development-3-pay/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1994,141 +1994,6 @@ Lua简介Lua是一个简洁、轻量、可扩展的
             
               
                 
-                <a class="post-title-link" href="/2016/05/30/centos7-nginx/" itemprop="url">
-                  CentOS7安装Nginx并配置Lua
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-30T00:00:00+08:00" content="2016-05-30">
-              2016-05-30
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/30/centos7-nginx/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/30/centos7-nginx/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/05/30/centos7-nginx/" class="leancloud_visitors" data-flag-title="CentOS7安装Nginx并配置Lua">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          安装Nginx下载对应当前系统版本的nginx包(package)1# wget  http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
-建立nginx的yum仓库1# r
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/30/centos7-nginx/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2016/05/30/nginx-apache/" itemprop="url">
                   Nginx代理Apache服务
                 </a>
@@ -2215,6 +2080,141 @@ Apache部署PHP服务配置Apache端口号：
 
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/05/30/nginx-apache/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/30/centos7-nginx/" itemprop="url">
+                  CentOS7安装Nginx并配置Lua
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-30T00:00:00+08:00" content="2016-05-30">
+              2016-05-30
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/30/centos7-nginx/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/30/centos7-nginx/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/05/30/centos7-nginx/" class="leancloud_visitors" data-flag-title="CentOS7安装Nginx并配置Lua">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          安装Nginx下载对应当前系统版本的nginx包(package)1# wget  http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
+建立nginx的yum仓库1# r
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/05/30/centos7-nginx/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2347,9 +2347,18 @@ Apache部署PHP服务配置Apache端口号：
               <span class="links-of-author-item">
                 <a href="http://www.zhihu.com/people/ba-bao-zhou-73" target="_blank" title="Zhihu">
                   
-                    <i class="fa fa-globe"></i>
+                    <i class="fa fa-star"></i>
                   
                   Zhihu
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://segmentfault.com/u/ybbz" target="_blank" title="SegmentFault">
+                  
+                    <i class="fa fa-star"></i>
+                  
+                  SegmentFault
                 </a>
               </span>
             
