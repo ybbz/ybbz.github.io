@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.ybbz.site/about/index.html</loc>
+    
+    <lastmod>2016-07-12T00:53:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.ybbz.site/2016/06/09/yii2-wechat-development-3-pay/</loc>
     
     <lastmod>2016-07-09T08:05:43.000Z</lastmod>
@@ -320,13 +327,6 @@
     <loc>http://blog.ybbz.site/2016/03/05/OWL-Guide/</loc>
     
     <lastmod>2016-04-24T15:03:17.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.ybbz.site/about/index.html</loc>
-    
-    <lastmod>2016-04-23T13:31:41.000Z</lastmod>
     
   </url>
   
