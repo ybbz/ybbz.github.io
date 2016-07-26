@@ -235,8 +235,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/05/27/php-shell-1/" itemprop="url">
-                  PHP执行Shell命令（1）
+                <a class="post-title-link" href="/2016/05/30/nginx-apache/" itemprop="url">
+                  Nginx代理Apache服务
                 </a>
               
             
@@ -249,8 +249,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-27T00:00:00+08:00" content="2016-05-27">
-              2016-05-27
+            <time itemprop="dateCreated" datetime="2016-05-30T00:00:00+08:00" content="2016-05-30">
+              2016-05-30
             </time>
           </span>
 
@@ -263,8 +263,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/PHP/" itemprop="url" rel="index">
-                    <span itemprop="name">PHP</span>
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
                   </a>
                 </span>
 
@@ -279,8 +279,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/27/php-shell-1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/27/php-shell-1/" itemprop="commentsCount"></span>
+                <a href="/2016/05/30/nginx-apache/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/30/nginx-apache/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -290,7 +290,7 @@
 
           
           
-             <span id="/2016/05/27/php-shell-1/" class="leancloud_visitors" data-flag-title="PHP执行Shell命令（1）">
+             <span id="/2016/05/30/nginx-apache/" class="leancloud_visitors" data-flag-title="Nginx代理Apache服务">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -314,14 +314,13 @@
       
         
           
-          shell_exec通过 shell 环境执行命令，并且将完整的输出以字符串的方式返回。
-1string shell_exec ( string $cmd )
-举例1：
-123//$cmd_date = 'date';$cmd_date = 'date +%Y-%m-%d';$date = shel
+          使用Apache部署PHP服务的时候，80端口已经被占用（Nginx代理），则将Apache的端口配置为其他端口（如8888）；并通过Nginx将Apache服务代理到80端口；实现Web服务的端口统一为80。通过如下方式实现上述过程。
+Apache部署PHP服务配置Apache端口号：
+12cd 
           ...
 
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/27/php-shell-1/#more" rel="contents">
+            <a class="btn" href="/2016/05/30/nginx-apache/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -508,6 +507,143 @@
             
               
                 
+                <a class="post-title-link" href="/2016/05/27/php-shell-1/" itemprop="url">
+                  PHP执行Shell命令（1）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-27T00:00:00+08:00" content="2016-05-27">
+              2016-05-27
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/27/php-shell-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/27/php-shell-1/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/05/27/php-shell-1/" class="leancloud_visitors" data-flag-title="PHP执行Shell命令（1）">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          shell_exec通过 shell 环境执行命令，并且将完整的输出以字符串的方式返回。
+1string shell_exec ( string $cmd )
+举例1：
+123//$cmd_date = 'date';$cmd_date = 'date +%Y-%m-%d';$date = shel
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/05/27/php-shell-1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/05/25/ubuntu-apache2/" itemprop="url">
                   Ubuntu配置Apache2+PHP+Yii2
                 </a>
@@ -593,141 +729,6 @@
 
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/05/25/ubuntu-apache2/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/23/linux-nginx-log-goaccess/" itemprop="url">
-                  日志分析工具GoAccess
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-23T00:00:00+08:00" content="2016-05-23">
-              2016-05-23
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/23/linux-nginx-log-goaccess/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/23/linux-nginx-log-goaccess/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/05/23/linux-nginx-log-goaccess/" class="leancloud_visitors" data-flag-title="日志分析工具GoAccess">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          简介
-GoAccess is an open source real-time web log analyzer and interactive viewer that runs in a terminal in linux/unix systems. It provides fast and va
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/23/linux-nginx-log-goaccess/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1055,8 +1056,8 @@ tail[必要参数][选择参数][文件]
             
               
                 
-                <a class="post-title-link" href="/2016/05/22/yii2-qiniu-upload-file/" itemprop="url">
-                  Yii2使用七牛云存储上传文件
+                <a class="post-title-link" href="/2016/05/23/linux-nginx-log-goaccess/" itemprop="url">
+                  日志分析工具GoAccess
                 </a>
               
             
@@ -1069,8 +1070,8 @@ tail[必要参数][选择参数][文件]
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-22T00:00:00+08:00" content="2016-05-22">
-              2016-05-22
+            <time itemprop="dateCreated" datetime="2016-05-23T00:00:00+08:00" content="2016-05-23">
+              2016-05-23
             </time>
           </span>
 
@@ -1083,8 +1084,8 @@ tail[必要参数][选择参数][文件]
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/PHP/" itemprop="url" rel="index">
-                    <span itemprop="name">PHP</span>
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
                   </a>
                 </span>
 
@@ -1099,8 +1100,8 @@ tail[必要参数][选择参数][文件]
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/22/yii2-qiniu-upload-file/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/22/yii2-qiniu-upload-file/" itemprop="commentsCount"></span>
+                <a href="/2016/05/23/linux-nginx-log-goaccess/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/23/linux-nginx-log-goaccess/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1110,7 +1111,7 @@ tail[必要参数][选择参数][文件]
 
           
           
-             <span id="/2016/05/22/yii2-qiniu-upload-file/" class="leancloud_visitors" data-flag-title="Yii2使用七牛云存储上传文件">
+             <span id="/2016/05/23/linux-nginx-log-goaccess/" class="leancloud_visitors" data-flag-title="日志分析工具GoAccess">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1134,15 +1135,12 @@ tail[必要参数][选择参数][文件]
       
         
           
-          引入Qiniu借鉴了Github上的yii2-qiniu
-在composer.json的require中加入下面的代码并更新。
-1"crazyfd/yii2-qiniu": "dev-master",
-在config/params.php中加入一下代码：
-1234567'qiniu' =&gt;[ 
+          简介
+GoAccess is an open source real-time web log analyzer and interactive viewer that runs in a terminal in linux/unix systems. It provides fast and va
           ...
 
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/22/yii2-qiniu-upload-file/#more" rel="contents">
+            <a class="btn" href="/2016/05/23/linux-nginx-log-goaccess/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1279,6 +1277,144 @@ tail[必要参数][选择参数][文件]
 
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/05/22/yii2-detailview/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/22/yii2-qiniu-upload-file/" itemprop="url">
+                  Yii2使用七牛云存储上传文件
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-22T00:00:00+08:00" content="2016-05-22">
+              2016-05-22
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/22/yii2-qiniu-upload-file/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/22/yii2-qiniu-upload-file/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/05/22/yii2-qiniu-upload-file/" class="leancloud_visitors" data-flag-title="Yii2使用七牛云存储上传文件">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          引入Qiniu借鉴了Github上的yii2-qiniu
+在composer.json的require中加入下面的代码并更新。
+1"crazyfd/yii2-qiniu": "dev-master",
+在config/params.php中加入一下代码：
+1234567'qiniu' =&gt;[ 
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/05/22/yii2-qiniu-upload-file/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2140,142 +2276,6 @@ alter table user add rong_token varchar(20) Null;
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/24/rongcloud-practice-1-introduction/" itemprop="url">
-                  融云实践一：快速入门
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-24T14:10:23+08:00" content="2016-04-24">
-              2016-04-24
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/24/rongcloud-practice-1-introduction/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/24/rongcloud-practice-1-introduction/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/04/24/rongcloud-practice-1-introduction/" class="leancloud_visitors" data-flag-title="融云实践一：快速入门">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          简介
-融云是国内首家专业的即时通讯云服务提供商，专注为互联网、移动互联网开发者提供免费的即时通讯基础能力和云端服务。通过融云平台，开发者不必搭建服务端硬件环境，就可以将即时通讯、实时网络能力快速集成至应用中。
-针对开发者所需的不同场景，融云平台提供了一系列产品、技术解决方案，包括：客户端 IM 组件
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/24/rongcloud-practice-1-introduction/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2321,7 +2321,7 @@ alter table user add rong_token varchar(20) Null;
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">99</span>
+              <span class="site-state-item-count">101</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -2329,7 +2329,7 @@ alter table user add rong_token varchar(20) Null;
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -2338,7 +2338,7 @@ alter table user add rong_token varchar(20) Null;
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">66</span>
+                <span class="site-state-item-count">69</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
