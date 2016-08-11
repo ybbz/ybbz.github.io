@@ -2,7 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.ybbz.site/2016/07/25/jenkins%E4%B8%8Egitlab%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/</loc>
+    <loc>http://blog.ybbz.site/2016/08/10/scrapy-start/</loc>
+    
+    <lastmod>2016-08-11T13:44:41.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2016/07/10/mac-eclipse-tomcat/</loc>
+    
+    <lastmod>2016-07-27T09:01:56.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2016/06/25/jenkins%E4%B8%8Egitlab%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/</loc>
     
     <lastmod>2016-07-26T09:13:16.000Z</lastmod>
     
@@ -79,7 +93,7 @@
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2016/06/27/eclipse-checkstyle-setting/</loc>
+    <loc>http://blog.ybbz.site/2016/07/05/eclipse-checkstyle-setting/</loc>
     
     <lastmod>2016-07-01T09:10:34.000Z</lastmod>
     
