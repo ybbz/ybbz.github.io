@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.ybbz.site/about/index.html</loc>
+    
+    <lastmod>2016-08-11T14:12:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.ybbz.site/2016/08/10/scrapy-start/</loc>
     
     <lastmod>2016-08-11T13:44:41.000Z</lastmod>
@@ -40,13 +47,6 @@
     <loc>http://blog.ybbz.site/2016/03/18/server-configuration-2/</loc>
     
     <lastmod>2016-07-12T02:05:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.ybbz.site/about/index.html</loc>
-    
-    <lastmod>2016-07-12T00:53:09.000Z</lastmod>
     
   </url>
   
