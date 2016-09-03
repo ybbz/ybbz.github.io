@@ -1,0 +1,864 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android,人脸识别,深度学习," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="八宝粥的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="整个八月，一直忙于校招的笔试、面试，以及研究生课题。这个人脸识别APP，是我在不多的空闲时间中参与的一个小项目。现总结如下：
+项目介绍
+人脸识别算法已封装成库，供客户端使用；
+客户端实现了动态人脸识别、静态人脸比对、人脸管理等功能。
+
+开发环境
+Mac OS X 10.11.4
+Android Studio 2.1.2
+Huawei Honor 6 / Android 6.0
+
+APP效果图所谓无">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于深度学习的人脸识别在Android端的实现">
+<meta property="og:url" content="http://blog.ybbz.site/2016/09/03/face-recognition-based-on-deep-learning-with-android/index.html">
+<meta property="og:site_name" content="八宝粥的博客">
+<meta property="og:description" content="整个八月，一直忙于校招的笔试、面试，以及研究生课题。这个人脸识别APP，是我在不多的空闲时间中参与的一个小项目。现总结如下：
+项目介绍
+人脸识别算法已封装成库，供客户端使用；
+客户端实现了动态人脸识别、静态人脸比对、人脸管理等功能。
+
+开发环境
+Mac OS X 10.11.4
+Android Studio 2.1.2
+Huawei Honor 6 / Android 6.0
+
+APP效果图所谓无">
+<meta property="og:image" content="http://7xsjt1.com1.z0.glb.clouddn.com/face/face-recognition.jpg">
+<meta property="og:updated_time" content="2016-09-03T09:09:53.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="基于深度学习的人脸识别在Android端的实现">
+<meta name="twitter:description" content="整个八月，一直忙于校招的笔试、面试，以及研究生课题。这个人脸识别APP，是我在不多的空闲时间中参与的一个小项目。现总结如下：
+项目介绍
+人脸识别算法已封装成库，供客户端使用；
+客户端实现了动态人脸识别、静态人脸比对、人脸管理等功能。
+
+开发环境
+Mac OS X 10.11.4
+Android Studio 2.1.2
+Huawei Honor 6 / Android 6.0
+
+APP效果图所谓无">
+<meta name="twitter:image" content="http://7xsjt1.com1.z0.glb.clouddn.com/face/face-recognition.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6231437225821734000,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> 基于深度学习的人脸识别在Android端的实现 | 八宝粥的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?bf48638c9f88aa67b7f9a0135affb55a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">八宝粥的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">这一切都是命运石之门的选择</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                基于深度学习的人脸识别在Android端的实现
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-03T00:00:00+08:00" content="2016-09-03">
+              2016-09-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/03/face-recognition-based-on-deep-learning-with-android/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/03/face-recognition-based-on-deep-learning-with-android/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/03/face-recognition-based-on-deep-learning-with-android/" class="leancloud_visitors" data-flag-title="基于深度学习的人脸识别在Android端的实现">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>整个八月，一直忙于校招的笔试、面试，以及研究生课题。这个人脸识别APP，是我在不多的空闲时间中参与的一个小项目。现总结如下：</p>
+<h2 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h2><ul>
+<li>人脸识别算法已封装成库，供客户端使用；</li>
+<li>客户端实现了动态人脸识别、静态人脸比对、人脸管理等功能。</li>
+</ul>
+<h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><ul>
+<li>Mac OS X 10.11.4</li>
+<li>Android Studio 2.1.2</li>
+<li>Huawei Honor 6 / Android 6.0</li>
+</ul>
+<h2 id="APP效果图"><a href="#APP效果图" class="headerlink" title="APP效果图"></a>APP效果图</h2><p>所谓无图无真相，所以先放几张APP的实际效果图压阵；代码随后就到。</p>
+<p><img src="http://7xsjt1.com1.z0.glb.clouddn.com/face/face-recognition.jpg" alt="face-recognition"></p>
+<h2 id="manifest配置"><a href="#manifest配置" class="headerlink" title="manifest配置"></a>manifest配置</h2><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;uses-permission android:<span class="built_in">name</span>=<span class="string">"android.permission.WRITE_EXTERNAL_STORAGE"</span> /&gt;</span><br><span class="line">&lt;uses-permission android:<span class="built_in">name</span>=<span class="string">"android.permission.CAMERA"</span> /&gt;</span><br><span class="line"></span><br><span class="line">&lt;uses-feature android:<span class="built_in">name</span>=<span class="string">"android.hardware.camera"</span> /&gt;</span><br><span class="line">&lt;uses-feature android:<span class="built_in">name</span>=<span class="string">"android.hardware.camera.front"</span> /&gt;</span><br><span class="line">&lt;uses-feature android:<span class="built_in">name</span>=<span class="string">"android.hardware.camera.autofocus"</span> /&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Camera-SurfaceView实现摄像预览"><a href="#Camera-SurfaceView实现摄像预览" class="headerlink" title="Camera+SurfaceView实现摄像预览"></a>Camera+SurfaceView实现摄像预览</h2><h3 id="继承SurfaceView的CameraPreview"><a href="#继承SurfaceView的CameraPreview" class="headerlink" title="继承SurfaceView的CameraPreview"></a>继承SurfaceView的CameraPreview</h3><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">public</span> <span class="selector-tag">class</span> <span class="selector-tag">CameraPreview</span> <span class="selector-tag">extends</span> <span class="selector-tag">SurfaceView</span> <span class="selector-tag">implements</span> <span class="selector-tag">SurfaceHolder</span><span class="selector-class">.Callback</span> &#123;</span><br><span class="line"></span><br><span class="line">    private SurfaceHolder mHolder;</span><br><span class="line">    private Camera mCamera;</span><br><span class="line"></span><br><span class="line">    <span class="variable">@SuppressWarnings</span>(<span class="string">"deprecation"</span>)</span><br><span class="line">    public CameraPreview(Context context, Camera camera) &#123;</span><br><span class="line">        super(context);</span><br><span class="line">        mCamera = camera;</span><br><span class="line"></span><br><span class="line">        mHolder = getHolder();</span><br><span class="line">        mHolder<span class="selector-class">.addCallback</span>(this);</span><br><span class="line">        mHolder<span class="selector-class">.setType</span>(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void surfaceCreated(SurfaceHolder holder) &#123;</span><br><span class="line">        <span class="selector-tag">try</span> &#123;</span><br><span class="line">            mCamera<span class="selector-class">.setPreviewDisplay</span>(holder);</span><br><span class="line">            mCamera<span class="selector-class">.setDisplayOrientation</span>(<span class="number">90</span>);</span><br><span class="line">            mCamera<span class="selector-class">.startPreview</span>();</span><br><span class="line">        &#125; catch (IOException e) &#123;</span><br><span class="line">            e<span class="selector-class">.printStackTrace</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">public</span> <span class="selector-tag">void</span> <span class="selector-tag">surfaceDestroyed</span>(SurfaceHolder holder) &#123;</span><br><span class="line">        mCamera<span class="selector-class">.release</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">public</span> <span class="selector-tag">void</span> <span class="selector-tag">surfaceChanged</span>(SurfaceHolder holder, int format, int width, int height) &#123;</span><br><span class="line">        mCamera<span class="selector-class">.setDisplayOrientation</span>(<span class="number">90</span>);</span><br><span class="line"></span><br><span class="line">        <span class="selector-tag">if</span> (mHolder.getSurface() == null) &#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="selector-tag">try</span> &#123;</span><br><span class="line">            mCamera<span class="selector-class">.stopPreview</span>();</span><br><span class="line">        &#125; <span class="selector-tag">catch</span> (Exception e) &#123;</span><br><span class="line">            e<span class="selector-class">.printStackTrace</span>();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="selector-tag">try</span> &#123;</span><br><span class="line">            mCamera<span class="selector-class">.setPreviewDisplay</span>(mHolder);</span><br><span class="line">            mCamera<span class="selector-class">.startPreview</span>();</span><br><span class="line">        &#125; <span class="selector-tag">catch</span> (Exception e) &#123;</span><br><span class="line">            e<span class="selector-class">.printStackTrace</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="DetectActivity用于显示摄像头画面"><a href="#DetectActivity用于显示摄像头画面" class="headerlink" title="DetectActivity用于显示摄像头画面"></a>DetectActivity用于显示摄像头画面</h3><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DetectActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> FrameLayout previewLayout;</span><br><span class="line">    <span class="keyword">private</span> Camera mCamera;</span><br><span class="line">    <span class="keyword">private</span> CameraPreview mPreview;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_detect);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (!checkCamera()) &#123;</span><br><span class="line">            finish();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        initView();</span><br><span class="line">        initList();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            mCamera = openFrontCamera();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        mPreview = <span class="keyword">new</span> CameraPreview(<span class="keyword">this</span>, mCamera);</span><br><span class="line">        previewLayout.addView(mPreview);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">void</span> <span class="title">initView</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        previewLayout = (FrameLayout) findViewById(R.id.camera_preview);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="function">Camera <span class="title">openFrontCamera</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> cameraCount = <span class="number">0</span>;</span><br><span class="line">        Camera cam = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">        Camera.CameraInfo cameraInfo = <span class="keyword">new</span> Camera.CameraInfo();</span><br><span class="line">        cameraCount = Camera.getNumberOfCameras(); <span class="comment">// get cameras number</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> camIdx = <span class="number">0</span>; camIdx &lt; cameraCount; camIdx++) &#123;</span><br><span class="line">            Camera.getCameraInfo(camIdx, cameraInfo); <span class="comment">// get camerainfo</span></span><br><span class="line">            <span class="comment">// 代表摄像头的方位，目前有定义值两个分别为CAMERA_FACING_FRONT前置和CAMERA_FACING_BACK后置</span></span><br><span class="line">            <span class="keyword">if</span> (cameraInfo.facing == Camera.CameraInfo.CAMERA_FACING_FRONT) &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    cam = Camera.open(camIdx);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (RuntimeException e) &#123;</span><br><span class="line">                    Log.e(<span class="string">"DetectActivity"</span>, <span class="string">"Camera failed to open: "</span> + e.getLocalizedMessage());</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cam;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">boolean</span> <span class="title">checkCamera</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> DetectActivity.<span class="keyword">this</span>.getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onBackPressed</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onBackPressed();</span><br><span class="line">        onDestroy();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onDestroy();</span><br><span class="line">        <span class="keyword">handler</span>.removeCallbacks(runnable);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="DetectActivity的布局文件activity-detect"><a href="#DetectActivity的布局文件activity-detect" class="headerlink" title="DetectActivity的布局文件activity_detect"></a>DetectActivity的布局文件activity_detect</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span><span class="meta">?&gt;</span></span></span><br><span class="line"><span class="tag">&lt;<span class="name">FrameLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></span><br><span class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">FrameLayout</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/camera_preview"</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">FrameLayout</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">FrameLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="动态人脸检测的实现"><a href="#动态人脸检测的实现" class="headerlink" title="动态人脸检测的实现"></a>动态人脸检测的实现</h2><h3 id="获取实时图片流"><a href="#获取实时图片流" class="headerlink" title="获取实时图片流"></a>获取实时图片流</h3><p>动态人脸检测的前提是获取到实时的图片流，可通过如下的方式实现：</p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> takeSnapPhoto() &#123;</span><br><span class="line">    mCamera.setOneShotPreviewCallback(<span class="keyword">new</span> Camera.PreviewCallback() &#123;</span><br><span class="line">        @Override</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">void</span> onPreviewFrame(<span class="built_in">byte</span>[] data, Camera <span class="built_in">camera</span>) &#123;</span><br><span class="line">            Camera.Parameters parameters = <span class="built_in">camera</span>.getParameters();</span><br><span class="line">            <span class="built_in">int</span> <span class="built_in">width</span> = parameters.getPreviewSize().<span class="built_in">width</span>;</span><br><span class="line">            <span class="built_in">int</span> <span class="built_in">height</span> = parameters.getPreviewSize().<span class="built_in">height</span>;</span><br><span class="line"></span><br><span class="line">            Bitmap baseBitmap = Bitmap.createBitmap(<span class="built_in">width</span>, <span class="built_in">height</span>, Bitmap.Config.ARGB_8888);</span><br><span class="line">            Allocation bmData = renderScriptNV21ToRGBA888(DetectActivity.<span class="keyword">this</span>, <span class="built_in">width</span>, <span class="built_in">height</span>, data);</span><br><span class="line">            bmData.copyTo(baseBitmap);</span><br><span class="line"></span><br><span class="line">            Matrix matrix = <span class="keyword">new</span> Matrix();</span><br><span class="line">            <span class="keyword">switch</span> (currentCameraType) &#123;</span><br><span class="line">                <span class="keyword">case</span> FRONT:<span class="comment">//前</span></span><br><span class="line">                    matrix.preRotate(DIGREE_270);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> BACK:<span class="comment">//后</span></span><br><span class="line">                    matrix.preRotate(DIGREE_90);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            globalBitmap = Bitmap.createBitmap(baseBitmap, <span class="number">0</span>, <span class="number">0</span>, <span class="built_in">width</span>, <span class="built_in">height</span>, matrix, <span class="keyword">true</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> Allocation renderScriptNV21ToRGBA888(Context context, <span class="built_in">int</span> <span class="built_in">width</span>, <span class="built_in">int</span> <span class="built_in">height</span>, <span class="built_in">byte</span>[] nv21) &#123;</span><br><span class="line">    RenderScript rs = RenderScript.create(context);</span><br><span class="line">    ScriptIntrinsicYuvToRGB yuvToRgbIntrinsic = ScriptIntrinsicYuvToRGB.create(rs, Element.U8_4(rs));</span><br><span class="line"></span><br><span class="line">    Type.Builder yuvType = <span class="keyword">new</span> Type.Builder(rs, Element.U8(rs)).setX(nv21.length);</span><br><span class="line">    Allocation in = Allocation.createTyped(rs, yuvType.create(), Allocation.USAGE_SCRIPT);</span><br><span class="line"></span><br><span class="line">    Type.Builder rgbaType = <span class="keyword">new</span> Type.Builder(rs, Element.RGBA_8888(rs)).setX(<span class="built_in">width</span>).setY(<span class="built_in">height</span>);</span><br><span class="line">    Allocation out = Allocation.createTyped(rs, rgbaType.create(), Allocation.USAGE_SCRIPT);</span><br><span class="line"></span><br><span class="line">    in.copyFrom(nv21);</span><br><span class="line"></span><br><span class="line">    yuvToRgbIntrinsic.setInput(in);</span><br><span class="line">    yuvToRgbIntrinsic.forEach(out);</span><br><span class="line">    <span class="keyword">return</span> out;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Handler-Runnable实现定时检测与刷新操作"><a href="#Handler-Runnable实现定时检测与刷新操作" class="headerlink" title="Handler+Runnable实现定时检测与刷新操作"></a>Handler+Runnable实现定时检测与刷新操作</h3><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">handler</span> = <span class="keyword">new</span> Handler();</span><br><span class="line">runnable = <span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//获取相机预览图</span></span><br><span class="line">        takeSnapPhoto();</span><br><span class="line">        <span class="keyword">if</span> (globalBitmap != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="comment">//人脸检测</span></span><br><span class="line">            <span class="comment">//get rgb data buffer from bitmap</span></span><br><span class="line">            <span class="keyword">byte</span>[] rgbData = Util.getRGBByBitmap(globalBitmap);</span><br><span class="line">            <span class="comment">//detect face return face rect(x,y,width,height) in picture</span></span><br><span class="line">            <span class="keyword">int</span>[] ret = application.detectFace(rgbData, globalBitmap.getWidth(), globalBitmap.getHeight());</span><br><span class="line">            <span class="comment">//人脸标记</span></span><br><span class="line">            <span class="keyword">int</span> face_size = ret[<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">if</span> (face_size &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="comment">//相似度计算</span></span><br><span class="line">                <span class="comment">//更新界面</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">handler</span>.postDelayed(<span class="keyword">this</span>, <span class="number">500</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">handler</span>.postDelayed(runnable, <span class="number">500</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="人脸标记"><a href="#人脸标记" class="headerlink" title="人脸标记"></a>人脸标记</h2><p>通过上面的步骤，已经实现了人脸检测与刷新页面的功能；通过如下方式，用矩形框将人脸标记出来，并可以实时刷新标记状态。</p>
+<h3 id="自定义DrawImageView用于标记人脸"><a href="#自定义DrawImageView用于标记人脸" class="headerlink" title="自定义DrawImageView用于标记人脸"></a>自定义DrawImageView用于标记人脸</h3><p>实现原理：</p>
+<ol>
+<li>通过postInvalidate定时刷新页面，在onDraw中利用Canvas绘制矩形框。</li>
+<li>通过setParam方法，将DetectActivity中计算出的人脸参数传递到DrawImageView中。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DrawImageView</span> <span class="keyword">extends</span> <span class="title">ImageView</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Paint paint;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> left, top, right, bottom = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DrawImageView</span><span class="params">(Context context, AttributeSet attrs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(context, attrs);</span><br><span class="line"></span><br><span class="line">        paint = <span class="keyword">new</span> Paint();</span><br><span class="line">        paint.setAntiAlias(<span class="keyword">true</span>); <span class="comment">// 反锯齿</span></span><br><span class="line">        paint.setColor(Color.RED);</span><br><span class="line">        paint.setStyle(Paint.Style.STROKE);</span><br><span class="line">        paint.setStrokeWidth(<span class="number">3.5f</span>);<span class="comment">//设置线宽</span></span><br><span class="line">        paint.setAlpha(<span class="number">100</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">                        Thread.sleep(<span class="number">500</span>);</span><br><span class="line">                        postInvalidate();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;).start();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setParam</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> top, <span class="keyword">int</span> right, <span class="keyword">int</span> bottom)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.left = left;</span><br><span class="line">        <span class="keyword">this</span>.top = top;</span><br><span class="line">        <span class="keyword">this</span>.right = right;</span><br><span class="line">        <span class="keyword">this</span>.bottom = bottom;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDraw</span><span class="params">(Canvas canvas)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onDraw(canvas);</span><br><span class="line">        Rect rect = <span class="keyword">new</span> Rect(left, top, right, bottom);</span><br><span class="line">        canvas.drawRect(rect, paint);<span class="comment">//绘制矩形</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="从DetectActivity向DrawImageView传递人脸参数"><a href="#从DetectActivity向DrawImageView传递人脸参数" class="headerlink" title="从DetectActivity向DrawImageView传递人脸参数"></a>从DetectActivity向DrawImageView传递人脸参数</h3><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">drawImageView = <span class="keyword">new</span> DrawImageView(DetectActivity.<span class="keyword">this</span>, <span class="keyword">null</span>);</span><br><span class="line">drawImageView.setParam(<span class="number">1</span>, <span class="number">1</span>, <span class="number">10</span>, <span class="number">10</span>);</span><br><span class="line">previewLayout.addView(drawImageView);</span><br><span class="line"></span><br><span class="line"><span class="keyword">handler</span> = <span class="keyword">new</span> Handler();</span><br><span class="line">runnable = <span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//获取相机预览图</span></span><br><span class="line">        takeSnapPhoto();</span><br><span class="line">        <span class="keyword">if</span> (globalBitmap != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="comment">//人脸检测</span></span><br><span class="line">            <span class="comment">//get rgb data buffer from bitmap</span></span><br><span class="line">            <span class="keyword">byte</span>[] rgbData = Util.getRGBByBitmap(globalBitmap);</span><br><span class="line">            <span class="comment">//detect face return face rect(x,y,width,height) in picture</span></span><br><span class="line">            <span class="keyword">int</span>[] ret = application.detectFace(rgbData, globalBitmap.getWidth(), globalBitmap.getHeight());</span><br><span class="line">            <span class="comment">//人脸标记</span></span><br><span class="line">            <span class="keyword">int</span> face_size = ret[<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">if</span> (face_size &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">int</span> ret_x = ret[<span class="number">1</span>];</span><br><span class="line">                <span class="keyword">int</span> ret_y = ret[<span class="number">2</span>];</span><br><span class="line">                <span class="keyword">int</span> ret_width = ret[<span class="number">3</span>];</span><br><span class="line">                <span class="keyword">int</span> ret_height = ret[<span class="number">4</span>];</span><br><span class="line">                drawImageView.setParam(detectRetLeft(ret_x), detectRetTop(ret_y), detectRetRight(ret_x, ret_width), detectRetBottom(ret_y, ret_height));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">handler</span>.postDelayed(<span class="keyword">this</span>, <span class="number">500</span>);</span><br><span class="line">        counter++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">handler</span>.postDelayed(runnable, <span class="number">500</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="人脸匹配"><a href="#人脸匹配" class="headerlink" title="人脸匹配"></a>人脸匹配</h2><p>从Android本地数据库SQLite中读取所有人脸数据，分别计算与当前检测到的人脸的特征相似度；并匹配出最佳结果。</p>
+<h3 id="读取数据库中的人脸数据"><a href="#读取数据库中的人脸数据" class="headerlink" title="读取数据库中的人脸数据"></a>读取数据库中的人脸数据</h3><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">dbManager</span> = new DBManager(this);</span><br><span class="line"><span class="attr">persons</span> = dbManager.query();</span><br></pre></td></tr></table></figure>
+<h3 id="人脸特征数组转化"><a href="#人脸特征数组转化" class="headerlink" title="人脸特征数组转化"></a>人脸特征数组转化</h3><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="built_in">float</span>[] StringToFloatArray(<span class="keyword">String</span> feaStr) &#123;</span><br><span class="line">    <span class="keyword">String</span>[] strArray = feaStr.<span class="built_in">split</span>(<span class="string">","</span>);</span><br><span class="line">    <span class="built_in">float</span>[] floatArray = <span class="keyword">new</span> <span class="built_in">float</span>[strArray.length];</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; strArray.length; i++) &#123;</span><br><span class="line">        floatArray[i] = Float.parseFloat(strArray[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> floatArray;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="计算人脸相似度"><a href="#计算人脸相似度" class="headerlink" title="计算人脸相似度"></a>计算人脸相似度</h3><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> similarPerson(<span class="keyword">float</span>[] feature) &#123;</span><br><span class="line">    <span class="built_in">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; persons.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        Person person = persons.<span class="built_in">get</span>(i);</span><br><span class="line">        <span class="keyword">float</span> score = application.compare2Feature(feature, StringToFloatArray(person.feature));</span><br><span class="line">        <span class="built_in">if</span> (score &gt;= <span class="number">0.5</span> &amp;&amp; score &gt; globalMaxScore) &#123;</span><br><span class="line">            globalMaxScore = score;</span><br><span class="line">            globalMaxName = person.name;</span><br><span class="line">            globalMaxImage = person.<span class="built_in">image</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="切换摄像头"><a href="#切换摄像头" class="headerlink" title="切换摄像头"></a>切换摄像头</h2><p>人脸识别的时候，会有自拍（前置摄像头）和拍摄他人（后置摄像头）的需求。</p>
+<h3 id="定义导航栏菜单点击事件（切换摄像头）"><a href="#定义导航栏菜单点击事件（切换摄像头）" class="headerlink" title="定义导航栏菜单点击事件（切换摄像头）"></a>定义导航栏菜单点击事件（切换摄像头）</h3><p>detect.xml</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">menu</span> xmln<span class="variable">s:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    xmln<span class="variable">s:tools</span>=<span class="string">"http://schemas.android.com/tools"</span>&gt;</span><br><span class="line"></span><br><span class="line">    &lt;item</span><br><span class="line">        android:id=<span class="string">"@+id/camera_switch"</span></span><br><span class="line">        android:orderInCategory=<span class="string">"100"</span></span><br><span class="line">        android:showAsAction=<span class="string">"always"</span></span><br><span class="line">        android:title=<span class="string">"@string/camera_switch"</span> /&gt;</span><br><span class="line">&lt;/<span class="keyword">menu</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>DetectActivity.java</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@Override</span></span><br><span class="line">public boolean onCreateOptionsMenu(Menu menu) &#123;</span><br><span class="line">    getMenuInflater()<span class="selector-class">.inflate</span>(R.menu.detect, menu);</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">@Override</span></span><br><span class="line">public boolean onOptionsItemSelected(MenuItem item) &#123;</span><br><span class="line">    <span class="selector-tag">switch</span> (item.getItemId()) &#123;</span><br><span class="line">        case R<span class="selector-class">.id</span><span class="selector-class">.camera_switch</span>:</span><br><span class="line">            <span class="comment">//切换摄像头</span></span><br><span class="line">            <span class="selector-tag">Toast</span><span class="selector-class">.makeText</span>(DetectActivity.this, R.string.camera_switch, Toast.LENGTH_SHORT)<span class="selector-class">.show</span>();</span><br><span class="line">            <span class="selector-tag">try</span> &#123;</span><br><span class="line">                changeCamera();</span><br><span class="line">            &#125; catch (IOException e) &#123;</span><br><span class="line">                e<span class="selector-class">.printStackTrace</span>();</span><br><span class="line">            &#125;</span><br><span class="line">            break;</span><br><span class="line">        <span class="attribute">default</span>:</span><br><span class="line">            break;</span><br><span class="line">    &#125;</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="实现前后摄像头的切换操作"><a href="#实现前后摄像头的切换操作" class="headerlink" title="实现前后摄像头的切换操作"></a>实现前后摄像头的切换操作</h3><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">void</span> <span class="title">changeCamera</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">    mCamera.stopPreview();</span><br><span class="line">    mCamera.release();</span><br><span class="line">    mCamera = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (currentCameraType == FRONT) &#123;</span><br><span class="line">        mCamera = openCamera(BACK);</span><br><span class="line">    &#125; <span class="function"><span class="keyword">else</span> <span class="title">if</span> <span class="params">(currentCameraType == BACK)</span> </span>&#123;</span><br><span class="line">        mCamera = openCamera(FRONT);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        mCamera.setPreviewDisplay(mPreview.getHolder());</span><br><span class="line">        mCamera.setDisplayOrientation(getPreviewDegree(DetectActivity.<span class="keyword">this</span>));</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    Camera.Parameters parameters = mCamera.getParameters(); <span class="comment">// 获取各项参数</span></span><br><span class="line">    parameters.setPictureFormat(PixelFormat.JPEG); <span class="comment">// 设置图片格式</span></span><br><span class="line">    parameters.setJpegQuality(<span class="number">50</span>); <span class="comment">// 设置照片质量</span></span><br><span class="line">    mCamera.startPreview();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="function">Camera <span class="title">openCamera</span><span class="params">(<span class="keyword">int</span> type)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> frontIndex = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">int</span> backIndex = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">int</span> cameraCount = Camera.getNumberOfCameras();</span><br><span class="line">    Camera.CameraInfo info = <span class="keyword">new</span> Camera.CameraInfo();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> cameraIndex = <span class="number">0</span>; cameraIndex &lt; cameraCount; cameraIndex++) &#123;</span><br><span class="line">        Camera.getCameraInfo(cameraIndex, info);</span><br><span class="line">        <span class="keyword">if</span> (info.facing == Camera.CameraInfo.CAMERA_FACING_FRONT) &#123;</span><br><span class="line">            frontIndex = cameraIndex;</span><br><span class="line">        &#125; <span class="function"><span class="keyword">else</span> <span class="title">if</span> <span class="params">(info.facing == Camera.CameraInfo.CAMERA_FACING_BACK)</span> </span>&#123;</span><br><span class="line">            backIndex = cameraIndex;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    currentCameraType = type;</span><br><span class="line">    <span class="keyword">if</span> (type == FRONT &amp;&amp; frontIndex != <span class="number">-1</span>) &#123;</span><br><span class="line">        <span class="function"><span class="keyword">return</span> Camera.<span class="title">open</span><span class="params">(frontIndex)</span></span>;</span><br><span class="line">    &#125; <span class="function"><span class="keyword">else</span> <span class="title">if</span> <span class="params">(type == BACK &amp;&amp; backIndex != <span class="number">-1</span>)</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">return</span> Camera.<span class="title">open</span><span class="params">(backIndex)</span></span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//用于根据手机方向获得相机预览画面旋转的角度</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">int</span> <span class="title">getPreviewDegree</span><span class="params">(Activity activity)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 获得手机的方向</span></span><br><span class="line">    <span class="keyword">int</span> rotation = activity.getWindowManager().getDefaultDisplay().getRotation();</span><br><span class="line">    <span class="keyword">int</span> degree = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 根据手机的方向计算相机预览画面应该选择的角度</span></span><br><span class="line">    <span class="keyword">switch</span> (rotation) &#123;</span><br><span class="line">        <span class="keyword">case</span> Surface.ROTATION_0:</span><br><span class="line">            degree = 90;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> Surface.ROTATION_90:</span><br><span class="line">            degree = 0;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> Surface.ROTATION_180:</span><br><span class="line">            degree = 270;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> Surface.ROTATION_270:</span><br><span class="line">            degree = 180;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> degree;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="人脸管理功能的实现"><a href="#人脸管理功能的实现" class="headerlink" title="人脸管理功能的实现"></a>人脸管理功能的实现</h2><p>1.DBHelper</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DBHelper</span> <span class="keyword">extends</span> <span class="title">SQLiteOpenHelper</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String DATABASE_NAME = <span class="string">"face.db"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> DATABASE_VERSION = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DBHelper</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(context, DATABASE_NAME, <span class="keyword">null</span>, DATABASE_VERSION);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(SQLiteDatabase db)</span> </span>&#123;</span><br><span class="line">        db.execSQL(<span class="string">"CREATE TABLE IF NOT EXISTS person"</span> +</span><br><span class="line">                <span class="string">"(id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR, image BLOB, feature VARCHAR)"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onUpgrade</span><span class="params">(SQLiteDatabase db, <span class="keyword">int</span> oldVersion, <span class="keyword">int</span> newVersion)</span> </span>&#123;</span><br><span class="line">        db.execSQL(<span class="string">"ALTER TABLE person ADD COLUMN other STRING"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.DBManager</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">DBManager</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> DBHelper helper;</span><br><span class="line">    <span class="keyword">private</span> SQLiteDatabase db;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DBManager</span>(<span class="params">Context context</span>) </span>&#123;</span><br><span class="line">        helper = <span class="keyword">new</span> DBHelper(context);</span><br><span class="line">        db = helper.getWritableDatabase();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addPersons</span>(<span class="params">List&lt;Person&gt; persons</span>) </span>&#123;</span><br><span class="line">        db.beginTransaction();  <span class="comment">//开始事务</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">for</span> (Person person : persons) &#123;</span><br><span class="line">                db.execSQL(<span class="string">"INSERT INTO person VALUES(null, ?, ?, ?)"</span>, <span class="keyword">new</span> Object[]&#123;person.name, person.image, person.feature&#125;);</span><br><span class="line">            &#125;</span><br><span class="line">            Log.i(DBMANAGER, <span class="string">"批量添加多条记录"</span>);</span><br><span class="line">            db.setTransactionSuccessful();  <span class="comment">//设置事务成功完成</span></span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            db.endTransaction();    <span class="comment">//结束事务</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addPerson</span>(<span class="params">Person person</span>) </span>&#123;</span><br><span class="line">        db.execSQL(<span class="string">"INSERT INTO person VALUES(null, ?, ?, ?)"</span>, <span class="keyword">new</span> Object[]&#123;person.name, person.image, person.feature&#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deletePerson</span>(<span class="params">Person person</span>) </span>&#123;</span><br><span class="line">        db.delete(<span class="string">"person"</span>, <span class="string">"id=?"</span>, <span class="keyword">new</span> String[]&#123;String.valueOf(person.id)&#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Person&gt; <span class="title">query</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        ArrayList&lt;Person&gt; persons = <span class="keyword">new</span> ArrayList&lt;Person&gt;();</span><br><span class="line">        Cursor c = queryTheCursor();</span><br><span class="line">        <span class="keyword">while</span> (c.moveToNext()) &#123;</span><br><span class="line">            Person person = <span class="keyword">new</span> Person();</span><br><span class="line">            person.id = c.getInt(c.getColumnIndex(<span class="string">"id"</span>));</span><br><span class="line">            person.name = c.getString(c.getColumnIndex(<span class="string">"name"</span>));</span><br><span class="line">            person.image = c.getBlob(c.getColumnIndex(<span class="string">"image"</span>));</span><br><span class="line">            person.feature = c.getString(c.getColumnIndex(<span class="string">"feature"</span>));</span><br><span class="line">            persons.add(person);</span><br><span class="line">        &#125;</span><br><span class="line">        c.close();</span><br><span class="line">        <span class="keyword">return</span> persons;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Cursor <span class="title">queryTheCursor</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        Cursor c = db.rawQuery(<span class="string">"SELECT * FROM person"</span>, <span class="literal">null</span>);</span><br><span class="line">        <span class="keyword">return</span> c;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">closeDB</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        db.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="导航栏后退按钮"><a href="#导航栏后退按钮" class="headerlink" title="导航栏后退按钮"></a>导航栏后退按钮</h2><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> ActionBar actionBar;</span><br><span class="line"></span><br><span class="line">actionBar.setDisplayHomeAsUpEnabled(<span class="keyword">true</span>);</span><br><span class="line">actionBar = getActionBar();</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">boolean</span> <span class="title">onOptionsItemSelected</span><span class="params">(MenuItem item)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">switch</span> (item.getItemId()) &#123;</span><br><span class="line">            <span class="keyword">case</span> android.R.id.home:</span><br><span class="line">                finish();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a href="http://stackoverflow.com/questions/17682345/how-to-get-android-camera-preview-data" target="_blank" rel="external">How to get Android camera preview data?</a></li>
+<li><a href="http://stackoverflow.com/questions/1893072/getting-frames-from-video-image-in-android" target="_blank" rel="external">Getting frames from Video Image in Android</a></li>
+<li><a href="http://blog.csdn.net/sdkfjksf/article/details/51137408" target="_blank" rel="external">Androd自定义控件（五）打造自己的Camera</a></li>
+<li><a href="http://blog.csdn.net/zjbpku/article/details/8877524" target="_blank" rel="external">Android 数据库存取图片</a></li>
+<li><a href="http://www.cnblogs.com/hithlb/p/3543760.html" target="_blank" rel="external">android实现前置后置摄像头相互切换</a></li>
+<li><a href="http://blog.csdn.net/xinzheng_wang/article/details/7701490" target="_blank" rel="external">Android SurfaceView onDraw()绘图问题</a></li>
+</ul>
+
+      
+    </div>
+    
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/qrcode.jpg" alt="八宝粥 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+            <a href="/tags/人脸识别/" rel="tag">#人脸识别</a>
+          
+            <a href="/tags/深度学习/" rel="tag">#深度学习</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/12/Mac-NLPIR/" rel="next" title="Mac安装使用NLPIR过程中遇到的问题">
+                <i class="fa fa-chevron-left"></i> Mac安装使用NLPIR过程中遇到的问题
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/09/03/face-recognition-based-on-deep-learning-with-android/"
+     data-title="基于深度学习的人脸识别在Android端的实现"
+     data-content=""
+     data-url="http://blog.ybbz.site/2016/09/03/face-recognition-based-on-deep-learning-with-android/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/03/face-recognition-based-on-deep-learning-with-android/"
+           data-title="基于深度学习的人脸识别在Android端的实现" data-url="http://blog.ybbz.site/2016/09/03/face-recognition-based-on-deep-learning-with-android/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="八宝粥" />
+          <p class="site-author-name" itemprop="name">八宝粥</p>
+          <p class="site-description motion-element" itemprop="description">这一切都是命运石之门的选择</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">105</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">73</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ybbz" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/1005955131" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/ba-bao-zhou-73" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-star"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://segmentfault.com/u/ybbz" target="_blank" title="SegmentFault">
+                  
+                    <i class="fa fa-star"></i>
+                  
+                  SegmentFault
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目介绍"><span class="nav-number">1.</span> <span class="nav-text">项目介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开发环境"><span class="nav-number">2.</span> <span class="nav-text">开发环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#APP效果图"><span class="nav-number">3.</span> <span class="nav-text">APP效果图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#manifest配置"><span class="nav-number">4.</span> <span class="nav-text">manifest配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Camera-SurfaceView实现摄像预览"><span class="nav-number">5.</span> <span class="nav-text">Camera+SurfaceView实现摄像预览</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#继承SurfaceView的CameraPreview"><span class="nav-number">5.1.</span> <span class="nav-text">继承SurfaceView的CameraPreview</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DetectActivity用于显示摄像头画面"><span class="nav-number">5.2.</span> <span class="nav-text">DetectActivity用于显示摄像头画面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DetectActivity的布局文件activity-detect"><span class="nav-number">5.3.</span> <span class="nav-text">DetectActivity的布局文件activity_detect</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动态人脸检测的实现"><span class="nav-number">6.</span> <span class="nav-text">动态人脸检测的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#获取实时图片流"><span class="nav-number">6.1.</span> <span class="nav-text">获取实时图片流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Handler-Runnable实现定时检测与刷新操作"><span class="nav-number">6.2.</span> <span class="nav-text">Handler+Runnable实现定时检测与刷新操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#人脸标记"><span class="nav-number">7.</span> <span class="nav-text">人脸标记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义DrawImageView用于标记人脸"><span class="nav-number">7.1.</span> <span class="nav-text">自定义DrawImageView用于标记人脸</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从DetectActivity向DrawImageView传递人脸参数"><span class="nav-number">7.2.</span> <span class="nav-text">从DetectActivity向DrawImageView传递人脸参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#人脸匹配"><span class="nav-number">8.</span> <span class="nav-text">人脸匹配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#读取数据库中的人脸数据"><span class="nav-number">8.1.</span> <span class="nav-text">读取数据库中的人脸数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#人脸特征数组转化"><span class="nav-number">8.2.</span> <span class="nav-text">人脸特征数组转化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算人脸相似度"><span class="nav-number">8.3.</span> <span class="nav-text">计算人脸相似度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#切换摄像头"><span class="nav-number">9.</span> <span class="nav-text">切换摄像头</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义导航栏菜单点击事件（切换摄像头）"><span class="nav-number">9.1.</span> <span class="nav-text">定义导航栏菜单点击事件（切换摄像头）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现前后摄像头的切换操作"><span class="nav-number">9.2.</span> <span class="nav-text">实现前后摄像头的切换操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#人脸管理功能的实现"><span class="nav-number">10.</span> <span class="nav-text">人脸管理功能的实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#导航栏后退按钮"><span class="nav-number">11.</span> <span class="nav-text">导航栏后退按钮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">12.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">八宝粥</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"babaozhou"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("xKIXPQjqdy6UtStIi4iDbH8J-gzGzoHsz", "P2fn57Oe1oP1KAHUrFRnWpSH");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>

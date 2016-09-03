@@ -235,6 +235,141 @@
             
               
                 
+                <a class="post-title-link" href="/2016/06/06/openresty-introduce-and-installation/" itemprop="url">
+                  OpenResty安装、配置与使用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-06T00:00:00+08:00" content="2016-06-06">
+              2016-06-06
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/06/openresty-introduce-and-installation/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/06/openresty-introduce-and-installation/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/06/06/openresty-introduce-and-installation/" class="leancloud_visitors" data-flag-title="OpenResty安装、配置与使用">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          OpenResty简介OpenResty 是一个基于 Nginx 与 Lua 的高性能 Web 平台，其内部集成了大量精良的 Lua 库、第三方模块以及大多数的依赖项。用于方便地搭建能够处理超高并发、扩展性极高的动态 Web 应用、Web 服务和动态网关。
+Lua简介Lua是一个简洁、轻量、可扩展的
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/06/06/openresty-introduce-and-installation/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/06/04/classify-bookmarks-with-python/" itemprop="url">
                   用Python实现的书签分类器
                 </a>
@@ -1184,8 +1319,8 @@ Apache部署PHP服务配置Apache端口号：
             
               
                 
-                <a class="post-title-link" href="/2016/05/23/linux-command/" itemprop="url">
-                  Linux命令
+                <a class="post-title-link" href="/2016/05/23/linux-shell-and-crontab/" itemprop="url">
+                  Linux编写Shell脚本与Crontab定时执行
                 </a>
               
             
@@ -1228,8 +1363,8 @@ Apache部署PHP服务配置Apache端口号：
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/23/linux-command/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/23/linux-command/" itemprop="commentsCount"></span>
+                <a href="/2016/05/23/linux-shell-and-crontab/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/23/linux-shell-and-crontab/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1239,7 +1374,7 @@ Apache部署PHP服务配置Apache端口号：
 
           
           
-             <span id="/2016/05/23/linux-command/" class="leancloud_visitors" data-flag-title="Linux命令">
+             <span id="/2016/05/23/linux-shell-and-crontab/" class="leancloud_visitors" data-flag-title="Linux编写Shell脚本与Crontab定时执行">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1263,16 +1398,15 @@ Apache部署PHP服务配置Apache端口号：
       
         
           
-          tail 命令1.命令格式
-tail[必要参数][选择参数][文件]
-2.命令功能
-用于显示指定文件末尾内容，不指定文件时，作为输入信息进行处理。常用查看日志文件。
-3.命令参数：
-12345678-f 循环读取-q 不显示处理信息-v 显示详细的处理信息-c&lt;数目&gt; 显示的字节数-n&
+          1.编写Shell脚本
+新建脚本文件
+1vi goaccess
+添加以下内容
+123456789#!/bin/bash##goaccess cron every five minutesset -egoaccess -f /var/www/log/access.log -a &gt; /var/ww
           ...
 
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/23/linux-command/#more" rel="contents">
+            <a class="btn" href="/2016/05/23/linux-shell-and-crontab/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1458,8 +1592,8 @@ GoAccess is an open source real-time web log analyzer and interactive viewer tha
             
               
                 
-                <a class="post-title-link" href="/2016/05/23/linux-shell-and-crontab/" itemprop="url">
-                  Linux编写Shell脚本与Crontab定时执行
+                <a class="post-title-link" href="/2016/05/23/linux-command/" itemprop="url">
+                  Linux命令
                 </a>
               
             
@@ -1502,8 +1636,8 @@ GoAccess is an open source real-time web log analyzer and interactive viewer tha
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/23/linux-shell-and-crontab/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/23/linux-shell-and-crontab/" itemprop="commentsCount"></span>
+                <a href="/2016/05/23/linux-command/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/23/linux-command/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1513,7 +1647,7 @@ GoAccess is an open source real-time web log analyzer and interactive viewer tha
 
           
           
-             <span id="/2016/05/23/linux-shell-and-crontab/" class="leancloud_visitors" data-flag-title="Linux编写Shell脚本与Crontab定时执行">
+             <span id="/2016/05/23/linux-command/" class="leancloud_visitors" data-flag-title="Linux命令">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1537,15 +1671,16 @@ GoAccess is an open source real-time web log analyzer and interactive viewer tha
       
         
           
-          1.编写Shell脚本
-新建脚本文件
-1vi goaccess
-添加以下内容
-123456789#!/bin/bash##goaccess cron every five minutesset -egoaccess -f /var/www/log/access.log -a &gt; /var/ww
+          tail 命令1.命令格式
+tail[必要参数][选择参数][文件]
+2.命令功能
+用于显示指定文件末尾内容，不指定文件时，作为输入信息进行处理。常用查看日志文件。
+3.命令参数：
+12345678-f 循环读取-q 不显示处理信息-v 显示详细的处理信息-c&lt;数目&gt; 显示的字节数-n&
           ...
 
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/23/linux-shell-and-crontab/#more" rel="contents">
+            <a class="btn" href="/2016/05/23/linux-command/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2122,141 +2257,6 @@ GoAccess is an open source real-time web log analyzer and interactive viewer tha
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/10/tencent-qcloud-ssh-login/" itemprop="url">
-                  Mac配置使用ssh密钥登录腾讯云服务器
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-10T00:00:00+08:00" content="2016-05-10">
-              2016-05-10
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/10/tencent-qcloud-ssh-login/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/10/tencent-qcloud-ssh-login/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/05/10/tencent-qcloud-ssh-login/" class="leancloud_visitors" data-flag-title="Mac配置使用ssh密钥登录腾讯云服务器">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          创建SSH密钥、下载私钥并绑定Linux云服务器1.登录腾讯云控制台，点击【云服务器】-【SSH密钥】进入密钥窗口。2.点击【创建密钥】按钮，输入密钥名创建一个新密钥。3.创建完密钥后，点击【下载】按钮，下载私钥。4.右键选择刚创建的密钥ID，选择绑定需要登录的Linux服务器进行绑定。  
-使用私
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/10/tencent-qcloud-ssh-login/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2302,7 +2302,7 @@ GoAccess is an open source real-time web log analyzer and interactive viewer tha
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">104</span>
+              <span class="site-state-item-count">105</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -2319,7 +2319,7 @@ GoAccess is an open source real-time web log analyzer and interactive viewer tha
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">71</span>
+                <span class="site-state-item-count">73</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
