@@ -2,9 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.ybbz.site/2016/09/03/face-recognition-based-on-deep-learning-with-android/</loc>
+    <loc>http://blog.ybbz.site/2016/09/03/face-recognition-with-android/</loc>
     
-    <lastmod>2016-09-03T09:09:53.000Z</lastmod>
+    <lastmod>2016-09-07T06:44:24.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2016/04/01/machine-learning-notes/</loc>
+    
+    <lastmod>2016-09-03T09:19:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2016/02/22/Python-foundation-Web-Flask/</loc>
+    
+    <lastmod>2016-09-03T09:19:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2016/01/07/AsyncHttpClient-Volley-post-header/</loc>
+    
+    <lastmod>2016-09-03T09:18:31.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2015/12/14/RoboBinding-two-ImageView/</loc>
+    
+    <lastmod>2016-09-03T09:18:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2015/12/14/RoboBinding-three-HTTP/</loc>
+    
+    <lastmod>2016-09-03T09:18:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2015/12/14/RoboBinding-one-TextView-EditText/</loc>
+    
+    <lastmod>2016-09-03T09:17:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ybbz.site/2014/07/01/learn-c/</loc>
+    
+    <lastmod>2016-09-03T09:17:12.000Z</lastmod>
     
   </url>
   
@@ -40,13 +89,6 @@
     <loc>http://blog.ybbz.site/2016/06/25/jenkins%E4%B8%8Egitlab%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/</loc>
     
     <lastmod>2016-07-26T09:13:16.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.ybbz.site/2014/07/01/learn-c/</loc>
-    
-    <lastmod>2016-07-22T07:58:05.000Z</lastmod>
     
   </url>
   
@@ -394,37 +436,9 @@
   </url>
   
   <url>
-    <loc>http://blog.ybbz.site/2015/12/14/RoboBinding-one-TextView-EditText/</loc>
-    
-    <lastmod>2016-04-23T13:16:36.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.ybbz.site/2015/12/14/RoboBinding-three-HTTP/</loc>
-    
-    <lastmod>2016-04-23T13:15:29.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.ybbz.site/2015/12/14/RoboBinding-two-ImageView/</loc>
-    
-    <lastmod>2016-04-23T13:14:43.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.ybbz.site/2015/12/25/Android-SlidingMenu/</loc>
     
     <lastmod>2016-04-23T13:13:49.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.ybbz.site/2016/01/07/AsyncHttpClient-Volley-post-header/</loc>
-    
-    <lastmod>2016-04-23T13:13:30.000Z</lastmod>
     
   </url>
   
@@ -453,13 +467,6 @@
     <loc>http://blog.ybbz.site/2016/02/22/Python-foundation-five-http/</loc>
     
     <lastmod>2016-04-23T13:07:35.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.ybbz.site/2016/02/22/Python-foundation-Web-Flask/</loc>
-    
-    <lastmod>2016-04-23T13:07:00.000Z</lastmod>
     
   </url>
   
@@ -565,13 +572,6 @@
     <loc>http://blog.ybbz.site/2016/03/29/algorithm/</loc>
     
     <lastmod>2016-04-23T12:54:08.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.ybbz.site/2016/04/01/machine-learning-notes/</loc>
-    
-    <lastmod>2016-04-23T12:44:56.000Z</lastmod>
     
   </url>
   
