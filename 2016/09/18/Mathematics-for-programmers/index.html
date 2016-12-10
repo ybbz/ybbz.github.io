@@ -1,0 +1,886 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="数学,读书笔记," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="八宝粥的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="编程的基础是计算机科学，而计算机科学的基础是数学。因此，学习数学有助于巩固编程的基础，写出健壮的程序。
+第1章 0的故事——无即是有
+10进制计数法10称为10进制计数法的基数或者底，基数10右上角的数字是指数（有规律的顺次排列）。
+2进制计数法计算机在表示数的时候，会使用两种状态：
+
+开关切断状态 … 0
+开关连通状态 … 1
+
+在10进制计数法中，位数少，但是数字的种类多。（对人类来说，这种比">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《程序员的数学》读书笔记">
+<meta property="og:url" content="http://blog.ybbz.site/2016/09/18/Mathematics-for-programmers/index.html">
+<meta property="og:site_name" content="八宝粥的博客">
+<meta property="og:description" content="编程的基础是计算机科学，而计算机科学的基础是数学。因此，学习数学有助于巩固编程的基础，写出健壮的程序。
+第1章 0的故事——无即是有
+10进制计数法10称为10进制计数法的基数或者底，基数10右上角的数字是指数（有规律的顺次排列）。
+2进制计数法计算机在表示数的时候，会使用两种状态：
+
+开关切断状态 … 0
+开关连通状态 … 1
+
+在10进制计数法中，位数少，但是数字的种类多。（对人类来说，这种比">
+<meta property="og:updated_time" content="2016-10-15T03:28:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《程序员的数学》读书笔记">
+<meta name="twitter:description" content="编程的基础是计算机科学，而计算机科学的基础是数学。因此，学习数学有助于巩固编程的基础，写出健壮的程序。
+第1章 0的故事——无即是有
+10进制计数法10称为10进制计数法的基数或者底，基数10右上角的数字是指数（有规律的顺次排列）。
+2进制计数法计算机在表示数的时候，会使用两种状态：
+
+开关切断状态 … 0
+开关连通状态 … 1
+
+在10进制计数法中，位数少，但是数字的种类多。（对人类来说，这种比">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6231437225821734000,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> 《程序员的数学》读书笔记 | 八宝粥的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?bf48638c9f88aa67b7f9a0135affb55a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">八宝粥的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">这一切都是命运石之门的选择</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                《程序员的数学》读书笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-18T00:00:00+08:00" content="2016-09-18">
+              2016-09-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/数学/" itemprop="url" rel="index">
+                    <span itemprop="name">数学</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/18/Mathematics-for-programmers/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/18/Mathematics-for-programmers/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/18/Mathematics-for-programmers/" class="leancloud_visitors" data-flag-title="《程序员的数学》读书笔记">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>编程的基础是计算机科学，而计算机科学的基础是数学。因此，学习数学有助于巩固编程的基础，写出健壮的程序。</p>
+<h1 id="第1章-0的故事"><a href="#第1章-0的故事" class="headerlink" title="第1章 0的故事"></a>第1章 0的故事</h1><p>——无即是有</p>
+<h3 id="10进制计数法"><a href="#10进制计数法" class="headerlink" title="10进制计数法"></a>10进制计数法</h3><p>10称为10进制计数法的基数或者底，基数10右上角的数字是指数（有规律的顺次排列）。</p>
+<h3 id="2进制计数法"><a href="#2进制计数法" class="headerlink" title="2进制计数法"></a>2进制计数法</h3><p>计算机在表示数的时候，会使用两种状态：</p>
+<ul>
+<li>开关切断状态 … 0</li>
+<li>开关连通状态 … 1</li>
+</ul>
+<p>在10进制计数法中，位数少，但是数字的种类多。（对人类来说，这种比较易用）<br>在2进制计数法中，数字的种类少，但是位数多。（对计算机来说，这种比较易用）</p>
+<p>计算机在执行人类发出的任务时，会进行10进制和2进制间的转换。计算机先将10进制转换为2进制，用2进制进行计算，再将所得的2进制计算结果转换为10进制。</p>
+<h3 id="按位计数法"><a href="#按位计数法" class="headerlink" title="按位计数法"></a>按位计数法</h3><p>2进制、8进制、10进制、16进制计数法等<br>不使用按位计数法的是罗马数字（罗马计数法，钟表表盘）</p>
+<h3 id="指数法则"><a href="#指数法则" class="headerlink" title="指数法则"></a>指数法则</h3><p>10的0次方：指数每减1，数字就变为原来的10分之1。</p>
+<p>0的作用：1.占位；2.统一标准、简化规则</p>
+<h1 id="第二章-逻辑"><a href="#第二章-逻辑" class="headerlink" title="第二章 逻辑"></a>第二章 逻辑</h1><p>——真与假的二元世界</p>
+<h3 id="命题及其真假"><a href="#命题及其真假" class="headerlink" title="命题及其真假"></a>命题及其真假</h3><p>能够判断对错的陈述句叫做命题。命题正确时，称该命题为“真”（true）。反之，命题不正确时，称该命题为“假”（false）。命题要么为true要么为false。</p>
+<h3 id="完整性和排他性"><a href="#完整性和排他性" class="headerlink" title="完整性和排他性"></a>完整性和排他性</h3><p>逻辑从根本上说是对完整性和排他性的组合表达。</p>
+<ul>
+<li>有没有“遗漏”：不管针对哪个条件，都能判定命题真假。（大于6岁，不到6岁：没有6岁）</li>
+<li>有没有“重复”：确认规则对于某个条件是否有两种标准。（6岁以上，6岁以下：都包含6岁）</li>
+<li>没有“遗漏”，即具备完整性，由此明确该规则无论在什么情况下都能适用；</li>
+<li>没有“重复”，即具备排他性，由此明确该规则不存在矛盾之处。</li>
+</ul>
+<p>解决方法：</p>
+<ul>
+<li>画一根数轴辅助思考（注意边界值）</li>
+<li>使用if语句分解问题（兼具完整性和排他性的分解）</li>
+<li>真值表</li>
+<li>文氏图</li>
+</ul>
+<h3 id="复杂命题"><a href="#复杂命题" class="headerlink" title="复杂命题"></a>复杂命题</h3><ol>
+<li>逻辑非——不是A</li>
+<li>逻辑与——A并且B</li>
+<li>逻辑或——A或者B</li>
+<li>异或——A或者B（但不都满足）</li>
+<li>相等——A和B相等</li>
+<li>蕴涵——若A则B</li>
+</ol>
+<h3 id="德-摩根定律"><a href="#德-摩根定律" class="headerlink" title="德.摩根定律"></a>德.摩根定律</h3><ul>
+<li>“非A”或者“非B”，和非“A与B”是等价的</li>
+<li>“非A”并且“非B”，和非“A或B”是等价的</li>
+</ul>
+<h3 id="卡诺图"><a href="#卡诺图" class="headerlink" title="卡诺图"></a>卡诺图</h3><p>卡诺图是将所有命题的真假组合以二维表的形式表示的图。</p>
+<h1 id="第三章-余数"><a href="#第三章-余数" class="headerlink" title="第三章 余数"></a>第三章 余数</h1><p>——周期性和分组</p>
+<ul>
+<li>余数就是作除法运算时的剩下的数。</li>
+<li>余数就是分组：将较大的数字除一次就能分组（星期等循环规律）</li>
+<li>运用余数，大数字的问题就能简化成小数字的问题。（乘方问题）</li>
+<li>思考问题：黑白棋通信、奇偶校验、寻找恋人、铺设草席、一笔画（哥尼斯堡七桥）</li>
+</ul>
+<h3 id="一笔画问题"><a href="#一笔画问题" class="headerlink" title="一笔画问题"></a>一笔画问题</h3><ul>
+<li>将地图简化，用“图”表示（顶点和边）。</li>
+<li>一笔画需要满足：所有顶点都是偶点，或者有2个奇点（奇偶校验）</li>
+</ul>
+<h1 id="第四章-数学归纳法"><a href="#第四章-数学归纳法" class="headerlink" title="第四章 数学归纳法"></a>第四章 数学归纳法</h1><p>——如何征服无穷数列</p>
+<h3 id="高斯求和"><a href="#高斯求和" class="headerlink" title="高斯求和"></a>高斯求和</h3><p>1+2+3+…+100 = 100*(100+1)/2<br>0+1+2+3+…+n = n(n+1)/2</p>
+<h3 id="数学归纳法－如何征服无穷数列"><a href="#数学归纳法－如何征服无穷数列" class="headerlink" title="数学归纳法－如何征服无穷数列"></a>数学归纳法－如何征服无穷数列</h3><p>数学归纳法是证明有关整数的断言对于0以上的所有整数（0、1、2、3……）是否成立时所用的方法。</p>
+<p>“断言P(n)对于0以上的所有整数n都成立”，数学归纳法的两个步骤：</p>
+<ol>
+<li>证明“P(0)成立”（称作基底）</li>
+<li>证明不论k为0以上的哪个整数，“若P(k)成立，则P(k＋1)也成立”（称作归纳）</li>
+</ol>
+<h1 id="第五章-排列组合"><a href="#第五章-排列组合" class="headerlink" title="第五章 排列组合"></a>第五章 排列组合</h1><p>——解决计数问题的方法</p>
+<h3 id="计数与整数"><a href="#计数与整数" class="headerlink" title="计数与整数"></a>计数与整数</h3><p>对应关系：只要与整数正确对应，计数的结果就是正确的。（注意遗漏和重复）<br>植树问题：不要忘记0，最后的编号（第k个数据是k-1号）</p>
+<h3 id="加法法则"><a href="#加法法则" class="headerlink" title="加法法则"></a>加法法则</h3><ul>
+<li>加法法则就是将无“重复”元素的两个集合A、B相加，得到AUB的元素数＝A的元素数＋B的元素数  </li>
+<li>加法法则只在集合中没有重复元素的条件下成立。</li>
+<li>容斥原理：考虑了重复元素的加法法则</li>
+</ul>
+<h3 id="乘法法则"><a href="#乘法法则" class="headerlink" title="乘法法则"></a>乘法法则</h3><p>集合进行“元素配对”的法则</p>
+<h3 id="置换"><a href="#置换" class="headerlink" title="置换"></a>置换</h3><p>n个事物的所有排法。<br>将n个事物按顺序进行排列称为置换。（阶乘：乘数呈阶梯状递减）</p>
+<h3 id="排列"><a href="#排列" class="headerlink" title="排列"></a>排列</h3><p>从n个事物中取出一部分进行“排列”。</p>
+<h3 id="组合"><a href="#组合" class="headerlink" title="组合"></a>组合</h3><p>置换和排列都需要考虑顺序，组合不考虑顺序。</p>
+<h1 id="第六章-递归"><a href="#第六章-递归" class="headerlink" title="第六章 递归"></a>第六章 递归</h1><p>——自己定义自己</p>
+<h3 id="汉诺塔"><a href="#汉诺塔" class="headerlink" title="汉诺塔"></a>汉诺塔</h3><ul>
+<li>［使用递归来表示］找出借助“n-1层汉诺塔”来解“n层汉诺塔”的步骤。</li>
+<li>［递推公式］使用“n-1层汉诺塔”的移动次数来表示“n层汉诺塔”的移动次数。</li>
+<li>重要的一环：找出递推结构并建立递推公式。</li>
+</ul>
+<h3 id="斐波那契数列"><a href="#斐波那契数列" class="headerlink" title="斐波那契数列"></a>斐波那契数列</h3>
+      
+    </div>
+    
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/qrcode.jpg" alt="八宝粥 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数学/" rel="tag">#数学</a>
+          
+            <a href="/tags/读书笔记/" rel="tag">#读书笔记</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/03/face-recognition-with-android/" rel="next" title="人脸识别在Android端的实现">
+                <i class="fa fa-chevron-left"></i> 人脸识别在Android端的实现
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/15/learn-caffe/" rel="prev" title="caffe入门">
+                caffe入门 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/09/18/Mathematics-for-programmers/"
+     data-title="《程序员的数学》读书笔记"
+     data-content=""
+     data-url="http://blog.ybbz.site/2016/09/18/Mathematics-for-programmers/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/18/Mathematics-for-programmers/"
+           data-title="《程序员的数学》读书笔记" data-url="http://blog.ybbz.site/2016/09/18/Mathematics-for-programmers/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="八宝粥" />
+          <p class="site-author-name" itemprop="name">八宝粥</p>
+          <p class="site-description motion-element" itemprop="description">这一切都是命运石之门的选择</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">107</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">74</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ybbz" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/1005955131" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/ba-bao-zhou-73" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-star"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://segmentfault.com/u/ybbz" target="_blank" title="SegmentFault">
+                  
+                    <i class="fa fa-star"></i>
+                  
+                  SegmentFault
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第1章-0的故事"><span class="nav-number">1.</span> <span class="nav-text">第1章 0的故事</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#10进制计数法"><span class="nav-number">1.0.1.</span> <span class="nav-text">10进制计数法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2进制计数法"><span class="nav-number">1.0.2.</span> <span class="nav-text">2进制计数法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#按位计数法"><span class="nav-number">1.0.3.</span> <span class="nav-text">按位计数法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指数法则"><span class="nav-number">1.0.4.</span> <span class="nav-text">指数法则</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二章-逻辑"><span class="nav-number">2.</span> <span class="nav-text">第二章 逻辑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命题及其真假"><span class="nav-number">2.0.1.</span> <span class="nav-text">命题及其真假</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完整性和排他性"><span class="nav-number">2.0.2.</span> <span class="nav-text">完整性和排他性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复杂命题"><span class="nav-number">2.0.3.</span> <span class="nav-text">复杂命题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#德-摩根定律"><span class="nav-number">2.0.4.</span> <span class="nav-text">德.摩根定律</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卡诺图"><span class="nav-number">2.0.5.</span> <span class="nav-text">卡诺图</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三章-余数"><span class="nav-number">3.</span> <span class="nav-text">第三章 余数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一笔画问题"><span class="nav-number">3.0.1.</span> <span class="nav-text">一笔画问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第四章-数学归纳法"><span class="nav-number">4.</span> <span class="nav-text">第四章 数学归纳法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#高斯求和"><span class="nav-number">4.0.1.</span> <span class="nav-text">高斯求和</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数学归纳法－如何征服无穷数列"><span class="nav-number">4.0.2.</span> <span class="nav-text">数学归纳法－如何征服无穷数列</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第五章-排列组合"><span class="nav-number">5.</span> <span class="nav-text">第五章 排列组合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#计数与整数"><span class="nav-number">5.0.1.</span> <span class="nav-text">计数与整数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加法法则"><span class="nav-number">5.0.2.</span> <span class="nav-text">加法法则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#乘法法则"><span class="nav-number">5.0.3.</span> <span class="nav-text">乘法法则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#置换"><span class="nav-number">5.0.4.</span> <span class="nav-text">置换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#排列"><span class="nav-number">5.0.5.</span> <span class="nav-text">排列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组合"><span class="nav-number">5.0.6.</span> <span class="nav-text">组合</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第六章-递归"><span class="nav-number">6.</span> <span class="nav-text">第六章 递归</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#汉诺塔"><span class="nav-number">6.0.1.</span> <span class="nav-text">汉诺塔</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#斐波那契数列"><span class="nav-number">6.0.2.</span> <span class="nav-text">斐波那契数列</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">八宝粥</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"babaozhou"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("xKIXPQjqdy6UtStIi4iDbH8J-gzGzoHsz", "P2fn57Oe1oP1KAHUrFRnWpSH");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>

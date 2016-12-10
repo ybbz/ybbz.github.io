@@ -38,7 +38,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Linux," />
+  <meta name="keywords" content="机器学习,深度学习,caffe," />
 
 
 
@@ -56,34 +56,19 @@
 
 
 
-<meta name="description" content="配置SSH服务SSH作为Linux远程连接重要的方式，如何配置安装linux系统的SSH服务?
-1.在终端输入以下命令，查找当前系统是否已经安装ssh服务
-rpm -qa |grep ssh
-2.如果没有安装SSH软件包，可以通过进行安装
-yum install ssh
-sudo apt-get install openssh-server   #Ubuntu等
-3.安装好了之后，开启ssh服务">
+<meta name="description" content="安装依赖12yum install protobuf-devel leveldb-devel snappy-devel opencv-devel boost-devel hdf5-develyum install gflags-devel glog-devel lmdb-devel
+使用git拉取caffe源码1git clone https://github.com/BVLC/caffe.git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我在新服务器配置上走过的那些坑(2)">
-<meta property="og:url" content="http://blog.ybbz.site/2016/03/18/server-configuration-2/index.html">
+<meta property="og:title" content="caffe入门">
+<meta property="og:url" content="http://blog.ybbz.site/2016/10/15/learn-caffe/index.html">
 <meta property="og:site_name" content="八宝粥的博客">
-<meta property="og:description" content="配置SSH服务SSH作为Linux远程连接重要的方式，如何配置安装linux系统的SSH服务?
-1.在终端输入以下命令，查找当前系统是否已经安装ssh服务
-rpm -qa |grep ssh
-2.如果没有安装SSH软件包，可以通过进行安装
-yum install ssh
-sudo apt-get install openssh-server   #Ubuntu等
-3.安装好了之后，开启ssh服务">
-<meta property="og:updated_time" content="2016-07-12T02:05:48.000Z">
+<meta property="og:description" content="安装依赖12yum install protobuf-devel leveldb-devel snappy-devel opencv-devel boost-devel hdf5-develyum install gflags-devel glog-devel lmdb-devel
+使用git拉取caffe源码1git clone https://github.com/BVLC/caffe.git">
+<meta property="og:updated_time" content="2016-10-16T13:23:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我在新服务器配置上走过的那些坑(2)">
-<meta name="twitter:description" content="配置SSH服务SSH作为Linux远程连接重要的方式，如何配置安装linux系统的SSH服务?
-1.在终端输入以下命令，查找当前系统是否已经安装ssh服务
-rpm -qa |grep ssh
-2.如果没有安装SSH软件包，可以通过进行安装
-yum install ssh
-sudo apt-get install openssh-server   #Ubuntu等
-3.安装好了之后，开启ssh服务">
+<meta name="twitter:title" content="caffe入门">
+<meta name="twitter:description" content="安装依赖12yum install protobuf-devel leveldb-devel snappy-devel opencv-devel boost-devel hdf5-develyum install gflags-devel glog-devel lmdb-devel
+使用git拉取caffe源码1git clone https://github.com/BVLC/caffe.git">
 
 
 
@@ -101,7 +86,7 @@ sudo apt-get install openssh-server   #Ubuntu等
   };
 </script>
 
-  <title> 我在新服务器配置上走过的那些坑(2) | 八宝粥的博客 </title>
+  <title> caffe入门 | 八宝粥的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -251,7 +236,7 @@ sudo apt-get install openssh-server   #Ubuntu等
             
             
               
-                我在新服务器配置上走过的那些坑(2)
+                caffe入门
               
             
           </h1>
@@ -263,8 +248,8 @@ sudo apt-get install openssh-server   #Ubuntu等
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-18T00:00:00+08:00" content="2016-03-18">
-              2016-03-18
+            <time itemprop="dateCreated" datetime="2016-10-15T00:00:00+08:00" content="2016-10-15">
+              2016-10-15
             </time>
           </span>
 
@@ -277,8 +262,8 @@ sudo apt-get install openssh-server   #Ubuntu等
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
+                  <a href="/categories/深度学习/" itemprop="url" rel="index">
+                    <span itemprop="name">深度学习</span>
                   </a>
                 </span>
 
@@ -293,8 +278,8 @@ sudo apt-get install openssh-server   #Ubuntu等
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/18/server-configuration-2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/18/server-configuration-2/" itemprop="commentsCount"></span>
+                <a href="/2016/10/15/learn-caffe/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/15/learn-caffe/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -304,7 +289,7 @@ sudo apt-get install openssh-server   #Ubuntu等
 
           
           
-             <span id="/2016/03/18/server-configuration-2/" class="leancloud_visitors" data-flag-title="我在新服务器配置上走过的那些坑(2)">
+             <span id="/2016/10/15/learn-caffe/" class="leancloud_visitors" data-flag-title="caffe入门">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -326,111 +311,13 @@ sudo apt-get install openssh-server   #Ubuntu等
       
 
       
-        <h3 id="配置SSH服务"><a href="#配置SSH服务" class="headerlink" title="配置SSH服务"></a>配置SSH服务</h3><p>SSH作为Linux远程连接重要的方式，如何配置安装linux系统的SSH服务?</p>
-<p>1.在终端输入以下命令，查找当前系统是否已经安装ssh服务</p>
-<pre><code>rpm -qa |grep ssh
-</code></pre><p>2.如果没有安装SSH软件包，可以通过进行安装</p>
-<pre><code>yum install ssh
-sudo apt-get install openssh-server   #Ubuntu等
-</code></pre><p>3.安装好了之后，开启ssh服务</p>
-<pre><code>service sshd start
-/etc/init.d/sshd start   #二选一
-</code></pre><p>4.配置好ssh服务，就可以远程登录Linux系统了</p>
-<pre><code>ssh username@ip  ＃username：用户名；ip：服务器ip
-</code></pre><h3 id="安装Python3-5"><a href="#安装Python3-5" class="headerlink" title="安装Python3.5"></a>安装Python3.5</h3><p>1.下载python3.5的包</p>
-<p>在python官网<a href="https://www.python.org/downloads/release/python-351/" target="_blank" rel="external">https://www.python.org/downloads/release/python-351/</a> 下载tgz包（Python-3.5.1.tgz）</p>
-<p>2.解压文件，并进入目录</p>
-<pre><code>tar -xf Python-3.5.1.tgz
-cd Python-3.5.1
-</code></pre><p>4.开始安装，使用编译的方法进行安装</p>
-<pre><code>mkdir /usr/python3.5
-./configure --prefix=/usr/python3.5
-make
-make install
-</code></pre><p>5.让系统默认使用Python3.5.1（慎用！可能会对系统自带的python2.7造成影响……）</p>
-<pre><code>cd /usr/bin
-mv python python.bak
-ln -s /usr/python3.5/bin/python3 /usr/bin/python
-</code></pre><p>6.系统找不到python3/pip3命令，可通过如下方式解决</p>
-<pre><code>ln -s /usr/python3.5/bin/python3 /usr/bin/python3
-ln -s /usr/python3.5/bin/pip3 /usr/bin/pip3
-</code></pre><h3 id="重启网络服务"><a href="#重启网络服务" class="headerlink" title="重启网络服务"></a>重启网络服务</h3><pre><code>service network restart
-</code></pre><h3 id="修改DNS配置"><a href="#修改DNS配置" class="headerlink" title="修改DNS配置"></a>修改DNS配置</h3><pre><code>vi /etc/resolv.conf
-</code></pre><h3 id="yum源问题"><a href="#yum源问题" class="headerlink" title="yum源问题"></a>yum源问题</h3><p>DNS或者IPV6的问题（校园网用户略坑）</p>
-<h3 id="urlopen-error-unknown-url-type-https"><a href="#urlopen-error-unknown-url-type-https" class="headerlink" title="urlopen error unknown url type: https"></a>urlopen error unknown url type: https</h3><p>在网上找到了这个<a href="https://support.serverdensity.com/hc/en-us/articles/201670413-urlopen-error-unknown-url-type-https" target="_blank" rel="external">解决方案</a>，同时也参考了该<a href="http://blog.csdn.net/zyz511919766/article/details/25049365" target="_blank" rel="external">博客</a></p>
-<blockquote>
-<p>This happens if your system does not have SSL installed with Python. You need to recompile Python with SSL on:<br>Steps:<br>1.Download and install OpenSSL, if you don’t have it already.<br>2.Download Python source and rebuild Python (the usual steps of configure, make and make install). Python’s configure script should be able to pick up your existing SSL libraries automatically and build a shared library -ssl.so.</p>
-<p>也就是说：python内置的urllib模块不支持https协议，是因为编译安装python之前没有编译安装类似于openssl这样的SSL库。因此需要安装openssl-devel，之后再重新编译Python。</p>
-</blockquote>
-<pre><code>sudo yum install openssl-devel
-./configure --prefix=/usr/python3.5
-make
-make install
-</code></pre><h3 id="配置LAMP"><a href="#配置LAMP" class="headerlink" title="配置LAMP"></a>配置LAMP</h3><pre><code>yum install httpd -y    #安装apache服务
-yum install mariadb -y  #安装Mariadb(代替MySQL)
-yum install php -y      #安装PHP
-systemctl start httpd   #启动apache服务
-#在浏览器地址栏输入localhost即可看到测试界面
-</code></pre><table>
-<thead>
-<tr>
-<th>任务</th>
-<th style="text-align:center">指令</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>使某服务自动启动</td>
-<td style="text-align:center">systemctl enable httpd.service</td>
-</tr>
-<tr>
-<td>使某服务不自动启动</td>
-<td style="text-align:center">systemctl disable httpd.service</td>
-</tr>
-<tr>
-<td>检查服务状态</td>
-<td style="text-align:center">systemctl status httpd.service （服务详细信息）</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center">systemctl is-active httpd.service （仅显示是否 Active)</td>
-</tr>
-<tr>
-<td>显示所有已启动的服务</td>
-<td style="text-align:center">systemctl list-units –type=service</td>
-</tr>
-<tr>
-<td>启动某服务</td>
-<td style="text-align:center">systemctl start httpd.service</td>
-</tr>
-<tr>
-<td>停止某服务</td>
-<td style="text-align:center">systemctl stop httpd.service</td>
-</tr>
-<tr>
-<td>重启某服务</td>
-<td style="text-align:center">systemctl restart httpd.service</td>
-</tr>
-</tbody>
-</table>
-<p>Apache虚拟主机配置(参考另一篇文章：CentOS7配置Apache多站点VirtualHost)</p>
-<h3 id="关闭防火墙"><a href="#关闭防火墙" class="headerlink" title="关闭防火墙"></a>关闭防火墙</h3><pre><code>#无法访问Apache服务器，可能是防火墙的原因
-systemctl stop firewalld.service      #停止
-systemctl disable firewalld.service   #禁用
-</code></pre><h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><pre><code>#复制文件夹
-cp -Rf /root/user/python1 /var/www/python2     #python1目录复制到python2目录下
-cp -Rf /root/user/python1/* /var/www/python2/  #不复制python1目录本身
-
-＃文件权限（目录以及其子目录下的所有文件，所有用户及群组，写权限）
-chmod -R a+w /usr/share/nginx/html   
-#chmod命令详解:http://www.cnblogs.com/peida/archive/2012/11/29/2794010.html
-</code></pre><h3 id="查看Apache版本信息"><a href="#查看Apache版本信息" class="headerlink" title="查看Apache版本信息"></a>查看Apache版本信息</h3><pre><code>httpd -v
-apachectl -v   #二选一
-</code></pre><h3 id="CentOS7安装MariaDB（更新）"><a href="#CentOS7安装MariaDB（更新）" class="headerlink" title="CentOS7安装MariaDB（更新）"></a>CentOS7安装MariaDB（更新）</h3><p>1.安装MariaDB</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">yum install mariadb mariadb-server #询问是否要安装，输入Y即可自动安装,直到安装完成</span><br><span class="line">systemctl start mariadb<span class="selector-class">.service</span> #启动MariaDB</span><br><span class="line">systemctl stop mariadb<span class="selector-class">.service</span> #停止MariaDB</span><br><span class="line">systemctl restart mariadb<span class="selector-class">.service</span> #重启MariaDB</span><br><span class="line">systemctl enable mariadb<span class="selector-class">.service</span> #设置开机启动</span><br><span class="line">cp /usr/share/mysql/my-huge<span class="selector-class">.cnf</span> /etc/my<span class="selector-class">.cnf</span> #拷贝配置文件（注意：如果/etc目录下面默认有一个my.cnf，直接覆盖即可）</span><br></pre></td></tr></table></figure>
-<p>2.为root账户设置密码</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mysql_secure_installation</span><br><span class="line">回车，根据提示输入Y</span><br><span class="line">输入<span class="number">2</span>次密码，回车</span><br><span class="line">根据提示一路输入Y</span><br><span class="line">最后出现：Thanks <span class="built_in">for</span> <span class="keyword">using</span> MySQL!</span><br><span class="line">MySql密码设置完成，重新启动 MySQL：</span><br><span class="line">systemctl restart mariadb.service <span class="meta">#重启MariaDB</span></span><br></pre></td></tr></table></figure>
-<h3 id="端口占用问题"><a href="#端口占用问题" class="headerlink" title="端口占用问题"></a>端口占用问题</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fuser -n tcp 8080</span><br><span class="line"><span class="built_in">kill</span> -9 *****</span><br></pre></td></tr></table></figure>
+        <p>安装依赖<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install </span>protobuf-devel leveldb-devel snappy-devel opencv-devel <span class="keyword">boost-devel </span>hdf5-devel</span><br><span class="line">yum <span class="keyword">install </span>gflags-devel glog-devel lmdb-devel</span><br></pre></td></tr></table></figure></p>
+<p>使用git拉取caffe源码<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">https</span>://github.com/BVLC/caffe.git</span><br></pre></td></tr></table></figure></p>
+<p>安装caffe的python依赖<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> caffe/python/</span><br><span class="line"><span class="keyword">for</span> req <span class="keyword">in</span> $(cat requirements.txt); <span class="keyword">do</span> pip install <span class="variable">$req</span>; <span class="keyword">done</span></span><br></pre></td></tr></table></figure></p>
+<p>编辑caffe所需的Makefile文件<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd caffe</span><br><span class="line">cp Makefile<span class="selector-class">.config</span><span class="selector-class">.example</span> Makefile<span class="selector-class">.config</span></span><br><span class="line">vim Makefile.config</span><br></pre></td></tr></table></figure></p>
+<p>编译caffe<br><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">make</span></span><br></pre></td></tr></table></figure></p>
+<p>测试编译结果<br><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">make</span> test</span><br><span class="line"><span class="built_in">make</span> runtest</span><br></pre></td></tr></table></figure></p>
+<p>编译pycaffe<br><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">make</span> pycaffe</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -456,7 +343,11 @@ apachectl -v   #二选一
       
         <div class="post-tags">
           
-            <a href="/tags/Linux/" rel="tag">#Linux</a>
+            <a href="/tags/机器学习/" rel="tag">#机器学习</a>
+          
+            <a href="/tags/深度学习/" rel="tag">#深度学习</a>
+          
+            <a href="/tags/caffe/" rel="tag">#caffe</a>
           
         </div>
       
@@ -465,16 +356,16 @@ apachectl -v   #二选一
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/18/server-configuration-1/" rel="next" title="我在新服务器配置上走过的那些坑(1)">
-                <i class="fa fa-chevron-left"></i> 我在新服务器配置上走过的那些坑(1)
+              <a href="/2016/09/18/Mathematics-for-programmers/" rel="next" title="《程序员的数学》读书笔记">
+                <i class="fa fa-chevron-left"></i> 《程序员的数学》读书笔记
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/03/19/Python-shell-ipython/" rel="prev" title="Python增强交互式shell：ipython">
-                Python增强交互式shell：ipython <i class="fa fa-chevron-right"></i>
+              <a href="/2016/12/10/react-native-start/" rel="prev" title="React Native环境部署">
+                React Native环境部署 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -490,10 +381,10 @@ apachectl -v   #二选一
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/03/18/server-configuration-2/"
-     data-title="我在新服务器配置上走过的那些坑(2)"
+        <div class="ds-share flat" data-thread-key="2016/10/15/learn-caffe/"
+     data-title="caffe入门"
      data-content=""
-     data-url="http://blog.ybbz.site/2016/03/18/server-configuration-2/">
+     data-url="http://blog.ybbz.site/2016/10/15/learn-caffe/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -520,8 +411,8 @@ apachectl -v   #二选一
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/18/server-configuration-2/"
-           data-title="我在新服务器配置上走过的那些坑(2)" data-url="http://blog.ybbz.site/2016/03/18/server-configuration-2/">
+      <div class="ds-thread" data-thread-key="2016/10/15/learn-caffe/"
+           data-title="caffe入门" data-url="http://blog.ybbz.site/2016/10/15/learn-caffe/">
       </div>
     
   </div>
@@ -566,7 +457,7 @@ apachectl -v   #二选一
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">105</span>
+              <span class="site-state-item-count">107</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -574,7 +465,7 @@ apachectl -v   #二选一
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -583,7 +474,7 @@ apachectl -v   #二选一
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">67</span>
+                <span class="site-state-item-count">74</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -657,7 +548,7 @@ apachectl -v   #二选一
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置SSH服务"><span class="nav-number">1.</span> <span class="nav-text">配置SSH服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Python3-5"><span class="nav-number">2.</span> <span class="nav-text">安装Python3.5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重启网络服务"><span class="nav-number">3.</span> <span class="nav-text">重启网络服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改DNS配置"><span class="nav-number">4.</span> <span class="nav-text">修改DNS配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#yum源问题"><span class="nav-number">5.</span> <span class="nav-text">yum源问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#urlopen-error-unknown-url-type-https"><span class="nav-number">6.</span> <span class="nav-text">urlopen error unknown url type: https</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置LAMP"><span class="nav-number">7.</span> <span class="nav-text">配置LAMP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭防火墙"><span class="nav-number">8.</span> <span class="nav-text">关闭防火墙</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用命令"><span class="nav-number">9.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看Apache版本信息"><span class="nav-number">10.</span> <span class="nav-text">查看Apache版本信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CentOS7安装MariaDB（更新）"><span class="nav-number">11.</span> <span class="nav-text">CentOS7安装MariaDB（更新）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#端口占用问题"><span class="nav-number">12.</span> <span class="nav-text">端口占用问题</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>
